@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EYTabBarView">
+            <rect key="frame" x="0.0" y="0.0" width="462" height="49"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6HE-Mv-CAD" userLabel="背景的 view">
+                    <rect key="frame" x="0.0" y="0.0" width="462" height="49"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gii-5z-jry" userLabel="进度条">
+                            <rect key="frame" x="0.0" y="0.0" width="462" height="1"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="1xH-fO-rDc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fi7-1w-dOp">
+                            <rect key="frame" x="0.0" y="1" width="92.5" height="48"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="首页">
+                                <color key="titleColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="tapButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="osl-bz-T3p"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uuR-FI-bjb" userLabel="白色线1">
+                            <rect key="frame" x="28" y="47" width="37" height="2"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="xrl-ZO-bhX"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5J2-9u-lY5">
+                            <rect key="frame" x="92.5" y="1" width="92.5" height="48"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="关注">
+                                <color key="titleColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected" title="关注">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="tapButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="y0A-b1-eYi"/>
+                            </connections>
+                        </button>
+                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZc-Rh-c2O" userLabel="白色线2">
+                            <rect key="frame" x="120.5" y="47" width="37" height="2"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <button opaque="NO" tag="2" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReV-0y-3Jb">
+                            <rect key="frame" x="185" y="1" width="92" height="48"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="tabbar_compose_icon_add" backgroundImage="tabbar_compose_button">
+                                <color key="titleColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="tapButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="G1D-wq-tBS"/>
+                            </connections>
+                        </button>
+                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLY-hM-U5Y" userLabel="白色线3">
+                            <rect key="frame" x="212.5" y="47" width="37" height="2"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKt-HO-6XP">
+                            <rect key="frame" x="277" y="1" width="92.5" height="48"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="消息">
+                                <color key="titleColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected" title="消息">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="tapButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="ycn-Mw-4ex"/>
+                            </connections>
+                        </button>
+                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDm-rQ-iCN" userLabel="白色线4">
+                            <rect key="frame" x="305" y="47" width="37" height="2"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayY-Pd-ANl">
+                            <rect key="frame" x="369.5" y="1" width="92.5" height="48"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="我">
+                                <color key="titleColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected" title="我">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="tapButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="dLx-9A-p5O"/>
+                            </connections>
+                        </button>
+                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s27-P8-YUw" userLabel="白色线5">
+                            <rect key="frame" x="397.5" y="47" width="37" height="2"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="NZc-Rh-c2O" firstAttribute="bottom" secondItem="5J2-9u-lY5" secondAttribute="bottom" id="1Qp-d2-Hwh"/>
+                        <constraint firstItem="NZc-Rh-c2O" firstAttribute="height" secondItem="uuR-FI-bjb" secondAttribute="height" id="1dX-OK-mKx"/>
+                        <constraint firstAttribute="bottom" secondItem="ReV-0y-3Jb" secondAttribute="bottom" id="3Jn-QN-2sr"/>
+                        <constraint firstItem="GKt-HO-6XP" firstAttribute="leading" secondItem="ReV-0y-3Jb" secondAttribute="trailing" id="6WF-oD-1P3"/>
+                        <constraint firstItem="RLY-hM-U5Y" firstAttribute="height" secondItem="NZc-Rh-c2O" secondAttribute="height" id="8Xo-wo-UvQ"/>
+                        <constraint firstItem="ReV-0y-3Jb" firstAttribute="top" secondItem="gii-5z-jry" secondAttribute="bottom" id="94r-d3-G8M"/>
+                        <constraint firstItem="GKt-HO-6XP" firstAttribute="centerX" secondItem="zDm-rQ-iCN" secondAttribute="centerX" id="97Y-yR-YBo"/>
+                        <constraint firstItem="zDm-rQ-iCN" firstAttribute="height" secondItem="s27-P8-YUw" secondAttribute="height" id="9g0-31-QNl"/>
+                        <constraint firstItem="zDm-rQ-iCN" firstAttribute="width" secondItem="s27-P8-YUw" secondAttribute="width" id="Bg3-zh-biS"/>
+                        <constraint firstItem="RLY-hM-U5Y" firstAttribute="width" secondItem="zDm-rQ-iCN" secondAttribute="width" id="In2-bQ-w8r"/>
+                        <constraint firstAttribute="trailing" secondItem="gii-5z-jry" secondAttribute="trailing" id="Jex-kc-u5R"/>
+                        <constraint firstAttribute="trailing" secondItem="ayY-Pd-ANl" secondAttribute="trailing" id="Jm0-2p-za4"/>
+                        <constraint firstItem="RLY-hM-U5Y" firstAttribute="bottom" secondItem="ReV-0y-3Jb" secondAttribute="bottom" id="KDq-sq-mRg"/>
+                        <constraint firstItem="ayY-Pd-ANl" firstAttribute="width" secondItem="fi7-1w-dOp" secondAttribute="width" id="LQW-zZ-ZZb"/>
+                        <constraint firstItem="NZc-Rh-c2O" firstAttribute="width" secondItem="uuR-FI-bjb" secondAttribute="width" id="LeI-Xb-CrH"/>
+                        <constraint firstItem="ayY-Pd-ANl" firstAttribute="leading" secondItem="GKt-HO-6XP" secondAttribute="trailing" id="MBg-W7-tkl"/>
+                        <constraint firstItem="fi7-1w-dOp" firstAttribute="leading" secondItem="6HE-Mv-CAD" secondAttribute="leading" id="Phn-62-Rd9"/>
+                        <constraint firstItem="fi7-1w-dOp" firstAttribute="top" secondItem="gii-5z-jry" secondAttribute="bottom" id="QGS-08-m1A"/>
+                        <constraint firstItem="5J2-9u-lY5" firstAttribute="width" secondItem="fi7-1w-dOp" secondAttribute="width" id="TAI-IO-RpU"/>
+                        <constraint firstItem="ReV-0y-3Jb" firstAttribute="leading" secondItem="5J2-9u-lY5" secondAttribute="trailing" id="TDc-TO-xFf"/>
+                        <constraint firstItem="ayY-Pd-ANl" firstAttribute="bottom" secondItem="s27-P8-YUw" secondAttribute="bottom" id="VWC-UR-hc6"/>
+                        <constraint firstItem="GKt-HO-6XP" firstAttribute="width" secondItem="fi7-1w-dOp" secondAttribute="width" id="WYo-H9-v1s"/>
+                        <constraint firstItem="RLY-hM-U5Y" firstAttribute="height" secondItem="zDm-rQ-iCN" secondAttribute="height" id="Wis-pv-zcj"/>
+                        <constraint firstItem="NZc-Rh-c2O" firstAttribute="centerX" secondItem="5J2-9u-lY5" secondAttribute="centerX" id="Y5T-of-uoc"/>
+                        <constraint firstAttribute="bottom" secondItem="ayY-Pd-ANl" secondAttribute="bottom" id="YPA-lw-BKL"/>
+                        <constraint firstItem="gii-5z-jry" firstAttribute="top" secondItem="6HE-Mv-CAD" secondAttribute="top" id="Ycf-eZ-bVq"/>
+                        <constraint firstItem="GKt-HO-6XP" firstAttribute="height" secondItem="fi7-1w-dOp" secondAttribute="height" id="aV0-IH-qXx"/>
+                        <constraint firstItem="ayY-Pd-ANl" firstAttribute="centerX" secondItem="s27-P8-YUw" secondAttribute="centerX" id="b8k-tR-47h"/>
+                        <constraint firstItem="uuR-FI-bjb" firstAttribute="width" secondItem="fi7-1w-dOp" secondAttribute="width" multiplier="0.4" id="cMT-9W-H3q"/>
+                        <constraint firstItem="ayY-Pd-ANl" firstAttribute="top" secondItem="gii-5z-jry" secondAttribute="bottom" id="cef-ea-27Y"/>
+                        <constraint firstAttribute="bottom" secondItem="fi7-1w-dOp" secondAttribute="bottom" id="dAn-bV-Q1y"/>
+                        <constraint firstItem="ReV-0y-3Jb" firstAttribute="width" secondItem="fi7-1w-dOp" secondAttribute="width" id="ech-8t-nYZ"/>
+                        <constraint firstItem="ayY-Pd-ANl" firstAttribute="height" secondItem="fi7-1w-dOp" secondAttribute="height" id="gR4-Fu-FMo"/>
+                        <constraint firstItem="uuR-FI-bjb" firstAttribute="centerX" secondItem="fi7-1w-dOp" secondAttribute="centerX" id="h19-bd-ka9"/>
+                        <constraint firstItem="gii-5z-jry" firstAttribute="leading" secondItem="6HE-Mv-CAD" secondAttribute="leading" id="iJa-Kr-897"/>
+                        <constraint firstItem="RLY-hM-U5Y" firstAttribute="centerX" secondItem="ReV-0y-3Jb" secondAttribute="centerX" id="kMn-3N-CeY"/>
+                        <constraint firstItem="GKt-HO-6XP" firstAttribute="top" secondItem="gii-5z-jry" secondAttribute="bottom" id="kcs-ud-ddl"/>
+                        <constraint firstAttribute="bottom" secondItem="5J2-9u-lY5" secondAttribute="bottom" id="kuS-jl-GaK"/>
+                        <constraint firstItem="5J2-9u-lY5" firstAttribute="top" secondItem="gii-5z-jry" secondAttribute="bottom" id="lfe-9J-ily"/>
+                        <constraint firstAttribute="bottom" secondItem="GKt-HO-6XP" secondAttribute="bottom" id="pD9-E0-9zr"/>
+                        <constraint firstItem="RLY-hM-U5Y" firstAttribute="width" secondItem="NZc-Rh-c2O" secondAttribute="width" id="pgF-Go-Xqb"/>
+                        <constraint firstItem="uuR-FI-bjb" firstAttribute="bottom" secondItem="fi7-1w-dOp" secondAttribute="bottom" id="rMu-k2-OI8"/>
+                        <constraint firstItem="5J2-9u-lY5" firstAttribute="height" secondItem="fi7-1w-dOp" secondAttribute="height" id="rwK-Zb-qzQ"/>
+                        <constraint firstItem="GKt-HO-6XP" firstAttribute="bottom" secondItem="zDm-rQ-iCN" secondAttribute="bottom" id="tGG-gz-Ucg"/>
+                        <constraint firstItem="5J2-9u-lY5" firstAttribute="leading" secondItem="fi7-1w-dOp" secondAttribute="trailing" id="xhf-0l-dk1"/>
+                        <constraint firstItem="ReV-0y-3Jb" firstAttribute="height" secondItem="fi7-1w-dOp" secondAttribute="height" id="zhl-hn-jjY"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="6HE-Mv-CAD" secondAttribute="trailing" id="FSy-kU-nvd"/>
+                <constraint firstItem="6HE-Mv-CAD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="J6D-5d-jAn"/>
+                <constraint firstAttribute="bottom" secondItem="6HE-Mv-CAD" secondAttribute="bottom" id="LRN-2b-N2a"/>
+                <constraint firstItem="6HE-Mv-CAD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ip0-w2-WV9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="progressLabel" destination="gii-5z-jry" id="WYU-YG-4xH"/>
+                <outletCollection property="tabBarButton" destination="fi7-1w-dOp" id="8pa-3S-t4B"/>
+                <outletCollection property="tabBarButton" destination="5J2-9u-lY5" id="nLF-3z-Gy8"/>
+                <outletCollection property="tabBarButton" destination="ReV-0y-3Jb" id="CJl-0b-QOn"/>
+                <outletCollection property="tabBarButton" destination="GKt-HO-6XP" id="vvg-P6-oUC"/>
+                <outletCollection property="tabBarButton" destination="ayY-Pd-ANl" id="QW0-6c-2p2"/>
+                <outletCollection property="lineLabel" destination="uuR-FI-bjb" id="z6J-Ia-Hx9"/>
+                <outletCollection property="lineLabel" destination="NZc-Rh-c2O" id="PsH-Bf-fIZ"/>
+                <outletCollection property="lineLabel" destination="RLY-hM-U5Y" id="NRM-so-ak7"/>
+                <outletCollection property="lineLabel" destination="zDm-rQ-iCN" id="vrd-rm-ek9"/>
+                <outletCollection property="lineLabel" destination="s27-P8-YUw" id="PNG-nv-Wvf"/>
+            </connections>
+            <point key="canvasLocation" x="77" y="-247.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="tabbar_compose_button" width="64" height="44"/>
+        <image name="tabbar_compose_icon_add" width="25" height="25"/>
+    </resources>
+</document>

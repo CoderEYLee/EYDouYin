@@ -1,0 +1,22 @@
+[
+  {
+    "className" : "EYHomeViewController",
+    "title" : "首页"
+  },
+  {
+    "className" : "EYLikeViewController",
+    "title" : "关注"
+  },
+  {
+    "className" : "UIViewController",
+    "title" : "发送"
+  },
+  {
+    "className" : "EYMessageViewController",
+    "title" : "消息"
+  },
+  {
+    "className" : "EYMeViewController",
+    "title" : "我"
+  }
+]

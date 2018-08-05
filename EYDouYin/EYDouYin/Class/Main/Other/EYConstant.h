@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+#pragma mark -
+
+
+
+
+
+
+
+
+
+
+#pragma mark - 宏定义
 #ifdef DEBUG
 
 #define EYLog(...) NSLog(@"%s 第%d行 \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
@@ -33,24 +45,34 @@
 #define EYRandomColor EYColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
 //获取当前屏幕的尺寸
-#define EYScreenBounds [UIScreen mainScreen].bounds
-#define EYScreenWidth [[UIScreen mainScreen] bounds].size.width
-#define EYScreenHeight [[UIScreen mainScreen] bounds].size.height
+#define EYScreenBounds ([UIScreen mainScreen].bounds)
+#define EYScreenSize  (EYScreenBounds.size)
+#define EYScreenWidth (EYScreenSize.width)
+#define EYScreenHeight (EYScreenSize.height)
 
 // 判断是否为 iPhone 4S
-#define EYiPhone4S [[UIScreen mainScreen] bounds].size.width == 320.0f && [[UIScreen mainScreen] bounds].size.height == 480.0f
+#define EYiPhone4S ((EYScreenWidth == 320.0f) && (EYScreenHeight == 480.0f) || (EYScreenWidth == 480.0f) && (EYScreenHeight == 320.0f))
 
 // 判断是否为 iPhone 5SE
-#define EYiPhone5SE [[UIScreen mainScreen] bounds].size.width == 320.0f && [[UIScreen mainScreen] bounds].size.height == 568.0f
+#define EYiPhone5SE ((EYScreenWidth == 320.0f) && (EYScreenHeight == 568.0f) || (EYScreenWidth == 568.0f) && (EYScreenHeight == 320.0f))
 
 // 判断是否为iPhone 6
-#define EYiPhone6 [[UIScreen mainScreen] bounds].size.width == 375.0f && [[UIScreen mainScreen] bounds].size.height == 667.0f
+#define EYiPhone6 ((EYScreenWidth == 375.0f) && (EYScreenHeight == 667.0f) || (EYScreenWidth == 667.0f) && (EYScreenHeight == 375.0f))
 
 // 判断是否为iPhone 6Plus
-#define EYiPhone6Plus [[UIScreen mainScreen] bounds].size.width == 414.0f && [[UIScreen mainScreen] bounds].size.height == 736.0f
+#define EYiPhone6Plus ((EYScreenWidth == 414.0f) && (EYScreenHeight == 736.0f) || (EYScreenWidth == 736.0f) && (EYScreenHeight == 414.0f))
 
+// 判断是否为iPhone X
+#define EYiPhoneX ((EYScreenWidth == 375.f) && (EYScreenHeight == 812.f) || (EYScreenWidth == 812.f) && (EYScreenHeight == 375.f))
 
-#define EYiOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+// 设备系统版本
+#define EYDeviceSystemVersion ([[UIDevice currentDevice].systemVersion doubleValue])
+
+#define EYiOS12 (EYDeviceSystemVersion >= 12.0)
+#define EYiOS11 (EYDeviceSystemVersion >= 11.0)
+#define EYiOS10 (EYDeviceSystemVersion >= 10.0)
+#define EYiOS9 (EYDeviceSystemVersion >= 9.0)
+#define EYiOS8 (EYDeviceSystemVersion >= 8.0)
 
 //获取temp
 #define EYPathTemp NSTemporaryDirectory()

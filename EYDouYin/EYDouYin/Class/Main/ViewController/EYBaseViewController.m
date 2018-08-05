@@ -17,6 +17,58 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    EYLog(@"%@--viewDidLoad", self);
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    EYLog(@"%@--viewWillAppear", self);
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    EYLog(@"%@--viewWillLayoutSubviews", self);
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    EYLog(@"%@--viewDidLayoutSubviews", self);
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    EYLog(@"%@--viewDidAppear", self);
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    EYLog(@"%@--viewWillDisappear", self);
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    EYLog(@"%@--viewDidDisappear", self);
+}
+
+- (void)dealloc
+{
+    EYLog(@"%@--dealloc", self);
+}
+
+#pragma mark - 旋转方向
+-(BOOL)shouldAutorotate
+{
+    return YES;//默认支持旋转
+}
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;//默认只是竖屏
 }
 
 @end
