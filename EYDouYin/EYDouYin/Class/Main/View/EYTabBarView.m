@@ -36,6 +36,21 @@
 
 - (IBAction)tapButton:(UIButton *)sender
 {
+    switch (sender.tag) {
+        case EYTabBarViewTypeHome:
+            self.backgroundColor = [UIColor clearColor];
+            break;
+        case EYTabBarViewTypePlus:
+            break;
+        case EYTabBarViewTypeLike:
+        case EYTabBarViewTypeMessage:
+        case EYTabBarViewTypeMe:
+            self.backgroundColor = [UIColor blackColor];
+            break;
+        default:
+            break;
+    }
+    
     if (self.delegate && [self.delegate respondsToSelector:@selector(tabBarView:didSelectedIndex:)]) {
         [self.delegate tabBarView:self didSelectedIndex:sender.tag];
     }

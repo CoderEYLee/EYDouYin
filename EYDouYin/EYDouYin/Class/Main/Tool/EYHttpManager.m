@@ -9,6 +9,12 @@
 #import "EYHttpManager.h"
 
 @implementation EYHttpManager
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-implementations"
+
 SingletonM(httpManager)
+
+#pragma clang diagnostic pop
 
 @end
