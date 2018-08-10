@@ -10,6 +10,8 @@
 
 @interface EYHomeViewController ()
 
+@property (weak, nonatomic) UIButton * button;
+
 @end
 
 @implementation EYHomeViewController
@@ -19,6 +21,23 @@
     [super viewDidLoad];
     self.view.backgroundColor = EYRandomColor;
     EYLog(@"EYHomeViewController--viewDidLoad");
+    
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    button.backgroundColor = [UIColor redColor];
+    [button addTarget:self action:@selector(tapButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    self.button = button;
+}
+
+- (void)tapButton:(UIButton *)sender
+{
+    UIViewController * vc =[[UIViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [super touchesBegan:touches withEvent:event];
 }
 
 - (BOOL)prefersStatusBarHidden

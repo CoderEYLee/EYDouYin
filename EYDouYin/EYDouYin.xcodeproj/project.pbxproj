@@ -24,7 +24,6 @@
 		6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD412116CD21005DC856 /* EYTabBarView.m */; };
 		6055AD442116D18A005DC856 /* EYTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6055AD432116D18A005DC856 /* EYTabBarView.xib */; };
 		6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6075412B2104CC4B00EB258D /* AppDelegate.m */; };
-		607541322104CC4B00EB258D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607541302104CC4B00EB258D /* Main.storyboard */; };
 		607541342104CC4C00EB258D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607541332104CC4C00EB258D /* Assets.xcassets */; };
 		607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607541352104CC4C00EB258D /* LaunchScreen.storyboard */; };
 		6075413A2104CC4C00EB258D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 607541392104CC4C00EB258D /* main.m */; };
@@ -89,7 +88,6 @@
 		607541272104CC4B00EB258D /* EYDouYin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EYDouYin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6075412A2104CC4B00EB258D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6075412B2104CC4B00EB258D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		607541312104CC4B00EB258D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607541332104CC4C00EB258D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		607541362104CC4C00EB258D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		607541382104CC4C00EB258D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -338,7 +336,6 @@
 		607541702104D1EB00EB258D /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				607541302104CC4B00EB258D /* Main.storyboard */,
 				607541352104CC4C00EB258D /* LaunchScreen.storyboard */,
 				607541332104CC4C00EB258D /* Assets.xcassets */,
 				607541392104CC4C00EB258D /* main.m */,
@@ -495,7 +492,6 @@
 				607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */,
 				6055AD442116D18A005DC856 /* EYTabBarView.xib in Resources */,
 				607541342104CC4C00EB258D /* Assets.xcassets in Resources */,
-				607541322104CC4B00EB258D /* Main.storyboard in Resources */,
 				6055AD3C2116B382005DC856 /* TabBar.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,14 +629,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607541302104CC4B00EB258D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607541312104CC4B00EB258D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		607541352104CC4C00EB258D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -767,17 +755,22 @@
 			baseConfigurationReference = 2C2163A71ED181EE341E06B8 /* Pods-EYDouYin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PYJ3M9TJFN;
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/lieryang/个人/iOS项目/EYDouYin/EYDouYin/EYDouYin/Class/Main/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = EYDouYin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = lieryang.EYDouYin;
+				PRODUCT_BUNDLE_IDENTIFIER = "EY.OC--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -787,17 +780,22 @@
 			baseConfigurationReference = 4F8685C22B833ADCA49ADA7C /* Pods-EYDouYin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PYJ3M9TJFN;
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/lieryang/个人/iOS项目/EYDouYin/EYDouYin/EYDouYin/Class/Main/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = EYDouYin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = lieryang.EYDouYin;
+				PRODUCT_BUNDLE_IDENTIFIER = "EY.OC--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

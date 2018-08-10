@@ -86,12 +86,13 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </label>
-                        <button opaque="NO" tag="2" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReV-0y-3Jb">
+                        <button opaque="NO" tag="2" contentMode="center" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReV-0y-3Jb">
                             <rect key="frame" x="185" y="1" width="92" height="48"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" image="tabbar_compose_icon_add" backgroundImage="tabbar_compose_button">
+                            <state key="normal" image="tabbar_compose_button">
                                 <color key="titleColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <state key="selected">
@@ -99,6 +100,7 @@
                             </state>
                             <connections>
                                 <action selector="tapButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="G1D-wq-tBS"/>
+                                <outletCollection property="gestureRecognizers" destination="a3N-Kh-r7B" appends="YES" id="dXI-S5-52c"/>
                             </connections>
                         </button>
                         <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLY-hM-U5Y" userLabel="白色线3">
@@ -242,9 +244,13 @@
             </connections>
             <point key="canvasLocation" x="77" y="-247.5"/>
         </view>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="a3N-Kh-r7B">
+            <connections>
+                <action selector="longPressButton:" destination="iN0-l3-epB" id="OfF-mR-bVe"/>
+            </connections>
+        </pongPressGestureRecognizer>
     </objects>
     <resources>
-        <image name="tabbar_compose_button" width="64" height="44"/>
-        <image name="tabbar_compose_icon_add" width="25" height="25"/>
+        <image name="tabbar_compose_button" width="80" height="60"/>
     </resources>
 </document>

@@ -31,7 +31,7 @@
 
 + (instancetype)tabBarView
 {
-    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([EYTabBarView class]) owner:nil options:nil] lastObject];
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([EYTabBarView class]) owner:nil options:nil] firstObject];
 }
 
 - (IBAction)tapButton:(UIButton *)sender
@@ -74,6 +74,18 @@
     //当前点击按钮为选择状态
     sender.selected = YES;
     sender.titleLabel.font = [UIFont systemFontOfSize:19.0];
+}
+
+- (IBAction)longPressButton:(UILongPressGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        UIButton * button = (UIButton *)sender.view;
+        NSLog(@"----------%ld--", button.tag);
+    } else if (sender.state == UIGestureRecognizerStateBegan) {
+        
+    } else {
+        
+    }
 }
 
 @end

@@ -99,7 +99,6 @@
 #pragma mark - EYTabBarViewDelegate
 - (void)tabBarView:(EYTabBarView *)tabBarView didSelectedIndex:(NSInteger)index
 {
-//    NSLog(@"tabBarView--%@--didSelectedIndex--%ld", tabBarView, index);
     NSLog(@"didSelectedIndex--%ld", index);
     if (index == EYTabBarViewTypePlus) {
         [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
