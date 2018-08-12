@@ -11,7 +11,9 @@
 #import "EYTabBarController.h"
 #import "EYNavigationController.h"
 
-@interface EYRootViewController ()
+@interface EYRootViewController () <EYFindViewControllerDelegate>
+
+@property (weak, nonatomic) UIScrollView * scrollView;
 
 @end
 
@@ -31,11 +33,14 @@
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.bounces = NO;
     scrollView.pagingEnabled = YES;
+//    scrollView.delegate = self;
     [self.view addSubview:scrollView];
+    self.scrollView = scrollView;
     
     //左面view
     EYFindViewController * findViewController = [[EYFindViewController alloc] init];
     findViewController.view.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
+    findViewController.delegate = self;
     EYNavigationController *findNaviController = [[EYNavigationController alloc] initWithRootViewController:findViewController];
     [scrollView addSubview:findNaviController.view];
     [self addChildViewController:findNaviController];
@@ -47,12 +52,23 @@
     [self addChildViewController:tabbarController];
     
     scrollView.contentSize = CGSizeMake(EYScreenWidth * 2, EYScreenHeight);
+    //默认展示主view
     [scrollView setContentOffset:CGPointMake(EYScreenWidth, 0)];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {//控制EYTabBarController的方向
     return UIInterfaceOrientationMaskPortrait;
+}
+
+#pragma mark - EYFindViewControllerDelegate
+- (void)findViewController:(EYFindViewController *)findViewController didTapButton:(UIButton *)button {
+    [self.scrollView setContentOffset:CGPointMake(EYScreenWidth, 0) animated:YES];
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    EYLog(@"scrollViewDidEndDragging--%d", decelerate);
 }
 
 @end

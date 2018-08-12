@@ -29,7 +29,7 @@
     //左边按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(scan) image:@"common_scan" highImage:@"common_scan"];
     //右边按钮
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(right) image:@"common_arrow_right" highImage:@"common_arrow_right"];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(right:) image:@"common_arrow_right" highImage:@"common_arrow_right"];
     //中间文字
     UILabel * label = [[UILabel alloc] init];
     label.text = @"发现";
@@ -52,9 +52,10 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)right {
-    EYTestViewController * vc = [[EYTestViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+- (void)right:(UIButton *)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(findViewController:didTapButton:)]) {
+        [self.delegate findViewController:self didTapButton:sender];
+    }
 }
 
 #pragma mark - Override Methods
