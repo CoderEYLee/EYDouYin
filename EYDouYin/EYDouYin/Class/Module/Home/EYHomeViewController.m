@@ -29,9 +29,13 @@
     self.button = button;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
 - (void)tapButton:(UIButton *)sender
 {
-    UIViewController * vc =[[UIViewController alloc] init];
+    EYTestViewController * vc =[[EYTestViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

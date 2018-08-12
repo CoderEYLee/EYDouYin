@@ -50,6 +50,15 @@
 #define EYScreenWidth (EYScreenSize.width)
 #define EYScreenHeight (EYScreenSize.height)
 
+//电池栏的高度
+#define EYStatusBarHeight (EYiPhoneX ? (44) : (20))
+//电池栏+导航栏的高度
+#define EYStatusBarAndNaviBarHeight (EYiPhoneX ? (88) : (64))
+//TabBar 的高度
+#define EYTabBarHeight (EYiPhoneX ? (83) : (49))
+//HomeIndicator的高度(只有 X 有)
+#define EYHomeIndicatorHeight (EYiPhoneX ? (34) : (0))
+
 // 判断是否为 iPhone 4S
 #define EYiPhone4S ((EYScreenWidth == 320.0f) && (EYScreenHeight == 480.0f) || (EYScreenWidth == 480.0f) && (EYScreenHeight == 320.0f))
 

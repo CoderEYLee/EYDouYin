@@ -14,9 +14,12 @@
 
 @implementation EYNavigationController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setShadowImage:[UIImage new]];
 }
+
+
 
 @end

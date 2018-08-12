@@ -37,7 +37,6 @@
     EYFindViewController * findViewController = [[EYFindViewController alloc] init];
     findViewController.view.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
     EYNavigationController *findNaviController = [[EYNavigationController alloc] initWithRootViewController:findViewController];
-    
     [scrollView addSubview:findNaviController.view];
     [self addChildViewController:findNaviController];
     
