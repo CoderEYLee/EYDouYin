@@ -1,22 +1,22 @@
 [
   {
     "className" : "EYHomeViewController",
-    "title" : "首页"
+    "needNavi" : 1
   },
   {
     "className" : "EYLikeViewController",
-    "title" : "关注"
+    "needNavi" : 0
   },
   {
     "className" : "UIViewController",
-    "title" : "发送"
+    "needNavi" : 0
   },
   {
     "className" : "EYMessageViewController",
-    "title" : "消息"
+    "needNavi" : 1
   },
   {
     "className" : "EYMeViewController",
-    "title" : "我"
+    "needNavi" : 0
   }
 ]

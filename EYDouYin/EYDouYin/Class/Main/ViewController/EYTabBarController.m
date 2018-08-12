@@ -40,7 +40,12 @@
     NSArray *array = jsonName.ey_loadLocalFile;
     
     for (NSDictionary * dictionary in array) {
-        [self addChildViewController:[[NSClassFromString(dictionary[@"className"]) alloc] init] title:dictionary[@"title"]];
+        UIViewController * viewController = [[NSClassFromString(dictionary[@"className"]) alloc] init];
+        if ([dictionary[@"needNavi"] boolValue]) {
+            [self addChildViewController:[[EYNavigationController alloc] initWithRootViewController:viewController]];
+        } else {
+            [self addChildViewController:viewController];
+        }
     }
 }
 
@@ -61,34 +66,6 @@
     tabBarView.frame = CGRectMake(0, EYScreenHeight-49, EYScreenWidth, 49);
     tabBarView.delegate = self;
     [self.view addSubview:tabBarView];
-}
-
-/**
- 添加一个子控制器
-
- @param childViewController 子控制器
- @param title 标题
- */
-- (void)addChildViewController:(UIViewController *)childViewController title:(NSString *)title
-{
-    // 设置子控制器的文字
-    childViewController.tabBarItem.title = title;
-    
-    childViewController.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, -20);
-    
-    // 设置文字的样式
-    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[NSForegroundColorAttributeName] = [UIColor grayColor];
-    [childViewController.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
-    
-    NSMutableDictionary *selectTextAttrs = [NSMutableDictionary dictionary];
-    selectTextAttrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
-    [childViewController.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
-    
-    // 先给外面传进来的小控制器 包装 一个导航控制器
-    EYNavigationController *nav = [[EYNavigationController alloc] initWithRootViewController:childViewController];
-    // 添加为子控制器
-    [self addChildViewController:nav];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations

@@ -35,6 +35,8 @@
 		60BBC68B2104D83400DEEA34 /* EYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6862104D83400DEEA34 /* EYBaseViewController.m */; };
 		60BBC68E2104D8D200DEEA34 /* EYRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC68D2104D8D200DEEA34 /* EYRootViewController.m */; };
 		60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6902104D9D900DEEA34 /* EYConstant.m */; };
+		60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77AB211F5239004133A6 /* EYFindTopView.m */; };
+		60EE77AF211F52A4004133A6 /* EYFindTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60EE77AE211F52A4004133A6 /* EYFindTopView.xib */; };
 		9122EAE27368E55F59E982A8 /* libPods-EYDouYinTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A2A75C3787089F0E951A39 /* libPods-EYDouYinTests.a */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +113,9 @@
 		60BBC68D2104D8D200DEEA34 /* EYRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYRootViewController.m; sourceTree = "<group>"; };
 		60BBC68F2104D9D900DEEA34 /* EYConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYConstant.h; sourceTree = "<group>"; };
 		60BBC6902104D9D900DEEA34 /* EYConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYConstant.m; sourceTree = "<group>"; };
+		60EE77AA211F5239004133A6 /* EYFindTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFindTopView.h; sourceTree = "<group>"; };
+		60EE77AB211F5239004133A6 /* EYFindTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFindTopView.m; sourceTree = "<group>"; };
+		60EE77AE211F52A4004133A6 /* EYFindTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYFindTopView.xib; sourceTree = "<group>"; };
 		7D06E017DEB0E95B427AE159 /* Pods-EYDouYinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EYDouYinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EYDouYinTests/Pods-EYDouYinTests.release.xcconfig"; sourceTree = "<group>"; };
 		8108F30C51AA75E71455FEBD /* libPods-EYDouYin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EYDouYin.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C078103E0EC0C7276EF671 /* Pods-EYDouYinUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EYDouYinUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EYDouYinUITests/Pods-EYDouYinUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,8 +155,8 @@
 		601B03162104DDC900489E96 /* Find */ = {
 			isa = PBXGroup;
 			children = (
-				601B03172104DDED00489E96 /* EYFindViewController.h */,
-				601B03182104DDED00489E96 /* EYFindViewController.m */,
+				60EE77A9211F51D1004133A6 /* Controller */,
+				60EE77AD211F5241004133A6 /* View */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -359,6 +364,25 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		60EE77A9211F51D1004133A6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				601B03172104DDED00489E96 /* EYFindViewController.h */,
+				601B03182104DDED00489E96 /* EYFindViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		60EE77AD211F5241004133A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				60EE77AA211F5239004133A6 /* EYFindTopView.h */,
+				60EE77AB211F5239004133A6 /* EYFindTopView.m */,
+				60EE77AE211F52A4004133A6 /* EYFindTopView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		6C135B6B8657BEA513DBC0C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +513,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60EE77AF211F52A4004133A6 /* EYFindTopView.xib in Resources */,
 				607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */,
 				6055AD442116D18A005DC856 /* EYTabBarView.xib in Resources */,
 				607541342104CC4C00EB258D /* Assets.xcassets in Resources */,
@@ -577,6 +602,7 @@
 				6055AD382116933E005DC856 /* UIView+Extension.m in Sources */,
 				601B032B21056E7700489E96 /* EYMeViewController.m in Sources */,
 				6075416D2104CFE000EB258D /* EYHttpManager.m in Sources */,
+				60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */,
 				6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */,
 				6055AD3521169261005DC856 /* HWTabBar.m in Sources */,
 				6075413A2104CC4C00EB258D /* main.m in Sources */,

@@ -9,6 +9,7 @@
 #import "EYRootViewController.h"
 #import "EYFindViewController.h"
 #import "EYTabBarController.h"
+#import "EYNavigationController.h"
 
 @interface EYRootViewController ()
 
@@ -35,8 +36,10 @@
     //左面view
     EYFindViewController * findViewController = [[EYFindViewController alloc] init];
     findViewController.view.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
-    [scrollView addSubview:findViewController.view];
-    [self addChildViewController:findViewController];
+    EYNavigationController *findNaviController = [[EYNavigationController alloc] initWithRootViewController:findViewController];
+    
+    [scrollView addSubview:findNaviController.view];
+    [self addChildViewController:findNaviController];
     
     //主 view
     EYTabBarController * tabbarController = [[EYTabBarController alloc] init];

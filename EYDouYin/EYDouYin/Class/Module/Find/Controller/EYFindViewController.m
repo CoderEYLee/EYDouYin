@@ -7,6 +7,7 @@
 //
 
 #import "EYFindViewController.h"
+#import "EYFindTopView.h"
 
 @interface EYFindViewController ()
 
@@ -17,15 +18,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor greenColor];
     
-    [self setupUI];
+//    [self setupUI];
     EYLog(@"EYFindViewController--viewDidLoad");
 }
 
 - (void)setupUI
 {
-    
+    EYFindTopView * topView = [EYFindTopView findTopView];
+    topView.frame = CGRectMake(0, 20, EYScreenWidth, 44);
+    [self.view addSubview:topView];
 }
 
 @end
