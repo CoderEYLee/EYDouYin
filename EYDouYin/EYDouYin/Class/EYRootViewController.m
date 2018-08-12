@@ -11,7 +11,7 @@
 #import "EYTabBarController.h"
 #import "EYNavigationController.h"
 
-@interface EYRootViewController () <EYFindViewControllerDelegate>
+@interface EYRootViewController () <EYFindViewControllerDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) UIScrollView * scrollView;
 
@@ -33,7 +33,7 @@
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.bounces = NO;
     scrollView.pagingEnabled = YES;
-//    scrollView.delegate = self;
+    scrollView.delegate = self;
     [self.view addSubview:scrollView];
     self.scrollView = scrollView;
     
@@ -68,7 +68,22 @@
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    EYLog(@"scrollViewDidEndDragging--%d", decelerate);
+    EYLog(@"已经结束拖拽--%d", decelerate);
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    EYLog(@"滚动了");
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    EYLog(@"滚动了");
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+    
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+}
 @end

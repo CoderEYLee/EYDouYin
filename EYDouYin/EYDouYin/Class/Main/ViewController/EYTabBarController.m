@@ -21,19 +21,28 @@
 
 @implementation EYTabBarController
 
+#pragma mark - Life Cycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blueColor];
-    [self setupUI];
-}
-
-- (void)setupUI
-{
+    
     [self setupViewController];
     [self setupTabBar];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    for (UIView * subView in self.tabBar.subviews) {
+        if ([subView isKindOfClass:NSClassFromString(@"UITabBarButton")]) {//移除最上层的UITabBarButton(界面出现之后才会取到)
+            [subView removeFromSuperview];
+        }
+    }
+}
+
+#pragma mark - 初始化 UI
 - (void)setupViewController
 {
     NSString * jsonName = @"TabBar.json";
@@ -51,21 +60,22 @@
 
 - (void)setupTabBar
 {
-//    EYTabBar *tabBar = [[EYTabBar alloc] init];
-//    tabBar.delegate = self;// ① 不用写
-//    tabBar.delegate = nil; // ② 下面那句话会将这句话覆盖掉
-//    [self setValue:tabBar forKeyPath:@"tabBar"];//这句话会将 自己的控件 tabBar 的 delegate 设置为自己 相当于①
-    //    [[UITabBar appearance] setShadowImage:[UIImage new]];
-    //    [[UITabBar appearance] setBackgroundImage:[UIImage new]];
+    // 1.设置 tabbar
+    [[UITabBar appearance] setShadowImage:[UIImage new]];
+    [[UITabBar appearance] setBackgroundImage:[UIImage new]];
     
-    // 1.隐藏系统自带的 tabBar
-    [[UITabBar appearance] setHidden:YES];
-    
-    // 2.创建自定义的 view 充当 tabBar
+    // 2.创建自定义的 view 添加到 tabBar
     EYTabBarView * tabBarView = [EYTabBarView tabBarView];
-    tabBarView.frame = CGRectMake(0, EYScreenHeight-49, EYScreenWidth, 49);
+    tabBarView.frame = CGRectMake(0, 0, EYScreenWidth, EYTabBarHeight);
     tabBarView.delegate = self;
-    [self.view addSubview:tabBarView];
+    
+    //添加到tabBar上, 但是系统的UITabBarButton会覆盖到tabBarView的上层,需要移除掉
+    [self.tabBar addSubview:tabBarView];
+    
+    //    EYTabBar *tabBar = [[EYTabBar alloc] init];
+    //    tabBar.delegate = self;// ① 不用写 写到最下面程序会崩溃
+    //    tabBar.delegate = nil; // ② 下面那句话会将这句话覆盖掉
+    //    [self setValue:tabBar forKeyPath:@"tabBar"];//这句话会将 自己的控件 tabBar 的 delegate 设置为自己 相当于①
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations

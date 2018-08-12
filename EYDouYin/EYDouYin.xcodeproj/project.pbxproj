@@ -38,6 +38,7 @@
 		60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77B221201CE8004133A6 /* EYTestViewController.m */; };
 		60EE77B62120217D004133A6 /* UIBarButtonItem+EYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77B52120217D004133A6 /* UIBarButtonItem+EYExtension.m */; };
 		60EE77B82120282C004133A6 /* EYTestViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60EE77B72120282C004133A6 /* EYTestViewView.xib */; };
+		60EE77BF21204188004133A6 /* NSObject+EYRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77BE21204188004133A6 /* NSObject+EYRuntime.m */; };
 		9122EAE27368E55F59E982A8 /* libPods-EYDouYinTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A2A75C3787089F0E951A39 /* libPods-EYDouYinTests.a */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +119,8 @@
 		60EE77B42120217D004133A6 /* UIBarButtonItem+EYExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+EYExtension.h"; sourceTree = "<group>"; };
 		60EE77B52120217D004133A6 /* UIBarButtonItem+EYExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+EYExtension.m"; sourceTree = "<group>"; };
 		60EE77B72120282C004133A6 /* EYTestViewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYTestViewView.xib; sourceTree = "<group>"; };
+		60EE77BD21204188004133A6 /* NSObject+EYRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EYRuntime.h"; sourceTree = "<group>"; };
+		60EE77BE21204188004133A6 /* NSObject+EYRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EYRuntime.m"; sourceTree = "<group>"; };
 		7D06E017DEB0E95B427AE159 /* Pods-EYDouYinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EYDouYinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EYDouYinTests/Pods-EYDouYinTests.release.xcconfig"; sourceTree = "<group>"; };
 		8108F30C51AA75E71455FEBD /* libPods-EYDouYin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EYDouYin.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C078103E0EC0C7276EF671 /* Pods-EYDouYinUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EYDouYinUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EYDouYinUITests/Pods-EYDouYinUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -325,6 +328,8 @@
 				6055AD3E2116B929005DC856 /* NSString+EYExtension.m */,
 				60EE77B42120217D004133A6 /* UIBarButtonItem+EYExtension.h */,
 				60EE77B52120217D004133A6 /* UIBarButtonItem+EYExtension.m */,
+				60EE77BD21204188004133A6 /* NSObject+EYRuntime.h */,
+				60EE77BE21204188004133A6 /* NSObject+EYRuntime.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -613,6 +618,7 @@
 			files = (
 				6055AD382116933E005DC856 /* UIView+Extension.m in Sources */,
 				601B032B21056E7700489E96 /* EYMeViewController.m in Sources */,
+				60EE77BF21204188004133A6 /* NSObject+EYRuntime.m in Sources */,
 				60EE77B62120217D004133A6 /* UIBarButtonItem+EYExtension.m in Sources */,
 				6075416D2104CFE000EB258D /* EYHttpManager.m in Sources */,
 				60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */,

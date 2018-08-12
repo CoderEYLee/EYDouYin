@@ -55,7 +55,7 @@
 //电池栏+导航栏的高度
 #define EYStatusBarAndNaviBarHeight (EYiPhoneX ? (88) : (64))
 //TabBar 的高度
-#define EYTabBarHeight (EYiPhoneX ? (83) : (49))
+#define EYTabBarHeight (49)
 //HomeIndicator的高度(只有 X 有)
 #define EYHomeIndicatorHeight (EYiPhoneX ? (34) : (0))
 

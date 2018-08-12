@@ -17,9 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     UILabel * label = [[UILabel alloc] init];
     label.text = @"这是一个测试界面";
-    label.textColor = [UIColor whiteColor];
     [label sizeToFit];
     label.center = self.view.center;
     [self.view addSubview:label];
