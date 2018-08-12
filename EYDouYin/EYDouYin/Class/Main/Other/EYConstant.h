@@ -83,6 +83,10 @@
 #define EYiOS9 (EYDeviceSystemVersion >= 9.0)
 #define EYiOS8 (EYDeviceSystemVersion >= 8.0)
 
+#define EYKeyWindow [UIApplication sharedApplication].keyWindow
+
+#define EYKeyWindowRootViewController EYKeyWindow.rootViewController
+
 //获取temp
 #define EYPathTemp NSTemporaryDirectory()
 

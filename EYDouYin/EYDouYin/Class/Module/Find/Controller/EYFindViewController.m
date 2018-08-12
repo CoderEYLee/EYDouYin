@@ -7,7 +7,7 @@
 //
 
 #import "EYFindViewController.h"
-#import "EYFindTopView.h"
+#import "EYRootViewController.h"
 
 @interface EYFindViewController ()
 
@@ -26,10 +26,12 @@
 }
 
 - (void)setupUI {
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     //左边按钮
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(scan) image:@"common_scan" highImage:@"common_scan"];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(scan) image:@"find_scan" highImage:@"find_scan"];
     //右边按钮
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(right:) image:@"common_arrow_right" highImage:@"common_arrow_right"];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(right) image:@"common_arrow_right" highImage:@"common_arrow_right"];
     //中间文字
     UILabel * label = [[UILabel alloc] init];
     label.text = @"发现";
@@ -52,10 +54,9 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)right:(UIButton *)sender {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(findViewController:didTapButton:)]) {
-        [self.delegate findViewController:self didTapButton:sender];
-    }
+- (void)right {
+    EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
+    [rootViewController.scrollView setContentOffset:CGPointMake(EYScreenWidth, 0) animated:YES];
 }
 
 #pragma mark - Override Methods

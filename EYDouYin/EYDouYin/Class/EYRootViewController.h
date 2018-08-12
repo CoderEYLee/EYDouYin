@@ -10,4 +10,6 @@
 
 @interface EYRootViewController : EYBaseViewController
 
+@property (weak, nonatomic, readonly) UIScrollView * scrollView;
+
 @end

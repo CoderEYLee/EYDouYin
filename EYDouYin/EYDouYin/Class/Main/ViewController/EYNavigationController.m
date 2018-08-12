@@ -16,6 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //设置navigationBar为透明,实际存在,不是隐藏
+    [self settingNavigationBar];
+}
+
+- (void)settingNavigationBar {
     [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationBar setShadowImage:[UIImage new]];
 }

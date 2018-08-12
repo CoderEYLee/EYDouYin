@@ -8,17 +8,6 @@
 
 #import "EYBaseViewController.h"
 
-@class EYFindViewController;
-
-@protocol EYFindViewControllerDelegate<NSObject>
-
-@optional
-- (void)findViewController:(EYFindViewController *)findViewController didTapButton:(UIButton *)button;
-
-@end
-
 @interface EYFindViewController : EYBaseViewController
-
-@property (weak, nonatomic) id <EYFindViewControllerDelegate> delegate;
 
 @end

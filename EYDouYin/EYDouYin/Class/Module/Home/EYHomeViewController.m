@@ -7,6 +7,7 @@
 //
 
 #import "EYHomeViewController.h"
+#import "EYRootViewController.h"
 
 @interface EYHomeViewController ()
 
@@ -27,6 +28,32 @@
     [button addTarget:self action:@selector(tapButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     self.button = button;
+    
+    [self setupUI];
+}
+
+- (void)setupUI {
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    //左边按钮
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(search) image:@"home_search" highImage:@"home_search"];
+    //右边按钮
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(refresh) image:@"home_more_h" highImage:@"home_more_v"];
+    //中间文字
+    UILabel * label = [[UILabel alloc] init];
+    label.text = @"首页";
+    label.textColor = [UIColor whiteColor];
+    label.font = [UIFont boldSystemFontOfSize:18.0];
+    self.navigationItem.titleView = label;
+}
+
+- (void)search {
+    EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
+    [rootViewController.scrollView setContentOffset:CGPointZero animated:YES];
+}
+
+- (void)refresh {
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

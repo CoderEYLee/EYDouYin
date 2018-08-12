@@ -11,9 +11,9 @@
 #import "EYTabBarController.h"
 #import "EYNavigationController.h"
 
-@interface EYRootViewController () <EYFindViewControllerDelegate, UIScrollViewDelegate>
+@interface EYRootViewController () <UIScrollViewDelegate>
 
-@property (weak, nonatomic) UIScrollView * scrollView;
+@property (weak, nonatomic, readwrite) UIScrollView * scrollView;
 
 @end
 
@@ -40,7 +40,6 @@
     //左面view
     EYFindViewController * findViewController = [[EYFindViewController alloc] init];
     findViewController.view.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
-    findViewController.delegate = self;
     EYNavigationController *findNaviController = [[EYNavigationController alloc] initWithRootViewController:findViewController];
     [scrollView addSubview:findNaviController.view];
     [self addChildViewController:findNaviController];
@@ -59,11 +58,6 @@
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {//控制EYTabBarController的方向
     return UIInterfaceOrientationMaskPortrait;
-}
-
-#pragma mark - EYFindViewControllerDelegate
-- (void)findViewController:(EYFindViewController *)findViewController didTapButton:(UIButton *)button {
-    [self.scrollView setContentOffset:CGPointMake(EYScreenWidth, 0) animated:YES];
 }
 
 #pragma mark - UIScrollViewDelegate
