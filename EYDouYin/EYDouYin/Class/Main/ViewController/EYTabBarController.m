@@ -14,6 +14,7 @@
 #import "EYMeViewController.h"
 #import "EYNavigationController.h"
 #import "EYTabBarView.h"
+#import "EYRootViewController.h"
 
 @interface EYTabBarController () <EYTabBarViewDelegate>
 
@@ -26,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
+    self.view.backgroundColor = EYRandomColor;
     
     [self setupViewController];
     [self setupTabBar];
@@ -87,7 +88,14 @@
 - (void)tabBarView:(EYTabBarView *)tabBarView didSelectedIndex:(NSInteger)index
 {
     NSLog(@"didSelectedIndex--%ld", index);
-    if (index == EYTabBarViewTypePlus) {
+    EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
+    if (index == EYTabBarViewTypeHome) {//禁止滚动
+        rootViewController.scrollView.scrollEnabled = NO;
+    } else {
+        rootViewController.scrollView.scrollEnabled = YES;
+    }
+    
+    if (index == EYTabBarViewTypePlus) {//弹出发布界面
         [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
     } else {
         self.selectedIndex = index;

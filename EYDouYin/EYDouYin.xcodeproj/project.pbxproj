@@ -21,6 +21,10 @@
 		6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD3E2116B929005DC856 /* NSString+EYExtension.m */; };
 		6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD412116CD21005DC856 /* EYTabBarView.m */; };
 		6055AD442116D18A005DC856 /* EYTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6055AD432116D18A005DC856 /* EYTabBarView.xib */; };
+		606E6FA3212813CA00ABEB83 /* EYLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 606E6FA1212813CA00ABEB83 /* EYLikeCell.m */; };
+		606E6FA4212813CA00ABEB83 /* EYLikeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 606E6FA2212813CA00ABEB83 /* EYLikeCell.xib */; };
+		606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606E6FA621284FD900ABEB83 /* EYBaseTableViewController.m */; };
+		606E6FAA21284FF400ABEB83 /* EYBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606E6FA921284FF400ABEB83 /* EYBaseCollectionViewController.m */; };
 		6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6075412B2104CC4B00EB258D /* AppDelegate.m */; };
 		607541342104CC4C00EB258D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607541332104CC4C00EB258D /* Assets.xcassets */; };
 		607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607541352104CC4C00EB258D /* LaunchScreen.storyboard */; };
@@ -85,6 +89,13 @@
 		6055AD402116CD21005DC856 /* EYTabBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYTabBarView.h; sourceTree = "<group>"; };
 		6055AD412116CD21005DC856 /* EYTabBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYTabBarView.m; sourceTree = "<group>"; };
 		6055AD432116D18A005DC856 /* EYTabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYTabBarView.xib; sourceTree = "<group>"; };
+		606E6FA0212813CA00ABEB83 /* EYLikeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYLikeCell.h; sourceTree = "<group>"; };
+		606E6FA1212813CA00ABEB83 /* EYLikeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYLikeCell.m; sourceTree = "<group>"; };
+		606E6FA2212813CA00ABEB83 /* EYLikeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYLikeCell.xib; sourceTree = "<group>"; };
+		606E6FA521284FD900ABEB83 /* EYBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYBaseTableViewController.h; sourceTree = "<group>"; };
+		606E6FA621284FD900ABEB83 /* EYBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYBaseTableViewController.m; sourceTree = "<group>"; };
+		606E6FA821284FF400ABEB83 /* EYBaseCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYBaseCollectionViewController.h; sourceTree = "<group>"; };
+		606E6FA921284FF400ABEB83 /* EYBaseCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYBaseCollectionViewController.m; sourceTree = "<group>"; };
 		607541272104CC4B00EB258D /* EYDouYin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EYDouYin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6075412A2104CC4B00EB258D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6075412B2104CC4B00EB258D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -171,6 +182,9 @@
 			children = (
 				601B032621056E6900489E96 /* EYLikeViewController.h */,
 				601B032721056E6900489E96 /* EYLikeViewController.m */,
+				606E6FA0212813CA00ABEB83 /* EYLikeCell.h */,
+				606E6FA1212813CA00ABEB83 /* EYLikeCell.m */,
+				606E6FA2212813CA00ABEB83 /* EYLikeCell.xib */,
 			);
 			path = Like;
 			sourceTree = "<group>";
@@ -362,6 +376,10 @@
 			children = (
 				60BBC6832104D83400DEEA34 /* EYBaseViewController.h */,
 				60BBC6862104D83400DEEA34 /* EYBaseViewController.m */,
+				606E6FA521284FD900ABEB83 /* EYBaseTableViewController.h */,
+				606E6FA621284FD900ABEB83 /* EYBaseTableViewController.m */,
+				606E6FA821284FF400ABEB83 /* EYBaseCollectionViewController.h */,
+				606E6FA921284FF400ABEB83 /* EYBaseCollectionViewController.m */,
 				60BBC6872104D83400DEEA34 /* EYNavigationController.h */,
 				60BBC6842104D83400DEEA34 /* EYNavigationController.m */,
 				601B03132104DCBD00489E96 /* EYTabBarController.h */,
@@ -535,6 +553,7 @@
 				6055AD442116D18A005DC856 /* EYTabBarView.xib in Resources */,
 				607541342104CC4C00EB258D /* Assets.xcassets in Resources */,
 				6055AD3C2116B382005DC856 /* TabBar.json in Resources */,
+				606E6FA4212813CA00ABEB83 /* EYLikeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,9 +645,11 @@
 				6075413A2104CC4C00EB258D /* main.m in Sources */,
 				601B032221056E4E00489E96 /* EYSendViewController.m in Sources */,
 				601B032521056E5F00489E96 /* EYHomeViewController.m in Sources */,
+				606E6FA3212813CA00ABEB83 /* EYLikeCell.m in Sources */,
 				60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */,
 				601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */,
 				6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */,
+				606E6FAA21284FF400ABEB83 /* EYBaseCollectionViewController.m in Sources */,
 				601B03192104DDED00489E96 /* EYFindViewController.m in Sources */,
 				6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */,
 				601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */,
@@ -637,6 +658,7 @@
 				60BBC6892104D83400DEEA34 /* EYNavigationController.m in Sources */,
 				601B032821056E6900489E96 /* EYLikeViewController.m in Sources */,
 				60BBC68E2104D8D200DEEA34 /* EYRootViewController.m in Sources */,
+				606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */,
 				60BBC68B2104D83400DEEA34 /* EYBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -801,7 +823,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PYJ3M9TJFN;
+				DEVELOPMENT_TEAM = 3YW3MNT2AD;
 				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/lieryang/个人/iOS项目/EYDouYin/EYDouYin/EYDouYin/Class/Main/Other/PrefixHeader.pch";
@@ -811,7 +833,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "EY.OC--";
+				PRODUCT_BUNDLE_IDENTIFIER = EY.OC1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -826,7 +848,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PYJ3M9TJFN;
+				DEVELOPMENT_TEAM = 3YW3MNT2AD;
 				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/lieryang/个人/iOS项目/EYDouYin/EYDouYin/EYDouYin/Class/Main/Other/PrefixHeader.pch";
@@ -836,7 +858,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "EY.OC--";
+				PRODUCT_BUNDLE_IDENTIFIER = EY.OC1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

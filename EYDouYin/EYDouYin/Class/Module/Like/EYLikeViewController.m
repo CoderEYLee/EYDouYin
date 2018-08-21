@@ -14,11 +14,16 @@
 
 @implementation EYLikeViewController
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = EYRandomColor;
+    
+    self.view.backgroundColor = [UIColor redColor];
     EYLog(@"EYLikeViewController--viewDidLoad");
 }
+
+
 
 @end

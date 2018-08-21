@@ -9,6 +9,7 @@ target 'EYDouYin' do
 
   # Pods for EYDouYin
 #  pod 'AlicloudHTTPDNS', '~> 1.6.11'
+pod 'ZFPlayer', '3.1.5'
 
   target 'EYDouYinTests' do
     inherit! :search_paths
