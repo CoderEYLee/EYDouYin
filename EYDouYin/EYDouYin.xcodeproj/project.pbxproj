@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		12456AD2F580F71E29D93144 /* libPods-EYDouYin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8108F30C51AA75E71455FEBD /* libPods-EYDouYin.a */; };
-		38CEFA015A15E71820FB81B5 /* libPods-EYDouYinUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2814A2580E2965D9B57163 /* libPods-EYDouYinUITests.a */; };
 		601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B03142104DCBD00489E96 /* EYTabBarController.m */; };
 		601B03192104DDED00489E96 /* EYFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B03182104DDED00489E96 /* EYFindViewController.m */; };
 		601B032221056E4E00489E96 /* EYSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032121056E4E00489E96 /* EYSendViewController.m */; };
@@ -43,7 +42,6 @@
 		60EE77B62120217D004133A6 /* UIBarButtonItem+EYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77B52120217D004133A6 /* UIBarButtonItem+EYExtension.m */; };
 		60EE77B82120282C004133A6 /* EYTestViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60EE77B72120282C004133A6 /* EYTestViewView.xib */; };
 		60EE77BF21204188004133A6 /* NSObject+EYRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77BE21204188004133A6 /* NSObject+EYRuntime.m */; };
-		9122EAE27368E55F59E982A8 /* libPods-EYDouYinTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A2A75C3787089F0E951A39 /* libPods-EYDouYinTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +94,7 @@
 		606E6FA621284FD900ABEB83 /* EYBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYBaseTableViewController.m; sourceTree = "<group>"; };
 		606E6FA821284FF400ABEB83 /* EYBaseCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYBaseCollectionViewController.h; sourceTree = "<group>"; };
 		606E6FA921284FF400ABEB83 /* EYBaseCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYBaseCollectionViewController.m; sourceTree = "<group>"; };
+		606E70BE212C21C500ABEB83 /* EYDouYin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EYDouYin-Bridging-Header.h"; sourceTree = "<group>"; };
 		607541272104CC4B00EB258D /* EYDouYin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EYDouYin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6075412A2104CC4B00EB258D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6075412B2104CC4B00EB258D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -132,12 +131,8 @@
 		60EE77B72120282C004133A6 /* EYTestViewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYTestViewView.xib; sourceTree = "<group>"; };
 		60EE77BD21204188004133A6 /* NSObject+EYRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EYRuntime.h"; sourceTree = "<group>"; };
 		60EE77BE21204188004133A6 /* NSObject+EYRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EYRuntime.m"; sourceTree = "<group>"; };
-		7D06E017DEB0E95B427AE159 /* Pods-EYDouYinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EYDouYinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EYDouYinTests/Pods-EYDouYinTests.release.xcconfig"; sourceTree = "<group>"; };
 		8108F30C51AA75E71455FEBD /* libPods-EYDouYin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EYDouYin.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		88C078103E0EC0C7276EF671 /* Pods-EYDouYinUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EYDouYinUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EYDouYinUITests/Pods-EYDouYinUITests.release.xcconfig"; sourceTree = "<group>"; };
-		96CE45FAC7A095053DA7A9F7 /* Pods-EYDouYinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EYDouYinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EYDouYinTests/Pods-EYDouYinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		97A2A75C3787089F0E951A39 /* libPods-EYDouYinTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EYDouYinTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D7AFA784E3F4F860B5C06CD /* Pods-EYDouYinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EYDouYinUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EYDouYinUITests/Pods-EYDouYinUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +148,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9122EAE27368E55F59E982A8 /* libPods-EYDouYinTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +155,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38CEFA015A15E71820FB81B5 /* libPods-EYDouYinUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +295,7 @@
 				6075415E2104CCFF00EB258D /* Module */,
 				6075415D2104CCD200EB258D /* Main */,
 				6055AD3A2116B03E005DC856 /* Resource */,
+				606E70BE212C21C500ABEB83 /* EYDouYin-Bridging-Header.h */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -432,10 +426,6 @@
 			children = (
 				2C2163A71ED181EE341E06B8 /* Pods-EYDouYin.debug.xcconfig */,
 				4F8685C22B833ADCA49ADA7C /* Pods-EYDouYin.release.xcconfig */,
-				96CE45FAC7A095053DA7A9F7 /* Pods-EYDouYinTests.debug.xcconfig */,
-				7D06E017DEB0E95B427AE159 /* Pods-EYDouYinTests.release.xcconfig */,
-				9D7AFA784E3F4F860B5C06CD /* Pods-EYDouYinUITests.debug.xcconfig */,
-				88C078103E0EC0C7276EF671 /* Pods-EYDouYinUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -451,6 +441,7 @@
 				607541232104CC4B00EB258D /* Sources */,
 				607541242104CC4B00EB258D /* Frameworks */,
 				607541252104CC4B00EB258D /* Resources */,
+				15EC4EC8BC8C022B048CC422 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -465,7 +456,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607541562104CC4C00EB258D /* Build configuration list for PBXNativeTarget "EYDouYinTests" */;
 			buildPhases = (
-				845691F10D97EA9681DAB2F4 /* [CP] Check Pods Manifest.lock */,
 				6075413B2104CC4C00EB258D /* Sources */,
 				6075413C2104CC4C00EB258D /* Frameworks */,
 				6075413D2104CC4C00EB258D /* Resources */,
@@ -484,7 +474,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607541592104CC4C00EB258D /* Build configuration list for PBXNativeTarget "EYDouYinUITests" */;
 			buildPhases = (
-				2D3F01E1B47D6CF92120ECA4 /* [CP] Check Pods Manifest.lock */,
 				607541462104CC4C00EB258D /* Sources */,
 				607541472104CC4C00EB258D /* Frameworks */,
 				607541482104CC4C00EB258D /* Resources */,
@@ -511,6 +500,7 @@
 				TargetAttributes = {
 					607541262104CC4B00EB258D = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					6075413E2104CC4C00EB258D = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -574,22 +564,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2D3F01E1B47D6CF92120ECA4 /* [CP] Check Pods Manifest.lock */ = {
+		15EC4EC8BC8C022B048CC422 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${SRCROOT}/Pods/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources.sh",
+				"${PODS_ROOT}/ZFPlayer/ZFPlayer/Classes/ControlView/ZFPlayer.bundle",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EYDouYinUITests-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		34982ED06F2CA4C6D2CB7435 /* [CP] Check Pods Manifest.lock */ = {
@@ -604,24 +594,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-EYDouYin-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		845691F10D97EA9681DAB2F4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EYDouYinTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -821,6 +793,7 @@
 			baseConfigurationReference = 2C2163A71ED181EE341E06B8 /* Pods-EYDouYin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3YW3MNT2AD;
@@ -828,7 +801,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/lieryang/个人/iOS项目/EYDouYin/EYDouYin/EYDouYin/Class/Main/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = EYDouYin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -837,6 +810,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "EYDouYin/Class/EYDouYin-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -846,6 +822,7 @@
 			baseConfigurationReference = 4F8685C22B833ADCA49ADA7C /* Pods-EYDouYin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3YW3MNT2AD;
@@ -853,7 +830,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/lieryang/个人/iOS项目/EYDouYin/EYDouYin/EYDouYin/Class/Main/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = EYDouYin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -862,13 +839,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "EYDouYin/Class/EYDouYin-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		607541572104CC4C00EB258D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96CE45FAC7A095053DA7A9F7 /* Pods-EYDouYinTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -888,7 +866,6 @@
 		};
 		607541582104CC4C00EB258D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D06E017DEB0E95B427AE159 /* Pods-EYDouYinTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -908,7 +885,6 @@
 		};
 		6075415A2104CC4C00EB258D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D7AFA784E3F4F860B5C06CD /* Pods-EYDouYinUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PYJ3M9TJFN;
@@ -927,7 +903,6 @@
 		};
 		6075415B2104CC4C00EB258D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88C078103E0EC0C7276EF671 /* Pods-EYDouYinUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PYJ3M9TJFN;
