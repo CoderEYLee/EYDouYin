@@ -1,31 +1,3 @@
-PODS:
-  - IJKMediaFramework (0.1.1)
-  - ZFPlayer (3.1.5):
-    - ZFPlayer/Core (= 3.1.5)
-  - ZFPlayer/AVPlayer (3.1.5):
-    - ZFPlayer/Core
-  - ZFPlayer/ControlView (3.1.5):
-    - ZFPlayer/Core
-  - ZFPlayer/Core (3.1.5)
-  - ZFPlayer/ijkplayer (3.1.5):
-    - IJKMediaFramework
-    - ZFPlayer/Core
+PODFILE CHECKSUM: dfef8c626b65b408c680d22c392f053e85364b3e
 
-DEPENDENCIES:
-  - ZFPlayer (= 3.1.5)
-  - ZFPlayer/AVPlayer (~> 3.0)
-  - ZFPlayer/ControlView (~> 3.0)
-  - ZFPlayer/ijkplayer (~> 3.0)
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - IJKMediaFramework
-    - ZFPlayer
-
-SPEC CHECKSUMS:
-  IJKMediaFramework: 7c4fd53fd4480038a48514192dd449c80712499b
-  ZFPlayer: 8273a62fcc76f451db043ce640434d5f8799c09a
-
-PODFILE CHECKSUM: 2fae0d6ce66d222f2235ff799abad7d72db1508e
-
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.1

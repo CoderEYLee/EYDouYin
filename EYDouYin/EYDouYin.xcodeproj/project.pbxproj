@@ -441,7 +441,6 @@
 				607541232104CC4B00EB258D /* Sources */,
 				607541242104CC4B00EB258D /* Frameworks */,
 				607541252104CC4B00EB258D /* Resources */,
-				15EC4EC8BC8C022B048CC422 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -564,24 +563,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		15EC4EC8BC8C022B048CC422 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources.sh",
-				"${PODS_ROOT}/ZFPlayer/ZFPlayer/Classes/ControlView/ZFPlayer.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		34982ED06F2CA4C6D2CB7435 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
