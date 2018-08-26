@@ -20,6 +20,27 @@
     [super viewDidLoad];
     self.view.backgroundColor = EYRandomColor;
     EYLog(@"EYMeViewController--viewDidLoad");
+
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    label.backgroundColor = [UIColor redColor];
+    [self.view addSubview:label];
  }
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+
+    NSString * document = EYPathDocument;
+
+    NSString * fileName = @"a/b/c/d/e/f.mp3";
+
+    NSString * filePath = [document stringByAppendingPathComponent:fileName];
+
+    if ([EYFileManager fileExistsAtPath:filePath]) {
+        EYLog(@"1111111111111111");
+    } else {
+        EYLog(@"222222222222222");
+        [EYFileManager createDirectoryAtPath:[filePath stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+}
 
 @end

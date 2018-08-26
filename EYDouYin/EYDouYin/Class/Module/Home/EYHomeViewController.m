@@ -8,6 +8,7 @@
 
 #import "EYHomeViewController.h"
 #import "EYRootViewController.h"
+#import "EYHomeItemView.h"
 
 @interface EYHomeViewController ()
 

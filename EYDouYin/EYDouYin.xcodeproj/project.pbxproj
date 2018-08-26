@@ -36,6 +36,8 @@
 		60BBC68B2104D83400DEEA34 /* EYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6862104D83400DEEA34 /* EYBaseViewController.m */; };
 		60BBC68E2104D8D200DEEA34 /* EYRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC68D2104D8D200DEEA34 /* EYRootViewController.m */; };
 		60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6902104D9D900DEEA34 /* EYConstant.m */; };
+		60D81BB92132710600456939 /* EYHomeItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D81BB82132710600456939 /* EYHomeItemView.m */; };
+		60D81BBB2132711100456939 /* EYHomeItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D81BBA2132711100456939 /* EYHomeItemView.xib */; };
 		60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77AB211F5239004133A6 /* EYFindTopView.m */; };
 		60EE77AF211F52A4004133A6 /* EYFindTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60EE77AE211F52A4004133A6 /* EYFindTopView.xib */; };
 		60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77B221201CE8004133A6 /* EYTestViewController.m */; };
@@ -121,6 +123,9 @@
 		60BBC68D2104D8D200DEEA34 /* EYRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYRootViewController.m; sourceTree = "<group>"; };
 		60BBC68F2104D9D900DEEA34 /* EYConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYConstant.h; sourceTree = "<group>"; };
 		60BBC6902104D9D900DEEA34 /* EYConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYConstant.m; sourceTree = "<group>"; };
+		60D81BB72132710600456939 /* EYHomeItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeItemView.h; sourceTree = "<group>"; };
+		60D81BB82132710600456939 /* EYHomeItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeItemView.m; sourceTree = "<group>"; };
+		60D81BBA2132711100456939 /* EYHomeItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeItemView.xib; sourceTree = "<group>"; };
 		60EE77AA211F5239004133A6 /* EYFindTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFindTopView.h; sourceTree = "<group>"; };
 		60EE77AB211F5239004133A6 /* EYFindTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFindTopView.m; sourceTree = "<group>"; };
 		60EE77AE211F52A4004133A6 /* EYFindTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYFindTopView.xib; sourceTree = "<group>"; };
@@ -187,6 +192,9 @@
 			children = (
 				601B032321056E5F00489E96 /* EYHomeViewController.h */,
 				601B032421056E5F00489E96 /* EYHomeViewController.m */,
+				60D81BB72132710600456939 /* EYHomeItemView.h */,
+				60D81BB82132710600456939 /* EYHomeItemView.m */,
+				60D81BBA2132711100456939 /* EYHomeItemView.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -540,6 +548,7 @@
 				607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */,
 				60EE77B82120282C004133A6 /* EYTestViewView.xib in Resources */,
 				6055AD442116D18A005DC856 /* EYTabBarView.xib in Resources */,
+				60D81BBB2132711100456939 /* EYHomeItemView.xib in Resources */,
 				607541342104CC4C00EB258D /* Assets.xcassets in Resources */,
 				6055AD3C2116B382005DC856 /* TabBar.json in Resources */,
 				606E6FA4212813CA00ABEB83 /* EYLikeCell.xib in Resources */,
@@ -600,6 +609,7 @@
 				601B032521056E5F00489E96 /* EYHomeViewController.m in Sources */,
 				606E6FA3212813CA00ABEB83 /* EYLikeCell.m in Sources */,
 				60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */,
+				60D81BB92132710600456939 /* EYHomeItemView.m in Sources */,
 				601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */,
 				6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */,
 				606E6FAA21284FF400ABEB83 /* EYBaseCollectionViewController.m in Sources */,
@@ -782,7 +792,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/lieryang/个人/iOS项目/EYDouYin/EYDouYin/EYDouYin/Class/Main/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = EYDouYin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -811,7 +821,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/lieryang/个人/iOS项目/EYDouYin/EYDouYin/EYDouYin/Class/Main/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = EYDouYin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

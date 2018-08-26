@@ -60,7 +60,7 @@
     }
     
     for (UIButton *button in self.tabBarButton) {
-        button.titleLabel.font = [UIFont systemFontOfSize:17.0];
+        button.titleLabel.font = [UIFont systemFontOfSize:16.0 weight:UIFontWeightBold];
         button.selected = NO;//恢复默认状态
     }
     
@@ -73,7 +73,7 @@
     
     //当前点击按钮为选择状态
     sender.selected = YES;
-    sender.titleLabel.font = [UIFont systemFontOfSize:19.0];
+    sender.titleLabel.font = [UIFont systemFontOfSize:17.0 weight:UIFontWeightBold];
 }
 
 - (IBAction)longPressButton:(UILongPressGestureRecognizer *)sender
