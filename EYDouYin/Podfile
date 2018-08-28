@@ -1,16 +1,16 @@
-# Uncomment the next line to define a global platform for your project
-#platform :ios, '9.0'
-#use_frameworks!
-
-
 source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/aliyun/aliyun-specs.git'
+
+inhibit_all_warnings!
+
+#platform :ios, '9.0'
+#use_frameworks!
 
 target 'EYDouYin' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
 
 #   Pods for EYDouYin
-#  pod 'AlicloudHTTPDNS', '~> 1.6.11'
+#pod 'AlicloudHTTPDNS', '~> 1.6.11'
 #pod 'ZFPlayer', '3.1.5'
 #pod 'ZFPlayer/ControlView', '~> 3.0'
 #pod 'ZFPlayer/AVPlayer', '~> 3.0'
