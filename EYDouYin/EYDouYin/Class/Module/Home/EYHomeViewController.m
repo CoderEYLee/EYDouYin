@@ -9,6 +9,7 @@
 #import "EYHomeViewController.h"
 #import "EYRootViewController.h"
 #import "EYHomeItemView.h"
+#import "EYRedView.h"
 
 @interface EYHomeViewController ()
 
@@ -24,16 +25,21 @@
     self.view.backgroundColor = EYRandomColor;
     EYLog(@"EYHomeViewController--viewDidLoad");
     
-    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-    button.backgroundColor = [UIColor redColor];
-    [button addTarget:self action:@selector(tapButton:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
-    self.button = button;
-    
+//    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+//    button.backgroundColor = EYRandomColor;
+//    [button addTarget:self action:@selector(tapButton:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:button];
+//    self.button = button;
+
     [self setupUI];
 }
 
 - (void)setupUI {
+    [self setupTopView];
+    [self setupItemView];
+}
+
+- (void)setupTopView {
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     //左边按钮
@@ -46,6 +52,17 @@
     label.textColor = [UIColor whiteColor];
     label.font = [UIFont boldSystemFontOfSize:18.0];
     self.navigationItem.titleView = label;
+}
+
+//- (void)setupItemView {
+//    EYHomeItemView * itemView = [EYHomeItemView homeItemView];
+//    [self.view addSubview:itemView];
+//}
+
+- (void)setupItemView {
+    EYRedView * redView = [EYRedView redView];
+//    redView.frame = CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, 100);
+    [self.view addSubview:redView];
 }
 
 - (void)search {
@@ -61,14 +78,12 @@
     [super viewWillAppear:animated];
 }
 
-- (void)tapButton:(UIButton *)sender
-{
+- (void)tapButton:(UIButton *)sender {
     EYTestViewController * vc =[[EYTestViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
 }
 

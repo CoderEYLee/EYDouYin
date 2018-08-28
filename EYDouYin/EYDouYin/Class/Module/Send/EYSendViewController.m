@@ -21,7 +21,7 @@
     EYLog(@"EYSendViewController--viewDidLoad");
     
     UIButton * closeButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 100, 100)];
-    closeButton.backgroundColor = [UIColor redColor];
+    closeButton.backgroundColor = EYRandomColor;
     [closeButton addTarget:self action:@selector(tapCloseButton:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:closeButton];

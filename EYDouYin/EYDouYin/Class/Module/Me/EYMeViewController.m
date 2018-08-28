@@ -22,7 +22,7 @@
     EYLog(@"EYMeViewController--viewDidLoad");
 
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-    label.backgroundColor = [UIColor redColor];
+    label.backgroundColor = EYRandomColor;
     [self.view addSubview:label];
  }
 

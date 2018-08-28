@@ -10,4 +10,6 @@
 
 @interface EYHomeItemView : UIView
 
++ (instancetype)homeItemView;
+
 @end

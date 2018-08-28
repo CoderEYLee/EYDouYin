@@ -20,7 +20,7 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = EYRandomColor;
     EYLog(@"EYLikeViewController--viewDidLoad");
 }
 

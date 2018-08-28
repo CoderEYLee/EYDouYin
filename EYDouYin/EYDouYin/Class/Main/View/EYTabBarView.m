@@ -29,8 +29,17 @@
 
 @implementation EYTabBarView
 
-+ (instancetype)tabBarView
-{
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    for (UIButton * button in self.tabBarButton) {
+        if (button.tag == EYTabBarViewTypeHome) {
+            button.selected = YES;
+            button.titleLabel.font = [UIFont systemFontOfSize:17.0 weight:UIFontWeightBold];
+        }
+    }
+}
+
++ (instancetype)tabBarView {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([EYTabBarView class]) owner:nil options:nil] firstObject];
 }
 
@@ -76,12 +85,11 @@
     sender.titleLabel.font = [UIFont systemFontOfSize:17.0 weight:UIFontWeightBold];
 }
 
-- (IBAction)longPressButton:(UILongPressGestureRecognizer *)sender
-{
+- (IBAction)longPressButton:(UILongPressGestureRecognizer *)sender {
     if (sender.state == UIGestureRecognizerStateBegan) {
         UIButton * button = (UIButton *)sender.view;
         NSLog(@"----------%ld--", button.tag);
-    } else if (sender.state == UIGestureRecognizerStateBegan) {
+    } else if (sender.state == UIGestureRecognizerStateEnded) {
         
     } else {
         
