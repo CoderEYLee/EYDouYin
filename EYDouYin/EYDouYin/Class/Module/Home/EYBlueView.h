@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface EYBlueView : UIView
-
 @property (weak, nonatomic) IBOutlet UIButton *button;
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;

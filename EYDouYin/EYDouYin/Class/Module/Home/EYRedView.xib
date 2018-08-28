@@ -33,7 +33,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MbU-xb-cN1" customClass="EYBlueView">
-                    <rect key="frame" x="0.0" y="179" width="414" height="75"/>
+                    <rect key="frame" x="20" y="159" width="374" height="75"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="75" id="ecH-Q1-sVI"/>
@@ -43,9 +43,9 @@
             <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="XD7-42-WXh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1YP-rQ-AhA"/>
-                <constraint firstItem="MbU-xb-cN1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1nS-bO-5Wr"/>
-                <constraint firstItem="MbU-xb-cN1" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="BCr-SQ-WuR"/>
-                <constraint firstItem="MbU-xb-cN1" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ES5-kF-pZO"/>
+                <constraint firstItem="MbU-xb-cN1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="1nS-bO-5Wr"/>
+                <constraint firstItem="MbU-xb-cN1" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-20" id="BCr-SQ-WuR"/>
+                <constraint firstItem="MbU-xb-cN1" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-20" id="ES5-kF-pZO"/>
                 <constraint firstItem="ufn-VL-nYk" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Iqm-kK-Pda"/>
                 <constraint firstItem="ufn-VL-nYk" firstAttribute="leading" secondItem="XD7-42-WXh" secondAttribute="trailing" constant="5" id="Tfy-Ch-wuC"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ufn-VL-nYk" secondAttribute="trailing" constant="5" id="ajT-fd-DPJ"/>
@@ -53,7 +53,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-1092" y="-687"/>
+            <point key="canvasLocation" x="-1218" y="-772"/>
         </view>
     </objects>
 </document>

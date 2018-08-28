@@ -15,7 +15,10 @@
 @implementation EYBlueView
 
 + (instancetype)blueView {
+    // 方式一
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:[self alloc] options:nil] lastObject];
+    // 方式二
+    // return [[UINib nibWithNibName:NSStringFromClass([self class]) bundle:nil] instantiateWithOwner:nil options:nil].firstObject;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -28,19 +31,17 @@
     return self;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
+        //加载为普通的 view
         UIView *view = [[UINib nibWithNibName:NSStringFromClass([EYBlueView class]) bundle:nil] instantiateWithOwner:self options:nil].firstObject;
+        //设置位置(一定要设置)
         view.frame = self.bounds;
+        //添加到自己身上
         [self addSubview:view];
     }
     return self;
-}
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
 }
 
 @end
