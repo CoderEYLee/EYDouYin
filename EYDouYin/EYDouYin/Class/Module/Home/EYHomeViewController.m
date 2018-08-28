@@ -9,7 +9,6 @@
 #import "EYHomeViewController.h"
 #import "EYRootViewController.h"
 #import "EYHomeItemView.h"
-#import "EYRedView.h"
 
 @interface EYHomeViewController ()
 
@@ -54,15 +53,9 @@
     self.navigationItem.titleView = label;
 }
 
-//- (void)setupItemView {
-//    EYHomeItemView * itemView = [EYHomeItemView homeItemView];
-//    [self.view addSubview:itemView];
-//}
-
 - (void)setupItemView {
-    EYRedView * redView = [EYRedView redView];
-//    redView.frame = CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, 100);
-    [self.view addSubview:redView];
+    EYHomeItemView * itemView = [EYHomeItemView homeItemView];
+    [self.view addSubview:itemView];
 }
 
 - (void)search {
