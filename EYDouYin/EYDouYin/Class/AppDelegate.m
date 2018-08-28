@@ -27,6 +27,9 @@
     
     // 3.显示窗口
     [self.window makeKeyAndVisible];
+
+    [NSThread sleepForTimeInterval:3];
+
     return YES;
 }
 
