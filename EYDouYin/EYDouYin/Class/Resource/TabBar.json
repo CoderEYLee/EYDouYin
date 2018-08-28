@@ -1,7 +1,7 @@
 [
   {
     "className" : "EYHomeViewController",
-    "needNavi" : 0
+    "needNavi" : 1
   },
   {
     "className" : "EYLikeViewController",
