@@ -87,12 +87,12 @@
 #pragma mark - EYTabBarViewDelegate
 - (void)tabBarView:(EYTabBarView *)tabBarView didSelectedIndex:(NSInteger)index
 {
-    NSLog(@"didSelectedIndex--%ld", index);
+    EYLog(@"didSelectedIndex--%ld", index);
     EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
-    if (index == EYTabBarViewTypeHome) {//禁止滚动
-        rootViewController.scrollView.scrollEnabled = NO;
-    } else {
+    if (index == EYTabBarViewTypeHome) {
         rootViewController.scrollView.scrollEnabled = YES;
+    } else {//禁止滚动
+        rootViewController.scrollView.scrollEnabled = NO;
     }
     
     if (index == EYTabBarViewTypePlus) {//弹出发布界面
