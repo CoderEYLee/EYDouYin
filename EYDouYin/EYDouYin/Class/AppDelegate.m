@@ -30,7 +30,7 @@
 
     EYLog(@"1111111--->程序启动了");
 
-    [NSThread sleepForTimeInterval:3];
+//    [NSThread sleepForTimeInterval:3];
 
     return YES;
 }

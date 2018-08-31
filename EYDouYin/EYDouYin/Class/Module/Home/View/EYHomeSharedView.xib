@@ -28,15 +28,15 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DQ-2b-0ju">
                             <rect key="frame" x="0.0" y="0.0" width="176" height="112.5"/>
-                            <color key="backgroundColor" red="0.34805315592498898" green="1" blue="0.29847049291260352" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <state key="normal" title="1"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="这是头像"/>
                             <connections>
                                 <action selector="tapButton:" destination="-1" eventType="touchUpInside" id="lkZ-BN-n6D"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Le0-HM-Lge">
                             <rect key="frame" x="0.0" y="112.5" width="176" height="120"/>
-                            <color key="backgroundColor" red="0.60164026942755888" green="0.96664151057749492" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" image="home_heart_normal"/>
                             <state key="selected" image="home_heart_selected"/>
                             <connections>
@@ -45,7 +45,7 @@
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cit-oK-tFr">
                             <rect key="frame" x="0.0" y="232.5" width="176" height="120.5"/>
-                            <color key="backgroundColor" red="1" green="0.42883243307799312" blue="0.52184257286464586" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" image="home_comments"/>
                             <connections>
                                 <action selector="tapButton:" destination="-1" eventType="touchUpInside" id="sN0-t2-jMi"/>
@@ -53,7 +53,7 @@
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDa-XW-AN0">
                             <rect key="frame" x="0.0" y="353" width="176" height="120"/>
-                            <color key="backgroundColor" red="0.80510422477414556" green="0.31045472837761878" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" image="home_share"/>
                             <connections>
                                 <action selector="tapButton:" destination="-1" eventType="touchUpInside" id="fMn-G2-HBJ"/>
@@ -62,7 +62,7 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Oss-AF-gNd" secondAttribute="trailing" id="2T0-32-pFT"/>
                 <constraint firstItem="Oss-AF-gNd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9yL-y4-7hU"/>
@@ -73,7 +73,7 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-336" y="-5"/>
+            <point key="canvasLocation" x="-502" y="-4"/>
         </view>
     </objects>
     <resources>

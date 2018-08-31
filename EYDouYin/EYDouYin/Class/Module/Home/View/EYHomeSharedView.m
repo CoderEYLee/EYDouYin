@@ -10,6 +10,7 @@
 
 @interface EYHomeSharedView()
 
+// 待定使用
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
 
 @end
@@ -42,24 +43,9 @@
 }
 
 #pragma mark - 点击方法
-
 - (IBAction)tapButton:(UIButton *)sender {
-    switch (sender.tag) {
-        case EYHomeSharedViewButtonTypeHead: {
-            EYLog(@"头像");
-            break;
-        }case EYHomeSharedViewButtonTypelike: {
-            EYLog(@"点赞");
-            break;
-        }case EYHomeSharedViewButtonTypeComments: {
-            EYLog(@"评论");
-            break;
-        }case EYHomeSharedViewButtonTypeShare: {
-            EYLog(@"分享");
-            break;
-        }
-        default:
-            break;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(homeSharedView:didSeletedButton:)]) {
+        [self.delegate homeSharedView:self didSeletedButton:sender.tag];
     }
 }
 

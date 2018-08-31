@@ -15,8 +15,19 @@ typedef NS_ENUM(NSInteger, EYHomeSharedViewButtonType) {
     EYHomeSharedViewButtonTypeShare, //更多
 };
 
+@class EYHomeSharedView;
+
+@protocol EYHomeSharedViewDelegate<NSObject>
+
+@optional
+- (void)homeSharedView:(EYHomeSharedView *)view didSeletedButton:(EYHomeSharedViewButtonType)buttonType;
+
+@end
+
 @interface EYHomeSharedView : UIView
 
 + (instancetype)homeSharedView;
+
+@property (weak, nonatomic) id <EYHomeSharedViewDelegate> delegate;
 
 @end
