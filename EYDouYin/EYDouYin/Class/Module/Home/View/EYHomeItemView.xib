@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,6 +15,9 @@
             <rect key="frame" x="0.0" y="0.0" width="351" height="613"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xhf-zr-eas">
+                    <rect key="frame" x="0.0" y="0.0" width="351" height="613"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNK-cT-4r1" customClass="EYHomeInfoView">
                     <rect key="frame" x="0.0" y="493" width="351" height="120"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -24,31 +26,37 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yqy-qA-0an" customClass="EYHomeSharedView">
-                    <rect key="frame" x="263" y="186" width="88" height="307"/>
+                    <rect key="frame" x="281" y="143" width="70" height="350"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="88" id="74U-bi-2lw"/>
-                        <constraint firstAttribute="height" constant="307" id="uye-UQ-yv1"/>
+                        <constraint firstAttribute="width" constant="70" id="74U-bi-2lw"/>
+                        <constraint firstAttribute="height" constant="350" id="uye-UQ-yv1"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="Xhf-zr-eas" secondAttribute="bottom" id="65q-XK-dVJ"/>
+                <constraint firstItem="Xhf-zr-eas" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CyW-RA-K08"/>
+                <constraint firstItem="Xhf-zr-eas" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PYg-RM-YDa"/>
                 <constraint firstItem="gNK-cT-4r1" firstAttribute="top" secondItem="Yqy-qA-0an" secondAttribute="bottom" id="QVn-D2-Ti2"/>
-                <constraint firstItem="gNK-cT-4r1" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="faT-1s-hyX"/>
-                <constraint firstItem="gNK-cT-4r1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fmP-je-Tam"/>
-                <constraint firstItem="Yqy-qA-0an" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="lCZ-9z-Noa"/>
-                <constraint firstItem="gNK-cT-4r1" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="xKU-cy-M51"/>
+                <constraint firstItem="gNK-cT-4r1" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="faT-1s-hyX"/>
+                <constraint firstItem="gNK-cT-4r1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fmP-je-Tam"/>
+                <constraint firstItem="Xhf-zr-eas" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="kmb-iZ-pXQ"/>
+                <constraint firstItem="Yqy-qA-0an" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="lCZ-9z-Noa"/>
+                <constraint firstItem="gNK-cT-4r1" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="xKU-cy-M51"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="homeInfoView" destination="gNK-cT-4r1" id="x55-jW-otY"/>
                 <outlet property="homeSharedView" destination="Yqy-qA-0an" id="tiJ-3I-w6a"/>
             </connections>
-            <point key="canvasLocation" x="-677" y="119"/>
+            <point key="canvasLocation" x="-798" y="91"/>
         </view>
     </objects>
+    <resources>
+        <image name="1" width="1080" height="1920"/>
+    </resources>
 </document>

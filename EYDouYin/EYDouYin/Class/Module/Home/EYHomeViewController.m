@@ -8,9 +8,10 @@
 
 #import "EYHomeViewController.h"
 #import "EYRootViewController.h"
+#import "EYHomeTitleView.h"
 #import "EYHomeItemView.h"
 
-@interface EYHomeViewController ()
+@interface EYHomeViewController () <EYHomeTitleViewDelegate>
 
 @property (weak, nonatomic) UIButton * button;
 
@@ -41,21 +42,14 @@
 - (void)setupTopView {
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    //左边按钮
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(search) image:@"home_search" highImage:@"home_search"];
-    //右边按钮
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(refresh) image:@"home_more_h" highImage:@"home_more_v"];
-    //中间文字
-    UILabel * label = [[UILabel alloc] init];
-    label.text = @"首页";
-    label.textColor = [UIColor whiteColor];
-    label.font = [UIFont boldSystemFontOfSize:18.0];
-    self.navigationItem.titleView = label;
+    EYHomeTitleView * titleView = [EYHomeTitleView homeTitleView];
+    titleView.delegate = self;
+    [self.view addSubview:titleView];
 }
 
 - (void)setupItemView {
     EYHomeItemView * itemView = [EYHomeItemView homeItemView];
-    [self.view addSubview:itemView];
+    [self.view insertSubview:itemView atIndex:0];
 }
 
 - (void)search {
@@ -67,22 +61,35 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
 - (void)tapButton:(UIButton *)sender {
     EYTestViewController * vc =[[EYTestViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [super touchesBegan:touches withEvent:event];
-}
-
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+
+#pragma mark - EYHomeTitleViewDelegate
+- (void)homeTitleView:(EYHomeTitleView *)view didSelectedButton:(EYHomeTitleViewButtonType)buttonType {
+    switch (buttonType) {
+        case EYHomeTitleViewButtonTypeSearch: {
+            EYLog(@"搜索");
+            break;
+        }case EYHomeTitleViewButtonTypeMore: {
+            EYLog(@"更多");
+            break;
+        }case EYHomeTitleViewButtonTypeRecommend: {
+            EYLog(@"推荐");
+            break;
+        }case EYHomeTitleViewButtonTypeCity: {
+            EYLog(@"同城");
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 @end

@@ -15,6 +15,8 @@
 		601B032821056E6900489E96 /* EYLikeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032721056E6900489E96 /* EYLikeViewController.m */; };
 		601B032B21056E7700489E96 /* EYMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032A21056E7700489E96 /* EYMeViewController.m */; };
 		601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032D21056E8600489E96 /* EYMessageViewController.m */; };
+		604D55612139325900F83249 /* EYHomeTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 604D55602139325900F83249 /* EYHomeTitleView.m */; };
+		604D55632139326300F83249 /* EYHomeTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 604D55622139326300F83249 /* EYHomeTitleView.xib */; };
 		6055AD382116933E005DC856 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD372116933E005DC856 /* UIView+Extension.m */; };
 		6055AD3C2116B382005DC856 /* TabBar.json in Resources */ = {isa = PBXBuildFile; fileRef = 6055AD3B2116B382005DC856 /* TabBar.json */; };
 		6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD3E2116B929005DC856 /* NSString+EYExtension.m */; };
@@ -86,6 +88,9 @@
 		601B032A21056E7700489E96 /* EYMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMeViewController.m; sourceTree = "<group>"; };
 		601B032C21056E8600489E96 /* EYMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMessageViewController.h; sourceTree = "<group>"; };
 		601B032D21056E8600489E96 /* EYMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMessageViewController.m; sourceTree = "<group>"; };
+		604D555F2139325900F83249 /* EYHomeTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeTitleView.h; sourceTree = "<group>"; };
+		604D55602139325900F83249 /* EYHomeTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeTitleView.m; sourceTree = "<group>"; };
+		604D55622139326300F83249 /* EYHomeTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeTitleView.xib; sourceTree = "<group>"; };
 		6055AD362116933E005DC856 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		6055AD372116933E005DC856 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		6055AD3B2116B382005DC856 /* TabBar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TabBar.json; sourceTree = "<group>"; };
@@ -390,6 +395,9 @@
 				60D81BB72132710600456939 /* EYHomeItemView.h */,
 				60D81BB82132710600456939 /* EYHomeItemView.m */,
 				60D81BBA2132711100456939 /* EYHomeItemView.xib */,
+				604D555F2139325900F83249 /* EYHomeTitleView.h */,
+				604D55602139325900F83249 /* EYHomeTitleView.m */,
+				604D55622139326300F83249 /* EYHomeTitleView.xib */,
 				60B2FAE2213916270046D13D /* EYHomeInfoView.h */,
 				60B2FAE3213916270046D13D /* EYHomeInfoView.m */,
 				60B2FAE5213916330046D13D /* EYHomeInfoView.xib */,
@@ -581,6 +589,7 @@
 				6055AD442116D18A005DC856 /* EYTabBarView.xib in Resources */,
 				60D81BBB2132711100456939 /* EYHomeItemView.xib in Resources */,
 				607541342104CC4C00EB258D /* Assets.xcassets in Resources */,
+				604D55632139326300F83249 /* EYHomeTitleView.xib in Resources */,
 				6055AD3C2116B382005DC856 /* TabBar.json in Resources */,
 				606E6FA4212813CA00ABEB83 /* EYLikeCell.xib in Resources */,
 			);
@@ -640,6 +649,7 @@
 				601B032521056E5F00489E96 /* EYHomeViewController.m in Sources */,
 				606E6FA3212813CA00ABEB83 /* EYLikeCell.m in Sources */,
 				60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */,
+				604D55612139325900F83249 /* EYHomeTitleView.m in Sources */,
 				60D81BB92132710600456939 /* EYHomeItemView.m in Sources */,
 				601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */,
 				6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */,
