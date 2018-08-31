@@ -1,6 +1,6 @@
 //
 //  EYConstant.h
-//  今日新闻
+//  EYDouYin
 //
 //  Created by lieryang on 2016/11/5.
 //  Copyright © 2016年 lieryang. All rights reserved.

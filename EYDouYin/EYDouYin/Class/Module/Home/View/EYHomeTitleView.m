@@ -13,7 +13,7 @@
 #pragma mark - 初始化方法
 + (instancetype)homeTitleView {
     EYHomeTitleView * view = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
-    view.frame = CGRectMake(0, EYStatusBarHeight, EYScreenWidth, EYStatusBarAndNaviBarHeight - EYStatusBarHeight);
+    view.frame = CGRectMake(0, 0, EYScreenWidth, 72);
     return view;
 }
 

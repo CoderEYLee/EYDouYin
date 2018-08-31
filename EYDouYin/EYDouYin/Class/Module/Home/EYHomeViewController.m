@@ -13,8 +13,6 @@
 
 @interface EYHomeViewController () <EYHomeTitleViewDelegate>
 
-@property (weak, nonatomic) UIButton * button;
-
 @end
 
 @implementation EYHomeViewController
@@ -24,30 +22,17 @@
     [super viewDidLoad];
     self.view.backgroundColor = EYRandomColor;
     EYLog(@"EYHomeViewController--viewDidLoad");
-    
-//    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-//    button.backgroundColor = EYRandomColor;
-//    [button addTarget:self action:@selector(tapButton:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button];
-//    self.button = button;
 
     [self setupUI];
 }
 
 - (void)setupUI {
-    [self setupTopView];
-    [self setupItemView];
-}
-
-- (void)setupTopView {
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    // 1.titleView
     EYHomeTitleView * titleView = [EYHomeTitleView homeTitleView];
     titleView.delegate = self;
     [self.view addSubview:titleView];
-}
 
-- (void)setupItemView {
+    //具体展示的 view
     EYHomeItemView * itemView = [EYHomeItemView homeItemView];
     [self.view insertSubview:itemView atIndex:0];
 }
@@ -59,11 +44,6 @@
 
 - (void)refresh {
     
-}
-
-- (void)tapButton:(UIButton *)sender {
-    EYTestViewController * vc =[[EYTestViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (BOOL)prefersStatusBarHidden
