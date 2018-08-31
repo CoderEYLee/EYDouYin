@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EYHomeInfoView"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zoo-Ia-3FV">
+                    <rect key="frame" x="0.0" y="0.0" width="141" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="65" id="Twk-Zv-4kv"/>
+                        <constraint firstAttribute="width" constant="141" id="zhm-gA-iPF"/>
+                    </constraints>
+                    <state key="normal" title="定位信息">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名称 标题 XXX" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwC-9j-J3O">
+                    <rect key="frame" x="0.0" y="65" width="375" height="70"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.28210101830000001" green="0.8895199895" blue="0.33780327910000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ZwC-9j-J3O" secondAttribute="bottom" id="97H-NU-kDr"/>
+                <constraint firstItem="ZwC-9j-J3O" firstAttribute="top" secondItem="Zoo-Ia-3FV" secondAttribute="bottom" id="FXv-hA-hI1"/>
+                <constraint firstItem="Zoo-Ia-3FV" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="VRa-u0-1o9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZwC-9j-J3O" secondAttribute="trailing" id="ZK5-gp-iVn"/>
+                <constraint firstItem="Zoo-Ia-3FV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cUa-DK-PSE"/>
+                <constraint firstItem="ZwC-9j-J3O" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zQ9-eA-bR8"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="34" y="-238"/>
+        </view>
+    </objects>
+</document>
