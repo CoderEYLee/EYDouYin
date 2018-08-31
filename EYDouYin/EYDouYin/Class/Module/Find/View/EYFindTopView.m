@@ -10,8 +10,7 @@
 
 @implementation EYFindTopView
 
-+ (instancetype)findTopView
-{
++ (instancetype)findTopView {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([EYFindTopView class]) owner:nil options:nil] lastObject];
 }
 

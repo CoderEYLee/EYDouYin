@@ -26,8 +26,4 @@
     [self.view addSubview:label];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
 @end

@@ -40,9 +40,6 @@
         /* 设置导航栏上面的内容 */
         // 设置左边的返回按钮
         viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(pop) image:@"common_arrow_left" highImage:@"common_arrow_left"];
-        
-        // 设置右边的更多按钮
-//        viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(more) image:@"navigationbar_more" highImage:@"navigationbar_more_highlighted"];
     }
     
     [super pushViewController:viewController animated:animated];

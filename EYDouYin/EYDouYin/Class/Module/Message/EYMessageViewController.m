@@ -27,10 +27,8 @@ static NSString * EYLikeViewControllerCollectionViewHeadViewID = @"EYLikeViewCon
 @implementation EYMessageViewController
 
 #pragma mark - Life Cycle
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-//    self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = EYRandomColor;
     EYLog(@"EYMessageViewController--viewDidLoad");
     [self.collectionView reloadData];

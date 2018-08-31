@@ -48,7 +48,6 @@
 
 #pragma mark - Public Methods
 #pragma mark - Private Methods
-
 - (void)scan {
     EYTestViewController * vc = [[EYTestViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];

@@ -24,8 +24,7 @@
 
 #pragma mark - Life Cycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = EYRandomColor;
     
@@ -44,8 +43,7 @@
 }
 
 #pragma mark - 初始化 UI
-- (void)setupViewController
-{
+- (void)setupViewController {
     NSString * jsonName = @"TabBar.json";
     NSArray *array = jsonName.ey_loadLocalFile;
     
@@ -59,8 +57,7 @@
     }
 }
 
-- (void)setupTabBar
-{
+- (void)setupTabBar {
     // 1.设置 tabbar
     [[UITabBar appearance] setShadowImage:[UIImage new]];
     [[UITabBar appearance] setBackgroundImage:[UIImage new]];
@@ -72,22 +69,15 @@
     
     //添加到tabBar上, 但是系统的UITabBarButton会覆盖到tabBarView的上层,需要移除掉
     [self.tabBar addSubview:tabBarView];
-    
-    //    EYTabBar *tabBar = [[EYTabBar alloc] init];
-    //    tabBar.delegate = self;// ① 不用写 写到最下面程序会崩溃
-    //    tabBar.delegate = nil; // ② 下面那句话会将这句话覆盖掉
-    //    [self setValue:tabBar forKeyPath:@"tabBar"];//这句话会将 自己的控件 tabBar 的 delegate 设置为自己 相当于①
 }
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskLandscapeLeft;
 }
 
 #pragma mark - EYTabBarViewDelegate
-- (void)tabBarView:(EYTabBarView *)tabBarView didSelectedIndex:(NSInteger)index
-{
-    EYLog(@"didSelectedIndex--%ld", index);
+- (void)tabBarView:(EYTabBarView *)tabBarView didSelectedIndex:(NSInteger)index {
+    EYLog(@"当前点击的 index--%ld", index);
     EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
     if (index == EYTabBarViewTypeHome) {
         rootViewController.scrollView.scrollEnabled = YES;
@@ -103,25 +93,23 @@
 }
 
 #pragma mark - UITabBarDelegate
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
-{
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     EYLog(@"%@--didSelectItem--%@", tabBar, item);
 }
 
-- (void)tabBar:(UITabBar *)tabBar willBeginCustomizingItems:(NSArray<UITabBarItem *> *)items
-{
+- (void)tabBar:(UITabBar *)tabBar willBeginCustomizingItems:(NSArray<UITabBarItem *> *)items {
     EYLog(@"willBeginCustomizingItems--%@", items);
 }
-- (void)tabBar:(UITabBar *)tabBar didBeginCustomizingItems:(NSArray<UITabBarItem *> *)items
-{
+
+- (void)tabBar:(UITabBar *)tabBar didBeginCustomizingItems:(NSArray<UITabBarItem *> *)items {
     EYLog(@"didBeginCustomizingItems--%@", items);
 }
-- (void)tabBar:(UITabBar *)tabBar willEndCustomizingItems:(NSArray<UITabBarItem *> *)items changed:(BOOL)changed
-{
+
+- (void)tabBar:(UITabBar *)tabBar willEndCustomizingItems:(NSArray<UITabBarItem *> *)items changed:(BOOL)changed {
     EYLog(@"willEndCustomizingItems--%@", items);
 }
-- (void)tabBar:(UITabBar *)tabBar didEndCustomizingItems:(NSArray<UITabBarItem *> *)items changed:(BOOL)changed
-{
+
+- (void)tabBar:(UITabBar *)tabBar didEndCustomizingItems:(NSArray<UITabBarItem *> *)items changed:(BOOL)changed {
     EYLog(@"didEndCustomizingItems--%@", items);
 }
 

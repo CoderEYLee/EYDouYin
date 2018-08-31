@@ -15,8 +15,7 @@
 
 @implementation EYMeViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = EYRandomColor;
     EYLog(@"EYMeViewController--viewDidLoad");

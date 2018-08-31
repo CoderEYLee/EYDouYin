@@ -10,7 +10,6 @@
 
 @interface NSString (EYExtension)
 
-
 /**
  根据文件全名在 MainBundle 中查询,并且序列化返回
  如果查询不到该文件返回nil

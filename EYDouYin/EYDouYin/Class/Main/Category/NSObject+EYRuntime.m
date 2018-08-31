@@ -11,8 +11,7 @@
 
 @implementation NSObject (EYRuntime)
 
-+ (NSArray *)ey_objectsWithArray:(NSArray *)array
-{
++ (NSArray *)ey_objectsWithArray:(NSArray *)array {
     if (array.count == 0) {
         return nil;
     }
@@ -25,17 +24,14 @@
     
     // 2. 遍历数组
     NSMutableArray *arrayM = [NSMutableArray array];
-    for (NSDictionary *dictionary in array)
-    {
+    for (NSDictionary *dictionary in array) {
         // 3. 创建对象
         id obj = [self new];
         
         // 4. 遍历字典
-        for (NSString *key in dictionary)
-        {
+        for (NSString *key in dictionary) {
             // 判断字典中的 key 是否在成员变量中存在
-            if (![list containsObject:key])
-            {
+            if (![list containsObject:key]) {
                 continue;
             }
             
@@ -51,13 +47,11 @@
 
 void *propertiesKey = "propertiesList";
 
-+ (NSArray *)ey_propertiesList
-{
++ (NSArray *)ey_propertiesList {
     // 获取关联对象
     NSArray *result = objc_getAssociatedObject(self, propertiesKey);
     
-    if (result != nil)
-    {
+    if (result != nil) {
         return result;
     }
     
@@ -67,8 +61,7 @@ void *propertiesKey = "propertiesList";
     // 遍历所有的属性
     NSMutableArray *arrayM = [NSMutableArray array];
     
-    for (unsigned int i = 0; i < count; i++)
-    {
+    for (unsigned int i = 0; i < count; i++) {
         objc_property_t pty = list[i];
         
         // 获取 ivar 名称
@@ -88,13 +81,11 @@ void *propertiesKey = "propertiesList";
 
 void *ivarsKey = "ivarsList";
 
-+ (NSArray *)ey_ivarsList
-{
++ (NSArray *)ey_ivarsList {
     // 获取关联对象
     NSArray *result = objc_getAssociatedObject(self, ivarsKey);
     
-    if (result != nil)
-    {
+    if (result != nil) {
         return result;
     }
     

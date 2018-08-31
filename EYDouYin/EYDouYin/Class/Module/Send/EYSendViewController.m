@@ -14,8 +14,7 @@
 
 @implementation EYSendViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = EYRandomColor;
     EYLog(@"EYSendViewController--viewDidLoad");
@@ -27,13 +26,11 @@
     [self.view addSubview:closeButton];
 }
 
-- (BOOL)prefersStatusBarHidden
-{
+- (BOOL)prefersStatusBarHidden {
     return YES;
 }
 
-- (void)tapCloseButton:(UIButton *)sender
-{
+- (void)tapCloseButton:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
