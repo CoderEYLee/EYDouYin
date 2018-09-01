@@ -26,4 +26,10 @@
     [self.view addSubview:label];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end

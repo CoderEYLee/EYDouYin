@@ -27,35 +27,53 @@
 }
 
 - (void)setupUI {
+    self.naviBar.hidden = NO;
     // 1.titleView
     EYHomeTitleView * titleView = [EYHomeTitleView homeTitleView];
     titleView.delegate = self;
-    [self.view addSubview:titleView];
+    [self.naviBar addSubview:titleView];
 
     //具体展示的 view
     EYHomeItemView * itemView = [EYHomeItemView homeItemView];
     [self.view insertSubview:itemView atIndex:0];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    EYTestViewController * vc= [[EYTestViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - Life Cycle
+#pragma mark - Public Methods
+#pragma mark - Private Methods
 - (void)search {
     EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
     [rootViewController.scrollView setContentOffset:CGPointZero animated:YES];
 }
 
-- (void)refresh {
-    
+- (void)recommend {
+
 }
 
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
+- (void)city {
+
 }
+
+- (void)more {
+
+}
+
+//- (BOOL)prefersStatusBarHidden {
+//    return YES;
+//}
 
 #pragma mark - EYHomeTitleViewDelegate
 - (void)homeTitleView:(EYHomeTitleView *)view didSelectedButton:(EYHomeTitleViewButtonType)buttonType {
     switch (buttonType) {
         case EYHomeTitleViewButtonTypeSearch: {
             EYLog(@"搜索");
+            [self search];
             break;
         }case EYHomeTitleViewButtonTypeMore: {
             EYLog(@"更多");

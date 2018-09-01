@@ -18,7 +18,9 @@
     [super viewDidLoad];
     
     //设置navigationBar为透明,实际存在,不是隐藏
-    [self settingNavigationBar];
+//    [self settingNavigationBar];
+
+    self.navigationBar.hidden = YES;
 }
 
 - (void)settingNavigationBar {

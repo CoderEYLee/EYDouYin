@@ -10,4 +10,6 @@
 
 @interface EYBaseViewController : UIViewController
 
+@property (weak, nonatomic) UINavigationBar * naviBar;
+
 @end
