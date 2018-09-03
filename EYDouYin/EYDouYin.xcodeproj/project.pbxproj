@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		12456AD2F580F71E29D93144 /* libPods-EYDouYin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8108F30C51AA75E71455FEBD /* libPods-EYDouYin.a */; };
+		6000D86F213D1CFB00491BB7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6000D871213D1CFB00491BB7 /* Localizable.strings */; };
 		601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B03142104DCBD00489E96 /* EYTabBarController.m */; };
 		601B03192104DDED00489E96 /* EYFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B03182104DDED00489E96 /* EYFindViewController.m */; };
 		601B032221056E4E00489E96 /* EYSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032121056E4E00489E96 /* EYSendViewController.m */; };
@@ -74,6 +75,9 @@
 		2C2163A71ED181EE341E06B8 /* Pods-EYDouYin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EYDouYin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EYDouYin/Pods-EYDouYin.debug.xcconfig"; sourceTree = "<group>"; };
 		2D2814A2580E2965D9B57163 /* libPods-EYDouYinUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EYDouYinUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F8685C22B833ADCA49ADA7C /* Pods-EYDouYin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EYDouYin.release.xcconfig"; path = "Pods/Target Support Files/Pods-EYDouYin/Pods-EYDouYin.release.xcconfig"; sourceTree = "<group>"; };
+		6000D86C213D1C6700491BB7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		6000D870213D1CFB00491BB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6000D872213D1CFF00491BB7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		601B03132104DCBD00489E96 /* EYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYTabBarController.h; sourceTree = "<group>"; };
 		601B03142104DCBD00489E96 /* EYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYTabBarController.m; sourceTree = "<group>"; };
 		601B03172104DDED00489E96 /* EYFindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFindViewController.h; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 		6055AD3A2116B03E005DC856 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				6000D871213D1CFB00491BB7 /* Localizable.strings */,
 				6055AD3B2116B382005DC856 /* TabBar.json */,
 			);
 			path = Resource;
@@ -563,6 +568,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 6075411E2104CC4B00EB258D;
 			productRefGroup = 607541282104CC4B00EB258D /* Products */;
@@ -582,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60EE77AF211F52A4004133A6 /* EYFindTopView.xib in Resources */,
+				6000D86F213D1CFB00491BB7 /* Localizable.strings in Resources */,
 				60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */,
 				607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */,
 				60EE77B82120282C004133A6 /* EYTestViewView.xib in Resources */,
@@ -702,10 +709,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6000D871213D1CFB00491BB7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6000D870213D1CFB00491BB7 /* en */,
+				6000D872213D1CFF00491BB7 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		607541352104CC4C00EB258D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				607541362104CC4C00EB258D /* Base */,
+				6000D86C213D1C6700491BB7 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -717,6 +734,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -775,6 +793,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -19,15 +19,13 @@
 
 @implementation EYRootViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setupUI];
 }
 
-- (void)setupUI
-{
+- (void)setupUI {
     UIScrollView * scrollView = [[UIScrollView alloc] initWithFrame:EYScreenBounds];
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
@@ -55,22 +53,21 @@
     [scrollView setContentOffset:CGPointMake(EYScreenWidth, 0)];
 }
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-{//控制EYTabBarController的方向
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {//控制EYTabBarController的方向
     return UIInterfaceOrientationMaskPortrait;
 }
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    EYLog(@"已经结束拖拽--%d", decelerate);
+    // EYLog(@"已经结束拖拽--%d", decelerate);
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    EYLog(@"滚动了");
+    // EYLog(@"scrollViewDidScroll");
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    EYLog(@"滚动了");
+    // EYLog(@"scrollViewWillBeginDragging");
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {

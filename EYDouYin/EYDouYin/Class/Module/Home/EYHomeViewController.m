@@ -24,6 +24,22 @@
     EYLog(@"EYHomeViewController--viewDidLoad");
 
     [self setupUI];
+
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    [UIApplication sharedApplication].statusBarHidden = YES;
+    EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
+    rootViewController.scrollView.scrollEnabled = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+
+    [UIApplication sharedApplication].statusBarHidden = NO;
 }
 
 - (void)setupUI {
@@ -42,6 +58,9 @@
     [super touchesBegan:touches withEvent:event];
     EYTestViewController * vc= [[EYTestViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+
+    EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
+    rootViewController.scrollView.scrollEnabled = NO;
 }
 
 #pragma mark - Life Cycle
@@ -64,9 +83,9 @@
 
 }
 
-//- (BOOL)prefersStatusBarHidden {
-//    return YES;
-//}
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
 
 #pragma mark - EYHomeTitleViewDelegate
 - (void)homeTitleView:(EYHomeTitleView *)view didSelectedButton:(EYHomeTitleViewButtonType)buttonType {
