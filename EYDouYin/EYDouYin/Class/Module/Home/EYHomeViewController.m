@@ -24,16 +24,12 @@
     EYLog(@"EYHomeViewController--viewDidLoad");
 
     [self setupUI];
-
-
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
     [UIApplication sharedApplication].statusBarHidden = YES;
-    EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
-    rootViewController.scrollView.scrollEnabled = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
