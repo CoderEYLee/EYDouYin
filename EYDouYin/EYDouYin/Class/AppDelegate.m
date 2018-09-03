@@ -15,19 +15,15 @@
 
 @implementation AppDelegate
 
-
+#pragma mark - Life Cycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // 1.创建窗口
-    self.window = [[UIWindow alloc] init];
-    self.window.frame = [UIScreen mainScreen].bounds;
-    
-    // 2.设置根控制器
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[EYRootViewController alloc] init];
-    
-    // 3.显示窗口
     [self.window makeKeyAndVisible];
 
     EYLog(@"1111111--->程序启动了");
+
+    [self setUpAppLanguage];
 
 //    [NSThread sleepForTimeInterval:3];
 
@@ -54,5 +50,20 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     EYLog(@"6666666666666--->程序被杀了");
 }
+
+
+#pragma mark - Public Methods
+#pragma mark - Private Methods
+// 初始化 app 语言环境
+- (void)setUpAppLanguage {
+    if ([EYUserDefaults stringForKey:EYAppLanguage].length == 0) {
+        [EYUserDefaults setObject:NSLocale.preferredLanguages.firstObject forKey:EYAppLanguage];
+    }
+}
+#pragma mark - Override Methods
+#pragma mark - Net Work
+#pragma mark - DataSource
+#pragma mark - Delegate
+#pragma mark - Getters & Setters
 
 @end
