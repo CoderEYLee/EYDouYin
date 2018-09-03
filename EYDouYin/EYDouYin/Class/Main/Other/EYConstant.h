@@ -109,3 +109,7 @@
 #define EYArrayIsEmpty(array) ([array isKindOfClass:[NSNull class]] || array.count == 0 ? YES : NO)
 
 #define EYDictionaryIsEmpty(dictionary) ([dictionary isKindOfClass:[NSNull class]] || dictionary.allKeys == 0 ? YES : NO)
+
+#define EYAppLanguage @"EYAppLanguage"
+
+#define EYLocalized(key) [[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:EYAppLanguage]] ofType:@"lproj"]] localizedStringForKey:(key) value:nil table:nil]
