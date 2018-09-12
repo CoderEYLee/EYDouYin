@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,7 +17,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUA-Rc-B1q">
                     <rect key="frame" x="198.5" y="27" width="1" height="10"/>
-                    <color key="backgroundColor" red="0.28210101830000001" green="0.8895199895" blue="0.33780327910000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="10" id="5NN-LI-qhg"/>
                         <constraint firstAttribute="width" constant="1" id="j7Y-EP-Jly"/>
@@ -28,23 +27,27 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="VBy-8A-hob">
-                    <rect key="frame" x="140" y="14.5" width="118" height="35"/>
+                    <rect key="frame" x="129" y="14.5" width="140" height="35"/>
                     <subviews>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ig-Pi-a9y">
-                            <rect key="frame" x="0.0" y="0.0" width="62" height="35"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                            <state key="normal" title="  推荐   ">
-                                <color key="titleColor" red="0.28210101830000001" green="0.8895199895" blue="0.33780327910000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ig-Pi-a9y" userLabel="推荐">
+                            <rect key="frame" x="0.0" y="0.0" width="70" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="Ybd-MX-EAI"/>
+                                <constraint firstAttribute="width" constant="70" id="k5Y-ta-46I"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
                                 <action selector="tapButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="axE-pt-FDx"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ix-Sn-DQj">
-                            <rect key="frame" x="62" y="0.0" width="56" height="35"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                            <state key="normal" title="   同城   ">
-                                <color key="titleColor" red="0.28210101830000001" green="0.8895199895" blue="0.33780327910000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ix-Sn-DQj" userLabel="同城">
+                            <rect key="frame" x="70" y="0.0" width="70" height="35"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
                                 <action selector="tapButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="XPc-Mq-EoW"/>
@@ -52,6 +55,10 @@
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="1ix-Sn-DQj" firstAttribute="height" secondItem="8Ig-Pi-a9y" secondAttribute="height" id="R6f-wb-2dB"/>
+                        <constraint firstItem="1ix-Sn-DQj" firstAttribute="width" secondItem="8Ig-Pi-a9y" secondAttribute="width" id="qfT-xt-Lgt"/>
+                    </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41T-QX-OPp">
                     <rect key="frame" x="20" y="16" width="32" height="32"/>
@@ -72,8 +79,8 @@
             <constraints>
                 <constraint firstItem="i3A-JE-wN1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OoV-O0-k3l"/>
                 <constraint firstItem="VBy-8A-hob" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QUw-Dr-svS"/>
-                <constraint firstItem="41T-QX-OPp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Wjg-sC-xxj"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="i3A-JE-wN1" secondAttribute="trailing" constant="20" id="b55-bz-5cI"/>
+                <constraint firstItem="41T-QX-OPp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Wjg-sC-xxj"/>
+                <constraint firstAttribute="trailing" secondItem="i3A-JE-wN1" secondAttribute="trailing" constant="20" id="b55-bz-5cI"/>
                 <constraint firstItem="41T-QX-OPp" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nQx-9L-eW1"/>
                 <constraint firstItem="VBy-8A-hob" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="o2X-iY-Up1"/>
                 <constraint firstItem="wUA-Rc-B1q" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oR2-C4-J7J"/>
@@ -82,8 +89,11 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="29" y="-288"/>
+            <connections>
+                <outlet property="cityButton" destination="1ix-Sn-DQj" id="phf-uV-3yw"/>
+                <outlet property="recommendButton" destination="8Ig-Pi-a9y" id="Uuc-81-FI9"/>
+            </connections>
+            <point key="canvasLocation" x="147" y="-633"/>
         </view>
     </objects>
     <resources>

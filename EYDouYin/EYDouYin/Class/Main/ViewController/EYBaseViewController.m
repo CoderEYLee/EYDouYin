@@ -56,8 +56,8 @@
 
 - (void)setupNaviBar {
     UINavigationBar * naviBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, EYScreenWidth, 44)];
-    naviBar.hidden = YES;
-    naviBar.backgroundColor = [UIColor greenColor];
+    [naviBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [naviBar setShadowImage:[UIImage new]];
     [self.view addSubview:naviBar];
     self.naviBar = naviBar;
 }
