@@ -24,6 +24,18 @@
     [label sizeToFit];
     label.center = self.view.center;
     [self.view addSubview:label];
+
+    NSString * jsonName = @"ChinLab_en.json";
+    NSDictionary *dictionary = jsonName.ey_loadLocalFile;
+    NSString * value1 = dictionary[@"key1"];
+
+    NSLog(@"------dictionary:%@------", dictionary);
+
+    UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, EYScreenWidth, 200)];
+    label1.backgroundColor = EYRandomColor;
+    label1.text = [NSString stringWithFormat:value1, @"AAAA", @"BBBB"];
+    label1.numberOfLines = 0;
+    [self.view addSubview:label1];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
