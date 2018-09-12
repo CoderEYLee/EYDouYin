@@ -10,8 +10,14 @@
 #import "EYRootViewController.h"
 #import "EYHomeTitleView.h"
 #import "EYHomeItemView.h"
+#import "EYHomeItemModel.h"
 
-@interface EYHomeViewController () <EYHomeTitleViewDelegate>
+@interface EYHomeViewController () <EYHomeTitleViewDelegate, UIScrollViewDelegate>
+
+@property (weak, nonatomic) UIScrollView * scrollView;
+
+
+@property (strong, nonatomic) NSMutableArray *itemArrayM;
 
 @end
 
@@ -20,10 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = EYRandomColor;
     EYLog(@"EYHomeViewController--viewDidLoad");
 
     [self setupUI];
+
+    // 模拟网络数据
+    [self loadNetData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -50,9 +58,32 @@
     titleView.delegate = self;
     [self.naviBar addSubview:titleView];
 
-    //具体展示的 view
-    EYHomeItemView * itemView = [EYHomeItemView homeItemView];
-    [self.view insertSubview:itemView atIndex:0];
+    // 2.scrollView
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:EYScreenBounds];
+    scrollView.contentSize = CGSizeMake(EYScreenWidth, EYScreenHeight * 3);
+    scrollView.pagingEnabled = YES;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.delegate = self;
+    [self.view insertSubview:scrollView atIndex:0];
+    self.scrollView = scrollView;
+}
+
+- (void)loadNetData {
+    NSString *jsonName = @"Items.json";
+    NSArray *jsonArray = jsonName.ey_loadLocalFile;
+
+    for (int i = 0; i < jsonArray.count; i++) {
+        NSDictionary * dictionary = jsonArray[i];
+        [self.itemArrayM addObject:[EYHomeItemModel modelWithDictionary:dictionary]];
+        EYHomeItemView * itemView = [[EYHomeItemView alloc] initWithFrame:CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight)];
+        itemView.backgroundColor = EYRandomColor;
+        [self.scrollView addSubview:itemView];
+    }
+
+//    for (EYHomeItemModel * model in self.itemArrayM) {
+//
+//    }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -105,6 +136,19 @@
         default:
             break;
     }
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {
+    EYLog(@"scrollView滚动到顶部了");
+}
+
+#pragma mark - 懒加载
+- (NSMutableArray *)itemArrayM {
+    if (nil == _itemArrayM) {
+        _itemArrayM = [NSMutableArray array];
+    }
+    return _itemArrayM;
 }
 
 @end
