@@ -30,12 +30,17 @@
     [super viewDidAppear:animated];
 
     [UIApplication sharedApplication].statusBarHidden = YES;
+    EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
+    rootViewController.scrollView.scrollEnabled = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 
     [UIApplication sharedApplication].statusBarHidden = NO;
+
+    EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
+    rootViewController.scrollView.scrollEnabled = NO;
 }
 
 - (void)setupUI {
@@ -54,9 +59,6 @@
     [super touchesBegan:touches withEvent:event];
     EYTestViewController * vc= [[EYTestViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
-
-    EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
-    rootViewController.scrollView.scrollEnabled = NO;
 }
 
 #pragma mark - Life Cycle
