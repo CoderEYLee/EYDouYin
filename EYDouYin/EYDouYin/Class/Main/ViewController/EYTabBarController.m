@@ -26,7 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = EYRandomColor;
     
     [self setupViewController];
     [self setupTabBar];
