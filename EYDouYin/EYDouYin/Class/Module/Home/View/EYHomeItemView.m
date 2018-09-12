@@ -20,16 +20,24 @@
 @implementation EYHomeItemView
 
 #pragma mark - 初始化方法
-+ (instancetype)homeItemView {
-    EYHomeItemView *view = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([EYHomeItemView class]) owner:nil options:nil] lastObject];
-    view.frame = EYScreenBounds;
-    return view;
-}
-
 - (void)awakeFromNib {
     [super awakeFromNib];
 
     self.homeSharedView.delegate = self;
+}
+
++ (instancetype)homeItemView {
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([EYHomeItemView class]) owner:nil options:nil] lastObject];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+       self = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([EYHomeItemView class]) owner:nil options:nil] lastObject];
+        self.frame = frame;
+    }
+    return self;
 }
 
 #pragma mark - EYHomeSharedViewDelegate

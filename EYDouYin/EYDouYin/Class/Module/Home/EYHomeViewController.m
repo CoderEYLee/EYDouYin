@@ -23,10 +23,8 @@
 
 @implementation EYHomeViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    EYLog(@"EYHomeViewController--viewDidLoad");
 
     [self setupUI];
 
@@ -64,6 +62,7 @@
     scrollView.pagingEnabled = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.bounces = NO;
     scrollView.delegate = self;
     [self.view insertSubview:scrollView atIndex:0];
     self.scrollView = scrollView;
@@ -76,7 +75,8 @@
     for (int i = 0; i < jsonArray.count; i++) {
         NSDictionary * dictionary = jsonArray[i];
         [self.itemArrayM addObject:[EYHomeItemModel modelWithDictionary:dictionary]];
-        EYHomeItemView * itemView = [[EYHomeItemView alloc] initWithFrame:CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight)];
+        EYHomeItemView * itemView = [EYHomeItemView homeItemView];
+        itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
         itemView.backgroundColor = EYRandomColor;
         [self.scrollView addSubview:itemView];
     }
@@ -141,6 +141,30 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {
     EYLog(@"scrollView滚动到顶部了");
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    EYLog(@"scrollView滚动了");
+}
+
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
+    return YES;
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {// 开始拖拽
+    EYLog(@"scrollView将会开始拖拽");
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {// 结束拖拽
+    EYLog(@"scrollView已经结束拖拽");
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {//结束拖拽后立即开始减速
+    EYLog(@"scrollView将会开始减速");
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
+    EYLog(@"scrollView已经结束减速");
 }
 
 #pragma mark - 懒加载

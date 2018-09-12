@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,19 +15,16 @@
             <rect key="frame" x="0.0" y="0.0" width="351" height="613"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xhf-zr-eas">
-                    <rect key="frame" x="0.0" y="0.0" width="351" height="613"/>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNK-cT-4r1" customClass="EYHomeInfoView">
-                    <rect key="frame" x="0.0" y="493" width="351" height="120"/>
+                    <rect key="frame" x="0.0" y="444" width="351" height="120"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="Kwk-KA-f5y"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yqy-qA-0an" customClass="EYHomeSharedView">
-                    <rect key="frame" x="281" y="143" width="70" height="350"/>
-                    <color key="backgroundColor" red="0.28210101830000001" green="0.8895199895" blue="0.33780327910000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <rect key="frame" x="281" y="94" width="70" height="350"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="74U-bi-2lw"/>
                         <constraint firstAttribute="height" priority="750" constant="350" id="uye-UQ-yv1"/>
@@ -36,13 +33,9 @@
             </subviews>
             <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Xhf-zr-eas" secondAttribute="bottom" id="65q-XK-dVJ"/>
-                <constraint firstItem="Xhf-zr-eas" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CyW-RA-K08"/>
-                <constraint firstItem="Xhf-zr-eas" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PYg-RM-YDa"/>
                 <constraint firstItem="gNK-cT-4r1" firstAttribute="top" secondItem="Yqy-qA-0an" secondAttribute="bottom" id="QVn-D2-Ti2"/>
-                <constraint firstItem="gNK-cT-4r1" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="faT-1s-hyX"/>
+                <constraint firstItem="gNK-cT-4r1" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-49" id="faT-1s-hyX"/>
                 <constraint firstItem="gNK-cT-4r1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fmP-je-Tam"/>
-                <constraint firstItem="Xhf-zr-eas" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="kmb-iZ-pXQ"/>
                 <constraint firstItem="Yqy-qA-0an" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="lCZ-9z-Noa"/>
                 <constraint firstItem="gNK-cT-4r1" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="xKU-cy-M51"/>
             </constraints>

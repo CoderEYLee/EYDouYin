@@ -225,9 +225,9 @@
 		601B031C21056DE400489E96 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				6076A15E2148EC31002ED551 /* Items.json */,
 				601B032321056E5F00489E96 /* EYHomeViewController.h */,
 				601B032421056E5F00489E96 /* EYHomeViewController.m */,
-				6076A15E2148EC31002ED551 /* Items.json */,
 				6076A1632148FA27002ED551 /* Model */,
 				60B2FAE1213915A00046D13D /* View */,
 			);
