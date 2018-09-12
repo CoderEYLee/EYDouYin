@@ -15,22 +15,22 @@
             <rect key="frame" x="0.0" y="0.0" width="351" height="613"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xhf-zr-eas">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xhf-zr-eas">
                     <rect key="frame" x="0.0" y="0.0" width="351" height="613"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNK-cT-4r1" customClass="EYHomeInfoView">
                     <rect key="frame" x="0.0" y="493" width="351" height="120"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="Kwk-KA-f5y"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yqy-qA-0an" customClass="EYHomeSharedView">
                     <rect key="frame" x="281" y="143" width="70" height="350"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.28210101830000001" green="0.8895199895" blue="0.33780327910000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="74U-bi-2lw"/>
-                        <constraint firstAttribute="height" constant="350" id="uye-UQ-yv1"/>
+                        <constraint firstAttribute="height" priority="750" constant="350" id="uye-UQ-yv1"/>
                     </constraints>
                 </view>
             </subviews>
@@ -56,7 +56,4 @@
             <point key="canvasLocation" x="-798" y="91"/>
         </view>
     </objects>
-    <resources>
-        <image name="1" width="1080" height="1920"/>
-    </resources>
 </document>
