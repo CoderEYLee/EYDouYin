@@ -20,11 +20,17 @@
 
 // 主页的滚动视图
 @property (weak, nonatomic) UIScrollView *scrollView;
+// 上一个
+@property (weak, nonatomic) EYHomeItemView * previousHomeItemView;
+// 当前的
+@property (weak, nonatomic) EYHomeItemView * currentHomeItemView;
+// 下一个
+@property (weak, nonatomic) EYHomeItemView * nextHomeItemView;
 
 // 同城
 @property (weak, nonatomic) UIView *homeCityView;
 
-//数据数组
+// 数据数组
 @property (strong, nonatomic) NSMutableArray *itemArrayM;
 
 @end
@@ -67,16 +73,11 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
     [self.naviBar addSubview:titleView];
 
     // 2.scrollView
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:EYScreenBounds];
-    scrollView.contentSize = CGSizeMake(EYScreenWidth, EYScreenHeight * 3);
-    scrollView.pagingEnabled = YES;
-    scrollView.showsHorizontalScrollIndicator = NO;
-    scrollView.showsVerticalScrollIndicator = NO;
-    scrollView.bounces = NO;
-    scrollView.delegate = self;
-    [self.view insertSubview:scrollView atIndex:0];
-    self.scrollView = scrollView;
+    [self previousHomeItemView];
+    [self currentHomeItemView];
+    [self nextHomeItemView];
 
+    // 3.同城 view
     EYHomeCityViewController *homeCityViewController = [[EYHomeCityViewController alloc] init];
     UIView *homeCityView = homeCityViewController.view;
     homeCityView.hidden = YES;
@@ -84,7 +85,7 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
     self.homeCityView = homeCityView;
     [self addChildViewController:homeCityViewController];
 
-    // 声音控制
+    // 4.声音控制(隐藏视图)
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:EYHomeViewControllerSystemVolumeDidChangeNotification object:nil];
     [self.view addSubview:[self getSystemVolumSlider]];
 }
@@ -93,18 +94,14 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
     NSString *jsonName = @"Items.json";
     NSArray *jsonArray = jsonName.ey_loadLocalFile;
 
+    if (jsonArray.count < 3) {
+        return;
+    }
+
     for (int i = 0; i < jsonArray.count; i++) {
         NSDictionary * dictionary = jsonArray[i];
         [self.itemArrayM addObject:[EYHomeItemModel modelWithDictionary:dictionary]];
-        EYHomeItemView * itemView = [EYHomeItemView homeItemView];
-        itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
-        itemView.backgroundColor = EYRandomColor;
-        [self.scrollView addSubview:itemView];
     }
-
-//    for (EYHomeItemModel * model in self.itemArrayM) {
-//
-//    }
 }
 
 - (void)volumeChange:(NSNotification*)notifi{
@@ -152,6 +149,23 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
 
 - (void)more {
     EYLog(@"更多");
+}
+
+- (void)changThreeItemViewFrame {
+    CGFloat previousY = self.previousHomeItemView.frame.origin.y;
+    if (previousY == 0) {
+        self.currentHomeItemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
+        self.nextHomeItemView.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
+        self.previousHomeItemView.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
+    } else if (previousY == EYScreenHeight * 2) {
+        self.nextHomeItemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
+        self.previousHomeItemView.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
+        self.currentHomeItemView.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
+    } else {
+        self.previousHomeItemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
+        self.currentHomeItemView.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
+        self.nextHomeItemView.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
+    }
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -205,7 +219,14 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
-    EYLog(@"scrollView已经结束减速");
+    int index = scrollView.contentOffset.y / EYScreenHeight;
+
+    EYLog(@"scrollView已经结束减速:%d", index);
+
+    if (index == 2) {// 最后一个
+        [self changThreeItemViewFrame];
+        [scrollView setContentOffset:CGPointMake(0, EYScreenHeight) animated:NO];
+    }
 }
 
 #pragma mark - 懒加载
@@ -214,6 +235,54 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
         _itemArrayM = [NSMutableArray array];
     }
     return _itemArrayM;
+}
+
+- (UIScrollView *)scrollView {
+    if (nil == _scrollView) {
+        UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:EYScreenBounds];
+        scrollView.contentSize = CGSizeMake(EYScreenWidth, EYScreenHeight * 3);
+        scrollView.pagingEnabled = YES;
+        scrollView.showsHorizontalScrollIndicator = NO;
+        scrollView.showsVerticalScrollIndicator = NO;
+        scrollView.bounces = NO;
+        scrollView.delegate = self;
+        [self.view insertSubview:scrollView atIndex:0];
+        self.scrollView = scrollView;
+    }
+    return _scrollView;
+}
+
+- (EYHomeItemView *)previousHomeItemView {
+    if (nil == _previousHomeItemView) {
+        EYHomeItemView * itemView = [EYHomeItemView homeItemView];
+        itemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
+        itemView.backgroundColor = [UIColor redColor];
+        [self.scrollView addSubview:itemView];
+        _previousHomeItemView = itemView;
+    }
+    return _previousHomeItemView;
+}
+
+- (EYHomeItemView *)currentHomeItemView {
+    if (nil == _currentHomeItemView) {
+        EYHomeItemView * itemView = [EYHomeItemView homeItemView];
+        itemView.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
+        itemView.backgroundColor = [UIColor greenColor];
+        [self.scrollView addSubview:itemView];
+        _currentHomeItemView = itemView;
+    }
+    return _currentHomeItemView;
+}
+
+- (EYHomeItemView *)nextHomeItemView {
+    if (nil == _nextHomeItemView) {
+        EYHomeItemView * itemView = [EYHomeItemView homeItemView];
+        itemView.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
+        itemView.backgroundColor = [UIColor blueColor];
+        [self.scrollView addSubview:itemView];
+        _nextHomeItemView = itemView;
+    }
+    return _nextHomeItemView;
 }
 
 #pragma mark - 音量控制
