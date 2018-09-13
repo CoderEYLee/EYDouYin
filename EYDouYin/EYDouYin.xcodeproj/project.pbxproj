@@ -40,6 +40,7 @@
 		6076A1622148F696002ED551 /* EYHomeItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A1612148F696002ED551 /* EYHomeItemModel.m */; };
 		6076A1662148FA4D002ED551 /* EYHomeItemLikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A1652148FA4D002ED551 /* EYHomeItemLikeModel.m */; };
 		6076A1692148FB7D002ED551 /* EYHomeItemCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A1682148FB7D002ED551 /* EYHomeItemCommentModel.m */; };
+		6076A16B214A05BF002ED551 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6076A16A214A05BF002ED551 /* MediaPlayer.framework */; };
 		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
 		60B2FAE4213916270046D13D /* EYHomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAE3213916270046D13D /* EYHomeInfoView.m */; };
 		60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B2FAE5213916330046D13D /* EYHomeInfoView.xib */; };
@@ -142,6 +143,7 @@
 		6076A1652148FA4D002ED551 /* EYHomeItemLikeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeItemLikeModel.m; sourceTree = "<group>"; };
 		6076A1672148FB7D002ED551 /* EYHomeItemCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeItemCommentModel.h; sourceTree = "<group>"; };
 		6076A1682148FB7D002ED551 /* EYHomeItemCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeItemCommentModel.m; sourceTree = "<group>"; };
+		6076A16A214A05BF002ED551 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		60B2FAC32137D5B40046D13D /* EYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPerson.h; sourceTree = "<group>"; };
 		60B2FAC42137D5B40046D13D /* EYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPerson.m; sourceTree = "<group>"; };
 		60B2FAE2213916270046D13D /* EYHomeInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeInfoView.h; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6076A16B214A05BF002ED551 /* MediaPlayer.framework in Frameworks */,
 				12456AD2F580F71E29D93144 /* libPods-EYDouYin.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +496,7 @@
 		6C135B6B8657BEA513DBC0C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6076A16A214A05BF002ED551 /* MediaPlayer.framework */,
 				8108F30C51AA75E71455FEBD /* libPods-EYDouYin.a */,
 				97A2A75C3787089F0E951A39 /* libPods-EYDouYinTests.a */,
 				2D2814A2580E2965D9B57163 /* libPods-EYDouYinUITests.a */,
