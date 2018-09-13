@@ -24,25 +24,19 @@
 
     self.recommendButton.selected = YES;
     self.recommendButton.titleLabel.font = [UIFont systemFontOfSize:19.0 weight:UIFontWeightBold];
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.cityButton.titleLabel.textColor = EYColorAlpha(100, 100, 100, 1.0);
-        self.cityButton.titleLabel.tintColor = EYColorAlpha(100, 100, 100, 1.0);
-    });
+    self.cityButton.titleLabel.font = [UIFont systemFontOfSize:16.0 weight:UIFontWeightBold];
 }
 
 - (void)setButtonDefaultState {
     [self.recommendButton setTitle:@"推荐" forState:UIControlStateNormal];
     [self.recommendButton setTitle:@"推荐" forState:UIControlStateSelected];
-    [self.recommendButton setTitleColor:EYColorAlpha(100, 100, 100, 1.0) forState:UIControlStateNormal];
+    [self.recommendButton setTitleColor:EYColor(210, 210, 210) forState:UIControlStateNormal];
     [self.recommendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    self.recommendButton.titleLabel.font = [UIFont systemFontOfSize:16.0 weight:UIFontWeightBold];
 
     [self.cityButton setTitle:@"同城" forState:UIControlStateNormal];
     [self.cityButton setTitle:@"同城" forState:UIControlStateSelected];
-    [self.cityButton setTitleColor:EYColorAlpha(100, 100, 100, 1.0) forState:UIControlStateNormal];
+    [self.cityButton setTitleColor:EYColor(210, 210, 210) forState:UIControlStateNormal];
     [self.cityButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    self.cityButton.titleLabel.font = [UIFont systemFontOfSize:16.0 weight:UIFontWeightBold];
 }
 
 #pragma mark - 初始化方法
@@ -55,7 +49,11 @@
 #pragma mark - 点击方法
 
 - (IBAction)tapButton:(UIButton *)sender {
-    [self setButtonDefaultState];
+    self.recommendButton.selected = NO;
+    self.cityButton.selected = NO;
+    self.recommendButton.titleLabel.font = [UIFont systemFontOfSize:16.0 weight:UIFontWeightBold];
+    self.cityButton.titleLabel.font = [UIFont systemFontOfSize:16.0 weight:UIFontWeightBold];
+
     sender.selected = YES;
     sender.titleLabel.font = [UIFont systemFontOfSize:19.0 weight:UIFontWeightBold];
 
