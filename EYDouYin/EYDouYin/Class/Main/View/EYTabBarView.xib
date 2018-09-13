@@ -21,9 +21,9 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gii-5z-jry" userLabel="进度条">
                             <rect key="frame" x="0.0" y="0.0" width="462" height="1"/>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="1" id="1xH-fO-rDc"/>
+                                <constraint firstAttribute="height" constant="0.29999999999999999" id="1xH-fO-rDc"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
