@@ -77,10 +77,18 @@
 #pragma mark - EYTabBarViewDelegate
 - (void)tabBarView:(EYTabBarView *)tabBarView didSelectedIndex:(NSInteger)index {
     EYLog(@"当前点击的 index--%ld", index);
+    EYNavigationController * homeNaviViewController = self.viewControllers.firstObject;
+    EYHomeViewController *homeViewController = (EYHomeViewController *)homeNaviViewController.viewControllers.firstObject;
     EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
     if (index == EYTabBarViewTypeHome) {
+        if (homeViewController.type == EYHomeViewControllerButtonTypeRecommend) {
+            tabBarView.backgroundColor = [UIColor clearColor];
+        } else {
+            tabBarView.backgroundColor = [UIColor blackColor];
+        }
         rootViewController.scrollView.scrollEnabled = YES;
     } else {//禁止滚动
+        tabBarView.backgroundColor = [UIColor blackColor];
         rootViewController.scrollView.scrollEnabled = NO;
     }
     

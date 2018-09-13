@@ -7,3 +7,5 @@
 //
 
 #import <Foundation/Foundation.h>
+
+NSString *const EYTabbarShouldChangeColorNotification=@"EYTabbarShouldChangeColorNotification";

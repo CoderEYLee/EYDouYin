@@ -37,6 +37,9 @@
             button.titleLabel.font = [UIFont systemFontOfSize:17.0 weight:UIFontWeightBold];
         }
     }
+
+    // 添加监听
+    [EYNotificationCenter addObserver:self selector:@selector(shouldChangeColor:) name:EYTabbarShouldChangeColorNotification object:nil];
 }
 
 + (instancetype)tabBarView {
@@ -45,21 +48,6 @@
 
 - (IBAction)tapButton:(UIButton *)sender
 {
-    switch (sender.tag) {
-        case EYTabBarViewTypeHome:
-            self.backgroundColor = [UIColor clearColor];
-            break;
-        case EYTabBarViewTypePlus:
-            break;
-        case EYTabBarViewTypeLike:
-        case EYTabBarViewTypeMessage:
-        case EYTabBarViewTypeMe:
-            self.backgroundColor = [UIColor blackColor];
-            break;
-        default:
-            break;
-    }
-    
     if (self.delegate && [self.delegate respondsToSelector:@selector(tabBarView:didSelectedIndex:)]) {
         [self.delegate tabBarView:self didSelectedIndex:sender.tag];
     }
@@ -94,6 +82,17 @@
     } else {
         
     }
+}
+
+- (void)shouldChangeColor:(NSNotification *)noti {
+    NSLog(@"notinoti--%@", noti);
+    NSDictionary *userInfo = noti.userInfo;
+    UIColor * color = userInfo[@"color"];
+    self.backgroundColor = color;
+}
+
+- (void)dealloc {
+    [EYNotificationCenter removeObserver:self];
 }
 
 @end

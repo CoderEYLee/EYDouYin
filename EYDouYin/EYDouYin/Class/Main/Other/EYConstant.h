@@ -10,6 +10,8 @@
 
 #pragma mark - 通知名称
 
+//
+UIKIT_EXTERN NSString *const EYTabbarShouldChangeColorNotification;
 
 
 

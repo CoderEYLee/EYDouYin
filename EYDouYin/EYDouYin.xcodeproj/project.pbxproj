@@ -41,6 +41,7 @@
 		6076A1662148FA4D002ED551 /* EYHomeItemLikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A1652148FA4D002ED551 /* EYHomeItemLikeModel.m */; };
 		6076A1692148FB7D002ED551 /* EYHomeItemCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A1682148FB7D002ED551 /* EYHomeItemCommentModel.m */; };
 		6076A16B214A05BF002ED551 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6076A16A214A05BF002ED551 /* MediaPlayer.framework */; };
+		6076A171214A4D26002ED551 /* EYHomeCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A170214A4D26002ED551 /* EYHomeCityViewController.m */; };
 		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
 		60B2FAE4213916270046D13D /* EYHomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAE3213916270046D13D /* EYHomeInfoView.m */; };
 		60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B2FAE5213916330046D13D /* EYHomeInfoView.xib */; };
@@ -144,6 +145,8 @@
 		6076A1672148FB7D002ED551 /* EYHomeItemCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeItemCommentModel.h; sourceTree = "<group>"; };
 		6076A1682148FB7D002ED551 /* EYHomeItemCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeItemCommentModel.m; sourceTree = "<group>"; };
 		6076A16A214A05BF002ED551 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		6076A16F214A4D26002ED551 /* EYHomeCityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeCityViewController.h; sourceTree = "<group>"; };
+		6076A170214A4D26002ED551 /* EYHomeCityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeCityViewController.m; sourceTree = "<group>"; };
 		60B2FAC32137D5B40046D13D /* EYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPerson.h; sourceTree = "<group>"; };
 		60B2FAC42137D5B40046D13D /* EYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPerson.m; sourceTree = "<group>"; };
 		60B2FAE2213916270046D13D /* EYHomeInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeInfoView.h; sourceTree = "<group>"; };
@@ -231,6 +234,8 @@
 				6076A15E2148EC31002ED551 /* Items.json */,
 				601B032321056E5F00489E96 /* EYHomeViewController.h */,
 				601B032421056E5F00489E96 /* EYHomeViewController.m */,
+				6076A16F214A4D26002ED551 /* EYHomeCityViewController.h */,
+				6076A170214A4D26002ED551 /* EYHomeCityViewController.m */,
 				6076A1632148FA27002ED551 /* Model */,
 				60B2FAE1213915A00046D13D /* View */,
 			);
@@ -703,6 +708,7 @@
 				6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */,
 				601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */,
 				60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */,
+				6076A171214A4D26002ED551 /* EYHomeCityViewController.m in Sources */,
 				6075416F2104D15F00EB258D /* Foundation+Log.m in Sources */,
 				60BBC6892104D83400DEEA34 /* EYNavigationController.m in Sources */,
 				601B032821056E6900489E96 /* EYLikeViewController.m in Sources */,

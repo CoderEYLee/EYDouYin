@@ -11,12 +11,20 @@
 #import "EYHomeTitleView.h"
 #import "EYHomeItemView.h"
 #import "EYHomeItemModel.h"
+#import "EYHomeCityViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 
 @interface EYHomeViewController () <EYHomeTitleViewDelegate, UIScrollViewDelegate>
 
-@property (weak, nonatomic) UIScrollView * scrollView;
+@property (assign, nonatomic, readwrite) EYHomeViewControllerButtonType type;
 
+// 主页的滚动视图
+@property (weak, nonatomic) UIScrollView *scrollView;
+
+// 同城
+@property (weak, nonatomic) UIView *homeCityView;
+
+//数据数组
 @property (strong, nonatomic) NSMutableArray *itemArrayM;
 
 @end
@@ -69,6 +77,13 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
     [self.view insertSubview:scrollView atIndex:0];
     self.scrollView = scrollView;
 
+    EYHomeCityViewController *homeCityViewController = [[EYHomeCityViewController alloc] init];
+    UIView *homeCityView = homeCityViewController.view;
+    homeCityView.hidden = YES;
+    [self.view insertSubview:homeCityView atIndex:0];
+    self.homeCityView = homeCityView;
+    [self addChildViewController:homeCityViewController];
+
     // 声音控制
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:EYHomeViewControllerSystemVolumeDidChangeNotification object:nil];
     [self.view addSubview:[self getSystemVolumSlider]];
@@ -110,20 +125,33 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
 #pragma mark - Public Methods
 #pragma mark - Private Methods
 - (void)search {
+    EYLog(@"搜索");
     EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
     [rootViewController.scrollView setContentOffset:CGPointZero animated:YES];
 }
 
 - (void)recommend {
-
+    EYLog(@"推荐");
+    self.scrollView.hidden = NO;
+    self.homeCityView.hidden = YES;
+    self.type = EYHomeViewControllerButtonTypeRecommend;
+    [self changTabbarBackgroundColor:[UIColor clearColor]];
 }
 
 - (void)city {
+    EYLog(@"同城");
+    self.scrollView.hidden = YES;
+    self.homeCityView.hidden = NO;
+    self.type = EYHomeViewControllerButtonTypeCity;
+    [self changTabbarBackgroundColor:[UIColor blackColor]];
+}
 
+- (void)changTabbarBackgroundColor:(UIColor *)color {
+    [EYNotificationCenter postNotificationName:EYTabbarShouldChangeColorNotification object:nil userInfo:@{@"color" : color}];
 }
 
 - (void)more {
-
+    EYLog(@"更多");
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -134,17 +162,16 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
 - (void)homeTitleView:(EYHomeTitleView *)view didSelectedButton:(EYHomeTitleViewButtonType)buttonType {
     switch (buttonType) {
         case EYHomeTitleViewButtonTypeSearch: {
-            EYLog(@"搜索");
             [self search];
             break;
         }case EYHomeTitleViewButtonTypeMore: {
-            EYLog(@"更多");
+            [self more];
             break;
         }case EYHomeTitleViewButtonTypeRecommend: {
-            EYLog(@"推荐");
+            [self recommend];
             break;
         }case EYHomeTitleViewButtonTypeCity: {
-            EYLog(@"同城");
+            [self city];
             break;
         }
         default:

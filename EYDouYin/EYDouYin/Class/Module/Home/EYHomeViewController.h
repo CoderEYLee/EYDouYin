@@ -8,6 +8,13 @@
 
 #import "EYBaseViewController.h"
 
+typedef NS_ENUM(NSInteger, EYHomeViewControllerButtonType) {
+    EYHomeViewControllerButtonTypeRecommend,
+    EYHomeViewControllerButtonTypeCity,
+};
+
 @interface EYHomeViewController : EYBaseViewController
+
+@property (assign, nonatomic, readonly) EYHomeViewControllerButtonType type;
 
 @end
