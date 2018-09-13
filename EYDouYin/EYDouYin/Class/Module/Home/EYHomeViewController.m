@@ -17,12 +17,13 @@
 
 @property (weak, nonatomic) UIScrollView * scrollView;
 
-
 @property (strong, nonatomic) NSMutableArray *itemArrayM;
 
 @end
 
 @implementation EYHomeViewController
+
+NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystemController_SystemVolumeDidChangeNotification";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,14 +32,6 @@
 
     // 模拟网络数据
     [self loadNetData];
-}
-
--(void)volumeChange:(NSNotification*)notifi{
-    NSString * style = [notifi.userInfo objectForKey:@"AVSystemController_AudioCategoryNotificationParameter"];
-    CGFloat value = [[notifi.userInfo objectForKey:@"AVSystemController_AudioVolumeNotificationParameter"] doubleValue];
-    if ([style isEqualToString:@"Audio/Video"]){
-        NSLog(@"音量改变 当前值:%f",value);
-    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -77,7 +70,7 @@
     self.scrollView = scrollView;
 
     // 声音控制
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:EYHomeViewControllerSystemVolumeDidChangeNotification object:nil];
     [self.view addSubview:[self getSystemVolumSlider]];
 }
 
@@ -97,6 +90,14 @@
 //    for (EYHomeItemModel * model in self.itemArrayM) {
 //
 //    }
+}
+
+- (void)volumeChange:(NSNotification*)notifi{
+    NSString * style = [notifi.userInfo objectForKey:@"AVSystemController_AudioCategoryNotificationParameter"];
+    CGFloat value = [[notifi.userInfo objectForKey:@"AVSystemController_AudioVolumeNotificationParameter"] doubleValue];
+    if ([style isEqualToString:@"Audio/Video"]){
+        NSLog(@"音量改变 当前值:%f",value);
+    }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -194,7 +195,7 @@
  */
 - (UIView *)getSystemVolumSlider{
     UIView * view = nil;
-    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:CGRectMake(10, 50, 200, 4)];
+    MPVolumeView *volumeView = [[MPVolumeView alloc] init];
     for (UIView *newView in volumeView.subviews) {
         if ([newView.class.description isEqualToString:@"MPVolumeSlider"]){
             newView.hidden = YES;
@@ -203,6 +204,10 @@
         }
     }
     return view;
+}
+
+- (void)dealloc {
+    [EYNotificationCenter removeObserver:self];
 }
 
 @end
