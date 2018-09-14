@@ -16,6 +16,8 @@
 #import "NSString+EYExtension.h"
 
 #import <YYKit.h>
+#import <MJRefresh.h>
+#import <POP.h>
 
 #import "EYTestViewController.h"
 #endif /* PrefixHeader_pch */

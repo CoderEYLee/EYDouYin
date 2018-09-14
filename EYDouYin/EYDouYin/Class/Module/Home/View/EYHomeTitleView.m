@@ -48,7 +48,7 @@
 
 #pragma mark - 点击方法
 
-- (IBAction)tapButton:(UIButton *)sender {
+- (IBAction)tapChangeButton:(UIButton *)sender {
     self.recommendButton.selected = NO;
     self.cityButton.selected = NO;
     self.recommendButton.titleLabel.font = [UIFont systemFontOfSize:16.0 weight:UIFontWeightBold];
@@ -57,6 +57,10 @@
     sender.selected = YES;
     sender.titleLabel.font = [UIFont systemFontOfSize:19.0 weight:UIFontWeightBold];
 
+    [self tapButton:sender];
+}
+
+- (IBAction)tapButton:(UIButton *)sender {
     if (self.delegate && [self.delegate respondsToSelector:@selector(homeTitleView:didSelectedButton:)]) {
         [self.delegate homeTitleView:self didSelectedButton:sender.tag];
     }

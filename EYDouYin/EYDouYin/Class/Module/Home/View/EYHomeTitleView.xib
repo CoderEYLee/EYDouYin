@@ -40,7 +40,7 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="tapButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="axE-pt-FDx"/>
+                                <action selector="tapChangeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="vfH-nC-8g8"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ix-Sn-DQj" userLabel="同城">
@@ -50,7 +50,7 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="tapButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="XPc-Mq-EoW"/>
+                                <action selector="tapChangeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="6Tw-lg-4fj"/>
                             </connections>
                         </button>
                     </subviews>

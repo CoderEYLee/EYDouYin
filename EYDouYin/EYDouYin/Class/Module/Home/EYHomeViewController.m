@@ -20,9 +20,14 @@ typedef NS_ENUM(NSUInteger, EYScrollViewState) {// scrollView的滚动状态
     EYScrollViewStatePrevious, // 上一个
 };
 
+#define EYBackViewHeight 100 //后面的 view 的高度
+
 @interface EYHomeViewController () <EYHomeTitleViewDelegate, UIScrollViewDelegate>
 
 @property (assign, nonatomic, readwrite) EYHomeViewControllerButtonType type;
+
+// 后面的背景 view
+@property (weak, nonatomic) UIView *backView;
 
 // 主页的滚动视图
 @property (weak, nonatomic) UIScrollView *scrollView;
@@ -75,19 +80,26 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
 }
 
 - (void)setupUI {
+    self.view.backgroundColor = [UIColor blackColor];
+    // 1.底层的 view
+    UIView * backView = [[UIView alloc] initWithFrame:CGRectMake(0, EYBackViewHeight, EYScreenWidth, EYBackViewHeight)];
+    backView.backgroundColor = [UIColor redColor];
+    [self.view insertSubview:backView atIndex:0];
+    self.backView = backView;
+
     self.naviBar.hidden = NO;
-    // 1.titleView
+    // 2.titleView
     EYHomeTitleView * titleView = [EYHomeTitleView homeTitleView];
     titleView.delegate = self;
     [self.naviBar addSubview:titleView];
 
-    // 2.scrollView
+    // 3.scrollView
     self.scrollView.hidden = NO;
 
-    // 3.同城 view
+    // 4.同城 view
     self.homeCityView.hidden = YES;
 
-    // 4.声音控制(隐藏视图)
+    // 5.声音控制(隐藏视图)
     [self.view addSubview:[self getSystemVolumSlider]];
 }
 
@@ -176,7 +188,24 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
 }
 
 - (void)more {
+    CGFloat naviBarY = self.naviBar.mj_y;
     EYLog(@"更多");
+    if (naviBarY == 20.0) {
+        [self changeFrameWithPOP:self.backView offsetY:-EYBackViewHeight];
+        [self changeFrameWithPOP:self.naviBar offsetY:EYBackViewHeight];
+        [self changeFrameWithPOP:self.scrollView offsetY:EYBackViewHeight];
+    } else {
+        [self changeFrameWithPOP:self.backView offsetY:EYBackViewHeight];
+        [self changeFrameWithPOP:self.naviBar offsetY:-EYBackViewHeight];
+        [self changeFrameWithPOP:self.scrollView offsetY:-EYBackViewHeight];
+    }
+
+}
+
+- (void)changeFrameWithPOP:(UIView *)view offsetY:(CGFloat)y {
+    POPBasicAnimation * basic = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    basic.toValue = @(view.center.y + y);
+    [view pop_addAnimation:basic forKey:nil];
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -210,7 +239,7 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
     CGFloat y = scrollView.contentOffset.y;
     EYLog(@"scrollView已经结束拖拽--状态为%ld,结束的位置为:%f", self.scrollViewState, y);
     if (self.scrollViewState == EYScrollViewStateUnknown && y == 0.0) {
-        EYLog(@"可以刷新界面了");
+        EYLog(@"可以刷新界面了--");
     }
 }
 
