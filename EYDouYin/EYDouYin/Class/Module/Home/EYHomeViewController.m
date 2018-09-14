@@ -20,12 +20,8 @@
 
 // 主页的滚动视图
 @property (weak, nonatomic) UIScrollView *scrollView;
-// 上一个
-@property (weak, nonatomic) EYHomeItemView * previousHomeItemView;
-// 当前的
-@property (weak, nonatomic) EYHomeItemView * currentHomeItemView;
-// 下一个
-@property (weak, nonatomic) EYHomeItemView * nextHomeItemView;
+// 3个 view 视图
+@property (copy, nonatomic) NSArray <EYHomeItemView *> *itemViewArray;
 
 @property (assign, nonatomic) CGFloat beginDraggingY;
 @property (assign, nonatomic) BOOL isLookNext; //是否看的是下一个(向上拖拽)
@@ -42,10 +38,13 @@
 
 NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystemController_SystemVolumeDidChangeNotification";
 
+#pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     [self setupUI];
+
+    [self setupNotification];
 
     // 模拟网络数据
     [self loadNetData];
@@ -76,21 +75,17 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
     [self.naviBar addSubview:titleView];
 
     // 2.scrollView
-    [self previousHomeItemView];
-    [self currentHomeItemView];
-    [self nextHomeItemView];
+    self.scrollView.hidden = NO;
 
     // 3.同城 view
-    EYHomeCityViewController *homeCityViewController = [[EYHomeCityViewController alloc] init];
-    UIView *homeCityView = homeCityViewController.view;
-    homeCityView.hidden = YES;
-    [self.view insertSubview:homeCityView atIndex:0];
-    self.homeCityView = homeCityView;
-    [self addChildViewController:homeCityViewController];
+    self.homeCityView.hidden = YES;
 
     // 4.声音控制(隐藏视图)
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:EYHomeViewControllerSystemVolumeDidChangeNotification object:nil];
     [self.view addSubview:[self getSystemVolumSlider]];
+}
+
+- (void)setupNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:EYHomeViewControllerSystemVolumeDidChangeNotification object:nil];
 }
 
 - (void)loadNetData {
@@ -107,6 +102,7 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
     }
 }
 
+#pragma mark - Private Methods
 - (void)volumeChange:(NSNotification*)notifi{
     NSString * style = [notifi.userInfo objectForKey:@"AVSystemController_AudioCategoryNotificationParameter"];
     CGFloat value = [[notifi.userInfo objectForKey:@"AVSystemController_AudioVolumeNotificationParameter"] doubleValue];
@@ -121,9 +117,57 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-#pragma mark - Life Cycle
-#pragma mark - Public Methods
-#pragma mark - Private Methods
+// 计算下一个
+- (void)changeThreeItemViewFrameNext {
+    NSMutableArray *arrayM = [NSMutableArray arrayWithArray:self.itemViewArray];
+    [arrayM insertObject:arrayM.firstObject atIndex:arrayM.count];
+    [arrayM removeFirstObject];
+    self.itemViewArray = [NSArray arrayWithArray:arrayM];
+
+    for (int i = 0; i < self.itemViewArray.count; i++) {
+        EYHomeItemView *itemView = self.itemViewArray[i];
+        itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
+    }
+}
+
+// 计算上一个
+- (void)changeThreeItemViewFramePrevious {
+    NSMutableArray *arrayM = [NSMutableArray arrayWithArray:self.itemViewArray];
+    [arrayM insertObject:arrayM.lastObject atIndex:0];
+    [arrayM removeLastObject];
+    self.itemViewArray = [NSArray arrayWithArray:arrayM];
+
+    for (int i = 0; i < self.itemViewArray.count; i++) {
+        EYHomeItemView *itemView = self.itemViewArray[i];
+        itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
+    }
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
+#pragma mark - EYHomeTitleViewDelegate
+- (void)homeTitleView:(EYHomeTitleView *)view didSelectedButton:(EYHomeTitleViewButtonType)buttonType {
+    switch (buttonType) {
+        case EYHomeTitleViewButtonTypeSearch: {
+            [self search];
+            break;
+        }case EYHomeTitleViewButtonTypeMore: {
+            [self more];
+            break;
+        }case EYHomeTitleViewButtonTypeRecommend: {
+            [self recommend];
+            break;
+        }case EYHomeTitleViewButtonTypeCity: {
+            [self city];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
 - (void)search {
     EYLog(@"搜索");
     EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
@@ -152,67 +196,6 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
 
 - (void)more {
     EYLog(@"更多");
-}
-
-// 计算下一个
-- (void)changeThreeItemViewFrameNext {
-    CGFloat previousY = self.previousHomeItemView.frame.origin.y;
-    if (previousY == 0) {
-        self.currentHomeItemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
-        self.nextHomeItemView.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
-        self.previousHomeItemView.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
-    } else if (previousY == EYScreenHeight * 2) {
-        self.nextHomeItemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
-        self.previousHomeItemView.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
-        self.currentHomeItemView.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
-    } else {
-        self.previousHomeItemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
-        self.currentHomeItemView.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
-        self.nextHomeItemView.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
-    }
-}
-
-// 计算上一个
-- (void)changeThreeItemViewFramePrevious {
-    CGFloat previousY = self.previousHomeItemView.frame.origin.y;
-    if (previousY == 0) {
-        self.nextHomeItemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
-        self.previousHomeItemView.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
-        self.currentHomeItemView.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
-    } else if (previousY == EYScreenHeight * 2) {
-        self.previousHomeItemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
-        self.currentHomeItemView.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
-        self.nextHomeItemView.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
-    } else {
-        self.currentHomeItemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
-        self.nextHomeItemView.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
-        self.previousHomeItemView.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
-    }
-}
-
-- (BOOL)prefersStatusBarHidden {
-    return YES;
-}
-
-#pragma mark - EYHomeTitleViewDelegate
-- (void)homeTitleView:(EYHomeTitleView *)view didSelectedButton:(EYHomeTitleViewButtonType)buttonType {
-    switch (buttonType) {
-        case EYHomeTitleViewButtonTypeSearch: {
-            [self search];
-            break;
-        }case EYHomeTitleViewButtonTypeMore: {
-            [self more];
-            break;
-        }case EYHomeTitleViewButtonTypeRecommend: {
-            [self recommend];
-            break;
-        }case EYHomeTitleViewButtonTypeCity: {
-            [self city];
-            break;
-        }
-        default:
-            break;
-    }
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -283,43 +266,31 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
         scrollView.showsVerticalScrollIndicator = NO;
         scrollView.bounces = NO;
         scrollView.delegate = self;
-        [self.view insertSubview:scrollView atIndex:0];
+        [self.view insertSubview:scrollView belowSubview:self.naviBar];
         self.scrollView = scrollView;
+
+        NSMutableArray *arrayM = [NSMutableArray array];
+        for (int i = 0; i < 3; i++) {
+            EYHomeItemView *itemView = [EYHomeItemView homeItemView];
+            itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
+            itemView.backgroundColor = EYRandomColor;
+            [scrollView addSubview:itemView];
+            [arrayM addObject:itemView];
+        }
+        self.itemViewArray = [NSArray arrayWithArray:arrayM];
     }
     return _scrollView;
 }
 
-- (EYHomeItemView *)previousHomeItemView {
-    if (nil == _previousHomeItemView) {
-        EYHomeItemView * itemView = [EYHomeItemView homeItemView];
-        itemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
-        itemView.backgroundColor = [UIColor redColor];
-        [self.scrollView addSubview:itemView];
-        _previousHomeItemView = itemView;
+- (UIView *)homeCityView {
+    if (nil == _homeCityView) {
+        EYHomeCityViewController *homeCityViewController = [[EYHomeCityViewController alloc] init];
+        UIView *homeCityView = homeCityViewController.view;
+        [self.view insertSubview:homeCityView belowSubview:self.naviBar];
+        _homeCityView = homeCityView;
+        [self addChildViewController:homeCityViewController];
     }
-    return _previousHomeItemView;
-}
-
-- (EYHomeItemView *)currentHomeItemView {
-    if (nil == _currentHomeItemView) {
-        EYHomeItemView * itemView = [EYHomeItemView homeItemView];
-        itemView.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
-        itemView.backgroundColor = [UIColor greenColor];
-        [self.scrollView addSubview:itemView];
-        _currentHomeItemView = itemView;
-    }
-    return _currentHomeItemView;
-}
-
-- (EYHomeItemView *)nextHomeItemView {
-    if (nil == _nextHomeItemView) {
-        EYHomeItemView * itemView = [EYHomeItemView homeItemView];
-        itemView.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
-        itemView.backgroundColor = [UIColor blueColor];
-        [self.scrollView addSubview:itemView];
-        _nextHomeItemView = itemView;
-    }
-    return _nextHomeItemView;
+    return _homeCityView;
 }
 
 #pragma mark - 音量控制
