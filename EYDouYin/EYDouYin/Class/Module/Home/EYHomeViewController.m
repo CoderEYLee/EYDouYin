@@ -21,7 +21,7 @@
 // 主页的滚动视图
 @property (weak, nonatomic) UIScrollView *scrollView;
 // 3个 view 视图
-@property (copy, nonatomic) NSArray <EYHomeItemView *> *itemViewArray;
+@property (strong, nonatomic) NSMutableArray <EYHomeItemView *> *itemViewArrayM;
 
 @property (assign, nonatomic) CGFloat beginDraggingY;
 @property (assign, nonatomic) BOOL isLookNext; //是否看的是下一个(向上拖拽)
@@ -115,32 +115,6 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
     [super touchesBegan:touches withEvent:event];
     EYTestViewController * vc= [[EYTestViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-// 计算下一个
-- (void)changeThreeItemViewFrameNext {
-    NSMutableArray *arrayM = [NSMutableArray arrayWithArray:self.itemViewArray];
-    [arrayM insertObject:arrayM.firstObject atIndex:arrayM.count];
-    [arrayM removeFirstObject];
-    self.itemViewArray = [NSArray arrayWithArray:arrayM];
-
-    for (int i = 0; i < self.itemViewArray.count; i++) {
-        EYHomeItemView *itemView = self.itemViewArray[i];
-        itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
-    }
-}
-
-// 计算上一个
-- (void)changeThreeItemViewFramePrevious {
-    NSMutableArray *arrayM = [NSMutableArray arrayWithArray:self.itemViewArray];
-    [arrayM insertObject:arrayM.lastObject atIndex:0];
-    [arrayM removeLastObject];
-    self.itemViewArray = [NSArray arrayWithArray:arrayM];
-
-    for (int i = 0; i < self.itemViewArray.count; i++) {
-        EYHomeItemView *itemView = self.itemViewArray[i];
-        itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
-    }
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -237,13 +211,25 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
 
     EYLog(@"scrollView已经结束减速:%d", index);
 
-    if (index == 2 && self.isLookNext) {// 最后一个
-        [self changeThreeItemViewFrameNext];
+    if (self.isLookNext && index == self.itemViewArrayM.count - 1) {// 最后一个
+        [self.itemViewArrayM insertObject:self.itemViewArrayM.firstObject atIndex:self.itemViewArrayM.count];
+        [self.itemViewArrayM removeFirstObject];
+
+        for (int i = 0; i < self.itemViewArrayM.count; i++) {
+            EYHomeItemView *itemView = self.itemViewArrayM[i];
+            itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
+        }
         [scrollView setContentOffset:CGPointMake(0, EYScreenHeight) animated:NO];
     }
 
-    if (index == 0 && !self.isLookNext) {
-        [self changeThreeItemViewFramePrevious];
+    if (!self.isLookNext && index == 0) {
+        [self.itemViewArrayM insertObject:self.itemViewArrayM.lastObject atIndex:0];
+        [self.itemViewArrayM removeLastObject];
+
+        for (int i = 0; i < self.itemViewArrayM.count; i++) {
+            EYHomeItemView *itemView = self.itemViewArrayM[i];
+            itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
+        }
         [scrollView setContentOffset:CGPointMake(0, EYScreenHeight) animated:NO];
     }
 }
@@ -255,6 +241,13 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
         _itemArrayM = [NSMutableArray array];
     }
     return _itemArrayM;
+}
+
+- (NSMutableArray *)itemViewArrayM {
+    if (nil == _itemViewArrayM) {
+        _itemViewArrayM = [NSMutableArray array];
+    }
+    return _itemViewArrayM;
 }
 
 - (UIScrollView *)scrollView {
@@ -269,15 +262,13 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
         [self.view insertSubview:scrollView belowSubview:self.naviBar];
         self.scrollView = scrollView;
 
-        NSMutableArray *arrayM = [NSMutableArray array];
         for (int i = 0; i < 3; i++) {
             EYHomeItemView *itemView = [EYHomeItemView homeItemView];
             itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
             itemView.backgroundColor = EYRandomColor;
             [scrollView addSubview:itemView];
-            [arrayM addObject:itemView];
+            [self.itemViewArrayM addObject:itemView];
         }
-        self.itemViewArray = [NSArray arrayWithArray:arrayM];
     }
     return _scrollView;
 }
