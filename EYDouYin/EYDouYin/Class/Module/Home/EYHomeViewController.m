@@ -14,6 +14,12 @@
 #import "EYHomeCityViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 
+typedef NS_ENUM(NSUInteger, EYScrollViewState) {// scrollView的滚动状态
+    EYScrollViewStateUnknown,  // 未知状态
+    EYScrollViewStateNext,     // 下一个
+    EYScrollViewStatePrevious, // 上一个
+};
+
 @interface EYHomeViewController () <EYHomeTitleViewDelegate, UIScrollViewDelegate>
 
 @property (assign, nonatomic, readwrite) EYHomeViewControllerButtonType type;
@@ -24,7 +30,8 @@
 @property (strong, nonatomic) NSMutableArray <EYHomeItemView *> *itemViewArrayM;
 
 @property (assign, nonatomic) CGFloat beginDraggingY;
-@property (assign, nonatomic) BOOL isLookNext; //是否看的是下一个(向上拖拽)
+
+@property (assign, nonatomic) EYScrollViewState scrollViewState;
 
 // 同城
 @property (weak, nonatomic) UIView *homeCityView;
@@ -181,10 +188,10 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
     EYLog(@"scrollView滚动了");
     if (scrollView.contentOffset.y < self.beginDraggingY ){
         NSLog(@"向下拖拽");
-        self.isLookNext = NO;
+        self.scrollViewState = EYScrollViewStatePrevious;
     } else if (scrollView.contentOffset.y > self.beginDraggingY ){
         NSLog(@"向上拖拽");
-        self.isLookNext = YES;
+        self.scrollViewState = EYScrollViewStateNext;
     }
 }
 
@@ -193,25 +200,30 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {// 开始拖拽
-    EYLog(@"scrollView将会开始拖拽");
     //全局变量记录滑动前的contentOffset
     self.beginDraggingY = scrollView.contentOffset.y;//判断上下滑动时
+
+    EYLog(@"scrollView将会开始拖拽--状态为%ld,开始的位置为:%f", self.scrollViewState, self.beginDraggingY);
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {// 结束拖拽
-    EYLog(@"scrollView已经结束拖拽");
+    CGFloat y = scrollView.contentOffset.y;
+    EYLog(@"scrollView已经结束拖拽--状态为%ld,结束的位置为:%f", self.scrollViewState, y);
+    if (self.scrollViewState == EYScrollViewStateUnknown && y == 0.0) {
+        EYLog(@"可以刷新界面了");
+    }
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {//结束拖拽后立即开始减速
-    EYLog(@"scrollView将会开始减速");
+    EYLog(@"scrollView将会开始减速位置为:%f", scrollView.contentOffset.y);
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
     int index = scrollView.contentOffset.y / EYScreenHeight;
 
-    EYLog(@"scrollView已经结束减速:%d", index);
+    EYLog(@"scrollView已经结束减速:%d--%ld位置为:%f", index, self.scrollViewState, scrollView.contentOffset.y);
 
-    if (self.isLookNext && index == self.itemViewArrayM.count - 1) {// 最后一个
+    if (self.scrollViewState == EYScrollViewStateNext && index == self.itemViewArrayM.count - 1) {// 最后一个
         [self.itemViewArrayM insertObject:self.itemViewArrayM.firstObject atIndex:self.itemViewArrayM.count];
         [self.itemViewArrayM removeFirstObject];
 
@@ -222,7 +234,7 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
         [scrollView setContentOffset:CGPointMake(0, EYScreenHeight) animated:NO];
     }
 
-    if (!self.isLookNext && index == 0) {
+    if (self.scrollViewState == EYScrollViewStatePrevious && index == 0) {
         [self.itemViewArrayM insertObject:self.itemViewArrayM.lastObject atIndex:0];
         [self.itemViewArrayM removeLastObject];
 
