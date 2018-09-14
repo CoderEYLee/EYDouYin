@@ -27,6 +27,9 @@
 // 下一个
 @property (weak, nonatomic) EYHomeItemView * nextHomeItemView;
 
+@property (assign, nonatomic) CGFloat beginDraggingY;
+@property (assign, nonatomic) BOOL isLookNext; //是否看的是下一个(向上拖拽)
+
 // 同城
 @property (weak, nonatomic) UIView *homeCityView;
 
@@ -151,7 +154,8 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
     EYLog(@"更多");
 }
 
-- (void)changThreeItemViewFrame {
+// 计算下一个
+- (void)changeThreeItemViewFrameNext {
     CGFloat previousY = self.previousHomeItemView.frame.origin.y;
     if (previousY == 0) {
         self.currentHomeItemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
@@ -165,6 +169,24 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
         self.previousHomeItemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
         self.currentHomeItemView.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
         self.nextHomeItemView.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
+    }
+}
+
+// 计算上一个
+- (void)changeThreeItemViewFramePrevious {
+    CGFloat previousY = self.previousHomeItemView.frame.origin.y;
+    if (previousY == 0) {
+        self.nextHomeItemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
+        self.previousHomeItemView.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
+        self.currentHomeItemView.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
+    } else if (previousY == EYScreenHeight * 2) {
+        self.previousHomeItemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
+        self.currentHomeItemView.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
+        self.nextHomeItemView.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
+    } else {
+        self.currentHomeItemView.frame = CGRectMake(0, 0, EYScreenWidth, EYScreenHeight);
+        self.nextHomeItemView.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
+        self.previousHomeItemView.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
     }
 }
 
@@ -200,6 +222,13 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     EYLog(@"scrollView滚动了");
+    if (scrollView.contentOffset.y < self.beginDraggingY ){
+        NSLog(@"向下拖拽");
+        self.isLookNext = NO;
+    } else if (scrollView.contentOffset.y > self.beginDraggingY ){
+        NSLog(@"向上拖拽");
+        self.isLookNext = YES;
+    }
 }
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
@@ -208,6 +237,8 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {// 开始拖拽
     EYLog(@"scrollView将会开始拖拽");
+    //全局变量记录滑动前的contentOffset
+    self.beginDraggingY = scrollView.contentOffset.y;//判断上下滑动时
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {// 结束拖拽
@@ -223,11 +254,17 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
 
     EYLog(@"scrollView已经结束减速:%d", index);
 
-    if (index == 2) {// 最后一个
-        [self changThreeItemViewFrame];
+    if (index == 2 && self.isLookNext) {// 最后一个
+        [self changeThreeItemViewFrameNext];
+        [scrollView setContentOffset:CGPointMake(0, EYScreenHeight) animated:NO];
+    }
+
+    if (index == 0 && !self.isLookNext) {
+        [self changeThreeItemViewFramePrevious];
         [scrollView setContentOffset:CGPointMake(0, EYScreenHeight) animated:NO];
     }
 }
+
 
 #pragma mark - 懒加载
 - (NSMutableArray *)itemArrayM {
