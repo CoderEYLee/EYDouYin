@@ -77,24 +77,24 @@
 #pragma mark - EYTabBarViewDelegate
 - (void)tabBarView:(EYTabBarView *)tabBarView didSelectedIndex:(NSInteger)index {
     EYLog(@"当前点击的 index--%ld", index);
-    EYNavigationController * homeNaviViewController = self.viewControllers.firstObject;
-    EYHomeViewController *homeViewController = (EYHomeViewController *)homeNaviViewController.viewControllers.firstObject;
+
+    EYNavigationController * homeNavi = self.viewControllers.firstObject;
+    EYHomeViewController *homeVC = (EYHomeViewController *)homeNavi.viewControllers.firstObject;
+
     EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
     if (index == EYTabBarViewTypeHome) {
-        if (homeViewController.type == EYHomeViewControllerButtonTypeRecommend) {
+        if (homeVC.type == EYHomeViewControllerButtonTypeRecommend) {
             tabBarView.backgroundColor = [UIColor clearColor];
         } else {
             tabBarView.backgroundColor = [UIColor blackColor];
         }
         rootViewController.scrollView.scrollEnabled = YES;
+        self.selectedIndex = index;
+    } else if (index == EYTabBarViewTypePlus) {//弹出发布界面
+        [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
     } else {//禁止滚动
         tabBarView.backgroundColor = [UIColor blackColor];
         rootViewController.scrollView.scrollEnabled = NO;
-    }
-    
-    if (index == EYTabBarViewTypePlus) {//弹出发布界面
-        [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
-    } else {
         self.selectedIndex = index;
     }
 }

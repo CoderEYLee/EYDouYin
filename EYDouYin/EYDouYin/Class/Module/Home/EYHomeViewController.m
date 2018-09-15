@@ -12,7 +12,6 @@
 #import "EYHomeItemView.h"
 #import "EYHomeItemModel.h"
 #import "EYHomeCityViewController.h"
-#import <MediaPlayer/MediaPlayer.h>
 
 typedef NS_ENUM(NSUInteger, EYScrollViewState) {// scrollView的滚动状态
     EYScrollViewStateUnknown,  // 未知状态
@@ -31,6 +30,10 @@ typedef NS_ENUM(NSUInteger, EYScrollViewState) {// scrollView的滚动状态
 
 // 主页的滚动视图
 @property (weak, nonatomic) UIScrollView *scrollView;
+
+// 上滑的 view, 用来恢复 scrollView 的位置
+@property (weak, nonatomic) UIView *upSwipeView;
+
 // 3个 view 视图
 @property (strong, nonatomic) NSMutableArray <EYHomeItemView *> *itemViewArrayM;
 
@@ -48,15 +51,11 @@ typedef NS_ENUM(NSUInteger, EYScrollViewState) {// scrollView的滚动状态
 
 @implementation EYHomeViewController
 
-NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystemController_SystemVolumeDidChangeNotification";
-
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     [self setupUI];
-
-    [self setupNotification];
 
     // 模拟网络数据
     [self loadNetData];
@@ -98,13 +97,6 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
 
     // 4.同城 view
     self.homeCityView.hidden = YES;
-
-    // 5.声音控制(隐藏视图)
-    [self.view addSubview:[self getSystemVolumSlider]];
-}
-
-- (void)setupNotification {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:EYHomeViewControllerSystemVolumeDidChangeNotification object:nil];
 }
 
 - (void)loadNetData {
@@ -122,13 +114,7 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
 }
 
 #pragma mark - Private Methods
-- (void)volumeChange:(NSNotification*)notifi{
-    NSString * style = [notifi.userInfo objectForKey:@"AVSystemController_AudioCategoryNotificationParameter"];
-    CGFloat value = [[notifi.userInfo objectForKey:@"AVSystemController_AudioVolumeNotificationParameter"] doubleValue];
-    if ([style isEqualToString:@"Audio/Video"]){
-        NSLog(@"音量改变 当前值:%f",value);
-    }
-}
+
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
@@ -190,16 +176,22 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
 - (void)more {
     CGFloat naviBarY = self.naviBar.mj_y;
     EYLog(@"更多");
-    if (naviBarY == 20.0) {
+    if (naviBarY == EYStatusBarHeight) {// scrollView向下滚动
         [self changeFrameWithPOP:self.backView offsetY:-EYBackViewHeight];
         [self changeFrameWithPOP:self.naviBar offsetY:EYBackViewHeight];
         [self changeFrameWithPOP:self.scrollView offsetY:EYBackViewHeight];
-    } else {
+        self.upSwipeView.hidden = NO;
+    } else {// scrollView恢复原始位置
         [self changeFrameWithPOP:self.backView offsetY:EYBackViewHeight];
         [self changeFrameWithPOP:self.naviBar offsetY:-EYBackViewHeight];
         [self changeFrameWithPOP:self.scrollView offsetY:-EYBackViewHeight];
+        self.upSwipeView.hidden = YES;
     }
+}
 
+- (void)swipeClick:(UISwipeGestureRecognizer *)swpie {
+    [swpie.view removeFromSuperview];
+    [self more];
 }
 
 - (void)changeFrameWithPOP:(UIView *)view offsetY:(CGFloat)y {
@@ -228,8 +220,7 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
     return YES;
 }
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {// 开始拖拽
-    //全局变量记录滑动前的contentOffset
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView  {// 开始拖拽
     self.beginDraggingY = scrollView.contentOffset.y;//判断上下滑动时
 
     EYLog(@"scrollView将会开始拖拽--状态为%ld,开始的位置为:%f", self.scrollViewState, self.beginDraggingY);
@@ -314,6 +305,23 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
     return _scrollView;
 }
 
+- (UIView *)upSwipeView {
+    if (nil == _upSwipeView) {
+        // 创建蒙层view
+        CGFloat y = EYBackViewHeight + EYStatusBarHeight + self.naviBar.mj_h;
+        UIView * swipeView = [[UIView alloc] initWithFrame:CGRectMake(0, y, EYScreenWidth, EYScreenHeight - y - EYTabBarHeight)];
+        swipeView.backgroundColor = [UIColor clearColor];
+        [self.view addSubview:swipeView];
+        _upSwipeView = swipeView;
+
+        // 滑动手势
+        UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeClick:)];
+        upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
+        [swipeView addGestureRecognizer:upSwipe];
+    }
+    return _upSwipeView;
+}
+
 - (UIView *)homeCityView {
     if (nil == _homeCityView) {
         EYHomeCityViewController *homeCityViewController = [[EYHomeCityViewController alloc] init];
@@ -323,27 +331,6 @@ NSString *const EYHomeViewControllerSystemVolumeDidChangeNotification=@"AVSystem
         [self addChildViewController:homeCityViewController];
     }
     return _homeCityView;
-}
-
-#pragma mark - 音量控制
-/*
- *获取系统音量滑块
- */
-- (UIView *)getSystemVolumSlider{
-    UIView * view = nil;
-    MPVolumeView *volumeView = [[MPVolumeView alloc] init];
-    for (UIView *newView in volumeView.subviews) {
-        if ([newView.class.description isEqualToString:@"MPVolumeSlider"]){
-            newView.hidden = YES;
-            view = newView;
-            break;
-        }
-    }
-    return view;
-}
-
-- (void)dealloc {
-    [EYNotificationCenter removeObserver:self];
 }
 
 @end

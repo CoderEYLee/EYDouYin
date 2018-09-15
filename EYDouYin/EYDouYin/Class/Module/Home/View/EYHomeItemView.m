@@ -9,21 +9,35 @@
 #import "EYHomeItemView.h"
 #import "EYHomeInfoView.h"
 #import "EYHomeSharedView.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface EYHomeItemView() <EYHomeSharedViewDelegate>
 
 @property (weak, nonatomic) IBOutlet EYHomeInfoView *homeInfoView;
 @property (weak, nonatomic) IBOutlet EYHomeSharedView *homeSharedView;
 
+@property (weak, nonatomic) IBOutlet UILabel *volumeProgressLabel;
+
+
 @end
 
 @implementation EYHomeItemView
+
+NSString *const EYHomeItemViewSystemVolumeDidChangeNotification=@"AVSystemController_SystemVolumeDidChangeNotification";
 
 #pragma mark - 初始化方法
 - (void)awakeFromNib {
     [super awakeFromNib];
 
     self.homeSharedView.delegate = self;
+
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    self.volumeProgressLabel.mj_w = EYScreenWidth * audioSession.outputVolume;
+
+    [self addSubview:[self getSystemVolumSlider]];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:EYHomeItemViewSystemVolumeDidChangeNotification object:nil];
 }
 
 + (instancetype)homeItemView {
@@ -38,6 +52,19 @@
         self.frame = frame;
     }
     return self;
+}
+
+- (void)volumeChange:(NSNotification*)notifi{
+    NSString * style = [notifi.userInfo objectForKey:@"AVSystemController_AudioCategoryNotificationParameter"];
+    CGFloat value = [[notifi.userInfo objectForKey:@"AVSystemController_AudioVolumeNotificationParameter"] doubleValue];
+    if ([style isEqualToString:@"Audio/Video"]){
+        self.volumeProgressLabel.hidden = NO;
+        self.volumeProgressLabel.mj_w = EYScreenWidth * value;
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.volumeProgressLabel.hidden = YES;
+        });
+    }
 }
 
 #pragma mark - EYHomeSharedViewDelegate
@@ -59,6 +86,27 @@
         default:
             break;
     }
+}
+
+#pragma mark - 音量控制
+/*
+ * 获取系统音量滑块
+ */
+- (UIView *)getSystemVolumSlider{
+    UIView * view = nil;
+    MPVolumeView *volumeView = [[MPVolumeView alloc] init];
+    for (UIView *newView in volumeView.subviews) {
+        if ([newView.class.description isEqualToString:@"MPVolumeSlider"]){
+            newView.frame = CGRectMake(EYScreenWidth, EYScreenHeight, 1, 1);
+            view = newView;
+            break;
+        }
+    }
+    return view;
+}
+
+- (void)dealloc {
+    [EYNotificationCenter removeObserver:self];
 }
 
 @end

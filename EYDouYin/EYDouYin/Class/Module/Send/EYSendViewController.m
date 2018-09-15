@@ -27,7 +27,7 @@
     // 默认方式加载多语言
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 100, 100)];
     label.backgroundColor = EYRandomColor;
-    label.text = [NSString stringWithFormat:EYLocalized(@"测试%@"), @"123"];
+    label.text = [NSString stringWithFormat:EYLocalized(@"测试"), @"123"];
     [self.view addSubview:label];
 }
 

@@ -51,13 +51,16 @@
     EYLog(@"6666666666666--->程序被杀了");
 }
 
-
 #pragma mark - Public Methods
 #pragma mark - Private Methods
 // 初始化 app 语言环境
 - (void)setUpAppLanguage {
     if ([EYUserDefaults stringForKey:EYAppLanguage].length == 0) {
-        [EYUserDefaults setObject:NSLocale.preferredLanguages.firstObject forKey:EYAppLanguage];
+        NSString * language = NSLocale.preferredLanguages.firstObject;
+        if (![language hasPrefix:@"en"]) {
+            language = @"zh-Hans";
+        }
+        [EYUserDefaults setObject:language forKey:EYAppLanguage];
     }
 }
 #pragma mark - Override Methods
