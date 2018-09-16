@@ -13,12 +13,6 @@
 #import "EYHomeItemModel.h"
 #import "EYHomeCityViewController.h"
 
-typedef NS_ENUM(NSUInteger, EYScrollViewState) {// scrollView的滚动状态
-    EYScrollViewStateUnknown,  // 未知状态
-    EYScrollViewStateNext,     // 下一个
-    EYScrollViewStatePrevious, // 上一个
-};
-
 #define EYBackViewHeight 100 //后面的 view 的高度
 
 @interface EYHomeViewController () <EYHomeTitleViewDelegate, UIScrollViewDelegate>
@@ -36,10 +30,6 @@ typedef NS_ENUM(NSUInteger, EYScrollViewState) {// scrollView的滚动状态
 
 // 3个 view 视图
 @property (strong, nonatomic) NSMutableArray <EYHomeItemView *> *itemViewArrayM;
-
-@property (assign, nonatomic) CGFloat beginDraggingY;
-
-@property (assign, nonatomic) EYScrollViewState scrollViewState;
 
 // 同城
 @property (weak, nonatomic) UIView *homeCityView;
@@ -181,11 +171,19 @@ typedef NS_ENUM(NSUInteger, EYScrollViewState) {// scrollView的滚动状态
         [self changeFrameWithPOP:self.naviBar offsetY:EYBackViewHeight];
         [self changeFrameWithPOP:self.scrollView offsetY:EYBackViewHeight];
         self.upSwipeView.hidden = NO;
+        for (EYHomeItemView *view in self.itemViewArrayM) {
+            view.homeInfoView.hidden = YES;
+            view.homeSharedView.hidden = YES;
+        }
     } else {// scrollView恢复原始位置
         [self changeFrameWithPOP:self.backView offsetY:EYBackViewHeight];
         [self changeFrameWithPOP:self.naviBar offsetY:-EYBackViewHeight];
         [self changeFrameWithPOP:self.scrollView offsetY:-EYBackViewHeight];
         self.upSwipeView.hidden = YES;
+        for (EYHomeItemView *view in self.itemViewArrayM) {
+            view.homeInfoView.hidden = NO;
+            view.homeSharedView.hidden = NO;
+        }
     }
 }
 
@@ -207,13 +205,6 @@ typedef NS_ENUM(NSUInteger, EYScrollViewState) {// scrollView的滚动状态
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     EYLog(@"scrollView滚动了");
-    if (scrollView.contentOffset.y < self.beginDraggingY ){
-        NSLog(@"向下拖拽");
-        self.scrollViewState = EYScrollViewStatePrevious;
-    } else if (scrollView.contentOffset.y > self.beginDraggingY ){
-        NSLog(@"向上拖拽");
-        self.scrollViewState = EYScrollViewStateNext;
-    }
 }
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
@@ -221,15 +212,18 @@ typedef NS_ENUM(NSUInteger, EYScrollViewState) {// scrollView的滚动状态
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView  {// 开始拖拽
-    self.beginDraggingY = scrollView.contentOffset.y;//判断上下滑动时
+    EYLog(@"scrollView将会开始拖拽--状态为");
 
-    EYLog(@"scrollView将会开始拖拽--状态为%ld,开始的位置为:%f", self.scrollViewState, self.beginDraggingY);
+    CGFloat y = scrollView.contentOffset.y;
+    if (y == 0.0) {
+        EYLog(@"开始拖拽--可以刷新界面了--");
+    }
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {// 结束拖拽
     CGFloat y = scrollView.contentOffset.y;
-    EYLog(@"scrollView已经结束拖拽--状态为%ld,结束的位置为:%f", self.scrollViewState, y);
-    if (self.scrollViewState == EYScrollViewStateUnknown && y == 0.0) {
+    EYLog(@"scrollView已经结束拖拽--状态为,结束的位置为:%f", y);
+    if (y == 0.0) {
         EYLog(@"可以刷新界面了--");
     }
 }
@@ -241,9 +235,17 @@ typedef NS_ENUM(NSUInteger, EYScrollViewState) {// scrollView的滚动状态
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
     int index = scrollView.contentOffset.y / EYScreenHeight;
 
-    EYLog(@"scrollView已经结束减速:%d--%ld位置为:%f", index, self.scrollViewState, scrollView.contentOffset.y);
+    EYLog(@"scrollView已经结束减速:%d--位置为:%f", index, scrollView.contentOffset.y);
 
-    if (self.scrollViewState == EYScrollViewStateNext && index == self.itemViewArrayM.count - 1) {// 最后一个
+    CGFloat y = [scrollView.panGestureRecognizer translationInView:scrollView.superview].y;
+
+    if (y < 0) {
+        NSLog(@"12345678向上拖拽,展示下一个");
+    } else {
+        NSLog(@"12345678向下拖拽,展示上一个");
+    }
+
+    if (y < 0 && index == self.itemViewArrayM.count - 1) {// 最后一个
         [self.itemViewArrayM insertObject:self.itemViewArrayM.firstObject atIndex:self.itemViewArrayM.count];
         [self.itemViewArrayM removeFirstObject];
 
@@ -254,7 +256,7 @@ typedef NS_ENUM(NSUInteger, EYScrollViewState) {// scrollView的滚动状态
         [scrollView setContentOffset:CGPointMake(0, EYScreenHeight) animated:NO];
     }
 
-    if (self.scrollViewState == EYScrollViewStatePrevious && index == 0) {
+    if (y > 0 && index == 0) {
         [self.itemViewArrayM insertObject:self.itemViewArrayM.lastObject atIndex:0];
         [self.itemViewArrayM removeLastObject];
 

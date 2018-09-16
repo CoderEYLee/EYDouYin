@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EYHomeInfoView.h"
+#import "EYHomeSharedView.h"
 
 @interface EYHomeItemView : UIView
 
 + (instancetype)homeItemView;
+
+@property (weak, nonatomic, readonly) EYHomeInfoView *homeInfoView;
+
+@property (weak, nonatomic, readonly) EYHomeSharedView *homeSharedView;
 
 @end

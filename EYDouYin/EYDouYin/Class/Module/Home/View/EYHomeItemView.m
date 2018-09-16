@@ -7,16 +7,13 @@
 //
 
 #import "EYHomeItemView.h"
-#import "EYHomeInfoView.h"
-#import "EYHomeSharedView.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 
 @interface EYHomeItemView() <EYHomeSharedViewDelegate>
 
-@property (weak, nonatomic) IBOutlet EYHomeInfoView *homeInfoView;
-@property (weak, nonatomic) IBOutlet EYHomeSharedView *homeSharedView;
-
+@property (weak, nonatomic, readwrite) IBOutlet EYHomeInfoView *homeInfoView;
+@property (weak, nonatomic, readwrite) IBOutlet EYHomeSharedView *homeSharedView;
 @property (weak, nonatomic) IBOutlet UILabel *volumeProgressLabel;
 
 
