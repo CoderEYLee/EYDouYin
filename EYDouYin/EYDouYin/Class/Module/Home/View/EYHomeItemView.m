@@ -16,6 +16,7 @@
 @property (weak, nonatomic, readwrite) IBOutlet EYHomeSharedView *homeSharedView;
 @property (weak, nonatomic) IBOutlet UILabel *volumeProgressLabel;
 
+@property (weak, nonatomic) NSTimer * timer;
 
 @end
 
@@ -50,15 +51,20 @@ NSString *const EYHomeItemViewSystemVolumeDidChangeNotification=@"AVSystemContro
 }
 
 - (void)volumeChange:(NSNotification*)notifi{
-    NSString * style = [notifi.userInfo objectForKey:@"AVSystemController_AudioCategoryNotificationParameter"];
-    CGFloat value = [[notifi.userInfo objectForKey:@"AVSystemController_AudioVolumeNotificationParameter"] doubleValue];
+    NSString * style = notifi.userInfo[@"AVSystemController_AudioCategoryNotificationParameter"];
     if ([style isEqualToString:@"Audio/Video"]){
+        double value = [notifi.userInfo[@"AVSystemController_AudioVolumeNotificationParameter"] doubleValue];
         self.volumeProgressLabel.hidden = NO;
         self.volumeProgressLabel.mj_w = EYScreenWidth * value;
 
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.timer) {
+            [self.timer invalidate];
+        }
+
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 block:^(NSTimer * _Nonnull timer) {
             self.volumeProgressLabel.hidden = YES;
-        });
+            [self.timer invalidate];
+        } repeats:NO];
     }
 }
 
