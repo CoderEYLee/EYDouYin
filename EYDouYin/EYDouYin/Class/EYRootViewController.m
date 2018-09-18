@@ -59,22 +59,27 @@
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    // EYLog(@"已经结束拖拽--%d", decelerate);
+     EYLog(@"底部的 scrollView已经结束拖拽--%d", decelerate);
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    // EYLog(@"scrollViewDidScroll");
+     EYLog(@"底部的 scrollView已经滚动了");
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    // EYLog(@"scrollViewWillBeginDragging");
+     EYLog(@"底部的 scrollView将会开始拖拽--%@",NSStringFromCGPoint(scrollView.contentOffset));
+    [UIApplication sharedApplication].statusBarHidden = NO;
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    
+    EYLog(@"底部的 scrollView将会开始减速==%@", NSStringFromCGPoint(scrollView.contentOffset));
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    
+    EYLog(@"底部的 scrollView已经结束减速--%@", NSStringFromCGPoint(scrollView.contentOffset));
+    CGFloat x = scrollView.contentOffset.x;
+    if (x == EYScreenWidth) {
+        [UIApplication sharedApplication].statusBarHidden = YES;
+    }
 }
 @end
