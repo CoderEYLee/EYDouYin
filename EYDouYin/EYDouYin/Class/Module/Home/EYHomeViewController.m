@@ -284,8 +284,11 @@
     if (nil == _scrollView) {
         UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:EYScreenBounds];
         scrollView.contentSize = CGSizeMake(EYScreenWidth, EYScreenHeight * 3);
-//        scrollView.contentOffset = CGPointMake(0, 0);
-        scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        if (@available(iOS 11.0, *)) {
+            scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
         scrollView.pagingEnabled = YES;
         scrollView.showsHorizontalScrollIndicator = NO;
         scrollView.showsVerticalScrollIndicator = NO;
