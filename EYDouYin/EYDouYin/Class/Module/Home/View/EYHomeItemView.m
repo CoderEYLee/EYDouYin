@@ -32,8 +32,6 @@ NSString *const EYHomeItemViewSystemVolumeDidChangeNotification=@"AVSystemContro
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     self.volumeProgressLabel.mj_w = EYScreenWidth * audioSession.outputVolume;
 
-    [self addSubview:[self getSystemVolumSlider]];
-
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:EYHomeItemViewSystemVolumeDidChangeNotification object:nil];
 }
 
@@ -83,23 +81,6 @@ NSString *const EYHomeItemViewSystemVolumeDidChangeNotification=@"AVSystemContro
         default:
             break;
     }
-}
-
-#pragma mark - 音量控制
-/*
- * 获取系统音量滑块
- */
-- (UIView *)getSystemVolumSlider{
-    UIView * view = nil;
-    MPVolumeView *volumeView = [[MPVolumeView alloc] init];
-    for (UIView *newView in volumeView.subviews) {
-        if ([newView.class.description isEqualToString:@"MPVolumeSlider"]){
-            newView.frame = CGRectMake(EYScreenWidth, EYScreenHeight, 1, 1);
-            view = newView;
-            break;
-        }
-    }
-    return view;
 }
 
 - (void)dealloc {

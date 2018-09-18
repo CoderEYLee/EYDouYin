@@ -12,6 +12,7 @@
 #import "EYHomeItemView.h"
 #import "EYHomeItemModel.h"
 #import "EYHomeCityViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 #define EYBackViewHeight 100 //后面的 view 的高度
 
@@ -69,6 +70,8 @@
 }
 
 - (void)setupUI {
+    [self.view addSubview:[self getSystemVolumSlider]];
+
     self.view.backgroundColor = [UIColor blackColor];
     // 1.底层的 view
     UIView * backView = [[UIView alloc] initWithFrame:CGRectMake(0, EYBackViewHeight, EYScreenWidth, EYBackViewHeight)];
@@ -334,6 +337,23 @@
         [self addChildViewController:homeCityViewController];
     }
     return _homeCityView;
+}
+
+#pragma mark - 音量控制
+/*
+ * 获取系统音量滑块
+ */
+- (UIView *)getSystemVolumSlider{
+    UIView * view = nil;
+    MPVolumeView *volumeView = [[MPVolumeView alloc] init];
+    for (UIView *newView in volumeView.subviews) {
+        if ([newView.class.description isEqualToString:@"MPVolumeSlider"]){
+            newView.frame = CGRectMake(-300, -300, 1, 1);
+            view = newView;
+            break;
+        }
+    }
+    return view;
 }
 
 @end
