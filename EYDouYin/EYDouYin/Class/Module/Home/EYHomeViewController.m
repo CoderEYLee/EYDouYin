@@ -13,6 +13,7 @@
 #import "EYHomeItemModel.h"
 #import "EYHomeCityViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import "AppDelegate.h"
 
 #define EYBackViewHeight 100 //后面的 view 的高度
 
@@ -57,16 +58,16 @@
 
     // 隐藏电池
     [UIApplication sharedApplication].statusBarHidden = YES;
-    
-    EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
-    rootViewController.scrollView.scrollEnabled = YES;
+
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    appDelegate.rootViewController.scrollView.scrollEnabled = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 
-    EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
-    rootViewController.scrollView.scrollEnabled = NO;
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    appDelegate.rootViewController.scrollView.scrollEnabled = NO;
 }
 
 - (void)setupUI {
@@ -90,6 +91,12 @@
 
     // 4.同城 view
     self.homeCityView.hidden = YES;
+
+    // 5.左滑手势
+    // 滑动手势
+    UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipeClick:)];
+    leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:leftSwipe];
 }
 
 - (void)loadNetData {
@@ -111,8 +118,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
-    EYTestViewController * vc= [[EYTestViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+//    EYTestViewController * vc= [[EYTestViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - EYHomeTitleViewDelegate
@@ -138,8 +145,8 @@
 
 - (void)search {
     EYLog(@"搜索");
-    EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
-    [rootViewController.scrollView setContentOffset:CGPointZero animated:YES];
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appDelegate.rootViewController.scrollView setContentOffset:CGPointZero animated:YES];
 }
 
 - (void)recommend {
@@ -184,11 +191,6 @@
             view.homeSharedView.hidden = NO;
         }
     }
-}
-
-- (void)swipeClick:(UISwipeGestureRecognizer *)swpie {
-    [swpie.view removeFromSuperview];
-    [self more];
 }
 
 - (void)changeFrameWithPOP:(UIView *)view offsetY:(CGFloat)y {
@@ -318,7 +320,7 @@
         _upSwipeView = swipeView;
 
         // 滑动手势
-        UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeClick:)];
+        UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(more)];
         upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
         [swipeView addGestureRecognizer:upSwipe];
     }

@@ -85,8 +85,6 @@ UIKIT_EXTERN NSString *const EYTabbarShouldChangeColorNotification;
 
 #define EYKeyWindow [UIApplication sharedApplication].keyWindow
 
-#define EYKeyWindowRootViewController EYKeyWindow.rootViewController
-
 //获取temp
 #define EYPathTemp NSTemporaryDirectory()
 

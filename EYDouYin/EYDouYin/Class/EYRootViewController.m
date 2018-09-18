@@ -27,6 +27,12 @@
 
 - (void)setupUI {
     UIScrollView * scrollView = [[UIScrollView alloc] initWithFrame:EYScreenBounds];
+    scrollView.contentSize = CGSizeMake(EYScreenWidth * 2, EYScreenHeight);
+    if (@available(iOS 11.0, *)) {
+        scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.bounces = NO;
@@ -47,8 +53,7 @@
     tabbarController.view.frame = CGRectMake(EYScreenWidth, 0, EYScreenWidth, EYScreenHeight);
     [scrollView addSubview:tabbarController.view];
     [self addChildViewController:tabbarController];
-    
-    scrollView.contentSize = CGSizeMake(EYScreenWidth * 2, EYScreenHeight);
+
     //默认展示主view
     [scrollView setContentOffset:CGPointMake(EYScreenWidth, 0)];
 }
@@ -67,7 +72,7 @@
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-     EYLog(@"底部的 scrollView将会开始拖拽--%@",NSStringFromCGPoint(scrollView.contentOffset));
+     // EYLog(@"底部的 scrollView将会开始拖拽--%@",NSStringFromCGPoint(scrollView.contentOffset));
     [UIApplication sharedApplication].statusBarHidden = NO;
 
     CGFloat x = [scrollView.panGestureRecognizer translationInView:scrollView.superview].x;
@@ -76,17 +81,18 @@
     if (x < 0 && offsetX == EYScreenWidth) {
         NSLog(@"11111111111111111111111--显示测试界面");
         EYTestViewController * vc = [[EYTestViewController alloc] init];
-
-        [self presentViewController:vc animated:YES completion:nil];
+        [self.navigationController pushViewController:vc animated:YES];
+//
+//        [self presentViewController:vc animated:YES completion:nil];
     }
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    EYLog(@"底部的 scrollView将会开始减速==%@", NSStringFromCGPoint(scrollView.contentOffset));
+    // EYLog(@"底部的 scrollView将会开始减速==%@", NSStringFromCGPoint(scrollView.contentOffset));
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    EYLog(@"底部的 scrollView已经结束减速--%@", NSStringFromCGPoint(scrollView.contentOffset));
+    // EYLog(@"底部的 scrollView已经结束减速--%@", NSStringFromCGPoint(scrollView.contentOffset));
     CGFloat x = scrollView.contentOffset.x;
     if (x == EYScreenWidth) {
         [UIApplication sharedApplication].statusBarHidden = YES;

@@ -8,6 +8,7 @@
 
 #import "EYFindViewController.h"
 #import "EYRootViewController.h"
+#import "AppDelegate.h"
 
 @interface EYFindViewController ()
 
@@ -56,8 +57,8 @@
 }
 
 - (void)right {
-    EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
-    [rootViewController.scrollView setContentOffset:CGPointMake(EYScreenWidth, 0) animated:YES];
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appDelegate.rootViewController.scrollView setContentOffset:CGPointMake(EYScreenWidth, 0) animated:YES];
 }
 
 #pragma mark - Override Methods

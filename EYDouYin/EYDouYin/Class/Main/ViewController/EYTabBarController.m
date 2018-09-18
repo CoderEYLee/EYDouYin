@@ -15,6 +15,7 @@
 #import "EYNavigationController.h"
 #import "EYTabBarView.h"
 #import "EYRootViewController.h"
+#import "AppDelegate.h"
 
 @interface EYTabBarController () <EYTabBarViewDelegate>
 
@@ -81,7 +82,8 @@
     EYNavigationController * homeNavi = self.viewControllers.firstObject;
     EYHomeViewController *homeVC = (EYHomeViewController *)homeNavi.viewControllers.firstObject;
 
-    EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    EYRootViewController * rootViewController = appDelegate.rootViewController;
     if (index == EYTabBarViewTypeHome) {
         if (homeVC.type == EYHomeViewControllerButtonTypeRecommend) {
             tabBarView.backgroundColor = [UIColor clearColor];

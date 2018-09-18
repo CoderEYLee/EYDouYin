@@ -7,9 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "EYRootViewController.h"
+#import "EYNavigationController.h"
 
 @interface AppDelegate ()
+
+@property (weak, nonatomic, readwrite) EYRootViewController *rootViewController;
 
 @end
 
@@ -18,7 +20,9 @@
 #pragma mark - Life Cycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[EYRootViewController alloc] init];
+    EYRootViewController *rootVC= [[EYRootViewController alloc] init];
+    self.window.rootViewController = [[EYNavigationController alloc] initWithRootViewController:rootVC];
+    self.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
 
     EYLog(@"1111111--->程序启动了");
