@@ -18,7 +18,7 @@
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor grayColor];
-    id target = self.navigationController.interactivePopGestureRecognizer.delegate;
+    id<UIGestureRecognizerDelegate> target = self.navigationController.interactivePopGestureRecognizer.delegate;
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:NSSelectorFromString(@"handleNavigationTransition:")];
     [self.view addGestureRecognizer:pan];
 
@@ -33,6 +33,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
+
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
