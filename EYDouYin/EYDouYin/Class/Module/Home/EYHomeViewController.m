@@ -91,12 +91,6 @@
 
     // 4.同城 view
     self.homeCityView.hidden = YES;
-
-    // 5.左滑手势
-    // 滑动手势
-    UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipeClick:)];
-    leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
-    [self.view addGestureRecognizer:leftSwipe];
 }
 
 - (void)loadNetData {
@@ -118,8 +112,6 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
-//    EYTestViewController * vc= [[EYTestViewController alloc] init];
-//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - EYHomeTitleViewDelegate

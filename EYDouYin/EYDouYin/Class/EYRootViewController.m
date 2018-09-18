@@ -10,6 +10,7 @@
 #import "EYFindViewController.h"
 #import "EYTabBarController.h"
 #import "EYNavigationController.h"
+#import "EYHomeWorksViewController.h"
 
 @interface EYRootViewController () <UIScrollViewDelegate>
 
@@ -80,10 +81,8 @@
 
     if (x < 0 && offsetX == EYScreenWidth) {
         NSLog(@"11111111111111111111111--显示测试界面");
-        EYTestViewController * vc = [[EYTestViewController alloc] init];
+        EYHomeWorksViewController * vc = [[EYHomeWorksViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
-//
-//        [self presentViewController:vc animated:YES completion:nil];
     }
 }
 
@@ -96,6 +95,8 @@
     CGFloat x = scrollView.contentOffset.x;
     if (x == EYScreenWidth) {
         [UIApplication sharedApplication].statusBarHidden = YES;
+    } else {
+        
     }
 }
 @end
