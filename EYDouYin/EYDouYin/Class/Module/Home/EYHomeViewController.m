@@ -203,7 +203,7 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    EYLog(@"scrollView滚动了");
+    // EYLog(@"scrollView滚动了");
 }
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
@@ -211,10 +211,12 @@
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView  {// 开始拖拽
-    EYLog(@"scrollView将会开始拖拽--状态为");
+    // EYLog(@"scrollView将会开始拖拽--状态为");
 
-    CGFloat y = scrollView.contentOffset.y;
-    if (y == 0.0) {
+    CGFloat y = [scrollView.panGestureRecognizer translationInView:scrollView.superview].y;
+    CGFloat offsetY = scrollView.contentOffset.y;
+
+    if (y > 0 && offsetY == 0.0) {
         EYLog(@"开始拖拽--可以刷新界面了--");
     }
 }
@@ -222,13 +224,14 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {// 结束拖拽
     CGFloat y = scrollView.contentOffset.y;
     EYLog(@"scrollView已经结束拖拽--状态为,结束的位置为:%f", y);
-    if (y == 0.0) {
-        EYLog(@"可以刷新界面了--");
-    }
+
+//    if (y == 0.0) {
+//        EYLog(@"可以刷新界面了--");
+//    }
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {//结束拖拽后立即开始减速
-    EYLog(@"scrollView将会开始减速位置为:%f", scrollView.contentOffset.y);
+    // EYLog(@"scrollView将会开始减速位置为:%f", scrollView.contentOffset.y);
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
@@ -237,12 +240,6 @@
     EYLog(@"scrollView已经结束减速:%d--位置为:%f", index, scrollView.contentOffset.y);
 
     CGFloat y = [scrollView.panGestureRecognizer translationInView:scrollView.superview].y;
-
-    if (y < 0) {
-        NSLog(@"12345678向上拖拽,展示下一个");
-    } else {
-        NSLog(@"12345678向下拖拽,展示上一个");
-    }
 
     if (y < 0 && index == self.itemViewArrayM.count - 1) {// 最后一个
         [self.itemViewArrayM insertObject:self.itemViewArrayM.firstObject atIndex:self.itemViewArrayM.count];
