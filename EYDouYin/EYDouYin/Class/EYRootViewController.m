@@ -59,16 +59,26 @@
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-     EYLog(@"底部的 scrollView已经结束拖拽--%d", decelerate);
+     // EYLog(@"底部的 scrollView已经结束拖拽--%d", decelerate);
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-     EYLog(@"底部的 scrollView已经滚动了");
+     // EYLog(@"底部的 scrollView已经滚动了");
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
      EYLog(@"底部的 scrollView将会开始拖拽--%@",NSStringFromCGPoint(scrollView.contentOffset));
     [UIApplication sharedApplication].statusBarHidden = NO;
+
+    CGFloat x = [scrollView.panGestureRecognizer translationInView:scrollView.superview].x;
+    CGFloat offsetX = scrollView.contentOffset.x;
+
+    if (x < 0 && offsetX == EYScreenWidth) {
+        NSLog(@"11111111111111111111111--显示测试界面");
+        EYTestViewController * vc = [[EYTestViewController alloc] init];
+
+        [self presentViewController:vc animated:YES completion:nil];
+    }
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
