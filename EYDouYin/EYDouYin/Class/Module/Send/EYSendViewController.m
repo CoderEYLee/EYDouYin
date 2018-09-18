@@ -31,10 +31,6 @@
     [self.view addSubview:label];
 }
 
-- (BOOL)prefersStatusBarHidden {
-    return YES;
-}
-
 - (void)tapCloseButton:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

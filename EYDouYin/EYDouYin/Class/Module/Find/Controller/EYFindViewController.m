@@ -41,6 +41,8 @@
     
     //下部的滚动视图
     UIScrollView * scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight)];
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
     scrollView.backgroundColor = EYRandomColor;
     scrollView.contentSize = CGSizeMake(EYScreenWidth, 1000);
     [self.view addSubview:scrollView];

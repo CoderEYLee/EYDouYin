@@ -17,11 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor grayColor];
     id target = self.navigationController.interactivePopGestureRecognizer.delegate;
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:NSSelectorFromString(@"handleNavigationTransition:")];
     [self.view addGestureRecognizer:pan];
-    
+
+    [UIApplication sharedApplication].statusBarHidden = NO;
+
     UILabel * label = [[UILabel alloc] init];
     label.text = @"这是一个测试界面";
     [label sizeToFit];

@@ -54,15 +54,15 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
+    // 隐藏电池
     [UIApplication sharedApplication].statusBarHidden = YES;
+    
     EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
     rootViewController.scrollView.scrollEnabled = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-
-    [UIApplication sharedApplication].statusBarHidden = NO;
 
     EYRootViewController * rootViewController = (EYRootViewController *)EYKeyWindowRootViewController;
     rootViewController.scrollView.scrollEnabled = NO;
@@ -110,10 +110,6 @@
     [super touchesBegan:touches withEvent:event];
     EYTestViewController * vc= [[EYTestViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (BOOL)prefersStatusBarHidden {
-    return YES;
 }
 
 #pragma mark - EYHomeTitleViewDelegate
@@ -288,6 +284,8 @@
     if (nil == _scrollView) {
         UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:EYScreenBounds];
         scrollView.contentSize = CGSizeMake(EYScreenWidth, EYScreenHeight * 3);
+//        scrollView.contentOffset = CGPointMake(0, 0);
+        scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         scrollView.pagingEnabled = YES;
         scrollView.showsHorizontalScrollIndicator = NO;
         scrollView.showsVerticalScrollIndicator = NO;
