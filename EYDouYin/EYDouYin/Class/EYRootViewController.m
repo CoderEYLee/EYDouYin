@@ -28,7 +28,7 @@
 
 - (void)setupUI {
     UIScrollView * scrollView = [[UIScrollView alloc] initWithFrame:EYScreenBounds];
-    scrollView.contentSize = CGSizeMake(EYScreenWidth * 2, EYScreenHeight);
+    scrollView.contentSize = CGSizeMake(EYScreenWidth * 2.2, EYScreenHeight);
     if (@available(iOS 11.0, *)) {
         scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
@@ -65,25 +65,29 @@
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-     // EYLog(@"底部的 scrollView已经结束拖拽--%d", decelerate);
+    CGPoint point = [scrollView.panGestureRecognizer translationInView:scrollView.superview];
+    CGFloat offsetX = scrollView.contentOffset.x;
+    EYLog(@"底部的 scrollView已经结束拖拽--手势的偏移位置%@scrollView 的偏移位置%@", NSStringFromCGPoint(point), NSStringFromCGPoint(scrollView.contentOffset));
+
+    if (offsetX >= EYScreenWidth * 1.1) {
+        // UIViewAnimationOptionLayoutSubviews
+        // UIViewAnimationOptionAllowUserInteraction
+        EYHomeWorksViewController * vc = [[EYHomeWorksViewController alloc] init];
+        [UIView transitionWithView:self.navigationController.view duration:1 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            [self.navigationController pushViewController:vc animated:YES];
+        } completion:nil];
+    } else {
+
+    }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-     // EYLog(@"底部的 scrollView已经滚动了");
+    CGFloat offsetX = scrollView.contentOffset.x;
+     EYLog(@"底部的 scrollView已经滚动了--scrollView 的偏移位置%f", offsetX);
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-     // EYLog(@"底部的 scrollView将会开始拖拽--%@",NSStringFromCGPoint(scrollView.contentOffset));
     [UIApplication sharedApplication].statusBarHidden = NO;
-
-    CGFloat x = [scrollView.panGestureRecognizer translationInView:scrollView.superview].x;
-    CGFloat offsetX = scrollView.contentOffset.x;
-
-    if (x < 0 && offsetX == EYScreenWidth) {
-        NSLog(@"11111111111111111111111--显示测试界面");
-        EYHomeWorksViewController * vc = [[EYHomeWorksViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
@@ -91,12 +95,13 @@
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    // EYLog(@"底部的 scrollView已经结束减速--%@", NSStringFromCGPoint(scrollView.contentOffset));
+     EYLog(@"底部的 scrollView已经结束减速--%@", NSStringFromCGPoint(scrollView.contentOffset));
     CGFloat x = scrollView.contentOffset.x;
     if (x == EYScreenWidth) {
         [UIApplication sharedApplication].statusBarHidden = YES;
     } else {
-        
+
     }
 }
+
 @end
