@@ -12,7 +12,7 @@
 #import "EYNavigationController.h"
 #import "EYHomeWorksViewController.h"
 
-#define EYScrollViewWidthScale 0.2
+#define EYScrollViewWidthScale 0.0
 
 @interface EYRootViewController () <UIScrollViewDelegate>
 
