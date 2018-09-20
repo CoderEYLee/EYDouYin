@@ -20,6 +20,7 @@ target 'EYDouYin' do
 
 #pod 'IJKMediaFramework', '~> 0.1.1'
 
+pod 'AFNetworking', '3.2.1'
 pod 'YYKit', '1.0.9'
 pod 'MJRefresh', '3.1.15.7'
 pod 'pop', '1.0.10'
