@@ -15,6 +15,7 @@
 #import "NSObject+EYRuntime.h"
 #import "NSString+EYExtension.h"
 
+#import <AFNetworking.h>
 #import <YYKit.h>
 #import <MJRefresh.h>
 #import <POP.h>

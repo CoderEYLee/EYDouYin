@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "EYNavigationController.h"
+#import <AFNetworkActivityIndicatorManager.h>
 
 @interface AppDelegate ()
 
@@ -28,6 +29,8 @@
     EYLog(@"1111111--->程序启动了");
 
     [self setUpAppLanguage];
+
+    [self handleAFNetConnect];
 
 //    [NSThread sleepForTimeInterval:3];
 
@@ -67,6 +70,40 @@
         [EYUserDefaults setObject:language forKey:EYAppLanguage];
     }
 }
+// AFN 的网络监控
+- (void)handleAFNetConnect {
+    // 开启网络指示器
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+
+    // 基准网站
+    NSURL *url = [NSURL URLWithString:@"http://baidu.com"];
+
+    // 监听结果回调
+    // AFHTTPSessionManager : AFURLSessionManager : NSObject
+    AFHTTPSessionManager * manager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
+
+    NSOperationQueue *operationQueue = manager.operationQueue;
+    [manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+            case AFNetworkReachabilityStatusNotReachable: {
+                [operationQueue setSuspended:YES]; //暂停所有的网络请求
+                break;
+            }
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+            case AFNetworkReachabilityStatusReachableViaWiFi: {
+                [operationQueue setSuspended:NO];   //恢复所有的网络请求
+                NSLog(@"有网络");
+                break;
+            }
+            default: break;
+        }
+    }];
+
+    // 开始监听
+    [manager.reachabilityManager startMonitoring];
+}
+
 #pragma mark - Override Methods
 #pragma mark - Net Work
 #pragma mark - DataSource
