@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "EYNavigationController.h"
 #import <AFNetworkActivityIndicatorManager.h>
+#import <AVKit/AVKit.h>
 
 @interface AppDelegate ()
 
@@ -24,7 +25,8 @@
     EYRootViewController *rootVC= [[EYRootViewController alloc] init];
     self.window.rootViewController = [[EYNavigationController alloc] initWithRootViewController:rootVC];
     self.rootViewController = rootVC;
-    [self.window makeKeyAndVisible];
+
+    [NSThread sleepForTimeInterval:2];
 
     EYLog(@"1111111--->程序启动了");
 
@@ -32,7 +34,9 @@
 
     [self handleAFNetConnect];
 
-//    [NSThread sleepForTimeInterval:3];
+    [self openAnimation];
+
+    [self.window makeKeyAndVisible];
 
     return YES;
 }
@@ -102,6 +106,31 @@
 
     // 开始监听
     [manager.reachabilityManager startMonitoring];
+}
+
+-(void)openAnimation {
+    NSBundle *bundle = [NSBundle mainBundle];
+    if(bundle != nil) {
+        NSString *moviePath = [bundle pathForResource:@"OpenAnimation" ofType:@"mp4"];
+        if (moviePath) {
+            AVPlayerViewController *playerViewController = [[AVPlayerViewController alloc] init];
+            playerViewController.player = [AVPlayer playerWithURL:[NSURL fileURLWithPath:moviePath]];
+            playerViewController.videoGravity = AVLayerVideoGravityResizeAspect;
+
+            playerViewController.view.userInteractionEnabled = NO;
+            playerViewController.showsPlaybackControls = NO;
+
+            UIViewController *lastRootVC = self.window.rootViewController;
+            [EYNotificationCenter addObserverForName:AVPlayerItemDidPlayToEndTimeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+                self.window.rootViewController = lastRootVC;
+            }];
+
+            self.window.rootViewController = playerViewController;
+
+            // 播放
+            [playerViewController.player play];
+        }
+    }
 }
 
 #pragma mark - Override Methods

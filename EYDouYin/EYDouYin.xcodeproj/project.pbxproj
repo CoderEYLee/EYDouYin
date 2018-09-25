@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		12456AD2F580F71E29D93144 /* libPods-EYDouYin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8108F30C51AA75E71455FEBD /* libPods-EYDouYin.a */; };
 		6000D86F213D1CFB00491BB7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6000D871213D1CFB00491BB7 /* Localizable.strings */; };
+		6012FD62215A2172004A3083 /* OpenAnimation.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6012FD61215A2172004A3083 /* OpenAnimation.mp4 */; };
 		601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B03142104DCBD00489E96 /* EYTabBarController.m */; };
 		601B03192104DDED00489E96 /* EYFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B03182104DDED00489E96 /* EYFindViewController.m */; };
 		601B032221056E4E00489E96 /* EYSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032121056E4E00489E96 /* EYSendViewController.m */; };
@@ -88,6 +89,7 @@
 		6000D86C213D1C6700491BB7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6000D870213D1CFB00491BB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6000D872213D1CFF00491BB7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6012FD61215A2172004A3083 /* OpenAnimation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenAnimation.mp4; sourceTree = "<group>"; };
 		601B03132104DCBD00489E96 /* EYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYTabBarController.h; sourceTree = "<group>"; };
 		601B03142104DCBD00489E96 /* EYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYTabBarController.m; sourceTree = "<group>"; };
 		601B03172104DDED00489E96 /* EYFindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFindViewController.h; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 		6055AD3A2116B03E005DC856 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				6012FD61215A2172004A3083 /* OpenAnimation.mp4 */,
 				6000D871213D1CFB00491BB7 /* Localizable.strings */,
 				6055AD3B2116B382005DC856 /* TabBar.json */,
 			);
@@ -671,6 +674,7 @@
 				6000D86F213D1CFB00491BB7 /* Localizable.strings in Resources */,
 				60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */,
 				607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */,
+				6012FD62215A2172004A3083 /* OpenAnimation.mp4 in Resources */,
 				6076A15F2148EC31002ED551 /* Items.json in Resources */,
 				60EE77B82120282C004133A6 /* EYTestViewView.xib in Resources */,
 				60B2FAEB213916870046D13D /* EYHomeSharedView.xib in Resources */,
