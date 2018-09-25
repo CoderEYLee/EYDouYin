@@ -78,7 +78,7 @@
     [self.view clipsCornerRadius:UIRectCornerAllCorners cornerRadii:5.0];
     // 1.底层的 view
     EYHomeBackView *backView = [EYHomeBackView homeBackView];
-    backView.frame = CGRectMake(0, 0, EYScreenWidth, EYBackViewHeight);
+    backView.frame = CGRectMake(0, EYBackViewHeight, EYScreenWidth, EYBackViewHeight);
     backView.backgroundColor = [UIColor redColor];
     [self.view insertSubview:backView atIndex:0];
     self.backView = backView;
@@ -90,6 +90,7 @@
     [self.naviBar addSubview:titleView];
 
     // 3.scrollView
+    [self.scrollView clipsCornerRadius:UIRectCornerAllCorners cornerRadii:5.0];
     self.scrollView.hidden = NO;
 
     // 4.同城 view
@@ -308,10 +309,9 @@
 - (UIView *)upSwipeView {
     if (nil == _upSwipeView) {
         // 创建蒙层view
-        CGFloat y = EYBackViewHeight + EYStatusBarHeight + self.naviBar.mj_h;
-        UIView * swipeView = [[UIView alloc] initWithFrame:CGRectMake(0, y, EYScreenWidth, EYScreenHeight - y - EYTabBarHeight)];
+        UIView * swipeView = [[UIView alloc] initWithFrame:CGRectMake(0, EYBackViewHeight, EYScreenWidth, EYScreenHeight - EYBackViewHeight - EYTabBarHeight)];
         swipeView.backgroundColor = [UIColor clearColor];
-        [self.view addSubview:swipeView];
+        [self.view insertSubview:swipeView belowSubview:self.naviBar];
         _upSwipeView = swipeView;
 
         // 滑动手势
