@@ -10,6 +10,9 @@
 		12456AD2F580F71E29D93144 /* libPods-EYDouYin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8108F30C51AA75E71455FEBD /* libPods-EYDouYin.a */; };
 		6000D86F213D1CFB00491BB7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6000D871213D1CFB00491BB7 /* Localizable.strings */; };
 		6012FD62215A2172004A3083 /* OpenAnimation.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6012FD61215A2172004A3083 /* OpenAnimation.mp4 */; };
+		6012FD68215A2FA5004A3083 /* EYHomeBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012FD67215A2FA5004A3083 /* EYHomeBackView.m */; };
+		6012FD6A215A2FB8004A3083 /* EYHomeBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6012FD69215A2FB8004A3083 /* EYHomeBackView.xib */; };
+		6012FD70215A36BF004A3083 /* UIView+EYCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012FD6F215A36BF004A3083 /* UIView+EYCornerRadius.m */; };
 		601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B03142104DCBD00489E96 /* EYTabBarController.m */; };
 		601B03192104DDED00489E96 /* EYFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B03182104DDED00489E96 /* EYFindViewController.m */; };
 		601B032221056E4E00489E96 /* EYSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032121056E4E00489E96 /* EYSendViewController.m */; };
@@ -90,6 +93,11 @@
 		6000D870213D1CFB00491BB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6000D872213D1CFF00491BB7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6012FD61215A2172004A3083 /* OpenAnimation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenAnimation.mp4; sourceTree = "<group>"; };
+		6012FD66215A2FA5004A3083 /* EYHomeBackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeBackView.h; sourceTree = "<group>"; };
+		6012FD67215A2FA5004A3083 /* EYHomeBackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeBackView.m; sourceTree = "<group>"; };
+		6012FD69215A2FB8004A3083 /* EYHomeBackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeBackView.xib; sourceTree = "<group>"; };
+		6012FD6E215A36BF004A3083 /* UIView+EYCornerRadius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+EYCornerRadius.h"; sourceTree = "<group>"; };
+		6012FD6F215A36BF004A3083 /* UIView+EYCornerRadius.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+EYCornerRadius.m"; sourceTree = "<group>"; };
 		601B03132104DCBD00489E96 /* EYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYTabBarController.h; sourceTree = "<group>"; };
 		601B03142104DCBD00489E96 /* EYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYTabBarController.m; sourceTree = "<group>"; };
 		601B03172104DDED00489E96 /* EYFindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFindViewController.h; sourceTree = "<group>"; };
@@ -406,6 +414,8 @@
 				60EE77B52120217D004133A6 /* UIBarButtonItem+EYExtension.m */,
 				60EE77BD21204188004133A6 /* NSObject+EYRuntime.h */,
 				60EE77BE21204188004133A6 /* NSObject+EYRuntime.m */,
+				6012FD6E215A36BF004A3083 /* UIView+EYCornerRadius.h */,
+				6012FD6F215A36BF004A3083 /* UIView+EYCornerRadius.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -477,6 +487,9 @@
 		60B2FAE1213915A00046D13D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6012FD66215A2FA5004A3083 /* EYHomeBackView.h */,
+				6012FD67215A2FA5004A3083 /* EYHomeBackView.m */,
+				6012FD69215A2FB8004A3083 /* EYHomeBackView.xib */,
 				60D81BB72132710600456939 /* EYHomeItemView.h */,
 				60D81BB82132710600456939 /* EYHomeItemView.m */,
 				60D81BBA2132711100456939 /* EYHomeItemView.xib */,
@@ -676,6 +689,7 @@
 				607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */,
 				6012FD62215A2172004A3083 /* OpenAnimation.mp4 in Resources */,
 				6076A15F2148EC31002ED551 /* Items.json in Resources */,
+				6012FD6A215A2FB8004A3083 /* EYHomeBackView.xib in Resources */,
 				60EE77B82120282C004133A6 /* EYTestViewView.xib in Resources */,
 				60B2FAEB213916870046D13D /* EYHomeSharedView.xib in Resources */,
 				6055AD442116D18A005DC856 /* EYTabBarView.xib in Resources */,
@@ -761,6 +775,7 @@
 				601B032521056E5F00489E96 /* EYHomeViewController.m in Sources */,
 				606E6FA3212813CA00ABEB83 /* EYLikeCell.m in Sources */,
 				60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */,
+				6012FD70215A36BF004A3083 /* UIView+EYCornerRadius.m in Sources */,
 				604D55612139325900F83249 /* EYHomeTitleView.m in Sources */,
 				60D81BB92132710600456939 /* EYHomeItemView.m in Sources */,
 				601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */,
@@ -772,6 +787,7 @@
 				6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */,
 				601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */,
 				60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */,
+				6012FD68215A2FA5004A3083 /* EYHomeBackView.m in Sources */,
 				6076A171214A4D26002ED551 /* EYHomeCityViewController.m in Sources */,
 				6075416F2104D15F00EB258D /* Foundation+Log.m in Sources */,
 				6076A1802150FE71002ED551 /* EYHomeWorksViewController.m in Sources */,

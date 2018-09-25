@@ -26,7 +26,7 @@
     self.window.rootViewController = [[EYNavigationController alloc] initWithRootViewController:rootVC];
     self.rootViewController = rootVC;
 
-    [NSThread sleepForTimeInterval:2];
+//    [NSThread sleepForTimeInterval:2];
 
     EYLog(@"1111111--->程序启动了");
 
@@ -34,7 +34,7 @@
 
     [self handleAFNetConnect];
 
-    [self openAnimation];
+//    [self openAnimation];
 
     [self.window makeKeyAndVisible];
 
@@ -108,6 +108,7 @@
     [manager.reachabilityManager startMonitoring];
 }
 
+// 开机动画
 -(void)openAnimation {
     NSBundle *bundle = [NSBundle mainBundle];
     if(bundle != nil) {

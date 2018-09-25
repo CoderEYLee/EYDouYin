@@ -14,6 +14,7 @@
 #import "EYHomeCityViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "AppDelegate.h"
+#import "EYHomeBackView.h"
 
 #define EYBackViewHeight 100 //后面的 view 的高度
 
@@ -74,8 +75,10 @@
     [self.view addSubview:[self getSystemVolumSlider]];
 
     self.view.backgroundColor = [UIColor blackColor];
+    [self.view clipsCornerRadius:UIRectCornerAllCorners cornerRadii:5.0];
     // 1.底层的 view
-    UIView * backView = [[UIView alloc] initWithFrame:CGRectMake(0, EYBackViewHeight, EYScreenWidth, EYBackViewHeight)];
+    EYHomeBackView *backView = [EYHomeBackView homeBackView];
+    backView.frame = CGRectMake(0, 0, EYScreenWidth, EYBackViewHeight);
     backView.backgroundColor = [UIColor redColor];
     [self.view insertSubview:backView atIndex:0];
     self.backView = backView;
