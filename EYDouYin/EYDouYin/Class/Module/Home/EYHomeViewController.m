@@ -75,7 +75,6 @@
     [self.view addSubview:[self getSystemVolumSlider]];
 
     self.view.backgroundColor = [UIColor blackColor];
-    [self.view clipsCornerRadius:UIRectCornerAllCorners cornerRadii:5.0];
     // 1.底层的 view
     EYHomeBackView *backView = [EYHomeBackView homeBackView];
     backView.frame = CGRectMake(0, EYBackViewHeight, EYScreenWidth, EYBackViewHeight);
@@ -90,7 +89,6 @@
     [self.naviBar addSubview:titleView];
 
     // 3.scrollView
-    [self.scrollView clipsCornerRadius:UIRectCornerAllCorners cornerRadii:5.0];
     self.scrollView.hidden = NO;
 
     // 4.同城 view
@@ -281,6 +279,7 @@
 - (UIScrollView *)scrollView {
     if (nil == _scrollView) {
         UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:EYScreenBounds];
+        scrollView.layer.cornerRadius = 5.0;
         scrollView.contentSize = CGSizeMake(EYScreenWidth, EYScreenHeight * 3);
         if (@available(iOS 11.0, *)) {
             scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
