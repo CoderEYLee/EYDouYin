@@ -86,18 +86,6 @@
     CGFloat minOffsetX = EYScreenWidth * EYScrollViewWidthScale  * 0.5;
     CGFloat offsetX = scrollView.contentOffset.x - EYScreenWidth;
     EYLog(@"底部的 scrollView已经结束拖拽--scrollView 的偏移位置%f最小偏移大小%f", offsetX, minOffsetX);
-
-    //    CGPoint point = [scrollView.panGestureRecognizer translationInView:scrollView.superview];
-    if (offsetX >= minOffsetX) {
-        // UIViewAnimationOptionLayoutSubviews
-        // UIViewAnimationOptionAllowUserInteraction
-        EYHomeWorksViewController * vc = [[EYHomeWorksViewController alloc] init];
-        [UIView transitionWithView:self.navigationController.view duration:1 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-            [self.navigationController pushViewController:vc animated:YES];
-        } completion:nil];
-    } else {
-        NSLog(@"22222222222222222");
-    }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

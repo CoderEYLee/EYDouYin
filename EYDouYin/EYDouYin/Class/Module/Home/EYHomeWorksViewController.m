@@ -18,12 +18,6 @@
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor redColor];
-
-    id<UIGestureRecognizerDelegate> target = self.navigationController.interactivePopGestureRecognizer.delegate;
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:NSSelectorFromString(@"handleNavigationTransition:")];
-    [self.view addGestureRecognizer:pan];
-
-    [UIApplication sharedApplication].statusBarHidden = NO;
 }
 
 @end

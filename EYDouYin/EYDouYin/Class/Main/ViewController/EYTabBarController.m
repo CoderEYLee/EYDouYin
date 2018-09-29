@@ -50,7 +50,9 @@
     for (NSDictionary * dictionary in array) {
         UIViewController * viewController = [[NSClassFromString(dictionary[@"className"]) alloc] init];
         if ([dictionary[@"needNavi"] boolValue]) {
-            [self addChildViewController:[[EYNavigationController alloc] initWithRootViewController:viewController]];
+            EYNavigationController *navi = [[EYNavigationController alloc] initWithRootViewController:viewController];
+            navi.gk_openScrollLeftPush = YES;
+            [self addChildViewController:navi];
         } else {
             [self addChildViewController:viewController];
         }

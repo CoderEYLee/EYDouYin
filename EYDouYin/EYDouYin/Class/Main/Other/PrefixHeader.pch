@@ -22,6 +22,7 @@
 #import <MJRefresh.h>
 #import <POP.h>
 #import <UIImage+GIF.h>
+#import <UINavigationController+GKCategory.h>
 
 #import "EYTestViewController.h"
 #endif /* PrefixHeader_pch */

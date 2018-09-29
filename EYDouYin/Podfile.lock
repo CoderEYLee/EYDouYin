@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - GKNavigationBarViewController (2.1.2)
   - MJRefresh (3.1.15.7)
   - pop (1.0.10)
   - SDWebImage (5.0.0-beta3):
@@ -25,6 +26,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (= 3.2.1)
+  - GKNavigationBarViewController (~> 2.1.2)
   - MJRefresh (= 3.1.15.7)
   - pop (= 1.0.10)
   - SDWebImage (~> 5.0.0-beta3)
@@ -33,6 +35,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - GKNavigationBarViewController
     - MJRefresh
     - pop
     - SDWebImage
@@ -40,11 +43,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  GKNavigationBarViewController: a9a6ca818de0ea32697ccb3c0ce8ad00910cea40
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   SDWebImage: e52654ceef9fdc19f4c612d64a5b6d3f05dd81a4
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 1dd132d7020717577bde14910a8e33c0dd93cef4
+PODFILE CHECKSUM: 7ef959eff3a6531525d6788919a9e1e9e696e8b5
 
 COCOAPODS: 1.6.0.beta.1
