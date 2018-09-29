@@ -72,6 +72,7 @@
 }
 
 - (void)setupUI {
+    [self.view clipsCornerRadius:UIRectCornerAllCorners cornerRadii:5.0];
     [self.view addSubview:[self getSystemVolumSlider]];
 
     self.view.backgroundColor = [UIColor blackColor];

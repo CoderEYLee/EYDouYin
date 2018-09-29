@@ -26,17 +26,15 @@
     self.window.rootViewController = [[EYNavigationController alloc] initWithRootViewController:rootVC];
     self.rootViewController = rootVC;
 
-//    [NSThread sleepForTimeInterval:2];
-
-    EYLog(@"1111111--->程序启动了");
+    EYLog(@"1111111--->程序启动了--%@", EYPathDocument);
 
     [self setUpAppLanguage];
 
     [self handleAFNetConnect];
 
-//    [self openAnimation];
-
     [self.window makeKeyAndVisible];
+
+    [self openAnimation];
 
     return YES;
 }
@@ -110,28 +108,27 @@
 
 // 开机动画
 -(void)openAnimation {
-    NSBundle *bundle = [NSBundle mainBundle];
-    if(bundle != nil) {
-        NSString *moviePath = [bundle pathForResource:@"OpenAnimation" ofType:@"mp4"];
-        if (moviePath) {
-            AVPlayerViewController *playerViewController = [[AVPlayerViewController alloc] init];
-            playerViewController.player = [AVPlayer playerWithURL:[NSURL fileURLWithPath:moviePath]];
-            playerViewController.videoGravity = AVLayerVideoGravityResizeAspect;
+    NSString *gifPath = [[NSBundle mainBundle] pathForResource:@"openAnimation" ofType:@"gif"];
+    UIImage *gif = [UIImage sd_imageWithGIFData:[NSData dataWithContentsOfFile:gifPath]];
+    UIImageView *gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    gifImageView.contentMode = UIViewContentModeScaleAspectFill;
+    gifImageView.image = gif;
+    [_window addSubview:gifImageView];
 
-            playerViewController.view.userInteractionEnabled = NO;
-            playerViewController.showsPlaybackControls = NO;
+    NSString *lastFramePath = [[NSBundle mainBundle] pathForResource:@"lastFrame" ofType:@"png"];
+    UIImage *lastFrame = [UIImage imageWithContentsOfFile:lastFramePath];
 
-            UIViewController *lastRootVC = self.window.rootViewController;
-            [EYNotificationCenter addObserverForName:AVPlayerItemDidPlayToEndTimeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-                self.window.rootViewController = lastRootVC;
-            }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        gifImageView.image = lastFrame;
 
-            self.window.rootViewController = playerViewController;
-
-            // 播放
-            [playerViewController.player play];
-        }
-    }
+        [UIView animateWithDuration:1.0 animations:^{
+            gifImageView.center = self.window.center;
+            gifImageView.bounds = CGRectMake(0, 0, kScreenWidth*2, kScreenHeight*2);
+            gifImageView.alpha = 0.0;
+        } completion:^(BOOL finished) {
+            [gifImageView removeFromSuperview];
+        }];
+    });
 }
 
 #pragma mark - Override Methods

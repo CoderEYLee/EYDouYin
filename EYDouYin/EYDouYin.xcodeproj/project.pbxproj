@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		12456AD2F580F71E29D93144 /* libPods-EYDouYin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8108F30C51AA75E71455FEBD /* libPods-EYDouYin.a */; };
 		6000D86F213D1CFB00491BB7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6000D871213D1CFB00491BB7 /* Localizable.strings */; };
-		6012FD62215A2172004A3083 /* OpenAnimation.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6012FD61215A2172004A3083 /* OpenAnimation.mp4 */; };
 		6012FD68215A2FA5004A3083 /* EYHomeBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012FD67215A2FA5004A3083 /* EYHomeBackView.m */; };
 		6012FD6A215A2FB8004A3083 /* EYHomeBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6012FD69215A2FB8004A3083 /* EYHomeBackView.xib */; };
 		6012FD70215A36BF004A3083 /* UIView+EYCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012FD6F215A36BF004A3083 /* UIView+EYCornerRadius.m */; };
@@ -60,6 +59,8 @@
 		60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6902104D9D900DEEA34 /* EYConstant.m */; };
 		60D81BB92132710600456939 /* EYHomeItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D81BB82132710600456939 /* EYHomeItemView.m */; };
 		60D81BBB2132711100456939 /* EYHomeItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D81BBA2132711100456939 /* EYHomeItemView.xib */; };
+		60ED6DFA215F6DD600381DBD /* openAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60ED6DF9215F6DD600381DBD /* openAnimation.gif */; };
+		60ED6DFC215F6EBB00381DBD /* lastFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = 60ED6DFB215F6EBB00381DBD /* lastFrame.png */; };
 		60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77AB211F5239004133A6 /* EYFindTopView.m */; };
 		60EE77AF211F52A4004133A6 /* EYFindTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60EE77AE211F52A4004133A6 /* EYFindTopView.xib */; };
 		60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77B221201CE8004133A6 /* EYTestViewController.m */; };
@@ -92,7 +93,6 @@
 		6000D86C213D1C6700491BB7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6000D870213D1CFB00491BB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6000D872213D1CFF00491BB7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		6012FD61215A2172004A3083 /* OpenAnimation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenAnimation.mp4; sourceTree = "<group>"; };
 		6012FD66215A2FA5004A3083 /* EYHomeBackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeBackView.h; sourceTree = "<group>"; };
 		6012FD67215A2FA5004A3083 /* EYHomeBackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeBackView.m; sourceTree = "<group>"; };
 		6012FD69215A2FB8004A3083 /* EYHomeBackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeBackView.xib; sourceTree = "<group>"; };
@@ -186,6 +186,8 @@
 		60D81BB72132710600456939 /* EYHomeItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeItemView.h; sourceTree = "<group>"; };
 		60D81BB82132710600456939 /* EYHomeItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeItemView.m; sourceTree = "<group>"; };
 		60D81BBA2132711100456939 /* EYHomeItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeItemView.xib; sourceTree = "<group>"; };
+		60ED6DF9215F6DD600381DBD /* openAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = openAnimation.gif; sourceTree = "<group>"; };
+		60ED6DFB215F6EBB00381DBD /* lastFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lastFrame.png; sourceTree = "<group>"; };
 		60EE77AA211F5239004133A6 /* EYFindTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFindTopView.h; sourceTree = "<group>"; };
 		60EE77AB211F5239004133A6 /* EYFindTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFindTopView.m; sourceTree = "<group>"; };
 		60EE77AE211F52A4004133A6 /* EYFindTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYFindTopView.xib; sourceTree = "<group>"; };
@@ -304,7 +306,8 @@
 		6055AD3A2116B03E005DC856 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				6012FD61215A2172004A3083 /* OpenAnimation.mp4 */,
+				60ED6DF9215F6DD600381DBD /* openAnimation.gif */,
+				60ED6DFB215F6EBB00381DBD /* lastFrame.png */,
 				6000D871213D1CFB00491BB7 /* Localizable.strings */,
 				6055AD3B2116B382005DC856 /* TabBar.json */,
 			);
@@ -687,13 +690,14 @@
 				6000D86F213D1CFB00491BB7 /* Localizable.strings in Resources */,
 				60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */,
 				607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */,
-				6012FD62215A2172004A3083 /* OpenAnimation.mp4 in Resources */,
 				6076A15F2148EC31002ED551 /* Items.json in Resources */,
 				6012FD6A215A2FB8004A3083 /* EYHomeBackView.xib in Resources */,
 				60EE77B82120282C004133A6 /* EYTestViewView.xib in Resources */,
+				60ED6DFA215F6DD600381DBD /* openAnimation.gif in Resources */,
 				60B2FAEB213916870046D13D /* EYHomeSharedView.xib in Resources */,
 				6055AD442116D18A005DC856 /* EYTabBarView.xib in Resources */,
 				6076A15D2148E097002ED551 /* ChinLab_en.json in Resources */,
+				60ED6DFC215F6EBB00381DBD /* lastFrame.png in Resources */,
 				60D81BBB2132711100456939 /* EYHomeItemView.xib in Resources */,
 				607541342104CC4C00EB258D /* Assets.xcassets in Resources */,
 				604D55632139326300F83249 /* EYHomeTitleView.xib in Resources */,
