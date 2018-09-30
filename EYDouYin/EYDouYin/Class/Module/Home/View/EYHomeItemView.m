@@ -34,6 +34,35 @@ NSString *const EYHomeItemViewSystemVolumeDidChangeNotification=@"AVSystemContro
     self.volumeProgressLabel.mj_w = EYScreenWidth * audioSession.outputVolume;
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:EYHomeItemViewSystemVolumeDidChangeNotification object:nil];
+
+    // 滑动手势
+    UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleLeftSwipeGestureRecognizer:)];
+    leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self addGestureRecognizer:leftSwipe];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+
+    EYLog(@"----touchesBegan---");
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesMoved:touches withEvent:event];
+    EYLog(@"----touchesMoved---");
+}
+
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesCancelled:touches withEvent:event];
+
+    EYLog(@"----touchesCancelled---");
+}
+
+// 左滑手势处理
+- (void)handleLeftSwipeGestureRecognizer:(UIGestureRecognizer *)gesture {
+    EYLog(@"----%@---", gesture);
+
+
 }
 
 + (instancetype)homeItemView {

@@ -15,11 +15,10 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "AppDelegate.h"
 #import "EYHomeBackView.h"
-#import "EYHomeWorksViewController.h"
 
 #define EYBackViewHeight 100 //后面的 view 的高度
 
-@interface EYHomeViewController () <EYHomeTitleViewDelegate, GKViewControllerPushDelegate, UIScrollViewDelegate>
+@interface EYHomeViewController () <EYHomeTitleViewDelegate, UIScrollViewDelegate>
 
 @property (assign, nonatomic, readwrite) EYHomeViewControllerButtonType type;
 
@@ -63,9 +62,6 @@
 
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     appDelegate.rootViewController.scrollView.scrollEnabled = YES;
-
-    // 设置左滑push代理
-    self.gk_pushDelegate = self;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -73,9 +69,6 @@
 
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     appDelegate.rootViewController.scrollView.scrollEnabled = NO;
-
-    // 清空左滑push代理
-    self.gk_pushDelegate = nil;
 }
 
 - (void)setupUI {
@@ -199,12 +192,6 @@
     POPBasicAnimation * basic = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
     basic.toValue = @(view.center.y + y);
     [view pop_addAnimation:basic forKey:nil];
-}
-
-#pragma mark - GKViewControllerPushDelegate
-- (void)pushToNextViewController {
-    EYHomeWorksViewController *homeWorksViewController = [EYHomeWorksViewController new];
-    [self.navigationController pushViewController:homeWorksViewController animated:YES];
 }
 
 #pragma mark - UIScrollViewDelegate
