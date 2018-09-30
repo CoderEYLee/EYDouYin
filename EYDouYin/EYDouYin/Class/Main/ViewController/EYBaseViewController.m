@@ -55,6 +55,8 @@
 }
 
 - (void)setupNaviBar {
+    self.gk_navigationBar.hidden = YES;
+    
     UINavigationBar * naviBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, EYScreenWidth, 44)];
     [naviBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [naviBar setShadowImage:[UIImage new]];
