@@ -13,8 +13,6 @@
 #import "EYHomeWorksViewController.h"
 #import "EYScrollView.h"
 
-#define EYScrollViewWidthScale 0.0
-
 @interface EYRootViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic, readwrite) EYScrollView *scrollView;
@@ -46,7 +44,7 @@
     [self.scrollView addSubview:tabbarController.view];
     [self addChildViewController:tabbarController];
 
-    self.scrollView.contentSize = CGSizeMake(EYScreenWidth * (2 + EYScrollViewWidthScale), EYScreenHeight);
+    self.scrollView.contentSize = CGSizeMake(EYScreenWidth * self.childViewControllers.count, EYScreenHeight);
     //默认展示主view
     [self.scrollView setContentOffset:CGPointMake(EYScreenWidth, 0)];
 
@@ -84,21 +82,7 @@
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    CGFloat minOffsetX = EYScreenWidth * EYScrollViewWidthScale  * 0.5;
-    CGFloat offsetX = scrollView.contentOffset.x - EYScreenWidth;
-    EYLog(@"底部的 scrollView已经结束拖拽--scrollView 的偏移位置%f最小偏移大小%f", offsetX, minOffsetX);
-
-    //    CGPoint point = [scrollView.panGestureRecognizer translationInView:scrollView.superview];
-    if (offsetX >= minOffsetX) {
-        // UIViewAnimationOptionLayoutSubviews
-        // UIViewAnimationOptionAllowUserInteraction
-        EYHomeWorksViewController * vc = [[EYHomeWorksViewController alloc] init];
-        [UIView transitionWithView:self.navigationController.view duration:1 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-            [self.navigationController pushViewController:vc animated:YES];
-        } completion:nil];
-    } else {
-        NSLog(@"22222222222222222");
-    }
+    EYLog(@"底部的 scrollView已经结束拖拽--");
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
