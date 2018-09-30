@@ -61,6 +61,7 @@
 		60D81BBB2132711100456939 /* EYHomeItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D81BBA2132711100456939 /* EYHomeItemView.xib */; };
 		60ED6DFA215F6DD600381DBD /* openAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60ED6DF9215F6DD600381DBD /* openAnimation.gif */; };
 		60ED6DFC215F6EBB00381DBD /* lastFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = 60ED6DFB215F6EBB00381DBD /* lastFrame.png */; };
+		60ED70C22160987E00381DBD /* EYScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED70C12160987E00381DBD /* EYScrollView.m */; };
 		60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77AB211F5239004133A6 /* EYFindTopView.m */; };
 		60EE77AF211F52A4004133A6 /* EYFindTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60EE77AE211F52A4004133A6 /* EYFindTopView.xib */; };
 		60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77B221201CE8004133A6 /* EYTestViewController.m */; };
@@ -188,6 +189,8 @@
 		60D81BBA2132711100456939 /* EYHomeItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeItemView.xib; sourceTree = "<group>"; };
 		60ED6DF9215F6DD600381DBD /* openAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = openAnimation.gif; sourceTree = "<group>"; };
 		60ED6DFB215F6EBB00381DBD /* lastFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lastFrame.png; sourceTree = "<group>"; };
+		60ED70C02160987E00381DBD /* EYScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYScrollView.h; sourceTree = "<group>"; };
+		60ED70C12160987E00381DBD /* EYScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYScrollView.m; sourceTree = "<group>"; };
 		60EE77AA211F5239004133A6 /* EYFindTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFindTopView.h; sourceTree = "<group>"; };
 		60EE77AB211F5239004133A6 /* EYFindTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFindTopView.m; sourceTree = "<group>"; };
 		60EE77AE211F52A4004133A6 /* EYFindTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYFindTopView.xib; sourceTree = "<group>"; };
@@ -299,6 +302,8 @@
 				6055AD402116CD21005DC856 /* EYTabBarView.h */,
 				6055AD412116CD21005DC856 /* EYTabBarView.m */,
 				6055AD432116D18A005DC856 /* EYTabBarView.xib */,
+				60ED70C02160987E00381DBD /* EYScrollView.h */,
+				60ED70C12160987E00381DBD /* EYScrollView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -791,6 +796,7 @@
 				6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */,
 				601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */,
 				60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */,
+				60ED70C22160987E00381DBD /* EYScrollView.m in Sources */,
 				6012FD68215A2FA5004A3083 /* EYHomeBackView.m in Sources */,
 				6076A171214A4D26002ED551 /* EYHomeCityViewController.m in Sources */,
 				6075416F2104D15F00EB258D /* Foundation+Log.m in Sources */,

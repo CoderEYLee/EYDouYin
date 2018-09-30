@@ -11,12 +11,13 @@
 #import "EYTabBarController.h"
 #import "EYNavigationController.h"
 #import "EYHomeWorksViewController.h"
+#import "EYScrollView.h"
 
 #define EYScrollViewWidthScale 0.0
 
 @interface EYRootViewController () <UIScrollViewDelegate>
 
-@property (weak, nonatomic, readwrite) UIScrollView * scrollView;
+@property (weak, nonatomic, readwrite) EYScrollView *scrollView;
 
 @property (weak, nonatomic) UIView * homeWorksView;
 
@@ -64,7 +65,7 @@
 #pragma mark - 懒加载
 - (UIScrollView *)scrollView {
     if (nil == _scrollView) {
-        UIScrollView * scrollView = [[UIScrollView alloc] initWithFrame:EYScreenBounds];
+        EYScrollView * scrollView = [[EYScrollView alloc] initWithFrame:EYScreenBounds];
         if (@available(iOS 11.0, *)) {
             scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         } else {
