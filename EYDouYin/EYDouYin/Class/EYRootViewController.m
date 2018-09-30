@@ -13,12 +13,9 @@
 #import "EYHomeWorksViewController.h"
 #import "EYScrollView.h"
 
-@interface EYRootViewController () <UIScrollViewDelegate>
+@interface EYRootViewController () <UIScrollViewDelegate, GKViewControllerPushDelegate>
 
 @property (weak, nonatomic, readwrite) EYScrollView *scrollView;
-
-@property (weak, nonatomic) UIView * homeWorksView;
-
 
 @end
 
@@ -28,6 +25,8 @@
     [super viewDidLoad];
     
     [self setupUI];
+
+    self.gk_pushDelegate = self;
 }
 
 - (void)setupUI {
@@ -47,13 +46,20 @@
     self.scrollView.contentSize = CGSizeMake(EYScreenWidth * self.childViewControllers.count, EYScreenHeight);
     //默认展示主view
     [self.scrollView setContentOffset:CGPointMake(EYScreenWidth, 0)];
+}
 
-    EYHomeWorksViewController * homeWorksViewController = [[EYHomeWorksViewController alloc] init];
-    UIView * homeWorksView = homeWorksViewController.view;
-    homeWorksView.frame = CGRectMake(EYScreenWidth, 0, EYScreenWidth, EYScreenHeight);
-    [self.view addSubview:homeWorksView];
-    [self addChildViewController:homeWorksViewController];
-    self.homeWorksView = homeWorksView;
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    // 设置左滑push代理
+    self.gk_pushDelegate = self;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+
+    // 清空左滑push代理
+    self.gk_pushDelegate = nil;
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {//控制EYTabBarController的方向
@@ -78,6 +84,12 @@
         _scrollView = scrollView;
     }
     return _scrollView;
+}
+
+- (void)pushToNextViewController {
+    EYHomeWorksViewController * vc = [[EYHomeWorksViewController alloc] init];
+
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - UIScrollViewDelegate

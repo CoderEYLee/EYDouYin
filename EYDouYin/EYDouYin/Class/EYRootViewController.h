@@ -6,9 +6,9 @@
 //  Copyright © 2018年 李二洋. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "EYBaseViewController.h"
 
-@interface EYRootViewController : UIViewController
+@interface EYRootViewController : EYBaseViewController
 
 @property (weak, nonatomic, readonly) UIScrollView * scrollView;
 

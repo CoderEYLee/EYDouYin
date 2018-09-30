@@ -6,9 +6,9 @@
 //  Copyright © 2018年 李二洋. All rights reserved.
 //  控制器的父类
 
-#import <UIKit/UIKit.h>
+#import <GKNavigationBarViewController.h>
 
-@interface EYBaseViewController : UIViewController
+@interface EYBaseViewController : GKNavigationBarViewController
 
 @property (weak, nonatomic) UINavigationBar * naviBar;
 
