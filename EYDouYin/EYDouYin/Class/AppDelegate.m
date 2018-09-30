@@ -23,9 +23,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     EYRootViewController *rootVC= [[EYRootViewController alloc] init];
-    EYNavigationController *nav = [EYNavigationController rootVC:rootVC translationScale:NO];
-    nav.gk_openScrollLeftPush = YES;
-    self.window.rootViewController = nav;
+    EYNavigationController *navi = [[EYNavigationController alloc] initWithRootViewController:rootVC];
+    navi.gk_openScrollLeftPush = YES;
+    self.window.rootViewController = navi;
     self.rootViewController = rootVC;
 
     EYLog(@"1111111--->程序启动了--%@", EYPathDocument);
