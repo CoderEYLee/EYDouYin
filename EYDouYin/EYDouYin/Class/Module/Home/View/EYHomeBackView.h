@@ -33,4 +33,9 @@
  */
 - (void)showWithArray:(NSArray *)array;
 
+/**
+ 关闭的动画
+ */
+- (void)close;
+
 @end

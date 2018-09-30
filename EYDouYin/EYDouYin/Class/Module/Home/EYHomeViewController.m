@@ -78,9 +78,9 @@
     self.view.backgroundColor = [UIColor blackColor];
     // 1.底层的 view
     EYHomeBackView *backView = [EYHomeBackView homeBackView];
-    backView.frame = CGRectMake(0, EYBackViewHeight, EYScreenWidth, EYBackViewHeight);
+    backView.frame = CGRectMake(0, 0, EYScreenWidth, EYBackViewHeight);
     backView.delegate = self;
-    backView.backgroundColor = [UIColor redColor];
+    backView.backgroundColor = [UIColor blackColor];
     [self.view insertSubview:backView atIndex:0];
     self.backView = backView;
 
@@ -169,7 +169,6 @@
     CGFloat naviBarY = self.naviBar.mj_y;
     EYLog(@"更多");
     if (naviBarY == EYStatusBarHeight) {// scrollView向下滚动
-        [self changeFrameWithPOP:self.backView offsetY:-EYBackViewHeight];
         [self changeFrameWithPOP:self.naviBar offsetY:EYBackViewHeight];
         [self changeFrameWithPOP:self.scrollView offsetY:EYBackViewHeight];
         self.upSwipeView.hidden = NO;
@@ -180,7 +179,6 @@
 
         [self.backView showWithArray:self.modelArrayM];
     } else {// scrollView恢复原始位置
-        [self changeFrameWithPOP:self.backView offsetY:EYBackViewHeight];
         [self changeFrameWithPOP:self.naviBar offsetY:-EYBackViewHeight];
         [self changeFrameWithPOP:self.scrollView offsetY:-EYBackViewHeight];
         self.upSwipeView.hidden = YES;
@@ -188,13 +186,16 @@
             view.homeInfoView.hidden = NO;
             view.homeSharedView.hidden = NO;
         }
+        [self.backView close];
     }
 }
 
 - (void)changeFrameWithPOP:(UIView *)view offsetY:(CGFloat)y {
-    POPBasicAnimation * basic = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-    basic.toValue = @(view.center.y + y);
-    [view pop_addAnimation:basic forKey:nil];
+    POPBasicAnimation * anim = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    anim.fromValue = @(view.centerY);
+    anim.toValue = @(view.centerY + y);
+    anim.duration = 0.5;
+    [view pop_addAnimation:anim forKey:nil];
 }
 
 #pragma mark - EYHomeBackViewDelegate
@@ -344,7 +345,7 @@
 - (NSMutableArray *)modelArrayM {
     if (nil == _modelArrayM) {
         _modelArrayM = [NSMutableArray array];
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 3; i++) {
             EYHomeBackItemModel * model = [[EYHomeBackItemModel alloc] init];
             [_modelArrayM addObject:model];
         }
