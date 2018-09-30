@@ -7,8 +7,9 @@
 //
 
 #import "EYHomeBackView.h"
+#import "EYHomeBackItemView.h"
 
-@interface EYHomeBackView()
+@interface EYHomeBackView() <EYHomeBackItemViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
@@ -16,12 +17,39 @@
 
 @implementation EYHomeBackView
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+}
+
 + (instancetype)homeBackView {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
 }
 
-- (void)show {
+- (void)showWithArray:(NSArray *)array {
+    EYLog(@"EYHomeBackView----%@", self.scrollView.subviews);
 
+    EYHomeBackItemView *view = nil;
+    CGFloat width = EYScreenWidth*0.2;
+    NSUInteger count = array.count;
+
+    // 创建对应个数的view 展示界面
+    for (int i = 0; i < count; i++) {
+        view = [EYHomeBackItemView homeBackItemView];
+        view.frame = CGRectMake(width * i, 0, width, EYBackViewHeight);
+        view.model = array[i];
+        view.delegate = self;
+        view.backgroundColor = EYRandomColor;
+        [self.scrollView addSubview:view];
+    }
+
+    self.scrollView.contentSize = CGSizeMake(width * count, EYBackViewHeight);
+}
+
+#pragma mark - EYHomeBackItemViewDelegate
+- (void)homeBackItemViewDidClick:(EYHomeBackItemView *)view {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(homeBackViewDidSelectedModel:)]) {
+        [self.delegate homeBackViewDidSelectedModel:view.model];
+    }
 }
 
 @end

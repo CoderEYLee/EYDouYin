@@ -111,3 +111,7 @@ UIKIT_EXTERN NSString *const EYTabbarShouldChangeColorNotification;
 #define EYAppLanguage @"EYAppLanguage"
 
 #define EYLocalized(key) [[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:EYAppLanguage]] ofType:@"lproj"]] localizedStringForKey:(key) value:nil table:nil]
+
+
+#pragma mark - 常量
+#define EYBackViewHeight 100 //首页中, 后面正在直播的 view 高度

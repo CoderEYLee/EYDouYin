@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ii2-Ry-i5K">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii2-Ry-i5K">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
                 </scrollView>
             </subviews>
@@ -32,7 +32,7 @@
             <connections>
                 <outlet property="scrollView" destination="Ii2-Ry-i5K" id="J3B-u5-cOE"/>
             </connections>
-            <point key="canvasLocation" x="-271" y="-157"/>
+            <point key="canvasLocation" x="-52" y="-87"/>
         </view>
     </objects>
 </document>

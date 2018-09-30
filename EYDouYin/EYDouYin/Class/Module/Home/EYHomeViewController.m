@@ -15,15 +15,14 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "AppDelegate.h"
 #import "EYHomeBackView.h"
+#import "EYHomeBackItemModel.h"
 
-#define EYBackViewHeight 100 //后面的 view 的高度
-
-@interface EYHomeViewController () <EYHomeTitleViewDelegate, UIScrollViewDelegate>
+@interface EYHomeViewController () <EYHomeTitleViewDelegate, EYHomeBackViewDelegate, UIScrollViewDelegate>
 
 @property (assign, nonatomic, readwrite) EYHomeViewControllerButtonType type;
 
 // 后面的背景 view
-@property (weak, nonatomic) UIView *backView;
+@property (weak, nonatomic) EYHomeBackView *backView;
 
 // 主页的滚动视图
 @property (weak, nonatomic) UIScrollView *scrollView;
@@ -40,6 +39,7 @@
 // 数据数组
 @property (strong, nonatomic) NSMutableArray *itemArrayM;
 
+@property (strong, nonatomic) NSMutableArray *modelArrayM;
 @end
 
 @implementation EYHomeViewController
@@ -79,6 +79,7 @@
     // 1.底层的 view
     EYHomeBackView *backView = [EYHomeBackView homeBackView];
     backView.frame = CGRectMake(0, EYBackViewHeight, EYScreenWidth, EYBackViewHeight);
+    backView.delegate = self;
     backView.backgroundColor = [UIColor redColor];
     [self.view insertSubview:backView atIndex:0];
     self.backView = backView;
@@ -176,6 +177,8 @@
             view.homeInfoView.hidden = YES;
             view.homeSharedView.hidden = YES;
         }
+
+        [self.backView showWithArray:self.modelArrayM];
     } else {// scrollView恢复原始位置
         [self changeFrameWithPOP:self.backView offsetY:EYBackViewHeight];
         [self changeFrameWithPOP:self.naviBar offsetY:-EYBackViewHeight];
@@ -192,6 +195,11 @@
     POPBasicAnimation * basic = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
     basic.toValue = @(view.center.y + y);
     [view pop_addAnimation:basic forKey:nil];
+}
+
+#pragma mark - EYHomeBackViewDelegate
+- (void)homeBackViewDidSelectedModel:(EYHomeBackItemModel *)model {
+    EYLog(@"----1111--%@-", model);
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -331,6 +339,17 @@
         [self addChildViewController:homeCityViewController];
     }
     return _homeCityView;
+}
+
+- (NSMutableArray *)modelArrayM {
+    if (nil == _modelArrayM) {
+        _modelArrayM = [NSMutableArray array];
+        for (int i = 0; i < 10; i++) {
+            EYHomeBackItemModel * model = [[EYHomeBackItemModel alloc] init];
+            [_modelArrayM addObject:model];
+        }
+    }
+    return _modelArrayM;
 }
 
 #pragma mark - 音量控制
