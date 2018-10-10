@@ -46,7 +46,6 @@
 		6076A16B214A05BF002ED551 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6076A16A214A05BF002ED551 /* MediaPlayer.framework */; };
 		6076A171214A4D26002ED551 /* EYHomeCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A170214A4D26002ED551 /* EYHomeCityViewController.m */; };
 		6076A1792150CFD8002ED551 /* DispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A1782150CFD8002ED551 /* DispatchTimer.m */; };
-		6076A17D2150FBF7002ED551 /* HSPushAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A17C2150FBF7002ED551 /* HSPushAnimation.m */; };
 		6076A1802150FE71002ED551 /* EYHomeWorksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A17F2150FE71002ED551 /* EYHomeWorksViewController.m */; };
 		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
 		60B2FAE4213916270046D13D /* EYHomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAE3213916270046D13D /* EYHomeInfoView.m */; };
@@ -167,8 +166,6 @@
 		6076A173214C8790002ED551 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6076A1772150CFD8002ED551 /* DispatchTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchTimer.h; sourceTree = "<group>"; };
 		6076A1782150CFD8002ED551 /* DispatchTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchTimer.m; sourceTree = "<group>"; };
-		6076A17B2150FBF7002ED551 /* HSPushAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSPushAnimation.h; sourceTree = "<group>"; };
-		6076A17C2150FBF7002ED551 /* HSPushAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSPushAnimation.m; sourceTree = "<group>"; };
 		6076A17E2150FE71002ED551 /* EYHomeWorksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeWorksViewController.h; sourceTree = "<group>"; };
 		6076A17F2150FE71002ED551 /* EYHomeWorksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeWorksViewController.m; sourceTree = "<group>"; };
 		60B2FAC32137D5B40046D13D /* EYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPerson.h; sourceTree = "<group>"; };
@@ -478,7 +475,6 @@
 		6076A1752150CF5E002ED551 /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
-				6076A17A2150FBDF002ED551 /* PushAnimation */,
 				6076A1762150CFD8002ED551 /* DispatchTimer */,
 			);
 			path = ThirdLib;
@@ -491,15 +487,6 @@
 				6076A1782150CFD8002ED551 /* DispatchTimer.m */,
 			);
 			path = DispatchTimer;
-			sourceTree = "<group>";
-		};
-		6076A17A2150FBDF002ED551 /* PushAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				6076A17B2150FBF7002ED551 /* HSPushAnimation.h */,
-				6076A17C2150FBF7002ED551 /* HSPushAnimation.m */,
-			);
-			path = PushAnimation;
 			sourceTree = "<group>";
 		};
 		60B2FAE1213915A00046D13D /* View */ = {
@@ -828,7 +815,6 @@
 				606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */,
 				60BBC68B2104D83400DEEA34 /* EYBaseViewController.m in Sources */,
 				60ED70CA2160BD8500381DBD /* EYHomeBackItemModel.m in Sources */,
-				6076A17D2150FBF7002ED551 /* HSPushAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
