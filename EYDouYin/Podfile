@@ -11,9 +11,9 @@ target 'EYDouYin' do
 
 #   Pods for EYDouYin
 #pod 'AlicloudHTTPDNS', '~> 1.6.11'
-#pod 'ZFPlayer', '3.1.5'
-#pod 'ZFPlayer/ControlView', '~> 3.0'
-#pod 'ZFPlayer/AVPlayer', '~> 3.0'
+pod 'ZFPlayer', '3.1.5'
+pod 'ZFPlayer/ControlView', '~> 3.0'
+pod 'ZFPlayer/AVPlayer', '~> 3.0'
 #pod 'ZFPlayer/ijkplayer', '~> 3.0'
 
 #pod 'MPMoviePlayerController-Subtitles', '~> 2.2.2'

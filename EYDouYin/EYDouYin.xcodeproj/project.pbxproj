@@ -58,6 +58,8 @@
 		60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6902104D9D900DEEA34 /* EYConstant.m */; };
 		60D81BB92132710600456939 /* EYHomeItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D81BB82132710600456939 /* EYHomeItemView.m */; };
 		60D81BBB2132711100456939 /* EYHomeItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D81BBA2132711100456939 /* EYHomeItemView.xib */; };
+		60EBB269216DE0420016ED6D /* EYZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBB268216DE0420016ED6D /* EYZFPlayerControlView.m */; };
+		60EBB26C216DFC680016ED6D /* EYZFPortraitControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBB26B216DFC680016ED6D /* EYZFPortraitControlView.m */; };
 		60ED6DFA215F6DD600381DBD /* openAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60ED6DF9215F6DD600381DBD /* openAnimation.gif */; };
 		60ED6DFC215F6EBB00381DBD /* lastFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = 60ED6DFB215F6EBB00381DBD /* lastFrame.png */; };
 		60ED70C22160987E00381DBD /* EYScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED70C12160987E00381DBD /* EYScrollView.m */; };
@@ -187,6 +189,10 @@
 		60D81BB72132710600456939 /* EYHomeItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeItemView.h; sourceTree = "<group>"; };
 		60D81BB82132710600456939 /* EYHomeItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeItemView.m; sourceTree = "<group>"; };
 		60D81BBA2132711100456939 /* EYHomeItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeItemView.xib; sourceTree = "<group>"; };
+		60EBB267216DE0420016ED6D /* EYZFPlayerControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYZFPlayerControlView.h; sourceTree = "<group>"; };
+		60EBB268216DE0420016ED6D /* EYZFPlayerControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYZFPlayerControlView.m; sourceTree = "<group>"; };
+		60EBB26A216DFC680016ED6D /* EYZFPortraitControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYZFPortraitControlView.h; sourceTree = "<group>"; };
+		60EBB26B216DFC680016ED6D /* EYZFPortraitControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYZFPortraitControlView.m; sourceTree = "<group>"; };
 		60ED6DF9215F6DD600381DBD /* openAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = openAnimation.gif; sourceTree = "<group>"; };
 		60ED6DFB215F6EBB00381DBD /* lastFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lastFrame.png; sourceTree = "<group>"; };
 		60ED70C02160987E00381DBD /* EYScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYScrollView.h; sourceTree = "<group>"; };
@@ -297,6 +303,10 @@
 			children = (
 				601B032021056E4E00489E96 /* EYSendViewController.h */,
 				601B032121056E4E00489E96 /* EYSendViewController.m */,
+				60EBB267216DE0420016ED6D /* EYZFPlayerControlView.h */,
+				60EBB268216DE0420016ED6D /* EYZFPlayerControlView.m */,
+				60EBB26A216DFC680016ED6D /* EYZFPortraitControlView.h */,
+				60EBB26B216DFC680016ED6D /* EYZFPortraitControlView.m */,
 			);
 			path = Send;
 			sourceTree = "<group>";
@@ -756,11 +766,13 @@
 				"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources.sh",
 				"${PODS_ROOT}/GKNavigationBarViewController/GKNavigationBarViewController/GKNavigationBarViewController.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/ZFPlayer/ZFPlayer/Classes/ControlView/ZFPlayer.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GKNavigationBarViewController.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -782,6 +794,7 @@
 				60EE77B62120217D004133A6 /* UIBarButtonItem+EYExtension.m in Sources */,
 				6075416D2104CFE000EB258D /* EYHttpManager.m in Sources */,
 				60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */,
+				60EBB26C216DFC680016ED6D /* EYZFPortraitControlView.m in Sources */,
 				6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */,
 				6075413A2104CC4C00EB258D /* main.m in Sources */,
 				601B032221056E4E00489E96 /* EYSendViewController.m in Sources */,
@@ -812,6 +825,7 @@
 				6076A1692148FB7D002ED551 /* EYHomeItemCommentModel.m in Sources */,
 				6076A1662148FA4D002ED551 /* EYHomeItemLikeModel.m in Sources */,
 				60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */,
+				60EBB269216DE0420016ED6D /* EYZFPlayerControlView.m in Sources */,
 				606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */,
 				60BBC68B2104D83400DEEA34 /* EYBaseViewController.m in Sources */,
 				60ED70CA2160BD8500381DBD /* EYHomeBackItemModel.m in Sources */,
