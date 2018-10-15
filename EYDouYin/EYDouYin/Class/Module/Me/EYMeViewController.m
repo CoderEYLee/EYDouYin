@@ -7,7 +7,6 @@
 //
 
 #import "EYMeViewController.h"
-#import <YYKit.h>
 
 @interface EYMeViewController ()
 

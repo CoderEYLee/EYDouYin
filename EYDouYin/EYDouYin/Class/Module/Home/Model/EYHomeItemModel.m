@@ -17,7 +17,7 @@
 }
 
 - (NSString *)description {
-    return  self.modelDescription;
+    return  self.yy_modelDescription;
 }
 
 @end

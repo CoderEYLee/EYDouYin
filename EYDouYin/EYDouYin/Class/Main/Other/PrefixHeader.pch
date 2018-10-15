@@ -18,7 +18,8 @@
 
 
 #import <AFNetworking.h>
-#import <YYKit.h>
+#import <YYModel.h>
+#import <YYCategories.h>
 #import <MJRefresh.h>
 #import <POP.h>
 #import <UIImage+GIF.h>

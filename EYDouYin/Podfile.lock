@@ -20,9 +20,10 @@ PODS:
   - SDWebImage (5.0.0-beta3):
     - SDWebImage/Core (= 5.0.0-beta3)
   - SDWebImage/Core (5.0.0-beta3)
-  - YYKit (1.0.9):
-    - YYKit/no-arc (= 1.0.9)
-  - YYKit/no-arc (1.0.9)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+  - YYModel (1.0.4)
   - ZFPlayer (3.1.5):
     - ZFPlayer/Core (= 3.1.5)
   - ZFPlayer/AVPlayer (3.1.5):
@@ -37,7 +38,8 @@ DEPENDENCIES:
   - MJRefresh (= 3.1.15.7)
   - pop (= 1.0.10)
   - SDWebImage (~> 5.0.0-beta3)
-  - YYKit (= 1.0.9)
+  - YYCategories (= 1.0.4)
+  - YYModel (= 1.0.4)
   - ZFPlayer (= 3.1.5)
   - ZFPlayer/AVPlayer (~> 3.0)
   - ZFPlayer/ControlView (~> 3.0)
@@ -49,7 +51,8 @@ SPEC REPOS:
     - MJRefresh
     - pop
     - SDWebImage
-    - YYKit
+    - YYCategories
+    - YYModel
     - ZFPlayer
 
 SPEC CHECKSUMS:
@@ -58,9 +61,10 @@ SPEC CHECKSUMS:
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   SDWebImage: e52654ceef9fdc19f4c612d64a5b6d3f05dd81a4
-  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZFPlayer: 8273a62fcc76f451db043ce640434d5f8799c09a
 
-PODFILE CHECKSUM: 315d8f1151720d57d6ca4a46cd74ad0caf8cf7eb
+PODFILE CHECKSUM: 023a55fb090a21107e78449b8029eb11edc830ed
 
 COCOAPODS: 1.6.0.beta.1

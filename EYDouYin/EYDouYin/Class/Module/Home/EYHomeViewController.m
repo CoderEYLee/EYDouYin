@@ -107,7 +107,7 @@
 
     for (int i = 0; i < jsonArray.count; i++) {
         NSDictionary * dictionary = jsonArray[i];
-        [self.itemArrayM addObject:[EYHomeItemModel modelWithDictionary:dictionary]];
+        [self.itemArrayM addObject:[EYHomeItemModel yy_modelWithDictionary:dictionary]];
     }
 }
 
