@@ -6,9 +6,9 @@
 //  Copyright © 2018年 李二洋. All rights reserved.
 //
 
-#import "EYBaseViewController.h"
+#import <GKNavigationBarViewController.h>
 
-@interface EYRootViewController : EYBaseViewController
+@interface EYRootViewController : GKNavigationBarViewController
 
 @property (weak, nonatomic, readonly) UIScrollView * scrollView;
 

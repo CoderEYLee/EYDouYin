@@ -30,8 +30,9 @@
 }
 
 - (void)setupUI {
+    self.gk_navigationBar.hidden = YES;
     //左面view
-    EYFindViewController * findViewController = [[EYFindViewController alloc] init];
+    EYFindViewController *findViewController = [[EYFindViewController alloc] init];
     findViewController.view.frame = EYScreenBounds;
     EYNavigationController *findNaviController = [[EYNavigationController alloc] initWithRootViewController:findViewController];
     [self.scrollView addSubview:findNaviController.view];
