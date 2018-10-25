@@ -13,16 +13,14 @@
 #import "EYMessageViewController.h"
 #import "EYMeViewController.h"
 #import "EYNavigationController.h"
-#import "EYTabBarView.h"
 #import "EYRootViewController.h"
-#import "AppDelegate.h"
 
 @interface EYTabBarController () <EYTabBarViewDelegate>
 
 @end
 
 @implementation EYTabBarController
-
+//@dynamic delegate;
 #pragma mark - Life Cycle
 
 - (void)viewDidLoad {
@@ -82,22 +80,22 @@
     EYNavigationController * homeNavi = self.viewControllers.firstObject;
     EYHomeViewController *homeVC = (EYHomeViewController *)homeNavi.viewControllers.firstObject;
 
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    EYRootViewController * rootViewController = appDelegate.rootViewController;
     if (index == EYTabBarViewTypeHome) {
         if (homeVC.type == EYHomeViewControllerButtonTypeRecommend) {
             tabBarView.backgroundColor = [UIColor clearColor];
         } else {
             tabBarView.backgroundColor = [UIColor blackColor];
         }
-        rootViewController.scrollView.scrollEnabled = YES;
         self.selectedIndex = index;
     } else if (index == EYTabBarViewTypePlus) {//弹出发布界面
         [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
     } else {//禁止滚动
         tabBarView.backgroundColor = [UIColor blackColor];
-        rootViewController.scrollView.scrollEnabled = NO;
         self.selectedIndex = index;
+    }
+
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tabBarControllerDidSelectedIndex:)]) {
+        [self.delegate tabBarControllerDidSelectedIndex:index];
     }
 }
 

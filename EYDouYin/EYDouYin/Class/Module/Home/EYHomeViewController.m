@@ -59,16 +59,10 @@
 
     // 隐藏电池
     [UIApplication sharedApplication].statusBarHidden = YES;
-
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    appDelegate.rootViewController.scrollView.scrollEnabled = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    appDelegate.rootViewController.scrollView.scrollEnabled = NO;
 }
 
 - (void)setupUI {

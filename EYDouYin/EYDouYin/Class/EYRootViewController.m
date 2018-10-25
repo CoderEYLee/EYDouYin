@@ -13,9 +13,11 @@
 #import "EYHomeWorksViewController.h"
 #import "EYScrollView.h"
 
-@interface EYRootViewController () <UIScrollViewDelegate, GKViewControllerPushDelegate>
+@interface EYRootViewController () <UIScrollViewDelegate, GKViewControllerPushDelegate, EYTabBarControllerDelegate>
 
 @property (weak, nonatomic, readwrite) EYScrollView *scrollView;
+
+@property (assign, nonatomic) EYTabBarViewType indexType;
 
 @end
 
@@ -41,6 +43,7 @@
     //主 view
     EYTabBarController * tabbarController = [[EYTabBarController alloc] init];
     tabbarController.view.frame = CGRectMake(EYScreenWidth, 0, EYScreenWidth, EYScreenHeight);
+    tabbarController.delegate = self;
     [self.scrollView addSubview:tabbarController.view];
     [self addChildViewController:tabbarController];
 
@@ -87,10 +90,17 @@
     return _scrollView;
 }
 
+#pragma mark - GKViewControllerPushDelegate
 - (void)pushToNextViewController {
-    EYHomeWorksViewController * vc = [[EYHomeWorksViewController alloc] init];
+    if (self.indexType == EYTabBarViewTypeHome) {
+        EYHomeWorksViewController * vc = [[EYHomeWorksViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
 
-    [self.navigationController pushViewController:vc animated:YES];
+#pragma mark - EYTabBarControllerDelegate
+- (void)tabBarControllerDidSelectedIndex:(EYTabBarViewType)index {
+    self.indexType = index;
 }
 
 #pragma mark - UIScrollViewDelegate

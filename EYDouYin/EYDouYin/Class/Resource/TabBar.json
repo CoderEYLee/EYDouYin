@@ -17,6 +17,6 @@
   },
   {
     "className" : "EYMeViewController",
-    "needNavi" : 0
+    "needNavi" : 1
   }
 ]

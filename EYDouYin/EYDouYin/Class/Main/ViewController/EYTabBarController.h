@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EYTabBarView.h"
+
+@class EYTabBarController;
+
+@protocol EYTabBarControllerDelegate<NSObject>
+@optional
+- (void)tabBarControllerDidSelectedIndex:(EYTabBarViewType)index;
+
+@end
 
 @interface EYTabBarController : UITabBarController
+
+@property (weak, nonatomic) id <EYTabBarControllerDelegate> delegate;
 
 @end

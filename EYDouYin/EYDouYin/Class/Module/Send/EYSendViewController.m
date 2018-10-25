@@ -58,9 +58,6 @@
     self.controlView.portraitControlView.currentTimeLabel.hidden = YES;
     self.controlView.portraitControlView.totalTimeLabel.hidden = YES;
     self.player.controlView = self.controlView;
-//    self.controlView.portraitControlView.backgroundColor = [UIColor whiteColor];
-    //    self.player.currentPlayerManager
-    //    [self.player.currentPlayerManager play];
 }
 
 - (UIView *)containerView {
