@@ -33,6 +33,7 @@
 		60752B3C2181EC78001B857C /* EYMeViewControllerSourceArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */; };
 		60752B3E2182C3F5001B857C /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 60752B3D2182C3F5001B857C /* NullSafe.m */; };
 		60752B422182C533001B857C /* EYSJVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60752B412182C533001B857C /* EYSJVideoPlayerViewController.m */; };
+		60752B472183224E001B857C /* EYZFPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60752B462183224D001B857C /* EYZFPlayerViewController.m */; };
 		6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6075412B2104CC4B00EB258D /* AppDelegate.m */; };
 		607541342104CC4C00EB258D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607541332104CC4C00EB258D /* Assets.xcassets */; };
 		607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607541352104CC4C00EB258D /* LaunchScreen.storyboard */; };
@@ -143,6 +144,8 @@
 		60752B3D2182C3F5001B857C /* NullSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullSafe.m; sourceTree = "<group>"; };
 		60752B402182C533001B857C /* EYSJVideoPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYSJVideoPlayerViewController.h; sourceTree = "<group>"; };
 		60752B412182C533001B857C /* EYSJVideoPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYSJVideoPlayerViewController.m; sourceTree = "<group>"; };
+		60752B452183224D001B857C /* EYZFPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYZFPlayerViewController.h; sourceTree = "<group>"; };
+		60752B462183224D001B857C /* EYZFPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYZFPlayerViewController.m; sourceTree = "<group>"; };
 		607541272104CC4B00EB258D /* EYDouYin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EYDouYin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6075412A2104CC4B00EB258D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6075412B2104CC4B00EB258D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -294,6 +297,7 @@
 				601B032A21056E7700489E96 /* EYMeViewController.m */,
 				60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */,
 				60752B3F2182C500001B857C /* SJVideoPlayer使用 */,
+				60752B4421832233001B857C /* ZFPlayer使用 */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -312,10 +316,6 @@
 			children = (
 				601B032021056E4E00489E96 /* EYSendViewController.h */,
 				601B032121056E4E00489E96 /* EYSendViewController.m */,
-				60EBB267216DE0420016ED6D /* EYZFPlayerControlView.h */,
-				60EBB268216DE0420016ED6D /* EYZFPlayerControlView.m */,
-				60EBB26A216DFC680016ED6D /* EYZFPortraitControlView.h */,
-				60EBB26B216DFC680016ED6D /* EYZFPortraitControlView.m */,
 			);
 			path = Send;
 			sourceTree = "<group>";
@@ -350,6 +350,19 @@
 				60752B412182C533001B857C /* EYSJVideoPlayerViewController.m */,
 			);
 			path = "SJVideoPlayer使用";
+			sourceTree = "<group>";
+		};
+		60752B4421832233001B857C /* ZFPlayer使用 */ = {
+			isa = PBXGroup;
+			children = (
+				60752B452183224D001B857C /* EYZFPlayerViewController.h */,
+				60752B462183224D001B857C /* EYZFPlayerViewController.m */,
+				60EBB267216DE0420016ED6D /* EYZFPlayerControlView.h */,
+				60EBB268216DE0420016ED6D /* EYZFPlayerControlView.m */,
+				60EBB26A216DFC680016ED6D /* EYZFPortraitControlView.h */,
+				60EBB26B216DFC680016ED6D /* EYZFPortraitControlView.m */,
+			);
+			path = "ZFPlayer使用";
 			sourceTree = "<group>";
 		};
 		6075411E2104CC4B00EB258D = {
@@ -821,6 +834,7 @@
 				60752B422182C533001B857C /* EYSJVideoPlayerViewController.m in Sources */,
 				6075416D2104CFE000EB258D /* EYHttpManager.m in Sources */,
 				60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */,
+				60752B472183224E001B857C /* EYZFPlayerViewController.m in Sources */,
 				60EBB26C216DFC680016ED6D /* EYZFPortraitControlView.m in Sources */,
 				6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */,
 				6075413A2104CC4C00EB258D /* main.m in Sources */,

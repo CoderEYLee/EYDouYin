@@ -13,6 +13,12 @@
                 <key>vcName</key>
                 <string>EYSJVideoPlayerViewController</string>
             </dict>
+            <dict>
+                <key>name</key>
+                <string>ZFPlayer使用</string>
+                <key>vcName</key>
+                <string>EYZFPlayerViewController</string>
+            </dict>
         </array>
 	</dict>
 </array>
