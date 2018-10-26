@@ -13,7 +13,7 @@
 #import "EYHomeWorksViewController.h"
 #import "EYScrollView.h"
 
-@interface EYRootViewController () <UIScrollViewDelegate, GKViewControllerPushDelegate, EYTabBarControllerDelegate>
+@interface EYRootViewController () <UIScrollViewDelegate, GKViewControllerPushDelegate, EYTabBarControllerDelegate, UITabBarControllerDelegate>
 
 @property (weak, nonatomic, readwrite) EYScrollView *scrollView;
 

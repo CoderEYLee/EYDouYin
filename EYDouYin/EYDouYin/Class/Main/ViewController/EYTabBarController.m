@@ -20,7 +20,7 @@
 @end
 
 @implementation EYTabBarController
-//@dynamic delegate;
+@dynamic delegate;
 #pragma mark - Life Cycle
 
 - (void)viewDidLoad {

@@ -19,6 +19,6 @@
 
 @interface EYTabBarController : UITabBarController
 
-@property (weak, nonatomic) id <EYTabBarControllerDelegate> delegate;
+@property (nullable, nonatomic, weak) id <EYTabBarControllerDelegate, UITabBarControllerDelegate> delegate;
 
 @end
