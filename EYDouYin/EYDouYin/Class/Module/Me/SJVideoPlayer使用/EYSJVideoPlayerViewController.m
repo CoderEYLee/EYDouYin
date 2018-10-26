@@ -10,23 +10,21 @@
 
 @interface EYSJVideoPlayerViewController ()
 
+@property (strong, nonatomic) SJVideoPlayer *player;
+
 @end
 
 @implementation EYSJVideoPlayerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    SJVideoPlayer *player = [SJVideoPlayer player];
+    player.view.frame = self.view.bounds;
+    [self.view addSubview:player.view];
+    player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:@"http://video.chinlab.com/CLXXXYE1539069802307.mp4"]];
+    player.disableAutoRotation = YES;
+    self.player = player;
 }
-*/
 
 @end

@@ -71,7 +71,12 @@
 }
 
 #pragma mark - UITableViewDelegate
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray *items = [self.array[indexPath.section] valueForKeyPath:@"items"];
+    NSDictionary *item = items[indexPath.row];
+    Class vcClass = NSClassFromString(item[@"vcName"]);
+    [self.navigationController pushViewController:[[vcClass alloc] init] animated:YES];
+}
 
 #pragma mark - 懒加载
 - (UITableView *)tableView {
