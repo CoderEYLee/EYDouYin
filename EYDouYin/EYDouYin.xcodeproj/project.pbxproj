@@ -32,6 +32,7 @@
 		606E6FAA21284FF400ABEB83 /* EYBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606E6FA921284FF400ABEB83 /* EYBaseCollectionViewController.m */; };
 		60752B3C2181EC78001B857C /* EYMeViewControllerSourceArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */; };
 		60752B3E2182C3F5001B857C /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 60752B3D2182C3F5001B857C /* NullSafe.m */; };
+		60752B422182C533001B857C /* EYSJVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60752B412182C533001B857C /* EYSJVideoPlayerViewController.m */; };
 		6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6075412B2104CC4B00EB258D /* AppDelegate.m */; };
 		607541342104CC4C00EB258D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607541332104CC4C00EB258D /* Assets.xcassets */; };
 		607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607541352104CC4C00EB258D /* LaunchScreen.storyboard */; };
@@ -140,6 +141,8 @@
 		606E70BE212C21C500ABEB83 /* EYDouYin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EYDouYin-Bridging-Header.h"; sourceTree = "<group>"; };
 		60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EYMeViewControllerSourceArray.plist; sourceTree = "<group>"; };
 		60752B3D2182C3F5001B857C /* NullSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullSafe.m; sourceTree = "<group>"; };
+		60752B402182C533001B857C /* EYSJVideoPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYSJVideoPlayerViewController.h; sourceTree = "<group>"; };
+		60752B412182C533001B857C /* EYSJVideoPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYSJVideoPlayerViewController.m; sourceTree = "<group>"; };
 		607541272104CC4B00EB258D /* EYDouYin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EYDouYin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6075412A2104CC4B00EB258D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6075412B2104CC4B00EB258D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -290,6 +293,7 @@
 				601B032921056E7700489E96 /* EYMeViewController.h */,
 				601B032A21056E7700489E96 /* EYMeViewController.m */,
 				60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */,
+				60752B3F2182C500001B857C /* SJVideoPlayer使用 */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -337,6 +341,15 @@
 				6055AD3B2116B382005DC856 /* TabBar.json */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		60752B3F2182C500001B857C /* SJVideoPlayer使用 */ = {
+			isa = PBXGroup;
+			children = (
+				60752B402182C533001B857C /* EYSJVideoPlayerViewController.h */,
+				60752B412182C533001B857C /* EYSJVideoPlayerViewController.m */,
+			);
+			path = "SJVideoPlayer使用";
 			sourceTree = "<group>";
 		};
 		6075411E2104CC4B00EB258D = {
@@ -773,12 +786,18 @@
 				"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources.sh",
 				"${PODS_ROOT}/GKNavigationBarViewController/GKNavigationBarViewController/GKNavigationBarViewController.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SJBaseVideoPlayer/SJBaseVideoPlayer/SJVolBrigControl/Resource/SJVolBrigResource.bundle",
+				"${PODS_ROOT}/SJVideoPlayer/SJVideoPlayer/SJEdgeControlLayer/Asset/SJEdgeControlLayer.bundle",
+				"${PODS_ROOT}/SJVideoPlayer/SJVideoPlayer/SJFilmEditingControlLayer/Asset/SJFilmEditing.bundle",
 				"${PODS_ROOT}/ZFPlayer/ZFPlayer/Classes/ControlView/ZFPlayer.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GKNavigationBarViewController.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SJVolBrigResource.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SJEdgeControlLayer.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SJFilmEditing.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -799,6 +818,7 @@
 				601B032B21056E7700489E96 /* EYMeViewController.m in Sources */,
 				60EE77BF21204188004133A6 /* NSObject+EYRuntime.m in Sources */,
 				60EE77B62120217D004133A6 /* UIBarButtonItem+EYExtension.m in Sources */,
+				60752B422182C533001B857C /* EYSJVideoPlayerViewController.m in Sources */,
 				6075416D2104CFE000EB258D /* EYHttpManager.m in Sources */,
 				60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */,
 				60EBB26C216DFC680016ED6D /* EYZFPortraitControlView.m in Sources */,

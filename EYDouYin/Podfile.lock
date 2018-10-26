@@ -15,11 +15,233 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - GKNavigationBarViewController (2.1.2)
+  - Masonry (1.1.0)
   - MJRefresh (3.1.15.7)
   - pop (1.0.10)
+  - Reachability (3.2)
   - SDWebImage (5.0.0-beta3):
     - SDWebImage/Core (= 5.0.0-beta3)
   - SDWebImage/Core (5.0.0-beta3)
+  - SJAttributesFactory (2.0.4)
+  - SJBaseVideoPlayer (1.5.2):
+    - Masonry
+    - Reachability
+    - SJBaseVideoPlayer/Header (= 1.5.2)
+    - SJBaseVideoPlayer/Model (= 1.5.2)
+    - SJBaseVideoPlayer/SJAVMediaPlaybackController (= 1.5.2)
+    - SJBaseVideoPlayer/SJPrompt (= 1.5.2)
+    - SJBaseVideoPlayer/SJRotationManager (= 1.5.2)
+    - SJBaseVideoPlayer/SJVolBrigControl (= 1.5.2)
+    - SJBaseVideoPlayer/Tool (= 1.5.2)
+    - SJObserverHelper
+  - SJBaseVideoPlayer/Header (1.5.2):
+    - Masonry
+    - Reachability
+    - SJObserverHelper
+  - SJBaseVideoPlayer/Model (1.5.2):
+    - Masonry
+    - Reachability
+    - SJBaseVideoPlayer/Header
+    - SJObserverHelper
+  - SJBaseVideoPlayer/SJAVMediaPlaybackController (1.5.2):
+    - Masonry
+    - Reachability
+    - SJBaseVideoPlayer/Header
+    - SJBaseVideoPlayer/Model
+    - SJBaseVideoPlayer/SJAVMediaPlaybackController/Core (= 1.5.2)
+    - SJBaseVideoPlayer/Tool
+    - SJObserverHelper
+  - SJBaseVideoPlayer/SJAVMediaPlaybackController/Core (1.5.2):
+    - Masonry
+    - Reachability
+    - SJBaseVideoPlayer/Header
+    - SJBaseVideoPlayer/Model
+    - SJBaseVideoPlayer/Tool
+    - SJObserverHelper
+  - SJBaseVideoPlayer/SJPrompt (1.5.2):
+    - Masonry
+    - Reachability
+    - SJObserverHelper
+  - SJBaseVideoPlayer/SJRotationManager (1.5.2):
+    - Masonry
+    - Reachability
+    - SJBaseVideoPlayer/Header
+    - SJObserverHelper
+  - SJBaseVideoPlayer/SJVolBrigControl (1.5.2):
+    - Masonry
+    - Reachability
+    - SJBaseVideoPlayer/SJVolBrigControl/Resource (= 1.5.2)
+    - SJObserverHelper
+  - SJBaseVideoPlayer/SJVolBrigControl/Resource (1.5.2):
+    - Masonry
+    - Reachability
+    - SJObserverHelper
+  - SJBaseVideoPlayer/Tool (1.5.2):
+    - Masonry
+    - Reachability
+    - SJObserverHelper
+  - SJFullscreenPopGesture (1.4.6)
+  - SJObserverHelper (1.0.5.1)
+  - SJUIFactory (0.0.16):
+    - SJUIFactory/Category (= 0.0.16)
+  - SJUIFactory/Category (0.0.16)
+  - SJVideoPlayer (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+    - SJVideoPlayer/Settings (= 2.1.6)
+    - SJVideoPlayer/SJEdgeControlLayer (= 2.1.6)
+    - SJVideoPlayer/SJEdgeLightweightControlLayer (= 2.1.6)
+    - SJVideoPlayer/SJFilmEditingControlLayer (= 2.1.6)
+    - SJVideoPlayer/SJLoadingView (= 2.1.6)
+    - SJVideoPlayer/SJProgressSlider (= 2.1.6)
+    - SJVideoPlayer/Switcher (= 2.1.6)
+  - SJVideoPlayer/Settings (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+    - SJVideoPlayer/SJEdgeControlLayer/Asset
+    - SJVideoPlayer/SJFilmEditingControlLayer/Asset
+  - SJVideoPlayer/SJEdgeControlLayer (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+    - SJVideoPlayer/SJEdgeControlLayer/Asset (= 2.1.6)
+    - SJVideoPlayer/SJEdgeControlLayer/EdgeViews (= 2.1.6)
+    - SJVideoPlayer/SJEdgeControlLayer/MaskView (= 2.1.6)
+    - SJVideoPlayer/SJEdgeControlLayer/MoreSetting (= 2.1.6)
+    - SJVideoPlayer/SJLoadingView
+    - SJVideoPlayer/SJProgressSlider
+  - SJVideoPlayer/SJEdgeControlLayer/Asset (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+    - SJVideoPlayer/SJLoadingView
+    - SJVideoPlayer/SJProgressSlider
+  - SJVideoPlayer/SJEdgeControlLayer/EdgeViews (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+    - SJVideoPlayer/SJEdgeControlLayer/Asset
+    - SJVideoPlayer/SJEdgeControlLayer/MaskView
+    - SJVideoPlayer/SJLoadingView
+    - SJVideoPlayer/SJProgressSlider
+  - SJVideoPlayer/SJEdgeControlLayer/MaskView (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+    - SJVideoPlayer/SJLoadingView
+    - SJVideoPlayer/SJProgressSlider
+  - SJVideoPlayer/SJEdgeControlLayer/MoreSetting (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+    - SJVideoPlayer/SJEdgeControlLayer/Asset
+    - SJVideoPlayer/SJLoadingView
+    - SJVideoPlayer/SJProgressSlider
+  - SJVideoPlayer/SJEdgeLightweightControlLayer (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+    - SJVideoPlayer/SJEdgeControlLayer/Asset
+    - SJVideoPlayer/SJEdgeControlLayer/MaskView
+    - SJVideoPlayer/SJEdgeLightweightControlLayer/LightweightControlView (= 2.1.6)
+    - SJVideoPlayer/SJLoadingView
+    - SJVideoPlayer/SJProgressSlider
+  - SJVideoPlayer/SJEdgeLightweightControlLayer/LightweightControlView (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+    - SJVideoPlayer/SJEdgeControlLayer/Asset
+    - SJVideoPlayer/SJEdgeControlLayer/MaskView
+    - SJVideoPlayer/SJLoadingView
+    - SJVideoPlayer/SJProgressSlider
+  - SJVideoPlayer/SJFilmEditingControlLayer (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+    - SJVideoPlayer/SJFilmEditingControlLayer/Asset (= 2.1.6)
+    - SJVideoPlayer/SJFilmEditingControlLayer/Category (= 2.1.6)
+    - SJVideoPlayer/SJFilmEditingControlLayer/Header (= 2.1.6)
+    - SJVideoPlayer/SJFilmEditingControlLayer/Result (= 2.1.6)
+    - SJVideoPlayer/SJFilmEditingControlLayer/View (= 2.1.6)
+    - SJVideoPlayer/SJProgressSlider
+  - SJVideoPlayer/SJFilmEditingControlLayer/Asset (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+    - SJVideoPlayer/SJFilmEditingControlLayer/Header
+    - SJVideoPlayer/SJProgressSlider
+  - SJVideoPlayer/SJFilmEditingControlLayer/Category (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+    - SJVideoPlayer/SJProgressSlider
+  - SJVideoPlayer/SJFilmEditingControlLayer/Header (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+    - SJVideoPlayer/SJProgressSlider
+  - SJVideoPlayer/SJFilmEditingControlLayer/Result (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+    - SJVideoPlayer/SJFilmEditingControlLayer/Header
+    - SJVideoPlayer/SJProgressSlider
+  - SJVideoPlayer/SJFilmEditingControlLayer/View (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+    - SJVideoPlayer/SJFilmEditingControlLayer/Header
+    - SJVideoPlayer/SJProgressSlider
+  - SJVideoPlayer/SJLoadingView (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+  - SJVideoPlayer/SJProgressSlider (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
+  - SJVideoPlayer/Switcher (2.1.6):
+    - Masonry
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJUIFactory
   - YYCache (1.0.4)
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
@@ -39,6 +261,7 @@ DEPENDENCIES:
   - MJRefresh (= 3.1.15.7)
   - pop (= 1.0.10)
   - SDWebImage (~> 5.0.0-beta3)
+  - SJVideoPlayer (~> 2.1.6)
   - YYCache (= 1.0.4)
   - YYCategories (= 1.0.4)
   - YYModel (= 1.0.4)
@@ -50,9 +273,17 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - GKNavigationBarViewController
+    - Masonry
     - MJRefresh
     - pop
+    - Reachability
     - SDWebImage
+    - SJAttributesFactory
+    - SJBaseVideoPlayer
+    - SJFullscreenPopGesture
+    - SJObserverHelper
+    - SJUIFactory
+    - SJVideoPlayer
     - YYCache
     - YYCategories
     - YYModel
@@ -61,14 +292,22 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   GKNavigationBarViewController: a9a6ca818de0ea32697ccb3c0ce8ad00910cea40
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: e52654ceef9fdc19f4c612d64a5b6d3f05dd81a4
+  SJAttributesFactory: 844e18f8a1a8f974ad32e7d93b5bf3bc064f1bd7
+  SJBaseVideoPlayer: fb429cbbea1ce4567ceecea3e50faf08b7375e06
+  SJFullscreenPopGesture: 94db6f970d864d53161d819916aed3f30b6a1442
+  SJObserverHelper: b8dcf2653dca2538bb601f558bde72c229e08737
+  SJUIFactory: b3e973c5e2ae08bc5a1bd2c68d94c00f81e01a0b
+  SJVideoPlayer: bf67108f465f280c1013ee670def876c96268715
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZFPlayer: 8273a62fcc76f451db043ce640434d5f8799c09a
 
-PODFILE CHECKSUM: 8e4d6569572da608d919d18e5bf5c81b7201e35f
+PODFILE CHECKSUM: 9aca6934d58144990b7dd5a429d175a522e8d697
 
 COCOAPODS: 1.6.0.beta.1

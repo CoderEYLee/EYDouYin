@@ -9,9 +9,9 @@
         <array>
             <dict>
                 <key>name</key>
-                <string>YYModel使用</string>
+                <string>SJVideoPlayer使用</string>
                 <key>vcName</key>
-                <string>ViewController</string>
+                <string>EYSJVideoPlayerViewController</string>
             </dict>
         </array>
 	</dict>

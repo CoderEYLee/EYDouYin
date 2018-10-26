@@ -70,6 +70,9 @@
     return [self.array valueForKeyPath:@"groupName"];
 }
 
+#pragma mark - UITableViewDelegate
+
+
 #pragma mark - 懒加载
 - (UITableView *)tableView {
     if (_tableView == nil) {
