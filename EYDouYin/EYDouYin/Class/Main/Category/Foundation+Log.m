@@ -2,8 +2,7 @@
 #import <Foundation/Foundation.h>
 
 @implementation NSDictionary (Log)
-- (NSString *)descriptionWithLocale:(id)locale
-{
+- (NSString *)descriptionWithLocale:(id)locale {
     NSMutableString *str = [NSMutableString string];
     
     [str appendString:@"{\n"];
@@ -27,8 +26,7 @@
 @end
 
 @implementation NSArray (Log)
-- (NSString *)descriptionWithLocale:(id)locale
-{
+- (NSString *)descriptionWithLocale:(id)locale {
     NSMutableString *str = [NSMutableString string];
     
     [str appendString:@"[\n"];

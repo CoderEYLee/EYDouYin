@@ -93,7 +93,7 @@
 
 - (void)loadNetData {
     NSString *jsonName = @"Items.json";
-    NSArray *jsonArray = jsonName.ey_loadLocalFile;
+    NSArray *jsonArray = jsonName.ey_loadLocalJSONFile;
 
     if (jsonArray.count < 3) {
         return;

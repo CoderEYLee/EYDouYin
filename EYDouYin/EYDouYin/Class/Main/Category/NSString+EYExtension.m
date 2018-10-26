@@ -10,8 +10,7 @@
 
 @implementation NSString (EYExtension)
 
-- (nullable id)ey_loadLocalFile
-{
+- (nullable id)ey_loadLocalJSONFile {
     NSData * data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:self ofType:nil]];
     if (data) {
         NSError *error;
@@ -21,6 +20,15 @@
         }
     }
     return nil;
+}
+
+- (nullable NSArray *)ey_loadLocalPlistFileArray; {
+    
+    return [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:self ofType:nil]];
+}
+
+- (nullable NSDictionary *)ey_loadLocalPlistFileDictionary {
+    return [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:self ofType:nil]];
 }
 
 @end

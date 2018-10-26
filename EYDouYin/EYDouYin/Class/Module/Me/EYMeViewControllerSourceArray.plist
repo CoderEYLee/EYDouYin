@@ -3,10 +3,17 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>title</key>
-		<string>1</string>
-		<key>vcName</key>
-		<string>1</string>
+		<key>groupName</key>
+		<string>三方框架使用</string>
+		<key>items</key>
+        <array>
+            <dict>
+                <key>name</key>
+                <string>YYModel使用</string>
+                <key>vcName</key>
+                <string>ViewController</string>
+            </dict>
+        </array>
 	</dict>
 </array>
 </plist>

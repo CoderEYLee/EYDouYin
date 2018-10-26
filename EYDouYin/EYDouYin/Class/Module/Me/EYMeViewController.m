@@ -23,7 +23,7 @@
 
     self.view.backgroundColor = EYRandomColor;
     EYLog(@"EYMeViewController--viewDidLoad");
-    self.array = @[@"1", @"2"];
+    self.array = @"EYMeViewControllerSourceArray.plist".ey_loadLocalPlistFileArray;
     [self.tableView reloadData];
  }
 
@@ -38,11 +38,11 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.array.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.array.count;
+    return [[self.array[section] valueForKeyPath:@"items"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -50,20 +50,30 @@
 
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
 
-    if (cell == nil)
-    {
+    if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
 
-    cell.backgroundColor = [UIColor redColor];
+    NSArray *items = [self.array[indexPath.section] valueForKeyPath:@"items"];
+    NSDictionary *item = items[indexPath.row];
+    cell.textLabel.text = item[@"name"];
 
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSDictionary *group = self.array[section];
+    return group[@"groupName"];
+}
+
+- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return [self.array valueForKeyPath:@"groupName"];
 }
 
 #pragma mark - 懒加载
 - (UITableView *)tableView {
     if (_tableView == nil) {
-        UITableView * tableView = [[UITableView alloc] initWithFrame:EYScreenBounds style:UITableViewStylePlain];
+        UITableView * tableView = [[UITableView alloc] initWithFrame:EYScreenBounds style:UITableViewStyleGrouped];
         if (@available(iOS 11.0, *)) {
             tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         } else {

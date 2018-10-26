@@ -31,6 +31,7 @@
 		606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606E6FA621284FD900ABEB83 /* EYBaseTableViewController.m */; };
 		606E6FAA21284FF400ABEB83 /* EYBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606E6FA921284FF400ABEB83 /* EYBaseCollectionViewController.m */; };
 		60752B3C2181EC78001B857C /* EYMeViewControllerSourceArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */; };
+		60752B3E2182C3F5001B857C /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 60752B3D2182C3F5001B857C /* NullSafe.m */; };
 		6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6075412B2104CC4B00EB258D /* AppDelegate.m */; };
 		607541342104CC4C00EB258D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607541332104CC4C00EB258D /* Assets.xcassets */; };
 		607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607541352104CC4C00EB258D /* LaunchScreen.storyboard */; };
@@ -138,6 +139,7 @@
 		606E6FA921284FF400ABEB83 /* EYBaseCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYBaseCollectionViewController.m; sourceTree = "<group>"; };
 		606E70BE212C21C500ABEB83 /* EYDouYin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EYDouYin-Bridging-Header.h"; sourceTree = "<group>"; };
 		60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = EYMeViewControllerSourceArray.plist; sourceTree = "<group>"; };
+		60752B3D2182C3F5001B857C /* NullSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullSafe.m; sourceTree = "<group>"; };
 		607541272104CC4B00EB258D /* EYDouYin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EYDouYin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6075412A2104CC4B00EB258D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6075412B2104CC4B00EB258D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				6075416E2104D15F00EB258D /* Foundation+Log.m */,
+				60752B3D2182C3F5001B857C /* NullSafe.m */,
 				6055AD362116933E005DC856 /* UIView+Extension.h */,
 				6055AD372116933E005DC856 /* UIView+Extension.m */,
 				6055AD3D2116B929005DC856 /* NSString+EYExtension.h */,
@@ -801,6 +804,7 @@
 				60EBB26C216DFC680016ED6D /* EYZFPortraitControlView.m in Sources */,
 				6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */,
 				6075413A2104CC4C00EB258D /* main.m in Sources */,
+				60752B3E2182C3F5001B857C /* NullSafe.m in Sources */,
 				601B032221056E4E00489E96 /* EYSendViewController.m in Sources */,
 				601B032521056E5F00489E96 /* EYHomeViewController.m in Sources */,
 				606E6FA3212813CA00ABEB83 /* EYLikeCell.m in Sources */,

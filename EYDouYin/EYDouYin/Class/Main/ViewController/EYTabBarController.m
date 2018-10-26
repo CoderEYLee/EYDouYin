@@ -43,7 +43,7 @@
 #pragma mark - 初始化 UI
 - (void)setupViewController {
     NSString * jsonName = @"TabBar.json";
-    NSArray *array = jsonName.ey_loadLocalFile;
+    NSArray *array = jsonName.ey_loadLocalJSONFile;
     
     for (NSDictionary * dictionary in array) {
         UIViewController * viewController = [[NSClassFromString(dictionary[@"className"]) alloc] init];

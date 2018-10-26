@@ -11,10 +11,25 @@
 @interface NSString (EYExtension)
 
 /**
+ 加载本地的 JSON 文件
  根据文件全名在 MainBundle 中查询,并且序列化返回
  如果查询不到该文件返回nil
  @return 文件中的信息
  */
-- (nullable id)ey_loadLocalFile;
+- (nullable id)ey_loadLocalJSONFile;
+
+/**
+ 加载本地的 Plist 文件
+ 如果查询不到该文件返回nil
+ @return 数组对象
+ */
+- (nullable NSArray *)ey_loadLocalPlistFileArray;
+
+/**
+ 加载本地的 Plist 文件
+ 如果查询不到该文件返回nil
+ @return 字典对象
+ */
+- (nullable NSDictionary *)ey_loadLocalPlistFileDictionary;
 
 @end
