@@ -10,12 +10,20 @@
 #import "EYWaterflowLayout.h"
 #import "EYShop.h"
 #import "EYShopCell.h"
+#import "EYWaterflowView.h"
+#include "EYWaterflowViewCell.h"
 
-@interface EYWaterFallViewController () <UICollectionViewDataSource, UICollectionViewDelegate, EYWaterflowLayoutDelegate>
+@interface EYWaterFallViewController () <UICollectionViewDataSource, UICollectionViewDelegate, EYWaterflowLayoutDelegate, EYWaterflowViewDataSource, EYWaterflowViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
+
+// 方式一
 @property (nonatomic, weak) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *shops;
+
+// 方式二
+@property (weak, nonatomic) EYWaterflowView * waterflowView;
+
 @end
 
 @implementation EYWaterFallViewController
@@ -25,12 +33,22 @@ static NSString *const ID = @"EYWaterFallViewControllerCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    // 方式一: UICollectionView控件, 通过布局实现效果
+    [self setupConllectionView];
+
+    // 方式二: 自定义继承 UIScrollView 的EYWaterflowView控件,
+    [self setupWaterflowView];
+    self.collectionView.hidden = NO;
+    self.waterflowView.hidden = YES;
+}
+
+- (void)setupConllectionView {
     EYWaterflowLayout *layout = [[EYWaterflowLayout alloc] init];
     layout.delegate = self;
-//    layout.sectionInset = UIEdgeInsetsMake(100, 20, 20, 30);
+    //    layout.sectionInset = UIEdgeInsetsMake(100, 20, 20, 30);
     layout.columnMargin = 20;
-//    layout.rowMargin = 30;
-//    layout.columnsCount = 4;
+    //    layout.rowMargin = 30;
+    //    layout.columnsCount = 4;
 
     // 2.创建UICollectionView
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight) collectionViewLayout:layout];
@@ -71,8 +89,46 @@ static NSString *const ID = @"EYWaterFallViewControllerCell";
     return cell;
 }
 
-- (IBAction)tapSegmentedControl:(UISegmentedControl *)sender {
+- (void)setupWaterflowView {
+    EYWaterflowView *waterflowView = [[EYWaterflowView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight)];
+    waterflowView.dataSource = self;
+    waterflowView.delegate = self;
+    [self.view addSubview:waterflowView];
+    self.waterflowView = waterflowView;
+}
 
+#pragma mark - EYWaterflowViewDataSource
+- (NSUInteger)numberOfCellsInWaterflowView:(EYWaterflowView *)waterflowView {
+    return 100;
+}
+
+- (EYWaterflowViewCell *)waterflowView:(EYWaterflowView *)waterflowView cellAtIndex:(NSUInteger)index {
+    static NSString * cellID = @"cellID";
+
+    EYWaterflowViewCell * cell = [waterflowView dequeueReusableCellWithIdentifier:cellID];
+    if (cell == nil) {
+        cell = [[EYWaterflowViewCell alloc] initWithReuseIdentifier:cellID];
+
+        cell.backgroundColor = [UIColor redColor];
+    }
+
+    return cell;
+}
+
+#pragma mark - EYWaterflowViewDelegate
+- (CGFloat)waterflowView:(EYWaterflowView *)waterflowView heightAtIndex:(NSUInteger)index {
+    return 100 + arc4random_uniform(100);
+}
+
+- (IBAction)tapSegmentedControl:(UISegmentedControl *)sender {
+    NSLog(@"---%ld", sender.selectedSegmentIndex);
+    if (sender.selectedSegmentIndex == 0) {
+        self.collectionView.hidden = NO;
+        self.waterflowView.hidden = YES;
+    } else {
+        self.collectionView.hidden = YES;
+        self.waterflowView.hidden = NO;
+    }
 }
 
 #pragma mark - 懒加载

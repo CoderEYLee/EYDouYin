@@ -42,6 +42,8 @@
 		60752B682186F3CE001B857C /* EYShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 60752B672186F3CE001B857C /* EYShop.m */; };
 		60752B6C2186F49A001B857C /* EYShopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60752B6A2186F49A001B857C /* EYShopCell.m */; };
 		60752B6D2186F49A001B857C /* EYShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60752B6B2186F49A001B857C /* EYShopCell.xib */; };
+		60752B75218717B8001B857C /* EYWaterflowViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60752B74218717B8001B857C /* EYWaterflowViewCell.m */; };
+		60752B7821871838001B857C /* EYWaterflowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60752B7721871838001B857C /* EYWaterflowView.m */; };
 		6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6075412B2104CC4B00EB258D /* AppDelegate.m */; };
 		607541342104CC4C00EB258D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607541332104CC4C00EB258D /* Assets.xcassets */; };
 		607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607541352104CC4C00EB258D /* LaunchScreen.storyboard */; };
@@ -167,6 +169,10 @@
 		60752B692186F49A001B857C /* EYShopCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYShopCell.h; sourceTree = "<group>"; };
 		60752B6A2186F49A001B857C /* EYShopCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYShopCell.m; sourceTree = "<group>"; };
 		60752B6B2186F49A001B857C /* EYShopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYShopCell.xib; sourceTree = "<group>"; };
+		60752B73218717B8001B857C /* EYWaterflowViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYWaterflowViewCell.h; sourceTree = "<group>"; };
+		60752B74218717B8001B857C /* EYWaterflowViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYWaterflowViewCell.m; sourceTree = "<group>"; };
+		60752B7621871838001B857C /* EYWaterflowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYWaterflowView.h; sourceTree = "<group>"; };
+		60752B7721871838001B857C /* EYWaterflowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYWaterflowView.m; sourceTree = "<group>"; };
 		607541272104CC4B00EB258D /* EYDouYin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EYDouYin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6075412A2104CC4B00EB258D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6075412B2104CC4B00EB258D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -400,9 +406,18 @@
 		60752B4C2186DFC2001B857C /* 瀑布流 */ = {
 			isa = PBXGroup;
 			children = (
+				60752B6E21871763001B857C /* 方式一 */,
+				60752B6F21871778001B857C /* 方式二 */,
 				60752B502186E205001B857C /* EYWaterFallViewController.h */,
 				60752B512186E205001B857C /* EYWaterFallViewController.m */,
 				60752B522186E205001B857C /* EYWaterFallViewController.xib */,
+			);
+			path = "瀑布流";
+			sourceTree = "<group>";
+		};
+		60752B6E21871763001B857C /* 方式一 */ = {
+			isa = PBXGroup;
+			children = (
 				60752B582186E39C001B857C /* EYWaterflowLayout.h */,
 				60752B592186E39C001B857C /* EYWaterflowLayout.m */,
 				60752B662186F3CE001B857C /* EYShop.h */,
@@ -412,7 +427,18 @@
 				60752B6B2186F49A001B857C /* EYShopCell.xib */,
 				60752B632186F230001B857C /* Shops.plist */,
 			);
-			path = "瀑布流";
+			path = "方式一";
+			sourceTree = "<group>";
+		};
+		60752B6F21871778001B857C /* 方式二 */ = {
+			isa = PBXGroup;
+			children = (
+				60752B7621871838001B857C /* EYWaterflowView.h */,
+				60752B7721871838001B857C /* EYWaterflowView.m */,
+				60752B73218717B8001B857C /* EYWaterflowViewCell.h */,
+				60752B74218717B8001B857C /* EYWaterflowViewCell.m */,
+			);
+			path = "方式二";
 			sourceTree = "<group>";
 		};
 		6075411E2104CC4B00EB258D = {
@@ -880,6 +906,7 @@
 			files = (
 				60ED70C52160B0EF00381DBD /* EYHomeBackItemView.m in Sources */,
 				6055AD382116933E005DC856 /* UIView+Extension.m in Sources */,
+				60752B7821871838001B857C /* EYWaterflowView.m in Sources */,
 				6076A1622148F696002ED551 /* EYHomeItemModel.m in Sources */,
 				601B032B21056E7700489E96 /* EYMeViewController.m in Sources */,
 				60EE77BF21204188004133A6 /* NSObject+EYRuntime.m in Sources */,
@@ -921,6 +948,7 @@
 				60BBC6892104D83400DEEA34 /* EYNavigationController.m in Sources */,
 				601B032821056E6900489E96 /* EYLikeViewController.m in Sources */,
 				60BBC68E2104D8D200DEEA34 /* EYRootViewController.m in Sources */,
+				60752B75218717B8001B857C /* EYWaterflowViewCell.m in Sources */,
 				6076A1792150CFD8002ED551 /* DispatchTimer.m in Sources */,
 				6076A1692148FB7D002ED551 /* EYHomeItemCommentModel.m in Sources */,
 				6076A1662148FA4D002ED551 /* EYHomeItemLikeModel.m in Sources */,
