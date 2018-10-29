@@ -21,5 +21,18 @@
             </dict>
         </array>
 	</dict>
+    <dict>
+        <key>groupName</key>
+        <string>基础知识使用</string>
+        <key>items</key>
+        <array>
+            <dict>
+                <key>name</key>
+                <string>iOS 锁使用</string>
+                <key>vcName</key>
+                <string>EYIOSLockViewController</string>
+            </dict>
+        </array>
+    </dict>
 </array>
 </plist>

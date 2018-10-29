@@ -34,6 +34,7 @@
 		60752B3E2182C3F5001B857C /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 60752B3D2182C3F5001B857C /* NullSafe.m */; };
 		60752B422182C533001B857C /* EYSJVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60752B412182C533001B857C /* EYSJVideoPlayerViewController.m */; };
 		60752B472183224E001B857C /* EYZFPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60752B462183224D001B857C /* EYZFPlayerViewController.m */; };
+		60752B4B2186A3B9001B857C /* EYIOSLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60752B4A2186A3B9001B857C /* EYIOSLockViewController.m */; };
 		6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6075412B2104CC4B00EB258D /* AppDelegate.m */; };
 		607541342104CC4C00EB258D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607541332104CC4C00EB258D /* Assets.xcassets */; };
 		607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607541352104CC4C00EB258D /* LaunchScreen.storyboard */; };
@@ -146,6 +147,8 @@
 		60752B412182C533001B857C /* EYSJVideoPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYSJVideoPlayerViewController.m; sourceTree = "<group>"; };
 		60752B452183224D001B857C /* EYZFPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYZFPlayerViewController.h; sourceTree = "<group>"; };
 		60752B462183224D001B857C /* EYZFPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYZFPlayerViewController.m; sourceTree = "<group>"; };
+		60752B492186A3B9001B857C /* EYIOSLockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYIOSLockViewController.h; sourceTree = "<group>"; };
+		60752B4A2186A3B9001B857C /* EYIOSLockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYIOSLockViewController.m; sourceTree = "<group>"; };
 		607541272104CC4B00EB258D /* EYDouYin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EYDouYin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6075412A2104CC4B00EB258D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6075412B2104CC4B00EB258D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -298,6 +301,7 @@
 				60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */,
 				60752B3F2182C500001B857C /* SJVideoPlayer使用 */,
 				60752B4421832233001B857C /* ZFPlayer使用 */,
+				60752B482186A37A001B857C /* iOS锁使用 */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -363,6 +367,15 @@
 				60EBB26B216DFC680016ED6D /* EYZFPortraitControlView.m */,
 			);
 			path = "ZFPlayer使用";
+			sourceTree = "<group>";
+		};
+		60752B482186A37A001B857C /* iOS锁使用 */ = {
+			isa = PBXGroup;
+			children = (
+				60752B492186A3B9001B857C /* EYIOSLockViewController.h */,
+				60752B4A2186A3B9001B857C /* EYIOSLockViewController.m */,
+			);
+			path = "iOS锁使用";
 			sourceTree = "<group>";
 		};
 		6075411E2104CC4B00EB258D = {
@@ -847,6 +860,7 @@
 				604D55612139325900F83249 /* EYHomeTitleView.m in Sources */,
 				60D81BB92132710600456939 /* EYHomeItemView.m in Sources */,
 				601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */,
+				60752B4B2186A3B9001B857C /* EYIOSLockViewController.m in Sources */,
 				6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */,
 				606E6FAA21284FF400ABEB83 /* EYBaseCollectionViewController.m in Sources */,
 				60B2FAE92139167C0046D13D /* EYHomeSharedView.m in Sources */,
