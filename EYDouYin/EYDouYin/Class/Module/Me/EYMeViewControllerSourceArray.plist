@@ -32,6 +32,12 @@
                 <key>vcName</key>
                 <string>EYIOSLockViewController</string>
             </dict>
+            <dict>
+                <key>name</key>
+                <string>瀑布流使用</string>
+                <key>vcName</key>
+                <string>EYWaterFallViewController</string>
+            </dict>
         </array>
     </dict>
 </array>

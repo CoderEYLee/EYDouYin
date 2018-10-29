@@ -60,6 +60,7 @@
     UINavigationBar * naviBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, EYStatusBarHeight, EYScreenWidth, EYStatusBarAndNaviBarHeight - EYStatusBarHeight)];
     [naviBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [naviBar setShadowImage:[UIImage new]];
+    naviBar.hidden = YES;
     [self.view addSubview:naviBar];
     self.naviBar = naviBar;
 }

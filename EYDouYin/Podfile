@@ -26,6 +26,7 @@ pod 'YYModel', '1.0.4'
 pod 'YYCategories', '1.0.4'
 pod 'YYCache', '1.0.4'
 pod 'MJRefresh', '3.1.15.7'
+pod 'MJExtension', '3.0.15.1'
 pod 'pop', '1.0.10'
 pod 'SDWebImage', '~> 5.0.0-beta3'
 pod 'GKNavigationBarViewController', '~> 2.1.2' #抖音的左滑 push 效果

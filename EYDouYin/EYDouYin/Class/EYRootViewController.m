@@ -101,6 +101,13 @@
 #pragma mark - EYTabBarControllerDelegate
 - (void)tabBarControllerDidSelectedIndex:(EYTabBarViewType)index {
     self.indexType = index;
+    if (index == EYTabBarViewTypeHome) {
+        self.scrollView.scrollEnabled = YES;
+    } else if (index == EYTabBarViewTypePlus) {
+
+    } else {
+        self.scrollView.scrollEnabled = NO;
+    }
 }
 
 #pragma mark - UIScrollViewDelegate

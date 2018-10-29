@@ -20,16 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.view.backgroundColor = EYRandomColor;
-    EYLog(@"EYMeViewController--viewDidLoad");
+    
     self.array = @"EYMeViewControllerSourceArray.plist".ey_loadLocalPlistFileArray;
     [self.tableView reloadData];
  }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.naviBar.backgroundColor = [UIColor greenColor];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

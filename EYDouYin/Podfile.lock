@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - GKNavigationBarViewController (2.1.2)
   - Masonry (1.1.0)
+  - MJExtension (3.0.15.1)
   - MJRefresh (3.1.15.7)
   - pop (1.0.10)
   - Reachability (3.2)
@@ -258,6 +259,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (= 3.2.1)
   - GKNavigationBarViewController (~> 2.1.2)
+  - MJExtension (= 3.0.15.1)
   - MJRefresh (= 3.1.15.7)
   - pop (= 1.0.10)
   - SDWebImage (~> 5.0.0-beta3)
@@ -274,6 +276,7 @@ SPEC REPOS:
     - AFNetworking
     - GKNavigationBarViewController
     - Masonry
+    - MJExtension
     - MJRefresh
     - pop
     - Reachability
@@ -293,6 +296,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   GKNavigationBarViewController: a9a6ca818de0ea32697ccb3c0ce8ad00910cea40
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
@@ -308,6 +312,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZFPlayer: 8273a62fcc76f451db043ce640434d5f8799c09a
 
-PODFILE CHECKSUM: 9aca6934d58144990b7dd5a429d175a522e8d697
+PODFILE CHECKSUM: 47113ae1042499c494b4779aafbbebb47f766646
 
 COCOAPODS: 1.6.0.beta.1
