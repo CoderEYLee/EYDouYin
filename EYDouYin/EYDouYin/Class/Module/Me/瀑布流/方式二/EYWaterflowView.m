@@ -10,7 +10,7 @@
 #import "EYWaterflowViewCell.h"
 
 #define EYWaterflowViewDefaultCellH 70
-#define EYWaterflowViewDefaultMargin 8
+#define EYWaterflowViewDefaultMargin 10
 #define EYWaterflowViewDefaultNumberOfColumns 3
 
 @interface EYWaterflowView()

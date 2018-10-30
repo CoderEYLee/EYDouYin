@@ -19,10 +19,11 @@
 
 // 方式一
 @property (nonatomic, weak) UICollectionView *collectionView;
-@property (nonatomic, strong) NSMutableArray *shops;
+@property (nonatomic, strong) NSMutableArray *collectionViewShops;
 
 // 方式二
 @property (weak, nonatomic) EYWaterflowView * waterflowView;
+@property (nonatomic, strong) NSMutableArray *waterflowViewShops;
 
 @end
 
@@ -34,72 +35,51 @@ static NSString *const ID = @"EYWaterFallViewControllerCell";
     [super viewDidLoad];
 
     // 方式一: UICollectionView控件, 通过布局实现效果
-    [self setupConllectionView];
+    self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMorecollectionViewShops)];
+    self.collectionView.hidden = NO;
 
     // 方式二: 自定义继承 UIScrollView 的EYWaterflowView控件,
-    [self setupWaterflowView];
-    self.collectionView.hidden = NO;
+    self.waterflowView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMorewaterflowViewShops)];
     self.waterflowView.hidden = YES;
 }
 
-- (void)setupConllectionView {
-    EYWaterflowLayout *layout = [[EYWaterflowLayout alloc] init];
-    layout.delegate = self;
-    //    layout.sectionInset = UIEdgeInsetsMake(100, 20, 20, 30);
-    layout.columnMargin = 20;
-    //    layout.rowMargin = 30;
-    //    layout.columnsCount = 4;
-
-    // 2.创建UICollectionView
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight) collectionViewLayout:layout];
-    collectionView.backgroundColor = [UIColor whiteColor];
-    collectionView.dataSource = self;
-    collectionView.delegate = self;
-    [collectionView registerNib:[UINib nibWithNibName:@"EYShopCell" bundle:nil] forCellWithReuseIdentifier:ID];
-    [self.view addSubview:collectionView];
-    self.collectionView = collectionView;
-
-    // 3.增加刷新控件
-    self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreShops)];
-}
-
-- (void)loadMoreShops {
+- (void)loadMorecollectionViewShops {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.shops addObjectsFromArray:self.shops];
+        [self.collectionViewShops addObjectsFromArray:self.collectionViewShops];
         [self.collectionView reloadData];
         [self.collectionView.mj_footer endRefreshing];
     });
 }
 
+- (void)loadMorewaterflowViewShops {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.waterflowViewShops addObjectsFromArray:self.waterflowViewShops];
+        [self.waterflowView reloadData];
+        [self.waterflowView.mj_footer endRefreshing];
+    });
+}
+
 #pragma mark - HMWaterflowLayoutDelegate
 - (CGFloat)waterflowLayout:(EYWaterflowLayout *)waterflowLayout heightForWidth:(CGFloat)width atIndexPath:(NSIndexPath *)indexPath {
-    EYShop *shop = self.shops[indexPath.item];
+    EYShop *shop = self.collectionViewShops[indexPath.item];
     return shop.h / shop.w * width;
 }
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.shops.count;
+    return self.collectionViewShops.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     EYShopCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
-    cell.shop = self.shops[indexPath.item];
+    cell.shop = self.collectionViewShops[indexPath.item];
     cell.backgroundColor = [UIColor redColor];
     return cell;
 }
 
-- (void)setupWaterflowView {
-    EYWaterflowView *waterflowView = [[EYWaterflowView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight)];
-    waterflowView.dataSource = self;
-    waterflowView.delegate = self;
-    [self.view addSubview:waterflowView];
-    self.waterflowView = waterflowView;
-}
-
 #pragma mark - EYWaterflowViewDataSource
 - (NSUInteger)numberOfCellsInWaterflowView:(EYWaterflowView *)waterflowView {
-    return 100;
+    return self.waterflowViewShops.count;;
 }
 
 - (EYWaterflowViewCell *)waterflowView:(EYWaterflowView *)waterflowView cellAtIndex:(NSUInteger)index {
@@ -117,7 +97,12 @@ static NSString *const ID = @"EYWaterFallViewControllerCell";
 
 #pragma mark - EYWaterflowViewDelegate
 - (CGFloat)waterflowView:(EYWaterflowView *)waterflowView heightAtIndex:(NSUInteger)index {
-    return 100 + arc4random_uniform(100);
+    EYShop *shop = self.waterflowViewShops[index];
+    return shop.h / shop.w * [waterflowView cellWidth];
+}
+
+- (CGFloat)waterflowView:(EYWaterflowView *)waterflowView marginForType:(EYWaterflowViewMarginType)type {
+    return 10;
 }
 
 - (IBAction)tapSegmentedControl:(UISegmentedControl *)sender {
@@ -132,11 +117,58 @@ static NSString *const ID = @"EYWaterFallViewControllerCell";
 }
 
 #pragma mark - 懒加载
-- (NSMutableArray *)shops {
-    if (nil == _shops) {
-        _shops = [EYShop mj_objectArrayWithFilename:@"Shops.plist"];
+- (UICollectionView *)collectionView {
+    if (nil == _collectionView) {
+        // 1.自定义流水布局
+        EYWaterflowLayout *layout = [[EYWaterflowLayout alloc] init];
+        layout.delegate = self;
+//        layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+//        layout.columnMargin = 20;
+//        layout.rowMargin = 30;
+//        layout.columnsCount = 4;
+
+        // 2.创建UICollectionView
+        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) collectionViewLayout:layout];
+        collectionView.backgroundColor = [UIColor whiteColor];
+        if (@available(iOS 11.0, *)) {
+            collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
+        collectionView.dataSource = self;
+        collectionView.delegate = self;
+        [collectionView registerNib:[UINib nibWithNibName:@"EYShopCell" bundle:nil] forCellWithReuseIdentifier:ID];
+        [self.view addSubview:collectionView];
+        self.collectionView = collectionView;
+        collectionView.backgroundColor = [UIColor blackColor];
     }
-    return _shops;
+    return _collectionView;
+}
+
+- (EYWaterflowView *)waterflowView {
+    if (nil == _waterflowView) {
+        EYWaterflowView *waterflowView = [[EYWaterflowView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight)];
+        waterflowView.dataSource = self;
+        waterflowView.delegate = self;
+        [self.view addSubview:waterflowView];
+        self.waterflowView = waterflowView;
+        waterflowView.backgroundColor = [UIColor greenColor];
+    }
+    return _waterflowView;
+}
+
+- (NSMutableArray *)collectionViewShops {
+    if (nil == _collectionViewShops) {
+        _collectionViewShops = [EYShop mj_objectArrayWithFilename:@"Shops.plist"];
+    }
+    return _collectionViewShops;
+}
+
+- (NSMutableArray *)waterflowViewShops {
+    if (nil == _waterflowViewShops) {
+        _waterflowViewShops = [EYShop mj_objectArrayWithFilename:@"Shops.plist"];
+    }
+    return _waterflowViewShops;
 }
 
 @end
