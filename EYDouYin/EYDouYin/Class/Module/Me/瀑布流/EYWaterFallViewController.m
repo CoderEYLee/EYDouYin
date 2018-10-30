@@ -59,13 +59,14 @@ static NSString *const ID = @"EYWaterFallViewControllerCell";
     });
 }
 
-#pragma mark - HMWaterflowLayoutDelegate
+#pragma mark - 方式一
+#pragma mark -- EYWaterflowLayoutDelegate
 - (CGFloat)waterflowLayout:(EYWaterflowLayout *)waterflowLayout heightForWidth:(CGFloat)width atIndexPath:(NSIndexPath *)indexPath {
     EYShop *shop = self.collectionViewShops[indexPath.item];
     return shop.h / shop.w * width;
 }
 
-#pragma mark - UICollectionViewDataSource
+#pragma mark -- UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.collectionViewShops.count;
 }
@@ -77,7 +78,8 @@ static NSString *const ID = @"EYWaterFallViewControllerCell";
     return cell;
 }
 
-#pragma mark - EYWaterflowViewDataSource
+#pragma mark - 方式二
+#pragma mark -- EYWaterflowViewDataSource
 - (NSUInteger)numberOfCellsInWaterflowView:(EYWaterflowView *)waterflowView {
     return self.waterflowViewShops.count;;
 }
@@ -95,14 +97,14 @@ static NSString *const ID = @"EYWaterFallViewControllerCell";
     return cell;
 }
 
-#pragma mark - EYWaterflowViewDelegate
+#pragma mark -- EYWaterflowViewDelegate
 - (CGFloat)waterflowView:(EYWaterflowView *)waterflowView heightAtIndex:(NSUInteger)index {
     EYShop *shop = self.waterflowViewShops[index];
-    return shop.h / shop.w * [waterflowView cellWidth];
+    return shop.h / shop.w * [waterflowView cellWidth]; //默认70
 }
 
 - (CGFloat)waterflowView:(EYWaterflowView *)waterflowView marginForType:(EYWaterflowViewMarginType)type {
-    return 10;
+    return 10; //默认10
 }
 
 - (IBAction)tapSegmentedControl:(UISegmentedControl *)sender {
@@ -122,7 +124,7 @@ static NSString *const ID = @"EYWaterFallViewControllerCell";
         // 1.自定义流水布局
         EYWaterflowLayout *layout = [[EYWaterflowLayout alloc] init];
         layout.delegate = self;
-//        layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+        layout.sectionInset = UIEdgeInsetsMake(0, 10, 10, 10);
 //        layout.columnMargin = 20;
 //        layout.rowMargin = 30;
 //        layout.columnsCount = 4;
@@ -152,7 +154,7 @@ static NSString *const ID = @"EYWaterFallViewControllerCell";
         waterflowView.delegate = self;
         [self.view addSubview:waterflowView];
         self.waterflowView = waterflowView;
-        waterflowView.backgroundColor = [UIColor greenColor];
+        waterflowView.backgroundColor = [UIColor blackColor];
     }
     return _waterflowView;
 }
