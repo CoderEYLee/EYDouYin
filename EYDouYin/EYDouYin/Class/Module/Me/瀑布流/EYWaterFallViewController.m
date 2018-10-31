@@ -11,7 +11,7 @@
 #import "EYShop.h"
 #import "EYShopCell.h"
 #import "EYWaterflowView.h"
-#include "EYWaterflowViewCell.h"
+#import "EYWaterflowShopCell1.h"
 
 @interface EYWaterFallViewController () <UICollectionViewDataSource, UICollectionViewDelegate, EYWaterflowLayoutDelegate, EYWaterflowViewDataSource, EYWaterflowViewDelegate>
 
@@ -87,12 +87,12 @@ static NSString *const ID = @"EYWaterFallViewControllerCell";
 - (EYWaterflowViewCell *)waterflowView:(EYWaterflowView *)waterflowView cellAtIndex:(NSUInteger)index {
     static NSString * cellID = @"cellID";
 
-    EYWaterflowViewCell * cell = [waterflowView dequeueReusableCellWithIdentifier:cellID];
+    EYWaterflowShopCell1 *cell = [waterflowView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil) {
-        cell = [[EYWaterflowViewCell alloc] initWithReuseIdentifier:cellID];
-
+        cell = [[EYWaterflowShopCell1 alloc] initWithReuseIdentifier:cellID];
         cell.backgroundColor = [UIColor redColor];
     }
+    cell.shop = self.waterflowViewShops[index];
 
     return cell;
 }
@@ -142,7 +142,6 @@ static NSString *const ID = @"EYWaterFallViewControllerCell";
         [collectionView registerNib:[UINib nibWithNibName:@"EYShopCell" bundle:nil] forCellWithReuseIdentifier:ID];
         [self.view addSubview:collectionView];
         self.collectionView = collectionView;
-        collectionView.backgroundColor = [UIColor blackColor];
     }
     return _collectionView;
 }
@@ -154,7 +153,6 @@ static NSString *const ID = @"EYWaterFallViewControllerCell";
         waterflowView.delegate = self;
         [self.view addSubview:waterflowView];
         self.waterflowView = waterflowView;
-        waterflowView.backgroundColor = [UIColor blackColor];
     }
     return _waterflowView;
 }

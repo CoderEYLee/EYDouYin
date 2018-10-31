@@ -61,6 +61,7 @@
 		6076A171214A4D26002ED551 /* EYHomeCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A170214A4D26002ED551 /* EYHomeCityViewController.m */; };
 		6076A1792150CFD8002ED551 /* DispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A1782150CFD8002ED551 /* DispatchTimer.m */; };
 		6076A1802150FE71002ED551 /* EYHomeWorksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A17F2150FE71002ED551 /* EYHomeWorksViewController.m */; };
+		6085A15B21897A2800637F31 /* EYWaterflowShopCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A15A21897A2800637F31 /* EYWaterflowShopCell1.m */; };
 		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
 		60B2FAE4213916270046D13D /* EYHomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAE3213916270046D13D /* EYHomeInfoView.m */; };
 		60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B2FAE5213916330046D13D /* EYHomeInfoView.xib */; };
@@ -207,6 +208,8 @@
 		6076A1782150CFD8002ED551 /* DispatchTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchTimer.m; sourceTree = "<group>"; };
 		6076A17E2150FE71002ED551 /* EYHomeWorksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeWorksViewController.h; sourceTree = "<group>"; };
 		6076A17F2150FE71002ED551 /* EYHomeWorksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeWorksViewController.m; sourceTree = "<group>"; };
+		6085A15921897A2800637F31 /* EYWaterflowShopCell1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYWaterflowShopCell1.h; sourceTree = "<group>"; };
+		6085A15A21897A2800637F31 /* EYWaterflowShopCell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYWaterflowShopCell1.m; sourceTree = "<group>"; };
 		60B2FAC32137D5B40046D13D /* EYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPerson.h; sourceTree = "<group>"; };
 		60B2FAC42137D5B40046D13D /* EYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPerson.m; sourceTree = "<group>"; };
 		60B2FAE2213916270046D13D /* EYHomeInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeInfoView.h; sourceTree = "<group>"; };
@@ -437,6 +440,8 @@
 				60752B7721871838001B857C /* EYWaterflowView.m */,
 				60752B73218717B8001B857C /* EYWaterflowViewCell.h */,
 				60752B74218717B8001B857C /* EYWaterflowViewCell.m */,
+				6085A15921897A2800637F31 /* EYWaterflowShopCell1.h */,
+				6085A15A21897A2800637F31 /* EYWaterflowShopCell1.m */,
 			);
 			path = "方式二";
 			sourceTree = "<group>";
@@ -823,6 +828,7 @@
 				60ED6DFA215F6DD600381DBD /* openAnimation.gif in Resources */,
 				60B2FAEB213916870046D13D /* EYHomeSharedView.xib in Resources */,
 				6055AD442116D18A005DC856 /* EYTabBarView.xib in Resources */,
+				6085A16021897A4B00637F31 /* EYWaterflowShopCell2.xib in Resources */,
 				6076A15D2148E097002ED551 /* ChinLab_en.json in Resources */,
 				60ED6DFC215F6EBB00381DBD /* lastFrame.png in Resources */,
 				60752B3C2181EC78001B857C /* EYMeViewControllerSourceArray.plist in Resources */,
@@ -956,6 +962,8 @@
 				60EBB269216DE0420016ED6D /* EYZFPlayerControlView.m in Sources */,
 				606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */,
 				60BBC68B2104D83400DEEA34 /* EYBaseViewController.m in Sources */,
+				6085A15B21897A2800637F31 /* EYWaterflowShopCell1.m in Sources */,
+				6085A15E21897A3C00637F31 /* EYWaterflowShopCell2.m in Sources */,
 				60ED70CA2160BD8500381DBD /* EYHomeBackItemModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

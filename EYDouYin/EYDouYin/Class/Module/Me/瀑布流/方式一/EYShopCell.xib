@@ -24,7 +24,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8E-NY-Cqx">
                         <rect key="frame" x="0.0" y="144" width="125" height="30"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.42999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="XMP-V6-LNH"/>
                         </constraints>
@@ -46,10 +46,10 @@
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="125" height="174"/>
             <connections>
-                <outlet property="imageView" destination="GVw-9z-YoB" id="EMp-qF-1B4"/>
-                <outlet property="priceLabel" destination="N8E-NY-Cqx" id="XR1-Lc-vLQ"/>
+                <outlet property="imageView" destination="GVw-9z-YoB" id="GxE-lg-7kC"/>
+                <outlet property="priceLabel" destination="N8E-NY-Cqx" id="xZy-RW-5rU"/>
             </connections>
-            <point key="canvasLocation" x="-79.200000000000003" y="61.169415292353825"/>
+            <point key="canvasLocation" x="-294" y="14"/>
         </collectionViewCell>
     </objects>
 </document>
