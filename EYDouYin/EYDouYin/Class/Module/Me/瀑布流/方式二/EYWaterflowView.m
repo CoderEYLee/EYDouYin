@@ -246,16 +246,23 @@
 #pragma mark - 懒加载
 - (NSMutableArray *)cellFrames {
     if (_cellFrames == nil) {
-        self.cellFrames = [NSMutableArray array];
+        _cellFrames = [NSMutableArray array];
     }
     return _cellFrames;
 }
 
 - (NSMutableDictionary *)displayingCells {
     if (_displayingCells == nil) {
-        self.displayingCells = [NSMutableDictionary dictionary];
+        _displayingCells = [NSMutableDictionary dictionary];
     }
     return _displayingCells;
+}
+
+- (NSMutableSet *)reusableCells {
+    if (_reusableCells == nil) {
+        _reusableCells = [NSMutableSet set];
+    }
+    return _reusableCells;
 }
 
 @end
