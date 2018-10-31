@@ -12,6 +12,7 @@
 #import "EYShopCell.h"
 #import "EYWaterflowView.h"
 #import "EYWaterflowShopCell1.h"
+#import "EYWaterflowShopCell2.h"
 
 @interface EYWaterFallViewController () <UICollectionViewDataSource, UICollectionViewDelegate, EYWaterflowLayoutDelegate, EYWaterflowViewDataSource, EYWaterflowViewDelegate>
 
@@ -30,6 +31,8 @@
 @implementation EYWaterFallViewController
 
 static NSString *const ID = @"EYWaterFallViewControllerCell";
+static NSString *const EYWaterFallViewControllerShopCell1 = @"EYWaterFallViewControllerShopCell1";
+static NSString *const EYWaterFallViewControllerShopCell2 = @"EYWaterFallViewControllerShopCell2";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -81,17 +84,24 @@ static NSString *const ID = @"EYWaterFallViewControllerCell";
 #pragma mark - 方式二
 #pragma mark -- EYWaterflowViewDataSource
 - (NSUInteger)numberOfCellsInWaterflowView:(EYWaterflowView *)waterflowView {
-    return self.waterflowViewShops.count;;
+     return self.waterflowViewShops.count;
 }
 
 - (EYWaterflowViewCell *)waterflowView:(EYWaterflowView *)waterflowView cellAtIndex:(NSUInteger)index {
-    static NSString * cellID = @"cellID";
 
-    EYWaterflowShopCell1 *cell = [waterflowView dequeueReusableCellWithIdentifier:cellID];
+//    EYWaterflowShopCell1 *cell = [waterflowView dequeueReusableCellWithIdentifier:EYWaterFallViewControllerShopCell1];
+//    if (cell == nil) {
+//        cell = [[EYWaterflowShopCell1 alloc] initWithReuseIdentifier:EYWaterFallViewControllerShopCell1];
+//        cell.backgroundColor = [UIColor redColor];
+//    }
+
+    EYWaterflowShopCell2 *cell = [waterflowView dequeueReusableCellWithIdentifier:EYWaterFallViewControllerShopCell2];
     if (cell == nil) {
-        cell = [[EYWaterflowShopCell1 alloc] initWithReuseIdentifier:cellID];
+        cell = [EYWaterflowShopCell2 waterflowShopCell2];
+        cell.reuseIdentifier = EYWaterFallViewControllerShopCell2;
         cell.backgroundColor = [UIColor redColor];
     }
+
     cell.shop = self.waterflowViewShops[index];
 
     return cell;

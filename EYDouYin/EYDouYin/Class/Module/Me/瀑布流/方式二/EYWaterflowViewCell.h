@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EYWaterflowViewCell : UIView
 
 //重用标识符
-@property (nonatomic, readonly, copy) NSString *reuseIdentifier;
+@property (nonatomic, copy) NSString *reuseIdentifier;
 
 - (__kindof EYWaterflowViewCell *)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 

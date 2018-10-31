@@ -62,6 +62,8 @@
 		6076A1792150CFD8002ED551 /* DispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A1782150CFD8002ED551 /* DispatchTimer.m */; };
 		6076A1802150FE71002ED551 /* EYHomeWorksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A17F2150FE71002ED551 /* EYHomeWorksViewController.m */; };
 		6085A15B21897A2800637F31 /* EYWaterflowShopCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A15A21897A2800637F31 /* EYWaterflowShopCell1.m */; };
+		6085A15E21897A3C00637F31 /* EYWaterflowShopCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A15D21897A3C00637F31 /* EYWaterflowShopCell2.m */; };
+		6085A16021897A4B00637F31 /* EYWaterflowShopCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6085A15F21897A4B00637F31 /* EYWaterflowShopCell2.xib */; };
 		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
 		60B2FAE4213916270046D13D /* EYHomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAE3213916270046D13D /* EYHomeInfoView.m */; };
 		60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B2FAE5213916330046D13D /* EYHomeInfoView.xib */; };
@@ -210,6 +212,9 @@
 		6076A17F2150FE71002ED551 /* EYHomeWorksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeWorksViewController.m; sourceTree = "<group>"; };
 		6085A15921897A2800637F31 /* EYWaterflowShopCell1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYWaterflowShopCell1.h; sourceTree = "<group>"; };
 		6085A15A21897A2800637F31 /* EYWaterflowShopCell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYWaterflowShopCell1.m; sourceTree = "<group>"; };
+		6085A15C21897A3C00637F31 /* EYWaterflowShopCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYWaterflowShopCell2.h; sourceTree = "<group>"; };
+		6085A15D21897A3C00637F31 /* EYWaterflowShopCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYWaterflowShopCell2.m; sourceTree = "<group>"; };
+		6085A15F21897A4B00637F31 /* EYWaterflowShopCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYWaterflowShopCell2.xib; sourceTree = "<group>"; };
 		60B2FAC32137D5B40046D13D /* EYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPerson.h; sourceTree = "<group>"; };
 		60B2FAC42137D5B40046D13D /* EYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPerson.m; sourceTree = "<group>"; };
 		60B2FAE2213916270046D13D /* EYHomeInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeInfoView.h; sourceTree = "<group>"; };
@@ -442,6 +447,9 @@
 				60752B74218717B8001B857C /* EYWaterflowViewCell.m */,
 				6085A15921897A2800637F31 /* EYWaterflowShopCell1.h */,
 				6085A15A21897A2800637F31 /* EYWaterflowShopCell1.m */,
+				6085A15C21897A3C00637F31 /* EYWaterflowShopCell2.h */,
+				6085A15D21897A3C00637F31 /* EYWaterflowShopCell2.m */,
+				6085A15F21897A4B00637F31 /* EYWaterflowShopCell2.xib */,
 			);
 			path = "方式二";
 			sourceTree = "<group>";
