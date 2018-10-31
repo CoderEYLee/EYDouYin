@@ -64,6 +64,9 @@
 		6085A15B21897A2800637F31 /* EYWaterflowShopCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A15A21897A2800637F31 /* EYWaterflowShopCell1.m */; };
 		6085A15E21897A3C00637F31 /* EYWaterflowShopCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A15D21897A3C00637F31 /* EYWaterflowShopCell2.m */; };
 		6085A16021897A4B00637F31 /* EYWaterflowShopCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6085A15F21897A4B00637F31 /* EYWaterflowShopCell2.xib */; };
+		6085A1672189A94900637F31 /* EYCircleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A1662189A94900637F31 /* EYCircleLayout.m */; };
+		6085A1702189B8F800637F31 /* EYCollectionViewOtherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A16E2189B8F800637F31 /* EYCollectionViewOtherController.m */; };
+		6085A1712189B8F800637F31 /* EYCollectionViewOtherController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */; };
 		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
 		60B2FAE4213916270046D13D /* EYHomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAE3213916270046D13D /* EYHomeInfoView.m */; };
 		60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B2FAE5213916330046D13D /* EYHomeInfoView.xib */; };
@@ -215,6 +218,11 @@
 		6085A15C21897A3C00637F31 /* EYWaterflowShopCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYWaterflowShopCell2.h; sourceTree = "<group>"; };
 		6085A15D21897A3C00637F31 /* EYWaterflowShopCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYWaterflowShopCell2.m; sourceTree = "<group>"; };
 		6085A15F21897A4B00637F31 /* EYWaterflowShopCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYWaterflowShopCell2.xib; sourceTree = "<group>"; };
+		6085A1652189A94900637F31 /* EYCircleLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCircleLayout.h; sourceTree = "<group>"; };
+		6085A1662189A94900637F31 /* EYCircleLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCircleLayout.m; sourceTree = "<group>"; };
+		6085A16D2189B8F800637F31 /* EYCollectionViewOtherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCollectionViewOtherController.h; sourceTree = "<group>"; };
+		6085A16E2189B8F800637F31 /* EYCollectionViewOtherController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCollectionViewOtherController.m; sourceTree = "<group>"; };
+		6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYCollectionViewOtherController.xib; sourceTree = "<group>"; };
 		60B2FAC32137D5B40046D13D /* EYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPerson.h; sourceTree = "<group>"; };
 		60B2FAC42137D5B40046D13D /* EYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPerson.m; sourceTree = "<group>"; };
 		60B2FAE2213916270046D13D /* EYHomeInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeInfoView.h; sourceTree = "<group>"; };
@@ -335,6 +343,7 @@
 				60752B4421832233001B857C /* ZFPlayer使用 */,
 				60752B482186A37A001B857C /* iOS锁使用 */,
 				60752B4C2186DFC2001B857C /* 瀑布流 */,
+				6085A1612189A81100637F31 /* UICollectionView 其他布局使用 */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -620,6 +629,18 @@
 			path = DispatchTimer;
 			sourceTree = "<group>";
 		};
+		6085A1612189A81100637F31 /* UICollectionView 其他布局使用 */ = {
+			isa = PBXGroup;
+			children = (
+				6085A1652189A94900637F31 /* EYCircleLayout.h */,
+				6085A1662189A94900637F31 /* EYCircleLayout.m */,
+				6085A16D2189B8F800637F31 /* EYCollectionViewOtherController.h */,
+				6085A16E2189B8F800637F31 /* EYCollectionViewOtherController.m */,
+				6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */,
+			);
+			path = "UICollectionView 其他布局使用";
+			sourceTree = "<group>";
+		};
 		60B2FAE1213915A00046D13D /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -845,6 +866,7 @@
 				604D55632139326300F83249 /* EYHomeTitleView.xib in Resources */,
 				6055AD3C2116B382005DC856 /* TabBar.json in Resources */,
 				606E6FA4212813CA00ABEB83 /* EYLikeCell.xib in Resources */,
+				6085A1712189B8F800637F31 /* EYCollectionViewOtherController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -930,6 +952,7 @@
 				6075416D2104CFE000EB258D /* EYHttpManager.m in Sources */,
 				60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */,
 				60752B472183224E001B857C /* EYZFPlayerViewController.m in Sources */,
+				6085A1702189B8F800637F31 /* EYCollectionViewOtherController.m in Sources */,
 				60752B5A2186E39C001B857C /* EYWaterflowLayout.m in Sources */,
 				60EBB26C216DFC680016ED6D /* EYZFPortraitControlView.m in Sources */,
 				6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */,
@@ -947,6 +970,7 @@
 				601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */,
 				60752B4B2186A3B9001B857C /* EYIOSLockViewController.m in Sources */,
 				6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */,
+				6085A1672189A94900637F31 /* EYCircleLayout.m in Sources */,
 				606E6FAA21284FF400ABEB83 /* EYBaseCollectionViewController.m in Sources */,
 				60B2FAE92139167C0046D13D /* EYHomeSharedView.m in Sources */,
 				601B03192104DDED00489E96 /* EYFindViewController.m in Sources */,

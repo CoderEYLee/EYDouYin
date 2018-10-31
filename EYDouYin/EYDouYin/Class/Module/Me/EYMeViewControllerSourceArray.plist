@@ -38,6 +38,12 @@
                 <key>vcName</key>
                 <string>EYWaterFallViewController</string>
             </dict>
+            <dict>
+                <key>name</key>
+                <string>UICollectionView 其他布局使用</string>
+                <key>vcName</key>
+                <string>EYCollectionViewOtherController</string>
+            </dict>
         </array>
     </dict>
 </array>
