@@ -67,6 +67,7 @@
 		6085A1672189A94900637F31 /* EYCircleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A1662189A94900637F31 /* EYCircleLayout.m */; };
 		6085A1702189B8F800637F31 /* EYCollectionViewOtherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A16E2189B8F800637F31 /* EYCollectionViewOtherController.m */; };
 		6085A1712189B8F800637F31 /* EYCollectionViewOtherController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */; };
+		6085A174218AA91600637F31 /* EYFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A173218AA91600637F31 /* EYFlowLayout.m */; };
 		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
 		60B2FAE4213916270046D13D /* EYHomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAE3213916270046D13D /* EYHomeInfoView.m */; };
 		60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B2FAE5213916330046D13D /* EYHomeInfoView.xib */; };
@@ -223,6 +224,8 @@
 		6085A16D2189B8F800637F31 /* EYCollectionViewOtherController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCollectionViewOtherController.h; sourceTree = "<group>"; };
 		6085A16E2189B8F800637F31 /* EYCollectionViewOtherController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCollectionViewOtherController.m; sourceTree = "<group>"; };
 		6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYCollectionViewOtherController.xib; sourceTree = "<group>"; };
+		6085A172218AA91600637F31 /* EYFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFlowLayout.h; sourceTree = "<group>"; };
+		6085A173218AA91600637F31 /* EYFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFlowLayout.m; sourceTree = "<group>"; };
 		60B2FAC32137D5B40046D13D /* EYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPerson.h; sourceTree = "<group>"; };
 		60B2FAC42137D5B40046D13D /* EYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPerson.m; sourceTree = "<group>"; };
 		60B2FAE2213916270046D13D /* EYHomeInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeInfoView.h; sourceTree = "<group>"; };
@@ -634,6 +637,8 @@
 			children = (
 				6085A1652189A94900637F31 /* EYCircleLayout.h */,
 				6085A1662189A94900637F31 /* EYCircleLayout.m */,
+				6085A172218AA91600637F31 /* EYFlowLayout.h */,
+				6085A173218AA91600637F31 /* EYFlowLayout.m */,
 				6085A16D2189B8F800637F31 /* EYCollectionViewOtherController.h */,
 				6085A16E2189B8F800637F31 /* EYCollectionViewOtherController.m */,
 				6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */,
@@ -963,6 +968,7 @@
 				60752B6C2186F49A001B857C /* EYShopCell.m in Sources */,
 				606E6FA3212813CA00ABEB83 /* EYLikeCell.m in Sources */,
 				60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */,
+				6085A174218AA91600637F31 /* EYFlowLayout.m in Sources */,
 				6012FD70215A36BF004A3083 /* UIView+EYCornerRadius.m in Sources */,
 				604D55612139325900F83249 /* EYHomeTitleView.m in Sources */,
 				60752B682186F3CE001B857C /* EYShop.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "EYCollectionViewOtherController.h"
 #import "EYCircleLayout.h"
+#import "EYFlowLayout.h"
 #import "EYShopCell.h"
 #import "EYShop.h"
 
@@ -30,15 +31,15 @@ static NSString *const EYCollectionViewOtherControllerCellID = @"EYCollectionVie
 
 - (IBAction)tapSegmentdCotrol:(UISegmentedControl *)sender {
     switch (sender.selectedSegmentIndex) {
-        case 0: {
+        case 0: {//圆圈
             [self.collectionView setCollectionViewLayout:[[EYCircleLayout alloc] init] animated:YES];
             break;
         }
-        case 1: {
-            [self.collectionView setCollectionViewLayout:[[EYCircleLayout alloc] init] animated:YES];
+        case 1: {//线性
+            [self.collectionView setCollectionViewLayout:[[EYFlowLayout alloc] init] animated:YES];
             break;
         }
-        case 2: {
+        case 2: {//待定
             break;
         }
 
@@ -49,8 +50,7 @@ static NSString *const EYCollectionViewOtherControllerCellID = @"EYCollectionVie
 
 #pragma mark -- UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    //    return self.collectionViewShops.count;
-    return 10;
+    return self.collectionViewShops.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
