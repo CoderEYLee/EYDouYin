@@ -222,8 +222,8 @@
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {// 结束拖拽
-    CGFloat y = scrollView.contentOffset.y;
-    EYLog(@"scrollView已经结束拖拽--状态为,结束的位置为:%f", y);
+//    CGFloat y = scrollView.contentOffset.y;
+//    EYLog(@"scrollView已经结束拖拽--状态为,结束的位置为:%f", y);
 
 //    if (y == 0.0) {
 //        EYLog(@"可以刷新界面了--");

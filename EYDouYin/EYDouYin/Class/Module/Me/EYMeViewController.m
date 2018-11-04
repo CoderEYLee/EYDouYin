@@ -43,7 +43,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString * ID = @"cell";
+    static NSString * ID = @"EYMeViewControllerCellID";
 
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
 
@@ -87,9 +87,8 @@
         }
         tableView.dataSource = self;
         tableView.delegate = self;
-        _tableView = tableView;
-
         [self.view addSubview:tableView];
+        _tableView = tableView;
     }
     return _tableView;
 }

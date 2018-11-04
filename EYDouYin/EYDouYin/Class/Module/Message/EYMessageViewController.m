@@ -52,7 +52,7 @@ static NSString * EYLikeViewControllerCollectionViewHeadViewID = @"EYLikeViewCon
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     EYLikeCell * cell = (EYLikeCell *)[collectionView dequeueReusableCellWithReuseIdentifier:EYLikeViewControllerCollectionViewCellID forIndexPath:indexPath];
     cell.backgroundColor =EYRandomColor;
-    cell.label.text = [NSString stringWithFormat:@"%ld组/%ld个", indexPath.section, indexPath.row];
+    cell.label.text = [NSString stringWithFormat:@"%d组/%d个", indexPath.section, indexPath.row];
     
     EYLog(@"李二洋---返回 cell--%ld--%ld", indexPath.section, indexPath. row);
     

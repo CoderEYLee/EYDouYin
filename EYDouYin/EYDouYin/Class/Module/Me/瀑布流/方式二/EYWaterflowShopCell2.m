@@ -25,8 +25,8 @@
 - (void)setShop:(EYShop *)shop {
     _shop = shop;
 
-    // 1.图片 现在图片链接f的服务器增加了证书验证! 使用不了了!!
-    // [self.imageView sd_setImageWithURL:[NSURL URLWithString:shop.img] placeholderImage:[UIImage imageNamed:@"loading"]];
+    // 1.图片
+    [self.imageView ey_setImageWithURL:[NSURL URLWithString:shop.img] placeholderImage:[UIImage imageNamed:@"loading"] options:SDWebImageAllowInvalidSSLCertificates];
 
     // 2.价格
     self.priceLabel.text = shop.price;

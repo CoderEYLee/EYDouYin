@@ -75,8 +75,7 @@
 
 - (IBAction)longPressButton:(UILongPressGestureRecognizer *)sender {
     if (sender.state == UIGestureRecognizerStateBegan) {
-        UIButton * button = (UIButton *)sender.view;
-        NSLog(@"----------%ld--", button.tag);
+//        UIButton * button = (UIButton *)sender.view;
     } else if (sender.state == UIGestureRecognizerStateEnded) {
         
     } else {

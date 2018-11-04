@@ -77,6 +77,10 @@
 		60BBC68B2104D83400DEEA34 /* EYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6862104D83400DEEA34 /* EYBaseViewController.m */; };
 		60BBC68E2104D8D200DEEA34 /* EYRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC68D2104D8D200DEEA34 /* EYRootViewController.m */; };
 		60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6902104D9D900DEEA34 /* EYConstant.m */; };
+		60C40089218BFB9B00B07E4A /* EYCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C40088218BFB9B00B07E4A /* EYCollectionViewController.m */; };
+		60C4008B218BFCF000B07E4A /* Collection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C4008A218BFCF000B07E4A /* Collection.plist */; };
+		60C4008E218C1DB600B07E4A /* EYCollectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */; };
+		60C40091218C269C00B07E4A /* UIImageView+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */; };
 		60D81BB92132710600456939 /* EYHomeItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D81BB82132710600456939 /* EYHomeItemView.m */; };
 		60D81BBB2132711100456939 /* EYHomeItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D81BBA2132711100456939 /* EYHomeItemView.xib */; };
 		60EBB269216DE0420016ED6D /* EYZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBB268216DE0420016ED6D /* EYZFPlayerControlView.m */; };
@@ -242,6 +246,13 @@
 		60BBC68D2104D8D200DEEA34 /* EYRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYRootViewController.m; sourceTree = "<group>"; };
 		60BBC68F2104D9D900DEEA34 /* EYConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYConstant.h; sourceTree = "<group>"; };
 		60BBC6902104D9D900DEEA34 /* EYConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYConstant.m; sourceTree = "<group>"; };
+		60C40087218BFB9B00B07E4A /* EYCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCollectionViewController.h; sourceTree = "<group>"; };
+		60C40088218BFB9B00B07E4A /* EYCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCollectionViewController.m; sourceTree = "<group>"; };
+		60C4008A218BFCF000B07E4A /* Collection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Collection.plist; sourceTree = "<group>"; };
+		60C4008C218C1DB600B07E4A /* EYCollectionDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCollectionDetailViewController.h; sourceTree = "<group>"; };
+		60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCollectionDetailViewController.m; sourceTree = "<group>"; };
+		60C4008F218C269C00B07E4A /* UIImageView+EYSDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+EYSDWebImage.h"; sourceTree = "<group>"; };
+		60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+EYSDWebImage.m"; sourceTree = "<group>"; };
 		60D81BB72132710600456939 /* EYHomeItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeItemView.h; sourceTree = "<group>"; };
 		60D81BB82132710600456939 /* EYHomeItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeItemView.m; sourceTree = "<group>"; };
 		60D81BBA2132711100456939 /* EYHomeItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeItemView.xib; sourceTree = "<group>"; };
@@ -342,6 +353,7 @@
 				601B032921056E7700489E96 /* EYMeViewController.h */,
 				601B032A21056E7700489E96 /* EYMeViewController.m */,
 				60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */,
+				60C40086218BFB2200B07E4A /* Collection */,
 				60752B3F2182C500001B857C /* SJVideoPlayer使用 */,
 				60752B4421832233001B857C /* ZFPlayer使用 */,
 				60752B482186A37A001B857C /* iOS锁使用 */,
@@ -572,6 +584,8 @@
 				60EE77BE21204188004133A6 /* NSObject+EYRuntime.m */,
 				6012FD6E215A36BF004A3083 /* UIView+EYCornerRadius.h */,
 				6012FD6F215A36BF004A3083 /* UIView+EYCornerRadius.m */,
+				60C4008F218C269C00B07E4A /* UIImageView+EYSDWebImage.h */,
+				60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -686,6 +700,18 @@
 				601B03142104DCBD00489E96 /* EYTabBarController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		60C40086218BFB2200B07E4A /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				60C4008A218BFCF000B07E4A /* Collection.plist */,
+				60C40087218BFB9B00B07E4A /* EYCollectionViewController.h */,
+				60C40088218BFB9B00B07E4A /* EYCollectionViewController.m */,
+				60C4008C218C1DB600B07E4A /* EYCollectionDetailViewController.h */,
+				60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 		60EE77A9211F51D1004133A6 /* Controller */ = {
@@ -865,6 +891,7 @@
 				6085A16021897A4B00637F31 /* EYWaterflowShopCell2.xib in Resources */,
 				6076A15D2148E097002ED551 /* ChinLab_en.json in Resources */,
 				60ED6DFC215F6EBB00381DBD /* lastFrame.png in Resources */,
+				60C4008B218BFCF000B07E4A /* Collection.plist in Resources */,
 				60752B3C2181EC78001B857C /* EYMeViewControllerSourceArray.plist in Resources */,
 				60D81BBB2132711100456939 /* EYHomeItemView.xib in Resources */,
 				607541342104CC4C00EB258D /* Assets.xcassets in Resources */,
@@ -952,6 +979,7 @@
 				601B032B21056E7700489E96 /* EYMeViewController.m in Sources */,
 				60EE77BF21204188004133A6 /* NSObject+EYRuntime.m in Sources */,
 				60752B532186E205001B857C /* EYWaterFallViewController.m in Sources */,
+				60C40089218BFB9B00B07E4A /* EYCollectionViewController.m in Sources */,
 				60EE77B62120217D004133A6 /* UIBarButtonItem+EYExtension.m in Sources */,
 				60752B422182C533001B857C /* EYSJVideoPlayerViewController.m in Sources */,
 				6075416D2104CFE000EB258D /* EYHttpManager.m in Sources */,
@@ -993,8 +1021,10 @@
 				601B032821056E6900489E96 /* EYLikeViewController.m in Sources */,
 				60BBC68E2104D8D200DEEA34 /* EYRootViewController.m in Sources */,
 				60752B75218717B8001B857C /* EYWaterflowViewCell.m in Sources */,
+				60C4008E218C1DB600B07E4A /* EYCollectionDetailViewController.m in Sources */,
 				6076A1792150CFD8002ED551 /* DispatchTimer.m in Sources */,
 				6076A1692148FB7D002ED551 /* EYHomeItemCommentModel.m in Sources */,
+				60C40091218C269C00B07E4A /* UIImageView+EYSDWebImage.m in Sources */,
 				6076A1662148FA4D002ED551 /* EYHomeItemLikeModel.m in Sources */,
 				60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */,
 				60EBB269216DE0420016ED6D /* EYZFPlayerControlView.m in Sources */,

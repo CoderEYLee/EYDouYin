@@ -116,8 +116,8 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat offsetX = scrollView.contentOffset.x;
-     EYLog(@"底部的 scrollView已经滚动了--scrollView 的偏移位置%f", offsetX);
+//    CGFloat offsetX = scrollView.contentOffset.x;
+//     EYLog(@"底部的 scrollView已经滚动了--scrollView 的偏移位置%f", offsetX);
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {

@@ -118,7 +118,6 @@ static NSString *const EYWaterFallViewControllerShopCell2 = @"EYWaterFallViewCon
 }
 
 - (IBAction)tapSegmentedControl:(UISegmentedControl *)sender {
-    NSLog(@"---%ld", sender.selectedSegmentIndex);
     if (sender.selectedSegmentIndex == 0) {
         self.collectionView.hidden = NO;
         self.waterflowView.hidden = YES;
