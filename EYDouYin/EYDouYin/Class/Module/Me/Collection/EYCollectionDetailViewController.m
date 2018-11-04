@@ -21,15 +21,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    self.naviBar.hidden = NO;
-
     NSLog(@"2222-%@", self.content_url);
 
 //    NSHTTPCookie *cookieWID = [NSHTTPCookie cookieWithProperties:[NSDictionary dictionaryWithObjectsAndKeys: @"wid" ,NSHTTPCookieName, WID,NSHTTPCookieValue, @"www.google.com",NSHTTPCookieDomain, @"",NSHTTPCookiePath, @"false",@"HttpOnly", nil]];
 
     WKWebViewConfiguration*config = [[WKWebViewConfiguration alloc]init];
     config.selectionGranularity = WKSelectionGranularityCharacter;
-    WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) configuration:config];
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:EYScreenBounds configuration:config];
     webView.navigationDelegate = self;
     [self.view addSubview:webView];
     self.webView = webView;

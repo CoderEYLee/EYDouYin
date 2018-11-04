@@ -8,5 +8,24 @@
 		<key>content_url</key>
 		<string>https://mp.weixin.qq.com/s/HGsChYxJKWNuQgdP8EkLog</string>
 	</dict>
+    <dict>
+        <key>title</key>
+        <string>2、iOS自定义代码段模板（CodeSnippets）和文件模板(.xctemplate)
+</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/cSGQMatLfLeCifgcVDHjmA</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>3、iOS性能优化系列篇之“列表流畅度优化”</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/1evLlafG4rFKs4LHtl4bTw</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>4、重识iOS之Property</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/d3Bu8PBXZk4YV3C3q6SlCg</string>
+    </dict>
 </array>
 </plist>
