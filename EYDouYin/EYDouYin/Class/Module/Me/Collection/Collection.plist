@@ -27,5 +27,47 @@
         <key>content_url</key>
         <string>https://mp.weixin.qq.com/s/d3Bu8PBXZk4YV3C3q6SlCg</string>
     </dict>
+    <dict>
+        <key>title</key>
+        <string>5、YYImage 源码剖析：图片处理技巧</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/PhtPwvv-_KUUAeYYRpc_KA</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>6、iOS导航栏使用总结</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/oDTV4k_C2xenPVDy-oHx2g</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>7、细说 Swift 4.2 新特性：Dynamic Member Lookup</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/5r65t4iAXHBdHvUedsvkRA</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>8、iOS 初探代码混淆（OC）</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/94EQ7aL6CloX5XNyLqIlOQ</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>9、Method Swizzling在项目中的实际运用</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/pfDlJXgkwPKlAH3AKUkVgQ</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>10、Method Swizzling在项目中的实际运用</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/pfDlJXgkwPKlAH3AKUkVgQ</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>11、iOS：腾讯三面</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/wovVRe6qIUk4Eu692zrdpA</string>
+    </dict>
 </array>
 </plist>
