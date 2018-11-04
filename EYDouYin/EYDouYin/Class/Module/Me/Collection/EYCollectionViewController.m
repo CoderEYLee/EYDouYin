@@ -65,7 +65,6 @@
         UITableView * tableView = [[UITableView alloc] initWithFrame:EYScreenBounds style:UITableViewStylePlain];
         tableView.dataSource = self;
         tableView.delegate = self;
-        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         if (@available(iOS 11.0, *)) {
             tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         } else {

@@ -59,15 +59,57 @@
     </dict>
     <dict>
         <key>title</key>
-        <string>10、Method Swizzling在项目中的实际运用</string>
+        <string>10、Swift中Notification.Name这么难用怎么办</string>
         <key>content_url</key>
-        <string>https://mp.weixin.qq.com/s/pfDlJXgkwPKlAH3AKUkVgQ</string>
+        <string>https://mp.weixin.qq.com/s/uU-4H99NZYirSiwS_9LN0A</string>
     </dict>
     <dict>
         <key>title</key>
         <string>11、iOS：腾讯三面</string>
         <key>content_url</key>
         <string>https://mp.weixin.qq.com/s/wovVRe6qIUk4Eu692zrdpA</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>12、2018-iOS面试题一（更新答案版）</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/ibV2jn1__vnLeHncWl5n9Q</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>13、两年iOS经验之你忽略的小知识点</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/3agq_KX9q5PhEC2Ywf2vog</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>14、iOS组件化探究之私有库的创建</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/xmJfpigZwJNjMQbdRwXrEQ</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>15、iOS 深拷贝浅拷贝与@property 引用计数关键字Strong,Copy,Weak,Assign</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/IciNx9pYcmoyS8RiMNxAtQ</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>16、一份走心的iOS开发规范</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/J3akW8s0OW1UjKlSLkPoDw</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>17、iOS网络请求相关框架的使用</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/lj3rmaGWluPdBAsGN_LL7A</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>18、iOS Masonry 等间隔或等宽高排列多个控件</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/DXYJaiG_jvrbYD1stnpyIw</string>
     </dict>
 </array>
 </plist>
