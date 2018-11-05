@@ -68,6 +68,7 @@
 		6085A1702189B8F800637F31 /* EYCollectionViewOtherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A16E2189B8F800637F31 /* EYCollectionViewOtherController.m */; };
 		6085A1712189B8F800637F31 /* EYCollectionViewOtherController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */; };
 		6085A174218AA91600637F31 /* EYFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A173218AA91600637F31 /* EYFlowLayout.m */; };
+		608F940A218FEDF600AD00EB /* EYManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 608F9409218FEDF600AD00EB /* EYManager.m */; };
 		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
 		60B2FAE4213916270046D13D /* EYHomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAE3213916270046D13D /* EYHomeInfoView.m */; };
 		60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B2FAE5213916330046D13D /* EYHomeInfoView.xib */; };
@@ -230,6 +231,8 @@
 		6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYCollectionViewOtherController.xib; sourceTree = "<group>"; };
 		6085A172218AA91600637F31 /* EYFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFlowLayout.h; sourceTree = "<group>"; };
 		6085A173218AA91600637F31 /* EYFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFlowLayout.m; sourceTree = "<group>"; };
+		608F9408218FEDF600AD00EB /* EYManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYManager.h; sourceTree = "<group>"; };
+		608F9409218FEDF600AD00EB /* EYManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYManager.m; sourceTree = "<group>"; };
 		60B2FAC32137D5B40046D13D /* EYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPerson.h; sourceTree = "<group>"; };
 		60B2FAC42137D5B40046D13D /* EYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPerson.m; sourceTree = "<group>"; };
 		60B2FAE2213916270046D13D /* EYHomeInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeInfoView.h; sourceTree = "<group>"; };
@@ -594,6 +597,8 @@
 			isa = PBXGroup;
 			children = (
 				607541722104D36800EB258D /* Singleton.h */,
+				608F9408218FEDF600AD00EB /* EYManager.h */,
+				608F9409218FEDF600AD00EB /* EYManager.m */,
 				6075416B2104CFE000EB258D /* EYHttpManager.h */,
 				6075416C2104CFE000EB258D /* EYHttpManager.m */,
 			);
@@ -973,6 +978,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60ED70C52160B0EF00381DBD /* EYHomeBackItemView.m in Sources */,
+				608F940A218FEDF600AD00EB /* EYManager.m in Sources */,
 				6055AD382116933E005DC856 /* UIView+Extension.m in Sources */,
 				60752B7821871838001B857C /* EYWaterflowView.m in Sources */,
 				6076A1622148F696002ED551 /* EYHomeItemModel.m in Sources */,

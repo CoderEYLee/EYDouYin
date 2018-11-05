@@ -16,6 +16,7 @@
 #import "NSString+EYExtension.h"
 #import "UIView+EYCornerRadius.h"
 #import "UIImageView+EYSDWebImage.h"
+#import "EYManager.h"
 
 #import <AFNetworking.h>
 #import <YYModel.h>
