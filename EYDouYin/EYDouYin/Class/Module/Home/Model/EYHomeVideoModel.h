@@ -1,5 +1,5 @@
 //
-//  EYHomeItemModel.h
+//  EYHomeVideoModel.h
 //  EYDouYin
 //
 //  Created by 李二洋 on 2018/9/12.
@@ -10,7 +10,7 @@
 #import "EYHomeItemLikeModel.h"
 #import "EYHomeItemCommentModel.h"
 
-@interface EYHomeItemModel : NSObject
+@interface EYHomeVideoModel : NSObject
 
 @property (copy, nonatomic) NSString *userId;
 
@@ -19,6 +19,8 @@
 @property (copy, nonatomic) NSString *itemId;
 
 @property (copy, nonatomic) NSString *title;
+
+@property (copy, nonatomic) NSString *video_url;
 
 @property (copy, nonatomic) NSArray <EYHomeItemLikeModel *>*likes;
 

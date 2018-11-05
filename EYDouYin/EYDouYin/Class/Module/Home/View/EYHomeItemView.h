@@ -18,4 +18,9 @@
 
 @property (weak, nonatomic, readonly) EYHomeSharedView *homeSharedView;
 
+#pragma mark - 视频相关的功能
+- (void)playVideo;
+- (void)stopVideo;
+
+
 @end

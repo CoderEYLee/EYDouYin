@@ -50,6 +50,7 @@ NSString *const EYHomeItemViewSystemVolumeDidChangeNotification=@"AVSystemContro
     return self;
 }
 
+#pragma mark - 音量控制
 - (void)volumeChange:(NSNotification*)notifi{
     NSString * style = notifi.userInfo[@"AVSystemController_AudioCategoryNotificationParameter"];
     if ([style isEqualToString:@"Audio/Video"]){
@@ -87,6 +88,15 @@ NSString *const EYHomeItemViewSystemVolumeDidChangeNotification=@"AVSystemContro
         default:
             break;
     }
+}
+
+#pragma mark - 视频相关的功能
+- (void)playVideo {
+    EYLog(@"开始播放视频");
+}
+
+- (void)stopVideo {
+    EYLog(@"停止播放视频");
 }
 
 - (void)dealloc {
