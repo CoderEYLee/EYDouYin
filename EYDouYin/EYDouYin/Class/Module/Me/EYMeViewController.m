@@ -20,8 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.array = @"EYMeViewControllerSourceArray.plist".ey_loadLocalPlistFileArray;
+
+    self.array = [EYManager sharedManager].meArray;
+
     [self.tableView reloadData];
  }
 

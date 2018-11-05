@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.array = @"Collection.plist".ey_loadLocalPlistFileArray;
+    self.array = self.array = [EYManager sharedManager].collectionArray;
     [self.tableView reloadData];
 }
 
