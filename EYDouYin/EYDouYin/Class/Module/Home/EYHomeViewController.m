@@ -10,7 +10,7 @@
 #import "EYRootViewController.h"
 #import "EYHomeTitleView.h"
 #import "EYHomeItemView.h"
-#import "EYHomeItemModel.h"
+#import "EYHomeVideoModel.h"
 #import "EYHomeCityViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "AppDelegate.h"
@@ -38,8 +38,10 @@
 
 // 数据数组
 @property (strong, nonatomic) NSMutableArray *itemArrayM;
-
 @property (strong, nonatomic) NSMutableArray *modelArrayM;
+
+// 当前观看视频的下标
+@property (assign, nonatomic) NSUInteger currentVideoIndex;
 @end
 
 @implementation EYHomeViewController
@@ -99,10 +101,8 @@
         return;
     }
 
-    for (int i = 0; i < jsonArray.count; i++) {
-        NSDictionary * dictionary = jsonArray[i];
-        [self.itemArrayM addObject:[EYHomeItemModel yy_modelWithDictionary:dictionary]];
-    }
+    self.currentVideoIndex = 0;
+    self.itemArrayM = [EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray];
 }
 
 #pragma mark - Private Methods
@@ -213,12 +213,14 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView  {// 开始拖拽
     // EYLog(@"scrollView将会开始拖拽--状态为");
 
-    CGFloat y = [scrollView.panGestureRecognizer translationInView:scrollView.superview].y;
-    CGFloat offsetY = scrollView.contentOffset.y;
+//    CGFloat y = [scrollView.panGestureRecognizer translationInView:scrollView.superview].y;
+//    CGFloat offsetY = scrollView.contentOffset.y;
 
-    if (y > 0 && offsetY == 0.0) {
-        EYLog(@"开始拖拽--可以刷新界面了--");
-    }
+//    if (y > 0 && offsetY == 0.0) {
+//        EYLog(@"开始拖拽--可以刷新界面了--");
+//        [self more];
+//        [self loadNetData];
+//    }
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {// 结束拖拽
@@ -236,10 +238,39 @@
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
     int index = scrollView.contentOffset.y / EYScreenHeight;
-
+//    CGFloat contentOffY = scrollView.contentOffset.y;
     EYLog(@"scrollView已经结束减速:%d--位置为:%f", index, scrollView.contentOffset.y);
 
     CGFloat y = [scrollView.panGestureRecognizer translationInView:scrollView.superview].y;
+
+    if (y < 0) {//向上滚动
+        self.currentVideoIndex++;
+
+    } else {//向下滚动
+        if (self.currentVideoIndex) {
+            self.currentVideoIndex--;
+        }
+    }
+
+    EYLog(@"当前的index--%ld", self.currentVideoIndex);
+
+    if (self.currentVideoIndex + 1 >= self.itemArrayM.count) {
+        EYLog(@"可以请求下一组啦啦啦");
+        NSString *jsonName = @"Items.json";
+        NSArray *jsonArray = jsonName.ey_loadLocalJSONFile;
+        
+        [self.itemArrayM addObjectsFromArray:[EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray]];
+    }
+
+    if (self.currentVideoIndex <= 0) {
+        EYLog(@"可以请求最新的一组哈哈哈");
+        NSString *jsonName = @"Items.json";
+        NSArray *jsonArray = jsonName.ey_loadLocalJSONFile;
+
+        self.currentVideoIndex = 0;
+        NSMutableArray *array = [EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray];
+        [self.itemArrayM insertObjects:array atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, array.count)]];
+    }
 
     if (y < 0 && index == self.itemViewArrayM.count - 1) {// 最后一个
         [self.itemViewArrayM insertObject:self.itemViewArrayM.firstObject atIndex:self.itemViewArrayM.count];
