@@ -9,7 +9,7 @@
 #import "EYHomeViewController.h"
 #import "EYRootViewController.h"
 #import "EYHomeTitleView.h"
-#import "EYHomeItemView.h"
+#import "EYHomeVideoView.h"
 #import "EYHomeVideoModel.h"
 #import "EYHomeCityViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
@@ -31,7 +31,7 @@
 @property (weak, nonatomic) UIView *upSwipeView;
 
 // 3个 view 视图
-@property (strong, nonatomic) NSMutableArray <EYHomeItemView *> *itemViewArrayM;
+@property (strong, nonatomic) NSMutableArray <EYHomeVideoView *> *itemViewArrayM;
 
 // 同城
 @property (weak, nonatomic) UIView *homeCityView;
@@ -166,7 +166,7 @@
         [self changeFrameWithPOP:self.naviBar offsetY:EYBackViewHeight];
         [self changeFrameWithPOP:self.scrollView offsetY:EYBackViewHeight];
         self.upSwipeView.hidden = NO;
-        for (EYHomeItemView *view in self.itemViewArrayM) {
+        for (EYHomeVideoView *view in self.itemViewArrayM) {
             view.homeInfoView.hidden = YES;
             view.homeSharedView.hidden = YES;
         }
@@ -176,7 +176,7 @@
         [self changeFrameWithPOP:self.naviBar offsetY:-EYBackViewHeight];
         [self changeFrameWithPOP:self.scrollView offsetY:-EYBackViewHeight];
         self.upSwipeView.hidden = YES;
-        for (EYHomeItemView *view in self.itemViewArrayM) {
+        for (EYHomeVideoView *view in self.itemViewArrayM) {
             view.homeInfoView.hidden = NO;
             view.homeSharedView.hidden = NO;
         }
@@ -258,7 +258,7 @@
         EYLog(@"可以请求下一组啦啦啦");
         NSString *jsonName = @"Items.json";
         NSArray *jsonArray = jsonName.ey_loadLocalJSONFile;
-        
+
         [self.itemArrayM addObjectsFromArray:[EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray]];
     }
 
@@ -277,7 +277,7 @@
         [self.itemViewArrayM removeFirstObject];
 
         for (int i = 0; i < self.itemViewArrayM.count; i++) {
-            EYHomeItemView *itemView = self.itemViewArrayM[i];
+            EYHomeVideoView *itemView = self.itemViewArrayM[i];
             itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
         }
         [scrollView setContentOffset:CGPointMake(0, EYScreenHeight) animated:NO];
@@ -288,7 +288,7 @@
         [self.itemViewArrayM removeLastObject];
 
         for (int i = 0; i < self.itemViewArrayM.count; i++) {
-            EYHomeItemView *itemView = self.itemViewArrayM[i];
+            EYHomeVideoView *itemView = self.itemViewArrayM[i];
             itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
         }
         [scrollView setContentOffset:CGPointMake(0, EYScreenHeight) animated:NO];
@@ -330,7 +330,7 @@
         self.scrollView = scrollView;
 
         for (int i = 0; i < 3; i++) {
-            EYHomeItemView *itemView = [EYHomeItemView homeItemView];
+            EYHomeVideoView *itemView = [EYHomeVideoView homeItemView];
             itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
             itemView.backgroundColor = EYRandomColor;
             [scrollView addSubview:itemView];

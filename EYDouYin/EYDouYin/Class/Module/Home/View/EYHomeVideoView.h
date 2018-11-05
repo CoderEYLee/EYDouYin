@@ -1,5 +1,5 @@
 //
-//  EYHomeItemView.h
+//  EYHomeVideoView.h
 //  EYDouYin
 //
 //  Created by 李二洋 on 2018/8/26.
@@ -10,7 +10,7 @@
 #import "EYHomeInfoView.h"
 #import "EYHomeSharedView.h"
 
-@interface EYHomeItemView : UIView
+@interface EYHomeVideoView : UIView
 
 + (instancetype)homeItemView;
 

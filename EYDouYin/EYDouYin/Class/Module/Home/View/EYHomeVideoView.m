@@ -1,16 +1,16 @@
 //
-//  EYHomeItemView.m
+//  EYHomeVideoView.m
 //  EYDouYin
 //
 //  Created by 李二洋 on 2018/8/26.
 //  Copyright © 2018年 李二洋. All rights reserved.
 //
 
-#import "EYHomeItemView.h"
+#import "EYHomeVideoView.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface EYHomeItemView() <EYHomeSharedViewDelegate>
+@interface EYHomeVideoView() <EYHomeSharedViewDelegate>
 
 @property (weak, nonatomic, readwrite) IBOutlet EYHomeInfoView *homeInfoView;
 @property (weak, nonatomic, readwrite) IBOutlet EYHomeSharedView *homeSharedView;
@@ -20,9 +20,9 @@
 
 @end
 
-@implementation EYHomeItemView
+@implementation EYHomeVideoView
 
-NSString *const EYHomeItemViewSystemVolumeDidChangeNotification=@"AVSystemController_SystemVolumeDidChangeNotification";
+NSString *const EYHomeVideoViewSystemVolumeDidChangeNotification=@"AVSystemController_SystemVolumeDidChangeNotification";
 
 #pragma mark - 初始化方法
 - (void)awakeFromNib {
@@ -33,7 +33,7 @@ NSString *const EYHomeItemViewSystemVolumeDidChangeNotification=@"AVSystemContro
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     self.volumeProgressLabel.mj_w = EYScreenWidth * audioSession.outputVolume;
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:EYHomeItemViewSystemVolumeDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:EYHomeVideoViewSystemVolumeDidChangeNotification object:nil];
 }
 
 + (instancetype)homeItemView {

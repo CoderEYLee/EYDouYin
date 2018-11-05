@@ -83,7 +83,7 @@
 		60C4008B218BFCF000B07E4A /* Collection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C4008A218BFCF000B07E4A /* Collection.plist */; };
 		60C4008E218C1DB600B07E4A /* EYCollectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */; };
 		60C40091218C269C00B07E4A /* UIImageView+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */; };
-		60D81BB92132710600456939 /* EYHomeItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D81BB82132710600456939 /* EYHomeItemView.m */; };
+		60D81BB92132710600456939 /* EYHomeVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D81BB82132710600456939 /* EYHomeVideoView.m */; };
 		60D81BBB2132711100456939 /* EYHomeItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D81BBA2132711100456939 /* EYHomeItemView.xib */; };
 		60EBB269216DE0420016ED6D /* EYZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBB268216DE0420016ED6D /* EYZFPlayerControlView.m */; };
 		60EBB26C216DFC680016ED6D /* EYZFPortraitControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBB26B216DFC680016ED6D /* EYZFPortraitControlView.m */; };
@@ -258,8 +258,8 @@
 		60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCollectionDetailViewController.m; sourceTree = "<group>"; };
 		60C4008F218C269C00B07E4A /* UIImageView+EYSDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+EYSDWebImage.h"; sourceTree = "<group>"; };
 		60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+EYSDWebImage.m"; sourceTree = "<group>"; };
-		60D81BB72132710600456939 /* EYHomeItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeItemView.h; sourceTree = "<group>"; };
-		60D81BB82132710600456939 /* EYHomeItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeItemView.m; sourceTree = "<group>"; };
+		60D81BB72132710600456939 /* EYHomeVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeVideoView.h; sourceTree = "<group>"; };
+		60D81BB82132710600456939 /* EYHomeVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeVideoView.m; sourceTree = "<group>"; };
 		60D81BBA2132711100456939 /* EYHomeItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeItemView.xib; sourceTree = "<group>"; };
 		60EBB267216DE0420016ED6D /* EYZFPlayerControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYZFPlayerControlView.h; sourceTree = "<group>"; };
 		60EBB268216DE0420016ED6D /* EYZFPlayerControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYZFPlayerControlView.m; sourceTree = "<group>"; };
@@ -674,8 +674,8 @@
 				60ED70C32160B0EF00381DBD /* EYHomeBackItemView.h */,
 				60ED70C42160B0EF00381DBD /* EYHomeBackItemView.m */,
 				60ED70C62160B0FC00381DBD /* EYHomeBackItemView.xib */,
-				60D81BB72132710600456939 /* EYHomeItemView.h */,
-				60D81BB82132710600456939 /* EYHomeItemView.m */,
+				60D81BB72132710600456939 /* EYHomeVideoView.h */,
+				60D81BB82132710600456939 /* EYHomeVideoView.m */,
 				60D81BBA2132711100456939 /* EYHomeItemView.xib */,
 				604D555F2139325900F83249 /* EYHomeTitleView.h */,
 				604D55602139325900F83249 /* EYHomeTitleView.m */,
@@ -1006,7 +1006,7 @@
 				6012FD70215A36BF004A3083 /* UIView+EYCornerRadius.m in Sources */,
 				604D55612139325900F83249 /* EYHomeTitleView.m in Sources */,
 				60752B682186F3CE001B857C /* EYShop.m in Sources */,
-				60D81BB92132710600456939 /* EYHomeItemView.m in Sources */,
+				60D81BB92132710600456939 /* EYHomeVideoView.m in Sources */,
 				601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */,
 				60752B4B2186A3B9001B857C /* EYIOSLockViewController.m in Sources */,
 				6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */,
