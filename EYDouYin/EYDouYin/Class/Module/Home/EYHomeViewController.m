@@ -31,13 +31,13 @@
 @property (weak, nonatomic) UIView *upSwipeView;
 
 // 3个 view 视图
-@property (strong, nonatomic) NSMutableArray <EYHomeVideoView *> *itemViewArrayM;
+@property (strong, nonatomic) NSMutableArray <EYHomeVideoView *> *videoViewArrayM;
+// 数据数组
+@property (strong, nonatomic) NSMutableArray <EYHomeVideoModel *>*videoModelArrayM;
 
 // 同城
 @property (weak, nonatomic) UIView *homeCityView;
 
-// 数据数组
-@property (strong, nonatomic) NSMutableArray *itemArrayM;
 @property (strong, nonatomic) NSMutableArray *modelArrayM;
 
 // 当前观看视频的下标
@@ -102,7 +102,7 @@
     }
 
     self.currentVideoIndex = 0;
-    self.itemArrayM = [EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray];
+    self.videoModelArrayM = [EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray];
 }
 
 #pragma mark - Private Methods
@@ -166,7 +166,7 @@
         [self changeFrameWithPOP:self.naviBar offsetY:EYBackViewHeight];
         [self changeFrameWithPOP:self.scrollView offsetY:EYBackViewHeight];
         self.upSwipeView.hidden = NO;
-        for (EYHomeVideoView *view in self.itemViewArrayM) {
+        for (EYHomeVideoView *view in self.videoViewArrayM) {
             view.homeInfoView.hidden = YES;
             view.homeSharedView.hidden = YES;
         }
@@ -176,7 +176,7 @@
         [self changeFrameWithPOP:self.naviBar offsetY:-EYBackViewHeight];
         [self changeFrameWithPOP:self.scrollView offsetY:-EYBackViewHeight];
         self.upSwipeView.hidden = YES;
-        for (EYHomeVideoView *view in self.itemViewArrayM) {
+        for (EYHomeVideoView *view in self.videoViewArrayM) {
             view.homeInfoView.hidden = NO;
             view.homeSharedView.hidden = NO;
         }
@@ -254,12 +254,13 @@
 
     EYLog(@"当前的index--%ld", self.currentVideoIndex);
 
-    if (self.currentVideoIndex + 1 >= self.itemArrayM.count) {
+
+    if (self.currentVideoIndex + 1 >= self.videoModelArrayM.count) {
         EYLog(@"可以请求下一组啦啦啦");
         NSString *jsonName = @"Items.json";
         NSArray *jsonArray = jsonName.ey_loadLocalJSONFile;
 
-        [self.itemArrayM addObjectsFromArray:[EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray]];
+        [self.videoModelArrayM addObjectsFromArray:[EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray]];
     }
 
     if (self.currentVideoIndex <= 0) {
@@ -269,26 +270,26 @@
 
         self.currentVideoIndex = 0;
         NSMutableArray *array = [EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray];
-        [self.itemArrayM insertObjects:array atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, array.count)]];
+        [self.videoModelArrayM insertObjects:array atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, array.count)]];
     }
 
-    if (y < 0 && index == self.itemViewArrayM.count - 1) {// 最后一个
-        [self.itemViewArrayM insertObject:self.itemViewArrayM.firstObject atIndex:self.itemViewArrayM.count];
-        [self.itemViewArrayM removeFirstObject];
+    if (y < 0 && index == self.videoViewArrayM.count - 1) {// 最后一个
+        [self.videoViewArrayM insertObject:self.videoViewArrayM.firstObject atIndex:self.videoViewArrayM.count];
+        [self.videoViewArrayM removeFirstObject];
 
-        for (int i = 0; i < self.itemViewArrayM.count; i++) {
-            EYHomeVideoView *itemView = self.itemViewArrayM[i];
+        for (int i = 0; i < self.videoViewArrayM.count; i++) {
+            EYHomeVideoView *itemView = self.videoViewArrayM[i];
             itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
         }
         [scrollView setContentOffset:CGPointMake(0, EYScreenHeight) animated:NO];
     }
 
     if (y > 0 && index == 0) {
-        [self.itemViewArrayM insertObject:self.itemViewArrayM.lastObject atIndex:0];
-        [self.itemViewArrayM removeLastObject];
+        [self.videoViewArrayM insertObject:self.videoViewArrayM.lastObject atIndex:0];
+        [self.videoViewArrayM removeLastObject];
 
-        for (int i = 0; i < self.itemViewArrayM.count; i++) {
-            EYHomeVideoView *itemView = self.itemViewArrayM[i];
+        for (int i = 0; i < self.videoViewArrayM.count; i++) {
+            EYHomeVideoView *itemView = self.videoViewArrayM[i];
             itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
         }
         [scrollView setContentOffset:CGPointMake(0, EYScreenHeight) animated:NO];
@@ -297,18 +298,18 @@
 
 
 #pragma mark - 懒加载
-- (NSMutableArray *)itemArrayM {
-    if (nil == _itemArrayM) {
-        _itemArrayM = [NSMutableArray array];
+- (NSMutableArray *)videoModelArrayM {
+    if (nil == _videoModelArrayM) {
+        _videoModelArrayM = [NSMutableArray array];
     }
-    return _itemArrayM;
+    return _videoModelArrayM;
 }
 
-- (NSMutableArray *)itemViewArrayM {
-    if (nil == _itemViewArrayM) {
-        _itemViewArrayM = [NSMutableArray array];
+- (NSMutableArray *)videoViewArrayM {
+    if (nil == _videoViewArrayM) {
+        _videoViewArrayM = [NSMutableArray array];
     }
-    return _itemViewArrayM;
+    return _videoViewArrayM;
 }
 
 - (UIScrollView *)scrollView {
@@ -334,7 +335,7 @@
             itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
             itemView.backgroundColor = EYRandomColor;
             [scrollView addSubview:itemView];
-            [self.itemViewArrayM addObject:itemView];
+            [self.videoViewArrayM addObject:itemView];
         }
     }
     return _scrollView;

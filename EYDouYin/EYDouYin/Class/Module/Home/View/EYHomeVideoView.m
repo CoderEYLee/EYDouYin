@@ -18,6 +18,8 @@
 
 @property (weak, nonatomic) NSTimer * timer;
 
+@property (strong, nonatomic) SJVideoPlayer *player;
+
 @end
 
 @implementation EYHomeVideoView
@@ -34,6 +36,14 @@ NSString *const EYHomeVideoViewSystemVolumeDidChangeNotification=@"AVSystemContr
     self.volumeProgressLabel.mj_w = EYScreenWidth * audioSession.outputVolume;
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:EYHomeVideoViewSystemVolumeDidChangeNotification object:nil];
+
+    SJVideoPlayer *player = [SJVideoPlayer player];
+    player.view.frame = self.bounds;
+    [self insertSubview:player.view atIndex:0];
+//    player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:@"http://video.chinlab.com/CLXXXYE1539069802307.mp4"]];
+    player.disableAutoRotation = YES;
+    player.autoPlay = NO;
+    self.player = player;
 }
 
 + (instancetype)homeItemView {
@@ -90,9 +100,15 @@ NSString *const EYHomeVideoViewSystemVolumeDidChangeNotification=@"AVSystemContr
     }
 }
 
+- (void)setVideoModel:(EYHomeVideoModel *)videoModel {
+    _videoModel = videoModel;
+    self.player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:videoModel.video_url]];
+}
+
 #pragma mark - 视频相关的功能
 - (void)playVideo {
     EYLog(@"开始播放视频");
+    [self.player play];
 }
 
 - (void)stopVideo {

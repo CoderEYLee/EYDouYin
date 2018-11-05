@@ -9,14 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "EYHomeInfoView.h"
 #import "EYHomeSharedView.h"
+#import "EYHomeVideoModel.h"
 
 @interface EYHomeVideoView : UIView
 
 + (instancetype)homeItemView;
 
 @property (weak, nonatomic, readonly) EYHomeInfoView *homeInfoView;
-
 @property (weak, nonatomic, readonly) EYHomeSharedView *homeSharedView;
+
+@property (strong, nonatomic) EYHomeVideoModel *videoModel;
 
 #pragma mark - 视频相关的功能
 - (void)playVideo;
