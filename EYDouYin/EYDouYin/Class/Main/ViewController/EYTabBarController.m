@@ -75,7 +75,7 @@
 
 #pragma mark - EYTabBarViewDelegate
 - (void)tabBarView:(EYTabBarView *)tabBarView didSelectedIndex:(NSInteger)index {
-    EYLog(@"当前点击的 index--%d", index);
+    EYLog(@"当前点击的 index--%ld", (long)index);
 
     EYNavigationController * homeNavi = self.viewControllers.firstObject;
     EYHomeViewController *homeVC = (EYHomeViewController *)homeNavi.viewControllers.firstObject;

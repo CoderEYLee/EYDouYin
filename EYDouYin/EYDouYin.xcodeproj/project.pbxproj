@@ -69,6 +69,7 @@
 		6085A1712189B8F800637F31 /* EYCollectionViewOtherController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */; };
 		6085A174218AA91600637F31 /* EYFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A173218AA91600637F31 /* EYFlowLayout.m */; };
 		608F940A218FEDF600AD00EB /* EYManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 608F9409218FEDF600AD00EB /* EYManager.m */; };
+		60A5A55F21902E0800224D0C /* EYHomeBackItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A5A55E21902E0800224D0C /* EYHomeBackItemModel.m */; };
 		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
 		60B2FAE4213916270046D13D /* EYHomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAE3213916270046D13D /* EYHomeInfoView.m */; };
 		60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B2FAE5213916330046D13D /* EYHomeInfoView.xib */; };
@@ -91,7 +92,6 @@
 		60ED70C22160987E00381DBD /* EYScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED70C12160987E00381DBD /* EYScrollView.m */; };
 		60ED70C52160B0EF00381DBD /* EYHomeBackItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED70C42160B0EF00381DBD /* EYHomeBackItemView.m */; };
 		60ED70C72160B0FC00381DBD /* EYHomeBackItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60ED70C62160B0FC00381DBD /* EYHomeBackItemView.xib */; };
-		60ED70CA2160BD8500381DBD /* EYHomeBackItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED70C92160BD8500381DBD /* EYHomeBackItemModel.m */; };
 		60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77AB211F5239004133A6 /* EYFindTopView.m */; };
 		60EE77AF211F52A4004133A6 /* EYFindTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60EE77AE211F52A4004133A6 /* EYFindTopView.xib */; };
 		60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77B221201CE8004133A6 /* EYTestViewController.m */; };
@@ -233,6 +233,8 @@
 		6085A173218AA91600637F31 /* EYFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFlowLayout.m; sourceTree = "<group>"; };
 		608F9408218FEDF600AD00EB /* EYManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYManager.h; sourceTree = "<group>"; };
 		608F9409218FEDF600AD00EB /* EYManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYManager.m; sourceTree = "<group>"; };
+		60A5A55D21902E0800224D0C /* EYHomeBackItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYHomeBackItemModel.h; sourceTree = "<group>"; };
+		60A5A55E21902E0800224D0C /* EYHomeBackItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYHomeBackItemModel.m; sourceTree = "<group>"; };
 		60B2FAC32137D5B40046D13D /* EYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPerson.h; sourceTree = "<group>"; };
 		60B2FAC42137D5B40046D13D /* EYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPerson.m; sourceTree = "<group>"; };
 		60B2FAE2213916270046D13D /* EYHomeInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeInfoView.h; sourceTree = "<group>"; };
@@ -270,8 +272,6 @@
 		60ED70C32160B0EF00381DBD /* EYHomeBackItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeBackItemView.h; sourceTree = "<group>"; };
 		60ED70C42160B0EF00381DBD /* EYHomeBackItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeBackItemView.m; sourceTree = "<group>"; };
 		60ED70C62160B0FC00381DBD /* EYHomeBackItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeBackItemView.xib; sourceTree = "<group>"; };
-		60ED70C82160BD8500381DBD /* EYHomeBackItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeBackItemModel.h; sourceTree = "<group>"; };
-		60ED70C92160BD8500381DBD /* EYHomeBackItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeBackItemModel.m; sourceTree = "<group>"; };
 		60EE77AA211F5239004133A6 /* EYFindTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFindTopView.h; sourceTree = "<group>"; };
 		60EE77AB211F5239004133A6 /* EYFindTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFindTopView.m; sourceTree = "<group>"; };
 		60EE77AE211F52A4004133A6 /* EYFindTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYFindTopView.xib; sourceTree = "<group>"; };
@@ -628,8 +628,8 @@
 				6076A1652148FA4D002ED551 /* EYHomeItemLikeModel.m */,
 				6076A1672148FB7D002ED551 /* EYHomeItemCommentModel.h */,
 				6076A1682148FB7D002ED551 /* EYHomeItemCommentModel.m */,
-				60ED70C82160BD8500381DBD /* EYHomeBackItemModel.h */,
-				60ED70C92160BD8500381DBD /* EYHomeBackItemModel.m */,
+				60A5A55D21902E0800224D0C /* EYHomeBackItemModel.h */,
+				60A5A55E21902E0800224D0C /* EYHomeBackItemModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1017,6 +1017,7 @@
 				60B2FAE4213916270046D13D /* EYHomeInfoView.m in Sources */,
 				6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */,
 				601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */,
+				60A5A55F21902E0800224D0C /* EYHomeBackItemModel.m in Sources */,
 				60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */,
 				60ED70C22160987E00381DBD /* EYScrollView.m in Sources */,
 				6012FD68215A2FA5004A3083 /* EYHomeBackView.m in Sources */,
@@ -1038,7 +1039,6 @@
 				60BBC68B2104D83400DEEA34 /* EYBaseViewController.m in Sources */,
 				6085A15B21897A2800637F31 /* EYWaterflowShopCell1.m in Sources */,
 				6085A15E21897A3C00637F31 /* EYWaterflowShopCell2.m in Sources */,
-				60ED70CA2160BD8500381DBD /* EYHomeBackItemModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

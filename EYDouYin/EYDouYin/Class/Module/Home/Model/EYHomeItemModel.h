@@ -20,7 +20,7 @@
 
 @property (copy, nonatomic) NSString *title;
 
-@property (copy, nonatomic) NSArray <EYHomeItemLikeModel *>  *likes;
+@property (copy, nonatomic) NSArray <EYHomeItemLikeModel *>*likes;
 
 @property (copy, nonatomic) NSArray <EYHomeItemLikeModel *>*comments;
 

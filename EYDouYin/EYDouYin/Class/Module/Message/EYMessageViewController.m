@@ -54,9 +54,6 @@ static NSString * EYLikeViewControllerCollectionViewHeadViewID = @"EYLikeViewCon
     cell.backgroundColor =EYRandomColor;
     cell.label.text = [NSString stringWithFormat:@"%ld组/%ld个", (long)indexPath.section, (long)indexPath.row];
     
-    EYLog(@"李二洋---返回 cell--%d--%d", indexPath.section, indexPath. row);
-    
-    
     return cell;
 }
 

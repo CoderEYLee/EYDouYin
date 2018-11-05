@@ -12,8 +12,7 @@
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{@"likes" : [EYHomeItemLikeModel class],
-             @"comments" : EYHomeItemCommentModel.class
-             };
+             @"comments" : EYHomeItemCommentModel.class};
 }
 
 - (NSString *)description {
