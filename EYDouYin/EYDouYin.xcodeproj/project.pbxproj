@@ -84,7 +84,7 @@
 		60C4008E218C1DB600B07E4A /* EYCollectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */; };
 		60C40091218C269C00B07E4A /* UIImageView+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */; };
 		60D81BB92132710600456939 /* EYHomeVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D81BB82132710600456939 /* EYHomeVideoView.m */; };
-		60D81BBB2132711100456939 /* EYHomeItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D81BBA2132711100456939 /* EYHomeItemView.xib */; };
+		60D81BBB2132711100456939 /* EYHomeVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D81BBA2132711100456939 /* EYHomeVideoView.xib */; };
 		60EBB269216DE0420016ED6D /* EYZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBB268216DE0420016ED6D /* EYZFPlayerControlView.m */; };
 		60EBB26C216DFC680016ED6D /* EYZFPortraitControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBB26B216DFC680016ED6D /* EYZFPortraitControlView.m */; };
 		60ED6DFA215F6DD600381DBD /* openAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60ED6DF9215F6DD600381DBD /* openAnimation.gif */; };
@@ -260,7 +260,7 @@
 		60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+EYSDWebImage.m"; sourceTree = "<group>"; };
 		60D81BB72132710600456939 /* EYHomeVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeVideoView.h; sourceTree = "<group>"; };
 		60D81BB82132710600456939 /* EYHomeVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeVideoView.m; sourceTree = "<group>"; };
-		60D81BBA2132711100456939 /* EYHomeItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeItemView.xib; sourceTree = "<group>"; };
+		60D81BBA2132711100456939 /* EYHomeVideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeVideoView.xib; sourceTree = "<group>"; };
 		60EBB267216DE0420016ED6D /* EYZFPlayerControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYZFPlayerControlView.h; sourceTree = "<group>"; };
 		60EBB268216DE0420016ED6D /* EYZFPlayerControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYZFPlayerControlView.m; sourceTree = "<group>"; };
 		60EBB26A216DFC680016ED6D /* EYZFPortraitControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYZFPortraitControlView.h; sourceTree = "<group>"; };
@@ -676,7 +676,7 @@
 				60ED70C62160B0FC00381DBD /* EYHomeBackItemView.xib */,
 				60D81BB72132710600456939 /* EYHomeVideoView.h */,
 				60D81BB82132710600456939 /* EYHomeVideoView.m */,
-				60D81BBA2132711100456939 /* EYHomeItemView.xib */,
+				60D81BBA2132711100456939 /* EYHomeVideoView.xib */,
 				604D555F2139325900F83249 /* EYHomeTitleView.h */,
 				604D55602139325900F83249 /* EYHomeTitleView.m */,
 				604D55622139326300F83249 /* EYHomeTitleView.xib */,
@@ -898,7 +898,7 @@
 				60ED6DFC215F6EBB00381DBD /* lastFrame.png in Resources */,
 				60C4008B218BFCF000B07E4A /* Collection.plist in Resources */,
 				60752B3C2181EC78001B857C /* EYMeViewControllerSourceArray.plist in Resources */,
-				60D81BBB2132711100456939 /* EYHomeItemView.xib in Resources */,
+				60D81BBB2132711100456939 /* EYHomeVideoView.xib in Resources */,
 				607541342104CC4C00EB258D /* Assets.xcassets in Resources */,
 				604D55632139326300F83249 /* EYHomeTitleView.xib in Resources */,
 				6055AD3C2116B382005DC856 /* TabBar.json in Resources */,
