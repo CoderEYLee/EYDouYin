@@ -61,6 +61,11 @@
 
     // 隐藏电池
     [UIApplication sharedApplication].statusBarHidden = YES;
+
+    //开始播放第0个
+    EYHomeVideoView *videoView = self.videoViewArrayM.firstObject;
+    videoView.videoModel = self.videoModelArrayM.firstObject;
+    [videoView playVideo];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -254,6 +259,9 @@
 
     EYLog(@"当前的index--%ld", self.currentVideoIndex);
 
+    EYHomeVideoView *videoView = self.videoViewArrayM[self.currentVideoIndex % 3];
+    videoView.videoModel = self.videoModelArrayM[self.currentVideoIndex];
+    [videoView playVideo];
 
     if (self.currentVideoIndex + 1 >= self.videoModelArrayM.count) {
         EYLog(@"可以请求下一组啦啦啦");

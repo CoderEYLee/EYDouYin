@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EYHomeInfoView.h"
 #import "EYHomeSharedView.h"
-#import "EYHomeVideoModel.h"
+@class EYHomeVideoModel;
 
 @interface EYHomeVideoView : UIView
 

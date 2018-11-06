@@ -1,5 +1,5 @@
 //
-//  EYHomeItemLikeModel.h
+//  EYHomeVideoLikeModel.h
 //  EYDouYin
 //
 //  Created by 李二洋 on 2018/9/12.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EYHomeItemLikeModel : NSObject
+@interface EYHomeVideoLikeModel : NSObject
 
 @property (copy, nonatomic) NSString *userId;
 

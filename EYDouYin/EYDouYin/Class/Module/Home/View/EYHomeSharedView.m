@@ -7,11 +7,29 @@
 //
 
 #import "EYHomeSharedView.h"
+#import "EYHomeVideoModel.h"
 
 @interface EYHomeSharedView()
 
 // 待定使用
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
+
+// 显示层的 label
+
+/**
+ 小心心
+ */
+@property (weak, nonatomic) IBOutlet UILabel *likeLabel;
+
+/**
+ 评论
+ */
+@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
+
+/**
+ 转发
+ */
+@property (weak, nonatomic) IBOutlet UILabel *forwardLabel;
 
 @end
 
@@ -47,6 +65,12 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(homeSharedView:didSeletedButton:)]) {
         [self.delegate homeSharedView:self didSeletedButton:sender.tag];
     }
+}
+
+- (void)setVideoModel:(EYHomeVideoModel *)videoModel {
+    _videoModel = videoModel;
+    NSArray <EYHomeVideoLikeModel *>*likes = videoModel.likes;
+    self.likeLabel.text = [NSString stringWithFormat:@"%lu", likes.count];
 }
 
 @end

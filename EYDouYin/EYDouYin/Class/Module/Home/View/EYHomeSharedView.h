@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class EYHomeVideoModel;
 
 typedef NS_ENUM(NSInteger, EYHomeSharedViewButtonType) {
     EYHomeSharedViewButtonTypeHead, //头像
@@ -29,5 +30,7 @@ typedef NS_ENUM(NSInteger, EYHomeSharedViewButtonType) {
 + (instancetype)homeSharedView;
 
 @property (weak, nonatomic) id <EYHomeSharedViewDelegate> delegate;
+
+@property (strong, nonatomic) EYHomeVideoModel *videoModel;
 
 @end

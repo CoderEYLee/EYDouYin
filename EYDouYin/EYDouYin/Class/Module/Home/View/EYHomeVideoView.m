@@ -9,6 +9,7 @@
 #import "EYHomeVideoView.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
+#import "EYHomeVideoModel.h"
 
 @interface EYHomeVideoView() <EYHomeSharedViewDelegate>
 
@@ -18,7 +19,7 @@
 
 @property (weak, nonatomic) NSTimer * timer;
 
-@property (strong, nonatomic) SJVideoPlayer *player;
+@property (strong, nonatomic) SJBaseVideoPlayer *player;
 
 @end
 
@@ -36,14 +37,6 @@ NSString *const EYHomeVideoViewSystemVolumeDidChangeNotification=@"AVSystemContr
     self.volumeProgressLabel.mj_w = EYScreenWidth * audioSession.outputVolume;
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:EYHomeVideoViewSystemVolumeDidChangeNotification object:nil];
-
-    SJVideoPlayer *player = [SJVideoPlayer player];
-    player.view.frame = self.bounds;
-    [self insertSubview:player.view atIndex:0];
-//    player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:@"http://video.chinlab.com/CLXXXYE1539069802307.mp4"]];
-    player.disableAutoRotation = YES;
-    player.autoPlay = NO;
-    self.player = player;
 }
 
 + (instancetype)homeItemView {
@@ -102,6 +95,8 @@ NSString *const EYHomeVideoViewSystemVolumeDidChangeNotification=@"AVSystemContr
 
 - (void)setVideoModel:(EYHomeVideoModel *)videoModel {
     _videoModel = videoModel;
+    self.homeInfoView.videoModel = videoModel;
+    self.homeSharedView.videoModel = videoModel;
     self.player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:videoModel.video_url]];
 }
 
@@ -117,6 +112,20 @@ NSString *const EYHomeVideoViewSystemVolumeDidChangeNotification=@"AVSystemContr
 
 - (void)dealloc {
     [EYNotificationCenter removeObserver:self];
+}
+
+- (SJBaseVideoPlayer *)player {
+    if (nil == _player) {
+        SJBaseVideoPlayer *player = [SJBaseVideoPlayer player];
+        player.view.frame = EYScreenBounds;
+        player.view.userInteractionEnabled = NO;
+        [self insertSubview:player.view atIndex:0];
+        player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:@""]];
+        player.disableAutoRotation = YES;
+//        player.autoPlay = NO;
+        _player = player;
+    }
+    return _player;
 }
 
 @end

@@ -11,7 +11,7 @@
 @implementation EYHomeVideoModel
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{@"likes" : [EYHomeItemLikeModel class],
+    return @{@"likes" : [EYHomeVideoLikeModel class],
              @"comments" : EYHomeItemCommentModel.class};
 }
 

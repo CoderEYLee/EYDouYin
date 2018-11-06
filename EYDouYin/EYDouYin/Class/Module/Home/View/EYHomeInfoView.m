@@ -7,6 +7,14 @@
 //
 
 #import "EYHomeInfoView.h"
+#import "EYHomeVideoModel.h"
+
+@interface EYHomeInfoView ()
+
+@property (weak, nonatomic) IBOutlet UIButton *locationButton;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@end
 
 @implementation EYHomeInfoView
 
@@ -32,6 +40,13 @@
         [self addSubview:view];
     }
     return self;
+}
+
+- (void)setVideoModel:(EYHomeVideoModel *)videoModel {
+    _videoModel = videoModel;
+
+    self.titleLabel.text = videoModel.title;
+    [self.locationButton setTitle:videoModel.location forState:UIControlStateNormal];
 }
 
 @end

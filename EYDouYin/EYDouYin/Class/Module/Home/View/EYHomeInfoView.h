@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class EYHomeVideoModel;
 
 @interface EYHomeInfoView : UIView
 
 + (instancetype)homeInfoView;
+
+@property (strong, nonatomic) EYHomeVideoModel *videoModel;
 
 @end

@@ -7,23 +7,49 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EYHomeItemLikeModel.h"
+#import "EYHomeVideoLikeModel.h"
 #import "EYHomeItemCommentModel.h"
 
 @interface EYHomeVideoModel : NSObject
 
+/**
+ 用户 id
+ */
 @property (copy, nonatomic) NSString *userId;
 
+/**
+  用户 name
+ */
 @property (copy, nonatomic) NSString *userName;
 
+/**
+ 视频 id
+ */
 @property (copy, nonatomic) NSString *itemId;
 
+/**
+ 视频标题
+ */
 @property (copy, nonatomic) NSString *title;
 
+/**
+ 视频链接
+ */
 @property (copy, nonatomic) NSString *video_url;
 
-@property (copy, nonatomic) NSArray <EYHomeItemLikeModel *>*likes;
+/**
+ 位置信息
+ */
+@property (copy, nonatomic) NSString *location;
 
-@property (copy, nonatomic) NSArray <EYHomeItemLikeModel *>*comments;
+/**
+ 视频中的喜欢数组
+ */
+@property (copy, nonatomic) NSArray <EYHomeVideoLikeModel *>*likes;
+
+/**
+ 视频中评论数组
+ */
+@property (copy, nonatomic) NSArray <EYHomeVideoLikeModel *>*comments;
 
 @end
