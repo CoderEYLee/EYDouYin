@@ -34,6 +34,15 @@
 
 @implementation EYHomeSharedView
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+
+    if (self.buttons.count) {
+        UIButton *button = self.buttons.firstObject;
+        [button changButtonWithLineColor:[UIColor whiteColor] lineWidth:2.0];
+    }
+}
+
 #pragma mark - 初始化方法
 + (instancetype)homeSharedView {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:[self alloc] options:nil] lastObject];

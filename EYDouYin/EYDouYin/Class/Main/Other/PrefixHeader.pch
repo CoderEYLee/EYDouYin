@@ -17,6 +17,8 @@
 #import "UIView+EYCornerRadius.h"
 #import "UIImageView+EYSDWebImage.h"
 #import "UIButton+EYSDWebImage.h"
+#import "UIImage+EYAddition.h"
+#import "UIButton+EYAddition.h"
 #import "EYManager.h"
 
 #import <AFNetworking.h>

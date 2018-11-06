@@ -27,6 +27,8 @@
 		6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD412116CD21005DC856 /* EYTabBarView.m */; };
 		6055AD442116D18A005DC856 /* EYTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6055AD432116D18A005DC856 /* EYTabBarView.xib */; };
 		606B658A219182130059D1F7 /* UIButton+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */; };
+		606B658D2191883B0059D1F7 /* UIImage+EYAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B658C2191883B0059D1F7 /* UIImage+EYAddition.m */; };
+		606B6590219189310059D1F7 /* UIButton+EYAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B658F219189310059D1F7 /* UIButton+EYAddition.m */; };
 		606E6FA3212813CA00ABEB83 /* EYLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 606E6FA1212813CA00ABEB83 /* EYLikeCell.m */; };
 		606E6FA4212813CA00ABEB83 /* EYLikeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 606E6FA2212813CA00ABEB83 /* EYLikeCell.xib */; };
 		606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606E6FA621284FD900ABEB83 /* EYBaseTableViewController.m */; };
@@ -157,6 +159,10 @@
 		6055AD432116D18A005DC856 /* EYTabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYTabBarView.xib; sourceTree = "<group>"; };
 		606B6588219182130059D1F7 /* UIButton+EYSDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+EYSDWebImage.h"; sourceTree = "<group>"; };
 		606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EYSDWebImage.m"; sourceTree = "<group>"; };
+		606B658B2191883B0059D1F7 /* UIImage+EYAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EYAddition.h"; sourceTree = "<group>"; };
+		606B658C2191883B0059D1F7 /* UIImage+EYAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EYAddition.m"; sourceTree = "<group>"; };
+		606B658E219189310059D1F7 /* UIButton+EYAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+EYAddition.h"; sourceTree = "<group>"; };
+		606B658F219189310059D1F7 /* UIButton+EYAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EYAddition.m"; sourceTree = "<group>"; };
 		606E6FA0212813CA00ABEB83 /* EYLikeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYLikeCell.h; sourceTree = "<group>"; };
 		606E6FA1212813CA00ABEB83 /* EYLikeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYLikeCell.m; sourceTree = "<group>"; };
 		606E6FA2212813CA00ABEB83 /* EYLikeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYLikeCell.xib; sourceTree = "<group>"; };
@@ -593,6 +599,10 @@
 				60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */,
 				606B6588219182130059D1F7 /* UIButton+EYSDWebImage.h */,
 				606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */,
+				606B658E219189310059D1F7 /* UIButton+EYAddition.h */,
+				606B658F219189310059D1F7 /* UIButton+EYAddition.m */,
+				606B658B2191883B0059D1F7 /* UIImage+EYAddition.h */,
+				606B658C2191883B0059D1F7 /* UIImage+EYAddition.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -996,6 +1006,7 @@
 				6075416D2104CFE000EB258D /* EYHttpManager.m in Sources */,
 				60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */,
 				60752B472183224E001B857C /* EYZFPlayerViewController.m in Sources */,
+				606B6590219189310059D1F7 /* UIButton+EYAddition.m in Sources */,
 				6085A1702189B8F800637F31 /* EYCollectionViewOtherController.m in Sources */,
 				60752B5A2186E39C001B857C /* EYWaterflowLayout.m in Sources */,
 				60EBB26C216DFC680016ED6D /* EYZFPortraitControlView.m in Sources */,
@@ -1019,6 +1030,7 @@
 				6085A1672189A94900637F31 /* EYCircleLayout.m in Sources */,
 				606E6FAA21284FF400ABEB83 /* EYBaseCollectionViewController.m in Sources */,
 				60B2FAE92139167C0046D13D /* EYHomeSharedView.m in Sources */,
+				606B658D2191883B0059D1F7 /* UIImage+EYAddition.m in Sources */,
 				601B03192104DDED00489E96 /* EYFindViewController.m in Sources */,
 				60B2FAE4213916270046D13D /* EYHomeInfoView.m in Sources */,
 				6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */,
