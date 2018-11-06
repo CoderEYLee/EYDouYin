@@ -12,7 +12,8 @@
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{@"likes" : [EYHomeVideoLikeModel class],
-             @"comments" : EYHomeItemCommentModel.class};
+             @"comments" : EYHomeItemCommentModel.class,
+             @"forwards" : EYHomeItemCommentModel.class};
 }
 
 - (NSString *)description {

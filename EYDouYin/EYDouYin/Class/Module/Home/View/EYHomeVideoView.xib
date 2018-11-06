@@ -25,6 +25,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yqy-qA-0an" customClass="EYHomeSharedView">
                     <rect key="frame" x="292.66666666666669" y="181.66666666666666" width="58.333333333333314" height="292.33333333333337"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Yqy-qA-0an" secondAttribute="height" multiplier="1:5" id="bmf-fd-mwr"/>
                     </constraints>
@@ -59,7 +60,7 @@
                 <outlet property="homeSharedView" destination="Yqy-qA-0an" id="tiJ-3I-w6a"/>
                 <outlet property="volumeProgressLabel" destination="Qou-bR-8iX" id="OZz-jH-9Kx"/>
             </connections>
-            <point key="canvasLocation" x="-786" y="71"/>
+            <point key="canvasLocation" x="-1702" y="75"/>
         </view>
     </objects>
 </document>

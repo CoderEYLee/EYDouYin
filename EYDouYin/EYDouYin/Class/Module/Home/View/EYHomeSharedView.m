@@ -14,8 +14,7 @@
 // 待定使用
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
 
-// 显示层的 label
-
+#pragma mark - 显示层的 label
 /**
  小心心
  */
@@ -69,8 +68,14 @@
 
 - (void)setVideoModel:(EYHomeVideoModel *)videoModel {
     _videoModel = videoModel;
-    NSArray <EYHomeVideoLikeModel *>*likes = videoModel.likes;
-    self.likeLabel.text = [NSString stringWithFormat:@"%lu", likes.count];
+    if (self.buttons.count) {
+        UIButton *headButton = self.buttons.firstObject;
+        [headButton ey_setImageWithURL:[NSURL URLWithString:videoModel.user_head_url] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"common_placeholder"] options:SDWebImageAllowInvalidSSLCertificates];
+    }
+
+    self.likeLabel.text = [NSString stringWithFormat:@"%lu", videoModel.likes.count];
+    self.commentLabel.text = [NSString stringWithFormat:@"%lu", videoModel.comments.count];
+    self.forwardLabel.text = [NSString stringWithFormat:@"%lu", videoModel.forwards.count];
 }
 
 @end

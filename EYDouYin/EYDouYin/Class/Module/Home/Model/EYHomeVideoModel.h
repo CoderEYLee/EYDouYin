@@ -23,6 +23,11 @@
 @property (copy, nonatomic) NSString *userName;
 
 /**
+ 用户头像链接
+ */
+@property (copy, nonatomic) NSString *user_head_url;
+
+/**
  视频 id
  */
 @property (copy, nonatomic) NSString *itemId;
@@ -51,5 +56,10 @@
  视频中评论数组
  */
 @property (copy, nonatomic) NSArray <EYHomeVideoLikeModel *>*comments;
+
+/**
+ 视频中转发数组
+ */
+@property (copy, nonatomic) NSArray <EYHomeVideoLikeModel *>*forwards;
 
 @end

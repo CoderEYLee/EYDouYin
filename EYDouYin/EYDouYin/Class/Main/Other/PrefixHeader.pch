@@ -16,6 +16,7 @@
 #import "NSString+EYExtension.h"
 #import "UIView+EYCornerRadius.h"
 #import "UIImageView+EYSDWebImage.h"
+#import "UIButton+EYSDWebImage.h"
 #import "EYManager.h"
 
 #import <AFNetworking.h>
@@ -26,7 +27,7 @@
 #import <POP.h>
 #import <UIImage+GIF.h>
 #import <SJVideoPlayer.h>
-#import <SDWebImage.h>
+//#import <SDWebImage.h>
 
 #import "EYTestViewController.h"
 #endif /* PrefixHeader_pch */
