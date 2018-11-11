@@ -83,7 +83,7 @@
 		60BBC68E2104D8D200DEEA34 /* EYRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC68D2104D8D200DEEA34 /* EYRootViewController.m */; };
 		60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6902104D9D900DEEA34 /* EYConstant.m */; };
 		60C40089218BFB9B00B07E4A /* EYCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C40088218BFB9B00B07E4A /* EYCollectionViewController.m */; };
-		60C4008B218BFCF000B07E4A /* Collection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C4008A218BFCF000B07E4A /* Collection.plist */; };
+		60C4008B218BFCF000B07E4A /* EYCollectionArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C4008A218BFCF000B07E4A /* EYCollectionArray.plist */; };
 		60C4008E218C1DB600B07E4A /* EYCollectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */; };
 		60C40091218C269C00B07E4A /* UIImageView+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */; };
 		60D81BB92132710600456939 /* EYHomeVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D81BB82132710600456939 /* EYHomeVideoView.m */; };
@@ -262,7 +262,7 @@
 		60BBC6902104D9D900DEEA34 /* EYConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYConstant.m; sourceTree = "<group>"; };
 		60C40087218BFB9B00B07E4A /* EYCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCollectionViewController.h; sourceTree = "<group>"; };
 		60C40088218BFB9B00B07E4A /* EYCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCollectionViewController.m; sourceTree = "<group>"; };
-		60C4008A218BFCF000B07E4A /* Collection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Collection.plist; sourceTree = "<group>"; };
+		60C4008A218BFCF000B07E4A /* EYCollectionArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EYCollectionArray.plist; sourceTree = "<group>"; };
 		60C4008C218C1DB600B07E4A /* EYCollectionDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCollectionDetailViewController.h; sourceTree = "<group>"; };
 		60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCollectionDetailViewController.m; sourceTree = "<group>"; };
 		60C4008F218C269C00B07E4A /* UIImageView+EYSDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+EYSDWebImage.h"; sourceTree = "<group>"; };
@@ -725,7 +725,7 @@
 		60C40086218BFB2200B07E4A /* Collection */ = {
 			isa = PBXGroup;
 			children = (
-				60C4008A218BFCF000B07E4A /* Collection.plist */,
+				60C4008A218BFCF000B07E4A /* EYCollectionArray.plist */,
 				60C40087218BFB9B00B07E4A /* EYCollectionViewController.h */,
 				60C40088218BFB9B00B07E4A /* EYCollectionViewController.m */,
 				60C4008C218C1DB600B07E4A /* EYCollectionDetailViewController.h */,
@@ -911,7 +911,7 @@
 				6085A16021897A4B00637F31 /* EYWaterflowShopCell2.xib in Resources */,
 				6076A15D2148E097002ED551 /* ChinLab_en.json in Resources */,
 				60ED6DFC215F6EBB00381DBD /* lastFrame.png in Resources */,
-				60C4008B218BFCF000B07E4A /* Collection.plist in Resources */,
+				60C4008B218BFCF000B07E4A /* EYCollectionArray.plist in Resources */,
 				60752B3C2181EC78001B857C /* EYMeViewControllerSourceArray.plist in Resources */,
 				60D81BBB2132711100456939 /* EYHomeVideoView.xib in Resources */,
 				607541342104CC4C00EB258D /* Assets.xcassets in Resources */,

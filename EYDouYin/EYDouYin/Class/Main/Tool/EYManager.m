@@ -19,7 +19,7 @@
 @implementation EYManager
 
 static NSString * const meArrayPlist = @"EYMeViewControllerSourceArray.plist";
-static NSString * const collectionArrayPlist = @"collectionArray.plist";
+static NSString * const collectionArrayPlist = @"EYCollectionArray.plist";
 
 // 用来保存唯一的单例对象
 static EYManager * _manager = nil;
