@@ -173,11 +173,11 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>28、内部优惠券</string>
+		<string>28、高效的设计模式</string>
 		<key>lock</key>
 		<true/>
 		<key>content_url</key>
-		<string>www.25kmm.com:8888/index.html</string>
+		<string>http://www.25kmm.com:8888/index.html</string>
 	</dict>
     <dict>
         <key>title</key>
