@@ -57,7 +57,24 @@
     NSDictionary *item = self.array[indexPath.row];
     EYCollectionDetailViewController *vc = [[EYCollectionDetailViewController alloc] init];
     vc.content_url = item[@"content_url"];
-    [self.navigationController pushViewController:vc animated:YES];
+    if (item[@"lock"]) {
+        //添加提示框
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您正在访问内部优惠券" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.secureTextEntry = YES;
+            textField.keyboardType = UIKeyboardTypeNumberPad;
+        }];
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            NSString *password = alert.textFields.firstObject.text;
+            if ([password.md2String isEqualToString:@"ec959feaadc86988b166247cd670dbaf"]) {
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else {
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (UITableView *)tableView {

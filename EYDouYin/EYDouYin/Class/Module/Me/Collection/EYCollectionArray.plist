@@ -171,11 +171,37 @@
 		<key>content_url</key>
 		<string>https://mp.weixin.qq.com/s/-HKlvues6xXEEGErTVtysw</string>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>28、内部优惠券</string>
+		<key>lock</key>
+		<true/>
+		<key>content_url</key>
+		<string>www.25kmm.com:8888/index.html</string>
+	</dict>
     <dict>
         <key>title</key>
-        <string>27、iOS 自动布局框架 – Masonry 详解</string>
+        <string>29、[iOS]一次高效的依赖注入</string>
         <key>content_url</key>
-        <string>http://66.79.161.100:8888/index.html</string>
+        <string>https://mp.weixin.qq.com/s/uFERB8ytem0h2O-_FP-Nlw</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>30、iOS自适应cell行高的那点破事儿</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/IUPY4D6J1hhgaEkFQlfJIg</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>31、iOS设计模式 - (1)概述</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/HmkMh0r-hIghH08R9LLSUA</string>
+    </dict>
+    <dict>
+        <key>title</key>
+        <string>32、七款Python开源框架的优劣总结</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/xzxBU1O7ztnsjpRy8LYptA</string>
     </dict>
 </array>
 </plist>
