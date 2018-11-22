@@ -14,8 +14,16 @@
 #import "EYMeViewController.h"
 #import "EYNavigationController.h"
 #import "EYRootViewController.h"
+#import "EYTabBar.h"
+
+typedef NS_ENUM(NSInteger, EYTabBarStyle) {
+    EYTabBarStyleCustomView = 0, //自定义 view 充当 tabBar
+    EYTabBarStyleCustomTabBar,//自定义 tabBar 充当 tabBar
+};
 
 @interface EYTabBarController () <EYTabBarViewDelegate>
+
+@property (assign, nonatomic) EYTabBarStyle style;
 
 @end
 
@@ -25,48 +33,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    if (EYSCREENSIZE_IS_IPhoneX_All) {
+        self.style = EYTabBarStyleCustomTabBar;
+    } else {
+        self.style = EYTabBarStyleCustomView;
+    }
     
     [self setupViewController];
     [self setupTabBar];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    for (UIView * subView in self.tabBar.subviews) {
-        if ([subView isKindOfClass:NSClassFromString(@"UITabBarButton")]) {//移除最上层的UITabBarButton(界面出现之后才会取到)
-            [subView removeFromSuperview];
-        }
-    }
 }
 
 #pragma mark - 初始化 UI
 - (void)setupViewController {
     NSString * jsonName = @"TabBar.json";
     NSArray *array = jsonName.ey_loadLocalJSONFile;
-    
+
+    NSMutableArray *arrayM = [NSMutableArray array];
+
     for (NSDictionary * dictionary in array) {
         UIViewController * viewController = [[NSClassFromString(dictionary[@"className"]) alloc] init];
+        if (self.style == EYTabBarStyleCustomTabBar) {
+            viewController.title = dictionary[@"title"];
+        }
         if ([dictionary[@"needNavi"] boolValue]) {
-            [self addChildViewController:[[EYNavigationController alloc] initWithRootViewController:viewController]];
+            [arrayM addObject:[[EYNavigationController alloc] initWithRootViewController:viewController]];
         } else {
-            [self addChildViewController:viewController];
+            [arrayM addObject:viewController];
         }
     }
+
+    self.viewControllers = arrayM;
 }
 
 - (void)setupTabBar {
     // 1.设置 tabbar
     [[UITabBar appearance] setShadowImage:[UIImage new]];
     [[UITabBar appearance] setBackgroundImage:[UIImage new]];
-    
-    // 2.创建自定义的 view 添加到 tabBar
-    EYTabBarView * tabBarView = [EYTabBarView tabBarView];
-    tabBarView.frame = CGRectMake(0, 0, EYScreenWidth, EYTabBarHeight);
-    tabBarView.delegate = self;
-    
-    //添加到tabBar上, 但是系统的UITabBarButton会覆盖到tabBarView的上层,需要移除掉
-    [self.tabBar addSubview:tabBarView];
+
+    if (self.style == EYTabBarStyleCustomView) {
+#pragma mark - 方式一
+        // 2.创建自定义的 view 添加到 tabBar
+        EYTabBarView * tabBarView = [EYTabBarView tabBarView];
+        tabBarView.frame = CGRectMake(0, 0, EYScreenWidth, EYTabBarHeight);
+        tabBarView.delegate = self;
+        [self.tabBar addSubview:tabBarView];
+    } else {
+#pragma mark - 方式二
+        EYTabBar *tabBar = [[EYTabBar alloc] init];
+        [self setValue:tabBar forKeyPath:@"tabBar"];
+    }
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
@@ -101,7 +117,22 @@
 
 #pragma mark - UITabBarDelegate
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    EYLog(@"%@--didSelectItem--%@", tabBar, item);
+    NSUInteger index = [tabBar.items indexOfObject:item];
+    EYLog(@"%@--didSelectItem--%@--%lu", tabBar, item, index);
+    switch (index) {
+        case 0: {
+            [tabBar setBackgroundColor:[UIColor clearColor]];
+        }
+            break;
+        case 1:
+        case 3:
+        case 4: {
+            [tabBar setBackgroundColor:[UIColor blackColor]];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)tabBar:(UITabBar *)tabBar willBeginCustomizingItems:(NSArray<UITabBarItem *> *)items {

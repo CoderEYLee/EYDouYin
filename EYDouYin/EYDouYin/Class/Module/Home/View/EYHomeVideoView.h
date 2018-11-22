@@ -20,6 +20,8 @@
 
 @property (strong, nonatomic) EYHomeVideoModel *videoModel;
 
+@property (weak, nonatomic) IBOutlet UILabel *indexLabel;
+
 #pragma mark - 视频相关的功能
 - (void)playVideo;
 - (void)stopVideo;

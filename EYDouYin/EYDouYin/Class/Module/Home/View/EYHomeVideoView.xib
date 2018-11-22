@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -41,15 +41,23 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前的 index" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufz-Vt-fYu">
+                    <rect key="frame" x="127" y="296" width="97.333333333333314" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="gNK-cT-4r1" firstAttribute="top" secondItem="Yqy-qA-0an" secondAttribute="bottom" id="QVn-D2-Ti2"/>
+                <constraint firstItem="Ufz-Vt-fYu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TYO-xI-Yko"/>
                 <constraint firstItem="Qou-bR-8iX" firstAttribute="leading" secondItem="gNK-cT-4r1" secondAttribute="leading" id="et8-aA-H7p"/>
                 <constraint firstAttribute="bottom" secondItem="gNK-cT-4r1" secondAttribute="bottom" constant="49" id="faT-1s-hyX"/>
                 <constraint firstItem="gNK-cT-4r1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fmP-je-Tam"/>
                 <constraint firstItem="Yqy-qA-0an" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="lCZ-9z-Noa"/>
                 <constraint firstItem="Qou-bR-8iX" firstAttribute="centerY" secondItem="gNK-cT-4r1" secondAttribute="bottom" id="ppV-qf-Fm3"/>
+                <constraint firstItem="Ufz-Vt-fYu" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ptk-5x-VYn"/>
                 <constraint firstItem="gNK-cT-4r1" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="xKU-cy-M51"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
@@ -58,9 +66,10 @@
             <connections>
                 <outlet property="homeInfoView" destination="gNK-cT-4r1" id="x55-jW-otY"/>
                 <outlet property="homeSharedView" destination="Yqy-qA-0an" id="tiJ-3I-w6a"/>
+                <outlet property="indexLabel" destination="Ufz-Vt-fYu" id="nTc-KO-pIz"/>
                 <outlet property="volumeProgressLabel" destination="Qou-bR-8iX" id="OZz-jH-9Kx"/>
             </connections>
-            <point key="canvasLocation" x="-1725" y="55"/>
+            <point key="canvasLocation" x="-2047" y="32"/>
         </view>
     </objects>
 </document>

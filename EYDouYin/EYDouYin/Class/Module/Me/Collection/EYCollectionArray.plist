@@ -203,5 +203,11 @@
         <key>content_url</key>
         <string>https://mp.weixin.qq.com/s/xzxBU1O7ztnsjpRy8LYptA</string>
     </dict>
+    <dict>
+        <key>title</key>
+        <string>32、百度一下</string>
+        <key>content_url</key>
+        <string>https://www.baidu.com</string>
+    </dict>
 </array>
 </plist>

@@ -95,19 +95,19 @@ NSString *const EYHomeVideoViewSystemVolumeDidChangeNotification=@"AVSystemContr
 
 - (void)setVideoModel:(EYHomeVideoModel *)videoModel {
     _videoModel = videoModel;
-    self.homeInfoView.videoModel = videoModel;
-    self.homeSharedView.videoModel = videoModel;
-    self.player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:videoModel.video_url]];
+//    self.homeInfoView.videoModel = videoModel;
+//    self.homeSharedView.videoModel = videoModel;
+//    self.player.URLAsset = [[SJVideoPlayerURLAsset alloc] initWithURL:[NSURL URLWithString:videoModel.video_url]];
 }
 
 #pragma mark - 视频相关的功能
 - (void)playVideo {
-    EYLog(@"开始播放视频");
-    [self.player play];
+//    EYLog(@"开始播放视频");
+//    [self.player play];
 }
 
 - (void)stopVideo {
-    EYLog(@"停止播放视频");
+//    EYLog(@"停止播放视频");
 }
 
 - (void)dealloc {

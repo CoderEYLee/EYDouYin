@@ -40,8 +40,9 @@
 
 @property (strong, nonatomic) NSMutableArray *modelArrayM;
 
-// 当前观看视频的下标
+// 当前视频控件的下标
 @property (assign, nonatomic) NSUInteger currentVideoIndex;
+
 @end
 
 @implementation EYHomeViewController
@@ -63,13 +64,9 @@
     [UIApplication sharedApplication].statusBarHidden = YES;
 
     //开始播放第0个
-    EYHomeVideoView *videoView = self.videoViewArrayM.firstObject;
-    videoView.videoModel = self.videoModelArrayM.firstObject;
-    [videoView playVideo];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
+//    EYHomeVideoView *videoView = self.videoViewArrayM.firstObject;
+//    videoView.videoModel = self.videoModelArrayM.firstObject;
+//    [videoView playVideo];
 }
 
 - (void)setupUI {
@@ -244,43 +241,44 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
     int index = scrollView.contentOffset.y / EYScreenHeight;
 //    CGFloat contentOffY = scrollView.contentOffset.y;
-    EYLog(@"scrollView已经结束减速:%d--位置为:%f", index, scrollView.contentOffset.y);
+    // EYLog(@"scrollView已经结束减速:%d--位置为:%f", index, scrollView.contentOffset.y);
 
     CGFloat y = [scrollView.panGestureRecognizer translationInView:scrollView.superview].y;
-
-    if (y < 0) {//向上滚动
-        self.currentVideoIndex++;
-
-    } else {//向下滚动
-        if (self.currentVideoIndex) {
-            self.currentVideoIndex--;
-        }
-    }
-
-    EYLog(@"当前的index--%ld", self.currentVideoIndex);
-
-    EYHomeVideoView *videoView = self.videoViewArrayM[self.currentVideoIndex % 3];
-    videoView.videoModel = self.videoModelArrayM[self.currentVideoIndex];
-    [videoView playVideo];
-
-    if (self.currentVideoIndex + 1 >= self.videoModelArrayM.count) {
-        EYLog(@"可以请求下一组啦啦啦");
-        NSString *jsonName = @"Items.json";
-        NSArray *jsonArray = jsonName.ey_loadLocalJSONFile;
-
-        [self.videoModelArrayM addObjectsFromArray:[EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray]];
-    }
-
-    if (self.currentVideoIndex <= 0) {
-        EYLog(@"可以请求最新的一组哈哈哈");
-        NSString *jsonName = @"Items.json";
-        NSArray *jsonArray = jsonName.ey_loadLocalJSONFile;
-
-        self.currentVideoIndex = 0;
-        NSMutableArray *array = [EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray];
-        [self.videoModelArrayM insertObjects:array atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, array.count)]];
-    }
-
+//
+//    if (y < 0) {//向上滚动
+//        self.currentVideoIndex++;
+//
+//    } else {//向下滚动
+//        if (self.currentVideoIndex) {
+//            self.currentVideoIndex--;
+//        }
+//    }
+//
+//    EYLog(@"当前的index--%ld", self.currentVideoIndex);
+//
+//    EYHomeVideoView *videoView = self.videoViewArrayM[self.currentVideoIndex % 3];
+//    videoView.indexLabel.text = [NSString stringWithFormat:@"%lu", self.currentVideoIndex];
+////    videoView.videoModel = self.videoModelArrayM[self.currentVideoIndex];
+////    [videoView playVideo];
+//
+//    if (self.currentVideoIndex + 1 >= self.videoModelArrayM.count) {
+//        EYLog(@"可以请求下一组啦啦啦");
+//        NSString *jsonName = @"Items.json";
+//        NSArray *jsonArray = jsonName.ey_loadLocalJSONFile;
+//
+//        [self.videoModelArrayM addObjectsFromArray:[EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray]];
+//    }
+//
+//    if (self.currentVideoIndex <= 0) {
+//        EYLog(@"可以请求最新的一组哈哈哈");
+//        NSString *jsonName = @"Items.json";
+//        NSArray *jsonArray = jsonName.ey_loadLocalJSONFile;
+//
+//        self.currentVideoIndex = 0;
+//        NSMutableArray *array = [EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray];
+//        [self.videoModelArrayM insertObjects:array atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, array.count)]];
+//    }
+//
     if (y < 0 && index == self.videoViewArrayM.count - 1) {// 最后一个
         [self.videoViewArrayM insertObject:self.videoViewArrayM.firstObject atIndex:self.videoViewArrayM.count];
         [self.videoViewArrayM removeFirstObject];
@@ -336,15 +334,22 @@
         scrollView.bounces = NO;
         scrollView.delegate = self;
         [self.view insertSubview:scrollView belowSubview:self.naviBar];
-        self.scrollView = scrollView;
 
         for (int i = 0; i < 3; i++) {
-            EYHomeVideoView *itemView = [EYHomeVideoView homeItemView];
-            itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
-            itemView.backgroundColor = EYRandomColor;
-            [scrollView addSubview:itemView];
-            [self.videoViewArrayM addObject:itemView];
+            EYHomeVideoView *videoView = [EYHomeVideoView homeItemView];
+            videoView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
+            if (i == 0) {
+                videoView.backgroundColor = [UIColor redColor];
+            } else if (i == 1) {
+                videoView.backgroundColor = [UIColor greenColor];
+            } else {
+                videoView.backgroundColor = [UIColor blueColor];
+            }
+            [scrollView addSubview:videoView];
+            [self.videoViewArrayM addObject:videoView];
         }
+        scrollView.contentOffset = CGPointMake(0, EYScreenHeight);
+        _scrollView = scrollView;
     }
     return _scrollView;
 }
