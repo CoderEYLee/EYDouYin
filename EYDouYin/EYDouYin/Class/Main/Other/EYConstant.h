@@ -44,6 +44,26 @@ UIKIT_EXTERN NSString *const EYTabbarShouldChangeColorNotification;
 // 随机色
 #define EYRandomColor EYColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
+#pragma mark - 尺寸相关
+#define UI_IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define UI_IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define UI_IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
+
+#define EYSCREENSIZE_IS_40  (UI_IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 568.0 || [[UIScreen mainScreen] bounds].size.width == 568.0)
+#define EYSCREENSIZE_IS_47  (UI_IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 667.0 || [[UIScreen mainScreen] bounds].size.width == 667.0)
+#define EYSCREENSIZE_IS_55  (UI_IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 736.0 || [[UIScreen mainScreen] bounds].size.width == 736.0)
+
+//判断iPHoneXR
+#define EYSCREENSIZE_IS_XR ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) && !UI_IS_IPAD : NO)
+
+//判断iPHoneX或者iPHoneXs
+#define EYSCREENSIZE_IS_X ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) && !UI_IS_IPAD : NO)
+
+//判断iPhoneXs Max
+#define EYSCREENSIZE_IS_XS_MAX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) && !UI_IS_IPAD : NO)
+//判断X系列
+#define EYSCREENSIZE_IS_IPhoneX_All (EYSCREENSIZE_IS_XR || EYSCREENSIZE_IS_X || EYSCREENSIZE_IS_XS_MAX)
+
 //获取当前屏幕的尺寸
 #define EYScreenBounds ([UIScreen mainScreen].bounds)
 #define EYScreenSize  (EYScreenBounds.size)
@@ -51,28 +71,13 @@ UIKIT_EXTERN NSString *const EYTabbarShouldChangeColorNotification;
 #define EYScreenHeight (EYScreenSize.height)
 
 //电池栏的高度
-#define EYStatusBarHeight (EYiPhoneX ? (44) : (20))
+#define EYStatusBarHeight (EYSCREENSIZE_IS_IPhoneX_All ? (44) : (20))
 //电池栏+导航栏的高度
-#define EYStatusBarAndNaviBarHeight (EYiPhoneX ? (88) : (64))
+#define EYStatusBarAndNaviBarHeight (EYSCREENSIZE_IS_IPhoneX_All ? (88) : (64))
 //TabBar 的高度
 #define EYTabBarHeight (49)
 //HomeIndicator的高度(只有 X 有)
-#define EYHomeIndicatorHeight (EYiPhoneX ? (34) : (0))
-
-// 判断是否为 iPhone 4S
-#define EYiPhone4S ((EYScreenWidth == 320.0f) && (EYScreenHeight == 480.0f) || (EYScreenWidth == 480.0f) && (EYScreenHeight == 320.0f))
-
-// 判断是否为 iPhone 5SE
-#define EYiPhone5SE ((EYScreenWidth == 320.0f) && (EYScreenHeight == 568.0f) || (EYScreenWidth == 568.0f) && (EYScreenHeight == 320.0f))
-
-// 判断是否为iPhone 6
-#define EYiPhone6 ((EYScreenWidth == 375.0f) && (EYScreenHeight == 667.0f) || (EYScreenWidth == 667.0f) && (EYScreenHeight == 375.0f))
-
-// 判断是否为iPhone 6Plus
-#define EYiPhone6Plus ((EYScreenWidth == 414.0f) && (EYScreenHeight == 736.0f) || (EYScreenWidth == 736.0f) && (EYScreenHeight == 414.0f))
-
-// 判断是否为iPhone X
-#define EYiPhoneX ((EYScreenWidth == 375.f) && (EYScreenHeight == 812.f) || (EYScreenWidth == 812.f) && (EYScreenHeight == 375.f))
+#define EYHomeIndicatorHeight (EYSCREENSIZE_IS_IPhoneX_All ? (34) : (0))
 
 // 设备系统版本
 #define EYDeviceSystemVersion ([[UIDevice currentDevice].systemVersion doubleValue])
