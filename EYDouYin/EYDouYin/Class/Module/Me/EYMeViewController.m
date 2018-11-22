@@ -21,8 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.view.backgroundColor = [UIColor whiteColor];
     self.array = [EYManager sharedManager].meArray;
-
     [self.tableView reloadData];
  }
 

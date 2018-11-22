@@ -50,7 +50,12 @@
  @discussion If you do not implement this method, the web view will load the request or, if appropriate, forward it to another application.
  */
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-
+    WKNavigationActionPolicy policy = WKNavigationActionPolicyCancel;
+    if ([webView.URL.absoluteString isEqualToString:self.content_url]) {
+        policy = WKNavigationActionPolicyAllow;
+    }
+    //这句是必须加上的，不然会崩溃
+    decisionHandler(policy);
 }
 
 /*! @abstract Decides whether to allow or cancel a navigation after its

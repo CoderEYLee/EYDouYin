@@ -60,8 +60,11 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    // 隐藏电池
-    [UIApplication sharedApplication].statusBarHidden = YES;
+    if (EYSCREENSIZE_IS_IPhoneX_All) {
+        [UIApplication sharedApplication].statusBarHidden = NO;
+    } else {
+        [UIApplication sharedApplication].statusBarHidden = YES;
+    }
 
     //开始播放第0个
 //    EYHomeVideoView *videoView = self.videoViewArrayM.firstObject;

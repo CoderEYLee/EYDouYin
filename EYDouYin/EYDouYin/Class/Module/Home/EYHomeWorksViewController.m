@@ -18,8 +18,9 @@
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor redColor];
-
-    [UIApplication sharedApplication].statusBarHidden = NO;
+    if (!EYSCREENSIZE_IS_IPhoneX_All) {
+        [UIApplication sharedApplication].statusBarHidden = NO;
+    }
 }
 
 @end

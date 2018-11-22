@@ -105,6 +105,7 @@
         } else {//禁止滚动
             tabBarView.backgroundColor = [UIColor blackColor];
             self.selectedIndex = index;
+            [UIApplication sharedApplication].statusBarHidden = NO;
         }
     }
 

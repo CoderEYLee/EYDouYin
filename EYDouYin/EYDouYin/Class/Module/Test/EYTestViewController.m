@@ -22,7 +22,9 @@
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:NSSelectorFromString(@"handleNavigationTransition:")];
     [self.view addGestureRecognizer:pan];
 
-    [UIApplication sharedApplication].statusBarHidden = NO;
+    if (!EYSCREENSIZE_IS_IPhoneX_All) {
+        [UIApplication sharedApplication].statusBarHidden = NO;
+    }
 
     UILabel * label = [[UILabel alloc] init];
     label.text = @"这是一个测试界面";

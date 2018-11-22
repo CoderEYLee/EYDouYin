@@ -121,7 +121,9 @@
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    [UIApplication sharedApplication].statusBarHidden = NO;
+    if (!EYSCREENSIZE_IS_IPhoneX_All) {
+        [UIApplication sharedApplication].statusBarHidden = NO;
+    }
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
@@ -132,7 +134,9 @@
      EYLog(@"底部的 scrollView已经结束减速--%@", NSStringFromCGPoint(scrollView.contentOffset));
     CGFloat x = scrollView.contentOffset.x;
     if (x == EYScreenWidth) {
-        [UIApplication sharedApplication].statusBarHidden = YES;
+        if (!EYSCREENSIZE_IS_IPhoneX_All) {
+            [UIApplication sharedApplication].statusBarHidden = YES;
+        }
     } else {
 
     }
