@@ -16,6 +16,7 @@
 @property (weak, nonatomic, readwrite) IBOutlet EYHomeInfoView *homeInfoView;
 @property (weak, nonatomic, readwrite) IBOutlet EYHomeSharedView *homeSharedView;
 @property (weak, nonatomic) IBOutlet UILabel *volumeProgressLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 
 @property (weak, nonatomic) NSTimer * timer;
 
@@ -37,6 +38,12 @@ NSString *const EYHomeVideoViewSystemVolumeDidChangeNotification=@"AVSystemContr
     self.volumeProgressLabel.mj_w = EYScreenWidth * audioSession.outputVolume;
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:EYHomeVideoViewSystemVolumeDidChangeNotification object:nil];
+
+    if (EYSCREENSIZE_IS_IPhoneX_All) {
+        self.bottomConstraint.constant = 0;
+    } else {
+        self.bottomConstraint.constant = 49;
+    }
 }
 
 + (instancetype)homeItemView {

@@ -279,15 +279,18 @@
 //        [self.videoModelArrayM insertObjects:array atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, array.count)]];
 //    }
 //
+
+    CGFloat width = self.scrollView.width;
+    CGFloat height = self.scrollView.height;
     if (y < 0 && index == self.videoViewArrayM.count - 1) {// 最后一个
         [self.videoViewArrayM insertObject:self.videoViewArrayM.firstObject atIndex:self.videoViewArrayM.count];
         [self.videoViewArrayM removeFirstObject];
 
         for (int i = 0; i < self.videoViewArrayM.count; i++) {
             EYHomeVideoView *itemView = self.videoViewArrayM[i];
-            itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
+            itemView.frame = CGRectMake(0, height * i, width, height);
         }
-        [scrollView setContentOffset:CGPointMake(0, EYScreenHeight) animated:NO];
+        [scrollView setContentOffset:CGPointMake(0, height) animated:NO];
     }
 
     if (y > 0 && index == 0) {
@@ -296,9 +299,9 @@
 
         for (int i = 0; i < self.videoViewArrayM.count; i++) {
             EYHomeVideoView *itemView = self.videoViewArrayM[i];
-            itemView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
+            itemView.frame = CGRectMake(0, height * i, width, height);
         }
-        [scrollView setContentOffset:CGPointMake(0, EYScreenHeight) animated:NO];
+        [scrollView setContentOffset:CGPointMake(0, height) animated:NO];
     }
 }
 
