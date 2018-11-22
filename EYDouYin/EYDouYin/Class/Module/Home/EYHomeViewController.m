@@ -320,9 +320,16 @@
 
 - (UIScrollView *)scrollView {
     if (nil == _scrollView) {
-        UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:EYScreenBounds];
+        CGFloat width = EYScreenWidth;
+        CGFloat height = 0;
+        if (EYSCREENSIZE_IS_IPhoneX_All) {
+            height = EYScreenHeight -EYTabBarHeight - EYHomeIndicatorHeight;
+        } else {
+            height = EYScreenHeight;
+        }
+        UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
         scrollView.layer.cornerRadius = 5.0;
-        scrollView.contentSize = CGSizeMake(EYScreenWidth, EYScreenHeight * 3);
+        scrollView.contentSize = CGSizeMake(width, height * 3);
         if (@available(iOS 11.0, *)) {
             scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         } else {
@@ -337,7 +344,7 @@
 
         for (int i = 0; i < 3; i++) {
             EYHomeVideoView *videoView = [EYHomeVideoView homeItemView];
-            videoView.frame = CGRectMake(0, EYScreenHeight * i, EYScreenWidth, EYScreenHeight);
+            videoView.frame = CGRectMake(0, height * i, width, height);
             if (i == 0) {
                 videoView.backgroundColor = [UIColor redColor];
             } else if (i == 1) {
@@ -348,7 +355,7 @@
             [scrollView addSubview:videoView];
             [self.videoViewArrayM addObject:videoView];
         }
-        scrollView.contentOffset = CGPointMake(0, EYScreenHeight);
+        scrollView.contentOffset = CGPointMake(0, height);
         _scrollView = scrollView;
     }
     return _scrollView;
