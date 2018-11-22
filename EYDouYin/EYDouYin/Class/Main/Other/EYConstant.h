@@ -45,22 +45,22 @@ UIKIT_EXTERN NSString *const EYTabbarShouldChangeColorNotification;
 #define EYRandomColor EYColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
 #pragma mark - 尺寸相关
-#define UI_IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-#define UI_IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-#define UI_IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
+#define EYUI_IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define EYUI_IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define EYUI_IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
 
-#define EYSCREENSIZE_IS_40  (UI_IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 568.0 || [[UIScreen mainScreen] bounds].size.width == 568.0)
-#define EYSCREENSIZE_IS_47  (UI_IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 667.0 || [[UIScreen mainScreen] bounds].size.width == 667.0)
-#define EYSCREENSIZE_IS_55  (UI_IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 736.0 || [[UIScreen mainScreen] bounds].size.width == 736.0)
+#define EYSCREENSIZE_IS_40  (EYUI_IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 568.0 || [[UIScreen mainScreen] bounds].size.width == 568.0)
+#define EYSCREENSIZE_IS_47  (EYUI_IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 667.0 || [[UIScreen mainScreen] bounds].size.width == 667.0)
+#define EYSCREENSIZE_IS_55  (EYUI_IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 736.0 || [[UIScreen mainScreen] bounds].size.width == 736.0)
 
 //判断iPHoneXR
-#define EYSCREENSIZE_IS_XR ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) && !UI_IS_IPAD : NO)
+#define EYSCREENSIZE_IS_XR ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) && !EYUI_IS_IPAD : NO)
 
 //判断iPHoneX或者iPHoneXs
-#define EYSCREENSIZE_IS_X ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) && !UI_IS_IPAD : NO)
+#define EYSCREENSIZE_IS_X ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) && !EYUI_IS_IPAD : NO)
 
 //判断iPhoneXs Max
-#define EYSCREENSIZE_IS_XS_MAX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) && !UI_IS_IPAD : NO)
+#define EYSCREENSIZE_IS_XS_MAX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) && !EYUI_IS_IPAD : NO)
 //判断X系列
 #define EYSCREENSIZE_IS_IPhoneX_All (EYSCREENSIZE_IS_XR || EYSCREENSIZE_IS_X || EYSCREENSIZE_IS_XS_MAX)
 
