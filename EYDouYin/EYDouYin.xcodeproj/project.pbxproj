@@ -26,7 +26,6 @@
 		6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD3E2116B929005DC856 /* NSString+EYExtension.m */; };
 		6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD412116CD21005DC856 /* EYTabBarView.m */; };
 		6055AD442116D18A005DC856 /* EYTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6055AD432116D18A005DC856 /* EYTabBarView.xib */; };
-		605A83D421A64527005E8386 /* EYTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 605A83D321A64527005E8386 /* EYTabBar.m */; };
 		606B658A219182130059D1F7 /* UIButton+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */; };
 		606B658D2191883B0059D1F7 /* UIImage+EYAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B658C2191883B0059D1F7 /* UIImage+EYAddition.m */; };
 		606B6590219189310059D1F7 /* UIButton+EYAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B658F219189310059D1F7 /* UIButton+EYAddition.m */; };
@@ -158,8 +157,6 @@
 		6055AD402116CD21005DC856 /* EYTabBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYTabBarView.h; sourceTree = "<group>"; };
 		6055AD412116CD21005DC856 /* EYTabBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYTabBarView.m; sourceTree = "<group>"; };
 		6055AD432116D18A005DC856 /* EYTabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYTabBarView.xib; sourceTree = "<group>"; };
-		605A83D221A64527005E8386 /* EYTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYTabBar.h; sourceTree = "<group>"; };
-		605A83D321A64527005E8386 /* EYTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYTabBar.m; sourceTree = "<group>"; };
 		606B6588219182130059D1F7 /* UIButton+EYSDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+EYSDWebImage.h"; sourceTree = "<group>"; };
 		606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EYSDWebImage.m"; sourceTree = "<group>"; };
 		606B658B2191883B0059D1F7 /* UIImage+EYAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EYAddition.h"; sourceTree = "<group>"; };
@@ -401,8 +398,6 @@
 				6055AD402116CD21005DC856 /* EYTabBarView.h */,
 				6055AD412116CD21005DC856 /* EYTabBarView.m */,
 				6055AD432116D18A005DC856 /* EYTabBarView.xib */,
-				605A83D221A64527005E8386 /* EYTabBar.h */,
-				605A83D321A64527005E8386 /* EYTabBar.m */,
 				60ED70C02160987E00381DBD /* EYScrollView.h */,
 				60ED70C12160987E00381DBD /* EYScrollView.m */,
 			);
@@ -1018,7 +1013,6 @@
 				6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */,
 				6075413A2104CC4C00EB258D /* main.m in Sources */,
 				60752B3E2182C3F5001B857C /* NullSafe.m in Sources */,
-				605A83D421A64527005E8386 /* EYTabBar.m in Sources */,
 				601B032221056E4E00489E96 /* EYSendViewController.m in Sources */,
 				601B032521056E5F00489E96 /* EYHomeViewController.m in Sources */,
 				60752B6C2186F49A001B857C /* EYShopCell.m in Sources */,

@@ -14,16 +14,10 @@
 #import "EYMeViewController.h"
 #import "EYNavigationController.h"
 #import "EYRootViewController.h"
-#import "EYTabBar.h"
-
-typedef NS_ENUM(NSInteger, EYTabBarStyle) {
-    EYTabBarStyleCustomView = 0, //自定义 view 充当 tabBar
-    EYTabBarStyleCustomTabBar,//自定义 tabBar 充当 tabBar
-};
 
 @interface EYTabBarController () <EYTabBarViewDelegate>
 
-@property (assign, nonatomic) EYTabBarStyle style;
+@property (weak, nonatomic) UIView *tabBarView;
 
 @end
 
@@ -33,15 +27,15 @@ typedef NS_ENUM(NSInteger, EYTabBarStyle) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    if (EYSCREENSIZE_IS_IPhoneX_All) {
-        self.style = EYTabBarStyleCustomTabBar;
-    } else {
-        self.style = EYTabBarStyleCustomView;
-    }
     
     [self setupViewController];
     [self setupTabBar];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    self.tabBarView.height = EYTabBarHeight;
 }
 
 #pragma mark - 初始化 UI
@@ -53,9 +47,6 @@ typedef NS_ENUM(NSInteger, EYTabBarStyle) {
 
     for (NSDictionary * dictionary in array) {
         UIViewController * viewController = [[NSClassFromString(dictionary[@"className"]) alloc] init];
-        if (self.style == EYTabBarStyleCustomTabBar) {
-            viewController.title = dictionary[@"title"];
-        }
         if ([dictionary[@"needNavi"] boolValue]) {
             [arrayM addObject:[[EYNavigationController alloc] initWithRootViewController:viewController]];
         } else {
@@ -71,18 +62,15 @@ typedef NS_ENUM(NSInteger, EYTabBarStyle) {
     [[UITabBar appearance] setShadowImage:[UIImage new]];
     [[UITabBar appearance] setBackgroundImage:[UIImage new]];
 
-    if (self.style == EYTabBarStyleCustomView) {
-#pragma mark - 方式一
-        // 2.创建自定义的 view 添加到 tabBar
-        EYTabBarView * tabBarView = [EYTabBarView tabBarView];
-        tabBarView.frame = CGRectMake(0, 0, EYScreenWidth, EYTabBarHeight);
-        tabBarView.delegate = self;
-        [self.tabBar addSubview:tabBarView];
-    } else {
-#pragma mark - 方式二
-        EYTabBar *tabBar = [[EYTabBar alloc] init];
-        [self setValue:tabBar forKeyPath:@"tabBar"];
+    // 2.创建自定义的 view 添加到 tabBar
+    EYTabBarView * tabBarView = [EYTabBarView tabBarView];
+    tabBarView.frame = CGRectMake(0, 0, self.tabBar.width, self.tabBar.height);
+    tabBarView.delegate = self;
+    if (EYSCREENSIZE_IS_IPhoneX_All) {
+        self.tabBar.backgroundColor = [UIColor blackColor];
+        self.tabBarView = tabBarView;
     }
+    [self.tabBar addSubview:tabBarView];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
@@ -93,21 +81,31 @@ typedef NS_ENUM(NSInteger, EYTabBarStyle) {
 - (void)tabBarView:(EYTabBarView *)tabBarView didSelectedIndex:(NSInteger)index {
     EYLog(@"当前点击的 index--%ld", (long)index);
 
-    EYNavigationController * homeNavi = self.viewControllers.firstObject;
-    EYHomeViewController *homeVC = (EYHomeViewController *)homeNavi.viewControllers.firstObject;
-
-    if (index == EYTabBarViewTypeHome) {
-        if (homeVC.type == EYHomeViewControllerButtonTypeRecommend) {
-            tabBarView.backgroundColor = [UIColor clearColor];
+    if (EYSCREENSIZE_IS_IPhoneX_All) {
+        if (index == EYTabBarViewTypePlus) {//弹出发布界面
+            [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
         } else {
-            tabBarView.backgroundColor = [UIColor blackColor];
+            self.selectedIndex = index;
         }
-        self.selectedIndex = index;
-    } else if (index == EYTabBarViewTypePlus) {//弹出发布界面
-        [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
-    } else {//禁止滚动
-        tabBarView.backgroundColor = [UIColor blackColor];
-        self.selectedIndex = index;
+    } else {
+        EYNavigationController * homeNavi = self.viewControllers.firstObject;
+        EYHomeViewController *homeVC = (EYHomeViewController *)homeNavi.viewControllers.firstObject;
+
+        if (index == EYTabBarViewTypeHome) {
+            if (!EYSCREENSIZE_IS_IPhoneX_All) {
+                if (homeVC.type == EYHomeViewControllerButtonTypeRecommend) {
+                    tabBarView.backgroundColor = [UIColor clearColor];
+                } else {
+                    tabBarView.backgroundColor = [UIColor blackColor];
+                }
+            }
+            self.selectedIndex = index;
+        } else if (index == EYTabBarViewTypePlus) {//弹出发布界面
+            [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
+        } else {//禁止滚动
+            tabBarView.backgroundColor = [UIColor blackColor];
+            self.selectedIndex = index;
+        }
     }
 
     if (self.delegate && [self.delegate respondsToSelector:@selector(tabBarControllerDidSelectedIndex:)]) {
@@ -117,22 +115,7 @@ typedef NS_ENUM(NSInteger, EYTabBarStyle) {
 
 #pragma mark - UITabBarDelegate
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    NSUInteger index = [tabBar.items indexOfObject:item];
-    EYLog(@"%@--didSelectItem--%@--%lu", tabBar, item, index);
-    switch (index) {
-        case 0: {
-            [tabBar setBackgroundColor:[UIColor clearColor]];
-        }
-            break;
-        case 1:
-        case 3:
-        case 4: {
-            [tabBar setBackgroundColor:[UIColor blackColor]];
-        }
-            break;
-        default:
-            break;
-    }
+    EYLog(@"%@--didSelectItem--%@", tabBar, item);
 }
 
 - (void)tabBar:(UITabBar *)tabBar willBeginCustomizingItems:(NSArray<UITabBarItem *> *)items {
