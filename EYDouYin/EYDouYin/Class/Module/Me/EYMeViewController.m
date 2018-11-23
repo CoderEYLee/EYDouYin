@@ -72,7 +72,7 @@
 #pragma mark - 懒加载
 - (UITableView *)tableView {
     if (_tableView == nil) {
-        UITableView * tableView = [[UITableView alloc] initWithFrame:EYScreenBounds style:UITableViewStyleGrouped];
+        UITableView * tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight - EYTabBarHeight - EYHomeIndicatorHeight) style:UITableViewStyleGrouped];
         if (@available(iOS 11.0, *)) {
             tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         } else {

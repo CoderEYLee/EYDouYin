@@ -23,9 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.naviBar.hidden = NO;
-    self.naviBar.backgroundColor = [UIColor redColor];
-
     self.array = self.array = [EYManager sharedManager].collectionArray;
     [self.tableView reloadData];
 }

@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSLog(@"2222-%@", self.content_url);
+    NSLog(@"self.content_url-----%@", self.content_url);
 
 //    NSHTTPCookie *cookieWID = [NSHTTPCookie cookieWithProperties:[NSDictionary dictionaryWithObjectsAndKeys: @"wid" ,NSHTTPCookieName, WID,NSHTTPCookieValue, @"www.google.com",NSHTTPCookieDomain, @"",NSHTTPCookiePath, @"false",@"HttpOnly", nil]];
 
@@ -41,108 +41,118 @@
 
 #pragma mark - WKNavigationDelegate
 
-/*! @abstract Decides whether to allow or cancel a navigation.
- @param webView The web view invoking the delegate method.
- @param navigationAction Descriptive information about the action
- triggering the navigation request.
- @param decisionHandler The decision handler to call to allow or cancel the
- navigation. The argument is one of the constants of the enumerated type WKNavigationActionPolicy.
- @discussion If you do not implement this method, the web view will load the request or, if appropriate, forward it to another application.
+/**
+ 是否允许加载网页
+
+ @param webView 需要加载的网页
+ @param navigationAction 导航触发
+ @param decisionHandler 决定回调
  */
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+
     WKNavigationActionPolicy policy = WKNavigationActionPolicyCancel;
-    if ([webView.URL.absoluteString isEqualToString:self.content_url]) {
-        policy = WKNavigationActionPolicyAllow;
+    if (webView && [webView.URL.absoluteString isEqualToString:self.content_url]) {
+         policy = WKNavigationActionPolicyAllow;
     }
+    EYLog(@"是否允许加载网页-->%@", navigationAction);
     //这句是必须加上的，不然会崩溃
     decisionHandler(policy);
 }
 
-/*! @abstract Decides whether to allow or cancel a navigation after its
- response is known.
- @param webView The web view invoking the delegate method.
- @param navigationResponse Descriptive information about the navigation
- response.
- @param decisionHandler The decision handler to call to allow or cancel the
- navigation. The argument is one of the constants of the enumerated type WKNavigationResponsePolicy.
- @discussion If you do not implement this method, the web view will allow the response, if the web view can show it.
+/**
+ 决定是否允许或取消导航
+
+ @param webView 网页
+ @param navigationResponse 导航响应描述信息
+ @param decisionHandler 决定回调
  */
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler  {
-
+    EYLog(@"决定是否允许或取消导航-->%@", navigationResponse);
+    WKNavigationResponsePolicy policy = WKNavigationResponsePolicyCancel;
+    if (webView && [webView.URL.absoluteString isEqualToString:self.content_url]) {
+        policy = WKNavigationResponsePolicyAllow;
+    }
+    decisionHandler(policy);
 }
 
-/*! @abstract Invoked when a main frame navigation starts.
- @param webView The web view invoking the delegate method.
- @param navigation The navigation.
+/**
+ 已经开始了临时的导航
+
+ @param webView 网页
+ @param navigation 导航
  */
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
-
+    EYLog(@"已经开始了临时的导航--%@", navigation);
 }
 
-/*! @abstract Invoked when a server redirect is received for the main
- frame.
- @param webView The web view invoking the delegate method.
- @param navigation The navigation.
+/**
+ 已经收到了服务器从定向为临时导航
  */
 - (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
-
+    EYLog(@"已经收到了服务器从定向为临时导航-->%@", navigation);
 }
 
-/*! @abstract Invoked when an error occurs while starting to load data for
- the main frame.
- @param webView The web view invoking the delegate method.
- @param navigation The navigation.
- @param error The error that occurred.
+/**
+ 临时导航已经失败
+
+ @param webView 网页
+ @param navigation 导航
+ @param error 错误信息
  */
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
-
+    EYLog(@"临时导航已经失败-->%@", navigation);
 }
 
-/*! @abstract Invoked when content starts arriving for the main frame.
- @param webView The web view invoking the delegate method.
- @param navigation The navigation.
+/**
+ 已经提交了导航
+
+ @param webView 网页
+ @param navigation 导航
  */
 - (void)webView:(WKWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation {
-
+    EYLog(@"已经提交了导航-->%@", navigation);
 }
 
-/*! @abstract Invoked when a main frame navigation completes.
- @param webView The web view invoking the delegate method.
- @param navigation The navigation.
+/**
+ 已经结束了导航
+
+ @param webView 网页
+ @param navigation 导航
  */
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
-
+    EYLog(@"已经结束了导航-->%@", navigation);
 }
 
-/*! @abstract Invoked when an error occurs during a committed main frame
- navigation.
- @param webView The web view invoking the delegate method.
- @param navigation The navigation.
- @param error The error that occurred.
+/**
+ 已经失败了导航
+
+ @param webView 网页
+ @param navigation 导航
+ @param error 错误信息
  */
 - (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
-
+    EYLog(@"已经失败了导航-->%@", navigation);
 }
 
-/*! @abstract Invoked when the web view needs to respond to an authentication challenge.
- @param webView The web view that received the authentication challenge.
- @param challenge The authentication challenge.
- @param completionHandler The completion handler you must invoke to respond to the challenge. The
- disposition argument is one of the constants of the enumerated type
- NSURLSessionAuthChallengeDisposition. When disposition is NSURLSessionAuthChallengeUseCredential,
- the credential argument is the credential to use, or nil to indicate continuing without a
- credential.
- @discussion If you do not implement this method, the web view will respond to the authentication challenge with the NSURLSessionAuthChallengeRejectProtectionSpace disposition.
+/**
+ 证书验证时候调用
+
+ @param webView 网页
+ @param challenge 需要验证的信息
+ @param completionHandler 决定的回调
  */
 - (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler {
-
+    EYLog(@"证书验证时候调用--%@", challenge);
+    completionHandler(NSURLSessionAuthChallengeUseCredential, challenge.proposedCredential);
 }
 
-/*! @abstract Invoked when the web view's web content process is terminated.
- @param webView The web view whose underlying web content process was terminated.
- */
-- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView API_AVAILABLE(macosx(10.11), ios(9.0)) {
+/**
+ 网页的内容过程已经终止
 
+ @param webView 网页
+ */
+- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView {
+    EYLog(@"网页的内容过程已经终止--");
 }
 
 - (void)dealloc {
