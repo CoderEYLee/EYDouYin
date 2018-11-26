@@ -86,7 +86,7 @@
 
 - (UITableView *)tableView {
     if (_tableView == nil) {
-        UITableView * tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight) style:UITableViewStylePlain];
+        UITableView * tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) style:UITableViewStylePlain];
         tableView.dataSource = self;
         tableView.delegate = self;
         if (@available(iOS 11.0, *)) {

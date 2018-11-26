@@ -9,10 +9,9 @@
 #import "EYCollectionDetailViewController.h"
 #import <WebKit/WebKit.h>
 
-@interface EYCollectionDetailViewController () <WKNavigationDelegate>
+@interface EYCollectionDetailViewController () <WKNavigationDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) WKWebView *webView;
-
 
 @end
 
@@ -29,6 +28,7 @@
     config.selectionGranularity = WKSelectionGranularityCharacter;
     WKWebView *webView = [[WKWebView alloc] initWithFrame:EYScreenBounds configuration:config];
     webView.navigationDelegate = self;
+    webView.scrollView.delegate = self;
     [self.view addSubview:webView];
     self.webView = webView;
 }
@@ -42,7 +42,7 @@
 #pragma mark - WKNavigationDelegate
 
 /**
- 是否允许加载网页
+ 网页即将开始加载
 
  @param webView 需要加载的网页
  @param navigationAction 导航触发
@@ -54,20 +54,30 @@
     if (webView && [webView.URL.absoluteString isEqualToString:self.content_url]) {
          policy = WKNavigationActionPolicyAllow;
     }
-    EYLog(@"是否允许加载网页-->%@", navigationAction);
+    EYLog(@"网页即将开始加载-->%@", navigationAction);
     //这句是必须加上的，不然会崩溃
     decisionHandler(policy);
 }
 
 /**
- 决定是否允许或取消导航
+ 已经开始开始加载
+
+ @param webView 网页
+ @param navigation 导航
+ */
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
+    EYLog(@"已经开始开始加载--%@", navigation);
+}
+
+/**
+ 在收到响应后,决定是否跳转,是否把这个链接加载到webView 上
 
  @param webView 网页
  @param navigationResponse 导航响应描述信息
  @param decisionHandler 决定回调
  */
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler  {
-    EYLog(@"决定是否允许或取消导航-->%@", navigationResponse);
+    EYLog(@"在收到响应后,决定是否跳转,是否把这个链接加载到webView 上-->%@", navigationResponse);
     WKNavigationResponsePolicy policy = WKNavigationResponsePolicyCancel;
     if (webView && [webView.URL.absoluteString isEqualToString:self.content_url]) {
         policy = WKNavigationResponsePolicyAllow;
@@ -76,13 +86,37 @@
 }
 
 /**
- 已经开始了临时的导航
+ 当内容开始返回时,服务器已经开始向客户端发送网页数据
 
  @param webView 网页
  @param navigation 导航
  */
-- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
-    EYLog(@"已经开始了临时的导航--%@", navigation);
+- (void)webView:(WKWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation {
+    EYLog(@"当内容开始返回时,服务器已经开始向客户端发送网页数据-->%@", navigation);
+}
+
+/**
+ 网页加载完成之后 (JS注入)
+
+ @param webView 网页
+ @param navigation 导航
+ */
+- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
+    EYLog(@"网页加载完成之后 (JS注入)-->%@", navigation);
+    [webView evaluateJavaScript:@"" completionHandler:^(id _Nullable response, NSError * _Nullable error) {
+
+    }];
+}
+
+/**
+ 网页加载失败
+
+ @param webView 网页
+ @param navigation 导航
+ @param error 错误信息
+ */
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
+    EYLog(@"网页加载失败-->%@", navigation);
 }
 
 /**
@@ -93,45 +127,14 @@
 }
 
 /**
- 临时导航已经失败
-
- @param webView 网页
- @param navigation 导航
- @param error 错误信息
- */
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
-    EYLog(@"临时导航已经失败-->%@", navigation);
-}
-
-/**
- 已经提交了导航
-
- @param webView 网页
- @param navigation 导航
- */
-- (void)webView:(WKWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation {
-    EYLog(@"已经提交了导航-->%@", navigation);
-}
-
-/**
- 已经结束了导航
-
- @param webView 网页
- @param navigation 导航
- */
-- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
-    EYLog(@"已经结束了导航-->%@", navigation);
-}
-
-/**
- 已经失败了导航
+ 网页加载失败
 
  @param webView 网页
  @param navigation 导航
  @param error 错误信息
  */
 - (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
-    EYLog(@"已经失败了导航-->%@", navigation);
+    EYLog(@"网页加载失败-->%@", navigation);
 }
 
 /**

@@ -73,6 +73,7 @@
 		6085A174218AA91600637F31 /* EYFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A173218AA91600637F31 /* EYFlowLayout.m */; };
 		608F940A218FEDF600AD00EB /* EYManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 608F9409218FEDF600AD00EB /* EYManager.m */; };
 		60A5A55F21902E0800224D0C /* EYHomeBackItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A5A55E21902E0800224D0C /* EYHomeBackItemModel.m */; };
+		60A6CE8C21ABE58500428985 /* 34、iOS字体大小适配的几种方法.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE8B21ABE58500428985 /* 34、iOS字体大小适配的几种方法.html */; };
 		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
 		60B2FAE4213916270046D13D /* EYHomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAE3213916270046D13D /* EYHomeInfoView.m */; };
 		60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B2FAE5213916330046D13D /* EYHomeInfoView.xib */; };
@@ -244,6 +245,7 @@
 		608F9409218FEDF600AD00EB /* EYManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYManager.m; sourceTree = "<group>"; };
 		60A5A55D21902E0800224D0C /* EYHomeBackItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYHomeBackItemModel.h; sourceTree = "<group>"; };
 		60A5A55E21902E0800224D0C /* EYHomeBackItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYHomeBackItemModel.m; sourceTree = "<group>"; };
+		60A6CE8B21ABE58500428985 /* 34、iOS字体大小适配的几种方法.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "34、iOS字体大小适配的几种方法.html"; sourceTree = "<group>"; };
 		60B2FAC32137D5B40046D13D /* EYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPerson.h; sourceTree = "<group>"; };
 		60B2FAC42137D5B40046D13D /* EYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPerson.m; sourceTree = "<group>"; };
 		60B2FAE2213916270046D13D /* EYHomeInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeInfoView.h; sourceTree = "<group>"; };
@@ -680,6 +682,14 @@
 			path = "UICollectionView 其他布局使用";
 			sourceTree = "<group>";
 		};
+		60A6CE8A21ABE56E00428985 /* HTML5 */ = {
+			isa = PBXGroup;
+			children = (
+				60A6CE8B21ABE58500428985 /* 34、iOS字体大小适配的几种方法.html */,
+			);
+			path = HTML5;
+			sourceTree = "<group>";
+		};
 		60B2FAE1213915A00046D13D /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -725,6 +735,7 @@
 		60C40086218BFB2200B07E4A /* Collection */ = {
 			isa = PBXGroup;
 			children = (
+				60A6CE8A21ABE56E00428985 /* HTML5 */,
 				60C4008A218BFCF000B07E4A /* EYCollectionArray.plist */,
 				60C40087218BFB9B00B07E4A /* EYCollectionViewController.h */,
 				60C40088218BFB9B00B07E4A /* EYCollectionViewController.m */,
@@ -898,6 +909,7 @@
 				6000D86F213D1CFB00491BB7 /* Localizable.strings in Resources */,
 				60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */,
 				607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */,
+				60A6CE8C21ABE58500428985 /* 34、iOS字体大小适配的几种方法.html in Resources */,
 				6076A15F2148EC31002ED551 /* Items.json in Resources */,
 				60752B6D2186F49A001B857C /* EYShopCell.xib in Resources */,
 				60752B542186E205001B857C /* EYWaterFallViewController.xib in Resources */,
