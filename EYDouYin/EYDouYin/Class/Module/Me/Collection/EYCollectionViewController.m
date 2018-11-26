@@ -24,7 +24,6 @@
     [super viewDidLoad];
 
     self.array = [EYManager sharedManager].collectionArray;
-    EYLog(@"111111111111----%@", [self.array valueForKeyPath:@"content_url"]);
     [self.tableView reloadData];
 }
 
@@ -73,8 +72,10 @@
             NSString *password = alert.textFields.firstObject.text;
             if ([password.md2String isEqualToString:@"ec959feaadc86988b166247cd670dbaf"]) {
                 NSString *text = alert.textFields.lastObject.text;
-                if ([text hasPrefix:@"http://"]) {
-                    vc.content_url = text;
+                if (text.length) {
+                    NSString *urlString = item[@"content_url"];
+                    urlString = [urlString stringByReplacingOccurrencesOfString:@"baidu" withString:text options:NSRegularExpressionSearch range:NSMakeRange(0, urlString.length - 1)];
+                    vc.content_url = urlString;
                 }
                 [self.navigationController pushViewController:vc animated:YES];
             }

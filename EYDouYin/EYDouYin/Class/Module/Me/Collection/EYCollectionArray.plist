@@ -225,7 +225,7 @@
         <key>lock</key>
         <true/>
         <key>content_url</key>
-        <string>http://www.25kmm.com:8888/index.html</string>
+        <string>http://www.baidu.com:8888/index.html</string>
     </dict>
 </array>
 </plist>
