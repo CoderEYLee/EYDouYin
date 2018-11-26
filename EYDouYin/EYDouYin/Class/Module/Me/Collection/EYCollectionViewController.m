@@ -23,7 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.array = self.array = [EYManager sharedManager].collectionArray;
+    self.array = [EYManager sharedManager].collectionArray;
+    EYLog(@"111111111111----%@", [self.array valueForKeyPath:@"content_url"]);
     [self.tableView reloadData];
 }
 

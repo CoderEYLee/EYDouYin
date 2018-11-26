@@ -125,15 +125,9 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>20、GCD队列、同步异步</string>
+		<string>21、GCD队列、同步异步</string>
 		<key>content_url</key>
 		<string>https://mp.weixin.qq.com/s/tPKo18hsh5SZfZwTz59PMA</string>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>21、iOS开发·必会的算法操作：字符串数组排序+模型对象数组排序</string>
-		<key>content_url</key>
-		<string>https://mp.weixin.qq.com/s/zoBWzyqa4EhWBtPTYE4dnw</string>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -171,14 +165,12 @@
 		<key>content_url</key>
 		<string>https://mp.weixin.qq.com/s/-HKlvues6xXEEGErTVtysw</string>
 	</dict>
-	<dict>
-		<key>title</key>
-		<string>28、高效的设计模式</string>
-		<key>lock</key>
-		<true/>
-		<key>content_url</key>
-		<string>http://www.25kmm.com:8888/index.html</string>
-	</dict>
+    <dict>
+        <key>title</key>
+        <string>28、一行代码实现 UIView 镂空效果</string>
+        <key>content_url</key>
+        <string>https://mp.weixin.qq.com/s/xG79LVzMymXS_D9sNSoCkw</string>
+    </dict>
     <dict>
         <key>title</key>
         <string>29、[iOS]一次高效的依赖注入</string>
@@ -205,9 +197,9 @@
     </dict>
     <dict>
         <key>title</key>
-        <string>33、百度一下</string>
+        <string>33、iOS开发·必会的算法操作：字符串数组排序+模型对象数组排序</string>
         <key>content_url</key>
-        <string>https://www.baidu.com</string>
+        <string>https://mp.weixin.qq.com/s/zoBWzyqa4EhWBtPTYE4dnw</string>
     </dict>
     <dict>
         <key>title</key>
@@ -229,9 +221,11 @@
     </dict>
     <dict>
         <key>title</key>
-        <string>37、一行代码实现 UIView 镂空效果</string>
+        <string>37、高效的设计模式</string>
+        <key>lock</key>
+        <true/>
         <key>content_url</key>
-        <string>https://mp.weixin.qq.com/s/xG79LVzMymXS_D9sNSoCkw</string>
+        <string>http://www.25kmm.com:8888/index.html</string>
     </dict>
 </array>
 </plist>
