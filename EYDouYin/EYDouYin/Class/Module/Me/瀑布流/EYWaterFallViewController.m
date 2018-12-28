@@ -139,7 +139,7 @@ static NSString *const EYWaterFallViewControllerShopCell2 = @"EYWaterFallViewCon
 //        layout.columnsCount = 4;
 
         // 2.创建UICollectionView
-        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) collectionViewLayout:layout];
+        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 2*EYStatusBarHeight + EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) collectionViewLayout:layout];
         collectionView.backgroundColor = [UIColor whiteColor];
         if (@available(iOS 11.0, *)) {
             collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -157,7 +157,7 @@ static NSString *const EYWaterFallViewControllerShopCell2 = @"EYWaterFallViewCon
 
 - (EYWaterflowView *)waterflowView {
     if (nil == _waterflowView) {
-        EYWaterflowView *waterflowView = [[EYWaterflowView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight)];
+        EYWaterflowView *waterflowView = [[EYWaterflowView alloc] initWithFrame:CGRectMake(0, 2*EYStatusBarHeight +  EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight)];
         waterflowView.dataSource = self;
         waterflowView.delegate = self;
         [self.view addSubview:waterflowView];
