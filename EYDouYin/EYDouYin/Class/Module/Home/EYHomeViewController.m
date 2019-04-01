@@ -138,12 +138,15 @@
     }
 }
 
+
+//搜索
 - (void)search {
     EYLog(@"搜索");
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [appDelegate.rootViewController.scrollView setContentOffset:CGPointZero animated:YES];
 }
 
+//推荐
 - (void)recommend {
     EYLog(@"推荐");
     self.scrollView.hidden = NO;
@@ -152,6 +155,7 @@
     [self changTabbarBackgroundColor:[UIColor clearColor]];
 }
 
+//城市
 - (void)city {
     EYLog(@"同城");
     self.scrollView.hidden = YES;
@@ -164,6 +168,7 @@
     [EYNotificationCenter postNotificationName:EYTabbarShouldChangeColorNotification object:nil userInfo:@{@"color" : color}];
 }
 
+//更多
 - (void)more {
     CGFloat naviBarY = self.naviBar.mj_y;
     EYLog(@"更多");
@@ -189,6 +194,7 @@
     }
 }
 
+//动画
 - (void)changeFrameWithPOP:(UIView *)view offsetY:(CGFloat)y {
     POPBasicAnimation * anim = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
     anim.fromValue = @(view.centerY);
