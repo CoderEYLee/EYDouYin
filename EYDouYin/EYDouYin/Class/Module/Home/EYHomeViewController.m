@@ -106,8 +106,8 @@
         return;
     }
 
-    self.currentVideoIndex = 0;
-    self.videoModelArrayM = [EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray];
+//    self.currentVideoIndex = 0;
+//    self.videoModelArrayM = [EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray];
 }
 
 #pragma mark - Private Methods
@@ -214,7 +214,43 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    // EYLog(@"scrollView滚动了");
+    CGFloat index = scrollView.contentOffset.y / EYScreenHeight;
+    CGFloat width = scrollView.width;
+    CGFloat height = scrollView.height;
+
+    CGFloat y = [scrollView.panGestureRecognizer translationInView:scrollView.superview].y;
+    if (y < 0) {//向上滚动(下一个)
+//        EYLog(@"scrollView滚动了(下一个)");
+    } else {//向下滚动(上一个)
+//        EYLog(@"scrollView滚动了(上一个)");
+    }
+
+    if (index == self.videoViewArrayM.count - 1) {// 最后一个
+        [self.videoViewArrayM insertObject:self.videoViewArrayM.firstObject atIndex:self.videoViewArrayM.count];
+        [self.videoViewArrayM removeFirstObject];
+
+        for (int i = 0; i < self.videoViewArrayM.count; i++) {
+            EYHomeVideoView *itemView = self.videoViewArrayM[i];
+            itemView.frame = CGRectMake(0, height * i, width, height);
+        }
+        scrollView.contentOffset = CGPointMake(0, height);
+    }
+
+    if (index == 0.0) {
+        [self.videoViewArrayM insertObject:self.videoViewArrayM.lastObject atIndex:0];
+        [self.videoViewArrayM removeLastObject];
+
+        for (int i = 0; i < self.videoViewArrayM.count; i++) {
+            EYHomeVideoView *itemView = self.videoViewArrayM[i];
+            itemView.frame = CGRectMake(0, height * i, width, height);
+        }
+        scrollView.contentOffset = CGPointMake(0, height);
+    }
+    //    EYLog(@"scrollView滚动了==%f", scrollView.contentOffset.y);
+
+
+
+
 }
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
@@ -222,37 +258,21 @@
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView  {// 开始拖拽
-    // EYLog(@"scrollView将会开始拖拽--状态为");
-
-//    CGFloat y = [scrollView.panGestureRecognizer translationInView:scrollView.superview].y;
-//    CGFloat offsetY = scrollView.contentOffset.y;
-
-//    if (y > 0 && offsetY == 0.0) {
-//        EYLog(@"开始拖拽--可以刷新界面了--");
-//        [self more];
-//        [self loadNetData];
-//    }
+    EYLog(@"111111111111111");
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {// 结束拖拽
-//    CGFloat y = scrollView.contentOffset.y;
-//    EYLog(@"scrollView已经结束拖拽--状态为,结束的位置为:%f", y);
-
-//    if (y == 0.0) {
-//        EYLog(@"可以刷新界面了--");
-//    }
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {//结束拖拽后立即开始减速
-    // EYLog(@"scrollView将会开始减速位置为:%f", scrollView.contentOffset.y);
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
-    int index = scrollView.contentOffset.y / EYScreenHeight;
+//    int index = scrollView.contentOffset.y / EYScreenHeight;
 //    CGFloat contentOffY = scrollView.contentOffset.y;
     // EYLog(@"scrollView已经结束减速:%d--位置为:%f", index, scrollView.contentOffset.y);
 
-    CGFloat y = [scrollView.panGestureRecognizer translationInView:scrollView.superview].y;
+//    CGFloat y = [scrollView.panGestureRecognizer translationInView:scrollView.superview].y;
 //
 //    if (y < 0) {//向上滚动
 //        self.currentVideoIndex++;
@@ -289,31 +309,30 @@
 //    }
 //
 
-    CGFloat width = self.scrollView.width;
-    CGFloat height = self.scrollView.height;
-    if (y < 0 && index == self.videoViewArrayM.count - 1) {// 最后一个
-        [self.videoViewArrayM insertObject:self.videoViewArrayM.firstObject atIndex:self.videoViewArrayM.count];
-        [self.videoViewArrayM removeFirstObject];
-
-        for (int i = 0; i < self.videoViewArrayM.count; i++) {
-            EYHomeVideoView *itemView = self.videoViewArrayM[i];
-            itemView.frame = CGRectMake(0, height * i, width, height);
-        }
-        [scrollView setContentOffset:CGPointMake(0, height) animated:NO];
-    }
-
-    if (y > 0 && index == 0) {
-        [self.videoViewArrayM insertObject:self.videoViewArrayM.lastObject atIndex:0];
-        [self.videoViewArrayM removeLastObject];
-
-        for (int i = 0; i < self.videoViewArrayM.count; i++) {
-            EYHomeVideoView *itemView = self.videoViewArrayM[i];
-            itemView.frame = CGRectMake(0, height * i, width, height);
-        }
-        [scrollView setContentOffset:CGPointMake(0, height) animated:NO];
-    }
+//    CGFloat width = self.scrollView.width;
+//    CGFloat height = self.scrollView.height;
+//    if (y < 0 && index == self.videoViewArrayM.count - 1) {// 最后一个
+//        [self.videoViewArrayM insertObject:self.videoViewArrayM.firstObject atIndex:self.videoViewArrayM.count];
+//        [self.videoViewArrayM removeFirstObject];
+//
+//        for (int i = 0; i < self.videoViewArrayM.count; i++) {
+//            EYHomeVideoView *itemView = self.videoViewArrayM[i];
+//            itemView.frame = CGRectMake(0, height * i, width, height);
+//        }
+//        [scrollView setContentOffset:CGPointMake(0, height) animated:NO];
+//    }
+//
+//    if (y > 0 && index == 0) {
+//        [self.videoViewArrayM insertObject:self.videoViewArrayM.lastObject atIndex:0];
+//        [self.videoViewArrayM removeLastObject];
+//
+//        for (int i = 0; i < self.videoViewArrayM.count; i++) {
+//            EYHomeVideoView *itemView = self.videoViewArrayM[i];
+//            itemView.frame = CGRectMake(0, height * i, width, height);
+//        }
+//        [scrollView setContentOffset:CGPointMake(0, height) animated:NO];
+//    }
 }
-
 
 #pragma mark - 懒加载
 - (NSMutableArray *)videoModelArrayM {
@@ -367,7 +386,6 @@
             [scrollView addSubview:videoView];
             [self.videoViewArrayM addObject:videoView];
         }
-        scrollView.contentOffset = CGPointMake(0, height);
         _scrollView = scrollView;
     }
     return _scrollView;
