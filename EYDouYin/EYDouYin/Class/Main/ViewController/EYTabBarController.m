@@ -63,7 +63,7 @@
     [[UITabBar appearance] setBackgroundImage:[UIImage new]];
 
     // 2.创建自定义的 view 添加到 tabBar
-    EYTabBarView * tabBarView = [EYTabBarView tabBarView];
+    EYTabBarView *tabBarView = [EYTabBarView tabBarView];
     tabBarView.frame = CGRectMake(0, 0, self.tabBar.width, self.tabBar.height);
     tabBarView.delegate = self;
     if (EYSCREENSIZE_IS_IPhoneX_All) {

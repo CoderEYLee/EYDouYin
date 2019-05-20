@@ -316,6 +316,11 @@
 		60A6CEAF21ABF2EB00428985 /* 13、两年iOS经验之你忽略的小知识点.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "13、两年iOS经验之你忽略的小知识点.html"; sourceTree = "<group>"; };
 		60A6CEB021ABF2EB00428985 /* 6、iOS导航栏使用总结.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "6、iOS导航栏使用总结.html"; sourceTree = "<group>"; };
 		60A6CEB121ABF2EB00428985 /* 33、iOS开发·必会的算法操作：字符串数组排序+模型对象数组排序.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "33、iOS开发·必会的算法操作：字符串数组排序+模型对象数组排序.html"; sourceTree = "<group>"; };
+		60AFD696229244FD005C4742 /* EYDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYDefine.h; sourceTree = "<group>"; };
+		60AFD699229245A4005C4742 /* EYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCategory.h; sourceTree = "<group>"; };
+		60AFD69C229245FD005C4742 /* EYPods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPods.h; sourceTree = "<group>"; };
+		60AFD69F2292476C005C4742 /* EYColorConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYColorConstant.h; sourceTree = "<group>"; };
+		60AFD6A2229247BB005C4742 /* EYSizeFontConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYSizeFontConstant.h; sourceTree = "<group>"; };
 		60B2FAC32137D5B40046D13D /* EYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPerson.h; sourceTree = "<group>"; };
 		60B2FAC42137D5B40046D13D /* EYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPerson.m; sourceTree = "<group>"; };
 		60B2FAE2213916270046D13D /* EYHomeInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeInfoView.h; sourceTree = "<group>"; };
@@ -620,7 +625,6 @@
 				6075415E2104CCFF00EB258D /* Module */,
 				6075415D2104CCD200EB258D /* Main */,
 				6055AD3A2116B03E005DC856 /* Resource */,
-				606E70BE212C21C500ABEB83 /* EYDouYin-Bridging-Header.h */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -697,7 +701,13 @@
 				607541352104CC4C00EB258D /* LaunchScreen.storyboard */,
 				607541332104CC4C00EB258D /* Assets.xcassets */,
 				607541392104CC4C00EB258D /* main.m */,
+				606E70BE212C21C500ABEB83 /* EYDouYin-Bridging-Header.h */,
 				607541712104D33F00EB258D /* PrefixHeader.pch */,
+				60AFD699229245A4005C4742 /* EYCategory.h */,
+				60AFD69F2292476C005C4742 /* EYColorConstant.h */,
+				60AFD696229244FD005C4742 /* EYDefine.h */,
+				60AFD69C229245FD005C4742 /* EYPods.h */,
+				60AFD6A2229247BB005C4742 /* EYSizeFontConstant.h */,
 				60BBC68F2104D9D900DEEA34 /* EYConstant.h */,
 				60BBC6902104D9D900DEEA34 /* EYConstant.m */,
 				6076A15C2148E096002ED551 /* ChinLab_en.json */,
@@ -1401,7 +1411,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "EYDouYin/Class/EYDouYin-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "EYDouYin/Class/Main/Other/EYDouYin-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1431,7 +1441,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "EYDouYin/Class/EYDouYin-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "EYDouYin/Class/Main/Other/EYDouYin-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

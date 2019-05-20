@@ -106,7 +106,7 @@
         return;
     }
 
-//    self.currentVideoIndex = 0;
+    self.currentVideoIndex = 0;
 //    self.videoModelArrayM = [EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray];
 }
 
@@ -214,27 +214,31 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    EYLog(@"123456==%f", scrollView.contentOffset.y);
+    if (self.modelArrayM.count <= 3) {
+        return;
+    }
+
+    // 第一个
+    if (self.currentVideoIndex == 0 && scrollView.contentOffset.y <= EYScreenHeight) {
+        return;
+    }
+
     CGFloat index = scrollView.contentOffset.y / EYScreenHeight;
+    // 最后一个
+    if (self.currentVideoIndex == self.modelArrayM.count - 1 && scrollView.contentOffset.y > EYScreenHeight) {
+        return;
+    }
+
     CGFloat width = scrollView.width;
     CGFloat height = scrollView.height;
 
-    CGFloat y = [scrollView.panGestureRecognizer translationInView:scrollView.superview].y;
-    if (y < 0) {//向上滚动(下一个)
-//        EYLog(@"scrollView滚动了(下一个)");
-    } else {//向下滚动(上一个)
-//        EYLog(@"scrollView滚动了(上一个)");
-    }
-
-    if (index == self.videoViewArrayM.count - 1) {// 最后一个
-        [self.videoViewArrayM insertObject:self.videoViewArrayM.firstObject atIndex:self.videoViewArrayM.count];
-        [self.videoViewArrayM removeFirstObject];
-
-        for (int i = 0; i < self.videoViewArrayM.count; i++) {
-            EYHomeVideoView *itemView = self.videoViewArrayM[i];
-            itemView.frame = CGRectMake(0, height * i, width, height);
-        }
-        scrollView.contentOffset = CGPointMake(0, height);
-    }
+//    CGFloat y = [scrollView.panGestureRecognizer translationInView:scrollView.superview].y;
+//    if (y < 0) {//向上滚动(下一个)
+////        EYLog(@"scrollView滚动了(下一个)");
+//    } else {//向下滚动(上一个)
+////        EYLog(@"scrollView滚动了(上一个)");
+//    }
 
     if (index == 0.0) {
         [self.videoViewArrayM insertObject:self.videoViewArrayM.lastObject atIndex:0];
@@ -245,12 +249,36 @@
             itemView.frame = CGRectMake(0, height * i, width, height);
         }
         scrollView.contentOffset = CGPointMake(0, height);
+    } else if (index == self.videoViewArrayM.count - 1) {// 最后一个
+        [self.videoViewArrayM insertObject:self.videoViewArrayM.firstObject atIndex:self.videoViewArrayM.count];
+        [self.videoViewArrayM removeFirstObject];
+
+        for (int i = 0; i < self.videoViewArrayM.count; i++) {
+            EYHomeVideoView *itemView = self.videoViewArrayM[i];
+            itemView.frame = CGRectMake(0, height * i, width, height);
+        }
+        scrollView.contentOffset = CGPointMake(0, height);
+    } else if (index == 1) {
+        CGFloat y = [scrollView.panGestureRecognizer translationInView:scrollView.superview].y;
+        if (y < 0) {//向上滚动(下一个)
+            self.currentVideoIndex++;
+            if (self.currentVideoIndex >= self.modelArrayM.count - 1) {
+                EYLog(@"下一个不能滚动了==%ld", self.currentVideoIndex);
+                scrollView.contentOffset = CGPointMake(0, height);
+            } else {
+                EYLog(@"下一个===%ld", self.currentVideoIndex);
+            }
+        } else {//向下滚动(上一个)
+            if (self.currentVideoIndex) {
+                self.currentVideoIndex--;
+                EYLog(@"上一个===%ld", self.currentVideoIndex);
+            } else {
+                EYLog(@"上一个不能滚动了==%ld", self.currentVideoIndex);
+            }
+        }
+    } else {
+//        EYLog(@"scrollView滚动了==%f", scrollView.contentOffset.y);
     }
-    //    EYLog(@"scrollView滚动了==%f", scrollView.contentOffset.y);
-
-
-
-
 }
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
@@ -258,7 +286,7 @@
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView  {// 开始拖拽
-    EYLog(@"111111111111111");
+//    EYLog(@"111111111111111");
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {// 结束拖拽
@@ -421,7 +449,7 @@
 - (NSMutableArray *)modelArrayM {
     if (nil == _modelArrayM) {
         _modelArrayM = [NSMutableArray array];
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 5; i++) {
             EYHomeBackItemModel * model = [[EYHomeBackItemModel alloc] init];
             [_modelArrayM addObject:model];
         }
