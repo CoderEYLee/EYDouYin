@@ -663,26 +663,8 @@
 		6075415F2104CD2900EB258D /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				6075416E2104D15F00EB258D /* Foundation+Log.m */,
-				60752B3D2182C3F5001B857C /* NullSafe.m */,
-				6055AD362116933E005DC856 /* UIView+Extension.h */,
-				6055AD372116933E005DC856 /* UIView+Extension.m */,
-				6055AD3D2116B929005DC856 /* NSString+EYExtension.h */,
-				6055AD3E2116B929005DC856 /* NSString+EYExtension.m */,
-				60EE77B42120217D004133A6 /* UIBarButtonItem+EYExtension.h */,
-				60EE77B52120217D004133A6 /* UIBarButtonItem+EYExtension.m */,
-				60EE77BD21204188004133A6 /* NSObject+EYRuntime.h */,
-				60EE77BE21204188004133A6 /* NSObject+EYRuntime.m */,
-				6012FD6E215A36BF004A3083 /* UIView+EYCornerRadius.h */,
-				6012FD6F215A36BF004A3083 /* UIView+EYCornerRadius.m */,
-				60C4008F218C269C00B07E4A /* UIImageView+EYSDWebImage.h */,
-				60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */,
-				606B6588219182130059D1F7 /* UIButton+EYSDWebImage.h */,
-				606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */,
-				606B658E219189310059D1F7 /* UIButton+EYAddition.h */,
-				606B658F219189310059D1F7 /* UIButton+EYAddition.m */,
-				606B658B2191883B0059D1F7 /* UIImage+EYAddition.h */,
-				606B658C2191883B0059D1F7 /* UIImage+EYAddition.m */,
+				60AFD6A92292A023005C4742 /* UI */,
+				60AFD6AA2292A02C005C4742 /* Data */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -816,6 +798,40 @@
 				6075416C2104CFE000EB258D /* EYHttpManager.m */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		60AFD6A92292A023005C4742 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6055AD362116933E005DC856 /* UIView+Extension.h */,
+				6055AD372116933E005DC856 /* UIView+Extension.m */,
+				60EE77B42120217D004133A6 /* UIBarButtonItem+EYExtension.h */,
+				60EE77B52120217D004133A6 /* UIBarButtonItem+EYExtension.m */,
+				6012FD6E215A36BF004A3083 /* UIView+EYCornerRadius.h */,
+				6012FD6F215A36BF004A3083 /* UIView+EYCornerRadius.m */,
+				60C4008F218C269C00B07E4A /* UIImageView+EYSDWebImage.h */,
+				60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */,
+				606B6588219182130059D1F7 /* UIButton+EYSDWebImage.h */,
+				606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */,
+				606B658E219189310059D1F7 /* UIButton+EYAddition.h */,
+				606B658F219189310059D1F7 /* UIButton+EYAddition.m */,
+				606B658B2191883B0059D1F7 /* UIImage+EYAddition.h */,
+				606B658C2191883B0059D1F7 /* UIImage+EYAddition.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		60AFD6AA2292A02C005C4742 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6075416E2104D15F00EB258D /* Foundation+Log.m */,
+				60752B3D2182C3F5001B857C /* NullSafe.m */,
+				6055AD3D2116B929005DC856 /* NSString+EYExtension.h */,
+				6055AD3E2116B929005DC856 /* NSString+EYExtension.m */,
+				60EE77BD21204188004133A6 /* NSObject+EYRuntime.h */,
+				60EE77BE21204188004133A6 /* NSObject+EYRuntime.m */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		60B2FAE1213915A00046D13D /* View */ = {

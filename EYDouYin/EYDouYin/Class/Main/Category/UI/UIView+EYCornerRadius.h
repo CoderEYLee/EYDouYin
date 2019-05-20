@@ -11,4 +11,5 @@
 @interface UIView (EYCornerRadius)
 
 - (__kindof UIView *)clipsCornerRadius:(UIRectCorner)corners cornerRadii:(CGFloat)radius;
+
 @end
