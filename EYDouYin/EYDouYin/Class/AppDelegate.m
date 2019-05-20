@@ -7,9 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "EYLanguageTool.h"
 #import "EYNavigationController.h"
 #import <AFNetworkActivityIndicatorManager.h>
-#import <AVKit/AVKit.h>
+//#import <AVKit/AVKit.h>
 
 @interface AppDelegate ()
 
@@ -21,22 +22,42 @@
 
 #pragma mark - Life Cycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    EYRootViewController *rootVC= [[EYRootViewController alloc] init];
-    EYNavigationController *navi = [[EYNavigationController alloc] initWithRootViewController:rootVC];
-    navi.gk_openScrollLeftPush = YES;
-    self.window.rootViewController = navi;
-    self.rootViewController = rootVC;
+    
+    // 1.键盘设置
+    [self setupKeyboard];
 
-    EYLog(@"1111111--->程序启动了--%@", EYPathDocument);
+    // 2.SVProgressHUD
+    [self setupSVProgressHUD];
 
-    [self setUpAppLanguage];
+    // 3.语言
+    [self setupLanguage];
 
-    [self handleAFNetConnect];
+    // 4.监听通知
+    [self addNotification];
 
-    [self.window makeKeyAndVisible];
+    // 5.Bugly
+    [self setupBugly];
 
-    [self openAnimation];
+    // 6.iflyMSC
+    [self setupIflyMSC];
+
+    // 7.SDWebImage
+    [self setupSDWebImage];
+
+//    // [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+
+    // 8.设置启动页面
+    [self launchViewController];
+
+    //启动图时间
+    sleep(2);
+
+    EYLog(@"AppDelegate--1111111--->程序启动了");
+    
+//    GKNavigationBarConfigure *configure =  [GKNavigationBarConfigure sharedInstance];
+//    configure.
+
+//    [self openAnimation];
 
     return YES;
 }
@@ -60,6 +81,75 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     EYLog(@"6666666666666--->程序被杀了");
+}
+
+#pragma mark - 程序启动设置
+// 1.键盘设置
+- (void)setupKeyboard {
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.shouldResignOnTouchOutside = YES; // 点击背景收起键盘，默认NO
+    manager.enableAutoToolbar = NO; // IQKeyboardManager提供的键盘上面默认会有“前一个”“后一个”“完成”这样的辅助按钮。如果你不需要，可以将这个enableAutoToolbar属性设置为NO，这样就不会显示了。默认YES
+}
+
+// 2.SVProgressHUD
+- (void)setupSVProgressHUD {
+    [SVProgressHUD setMinimumDismissTimeInterval:1.5];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];//后面的大背景是透明色
+//    [SVProgressHUD setInfoImage:[UIImage imageNamed:@""]];//提示的图片
+//    [SVProgressHUD setImageViewSize:CGSizeMake(0, -1)];//提示的图片大小
+    [SVProgressHUD setBackgroundColor:EYColorRGBHexAlpha(0x000000, 0.5)];// 弹出框背景颜色
+    [SVProgressHUD setCornerRadius:5.0];
+    [SVProgressHUD setForegroundColor:EYColorWhite];//进度&文字颜色
+    [SVProgressHUD setFont:EYSizeFont14];//字体
+    [SVProgressHUD setRingThickness:3.0];// 进度条的宽度
+}
+
+// 3.语言
+- (void)setupLanguage {
+    [EYLanguageTool setDefaultAppLanguage];
+}
+
+// 4.监听通知
+- (void)addNotification {
+
+}
+
+// 5.Bugly
+- (void)setupBugly {
+//    [Bugly startWithAppId:Bugly_APP_ID];
+}
+
+// 6.iflyMSC
+- (void)setupIflyMSC {
+//    [IFlyDebugLog setShowLog:NO];//关闭log
+//    [IFlySpeechUtility createUtility:[NSString stringWithFormat:@"appid=%@",IflyMSC_APP_ID]];
+}
+
+// 7.SDWebImage
+- (void)setupSDWebImage {
+    //1.图片磁盘最大过期时间
+    [SDImageCache sharedImageCache].config.maxDiskAge = 60 * 60 * 24 * 7;
+    //2.图片磁盘最大占用 100M
+    [SDImageCache sharedImageCache].config.maxDiskSize = 1024 * 1024 * 100;
+    // 最大缓存个数
+    [SDImageCache sharedImageCache].config.maxMemoryCount = 20;
+    // 最大内存消耗 50M
+    [SDImageCache sharedImageCache].config.maxMemoryCost = 1024 * 1024 * 50;
+}
+
+// 8.设置启动页面
+- (void)launchViewController {
+
+    self.window = [[UIWindow alloc] initWithFrame:EYScreenBounds];
+    self.window.backgroundColor = EYColor2A2B33;
+    
+    EYRootViewController *rootVC= [[EYRootViewController alloc] init];
+    EYNavigationController *navi = [[EYNavigationController alloc] initWithRootViewController:rootVC];
+    navi.gk_openScrollLeftPush = YES;
+    
+    self.window.rootViewController = navi;
+    self.rootViewController = rootVC;
+    [self.window makeKeyAndVisible];
 }
 
 #pragma mark - Public Methods

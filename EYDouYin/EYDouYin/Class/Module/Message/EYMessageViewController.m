@@ -29,7 +29,7 @@ static NSString * EYLikeViewControllerCollectionViewHeadViewID = @"EYLikeViewCon
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = EYRandomColor;
+    self.view.backgroundColor = EYColorRandom;
     EYLog(@"EYMessageViewController--viewDidLoad");
     [self.collectionView reloadData];
 }
@@ -51,7 +51,7 @@ static NSString * EYLikeViewControllerCollectionViewHeadViewID = @"EYLikeViewCon
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     EYLikeCell * cell = (EYLikeCell *)[collectionView dequeueReusableCellWithReuseIdentifier:EYLikeViewControllerCollectionViewCellID forIndexPath:indexPath];
-    cell.backgroundColor =EYRandomColor;
+    cell.backgroundColor =EYColorRandom;
     cell.label.text = [NSString stringWithFormat:@"%ld组/%ld个", (long)indexPath.section, (long)indexPath.row];
     
     return cell;

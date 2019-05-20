@@ -30,12 +30,12 @@
 - (void)setButtonDefaultState {
     [self.recommendButton setTitle:@"推荐" forState:UIControlStateNormal];
     [self.recommendButton setTitle:@"推荐" forState:UIControlStateSelected];
-    [self.recommendButton setTitleColor:EYColor(210, 210, 210) forState:UIControlStateNormal];
+    [self.recommendButton setTitleColor:EYColorRGBHex(0xD2D2D2) forState:UIControlStateNormal];
     [self.recommendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
 
     [self.cityButton setTitle:@"同城" forState:UIControlStateNormal];
     [self.cityButton setTitle:@"同城" forState:UIControlStateSelected];
-    [self.cityButton setTitleColor:EYColor(210, 210, 210) forState:UIControlStateNormal];
+    [self.cityButton setTitleColor:EYColorRGBHex(0XD2D2D2) forState:UIControlStateNormal];
     [self.cityButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
 }
 

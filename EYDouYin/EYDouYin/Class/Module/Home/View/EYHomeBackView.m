@@ -39,7 +39,7 @@
         view.frame = CGRectMake(width * i, EYBackViewHeight, width, EYBackViewHeight);
         view.model = array[i];
         view.delegate = self;
-        view.backgroundColor = EYRandomColor;
+        view.backgroundColor = EYColorRandom;
         [self.scrollView addSubview:view];
     }
 

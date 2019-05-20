@@ -14,10 +14,13 @@
 
 @implementation EYBaseViewController
 
+#pragma mark - Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // EYLog(@"%@--viewDidLoad", self);
-    [self setupNaviBar];
+    
+    [self setupBaseUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -50,15 +53,17 @@
     // EYLog(@"%@--viewDidDisappear", self);
 }
 
-- (void)setupNaviBar {
-    self.gk_navigationBar.hidden = YES;
+#pragma mark - Private Methods
+/**
+ 初始化默认界面
+ */
+- (void)setupBaseUI {
+    // 1.设置背景颜色
+    self.view.backgroundColor = EYColor2A2B33;
     
-    UINavigationBar * naviBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, EYStatusBarHeight, EYScreenWidth, EYStatusBarAndNaviBarHeight - EYStatusBarHeight)];
-    [naviBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    [naviBar setShadowImage:[UIImage new]];
-//    naviBar.hidden = YES;
-    [self.view addSubview:naviBar];
-    self.naviBar = naviBar;
+    // 2.设置 GK 的导航
+//    self.gk_navigationBar.backgroundColor = EYColorRandom;
+    self.gk_navBackgroundColor = EYColorRandom;
 }
 
 #pragma mark - 旋转方向

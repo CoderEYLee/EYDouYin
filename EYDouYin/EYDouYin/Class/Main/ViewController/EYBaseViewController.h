@@ -10,6 +10,4 @@
 
 @interface EYBaseViewController : GKNavigationBarViewController
 
-@property (weak, nonatomic) UINavigationBar * naviBar;
-
 @end

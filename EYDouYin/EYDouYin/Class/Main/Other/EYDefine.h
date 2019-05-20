@@ -19,17 +19,16 @@
 
 #endif
 
-//获取通知中心
-#define EYNotificationCenter [NSNotificationCenter defaultCenter]
-
-// RGB颜色 可以设置透明度
-#define EYColorAlpha(r, g, b ,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
-
-// RGB颜色 不可以设置透明度
-#define EYColor(r, g, b) EYColorAlpha(r, g, b ,1.0)
-
-// 随机色
-#define EYRandomColor EYColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+#pragma mark - 偏好设置
+#define EYUserDefaults [NSUserDefaults standardUserDefaults]
+//赋值
+#define EYSetObjectForKey(value, key) [[NSUserDefaults standardUserDefaults] setObject:value forKey:key];\
+[[NSUserDefaults standardUserDefaults] synchronize]
+//取值
+#define EYObjectForKey(key) [[NSUserDefaults standardUserDefaults] objectForKey:key]
+//移除值
+#define EYRemoveObjectForKey(key)  [[NSUserDefaults standardUserDefaults] removeObjectForKey:(key)];\
+[[NSUserDefaults standardUserDefaults] synchronize]
 
 #pragma mark - 尺寸相关
 #define EYUI_IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
@@ -74,6 +73,9 @@
 #define EYiOS10 (EYDeviceSystemVersion >= 10.0)
 #define EYiOS9 (EYDeviceSystemVersion >= 9.0)
 #define EYiOS8 (EYDeviceSystemVersion >= 8.0)
+
+//获取通知中心
+#define EYNotificationCenter [NSNotificationCenter defaultCenter]
 
 #define EYKeyWindow [UIApplication sharedApplication].keyWindow
 

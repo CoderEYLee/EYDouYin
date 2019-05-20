@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -109,6 +109,7 @@
 		60A6CED321ABF2EB00428985 /* 13、两年iOS经验之你忽略的小知识点.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEAF21ABF2EB00428985 /* 13、两年iOS经验之你忽略的小知识点.html */; };
 		60A6CED421ABF2EB00428985 /* 6、iOS导航栏使用总结.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEB021ABF2EB00428985 /* 6、iOS导航栏使用总结.html */; };
 		60A6CED521ABF2EB00428985 /* 33、iOS开发·必会的算法操作：字符串数组排序+模型对象数组排序.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEB121ABF2EB00428985 /* 33、iOS开发·必会的算法操作：字符串数组排序+模型对象数组排序.html */; };
+		60AFD6A8229292F1005C4742 /* EYLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AFD6A7229292F1005C4742 /* EYLanguageTool.m */; };
 		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
 		60B2FAE4213916270046D13D /* EYHomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAE3213916270046D13D /* EYHomeInfoView.m */; };
 		60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B2FAE5213916330046D13D /* EYHomeInfoView.xib */; };
@@ -321,6 +322,8 @@
 		60AFD69C229245FD005C4742 /* EYPods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPods.h; sourceTree = "<group>"; };
 		60AFD69F2292476C005C4742 /* EYColorConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYColorConstant.h; sourceTree = "<group>"; };
 		60AFD6A2229247BB005C4742 /* EYSizeFontConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYSizeFontConstant.h; sourceTree = "<group>"; };
+		60AFD6A6229292F1005C4742 /* EYLanguageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYLanguageTool.h; sourceTree = "<group>"; };
+		60AFD6A7229292F1005C4742 /* EYLanguageTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYLanguageTool.m; sourceTree = "<group>"; };
 		60B2FAC32137D5B40046D13D /* EYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPerson.h; sourceTree = "<group>"; };
 		60B2FAC42137D5B40046D13D /* EYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPerson.m; sourceTree = "<group>"; };
 		60B2FAE2213916270046D13D /* EYHomeInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeInfoView.h; sourceTree = "<group>"; };
@@ -632,6 +635,7 @@
 		6075415D2104CCD200EB258D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				60AFD6A5229292D0005C4742 /* Manager */,
 				6076A1752150CF5E002ED551 /* ThirdLib */,
 				60BBC6822104D83400DEEA34 /* ViewController */,
 				6055AD392116AD7C005DC856 /* View */,
@@ -686,11 +690,8 @@
 		607541602104CD6600EB258D /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				607541722104D36800EB258D /* Singleton.h */,
-				608F9408218FEDF600AD00EB /* EYManager.h */,
-				608F9409218FEDF600AD00EB /* EYManager.m */,
-				6075416B2104CFE000EB258D /* EYHttpManager.h */,
-				6075416C2104CFE000EB258D /* EYHttpManager.m */,
+				60AFD6A6229292F1005C4742 /* EYLanguageTool.h */,
+				60AFD6A7229292F1005C4742 /* EYLanguageTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -803,6 +804,18 @@
 				60A6CEB121ABF2EB00428985 /* 33、iOS开发·必会的算法操作：字符串数组排序+模型对象数组排序.html */,
 			);
 			path = HTML5;
+			sourceTree = "<group>";
+		};
+		60AFD6A5229292D0005C4742 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				607541722104D36800EB258D /* Singleton.h */,
+				608F9408218FEDF600AD00EB /* EYManager.h */,
+				608F9409218FEDF600AD00EB /* EYManager.m */,
+				6075416B2104CFE000EB258D /* EYHttpManager.h */,
+				6075416C2104CFE000EB258D /* EYHttpManager.m */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		60B2FAE1213915A00046D13D /* View */ = {
@@ -1124,23 +1137,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources.sh",
-				"${PODS_ROOT}/GKNavigationBarViewController/GKNavigationBarViewController/GKNavigationBarViewController.bundle",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_ROOT}/SJBaseVideoPlayer/SJBaseVideoPlayer/SJVolBrigControl/Resource/SJVolBrigResource.bundle",
-				"${PODS_ROOT}/SJVideoPlayer/SJVideoPlayer/SJEdgeControlLayer/Asset/SJEdgeControlLayer.bundle",
-				"${PODS_ROOT}/SJVideoPlayer/SJVideoPlayer/SJFilmEditingControlLayer/Asset/SJFilmEditing.bundle",
-				"${PODS_ROOT}/ZFPlayer/ZFPlayer/Classes/ControlView/ZFPlayer.bundle",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GKNavigationBarViewController.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SJVolBrigResource.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SJEdgeControlLayer.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SJFilmEditing.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1199,6 +1201,7 @@
 				601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */,
 				60A5A55F21902E0800224D0C /* EYHomeBackItemModel.m in Sources */,
 				60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */,
+				60AFD6A8229292F1005C4742 /* EYLanguageTool.m in Sources */,
 				60ED70C22160987E00381DBD /* EYScrollView.m in Sources */,
 				6012FD68215A2FA5004A3083 /* EYHomeBackView.m in Sources */,
 				6076A171214A4D26002ED551 /* EYHomeCityViewController.m in Sources */,

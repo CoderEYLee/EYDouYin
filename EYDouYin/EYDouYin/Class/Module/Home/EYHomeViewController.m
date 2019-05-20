@@ -73,29 +73,33 @@
 }
 
 - (void)setupUI {
-    [self.view clipsCornerRadius:UIRectCornerAllCorners cornerRadii:5.0];
-    [self.view addSubview:[self getSystemVolumSlider]];
-
-    self.view.backgroundColor = [UIColor blackColor];
-    // 1.底层的 view
-    EYHomeBackView *backView = [EYHomeBackView homeBackView];
-    backView.frame = CGRectMake(0, 0, EYScreenWidth, EYBackViewHeight);
-    backView.delegate = self;
-    backView.backgroundColor = [UIColor blackColor];
-    [self.view insertSubview:backView atIndex:0];
-    self.backView = backView;
-
-    self.naviBar.hidden = NO;
-    // 2.titleView
-    EYHomeTitleView * titleView = [EYHomeTitleView homeTitleView];
-    titleView.delegate = self;
-    [self.naviBar addSubview:titleView];
-
-    // 3.scrollView
-    self.scrollView.hidden = NO;
-
-    // 4.同城 view
-    self.homeCityView.hidden = YES;
+//    [self.gk_navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+//    [self.gk_navigationBar setShadowImage:[UIImage new]];
+//    self.gk_navTitleView.backgroundColor = EYColorBlue;
+    
+//    [self.view clipsCornerRadius:UIRectCornerAllCorners cornerRadii:5.0];
+//    [self.view addSubview:[self getSystemVolumSlider]];
+//
+//    self.view.backgroundColor = [UIColor blackColor];
+//    // 1.底层的 view
+//    EYHomeBackView *backView = [EYHomeBackView homeBackView];
+//    backView.frame = CGRectMake(0, 0, EYScreenWidth, EYBackViewHeight);
+//    backView.delegate = self;
+//    backView.backgroundColor = [UIColor blackColor];
+//    [self.view insertSubview:backView atIndex:0];
+//    self.backView = backView;
+//
+//    self.naviBar.hidden = NO;
+//    // 2.titleView
+//    EYHomeTitleView * titleView = [EYHomeTitleView homeTitleView];
+//    titleView.delegate = self;
+//    [self.naviBar addSubview:titleView];
+//
+//    // 3.scrollView
+//    self.scrollView.hidden = NO;
+//
+//    // 4.同城 view
+//    self.homeCityView.hidden = YES;
 }
 
 - (void)loadNetData {
@@ -170,28 +174,28 @@
 
 //更多
 - (void)more {
-    CGFloat naviBarY = self.naviBar.mj_y;
-    EYLog(@"更多");
-    if (naviBarY == EYStatusBarHeight) {// scrollView向下滚动
-        [self changeFrameWithPOP:self.naviBar offsetY:EYBackViewHeight];
-        [self changeFrameWithPOP:self.scrollView offsetY:EYBackViewHeight];
-        self.upSwipeView.hidden = NO;
-        for (EYHomeVideoView *view in self.videoViewArrayM) {
-            view.homeInfoView.hidden = YES;
-            view.homeSharedView.hidden = YES;
-        }
-
-        [self.backView showWithArray:self.modelArrayM];
-    } else {// scrollView恢复原始位置
-        [self changeFrameWithPOP:self.naviBar offsetY:-EYBackViewHeight];
-        [self changeFrameWithPOP:self.scrollView offsetY:-EYBackViewHeight];
-        self.upSwipeView.hidden = YES;
-        for (EYHomeVideoView *view in self.videoViewArrayM) {
-            view.homeInfoView.hidden = NO;
-            view.homeSharedView.hidden = NO;
-        }
-        [self.backView close];
-    }
+//    CGFloat naviBarY = self.naviBar.mj_y;
+//    EYLog(@"更多");
+//    if (naviBarY == EYStatusBarHeight) {// scrollView向下滚动
+//        [self changeFrameWithPOP:self.naviBar offsetY:EYBackViewHeight];
+//        [self changeFrameWithPOP:self.scrollView offsetY:EYBackViewHeight];
+//        self.upSwipeView.hidden = NO;
+//        for (EYHomeVideoView *view in self.videoViewArrayM) {
+//            view.homeInfoView.hidden = YES;
+//            view.homeSharedView.hidden = YES;
+//        }
+//
+//        [self.backView showWithArray:self.modelArrayM];
+//    } else {// scrollView恢复原始位置
+//        [self changeFrameWithPOP:self.naviBar offsetY:-EYBackViewHeight];
+//        [self changeFrameWithPOP:self.scrollView offsetY:-EYBackViewHeight];
+//        self.upSwipeView.hidden = YES;
+//        for (EYHomeVideoView *view in self.videoViewArrayM) {
+//            view.homeInfoView.hidden = NO;
+//            view.homeSharedView.hidden = NO;
+//        }
+//        [self.backView close];
+//    }
 }
 
 //动画
@@ -399,7 +403,7 @@
         scrollView.showsVerticalScrollIndicator = NO;
         scrollView.bounces = NO;
         scrollView.delegate = self;
-        [self.view insertSubview:scrollView belowSubview:self.naviBar];
+//        [self.view insertSubview:scrollView belowSubview:self.naviBar];
 
         for (int i = 0; i < 3; i++) {
             EYHomeVideoView *videoView = [EYHomeVideoView homeItemView];
@@ -422,15 +426,15 @@
 - (UIView *)upSwipeView {
     if (nil == _upSwipeView) {
         // 创建蒙层view
-        UIView * swipeView = [[UIView alloc] initWithFrame:CGRectMake(0, EYBackViewHeight, EYScreenWidth, EYScreenHeight - EYBackViewHeight - EYTabBarHeight)];
-        swipeView.backgroundColor = [UIColor clearColor];
-        [self.view insertSubview:swipeView belowSubview:self.naviBar];
-        _upSwipeView = swipeView;
+//        UIView * swipeView = [[UIView alloc] initWithFrame:CGRectMake(0, EYBackViewHeight, EYScreenWidth, EYScreenHeight - EYBackViewHeight - EYTabBarHeight)];
+//        swipeView.backgroundColor = [UIColor clearColor];
+//        [self.view insertSubview:swipeView belowSubview:self.naviBar];
+//        _upSwipeView = swipeView;
 
         // 滑动手势
-        UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(more)];
-        upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
-        [swipeView addGestureRecognizer:upSwipe];
+//        UISwipeGestureRecognizer *upSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(more)];
+//        upSwipe.direction = UISwipeGestureRecognizerDirectionUp;
+//        [swipeView addGestureRecognizer:upSwipe];
     }
     return _upSwipeView;
 }
@@ -439,7 +443,7 @@
     if (nil == _homeCityView) {
         EYHomeCityViewController *homeCityViewController = [[EYHomeCityViewController alloc] init];
         UIView *homeCityView = homeCityViewController.view;
-        [self.view insertSubview:homeCityView belowSubview:self.naviBar];
+//        [self.view insertSubview:homeCityView belowSubview:self.naviBar];
         _homeCityView = homeCityView;
         [self addChildViewController:homeCityViewController];
     }

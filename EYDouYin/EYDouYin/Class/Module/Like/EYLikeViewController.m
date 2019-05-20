@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = EYRandomColor;
+    self.view.backgroundColor = EYColorRandom;
     EYLog(@"EYLikeViewController--viewDidLoad");
 }
 
