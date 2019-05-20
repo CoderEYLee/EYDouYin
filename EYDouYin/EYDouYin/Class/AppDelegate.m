@@ -32,8 +32,8 @@
     // 3.语言
     [self setupLanguage];
 
-    // 4.监听通知
-    [self addNotification];
+    // 4.设置导航条
+    [self setupGKNavigationBar];
 
     // 5.Bugly
     [self setupBugly];
@@ -54,9 +54,6 @@
 
     EYLog(@"AppDelegate--1111111--->程序启动了");
     
-//    GKNavigationBarConfigure *configure =  [GKNavigationBarConfigure sharedInstance];
-//    configure.
-
 //    [self openAnimation];
 
     return YES;
@@ -109,9 +106,13 @@
     [EYLanguageTool setDefaultAppLanguage];
 }
 
-// 4.监听通知
-- (void)addNotification {
-
+// 4.设置导航条
+- (void)setupGKNavigationBar {
+    GKNavigationBarConfigure *configure =  [GKNavigationBarConfigure sharedInstance];
+    configure.backgroundColor = EYColorBlue;
+    configure.titleColor = EYColorWhite;
+    configure.titleFont = EYSizeFont17;
+    configure.backStyle = GKNavigationBarBackStyleWhite;
 }
 
 // 5.Bugly

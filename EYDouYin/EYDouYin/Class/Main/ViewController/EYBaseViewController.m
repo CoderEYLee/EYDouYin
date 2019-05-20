@@ -61,9 +61,6 @@
     // 1.设置背景颜色
     self.view.backgroundColor = EYColor2A2B33;
     
-    // 2.设置 GK 的导航
-//    self.gk_navigationBar.backgroundColor = EYColorRandom;
-    self.gk_navBackgroundColor = EYColorRandom;
 }
 
 #pragma mark - 旋转方向
