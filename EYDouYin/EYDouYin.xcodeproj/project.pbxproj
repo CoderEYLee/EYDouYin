@@ -487,10 +487,10 @@
 		6055AD3A2116B03E005DC856 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				607541332104CC4C00EB258D /* Assets.xcassets */,
 				60ED6DF9215F6DD600381DBD /* openAnimation.gif */,
 				60ED6DFB215F6EBB00381DBD /* lastFrame.png */,
 				6000D871213D1CFB00491BB7 /* Localizable.strings */,
-				6055AD3B2116B382005DC856 /* TabBar.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -700,7 +700,6 @@
 			isa = PBXGroup;
 			children = (
 				607541352104CC4C00EB258D /* LaunchScreen.storyboard */,
-				607541332104CC4C00EB258D /* Assets.xcassets */,
 				607541392104CC4C00EB258D /* main.m */,
 				606E70BE212C21C500ABEB83 /* EYDouYin-Bridging-Header.h */,
 				607541712104D33F00EB258D /* PrefixHeader.pch */,
@@ -711,6 +710,7 @@
 				60AFD6A2229247BB005C4742 /* EYSizeFontConstant.h */,
 				60BBC68F2104D9D900DEEA34 /* EYConstant.h */,
 				60BBC6902104D9D900DEEA34 /* EYConstant.m */,
+				6055AD3B2116B382005DC856 /* TabBar.json */,
 				6076A15C2148E096002ED551 /* ChinLab_en.json */,
 			);
 			path = Other;

@@ -127,14 +127,15 @@
 
 // 7.SDWebImage
 - (void)setupSDWebImage {
+    SDImageCacheConfig *imageCacheConfig = [SDImageCacheConfig defaultCacheConfig];
     //1.图片磁盘最大过期时间
-    [SDImageCache sharedImageCache].config.maxDiskAge = 60 * 60 * 24 * 7;
+    imageCacheConfig.maxDiskAge = 60 * 60 * 24 * 7;
     //2.图片磁盘最大占用 100M
-    [SDImageCache sharedImageCache].config.maxDiskSize = 1024 * 1024 * 100;
+    imageCacheConfig.maxDiskSize = 1024 * 1024 * 100;
     // 最大缓存个数
-    [SDImageCache sharedImageCache].config.maxMemoryCount = 20;
+    imageCacheConfig.maxMemoryCount = 20;
     // 最大内存消耗 50M
-    [SDImageCache sharedImageCache].config.maxMemoryCost = 1024 * 1024 * 50;
+    imageCacheConfig.maxMemoryCost = 1024 * 1024 * 50;
 }
 
 // 8.设置启动页面
@@ -221,6 +222,22 @@
             [gifImageView removeFromSuperview];
         }];
     });
+}
+
+// 收到内存警告
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    EYLog(@"收到内存警告");
+    
+    //1.取消所有操作
+    [[SDWebImageManager sharedManager] cancelAll];
+    
+    //2.清空缓存（内存）
+    [[SDImageCache sharedImageCache] clearMemory];
+    
+    //3.清空磁盘图片
+    [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
+        EYLog(@"收到内存警告清理磁盘缓存结束");
+    }];
 }
 
 #pragma mark - Override Methods
