@@ -73,16 +73,7 @@
 }
 
 - (void)setupUI {
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, 200, 200)];
-    imageView.backgroundColor = EYColorRandom;
-    [self.view addSubview:imageView];
-    
-    [imageView sd_setImageWithURL:[NSURL URLWithString:@"https:/videoali.chinlab.com/screenshot/19201557828524.jpg?x-oss-process=image/resize,w_248,h_316/format,jpg"] placeholderImage:[UIImage imageNamed:@"common_placeholder"] options:SDWebImageAllowInvalidSSLCertificates];
-    
-//    [self.gk_navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-//    [self.gk_navigationBar setShadowImage:[UIImage new]];
-//    self.gk_navTitleView.backgroundColor = EYColorBlue;
-    
+    self.gk_navigationBar.hidden = YES;
 //    [self.view clipsCornerRadius:UIRectCornerAllCorners cornerRadii:5.0];
 //    [self.view addSubview:[self getSystemVolumSlider]];
 //
