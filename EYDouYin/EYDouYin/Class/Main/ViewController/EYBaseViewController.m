@@ -50,10 +50,6 @@
     // EYLog(@"%@--viewDidDisappear", self);
 }
 
-- (void)dealloc {
-    EYLog(@"%@--dealloc", self);
-}
-
 - (void)setupNaviBar {
     self.gk_navigationBar.hidden = YES;
     
@@ -72,6 +68,10 @@
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskPortrait;//默认只是竖屏
+}
+
+- (void)dealloc {
+    EYLog(@"%@--dealloc", self);
 }
 
 @end
