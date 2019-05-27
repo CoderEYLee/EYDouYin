@@ -11,11 +11,10 @@
 #import "EYTabBarController.h"
 #import "EYNavigationController.h"
 #import "EYHomeWorksViewController.h"
-#import "EYScrollView.h"
 
 @interface EYRootViewController () <UIScrollViewDelegate, GKViewControllerPushDelegate, EYTabBarControllerDelegate, UITabBarControllerDelegate>
 
-@property (weak, nonatomic, readwrite) EYScrollView *scrollView;
+@property (weak, nonatomic, readwrite) UIScrollView *scrollView;
 
 @property (assign, nonatomic) EYTabBarViewType indexType;
 
@@ -72,7 +71,7 @@
 #pragma mark - 懒加载
 - (UIScrollView *)scrollView {
     if (nil == _scrollView) {
-        EYScrollView * scrollView = [[EYScrollView alloc] initWithFrame:EYScreenBounds];
+        UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:EYScreenBounds];
         if (@available(iOS 11.0, *)) {
             scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         } else {
@@ -111,7 +110,7 @@
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    EYLog(@"底部的 scrollView已经结束拖拽--");
+    // EYLog(@"底部的 scrollView已经结束拖拽--");
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -130,7 +129,7 @@
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-     EYLog(@"底部的 scrollView已经结束减速--%@", NSStringFromCGPoint(scrollView.contentOffset));
+    //EYLog(@"底部的 scrollView已经结束减速--%@", NSStringFromCGPoint(scrollView.contentOffset));
     CGFloat x = scrollView.contentOffset.x;
     if (x == EYScreenWidth) {
         if (!EYSCREENSIZE_IS_IPhoneX_All) {
