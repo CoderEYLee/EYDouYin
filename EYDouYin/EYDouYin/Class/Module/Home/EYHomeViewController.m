@@ -100,8 +100,7 @@
 }
 
 - (void)loadNetData {
-    NSString *jsonName = @"Items.json";
-    NSArray *jsonArray = jsonName.ey_loadLocalJSONFile;
+    NSArray *jsonArray = @"Items.json".ey_loadLocalJSONFile;
 
     if (jsonArray.count < 3) {
         return;
@@ -321,16 +320,14 @@
 //
 //    if (self.currentVideoIndex + 1 >= self.videoModelArrayM.count) {
 //        EYLog(@"可以请求下一组啦啦啦");
-//        NSString *jsonName = @"Items.json";
-//        NSArray *jsonArray = jsonName.ey_loadLocalJSONFile;
+//        NSArray *jsonArray = @"Items.json".ey_loadLocalJSONFile;
 //
 //        [self.videoModelArrayM addObjectsFromArray:[EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray]];
 //    }
 //
 //    if (self.currentVideoIndex <= 0) {
 //        EYLog(@"可以请求最新的一组哈哈哈");
-//        NSString *jsonName = @"Items.json";
-//        NSArray *jsonArray = jsonName.ey_loadLocalJSONFile;
+//        NSArray *jsonArray = @"Items.json".ey_loadLocalJSONFile;
 //
 //        self.currentVideoIndex = 0;
 //        NSMutableArray *array = [EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray];

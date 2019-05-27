@@ -17,8 +17,6 @@
 
 @interface EYTabBarController () <EYTabBarViewDelegate>
 
-@property (weak, nonatomic) UIView *tabBarView;
-
 @end
 
 @implementation EYTabBarController
@@ -32,21 +30,14 @@
     [self setupTabBar];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-
-    self.tabBarView.height = EYTabBarHeight;
-}
-
 #pragma mark - 初始化 UI
 - (void)setupViewController {
-    NSString * jsonName = @"TabBar.json";
-    NSArray *array = jsonName.ey_loadLocalJSONFile;
+    NSArray *array = @"TabBar.json".ey_loadLocalJSONFile;
 
     NSMutableArray *arrayM = [NSMutableArray array];
 
     for (NSDictionary * dictionary in array) {
-        UIViewController * viewController = [[NSClassFromString(dictionary[@"className"]) alloc] init];
+        UIViewController *viewController = [[NSClassFromString(dictionary[@"className"]) alloc] init];
         if ([dictionary[@"needNavi"] boolValue]) {
             [arrayM addObject:[[EYNavigationController alloc] initWithRootViewController:viewController]];
         } else {
@@ -61,15 +52,11 @@
     // 1.设置 tabbar
     [[UITabBar appearance] setShadowImage:[UIImage new]];
     [[UITabBar appearance] setBackgroundImage:[UIImage new]];
+    [[UITabBar appearance] setBackgroundColor:EYColorClear];
 
     // 2.创建自定义的 view 添加到 tabBar
     EYTabBarView *tabBarView = [EYTabBarView tabBarView];
-    tabBarView.frame = CGRectMake(0, 0, self.tabBar.width, self.tabBar.height);
     tabBarView.delegate = self;
-    if (EYSCREENSIZE_IS_IPhoneX_All) {
-        self.tabBar.backgroundColor = [UIColor blackColor];
-        self.tabBarView = tabBarView;
-    }
     [self.tabBar addSubview:tabBarView];
 }
 
@@ -78,20 +65,28 @@
 }
 
 #pragma mark - EYTabBarViewDelegate
-- (void)tabBarView:(EYTabBarView *)tabBarView didSelectedIndex:(NSInteger)index {
-    EYLog(@"当前点击的 index--%ld", (long)index);
+- (BOOL)tabBarView:(EYTabBarView *)tabBarView shouldSelectedIndex:(NSUInteger)selectedIndex {
+    EYLog(@"当前点击的 index--%ld", (long)selectedIndex);
+    
+    if (selectedIndex == EYTabBarViewTypePlus) {//弹出发布界面
+        [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
+        return NO;
+    }
+    
+    self.selectedIndex = selectedIndex;
+    return YES;
 
     if (EYSCREENSIZE_IS_IPhoneX_All) {
-        if (index == EYTabBarViewTypePlus) {//弹出发布界面
+        if (selectedIndex == EYTabBarViewTypePlus) {//弹出发布界面
             [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
         } else {
-            self.selectedIndex = index;
+            self.selectedIndex = selectedIndex;
         }
     } else {
         EYNavigationController * homeNavi = self.viewControllers.firstObject;
         EYHomeViewController *homeVC = (EYHomeViewController *)homeNavi.viewControllers.firstObject;
 
-        if (index == EYTabBarViewTypeHome) {
+        if (selectedIndex == EYTabBarViewTypeHome) {
             if (!EYSCREENSIZE_IS_IPhoneX_All) {
                 if (homeVC.type == EYHomeViewControllerButtonTypeRecommend) {
                     tabBarView.backgroundColor = [UIColor clearColor];
@@ -99,19 +94,20 @@
                     tabBarView.backgroundColor = [UIColor blackColor];
                 }
             }
-            self.selectedIndex = index;
-        } else if (index == EYTabBarViewTypePlus) {//弹出发布界面
+            self.selectedIndex = selectedIndex;
+        } else if (selectedIndex == EYTabBarViewTypePlus) {//弹出发布界面
             [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
         } else {//禁止滚动
             tabBarView.backgroundColor = [UIColor blackColor];
-            self.selectedIndex = index;
+            self.selectedIndex = selectedIndex;
             [UIApplication sharedApplication].statusBarHidden = NO;
         }
     }
 
     if (self.delegate && [self.delegate respondsToSelector:@selector(tabBarControllerDidSelectedIndex:)]) {
-        [self.delegate tabBarControllerDidSelectedIndex:index];
+        [self.delegate tabBarControllerDidSelectedIndex:selectedIndex];
     }
+    return YES;
 }
 
 #pragma mark - UITabBarDelegate

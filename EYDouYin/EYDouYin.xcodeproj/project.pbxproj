@@ -25,7 +25,6 @@
 		6055AD3C2116B382005DC856 /* TabBar.json in Resources */ = {isa = PBXBuildFile; fileRef = 6055AD3B2116B382005DC856 /* TabBar.json */; };
 		6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD3E2116B929005DC856 /* NSString+EYExtension.m */; };
 		6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD412116CD21005DC856 /* EYTabBarView.m */; };
-		6055AD442116D18A005DC856 /* EYTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6055AD432116D18A005DC856 /* EYTabBarView.xib */; };
 		606B658A219182130059D1F7 /* UIButton+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */; };
 		606B658D2191883B0059D1F7 /* UIImage+EYAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B658C2191883B0059D1F7 /* UIImage+EYAddition.m */; };
 		606B6590219189310059D1F7 /* UIButton+EYAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B658F219189310059D1F7 /* UIButton+EYAddition.m */; };
@@ -193,7 +192,6 @@
 		6055AD3E2116B929005DC856 /* NSString+EYExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+EYExtension.m"; sourceTree = "<group>"; };
 		6055AD402116CD21005DC856 /* EYTabBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYTabBarView.h; sourceTree = "<group>"; };
 		6055AD412116CD21005DC856 /* EYTabBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYTabBarView.m; sourceTree = "<group>"; };
-		6055AD432116D18A005DC856 /* EYTabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYTabBarView.xib; sourceTree = "<group>"; };
 		606B6588219182130059D1F7 /* UIButton+EYSDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+EYSDWebImage.h"; sourceTree = "<group>"; };
 		606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EYSDWebImage.m"; sourceTree = "<group>"; };
 		606B658B2191883B0059D1F7 /* UIImage+EYAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EYAddition.h"; sourceTree = "<group>"; };
@@ -402,6 +400,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		601815BD229BB90E006598F6 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				6055AD402116CD21005DC856 /* EYTabBarView.h */,
+				6055AD412116CD21005DC856 /* EYTabBarView.m */,
+				601B03132104DCBD00489E96 /* EYTabBarController.h */,
+				601B03142104DCBD00489E96 /* EYTabBarController.m */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
 		601B03162104DDC900489E96 /* Find */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,9 +484,6 @@
 		6055AD392116AD7C005DC856 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6055AD402116CD21005DC856 /* EYTabBarView.h */,
-				6055AD412116CD21005DC856 /* EYTabBarView.m */,
-				6055AD432116D18A005DC856 /* EYTabBarView.xib */,
 				60ED70C02160987E00381DBD /* EYScrollView.h */,
 				60ED70C12160987E00381DBD /* EYScrollView.m */,
 			);
@@ -638,6 +644,7 @@
 				60AFD6A5229292D0005C4742 /* Manager */,
 				6076A1752150CF5E002ED551 /* ThirdLib */,
 				60BBC6822104D83400DEEA34 /* ViewController */,
+				601815BD229BB90E006598F6 /* TabBarController */,
 				6055AD392116AD7C005DC856 /* View */,
 				607541602104CD6600EB258D /* Tool */,
 				6075415F2104CD2900EB258D /* Category */,
@@ -870,8 +877,6 @@
 				606E6FA921284FF400ABEB83 /* EYBaseCollectionViewController.m */,
 				60BBC6872104D83400DEEA34 /* EYNavigationController.h */,
 				60BBC6842104D83400DEEA34 /* EYNavigationController.m */,
-				601B03132104DCBD00489E96 /* EYTabBarController.h */,
-				601B03142104DCBD00489E96 /* EYTabBarController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1091,7 +1096,6 @@
 				60B2FAEB213916870046D13D /* EYHomeSharedView.xib in Resources */,
 				60A6CEB321ABF2EB00428985 /* 29、[iOS]一次高效的依赖注入.html in Resources */,
 				60A6CECF21ABF2EB00428985 /* 34、iOS字体大小适配的几种方法.html in Resources */,
-				6055AD442116D18A005DC856 /* EYTabBarView.xib in Resources */,
 				6085A16021897A4B00637F31 /* EYWaterflowShopCell2.xib in Resources */,
 				6076A15D2148E097002ED551 /* ChinLab_en.json in Resources */,
 				60ED6DFC215F6EBB00381DBD /* lastFrame.png in Resources */,

@@ -64,6 +64,8 @@
 #define EYTabBarHeight (49)
 //HomeIndicator的高度(只有 X 有)
 #define EYHomeIndicatorHeight (EYSCREENSIZE_IS_IPhoneX_All ? (34) : (0))
+//TabBar + HomeIndicator
+#define EYTabBarHomeIndicatorHeight (EYTabBarHeight + EYHomeIndicatorHeight)
 
 // 设备系统版本
 #define EYDeviceSystemVersion ([[UIDevice currentDevice].systemVersion doubleValue])

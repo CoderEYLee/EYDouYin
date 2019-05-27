@@ -17,3 +17,4 @@
 #import <SJVideoPlayer.h>
 #import <SDWebImage.h>
 #import <SDImageCache.h>
+#import <Masonry.h>

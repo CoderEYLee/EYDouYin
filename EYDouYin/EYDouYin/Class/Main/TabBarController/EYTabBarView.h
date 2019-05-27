@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, EYTabBarViewType) {
 @protocol EYTabBarViewDelegate<NSObject>
 
 @optional
-- (void)tabBarView:(EYTabBarView *)tabBarView didSelectedIndex:(NSInteger)index;
+- (BOOL)tabBarView:(EYTabBarView *)tabBarView shouldSelectedIndex:(NSUInteger)selectedIndex;
 
 @end
 

@@ -33,5 +33,6 @@ pod 'SDWebImage', '~> 5.0.0-beta5'  #图片缓存
 pod 'GKNavigationBarViewController', '~> 2.1.2' #抖音的左滑 push 效果
 pod 'SJVideoPlayer', '~> 2.1.6'     #播放器
 pod 'Bugly', '2.5.0'                #Bugly
+pod 'Masonry', '1.1.0'              #自动布局
 
 end
