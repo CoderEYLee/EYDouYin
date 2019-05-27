@@ -27,10 +27,9 @@
     [super viewDidLoad];
     
     [self setupUI];
-
-    self.gk_pushDelegate = self;
 }
 
+// 初始化界面
 - (void)setupUI {
     self.gk_navigationBar.hidden = YES;
     //左面view
