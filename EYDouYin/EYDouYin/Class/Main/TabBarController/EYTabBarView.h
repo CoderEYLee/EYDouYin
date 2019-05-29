@@ -10,11 +10,11 @@
 @class EYTabBarView;
 
 typedef NS_ENUM(NSInteger, EYTabBarViewType) {
-    EYTabBarViewTypeHome, //首页
-    EYTabBarViewTypeLike, //关注
-    EYTabBarViewTypePlus, //+
+    EYTabBarViewTypeHome,   //首页
+    EYTabBarViewTypeLike,   //关注
+    EYTabBarViewTypePlus,   //+
     EYTabBarViewTypeMessage,//消息
-    EYTabBarViewTypeMe,//我
+    EYTabBarViewTypeMe,     //我
 };
 
 @protocol EYTabBarViewDelegate<NSObject>
