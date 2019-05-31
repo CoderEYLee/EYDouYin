@@ -16,11 +16,16 @@
 
 // 滚动视图
 @property (weak, nonatomic) UIScrollView *scrollView;
+@property (weak, nonatomic) EYHomePlayViewController *toptopVC;//上
+@property (weak, nonatomic) EYHomePlayViewController *centerVC;//中
+@property (weak, nonatomic) EYHomePlayViewController *bottomVC;//下
 
 @property (strong, nonatomic) NSMutableArray <EYVideoModel *>*arrarM;
 
-// 当前播放的下标
+// 当前屏幕所处的下标
 @property (assign, nonatomic) NSUInteger currentVideoIndex;
+// 当前屏幕所属的控制器
+@property (weak, nonatomic) EYHomePlayViewController *currentPlayViewController;
 
 @end
 
@@ -38,10 +43,6 @@
     
     //2.模拟网络数据
     [self loadNetData];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
 }
 
 //1.初始化界面
@@ -72,17 +73,19 @@
     self.scrollView = scrollView;
     
     //4.1 上
-    EYHomePlayViewController *topVC = [[EYHomePlayViewController alloc] init];
-    topVC.name = @"上";
-    [self addChildViewController:topVC];
-    topVC.view.frame = EYScreenBounds;
-    topVC.view.backgroundColor = EYColorRed;
-    [scrollView addSubview:topVC.view];
+    EYHomePlayViewController *toptopVC = [[EYHomePlayViewController alloc] init];
+    toptopVC.name = @"上";
+    [self addChildViewController:toptopVC];
+    self.toptopVC = toptopVC;
+    toptopVC.view.frame = EYScreenBounds;
+    toptopVC.view.backgroundColor = EYColorRed;
+    [scrollView addSubview:toptopVC.view];
     
     //4.1 中
     EYHomePlayViewController *centerVC = [[EYHomePlayViewController alloc] init];
     centerVC.name = @"中";
     [self addChildViewController:centerVC];
+    self.centerVC = centerVC;
     centerVC.view.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
     centerVC.view.backgroundColor = EYColorGreen;
     [scrollView addSubview:centerVC.view];
@@ -91,6 +94,7 @@
     EYHomePlayViewController *bottomVC = [[EYHomePlayViewController alloc] init];
     bottomVC.name = @"下";
     [self addChildViewController:bottomVC];
+    self.bottomVC = bottomVC;
     bottomVC.view.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
     bottomVC.view.backgroundColor = EYColorBlue;
     [scrollView addSubview:bottomVC.view];
@@ -105,12 +109,12 @@
         return;
     }
     
-    [self.arrarM addObjectsFromArray:[array subarrayWithRange:NSMakeRange(0, 3)]];
+    [self.arrarM addObjectsFromArray:[array subarrayWithRange:NSMakeRange(0, 5)]];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //开始播放第0个
-        //        EYHomePlayViewController *topVC = self.childViewControllers.firstObject;
-        //        [topVC startPlayWithURLString:self.arrarM.firstObject.tt_video_name];
+        self.currentPlayViewController = self.toptopVC;
+        [self.currentPlayViewController startPlayWithURLString:self.arrarM.firstObject.tt_video_name];
     });
 }
 
@@ -152,7 +156,7 @@
     }
     
     if (contentOffsetY >= 2 * EYScreenHeight) {//下一个视频
-        //        [self.videoPlayer removeVideo];
+//        [self.videoPlayer removeVideo];
         self.currentVideoIndex++;
         if (self.currentVideoIndex == self.arrarM.count - 1) {//最后一个
             EYLog(@"向下看 看到最后一个**%lu**", self.currentVideoIndex);
@@ -160,60 +164,47 @@
         }
         
         //1.修改位置
-        EYHomePlayViewController *toptopVC =  self.childViewControllers.firstObject;
-        EYHomePlayViewController *centerVC =  self.childViewControllers[1];
-        EYHomePlayViewController *bottomVC =  self.childViewControllers.lastObject;
-        if (toptopVC.view.mj_y == 0) {// 上(中)下 -> 中(下)上
-            centerVC.view.mj_y = 0;
-            bottomVC.view.mj_y = EYScreenHeight;
-            toptopVC.view.mj_y = EYScreenHeight * 2;
-        } else if (toptopVC.view.mj_y == EYScreenHeight) {// 下(上)中 -> 上(中)下
-            toptopVC.view.mj_y = 0;
-            centerVC.view.mj_y = EYScreenHeight;
-            bottomVC.view.mj_y = EYScreenHeight * 2;
+        if (self.toptopVC.view.mj_y == 0) {// 上(中)下 -> 中(下)上
+            self.centerVC.view.mj_y = 0;
+            self.bottomVC.view.mj_y = EYScreenHeight;
+            self.toptopVC.view.mj_y = EYScreenHeight * 2;
+        } else if (self.toptopVC.view.mj_y == EYScreenHeight) {// 下(上)中 -> 上(中)下
+            self.toptopVC.view.mj_y = 0;
+            self.centerVC.view.mj_y = EYScreenHeight;
+            self.bottomVC.view.mj_y = EYScreenHeight * 2;
         } else {// 中(下)上 -> 下(上)中
-            bottomVC.view.mj_y = 0;
-            toptopVC.view.mj_y = EYScreenHeight;
-            centerVC.view.mj_y = EYScreenHeight * 2;
+            self.bottomVC.view.mj_y = 0;
+            self.toptopVC.view.mj_y = EYScreenHeight;
+            self.centerVC.view.mj_y = EYScreenHeight * 2;
         }
         //2.滚动位置
         scrollView.contentOffset = CGPointMake(0, EYScreenHeight);
         
         EYLog(@"下一个视频**%lu**", self.currentVideoIndex);
-//        if (self.index < self.dataVideo.count - 1) {
-//            self.bottom_view.videoModel = self.dataVideo[self.index + 1];
-//        }
     } else if (contentOffsetY <= 0) {//上一个视频
         if (self.currentVideoIndex == 1) {
             self.currentVideoIndex = 0; EYLog(@"上滑到第一个视频**%lu**,可以进行下拉刷新的操作了", self.currentVideoIndex);
             return;
         }
         
-//        if (self.currentVideoIndex == self.arrarM.count - 1) {
-//            self.currentVideoIndex -= 2;
-//        }else {
-            self.currentVideoIndex--;
-//        }
+        self.currentVideoIndex--;
         
         //1.修改位置
-        EYHomePlayViewController *toptopVC =  self.childViewControllers.firstObject;
-        EYHomePlayViewController *centerVC =  self.childViewControllers[1];
-        EYHomePlayViewController *bottomVC =  self.childViewControllers.lastObject;
-        if (toptopVC.view.mj_y == 0) {// 上(中)下 -> 下(上)中
-            //                EYLog(@"777777777777");
-            bottomVC.view.mj_y = 0;
-            toptopVC.view.mj_y = EYScreenHeight;
-            centerVC.view.mj_y = EYScreenHeight * 2;
-        } else if (toptopVC.view.mj_y == EYScreenHeight) {// 下(上)中 -> 中(下)上
-            //                EYLog(@"8888888888888");
-            centerVC.view.mj_y = 0;
-            bottomVC.view.mj_y = EYScreenHeight;
-            toptopVC.view.mj_y = EYScreenHeight * 2;
+        if (self.toptopVC.view.mj_y == 0) {// 上(中)下 -> 下(上)中
+            //EYLog(@"777777777777");
+            self.bottomVC.view.mj_y = 0;
+            self.toptopVC.view.mj_y = EYScreenHeight;
+            self.centerVC.view.mj_y = EYScreenHeight * 2;
+        } else if (self.toptopVC.view.mj_y == EYScreenHeight) {// 下(上)中 -> 中(下)上
+            //EYLog(@"8888888888888");
+            self.centerVC.view.mj_y = 0;
+            self.bottomVC.view.mj_y = EYScreenHeight;
+            self.toptopVC.view.mj_y = EYScreenHeight * 2;
         } else {// 中(下)上 -> 上(中)下
-            //                EYLog(@"9999999999999");
-            toptopVC.view.mj_y = 0;
-            centerVC.view.mj_y = EYScreenHeight;
-            bottomVC.view.mj_y = EYScreenHeight * 2;
+            //EYLog(@"9999999999999");
+            self.toptopVC.view.mj_y = 0;
+            self.centerVC.view.mj_y = EYScreenHeight;
+            self.bottomVC.view.mj_y = EYScreenHeight * 2;
         }
         
         //2.滚动位置
@@ -223,11 +214,10 @@
 }
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
-    return YES;
+    return NO;
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView  {// 开始拖拽
-    //    EYLog(@"111111111111111");
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {// 结束拖拽
@@ -237,68 +227,16 @@
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
-    //    int index = scrollView.contentOffset.y / EYScreenHeight;
-    //    CGFloat contentOffY = scrollView.contentOffset.y;
-    // EYLog(@"scrollView已经结束减速:%d--位置为:%f", index, scrollView.contentOffset.y);
+    EYLog(@"需要播放的下标为**%lu**", self.currentVideoIndex);
+    if (self.currentVideoIndex == 0) {//第 0 个
+        
+    } else if (self.currentVideoIndex == self.arrarM.count) {//最后一个
+        
+    } else {//中间部分的
+        
+    }
     
-    //    CGFloat y = [scrollView.panGestureRecognizer translationInView:scrollView.superview].y;
-    //
-    //    if (y < 0) {//向上滚动
-    //        self.currentVideoIndex++;
-    //
-    //    } else {//向下滚动
-    //        if (self.currentVideoIndex) {
-    //            self.currentVideoIndex--;
-    //        }
-    //    }
-    //
-    //    EYLog(@"当前的index--%ld", self.currentVideoIndex);
-    //
-    //    EYHomeVideoView *videoView = self.videoViewArrayM[self.currentVideoIndex % 3];
-    //    videoView.indexLabel.text = [NSString stringWithFormat:@"%lu", self.currentVideoIndex];
-    ////    videoView.videoModel = self.videoModelArrayM[self.currentVideoIndex];
-    ////    [videoView playVideo];
-    //
-    //    if (self.currentVideoIndex + 1 >= self.videoModelArrayM.count) {
-    //        EYLog(@"可以请求下一组啦啦啦");
-    //        NSArray *jsonArray = @"EYVideoArray.plist".ey_loadLocalJSONFile;
-    //
-    //        [self.videoModelArrayM addObjectsFromArray:[EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray]];
-    //    }
-    //
-    //    if (self.currentVideoIndex <= 0) {
-    //        EYLog(@"可以请求最新的一组哈哈哈");
-    //        NSArray *jsonArray = @"EYVideoArray.plist".ey_loadLocalJSONFile;
-    //
-    //        self.currentVideoIndex = 0;
-    //        NSMutableArray *array = [EYHomeVideoModel mj_objectArrayWithKeyValuesArray:jsonArray];
-    //        [self.videoModelArrayM insertObjects:array atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, array.count)]];
-    //    }
-    //
-    
-    //    CGFloat width = self.scrollView.width;
-    //    CGFloat height = self.scrollView.height;
-    //    if (y < 0 && index == self.videoViewArrayM.count - 1) {// 最后一个
-    //        [self.videoViewArrayM insertObject:self.videoViewArrayM.firstObject atIndex:self.videoViewArrayM.count];
-    //        [self.videoViewArrayM removeFirstObject];
-    //
-    //        for (int i = 0; i < self.videoViewArrayM.count; i++) {
-    //            EYHomeVideoView *itemView = self.videoViewArrayM[i];
-    //            itemView.frame = CGRectMake(0, height * i, width, height);
-    //        }
-    //        [scrollView setContentOffset:CGPointMake(0, height) animated:NO];
-    //    }
-    //
-    //    if (y > 0 && index == 0) {
-    //        [self.videoViewArrayM insertObject:self.videoViewArrayM.lastObject atIndex:0];
-    //        [self.videoViewArrayM removeLastObject];
-    //
-    //        for (int i = 0; i < self.videoViewArrayM.count; i++) {
-    //            EYHomeVideoView *itemView = self.videoViewArrayM[i];
-    //            itemView.frame = CGRectMake(0, height * i, width, height);
-    //        }
-    //        [scrollView setContentOffset:CGPointMake(0, height) animated:NO];
-    //    }
+    EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
 }
 
 #pragma mark - 懒加载
