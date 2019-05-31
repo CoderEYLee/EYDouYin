@@ -14,9 +14,7 @@
 
 @interface EYRootViewController () <UIScrollViewDelegate, GKViewControllerPushDelegate, EYTabBarControllerDelegate, UITabBarControllerDelegate>
 
-@property (weak, nonatomic, readwrite) UIScrollView *scrollView;
-
-@property (assign, nonatomic) EYTabBarViewType indexType;
+@property (assign, nonatomic) EYTabBarViewType selecetdIndex;
 
 @end
 
@@ -25,43 +23,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 1.设置左滑代理
+    self.gk_pushDelegate = self;
+    
+    // 2.初始化界面
     [self setupUI];
 }
 
 // 初始化界面
 - (void)setupUI {
     self.gk_navigationBar.hidden = YES;
-    //左面view
-    EYFindViewController *findViewController = [[EYFindViewController alloc] init];
-    findViewController.view.frame = EYScreenBounds;
-    EYNavigationController *findNaviController = [[EYNavigationController alloc] initWithRootViewController:findViewController];
-    [self.scrollView addSubview:findNaviController.view];
-    [self addChildViewController:findNaviController];
     
-    //主 view
-    EYTabBarController * tabbarController = [[EYTabBarController alloc] init];
-    tabbarController.view.frame = CGRectMake(EYScreenWidth, 0, EYScreenWidth, EYScreenHeight);
+    EYTabBarController *tabbarController = [[EYTabBarController alloc] init];
+    tabbarController.view.frame = self.view.bounds;
     tabbarController.delegate = self;
-    [self.scrollView addSubview:tabbarController.view];
     [self addChildViewController:tabbarController];
-
-    self.scrollView.contentSize = CGSizeMake(EYScreenWidth * self.childViewControllers.count, EYScreenHeight);
-    //默认展示主view
-    [self.scrollView setContentOffset:CGPointMake(EYScreenWidth, 0)];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-
-    // 设置左滑push代理
-    self.gk_pushDelegate = self;
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-
-    // 清空左滑push代理
-    self.gk_pushDelegate = nil;
+    [self.view addSubview:tabbarController.view];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {//控制EYTabBarController的方向
@@ -69,42 +46,24 @@
 }
 
 #pragma mark - 懒加载
-- (UIScrollView *)scrollView {
-    if (nil == _scrollView) {
-        UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:EYScreenBounds];
-        if (@available(iOS 11.0, *)) {
-            scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        } else {
-            self.automaticallyAdjustsScrollViewInsets = NO;
-        }
-        scrollView.showsHorizontalScrollIndicator = NO;
-        scrollView.showsVerticalScrollIndicator = NO;
-        scrollView.bounces = NO;
-        scrollView.pagingEnabled = YES;
-        scrollView.delegate = self;
-        [self.view addSubview:scrollView];
-        _scrollView = scrollView;
-    }
-    return _scrollView;
-}
 
 #pragma mark - GKViewControllerPushDelegate
 - (void)pushToNextViewController {
-    if (self.indexType == EYTabBarViewTypeHome) {
-        EYHomeWorksViewController * vc = [[EYHomeWorksViewController alloc] init];
+    if (self.selecetdIndex == EYTabBarViewTypeHome) {
+        EYHomeWorksViewController *vc = [[EYHomeWorksViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
 #pragma mark - EYTabBarControllerDelegate
 - (void)tabBarControllerDidSelectedIndex:(EYTabBarViewType)index {
-    self.indexType = index;
+    
     if (index == EYTabBarViewTypeHome) {
-        self.scrollView.scrollEnabled = YES;
+        self.selecetdIndex = index;
     } else if (index == EYTabBarViewTypePlus) {
-
+        
     } else {
-        self.scrollView.scrollEnabled = NO;
+        self.selecetdIndex = index;
     }
 }
 
@@ -138,6 +97,11 @@
     } else {
 
     }
+}
+
+- (void)dealloc {
+    // 清空左滑代理
+    self.gk_pushDelegate = nil;
 }
 
 @end

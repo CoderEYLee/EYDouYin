@@ -9,18 +9,21 @@
 /* Begin PBXBuildFile section */
 		12456AD2F580F71E29D93144 /* libPods-EYDouYin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8108F30C51AA75E71455FEBD /* libPods-EYDouYin.a */; };
 		6000D86F213D1CFB00491BB7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6000D871213D1CFB00491BB7 /* Localizable.strings */; };
-		6012FD68215A2FA5004A3083 /* EYHomeBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012FD67215A2FA5004A3083 /* EYHomeBackView.m */; };
-		6012FD6A215A2FB8004A3083 /* EYHomeBackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6012FD69215A2FB8004A3083 /* EYHomeBackView.xib */; };
 		6012FD70215A36BF004A3083 /* UIView+EYCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012FD6F215A36BF004A3083 /* UIView+EYCornerRadius.m */; };
 		601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B03142104DCBD00489E96 /* EYTabBarController.m */; };
 		601B03192104DDED00489E96 /* EYFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B03182104DDED00489E96 /* EYFindViewController.m */; };
 		601B032221056E4E00489E96 /* EYSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032121056E4E00489E96 /* EYSendViewController.m */; };
 		601B032521056E5F00489E96 /* EYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032421056E5F00489E96 /* EYHomeViewController.m */; };
-		601B032821056E6900489E96 /* EYLikeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032721056E6900489E96 /* EYLikeViewController.m */; };
+		601B032821056E6900489E96 /* EYFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032721056E6900489E96 /* EYFollowViewController.m */; };
 		601B032B21056E7700489E96 /* EYMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032A21056E7700489E96 /* EYMeViewController.m */; };
 		601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032D21056E8600489E96 /* EYMessageViewController.m */; };
-		604D55612139325900F83249 /* EYHomeTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 604D55602139325900F83249 /* EYHomeTitleView.m */; };
-		604D55632139326300F83249 /* EYHomeTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 604D55622139326300F83249 /* EYHomeTitleView.xib */; };
+		602A3839229FA8FB00D6DB0D /* EYFollowListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A3838229FA8FB00D6DB0D /* EYFollowListViewController.m */; };
+		602A383C229FA91A00D6DB0D /* EYFollowFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A383B229FA91A00D6DB0D /* EYFollowFriendViewController.m */; };
+		602A386222A1143400D6DB0D /* EYHomePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A386122A1143400D6DB0D /* EYHomePlayViewController.m */; };
+		602A386522A11A4100D6DB0D /* EYVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A386422A11A4100D6DB0D /* EYVideoModel.m */; };
+		602A386922A11F8600D6DB0D /* EYBaseVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A386822A11F8600D6DB0D /* EYBaseVideoPlayer.m */; };
+		602A387122A12BCD00D6DB0D /* EYVideoArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 602A387022A12BCC00D6DB0D /* EYVideoArray.plist */; };
+		602DEE5B229E5756006B61A3 /* EYNotificationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 602DEE5A229E5756006B61A3 /* EYNotificationTool.m */; };
 		6055AD382116933E005DC856 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD372116933E005DC856 /* UIView+Extension.m */; };
 		6055AD3C2116B382005DC856 /* TabBar.json in Resources */ = {isa = PBXBuildFile; fileRef = 6055AD3B2116B382005DC856 /* TabBar.json */; };
 		6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD3E2116B929005DC856 /* NSString+EYExtension.m */; };
@@ -28,8 +31,6 @@
 		606B658A219182130059D1F7 /* UIButton+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */; };
 		606B658D2191883B0059D1F7 /* UIImage+EYAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B658C2191883B0059D1F7 /* UIImage+EYAddition.m */; };
 		606B6590219189310059D1F7 /* UIButton+EYAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B658F219189310059D1F7 /* UIButton+EYAddition.m */; };
-		606E6FA3212813CA00ABEB83 /* EYLikeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 606E6FA1212813CA00ABEB83 /* EYLikeCell.m */; };
-		606E6FA4212813CA00ABEB83 /* EYLikeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 606E6FA2212813CA00ABEB83 /* EYLikeCell.xib */; };
 		606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606E6FA621284FD900ABEB83 /* EYBaseTableViewController.m */; };
 		606E6FAA21284FF400ABEB83 /* EYBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606E6FA921284FF400ABEB83 /* EYBaseCollectionViewController.m */; };
 		60752B3C2181EC78001B857C /* EYMeViewControllerSourceArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */; };
@@ -55,10 +56,6 @@
 		6075416D2104CFE000EB258D /* EYHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6075416C2104CFE000EB258D /* EYHttpManager.m */; };
 		6075416F2104D15F00EB258D /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 6075416E2104D15F00EB258D /* Foundation+Log.m */; };
 		6076A15D2148E097002ED551 /* ChinLab_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 6076A15C2148E096002ED551 /* ChinLab_en.json */; };
-		6076A15F2148EC31002ED551 /* Items.json in Resources */ = {isa = PBXBuildFile; fileRef = 6076A15E2148EC31002ED551 /* Items.json */; };
-		6076A1622148F696002ED551 /* EYHomeVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A1612148F696002ED551 /* EYHomeVideoModel.m */; };
-		6076A1662148FA4D002ED551 /* EYHomeVideoLikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A1652148FA4D002ED551 /* EYHomeVideoLikeModel.m */; };
-		6076A1692148FB7D002ED551 /* EYHomeItemCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A1682148FB7D002ED551 /* EYHomeItemCommentModel.m */; };
 		6076A16B214A05BF002ED551 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6076A16A214A05BF002ED551 /* MediaPlayer.framework */; };
 		6076A171214A4D26002ED551 /* EYHomeCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A170214A4D26002ED551 /* EYHomeCityViewController.m */; };
 		6076A1792150CFD8002ED551 /* DispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A1782150CFD8002ED551 /* DispatchTimer.m */; };
@@ -71,49 +68,8 @@
 		6085A1712189B8F800637F31 /* EYCollectionViewOtherController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */; };
 		6085A174218AA91600637F31 /* EYFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A173218AA91600637F31 /* EYFlowLayout.m */; };
 		608F940A218FEDF600AD00EB /* EYManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 608F9409218FEDF600AD00EB /* EYManager.m */; };
-		60A5A55F21902E0800224D0C /* EYHomeBackItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A5A55E21902E0800224D0C /* EYHomeBackItemModel.m */; };
-		60A6CEB221ABF2EB00428985 /* 2、iOS自定义代码段模板（CodeSnippets）和文件模板(.xctemplate).html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE8E21ABF2EB00428985 /* 2、iOS自定义代码段模板（CodeSnippets）和文件模板(.xctemplate).html */; };
-		60A6CEB321ABF2EB00428985 /* 29、[iOS]一次高效的依赖注入.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE8F21ABF2EB00428985 /* 29、[iOS]一次高效的依赖注入.html */; };
-		60A6CEB421ABF2EB00428985 /* 25、iOS 通用链接（UniversalLinks）+ 分享功能的一些看法.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9021ABF2EB00428985 /* 25、iOS 通用链接（UniversalLinks）+ 分享功能的一些看法.html */; };
-		60A6CEB521ABF2EB00428985 /* 7、细说 Swift 4.2 新特性：Dynamic Member Lookup.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9121ABF2EB00428985 /* 7、细说 Swift 4.2 新特性：Dynamic Member Lookup.html */; };
-		60A6CEB621ABF2EB00428985 /* 27、iOS 自动布局框架 – Masonry 详解.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9221ABF2EB00428985 /* 27、iOS 自动布局框架 – Masonry 详解.html */; };
-		60A6CEB721ABF2EB00428985 /* 11、iOS：腾讯三面.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9321ABF2EB00428985 /* 11、iOS：腾讯三面.html */; };
-		60A6CEB821ABF2EB00428985 /* 3、iOS性能优化系列篇之“列表流畅度优化”.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9421ABF2EB00428985 /* 3、iOS性能优化系列篇之“列表流畅度优化”.html */; };
-		60A6CEB921ABF2EB00428985 /* 12、2018-iOS面试题一（更新答案版）.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9521ABF2EB00428985 /* 12、2018-iOS面试题一（更新答案版）.html */; };
-		60A6CEBA21ABF2EB00428985 /* 35、iOS 编写高质量Objective-C代码（五）.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9621ABF2EB00428985 /* 35、iOS 编写高质量Objective-C代码（五）.html */; };
-		60A6CEBB21ABF2EB00428985 /* 18、iOS Masonry 等间隔或等宽高排列多个控件.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9721ABF2EB00428985 /* 18、iOS Masonry 等间隔或等宽高排列多个控件.html */; };
-		60A6CEBC21ABF2EB00428985 /* 32、七款Python开源框架的优劣总结.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9821ABF2EB00428985 /* 32、七款Python开源框架的优劣总结.html */; };
-		60A6CEBD21ABF2EB00428985 /* 10、Swift中Notification.Name这么难用怎么办.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9921ABF2EB00428985 /* 10、Swift中Notification.Name这么难用怎么办.html */; };
-		60A6CEBE21ABF2EB00428985 /* 36、设计一个简单的 iOS 架构.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9A21ABF2EB00428985 /* 36、设计一个简单的 iOS 架构.html */; };
-		60A6CEBF21ABF2EB00428985 /* 15、iOS 深拷贝浅拷贝与@property 引用计数关键字Strong,Copy,Weak,Assign.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9B21ABF2EB00428985 /* 15、iOS 深拷贝浅拷贝与@property 引用计数关键字Strong,Copy,Weak,Assign.html */; };
-		60A6CEC021ABF2EB00428985 /* 14、iOS组件化探究之私有库的创建.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9C21ABF2EB00428985 /* 14、iOS组件化探究之私有库的创建.html */; };
-		60A6CEC121ABF2EB00428985 /* 30、iOS自适应cell行高的那点破事儿.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9D21ABF2EB00428985 /* 30、iOS自适应cell行高的那点破事儿.html */; };
-		60A6CEC221ABF2EB00428985 /* 21、GCD队列、同步异步.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9E21ABF2EB00428985 /* 21、GCD队列、同步异步.html */; };
-		60A6CEC321ABF2EB00428985 /* 19、2018年1月iOS招人心得（附面试题）.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CE9F21ABF2EB00428985 /* 19、2018年1月iOS招人心得（附面试题）.html */; };
-		60A6CEC421ABF2EB00428985 /* 5、YYImage 源码剖析：图片处理技巧.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEA021ABF2EB00428985 /* 5、YYImage 源码剖析：图片处理技巧.html */; };
-		60A6CEC521ABF2EB00428985 /* 24、这20个正则表达式，让你少写1,000行代码.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEA121ABF2EB00428985 /* 24、这20个正则表达式，让你少写1,000行代码.html */; };
-		60A6CEC621ABF2EB00428985 /* 31、iOS设计模式 - (1)概述.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEA221ABF2EB00428985 /* 31、iOS设计模式 - (1)概述.html */; };
-		60A6CEC721ABF2EB00428985 /* 16、一份走心的iOS开发规范.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEA321ABF2EB00428985 /* 16、一份走心的iOS开发规范.html */; };
-		60A6CEC821ABF2EB00428985 /* 4、重识iOS之Property.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEA421ABF2EB00428985 /* 4、重识iOS之Property.html */; };
-		60A6CEC921ABF2EB00428985 /* 28、一行代码实现 UIView 镂空效果.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEA521ABF2EB00428985 /* 28、一行代码实现 UIView 镂空效果.html */; };
-		60A6CECA21ABF2EB00428985 /* 1、iOS 中常见的几种锁-代码示例.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEA621ABF2EB00428985 /* 1、iOS 中常见的几种锁-代码示例.html */; };
-		60A6CECB21ABF2EB00428985 /* 26、长按UIWebView上的图片保存到相册.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEA721ABF2EB00428985 /* 26、长按UIWebView上的图片保存到相册.html */; };
-		60A6CECC21ABF2EB00428985 /* 17、iOS网络请求相关框架的使用.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEA821ABF2EB00428985 /* 17、iOS网络请求相关框架的使用.html */; };
-		60A6CECD21ABF2EB00428985 /* 22、iOS 上的 FlexBox 布局 为什么要了解 FlexBox?.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEA921ABF2EB00428985 /* 22、iOS 上的 FlexBox 布局 为什么要了解 FlexBox?.html */; };
-		60A6CECE21ABF2EB00428985 /* 8、iOS 初探代码混淆（OC）.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEAA21ABF2EB00428985 /* 8、iOS 初探代码混淆（OC）.html */; };
-		60A6CECF21ABF2EB00428985 /* 34、iOS字体大小适配的几种方法.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEAB21ABF2EB00428985 /* 34、iOS字体大小适配的几种方法.html */; };
-		60A6CED021ABF2EB00428985 /* 23、iOS开发——仿微信图片浏览交互的实现(向下拖拽图片退出图片浏览器).html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEAC21ABF2EB00428985 /* 23、iOS开发——仿微信图片浏览交互的实现(向下拖拽图片退出图片浏览器).html */; };
-		60A6CED121ABF2EB00428985 /* 20、对 Strong-Weak Dance的思考.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEAD21ABF2EB00428985 /* 20、对 Strong-Weak Dance的思考.html */; };
-		60A6CED221ABF2EB00428985 /* 9、Method Swizzling在项目中的实际运用.htm in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEAE21ABF2EB00428985 /* 9、Method Swizzling在项目中的实际运用.htm */; };
-		60A6CED321ABF2EB00428985 /* 13、两年iOS经验之你忽略的小知识点.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEAF21ABF2EB00428985 /* 13、两年iOS经验之你忽略的小知识点.html */; };
-		60A6CED421ABF2EB00428985 /* 6、iOS导航栏使用总结.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEB021ABF2EB00428985 /* 6、iOS导航栏使用总结.html */; };
-		60A6CED521ABF2EB00428985 /* 33、iOS开发·必会的算法操作：字符串数组排序+模型对象数组排序.html in Resources */ = {isa = PBXBuildFile; fileRef = 60A6CEB121ABF2EB00428985 /* 33、iOS开发·必会的算法操作：字符串数组排序+模型对象数组排序.html */; };
 		60AFD6A8229292F1005C4742 /* EYLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AFD6A7229292F1005C4742 /* EYLanguageTool.m */; };
 		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
-		60B2FAE4213916270046D13D /* EYHomeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAE3213916270046D13D /* EYHomeInfoView.m */; };
-		60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B2FAE5213916330046D13D /* EYHomeInfoView.xib */; };
-		60B2FAE92139167C0046D13D /* EYHomeSharedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAE82139167C0046D13D /* EYHomeSharedView.m */; };
-		60B2FAEB213916870046D13D /* EYHomeSharedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B2FAEA213916870046D13D /* EYHomeSharedView.xib */; };
 		60BBC6892104D83400DEEA34 /* EYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6842104D83400DEEA34 /* EYNavigationController.m */; };
 		60BBC68B2104D83400DEEA34 /* EYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6862104D83400DEEA34 /* EYBaseViewController.m */; };
 		60BBC68E2104D8D200DEEA34 /* EYRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC68D2104D8D200DEEA34 /* EYRootViewController.m */; };
@@ -122,14 +78,10 @@
 		60C4008B218BFCF000B07E4A /* EYCollectionArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C4008A218BFCF000B07E4A /* EYCollectionArray.plist */; };
 		60C4008E218C1DB600B07E4A /* EYCollectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */; };
 		60C40091218C269C00B07E4A /* UIImageView+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */; };
-		60D81BB92132710600456939 /* EYHomeVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D81BB82132710600456939 /* EYHomeVideoView.m */; };
-		60D81BBB2132711100456939 /* EYHomeVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60D81BBA2132711100456939 /* EYHomeVideoView.xib */; };
 		60EBB269216DE0420016ED6D /* EYZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBB268216DE0420016ED6D /* EYZFPlayerControlView.m */; };
 		60EBB26C216DFC680016ED6D /* EYZFPortraitControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBB26B216DFC680016ED6D /* EYZFPortraitControlView.m */; };
 		60ED6DFA215F6DD600381DBD /* openAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60ED6DF9215F6DD600381DBD /* openAnimation.gif */; };
 		60ED6DFC215F6EBB00381DBD /* lastFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = 60ED6DFB215F6EBB00381DBD /* lastFrame.png */; };
-		60ED70C52160B0EF00381DBD /* EYHomeBackItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED70C42160B0EF00381DBD /* EYHomeBackItemView.m */; };
-		60ED70C72160B0FC00381DBD /* EYHomeBackItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60ED70C62160B0FC00381DBD /* EYHomeBackItemView.xib */; };
 		60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77AB211F5239004133A6 /* EYFindTopView.m */; };
 		60EE77AF211F52A4004133A6 /* EYFindTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60EE77AE211F52A4004133A6 /* EYFindTopView.xib */; };
 		60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77B221201CE8004133A6 /* EYTestViewController.m */; };
@@ -162,9 +114,6 @@
 		6000D86C213D1C6700491BB7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6000D870213D1CFB00491BB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6000D872213D1CFF00491BB7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		6012FD66215A2FA5004A3083 /* EYHomeBackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeBackView.h; sourceTree = "<group>"; };
-		6012FD67215A2FA5004A3083 /* EYHomeBackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeBackView.m; sourceTree = "<group>"; };
-		6012FD69215A2FB8004A3083 /* EYHomeBackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeBackView.xib; sourceTree = "<group>"; };
 		6012FD6E215A36BF004A3083 /* UIView+EYCornerRadius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+EYCornerRadius.h"; sourceTree = "<group>"; };
 		6012FD6F215A36BF004A3083 /* UIView+EYCornerRadius.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+EYCornerRadius.m"; sourceTree = "<group>"; };
 		601B03132104DCBD00489E96 /* EYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYTabBarController.h; sourceTree = "<group>"; };
@@ -175,15 +124,25 @@
 		601B032121056E4E00489E96 /* EYSendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYSendViewController.m; sourceTree = "<group>"; };
 		601B032321056E5F00489E96 /* EYHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeViewController.h; sourceTree = "<group>"; };
 		601B032421056E5F00489E96 /* EYHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeViewController.m; sourceTree = "<group>"; };
-		601B032621056E6900489E96 /* EYLikeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYLikeViewController.h; sourceTree = "<group>"; };
-		601B032721056E6900489E96 /* EYLikeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYLikeViewController.m; sourceTree = "<group>"; };
+		601B032621056E6900489E96 /* EYFollowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFollowViewController.h; sourceTree = "<group>"; };
+		601B032721056E6900489E96 /* EYFollowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFollowViewController.m; sourceTree = "<group>"; };
 		601B032921056E7700489E96 /* EYMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMeViewController.h; sourceTree = "<group>"; };
 		601B032A21056E7700489E96 /* EYMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMeViewController.m; sourceTree = "<group>"; };
 		601B032C21056E8600489E96 /* EYMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMessageViewController.h; sourceTree = "<group>"; };
 		601B032D21056E8600489E96 /* EYMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMessageViewController.m; sourceTree = "<group>"; };
-		604D555F2139325900F83249 /* EYHomeTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeTitleView.h; sourceTree = "<group>"; };
-		604D55602139325900F83249 /* EYHomeTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeTitleView.m; sourceTree = "<group>"; };
-		604D55622139326300F83249 /* EYHomeTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeTitleView.xib; sourceTree = "<group>"; };
+		602A3837229FA8FB00D6DB0D /* EYFollowListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFollowListViewController.h; sourceTree = "<group>"; };
+		602A3838229FA8FB00D6DB0D /* EYFollowListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFollowListViewController.m; sourceTree = "<group>"; };
+		602A383A229FA91A00D6DB0D /* EYFollowFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFollowFriendViewController.h; sourceTree = "<group>"; };
+		602A383B229FA91A00D6DB0D /* EYFollowFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFollowFriendViewController.m; sourceTree = "<group>"; };
+		602A386022A1143400D6DB0D /* EYHomePlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomePlayViewController.h; sourceTree = "<group>"; };
+		602A386122A1143400D6DB0D /* EYHomePlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomePlayViewController.m; sourceTree = "<group>"; };
+		602A386322A11A4100D6DB0D /* EYVideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYVideoModel.h; sourceTree = "<group>"; };
+		602A386422A11A4100D6DB0D /* EYVideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYVideoModel.m; sourceTree = "<group>"; };
+		602A386722A11F8600D6DB0D /* EYBaseVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYBaseVideoPlayer.h; sourceTree = "<group>"; };
+		602A386822A11F8600D6DB0D /* EYBaseVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYBaseVideoPlayer.m; sourceTree = "<group>"; };
+		602A387022A12BCC00D6DB0D /* EYVideoArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EYVideoArray.plist; sourceTree = "<group>"; };
+		602DEE59229E5756006B61A3 /* EYNotificationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYNotificationTool.h; sourceTree = "<group>"; };
+		602DEE5A229E5756006B61A3 /* EYNotificationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYNotificationTool.m; sourceTree = "<group>"; };
 		6055AD362116933E005DC856 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		6055AD372116933E005DC856 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		6055AD3B2116B382005DC856 /* TabBar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TabBar.json; sourceTree = "<group>"; };
@@ -197,9 +156,6 @@
 		606B658C2191883B0059D1F7 /* UIImage+EYAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EYAddition.m"; sourceTree = "<group>"; };
 		606B658E219189310059D1F7 /* UIButton+EYAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+EYAddition.h"; sourceTree = "<group>"; };
 		606B658F219189310059D1F7 /* UIButton+EYAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EYAddition.m"; sourceTree = "<group>"; };
-		606E6FA0212813CA00ABEB83 /* EYLikeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYLikeCell.h; sourceTree = "<group>"; };
-		606E6FA1212813CA00ABEB83 /* EYLikeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYLikeCell.m; sourceTree = "<group>"; };
-		606E6FA2212813CA00ABEB83 /* EYLikeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYLikeCell.xib; sourceTree = "<group>"; };
 		606E6FA521284FD900ABEB83 /* EYBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYBaseTableViewController.h; sourceTree = "<group>"; };
 		606E6FA621284FD900ABEB83 /* EYBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYBaseTableViewController.m; sourceTree = "<group>"; };
 		606E6FA821284FF400ABEB83 /* EYBaseCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYBaseCollectionViewController.h; sourceTree = "<group>"; };
@@ -247,13 +203,6 @@
 		607541712104D33F00EB258D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		607541722104D36800EB258D /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		6076A15C2148E096002ED551 /* ChinLab_en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ChinLab_en.json; sourceTree = "<group>"; };
-		6076A15E2148EC31002ED551 /* Items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Items.json; sourceTree = "<group>"; };
-		6076A1602148F696002ED551 /* EYHomeVideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeVideoModel.h; sourceTree = "<group>"; };
-		6076A1612148F696002ED551 /* EYHomeVideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeVideoModel.m; sourceTree = "<group>"; };
-		6076A1642148FA4D002ED551 /* EYHomeVideoLikeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeVideoLikeModel.h; sourceTree = "<group>"; };
-		6076A1652148FA4D002ED551 /* EYHomeVideoLikeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeVideoLikeModel.m; sourceTree = "<group>"; };
-		6076A1672148FB7D002ED551 /* EYHomeItemCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeItemCommentModel.h; sourceTree = "<group>"; };
-		6076A1682148FB7D002ED551 /* EYHomeItemCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeItemCommentModel.m; sourceTree = "<group>"; };
 		6076A16A214A05BF002ED551 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		6076A16F214A4D26002ED551 /* EYHomeCityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeCityViewController.h; sourceTree = "<group>"; };
 		6076A170214A4D26002ED551 /* EYHomeCityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeCityViewController.m; sourceTree = "<group>"; };
@@ -276,59 +225,15 @@
 		6085A173218AA91600637F31 /* EYFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFlowLayout.m; sourceTree = "<group>"; };
 		608F9408218FEDF600AD00EB /* EYManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYManager.h; sourceTree = "<group>"; };
 		608F9409218FEDF600AD00EB /* EYManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYManager.m; sourceTree = "<group>"; };
-		60A5A55D21902E0800224D0C /* EYHomeBackItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYHomeBackItemModel.h; sourceTree = "<group>"; };
-		60A5A55E21902E0800224D0C /* EYHomeBackItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYHomeBackItemModel.m; sourceTree = "<group>"; };
-		60A6CE8E21ABF2EB00428985 /* 2、iOS自定义代码段模板（CodeSnippets）和文件模板(.xctemplate).html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "2、iOS自定义代码段模板（CodeSnippets）和文件模板(.xctemplate).html"; sourceTree = "<group>"; };
-		60A6CE8F21ABF2EB00428985 /* 29、[iOS]一次高效的依赖注入.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "29、[iOS]一次高效的依赖注入.html"; sourceTree = "<group>"; };
-		60A6CE9021ABF2EB00428985 /* 25、iOS 通用链接（UniversalLinks）+ 分享功能的一些看法.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "25、iOS 通用链接（UniversalLinks）+ 分享功能的一些看法.html"; sourceTree = "<group>"; };
-		60A6CE9121ABF2EB00428985 /* 7、细说 Swift 4.2 新特性：Dynamic Member Lookup.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "7、细说 Swift 4.2 新特性：Dynamic Member Lookup.html"; sourceTree = "<group>"; };
-		60A6CE9221ABF2EB00428985 /* 27、iOS 自动布局框架 – Masonry 详解.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "27、iOS 自动布局框架 – Masonry 详解.html"; sourceTree = "<group>"; };
-		60A6CE9321ABF2EB00428985 /* 11、iOS：腾讯三面.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "11、iOS：腾讯三面.html"; sourceTree = "<group>"; };
-		60A6CE9421ABF2EB00428985 /* 3、iOS性能优化系列篇之“列表流畅度优化”.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "3、iOS性能优化系列篇之“列表流畅度优化”.html"; sourceTree = "<group>"; };
-		60A6CE9521ABF2EB00428985 /* 12、2018-iOS面试题一（更新答案版）.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "12、2018-iOS面试题一（更新答案版）.html"; sourceTree = "<group>"; };
-		60A6CE9621ABF2EB00428985 /* 35、iOS 编写高质量Objective-C代码（五）.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "35、iOS 编写高质量Objective-C代码（五）.html"; sourceTree = "<group>"; };
-		60A6CE9721ABF2EB00428985 /* 18、iOS Masonry 等间隔或等宽高排列多个控件.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "18、iOS Masonry 等间隔或等宽高排列多个控件.html"; sourceTree = "<group>"; };
-		60A6CE9821ABF2EB00428985 /* 32、七款Python开源框架的优劣总结.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "32、七款Python开源框架的优劣总结.html"; sourceTree = "<group>"; };
-		60A6CE9921ABF2EB00428985 /* 10、Swift中Notification.Name这么难用怎么办.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "10、Swift中Notification.Name这么难用怎么办.html"; sourceTree = "<group>"; };
-		60A6CE9A21ABF2EB00428985 /* 36、设计一个简单的 iOS 架构.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "36、设计一个简单的 iOS 架构.html"; sourceTree = "<group>"; };
-		60A6CE9B21ABF2EB00428985 /* 15、iOS 深拷贝浅拷贝与@property 引用计数关键字Strong,Copy,Weak,Assign.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "15、iOS 深拷贝浅拷贝与@property 引用计数关键字Strong,Copy,Weak,Assign.html"; sourceTree = "<group>"; };
-		60A6CE9C21ABF2EB00428985 /* 14、iOS组件化探究之私有库的创建.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "14、iOS组件化探究之私有库的创建.html"; sourceTree = "<group>"; };
-		60A6CE9D21ABF2EB00428985 /* 30、iOS自适应cell行高的那点破事儿.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "30、iOS自适应cell行高的那点破事儿.html"; sourceTree = "<group>"; };
-		60A6CE9E21ABF2EB00428985 /* 21、GCD队列、同步异步.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "21、GCD队列、同步异步.html"; sourceTree = "<group>"; };
-		60A6CE9F21ABF2EB00428985 /* 19、2018年1月iOS招人心得（附面试题）.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "19、2018年1月iOS招人心得（附面试题）.html"; sourceTree = "<group>"; };
-		60A6CEA021ABF2EB00428985 /* 5、YYImage 源码剖析：图片处理技巧.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "5、YYImage 源码剖析：图片处理技巧.html"; sourceTree = "<group>"; };
-		60A6CEA121ABF2EB00428985 /* 24、这20个正则表达式，让你少写1,000行代码.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "24、这20个正则表达式，让你少写1,000行代码.html"; sourceTree = "<group>"; };
-		60A6CEA221ABF2EB00428985 /* 31、iOS设计模式 - (1)概述.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "31、iOS设计模式 - (1)概述.html"; sourceTree = "<group>"; };
-		60A6CEA321ABF2EB00428985 /* 16、一份走心的iOS开发规范.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "16、一份走心的iOS开发规范.html"; sourceTree = "<group>"; };
-		60A6CEA421ABF2EB00428985 /* 4、重识iOS之Property.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "4、重识iOS之Property.html"; sourceTree = "<group>"; };
-		60A6CEA521ABF2EB00428985 /* 28、一行代码实现 UIView 镂空效果.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "28、一行代码实现 UIView 镂空效果.html"; sourceTree = "<group>"; };
-		60A6CEA621ABF2EB00428985 /* 1、iOS 中常见的几种锁-代码示例.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "1、iOS 中常见的几种锁-代码示例.html"; sourceTree = "<group>"; };
-		60A6CEA721ABF2EB00428985 /* 26、长按UIWebView上的图片保存到相册.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "26、长按UIWebView上的图片保存到相册.html"; sourceTree = "<group>"; };
-		60A6CEA821ABF2EB00428985 /* 17、iOS网络请求相关框架的使用.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "17、iOS网络请求相关框架的使用.html"; sourceTree = "<group>"; };
-		60A6CEA921ABF2EB00428985 /* 22、iOS 上的 FlexBox 布局 为什么要了解 FlexBox?.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "22、iOS 上的 FlexBox 布局 为什么要了解 FlexBox?.html"; sourceTree = "<group>"; };
-		60A6CEAA21ABF2EB00428985 /* 8、iOS 初探代码混淆（OC）.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "8、iOS 初探代码混淆（OC）.html"; sourceTree = "<group>"; };
-		60A6CEAB21ABF2EB00428985 /* 34、iOS字体大小适配的几种方法.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "34、iOS字体大小适配的几种方法.html"; sourceTree = "<group>"; };
-		60A6CEAC21ABF2EB00428985 /* 23、iOS开发——仿微信图片浏览交互的实现(向下拖拽图片退出图片浏览器).html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "23、iOS开发——仿微信图片浏览交互的实现(向下拖拽图片退出图片浏览器).html"; sourceTree = "<group>"; };
-		60A6CEAD21ABF2EB00428985 /* 20、对 Strong-Weak Dance的思考.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "20、对 Strong-Weak Dance的思考.html"; sourceTree = "<group>"; };
-		60A6CEAE21ABF2EB00428985 /* 9、Method Swizzling在项目中的实际运用.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "9、Method Swizzling在项目中的实际运用.htm"; sourceTree = "<group>"; };
-		60A6CEAF21ABF2EB00428985 /* 13、两年iOS经验之你忽略的小知识点.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "13、两年iOS经验之你忽略的小知识点.html"; sourceTree = "<group>"; };
-		60A6CEB021ABF2EB00428985 /* 6、iOS导航栏使用总结.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "6、iOS导航栏使用总结.html"; sourceTree = "<group>"; };
-		60A6CEB121ABF2EB00428985 /* 33、iOS开发·必会的算法操作：字符串数组排序+模型对象数组排序.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "33、iOS开发·必会的算法操作：字符串数组排序+模型对象数组排序.html"; sourceTree = "<group>"; };
 		60AFD696229244FD005C4742 /* EYDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYDefine.h; sourceTree = "<group>"; };
 		60AFD699229245A4005C4742 /* EYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCategory.h; sourceTree = "<group>"; };
 		60AFD69C229245FD005C4742 /* EYPods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPods.h; sourceTree = "<group>"; };
 		60AFD69F2292476C005C4742 /* EYColorConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYColorConstant.h; sourceTree = "<group>"; };
 		60AFD6A2229247BB005C4742 /* EYSizeFontConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYSizeFontConstant.h; sourceTree = "<group>"; };
-		60AFD6A6229292F1005C4742 /* EYLanguageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYLanguageTool.h; sourceTree = "<group>"; };
-		60AFD6A7229292F1005C4742 /* EYLanguageTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYLanguageTool.m; sourceTree = "<group>"; };
+		60AFD6A6229292F1005C4742 /* EYLanguageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EYLanguageTool.h; path = ../EYLanguageTool.h; sourceTree = "<group>"; };
+		60AFD6A7229292F1005C4742 /* EYLanguageTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EYLanguageTool.m; path = ../EYLanguageTool.m; sourceTree = "<group>"; };
 		60B2FAC32137D5B40046D13D /* EYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPerson.h; sourceTree = "<group>"; };
 		60B2FAC42137D5B40046D13D /* EYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPerson.m; sourceTree = "<group>"; };
-		60B2FAE2213916270046D13D /* EYHomeInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeInfoView.h; sourceTree = "<group>"; };
-		60B2FAE3213916270046D13D /* EYHomeInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeInfoView.m; sourceTree = "<group>"; };
-		60B2FAE5213916330046D13D /* EYHomeInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeInfoView.xib; sourceTree = "<group>"; };
-		60B2FAE72139167C0046D13D /* EYHomeSharedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeSharedView.h; sourceTree = "<group>"; };
-		60B2FAE82139167C0046D13D /* EYHomeSharedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeSharedView.m; sourceTree = "<group>"; };
-		60B2FAEA213916870046D13D /* EYHomeSharedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeSharedView.xib; sourceTree = "<group>"; };
 		60BBC6832104D83400DEEA34 /* EYBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYBaseViewController.h; sourceTree = "<group>"; };
 		60BBC6842104D83400DEEA34 /* EYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYNavigationController.m; sourceTree = "<group>"; };
 		60BBC6862104D83400DEEA34 /* EYBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYBaseViewController.m; sourceTree = "<group>"; };
@@ -344,18 +249,12 @@
 		60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCollectionDetailViewController.m; sourceTree = "<group>"; };
 		60C4008F218C269C00B07E4A /* UIImageView+EYSDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+EYSDWebImage.h"; sourceTree = "<group>"; };
 		60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+EYSDWebImage.m"; sourceTree = "<group>"; };
-		60D81BB72132710600456939 /* EYHomeVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeVideoView.h; sourceTree = "<group>"; };
-		60D81BB82132710600456939 /* EYHomeVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeVideoView.m; sourceTree = "<group>"; };
-		60D81BBA2132711100456939 /* EYHomeVideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeVideoView.xib; sourceTree = "<group>"; };
 		60EBB267216DE0420016ED6D /* EYZFPlayerControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYZFPlayerControlView.h; sourceTree = "<group>"; };
 		60EBB268216DE0420016ED6D /* EYZFPlayerControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYZFPlayerControlView.m; sourceTree = "<group>"; };
 		60EBB26A216DFC680016ED6D /* EYZFPortraitControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYZFPortraitControlView.h; sourceTree = "<group>"; };
 		60EBB26B216DFC680016ED6D /* EYZFPortraitControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYZFPortraitControlView.m; sourceTree = "<group>"; };
 		60ED6DF9215F6DD600381DBD /* openAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = openAnimation.gif; sourceTree = "<group>"; };
 		60ED6DFB215F6EBB00381DBD /* lastFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lastFrame.png; sourceTree = "<group>"; };
-		60ED70C32160B0EF00381DBD /* EYHomeBackItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeBackItemView.h; sourceTree = "<group>"; };
-		60ED70C42160B0EF00381DBD /* EYHomeBackItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeBackItemView.m; sourceTree = "<group>"; };
-		60ED70C62160B0FC00381DBD /* EYHomeBackItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYHomeBackItemView.xib; sourceTree = "<group>"; };
 		60EE77AA211F5239004133A6 /* EYFindTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFindTopView.h; sourceTree = "<group>"; };
 		60EE77AB211F5239004133A6 /* EYFindTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFindTopView.m; sourceTree = "<group>"; };
 		60EE77AE211F52A4004133A6 /* EYFindTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYFindTopView.xib; sourceTree = "<group>"; };
@@ -420,11 +319,10 @@
 		601B031B21056DE400489E96 /* Like */ = {
 			isa = PBXGroup;
 			children = (
-				601B032621056E6900489E96 /* EYLikeViewController.h */,
-				601B032721056E6900489E96 /* EYLikeViewController.m */,
-				606E6FA0212813CA00ABEB83 /* EYLikeCell.h */,
-				606E6FA1212813CA00ABEB83 /* EYLikeCell.m */,
-				606E6FA2212813CA00ABEB83 /* EYLikeCell.xib */,
+				601B032621056E6900489E96 /* EYFollowViewController.h */,
+				601B032721056E6900489E96 /* EYFollowViewController.m */,
+				602A3835229FA82800D6DB0D /* Follow */,
+				602A3836229FA84600D6DB0D /* Friend */,
 			);
 			path = Like;
 			sourceTree = "<group>";
@@ -434,10 +332,9 @@
 			children = (
 				601B032321056E5F00489E96 /* EYHomeViewController.h */,
 				601B032421056E5F00489E96 /* EYHomeViewController.m */,
-				6076A16F214A4D26002ED551 /* EYHomeCityViewController.h */,
-				6076A170214A4D26002ED551 /* EYHomeCityViewController.m */,
-				6076A17E2150FE71002ED551 /* EYHomeWorksViewController.h */,
-				6076A17F2150FE71002ED551 /* EYHomeWorksViewController.m */,
+				602A385F22A1141000D6DB0D /* PlayerViewController */,
+				602A385E22A113B700D6DB0D /* Work */,
+				602A385D22A1139700D6DB0D /* City */,
 				6076A1632148FA27002ED551 /* Model */,
 				60B2FAE1213915A00046D13D /* View */,
 			);
@@ -476,6 +373,78 @@
 				601B032121056E4E00489E96 /* EYSendViewController.m */,
 			);
 			path = Send;
+			sourceTree = "<group>";
+		};
+		602A3835229FA82800D6DB0D /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				602A3837229FA8FB00D6DB0D /* EYFollowListViewController.h */,
+				602A3838229FA8FB00D6DB0D /* EYFollowListViewController.m */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		602A3836229FA84600D6DB0D /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				602A383A229FA91A00D6DB0D /* EYFollowFriendViewController.h */,
+				602A383B229FA91A00D6DB0D /* EYFollowFriendViewController.m */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		602A385D22A1139700D6DB0D /* City */ = {
+			isa = PBXGroup;
+			children = (
+				6076A16F214A4D26002ED551 /* EYHomeCityViewController.h */,
+				6076A170214A4D26002ED551 /* EYHomeCityViewController.m */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		602A385E22A113B700D6DB0D /* Work */ = {
+			isa = PBXGroup;
+			children = (
+				6076A17E2150FE71002ED551 /* EYHomeWorksViewController.h */,
+				6076A17F2150FE71002ED551 /* EYHomeWorksViewController.m */,
+			);
+			path = Work;
+			sourceTree = "<group>";
+		};
+		602A385F22A1141000D6DB0D /* PlayerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				602A386022A1143400D6DB0D /* EYHomePlayViewController.h */,
+				602A386122A1143400D6DB0D /* EYHomePlayViewController.m */,
+			);
+			path = PlayerViewController;
+			sourceTree = "<group>";
+		};
+		602A386622A11F7900D6DB0D /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				602A386722A11F8600D6DB0D /* EYBaseVideoPlayer.h */,
+				602A386822A11F8600D6DB0D /* EYBaseVideoPlayer.m */,
+			);
+			path = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		602DEE56229E56E5006B61A3 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				60AFD6A6229292F1005C4742 /* EYLanguageTool.h */,
+				60AFD6A7229292F1005C4742 /* EYLanguageTool.m */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		602DEE58229E5723006B61A3 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				602DEE59229E5756006B61A3 /* EYNotificationTool.h */,
+				602DEE5A229E5756006B61A3 /* EYNotificationTool.m */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		6055AD392116AD7C005DC856 /* View */ = {
@@ -674,8 +643,9 @@
 		607541602104CD6600EB258D /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				60AFD6A6229292F1005C4742 /* EYLanguageTool.h */,
-				60AFD6A7229292F1005C4742 /* EYLanguageTool.m */,
+				602A386622A11F7900D6DB0D /* VideoPlayer */,
+				602DEE56229E56E5006B61A3 /* Language */,
+				602DEE58229E5723006B61A3 /* Notification */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -703,15 +673,9 @@
 		6076A1632148FA27002ED551 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6076A15E2148EC31002ED551 /* Items.json */,
-				6076A1602148F696002ED551 /* EYHomeVideoModel.h */,
-				6076A1612148F696002ED551 /* EYHomeVideoModel.m */,
-				6076A1642148FA4D002ED551 /* EYHomeVideoLikeModel.h */,
-				6076A1652148FA4D002ED551 /* EYHomeVideoLikeModel.m */,
-				6076A1672148FB7D002ED551 /* EYHomeItemCommentModel.h */,
-				6076A1682148FB7D002ED551 /* EYHomeItemCommentModel.m */,
-				60A5A55D21902E0800224D0C /* EYHomeBackItemModel.h */,
-				60A5A55E21902E0800224D0C /* EYHomeBackItemModel.m */,
+				602A387022A12BCC00D6DB0D /* EYVideoArray.plist */,
+				602A386322A11A4100D6DB0D /* EYVideoModel.h */,
+				602A386422A11A4100D6DB0D /* EYVideoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -745,49 +709,6 @@
 				6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */,
 			);
 			path = "UICollectionView 其他布局使用";
-			sourceTree = "<group>";
-		};
-		60A6CE8D21ABF2EB00428985 /* HTML5 */ = {
-			isa = PBXGroup;
-			children = (
-				60A6CE8E21ABF2EB00428985 /* 2、iOS自定义代码段模板（CodeSnippets）和文件模板(.xctemplate).html */,
-				60A6CE8F21ABF2EB00428985 /* 29、[iOS]一次高效的依赖注入.html */,
-				60A6CE9021ABF2EB00428985 /* 25、iOS 通用链接（UniversalLinks）+ 分享功能的一些看法.html */,
-				60A6CE9121ABF2EB00428985 /* 7、细说 Swift 4.2 新特性：Dynamic Member Lookup.html */,
-				60A6CE9221ABF2EB00428985 /* 27、iOS 自动布局框架 – Masonry 详解.html */,
-				60A6CE9321ABF2EB00428985 /* 11、iOS：腾讯三面.html */,
-				60A6CE9421ABF2EB00428985 /* 3、iOS性能优化系列篇之“列表流畅度优化”.html */,
-				60A6CE9521ABF2EB00428985 /* 12、2018-iOS面试题一（更新答案版）.html */,
-				60A6CE9621ABF2EB00428985 /* 35、iOS 编写高质量Objective-C代码（五）.html */,
-				60A6CE9721ABF2EB00428985 /* 18、iOS Masonry 等间隔或等宽高排列多个控件.html */,
-				60A6CE9821ABF2EB00428985 /* 32、七款Python开源框架的优劣总结.html */,
-				60A6CE9921ABF2EB00428985 /* 10、Swift中Notification.Name这么难用怎么办.html */,
-				60A6CE9A21ABF2EB00428985 /* 36、设计一个简单的 iOS 架构.html */,
-				60A6CE9B21ABF2EB00428985 /* 15、iOS 深拷贝浅拷贝与@property 引用计数关键字Strong,Copy,Weak,Assign.html */,
-				60A6CE9C21ABF2EB00428985 /* 14、iOS组件化探究之私有库的创建.html */,
-				60A6CE9D21ABF2EB00428985 /* 30、iOS自适应cell行高的那点破事儿.html */,
-				60A6CE9E21ABF2EB00428985 /* 21、GCD队列、同步异步.html */,
-				60A6CE9F21ABF2EB00428985 /* 19、2018年1月iOS招人心得（附面试题）.html */,
-				60A6CEA021ABF2EB00428985 /* 5、YYImage 源码剖析：图片处理技巧.html */,
-				60A6CEA121ABF2EB00428985 /* 24、这20个正则表达式，让你少写1,000行代码.html */,
-				60A6CEA221ABF2EB00428985 /* 31、iOS设计模式 - (1)概述.html */,
-				60A6CEA321ABF2EB00428985 /* 16、一份走心的iOS开发规范.html */,
-				60A6CEA421ABF2EB00428985 /* 4、重识iOS之Property.html */,
-				60A6CEA521ABF2EB00428985 /* 28、一行代码实现 UIView 镂空效果.html */,
-				60A6CEA621ABF2EB00428985 /* 1、iOS 中常见的几种锁-代码示例.html */,
-				60A6CEA721ABF2EB00428985 /* 26、长按UIWebView上的图片保存到相册.html */,
-				60A6CEA821ABF2EB00428985 /* 17、iOS网络请求相关框架的使用.html */,
-				60A6CEA921ABF2EB00428985 /* 22、iOS 上的 FlexBox 布局 为什么要了解 FlexBox?.html */,
-				60A6CEAA21ABF2EB00428985 /* 8、iOS 初探代码混淆（OC）.html */,
-				60A6CEAB21ABF2EB00428985 /* 34、iOS字体大小适配的几种方法.html */,
-				60A6CEAC21ABF2EB00428985 /* 23、iOS开发——仿微信图片浏览交互的实现(向下拖拽图片退出图片浏览器).html */,
-				60A6CEAD21ABF2EB00428985 /* 20、对 Strong-Weak Dance的思考.html */,
-				60A6CEAE21ABF2EB00428985 /* 9、Method Swizzling在项目中的实际运用.htm */,
-				60A6CEAF21ABF2EB00428985 /* 13、两年iOS经验之你忽略的小知识点.html */,
-				60A6CEB021ABF2EB00428985 /* 6、iOS导航栏使用总结.html */,
-				60A6CEB121ABF2EB00428985 /* 33、iOS开发·必会的算法操作：字符串数组排序+模型对象数组排序.html */,
-			);
-			path = HTML5;
 			sourceTree = "<group>";
 		};
 		60AFD6A5229292D0005C4742 /* Manager */ = {
@@ -839,24 +760,6 @@
 		60B2FAE1213915A00046D13D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6012FD66215A2FA5004A3083 /* EYHomeBackView.h */,
-				6012FD67215A2FA5004A3083 /* EYHomeBackView.m */,
-				6012FD69215A2FB8004A3083 /* EYHomeBackView.xib */,
-				60ED70C32160B0EF00381DBD /* EYHomeBackItemView.h */,
-				60ED70C42160B0EF00381DBD /* EYHomeBackItemView.m */,
-				60ED70C62160B0FC00381DBD /* EYHomeBackItemView.xib */,
-				60D81BB72132710600456939 /* EYHomeVideoView.h */,
-				60D81BB82132710600456939 /* EYHomeVideoView.m */,
-				60D81BBA2132711100456939 /* EYHomeVideoView.xib */,
-				604D555F2139325900F83249 /* EYHomeTitleView.h */,
-				604D55602139325900F83249 /* EYHomeTitleView.m */,
-				604D55622139326300F83249 /* EYHomeTitleView.xib */,
-				60B2FAE2213916270046D13D /* EYHomeInfoView.h */,
-				60B2FAE3213916270046D13D /* EYHomeInfoView.m */,
-				60B2FAE5213916330046D13D /* EYHomeInfoView.xib */,
-				60B2FAE72139167C0046D13D /* EYHomeSharedView.h */,
-				60B2FAE82139167C0046D13D /* EYHomeSharedView.m */,
-				60B2FAEA213916870046D13D /* EYHomeSharedView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -879,7 +782,6 @@
 		60C40086218BFB2200B07E4A /* Collection */ = {
 			isa = PBXGroup;
 			children = (
-				60A6CE8D21ABF2EB00428985 /* HTML5 */,
 				60C4008A218BFCF000B07E4A /* EYCollectionArray.plist */,
 				60C40087218BFB9B00B07E4A /* EYCollectionViewController.h */,
 				60C40088218BFB9B00B07E4A /* EYCollectionViewController.m */,
@@ -1049,66 +951,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60A6CEBF21ABF2EB00428985 /* 15、iOS 深拷贝浅拷贝与@property 引用计数关键字Strong,Copy,Weak,Assign.html in Resources */,
 				60EE77AF211F52A4004133A6 /* EYFindTopView.xib in Resources */,
-				60A6CEBD21ABF2EB00428985 /* 10、Swift中Notification.Name这么难用怎么办.html in Resources */,
-				60A6CECA21ABF2EB00428985 /* 1、iOS 中常见的几种锁-代码示例.html in Resources */,
-				60A6CED021ABF2EB00428985 /* 23、iOS开发——仿微信图片浏览交互的实现(向下拖拽图片退出图片浏览器).html in Resources */,
-				60A6CED221ABF2EB00428985 /* 9、Method Swizzling在项目中的实际运用.htm in Resources */,
 				6000D86F213D1CFB00491BB7 /* Localizable.strings in Resources */,
-				60A6CEC621ABF2EB00428985 /* 31、iOS设计模式 - (1)概述.html in Resources */,
-				60A6CEB221ABF2EB00428985 /* 2、iOS自定义代码段模板（CodeSnippets）和文件模板(.xctemplate).html in Resources */,
-				60B2FAE6213916330046D13D /* EYHomeInfoView.xib in Resources */,
-				60A6CEB421ABF2EB00428985 /* 25、iOS 通用链接（UniversalLinks）+ 分享功能的一些看法.html in Resources */,
-				60A6CEB821ABF2EB00428985 /* 3、iOS性能优化系列篇之“列表流畅度优化”.html in Resources */,
+				602A387122A12BCD00D6DB0D /* EYVideoArray.plist in Resources */,
 				607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */,
-				60A6CEC321ABF2EB00428985 /* 19、2018年1月iOS招人心得（附面试题）.html in Resources */,
-				60A6CEC521ABF2EB00428985 /* 24、这20个正则表达式，让你少写1,000行代码.html in Resources */,
-				6076A15F2148EC31002ED551 /* Items.json in Resources */,
-				60A6CEBB21ABF2EB00428985 /* 18、iOS Masonry 等间隔或等宽高排列多个控件.html in Resources */,
 				60752B6D2186F49A001B857C /* EYShopCell.xib in Resources */,
 				60752B542186E205001B857C /* EYWaterFallViewController.xib in Resources */,
-				60A6CECB21ABF2EB00428985 /* 26、长按UIWebView上的图片保存到相册.html in Resources */,
-				60ED70C72160B0FC00381DBD /* EYHomeBackItemView.xib in Resources */,
-				60A6CEB721ABF2EB00428985 /* 11、iOS：腾讯三面.html in Resources */,
-				60A6CEBE21ABF2EB00428985 /* 36、设计一个简单的 iOS 架构.html in Resources */,
-				60A6CEBA21ABF2EB00428985 /* 35、iOS 编写高质量Objective-C代码（五）.html in Resources */,
-				60A6CEBC21ABF2EB00428985 /* 32、七款Python开源框架的优劣总结.html in Resources */,
-				60A6CEC221ABF2EB00428985 /* 21、GCD队列、同步异步.html in Resources */,
-				6012FD6A215A2FB8004A3083 /* EYHomeBackView.xib in Resources */,
-				60A6CECC21ABF2EB00428985 /* 17、iOS网络请求相关框架的使用.html in Resources */,
-				60A6CED421ABF2EB00428985 /* 6、iOS导航栏使用总结.html in Resources */,
 				60EE77B82120282C004133A6 /* EYTestViewView.xib in Resources */,
-				60A6CEC921ABF2EB00428985 /* 28、一行代码实现 UIView 镂空效果.html in Resources */,
-				60A6CEC021ABF2EB00428985 /* 14、iOS组件化探究之私有库的创建.html in Resources */,
-				60A6CEC421ABF2EB00428985 /* 5、YYImage 源码剖析：图片处理技巧.html in Resources */,
 				60752B642186F230001B857C /* Shops.plist in Resources */,
-				60A6CEC821ABF2EB00428985 /* 4、重识iOS之Property.html in Resources */,
-				60A6CEC121ABF2EB00428985 /* 30、iOS自适应cell行高的那点破事儿.html in Resources */,
-				60A6CEB521ABF2EB00428985 /* 7、细说 Swift 4.2 新特性：Dynamic Member Lookup.html in Resources */,
 				60ED6DFA215F6DD600381DBD /* openAnimation.gif in Resources */,
-				60A6CECE21ABF2EB00428985 /* 8、iOS 初探代码混淆（OC）.html in Resources */,
-				60B2FAEB213916870046D13D /* EYHomeSharedView.xib in Resources */,
-				60A6CEB321ABF2EB00428985 /* 29、[iOS]一次高效的依赖注入.html in Resources */,
-				60A6CECF21ABF2EB00428985 /* 34、iOS字体大小适配的几种方法.html in Resources */,
 				6085A16021897A4B00637F31 /* EYWaterflowShopCell2.xib in Resources */,
 				6076A15D2148E097002ED551 /* ChinLab_en.json in Resources */,
 				60ED6DFC215F6EBB00381DBD /* lastFrame.png in Resources */,
 				60C4008B218BFCF000B07E4A /* EYCollectionArray.plist in Resources */,
-				60A6CEB921ABF2EB00428985 /* 12、2018-iOS面试题一（更新答案版）.html in Resources */,
 				60752B3C2181EC78001B857C /* EYMeViewControllerSourceArray.plist in Resources */,
-				60D81BBB2132711100456939 /* EYHomeVideoView.xib in Resources */,
 				607541342104CC4C00EB258D /* Assets.xcassets in Resources */,
-				60A6CEB621ABF2EB00428985 /* 27、iOS 自动布局框架 – Masonry 详解.html in Resources */,
-				60A6CED321ABF2EB00428985 /* 13、两年iOS经验之你忽略的小知识点.html in Resources */,
-				604D55632139326300F83249 /* EYHomeTitleView.xib in Resources */,
-				60A6CECD21ABF2EB00428985 /* 22、iOS 上的 FlexBox 布局 为什么要了解 FlexBox?.html in Resources */,
-				60A6CED521ABF2EB00428985 /* 33、iOS开发·必会的算法操作：字符串数组排序+模型对象数组排序.html in Resources */,
-				60A6CEC721ABF2EB00428985 /* 16、一份走心的iOS开发规范.html in Resources */,
 				6055AD3C2116B382005DC856 /* TabBar.json in Resources */,
-				606E6FA4212813CA00ABEB83 /* EYLikeCell.xib in Resources */,
 				6085A1712189B8F800637F31 /* EYCollectionViewOtherController.xib in Resources */,
-				60A6CED121ABF2EB00428985 /* 20、对 Strong-Weak Dance的思考.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1171,11 +1030,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60ED70C52160B0EF00381DBD /* EYHomeBackItemView.m in Sources */,
 				608F940A218FEDF600AD00EB /* EYManager.m in Sources */,
 				6055AD382116933E005DC856 /* UIView+Extension.m in Sources */,
 				60752B7821871838001B857C /* EYWaterflowView.m in Sources */,
-				6076A1622148F696002ED551 /* EYHomeVideoModel.m in Sources */,
 				601B032B21056E7700489E96 /* EYMeViewController.m in Sources */,
 				60EE77BF21204188004133A6 /* NSObject+EYRuntime.m in Sources */,
 				60752B532186E205001B857C /* EYWaterFallViewController.m in Sources */,
@@ -1184,6 +1041,7 @@
 				60752B422182C533001B857C /* EYSJVideoPlayerViewController.m in Sources */,
 				6075416D2104CFE000EB258D /* EYHttpManager.m in Sources */,
 				60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */,
+				602A386222A1143400D6DB0D /* EYHomePlayViewController.m in Sources */,
 				60752B472183224E001B857C /* EYZFPlayerViewController.m in Sources */,
 				606B6590219189310059D1F7 /* UIButton+EYAddition.m in Sources */,
 				6085A1702189B8F800637F31 /* EYCollectionViewOtherController.m in Sources */,
@@ -1194,45 +1052,41 @@
 				60752B3E2182C3F5001B857C /* NullSafe.m in Sources */,
 				601B032221056E4E00489E96 /* EYSendViewController.m in Sources */,
 				601B032521056E5F00489E96 /* EYHomeViewController.m in Sources */,
+				602A3839229FA8FB00D6DB0D /* EYFollowListViewController.m in Sources */,
 				60752B6C2186F49A001B857C /* EYShopCell.m in Sources */,
-				606E6FA3212813CA00ABEB83 /* EYLikeCell.m in Sources */,
 				60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */,
 				6085A174218AA91600637F31 /* EYFlowLayout.m in Sources */,
 				6012FD70215A36BF004A3083 /* UIView+EYCornerRadius.m in Sources */,
-				604D55612139325900F83249 /* EYHomeTitleView.m in Sources */,
 				60752B682186F3CE001B857C /* EYShop.m in Sources */,
-				60D81BB92132710600456939 /* EYHomeVideoView.m in Sources */,
 				601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */,
 				606B658A219182130059D1F7 /* UIButton+EYSDWebImage.m in Sources */,
 				60752B4B2186A3B9001B857C /* EYIOSLockViewController.m in Sources */,
+				602A383C229FA91A00D6DB0D /* EYFollowFriendViewController.m in Sources */,
 				6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */,
 				6085A1672189A94900637F31 /* EYCircleLayout.m in Sources */,
 				606E6FAA21284FF400ABEB83 /* EYBaseCollectionViewController.m in Sources */,
-				60B2FAE92139167C0046D13D /* EYHomeSharedView.m in Sources */,
 				606B658D2191883B0059D1F7 /* UIImage+EYAddition.m in Sources */,
 				601B03192104DDED00489E96 /* EYFindViewController.m in Sources */,
-				60B2FAE4213916270046D13D /* EYHomeInfoView.m in Sources */,
 				6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */,
+				602DEE5B229E5756006B61A3 /* EYNotificationTool.m in Sources */,
 				601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */,
-				60A5A55F21902E0800224D0C /* EYHomeBackItemModel.m in Sources */,
 				60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */,
+				602A386922A11F8600D6DB0D /* EYBaseVideoPlayer.m in Sources */,
 				60AFD6A8229292F1005C4742 /* EYLanguageTool.m in Sources */,
-				6012FD68215A2FA5004A3083 /* EYHomeBackView.m in Sources */,
 				6076A171214A4D26002ED551 /* EYHomeCityViewController.m in Sources */,
 				6075416F2104D15F00EB258D /* Foundation+Log.m in Sources */,
 				6076A1802150FE71002ED551 /* EYHomeWorksViewController.m in Sources */,
 				60BBC6892104D83400DEEA34 /* EYNavigationController.m in Sources */,
-				601B032821056E6900489E96 /* EYLikeViewController.m in Sources */,
+				601B032821056E6900489E96 /* EYFollowViewController.m in Sources */,
 				60BBC68E2104D8D200DEEA34 /* EYRootViewController.m in Sources */,
 				60752B75218717B8001B857C /* EYWaterflowViewCell.m in Sources */,
 				60C4008E218C1DB600B07E4A /* EYCollectionDetailViewController.m in Sources */,
 				6076A1792150CFD8002ED551 /* DispatchTimer.m in Sources */,
-				6076A1692148FB7D002ED551 /* EYHomeItemCommentModel.m in Sources */,
 				60C40091218C269C00B07E4A /* UIImageView+EYSDWebImage.m in Sources */,
-				6076A1662148FA4D002ED551 /* EYHomeVideoLikeModel.m in Sources */,
 				60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */,
 				60EBB269216DE0420016ED6D /* EYZFPlayerControlView.m in Sources */,
 				606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */,
+				602A386522A11A4100D6DB0D /* EYVideoModel.m in Sources */,
 				60BBC68B2104D83400DEEA34 /* EYBaseViewController.m in Sources */,
 				6085A15B21897A2800637F31 /* EYWaterflowShopCell1.m in Sources */,
 				6085A15E21897A3C00637F31 /* EYWaterflowShopCell2.m in Sources */,

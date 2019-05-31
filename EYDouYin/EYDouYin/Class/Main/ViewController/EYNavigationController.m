@@ -14,18 +14,6 @@
 
 @implementation EYNavigationController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    //1. 设置系统导航
-    // [self setupNavigationBar];
-}
-
-//1. 设置系统导航
-- (void)setupNavigationBar {
-    self.navigationBar.hidden = YES;
-}
-
 /**
  *  重写这个方法目的：能够拦截所有push进来的控制器
  *
@@ -39,10 +27,6 @@
     }
     
     [super pushViewController:viewController animated:animated];
-}
-
-- (void)pop {
-    [self popViewControllerAnimated:YES];
 }
 
 @end

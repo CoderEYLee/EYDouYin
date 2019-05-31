@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#pragma mark - 通知名称
+#pragma mark - 通用枚举
 
-//
-UIKIT_EXTERN NSString *const EYTabbarShouldChangeColorNotification;
+UIKIT_EXTERN NSString *const TTOSSAPPStoreEndpoint;

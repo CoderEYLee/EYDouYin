@@ -5,7 +5,7 @@
     "needNavi"  : 1
   },
   {
-    "className" : "EYLikeViewController",
+    "className" : "EYFollowViewController",
     "title"     : "关注",
     "needNavi" : 0
   },

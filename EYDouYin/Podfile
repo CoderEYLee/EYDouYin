@@ -21,18 +21,20 @@ pod 'ZFPlayer/AVPlayer', '~> 3.0'
 #pod 'IJKMediaFramework', '~> 0.1.1'
 
 pod 'AFNetworking', '3.2.1'         #网络请求
-pod 'IQKeyboardManager', '~> 6.2.0' #键盘管理
-pod 'SVProgressHUD', '~> 2.2.5'     #提示框
+pod 'IQKeyboardManager', '6.3.0'    #键盘管理
+pod 'SVProgressHUD', '2.2.5'        #提示框
 pod 'YYModel', '1.0.4'              #字典转模型
 pod 'YYCategories', '1.0.4'         #分类
 pod 'YYCache', '1.0.4'              #缓存
-pod 'MJRefresh', '3.1.15.7'         #刷新
-pod 'MJExtension', '3.0.15.1'       #字典转模型
-pod 'pop', '1.0.10'                 #动画
-pod 'SDWebImage', '~> 5.0.0-beta5'  #图片缓存
-pod 'GKNavigationBarViewController', '~> 2.1.2' #抖音的左滑 push 效果
-pod 'SJVideoPlayer', '~> 2.1.6'     #播放器
+pod 'MJRefresh', '3.2.0'            #刷新
+pod 'MJExtension', '3.0.17'         #字典转模型
+pod 'pop', '1.0.12'                 #动画
+pod 'SDWebImage', '5.0.4'           #图片缓存
+pod 'GKNavigationBarViewController', '2.3.1' #抖音的左滑 push 效果
+#pod 'SJVideoPlayer', '2.5.7'        #播放器
 pod 'Bugly', '2.5.0'                #Bugly
 pod 'Masonry', '1.1.0'              #自动布局
+pod 'TXLiteAVSDK_Player', '6.3.7088'
+    # 腾讯云播放器-独立播放器
 
 end

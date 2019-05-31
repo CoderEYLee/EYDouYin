@@ -10,6 +10,4 @@
 
 @interface EYRootViewController : GKNavigationBarViewController
 
-@property (weak, nonatomic, readonly) UIScrollView * scrollView;
-
 @end

@@ -8,7 +8,7 @@
 
 #import "EYTabBarController.h"
 #import "EYHomeViewController.h"
-#import "EYLikeViewController.h"
+#import "EYFollowViewController.h"
 #import "EYSendViewController.h"
 #import "EYMessageViewController.h"
 #import "EYMeViewController.h"
@@ -61,53 +61,58 @@
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskLandscapeLeft;
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 #pragma mark - EYTabBarViewDelegate
 - (BOOL)tabBarView:(EYTabBarView *)tabBarView shouldSelectedIndex:(NSUInteger)selectedIndex {
     EYLog(@"当前点击的 index--%ld", (long)selectedIndex);
     
+    //回调代理
+    if (self.delegate && [self.delegate respondsToSelector:@selector(tabBarControllerDidSelectedIndex:)]) {
+        [self.delegate tabBarControllerDidSelectedIndex:selectedIndex];
+    }
+    
     if (selectedIndex == EYTabBarViewTypePlus) {//弹出发布界面
         [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
         return NO;
     }
     
+    // 选中对应下标
     self.selectedIndex = selectedIndex;
+    
+    //返回状态
     return YES;
-
-    if (EYSCREENSIZE_IS_IPhoneX_All) {
-        if (selectedIndex == EYTabBarViewTypePlus) {//弹出发布界面
-            [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
-        } else {
-            self.selectedIndex = selectedIndex;
-        }
-    } else {
-        EYNavigationController * homeNavi = self.viewControllers.firstObject;
-        EYHomeViewController *homeVC = (EYHomeViewController *)homeNavi.viewControllers.firstObject;
-
-        if (selectedIndex == EYTabBarViewTypeHome) {
-            if (!EYSCREENSIZE_IS_IPhoneX_All) {
-                if (homeVC.type == EYHomeViewControllerButtonTypeRecommend) {
-                    tabBarView.backgroundColor = [UIColor clearColor];
-                } else {
-                    tabBarView.backgroundColor = [UIColor blackColor];
-                }
-            }
-            self.selectedIndex = selectedIndex;
-        } else if (selectedIndex == EYTabBarViewTypePlus) {//弹出发布界面
-            [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
-        } else {//禁止滚动
-            tabBarView.backgroundColor = [UIColor blackColor];
-            self.selectedIndex = selectedIndex;
-            [UIApplication sharedApplication].statusBarHidden = NO;
-        }
-    }
-
-    if (self.delegate && [self.delegate respondsToSelector:@selector(tabBarControllerDidSelectedIndex:)]) {
-        [self.delegate tabBarControllerDidSelectedIndex:selectedIndex];
-    }
-    return YES;
+    
+//
+//    if (EYSCREENSIZE_IS_IPhoneX_All) {
+//        if (selectedIndex == EYTabBarViewTypePlus) {//弹出发布界面
+//            [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
+//        } else {
+//            self.selectedIndex = selectedIndex;
+//        }
+//    } else {
+//        EYNavigationController * homeNavi = self.viewControllers.firstObject;
+//        EYHomeViewController *homeVC = (EYHomeViewController *)homeNavi.viewControllers.firstObject;
+//
+//        if (selectedIndex == EYTabBarViewTypeHome) {
+//            if (!EYSCREENSIZE_IS_IPhoneX_All) {
+//                if (homeVC.type == EYHomeViewControllerButtonTypeRecommend) {
+//                    tabBarView.backgroundColor = [UIColor clearColor];
+//                } else {
+//                    tabBarView.backgroundColor = [UIColor blackColor];
+//                }
+//            }
+//            self.selectedIndex = selectedIndex;
+//        } else if (selectedIndex == EYTabBarViewTypePlus) {//弹出发布界面
+//            [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
+//        } else {//禁止滚动
+//            tabBarView.backgroundColor = [UIColor blackColor];
+//            self.selectedIndex = selectedIndex;
+//            [UIApplication sharedApplication].statusBarHidden = NO;
+//        }
+//    }
+//
 }
 
 #pragma mark - UITabBarDelegate

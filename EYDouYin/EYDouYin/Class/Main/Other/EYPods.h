@@ -14,7 +14,7 @@
 #import <MJRefresh.h>
 #import <MJExtension.h>
 #import <POP.h>
-#import <SJVideoPlayer.h>
+//#import <SJVideoPlayer.h>
 #import <SDWebImage.h>
 #import <SDImageCache.h>
 #import <Masonry.h>

@@ -10,6 +10,8 @@
 #import "EYLanguageTool.h"
 #import "EYNavigationController.h"
 #import <AFNetworkActivityIndicatorManager.h>
+#import "EYRootViewController.h"
+
 //#import <AVKit/AVKit.h>
 
 @interface AppDelegate ()
@@ -109,7 +111,7 @@
 // 4.设置导航条
 - (void)setupGKNavigationBar {
     GKNavigationBarConfigure *configure =  [GKNavigationBarConfigure sharedInstance];
-    configure.backgroundColor = EYColorBlue;
+    configure.backgroundColor = EYColorClear;
     configure.titleColor = EYColorWhite;
     configure.titleFont = EYSizeFont17;
     configure.backStyle = GKNavigationBarBackStyleWhite;

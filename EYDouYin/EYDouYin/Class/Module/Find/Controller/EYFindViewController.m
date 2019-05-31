@@ -57,8 +57,8 @@
 }
 
 - (void)right {
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [appDelegate.rootViewController.scrollView setContentOffset:CGPointMake(EYScreenWidth, 0) animated:YES];
+//    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//    [appDelegate.rootViewController.scrollView setContentOffset:CGPointMake(EYScreenWidth, 0) animated:YES];
 }
 
 #pragma mark - Override Methods

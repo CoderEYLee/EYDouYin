@@ -18,13 +18,38 @@
 
 @implementation EYMeViewController
 
+static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor whiteColor];
     self.array = [EYManager sharedManager].meArray;
+    
+    //1. 初始化界面
+    [self setupUI];
+    
     [self.tableView reloadData];
  }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+//    self.gk_navLineHidden = YES;
+}
+
+//1. 初始化界面
+- (void)setupUI {
+//    self.navigationController.navigationBar.backgroundColor = EYColorClear;
+    //1.隐藏分割线
+    [self hideNavLine];
+//    self.gk_navTitle = @"我的";
+//    self.gk_navShadowColor = EYColorClear;
+    
+    //1.底部 view
+    UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, EYScreenHeight - EYTabBarHomeIndicatorHeight, EYScreenWidth, EYTabBarHomeIndicatorHeight)];
+    bottomView.backgroundColor = EYColorBlack;
+    [self.view addSubview:bottomView];
+}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -36,12 +61,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString * ID = @"EYMeViewControllerCellID";
-
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
-
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:EYMeViewControllerCellID];
+    if (nil == cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:EYMeViewControllerCellID];
+        cell.backgroundColor = EYColorClear;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.textLabel.textColor = EYColorWhite;
     }
 
     NSArray *items = [self.array[indexPath.section] valueForKeyPath:@"items"];
@@ -78,6 +103,8 @@
         } else {
             self.automaticallyAdjustsScrollViewInsets = NO;
         }
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        tableView.backgroundColor = EYColorClear;
         tableView.dataSource = self;
         tableView.delegate = self;
         [self.view addSubview:tableView];
