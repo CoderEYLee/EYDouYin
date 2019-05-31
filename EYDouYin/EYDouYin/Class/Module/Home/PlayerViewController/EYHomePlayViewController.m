@@ -29,7 +29,17 @@
     //1.隐藏导航
     self.gk_navigationBar.hidden = YES;
     
-    self.view.backgroundColor = EYColorRandom;
+    UILabel *label = [[UILabel alloc] init];
+    label.backgroundColor = EYColorRandom;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = self.name;
+    [self.view addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(0);
+        make.width.height.mas_equalTo(200);
+    }];
+    
+//    self.view.backgroundColor = EYColorRandom;
 }
 
 - (void)startPlayWithURLString:(NSString *)URLString {
@@ -40,13 +50,13 @@
 
 #pragma mark - EYBaseVideoPlayerDelegate
 - (void)baseVideoPlayerOnNetStatus:(EYBaseVideoPlayer *)baseVideoPlayer withParam:(NSDictionary *)param {
-    EYLog(@"baseVideoPlayerOnNetStatus==%@", baseVideoPlayer);
+    // EYLog(@"baseVideoPlayerOnNetStatus==%@", baseVideoPlayer);
     
     
 }
 
 - (void)baseVideoPlayerOnPlayEvent:(EYBaseVideoPlayer *)baseVideoPlayer event:(int)EvtID withParam:(NSDictionary *)param {
-    EYLog(@"baseVideoPlayerOnPlayEvent");
+    // EYLog(@"baseVideoPlayerOnPlayEvent");
 }
 
 #pragma mark - 懒加载

@@ -96,7 +96,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         //1.设置背景颜色
-        self.backgroundColor = EYColorRGBHexAlpha(0x1A1B20, 0.3);
+        self.backgroundColor = EYColorRGBHexAlpha(0x1A1B20, 0.1);
         
         //2.初始化组件
         int count = 5;
