@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EYHomePlayViewController : EYBaseViewController
 
-@property (copy, nonatomic) NSString *name;
-
 - (void)startPlayWithURLString:(NSString *)URLString;
 
 @end

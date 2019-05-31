@@ -29,17 +29,7 @@
     //1.隐藏导航
     self.gk_navigationBar.hidden = YES;
     
-    UILabel *label = [[UILabel alloc] init];
-    label.backgroundColor = EYColorRandom;
-    label.textAlignment = NSTextAlignmentCenter;
-    label.text = self.name;
-    [self.view addSubview:label];
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(0);
-        make.width.height.mas_equalTo(200);
-    }];
-    
-//    self.view.backgroundColor = EYColorRandom;
+    self.view.backgroundColor = EYColorClear;
 }
 
 - (void)startPlayWithURLString:(NSString *)URLString {

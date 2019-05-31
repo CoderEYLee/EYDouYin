@@ -74,7 +74,6 @@
     
     //4.1 上
     EYHomePlayViewController *toptopVC = [[EYHomePlayViewController alloc] init];
-    toptopVC.name = @"上";
     [self addChildViewController:toptopVC];
     self.toptopVC = toptopVC;
     toptopVC.view.frame = EYScreenBounds;
@@ -83,7 +82,6 @@
     
     //4.1 中
     EYHomePlayViewController *centerVC = [[EYHomePlayViewController alloc] init];
-    centerVC.name = @"中";
     [self addChildViewController:centerVC];
     self.centerVC = centerVC;
     centerVC.view.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
@@ -92,7 +90,6 @@
     
     //4.1 下
     EYHomePlayViewController *bottomVC = [[EYHomePlayViewController alloc] init];
-    bottomVC.name = @"下";
     [self addChildViewController:bottomVC];
     self.bottomVC = bottomVC;
     bottomVC.view.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
@@ -145,6 +142,7 @@
     if (self.currentVideoIndex == 0 && contentOffsetY == EYScreenHeight) {
         self.currentVideoIndex++;
         EYLog(@"第二个视频=%lu", self.currentVideoIndex);
+        self.currentPlayViewController = self.centerVC;
         return;
     }
     
@@ -152,14 +150,29 @@
     if (self.currentVideoIndex == self.arrarM.count - 1 && contentOffsetY == EYScreenHeight) {
         self.currentVideoIndex--;
         EYLog(@"看完最后一个 回看倒数第二个**%lu**", self.currentVideoIndex);
+        NSUInteger remainder = self.arrarM.count % 3;
+        if (remainder == 1) {//多一个
+            self.currentPlayViewController = self.bottomVC;
+        } else if (remainder == 2) {//多两个
+            self.currentPlayViewController = self.toptopVC;
+        } else {//正好
+            self.currentPlayViewController = self.centerVC;
+        }
         return;
     }
     
     if (contentOffsetY >= 2 * EYScreenHeight) {//下一个视频
-//        [self.videoPlayer removeVideo];
         self.currentVideoIndex++;
         if (self.currentVideoIndex == self.arrarM.count - 1) {//最后一个
             EYLog(@"向下看 看到最后一个**%lu**", self.currentVideoIndex);
+            NSUInteger remainder = self.arrarM.count % 3;
+            if (remainder == 1) {//多一个
+                self.currentPlayViewController = self.toptopVC;
+            } else if (remainder == 2) {//多两个
+                self.currentPlayViewController = self.centerVC;
+            } else {//正好
+                self.currentPlayViewController = self.bottomVC;
+            }
             return;
         }
         
@@ -168,14 +181,17 @@
             self.centerVC.view.mj_y = 0;
             self.bottomVC.view.mj_y = EYScreenHeight;
             self.toptopVC.view.mj_y = EYScreenHeight * 2;
+            self.currentPlayViewController = self.bottomVC;
         } else if (self.toptopVC.view.mj_y == EYScreenHeight) {// 下(上)中 -> 上(中)下
             self.toptopVC.view.mj_y = 0;
             self.centerVC.view.mj_y = EYScreenHeight;
             self.bottomVC.view.mj_y = EYScreenHeight * 2;
+            self.currentPlayViewController = self.centerVC;
         } else {// 中(下)上 -> 下(上)中
             self.bottomVC.view.mj_y = 0;
             self.toptopVC.view.mj_y = EYScreenHeight;
             self.centerVC.view.mj_y = EYScreenHeight * 2;
+            self.currentPlayViewController = self.toptopVC;
         }
         //2.滚动位置
         scrollView.contentOffset = CGPointMake(0, EYScreenHeight);
@@ -183,7 +199,9 @@
         EYLog(@"下一个视频**%lu**", self.currentVideoIndex);
     } else if (contentOffsetY <= 0) {//上一个视频
         if (self.currentVideoIndex == 1) {
-            self.currentVideoIndex = 0; EYLog(@"上滑到第一个视频**%lu**,可以进行下拉刷新的操作了", self.currentVideoIndex);
+            self.currentVideoIndex = 0;
+            self.currentPlayViewController = self.toptopVC;
+            EYLog(@"上滑到第一个视频**%lu**,可以进行下拉刷新的操作了", self.currentVideoIndex);
             return;
         }
         
@@ -195,16 +213,19 @@
             self.bottomVC.view.mj_y = 0;
             self.toptopVC.view.mj_y = EYScreenHeight;
             self.centerVC.view.mj_y = EYScreenHeight * 2;
+            self.currentPlayViewController = self.toptopVC;
         } else if (self.toptopVC.view.mj_y == EYScreenHeight) {// 下(上)中 -> 中(下)上
             //EYLog(@"8888888888888");
             self.centerVC.view.mj_y = 0;
             self.bottomVC.view.mj_y = EYScreenHeight;
             self.toptopVC.view.mj_y = EYScreenHeight * 2;
+            self.currentPlayViewController = self.bottomVC;
         } else {// 中(下)上 -> 上(中)下
             //EYLog(@"9999999999999");
             self.toptopVC.view.mj_y = 0;
             self.centerVC.view.mj_y = EYScreenHeight;
             self.bottomVC.view.mj_y = EYScreenHeight * 2;
+            self.currentPlayViewController = self.centerVC;
         }
         
         //2.滚动位置
@@ -228,6 +249,8 @@
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
     EYLog(@"需要播放的下标为**%lu**", self.currentVideoIndex);
+    EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
+    
     if (self.currentVideoIndex == 0) {//第 0 个
         
     } else if (self.currentVideoIndex == self.arrarM.count) {//最后一个
@@ -236,7 +259,6 @@
         
     }
     
-    EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
 }
 
 #pragma mark - 懒加载
