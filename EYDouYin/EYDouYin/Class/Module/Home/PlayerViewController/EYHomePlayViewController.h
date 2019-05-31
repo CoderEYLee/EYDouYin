@@ -7,10 +7,13 @@
 //  视频流中每一个界面控制器
 
 #import "EYBaseViewController.h"
+#import "EYBaseVideoPlayer.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EYHomePlayViewController : EYBaseViewController
+
+@property (strong, nonatomic, readonly) EYBaseVideoPlayer *videoPlayer;
 
 - (void)startPlayWithURLString:(NSString *)URLString;
 

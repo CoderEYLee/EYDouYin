@@ -97,6 +97,11 @@
  停止播放
  */
 - (void)stopPlay {
+    if (self.TX_URLString.length == 0) {
+        EYLog(@"不需要停止播放==%@", self.TX_URLString);
+        return;
+    }
+    
     int result = [self.txVodPlayer stopPlay];
     if (result == 0) {
         EYLog(@"停止播放成功==%@", self.TX_URLString);

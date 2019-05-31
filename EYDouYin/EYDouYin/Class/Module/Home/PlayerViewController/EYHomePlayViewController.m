@@ -7,11 +7,10 @@
 //
 
 #import "EYHomePlayViewController.h"
-#import "EYBaseVideoPlayer.h"
 
 @interface EYHomePlayViewController () <EYBaseVideoPlayerDelegate>
 
-@property (strong, nonatomic) EYBaseVideoPlayer *videoPlayer;
+@property (strong, nonatomic, readwrite) EYBaseVideoPlayer *videoPlayer;
 
 @end
 
