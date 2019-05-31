@@ -105,7 +105,7 @@
         return;
     }
     
-    [self.arrarM addObjectsFromArray:[array subarrayWithRange:NSMakeRange(0, 12)]];
+    [self.arrarM addObjectsFromArray:[array subarrayWithRange:NSMakeRange(0, 3)]];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //开始播放第0个
@@ -137,30 +137,26 @@
     
     CGFloat contentOffsetY = scrollView.contentOffset.y;
     
-    // 第一个
-    if (self.currentVideoIndex == 0 && contentOffsetY <= EYScreenHeight) {
-        EYLog(@"第一个");
+    // 第二个
+    if (self.currentVideoIndex == 0 && contentOffsetY == EYScreenHeight) {
+        self.currentVideoIndex++;
+        EYLog(@"第二个视频=%lu", self.currentVideoIndex);
         return;
     }
     
-    // 最后两个
-    if (self.currentVideoIndex == self.arrarM.count - 1 && contentOffsetY > EYScreenHeight) {
-        EYLog(@"最后两个");
+    // 倒数第二个
+    if (self.currentVideoIndex == self.arrarM.count - 1 && contentOffsetY == EYScreenHeight) {
+        self.currentVideoIndex--;
+        EYLog(@"看完最后一个 回看倒数第二个**%lu**", self.currentVideoIndex);
         return;
     }
-//    CGFloat index = contentOffsetY / EYScreenHeight;
-//    EYLog(@"======%f==%f", contentOffsetY, index);
     
     if (contentOffsetY >= 2 * EYScreenHeight) {//下一个视频
         //        [self.videoPlayer removeVideo];
-        if (self.currentVideoIndex == 0) {//第一次向下翻动 下标从 0->2
-            self.currentVideoIndex += 2;
-        } else {//继续向下翻动
-            self.currentVideoIndex++;
-            if (self.currentVideoIndex == self.arrarM.count - 1) {//最后一个
-                EYLog(@"最后一个**%lu**", self.currentVideoIndex);
-                return;
-            }
+        self.currentVideoIndex++;
+        if (self.currentVideoIndex == self.arrarM.count - 1) {//最后一个
+            EYLog(@"向下看 看到最后一个**%lu**", self.currentVideoIndex);
+            return;
         }
         
         //1.修改位置
@@ -193,11 +189,11 @@
             return;
         }
         
-        if (self.currentVideoIndex == self.arrarM.count - 1) {
-            self.currentVideoIndex -= 2;
-        }else {
+//        if (self.currentVideoIndex == self.arrarM.count - 1) {
+//            self.currentVideoIndex -= 2;
+//        }else {
             self.currentVideoIndex--;
-        }
+//        }
         
         //1.修改位置
         EYHomePlayViewController *toptopVC =  self.childViewControllers.firstObject;
