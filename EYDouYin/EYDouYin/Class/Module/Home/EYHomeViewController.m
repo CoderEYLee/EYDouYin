@@ -106,7 +106,7 @@
         return;
     }
     
-    [self.arrarM addObjectsFromArray:[array subarrayWithRange:NSMakeRange(0, 5)]];
+    [self.arrarM addObjectsFromArray:array];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //开始播放第0个
@@ -249,7 +249,16 @@
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
     EYLog(@"需要播放的下标为**%lu**", self.currentVideoIndex);
+    
+    //1.清除之前的播放
+    [self.toptopVC stopPlay];
+    [self.centerVC stopPlay];
+    [self.bottomVC stopPlay];
+    
+    
+    //2.播放当前界面显示的对应视频
     EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
+    [self.currentPlayViewController startPlayWithURLString:videoModel.tt_video_name];
     
     if (self.currentVideoIndex == 0) {//第 0 个
         
