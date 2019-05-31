@@ -23,7 +23,7 @@
 @property (strong, nonatomic) NSMutableArray <EYVideoModel *>*arrarM;
 
 // 当前屏幕所处的下标
-@property (assign, nonatomic) int currentVideoIndex;
+@property (assign, nonatomic) NSUInteger currentVideoIndex;
 // 当前屏幕所属的控制器
 @property (weak, nonatomic) EYHomePlayViewController *currentPlayViewController;
 
@@ -138,10 +138,14 @@
     
     CGFloat contentOffsetY = scrollView.contentOffset.y;
     
+    if (self.currentVideoIndex == 0 && contentOffsetY < EYScreenHeight) {
+        return;
+    }
+    
     // 第二个
     if (self.currentVideoIndex == 0 && contentOffsetY == EYScreenHeight) {
         self.currentVideoIndex++;
-        EYLog(@"第二个视频=%lu", self.currentVideoIndex);
+        EYLog(@"第二个视频==%lu", self.currentVideoIndex);
         self.currentPlayViewController = self.centerVC;
         return;
     }
@@ -248,9 +252,8 @@
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
-    EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
     
-    EYLog(@"需要播放的下标为**%lu**%@", (unsigned long)self.currentVideoIndex, videoModel);
+    EYLog(@"需要播放的下标为**%lu**", self.currentVideoIndex);
     
     //1.清除之前的播放
     if (self.toptopVC == self.currentPlayViewController) {
@@ -273,6 +276,7 @@
     }
     
     //2.播放当前界面显示的对应视频
+    EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
     [self.currentPlayViewController startPlayWithURLString:videoModel.tt_video_name];
 }
 
