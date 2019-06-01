@@ -177,6 +177,10 @@
 }
 
 #pragma mark - UIScrollViewDelegate
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
+    return NO;
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat contentOffsetY = scrollView.contentOffset.y;
     
@@ -274,55 +278,32 @@
             }
             [self stopPlayAll];
         } else {
-            //1.修改位置
             if (self.toptopVC.view.mj_y == 0) {// 上(中)下 -> 中(下)上
                 [self centerBottomTop];
             } else if (self.toptopVC.view.mj_y == EYScreenHeight) {// 下(上)中 -> 上(中)下
                 [self topCenterBottom];
             } else {// 中(下)上 -> 下(上)中
                 [self bottomTopCenter];
-                scrollView.contentOffset = CGPointMake(0, EYScreenHeight);
             }
-            
             EYLog(@"下一个视频**%lu**", self.currentVideoIndex);
         }
     } else if (contentOffsetY <= 0) {//上一个视频
         if (self.currentVideoIndex == 1) {
             self.currentVideoIndex = 0;
-            
-            self.toptopVC.view.mj_y = 0;
-            self.centerVC.view.mj_y = EYScreenHeight;
-            self.bottomVC.view.mj_y = EYScreenHeight * 2;
-            
-            //1.设置图片
-            self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex];
-            self.centerVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
-            self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 2];
-            
-            self.currentPlayViewController = self.toptopVC;
-            
-            [self stopPlayAll];
-            EYLog(@"上滑到第一个视频**%lu**,可以进行下拉刷新的操作了", self.currentVideoIndex);
+            [self goBackToFirstVideo];
         } else {
             self.currentVideoIndex--;
+            EYLog(@"上一个视频**%lu**", self.currentVideoIndex);
             
-            //1.修改位置
             if (self.toptopVC.view.mj_y == 0) {// 上(中)下 -> 下(上)中
                 [self bottomTopCenter];
-                scrollView.contentOffset = CGPointMake(0, EYScreenHeight);
             } else if (self.toptopVC.view.mj_y == EYScreenHeight) {// 下(上)中 -> 中(下)上
                 [self centerBottomTop];
             } else {// 中(下)上 -> 上(中)下
                 [self topCenterBottom];
             }
-            
-            EYLog(@"上一个视频**%lu**", self.currentVideoIndex);
         }
     }
-}
-
-- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
-    return NO;
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
@@ -382,6 +363,7 @@
     self.bottomVC.view.mj_y = 0;
     self.toptopVC.view.mj_y = EYScreenHeight;
     self.centerVC.view.mj_y = EYScreenHeight * 2;
+    self.scrollView.contentOffset = CGPointMake(0, EYScreenHeight);
     
     //2.(1.先停止播放2.设置图片+缓存)
     [self.bottomVC stopPlay];
@@ -394,6 +376,28 @@
     
     //2.设置当前播放器
     self.currentPlayViewController = self.toptopVC;
+}
+
+// 回翻到第一个视频
+- (void)goBackToFirstVideo {
+    //1.修改位置
+    self.toptopVC.view.mj_y = 0;
+    self.centerVC.view.mj_y = EYScreenHeight;
+    self.bottomVC.view.mj_y = EYScreenHeight * 2;
+    
+    //2.(1.先停止播放2.设置图片+缓存)
+    self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex];
+    
+    [self.centerVC stopPlay];
+    self.centerVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
+    
+    [self.bottomVC stopPlay];
+    self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 2];
+    
+    //3.设置当前播放器
+    self.currentPlayViewController = self.toptopVC;
+    
+    EYLog(@"回翻到第一个视频**%lu**,可以进行下拉刷新的操作了", self.currentVideoIndex);
 }
 
 // 停止播放其他两个控制器
