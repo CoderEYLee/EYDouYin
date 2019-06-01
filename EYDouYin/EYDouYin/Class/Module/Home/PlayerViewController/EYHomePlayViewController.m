@@ -53,6 +53,8 @@
 }
 
 - (void)setVideoModel:(EYVideoModel *)videoModel {
+    _videoModel = videoModel;
+    
     // 1.恢复按钮状态
     self.playbutton.selected = NO;
     
@@ -60,15 +62,8 @@
     self.videoPlayer.isAutoPlay = NO;
     [self.videoPlayer startPlayWithURLString:videoModel.tt_video_name];
     
-    if (_videoModel == videoModel) {
-        EYLog(@"已经设置过了视频的首帧==%@==%@", self, videoModel.tt_video_name);
-        return;
-    }
-    _videoModel = videoModel;
-    
     //3.视频首帧图片
     [self.videoImageView ey_setImageWithURL:[NSURL URLWithString:videoModel.tt_video_img_normal] placeholderImage:[UIImage imageNamed:@"common_placeholder"]];
-    
 }
 
 #pragma mark - Public Methods
