@@ -42,6 +42,11 @@
 }
 
 - (void)setVideoModel:(EYVideoModel *)videoModel {
+    
+    if (_videoModel == videoModel) {
+        EYLog(@"已经设置过了视频的首帧");
+        return;
+    }
     _videoModel = videoModel;
     
     [self.videoImageView ey_setImageWithURL:[NSURL URLWithString:videoModel.tt_video_img_normal] placeholderImage:[UIImage imageNamed:@"common_placeholder"]];
