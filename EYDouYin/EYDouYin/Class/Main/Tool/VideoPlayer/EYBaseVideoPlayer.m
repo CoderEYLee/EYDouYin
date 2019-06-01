@@ -60,6 +60,13 @@
  开始播放视频
  */
 - (void)startPlayWithURLString:(NSString *)TX_URLString {
+    if (self.dissablePlaySameVideo) {//不允许播放相同的视频地址
+        NSString *lastTX_URLString = self.TX_URLString;
+        if ([lastTX_URLString isEqualToString:TX_URLString]) {
+            EYLog(@"不允许播放相同的视频地址%@" , lastTX_URLString);
+            return;
+        }
+    }
     // 停止播放
     [self.txVodPlayer stopPlay];
 
@@ -98,11 +105,13 @@
  */
 - (void)stopPlay {
     if (self.TX_URLString.length == 0) {
-        EYLog(@"不需要停止播放==%@", self.TX_URLString);
+        EYLog(@"视频地址为空,不需要停止播放");
         return;
     }
     
     int result = [self.txVodPlayer stopPlay];
+    
+    self.TX_URLString = nil;
     if (result == 0) {
         EYLog(@"停止播放成功==%@", self.TX_URLString);
     } else {
@@ -190,6 +199,9 @@
     _txVodPlayer.loop = NO;
     
     _txVodPlayer.isAutoPlay = YES;
+    
+    //不禁止 播放相同的地址的视频(允许播放相同的视频)
+    _dissablePlaySameVideo = NO;
 
     //添加通知
     [self addNotification];

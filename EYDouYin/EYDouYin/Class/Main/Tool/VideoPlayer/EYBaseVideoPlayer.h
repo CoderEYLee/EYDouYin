@@ -32,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// startPlay后是否立即播放，默认YES
 @property (assign, nonatomic) BOOL isAutoPlay;
 
+/// 播放同一地址的视频，默认NO(默认不对传入的视频播放地址做处理)
+@property (assign, nonatomic) BOOL dissablePlaySameVideo;
+
 /**
  渲染方式 默认 图像铺满屏幕
  */
@@ -65,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  当前播放的URL
  */
-@property (assign, nonatomic, readonly) NSString *TX_URLString;
+@property (copy, nonatomic, readonly) NSString *TX_URLString;
 
 #pragma mark - 播放相关
 
