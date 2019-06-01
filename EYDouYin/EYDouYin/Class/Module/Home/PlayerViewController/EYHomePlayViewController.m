@@ -99,6 +99,9 @@
  恢复播放
  */
 - (void)resumePlay {
+    // 1.恢复按钮状态
+    self.playbutton.selected = NO;
+    
     self.isAutoPlay = YES;
     [self.videoPlayer resumePlay];
 }
@@ -107,6 +110,9 @@
  停止播放
  */
 - (void)stopPlay {
+    // 1.恢复按钮状态
+    self.playbutton.selected = NO;
+    
     [self.videoPlayer stopPlay];
     self.isAutoPlay = NO;
 }
@@ -115,6 +121,9 @@
  移除播放
  */
 - (void)removePlay {
+    // 1.恢复按钮状态
+    self.playbutton.selected = NO;
+    
     [self.videoPlayer removePlay];
     self.isAutoPlay = NO;
 }

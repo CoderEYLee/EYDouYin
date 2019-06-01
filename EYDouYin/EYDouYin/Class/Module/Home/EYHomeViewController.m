@@ -121,7 +121,7 @@
         //1.设置图片&缓存视频
         self.toptopVC.videoModel = self.arrarM.firstObject;
         self.centerVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
-        self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 2];
+//        self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 2];
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             //2.开始播放第0个
@@ -217,8 +217,8 @@
         self.currentVideoIndex++;
         
         //1.设置图片(中 + 下)
-        self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-        self.centerVC.videoModel = self.arrarM[self.currentVideoIndex];
+//        self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
+//        self.centerVC.videoModel = self.arrarM[self.currentVideoIndex];
         self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
         
         //2.设为当前控制器
@@ -269,8 +269,8 @@
             self.toptopVC.view.mj_y = EYScreenHeight * 2;
             
             //1.设置图片
-            self.centerVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-            self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex];
+//            self.centerVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
+//            self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex];
             self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
             
             //2.设置当前播放器
@@ -281,8 +281,8 @@
             self.bottomVC.view.mj_y = EYScreenHeight * 2;
             
             //1.设置图片
-            self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-            self.centerVC.videoModel = self.arrarM[self.currentVideoIndex];
+//            self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
+//            self.centerVC.videoModel = self.arrarM[self.currentVideoIndex];
             self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
             
             //2.设置当前播放器
@@ -293,8 +293,8 @@
             self.centerVC.view.mj_y = EYScreenHeight * 2;
             
             //1.设置图片
-            self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-            self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex];
+//            self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
+//            self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex];
             self.centerVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
             
             //2.设置当前播放器
@@ -323,8 +323,8 @@
             
             //1.设置图片
             self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-            self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex];
-            self.centerVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
+//            self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex];
+//            self.centerVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
             
             //2.设置当前播放器
             self.currentPlayViewController = self.toptopVC;
@@ -336,8 +336,8 @@
             
             //1.设置图片
             self.centerVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-            self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex];
-            self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
+//            self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex];
+//            self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
             
             //2.设置当前播放器
             self.currentPlayViewController = self.bottomVC;
@@ -349,8 +349,8 @@
             
             //1.设置图片
             self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-            self.centerVC.videoModel = self.arrarM[self.currentVideoIndex];
-            self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
+//            self.centerVC.videoModel = self.arrarM[self.currentVideoIndex];
+//            self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
             
             //2.设置当前播放器
             self.currentPlayViewController = self.centerVC;
@@ -378,35 +378,25 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
     
     EYLog(@"需要播放的下标为**%lu**", self.currentVideoIndex);
-    [self.currentPlayViewController resumePlay];
     
     //1.清除之前的播放
     if (self.toptopVC == self.currentPlayViewController) {
         [self stopPlayWithVC:self.centerVC];
         [self stopPlayWithVC:self.bottomVC];
-//        [self.centerVC stopPlay];
-//        [self.bottomVC stopPlay];
     } else if (self.centerVC == self.currentPlayViewController) {
         [self stopPlayWithVC:self.toptopVC];
         [self stopPlayWithVC:self.bottomVC];
-//        [self.toptopVC stopPlay];
-//        [self.bottomVC stopPlay];
     } else if (self.bottomVC == self.currentPlayViewController) {
         [self stopPlayWithVC:self.toptopVC];
         [self stopPlayWithVC:self.centerVC];
-//        [self.toptopVC stopPlay];
-//        [self.centerVC stopPlay];
     } else {
-        [self.toptopVC stopPlay];
-        [self.centerVC stopPlay];
-        [self.bottomVC stopPlay];
+        
     }
+    
     
     //2.播放当前界面显示的对应视频
 //    EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self.currentPlayViewController resumePlay];
-//    });
+    [self.currentPlayViewController resumePlay];
 }
 
 // 停止播放
