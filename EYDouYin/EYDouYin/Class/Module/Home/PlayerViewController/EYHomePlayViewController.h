@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  开始播放视频
  */
-- (void)startPlay;
+//- (void)startPlayWithURLString:(NSString *)TX_URLString;
 
 /**
  暂停播放

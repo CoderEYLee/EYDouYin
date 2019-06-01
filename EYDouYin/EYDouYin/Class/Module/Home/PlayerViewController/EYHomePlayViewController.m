@@ -32,7 +32,6 @@
 - (void)setupUI {
     //1.隐藏导航
     self.gk_navigationBar.hidden = YES;
-    
     self.view.backgroundColor = EYColorClear;
     
     //2.图片
@@ -68,10 +67,17 @@
     [self.videoImageView ey_setImageWithURL:[NSURL URLWithString:videoModel.tt_video_img_normal] placeholderImage:[UIImage imageNamed:@"common_placeholder"]];
     
     //3.缓存视频
+    self.videoPlayer.isAutoPlay = NO;
     [self.videoPlayer startPlayWithURLString:videoModel.tt_video_name];
 }
 
 #pragma mark - Public Methods
+- (void)setIsAutoPlay:(BOOL)isAutoPlay {
+    _isAutoPlay = isAutoPlay;
+    
+    self.videoPlayer.isAutoPlay = isAutoPlay;
+}
+
 /**
  开始播放视频
  */
@@ -87,6 +93,7 @@
  暂停播放
  */
 - (void)pausePlay {
+    self.isAutoPlay = YES;
     [self.videoPlayer pausePlay];
     
     self.playbutton.selected = YES;
@@ -96,6 +103,7 @@
  恢复播放
  */
 - (void)resumePlay {
+    self.isAutoPlay = YES;
     [self.videoPlayer resumePlay];
 }
 
@@ -104,6 +112,7 @@
  */
 - (void)stopPlay {
     [self.videoPlayer stopPlay];
+    self.isAutoPlay = NO;
 }
 
 /**
@@ -111,6 +120,7 @@
  */
 - (void)removePlay {
     [self.videoPlayer removePlay];
+    self.isAutoPlay = NO;
 }
 
 #pragma mark - Private Methods
