@@ -47,8 +47,11 @@
     [self setupSDWebImage];
 
 //    // [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    
+    //8.腾讯播放器
+    [self setupTXpPlayer];
 
-    // 8.设置启动页面
+    // 9.设置启动页面
     [self launchViewController];
 
     //启动图时间
@@ -143,8 +146,9 @@
 
 // 8.腾讯独立播放器
 - (void)setupTXpPlayer {
-    //关闭所有 log
+    // 设置LOG信息
     [TXLiveBase setLogLevel:LOGLEVEL_NULL];
+    [TXLiveBase setConsoleEnabled:NO];
 }
 
 // 9.设置启动页面

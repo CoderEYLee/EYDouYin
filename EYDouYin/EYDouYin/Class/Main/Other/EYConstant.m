@@ -10,4 +10,5 @@
 
 #pragma mark - 阿里云
 // 图片视频拼接前缀 (阿里云的Endpoint)
-NSString *const TTOSSAPPStoreEndpoint=@"https://videoali.chinlab.com";
+NSString *const TTOSSAPPStoreEndpoint = @"https://videoali.chinlab.com";
+NSString *const TTTXVodPlayConfigPath = @"TTTXVodPlayConfigPath";

@@ -15,4 +15,7 @@ typedef NS_ENUM(NSInteger, EYJumpType) {
     EYJumpTypeHomeToMe,     // 首页->我的
 };
 
+#pragma mark - 阿里云
+
 UIKIT_EXTERN NSString *const TTOSSAPPStoreEndpoint;
+UIKIT_EXTERN NSString *const TTTXVodPlayConfigPath;
