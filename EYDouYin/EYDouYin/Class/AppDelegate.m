@@ -141,7 +141,13 @@
     imageCacheConfig.maxMemoryCost = 1024 * 1024 * 50;
 }
 
-// 8.设置启动页面
+// 8.腾讯独立播放器
+- (void)setupTXpPlayer {
+    //关闭所有 log
+    [TXLiveBase setLogLevel:LOGLEVEL_NULL];
+}
+
+// 9.设置启动页面
 - (void)launchViewController {
 
     self.window = [[UIWindow alloc] initWithFrame:EYScreenBounds];
