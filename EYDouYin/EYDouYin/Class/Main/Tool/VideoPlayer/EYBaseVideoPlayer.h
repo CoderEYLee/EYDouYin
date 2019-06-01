@@ -24,9 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EYBaseVideoPlayer : NSObject
 
-/**
- 是否循环播放 默认为NO
- */
+/// 是否循环播放 默认为NO
 @property (assign, nonatomic) BOOL loop;
 
 /// startPlay后是否立即播放，默认YES
@@ -35,9 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 播放同一地址的视频，默认NO(默认不对传入的视频播放地址做处理)
 @property (assign, nonatomic) BOOL dissablePlaySameVideo;
 
-/**
- 渲染方式 默认 图像铺满屏幕
- */
+/// 渲染方式 默认 图像铺满屏幕
 @property (assign, nonatomic) TX_Enum_Type_RenderMode renderMode;
 
 /**

@@ -23,7 +23,7 @@
 
 - (void)setIsAutoPlay:(BOOL)isAutoPlay {
     _isAutoPlay = isAutoPlay;
-    self.txVodPlayer.isAutoPlay = _isAutoPlay;
+    self.txVodPlayer.isAutoPlay = isAutoPlay;
 }
 
 - (void)setLoop:(BOOL)loop {
@@ -73,10 +73,18 @@
     self.TX_URLString = TX_URLString;
 
     int result = [self.txVodPlayer startPlay:TX_URLString];
-    if (result == 0) {
-        EYLog(@"开始播放成功==%@" , TX_URLString);
+    if (self.isAutoPlay) {
+        if (result == 0) {
+            EYLog(@"开始播放成功==%@" , TX_URLString);
+        } else {
+            EYLog(@"开始播放失败==%@", TX_URLString);
+        }
     } else {
-        EYLog(@"开始播放失败==%@", TX_URLString);
+        if (result == 0) {
+            EYLog(@"开始缓存成功==%@" , TX_URLString);
+        } else {
+            EYLog(@"开始缓存失败==%@", TX_URLString);
+        }
     }
 }
 
@@ -185,17 +193,17 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        //1. 初始化播放器
         [self setupPlayer];
+        
+        //2.添加通知
+        [self addNotification];
     }
     return self;
 }
 
-// 初始化播放器
+//2.初始化播放器
 - (void)setupPlayer {
-    // 设置LOG信息
-    [TXLiveBase setLogLevel:LOGLEVEL_NULL];
-    [TXLiveBase setConsoleEnabled:NO];
-
     // 初始化
     _txVodPlayer = [[TXVodPlayer alloc] init];
     // 设置渲染模式
@@ -209,11 +217,14 @@
     
     _txVodPlayer.isAutoPlay = YES;
     
+    // 缓存配置
+    TXVodPlayConfig *config = [[TXVodPlayConfig alloc] init];
+    config.cacheFolderPath = TTTXVodPlayConfigPath.insertTempPathString;// 设置缓存路径
+    config.maxCacheItems = 10;// 设置最多缓存多少个文件，避免缓存太多数据
+    [_txVodPlayer setConfig:config];
+    
     //不禁止 播放相同的地址的视频(允许播放相同的视频)
     _dissablePlaySameVideo = NO;
-
-    //添加通知
-    [self addNotification];
 }
 
 // 添加通知
