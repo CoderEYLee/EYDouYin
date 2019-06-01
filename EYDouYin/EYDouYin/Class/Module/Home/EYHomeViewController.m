@@ -283,7 +283,6 @@
             [self topCenterBottom];
         } else {// 中(下)上 -> 下(上)中
             [self bottomTopCenter];
-            [self stopPlayAll];
         }
         
         //2.滚动位置
@@ -315,7 +314,6 @@
         //1.修改位置
         if (self.toptopVC.view.mj_y == 0) {// 上(中)下 -> 下(上)中
             [self bottomTopCenter];
-            [self stopPlayAll];
         } else if (self.toptopVC.view.mj_y == EYScreenHeight) {// 下(上)中 -> 中(下)上
             [self centerBottomTop];
         } else {// 中(下)上 -> 上(中)下
@@ -388,9 +386,13 @@
     self.toptopVC.view.mj_y = EYScreenHeight;
     self.centerVC.view.mj_y = EYScreenHeight * 2;
     
-    //2.设置图片+缓存
+    //2.(1.先停止播放2.设置图片+缓存)
+    [self.bottomVC stopPlay];
     self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
+    
     self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex];
+    
+    [self.centerVC stopPlay];
     self.centerVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
     
     //2.设置当前播放器
