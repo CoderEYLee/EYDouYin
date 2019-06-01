@@ -13,7 +13,33 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImageView (EYSDWebImage)
 
-- (void)ey_setImageWithURL:(nullable NSURL *)url placeholderImage:(nullable UIImage *)placeholder options:(SDWebImageOptions)options;
+- (void)ey_setImageWithURL:(nullable NSURL *)url;
+
+- (void)ey_setImageWithURL:(nullable NSURL *)url
+          placeholderImage:(nullable UIImage *)placeholder;
+
+- (void)ey_setImageWithURL:(nullable NSURL *)url
+          placeholderImage:(nullable UIImage *)placeholder
+                   options:(SDWebImageOptions)options;
+
+- (void)ey_setImageWithURL:(nullable NSURL *)url
+                 completed:(nullable SDExternalCompletionBlock)completedBlock;
+
+- (void)ey_setImageWithURL:(nullable NSURL *)url
+          placeholderImage:(nullable UIImage *)placeholder
+                 completed:(nullable SDExternalCompletionBlock)completedBlock;
+
+- (void)ey_setImageWithURL:(nullable NSURL *)url
+          placeholderImage:(nullable UIImage *)placeholder
+                   options:(SDWebImageOptions)options
+                 completed:(nullable SDExternalCompletionBlock)completedBlock;
+
+- (void)ey_setImageWithURL:(nullable NSURL *)url
+          placeholderImage:(nullable UIImage *)placeholder
+                   options:(SDWebImageOptions)options
+                  progress:(nullable SDImageLoaderProgressBlock)progressBlock
+                 completed:(nullable SDExternalCompletionBlock)completedBlock;
+
 
 @end
 

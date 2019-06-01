@@ -11,6 +11,7 @@
 @interface EYHomePlayViewController () <EYBaseVideoPlayerDelegate>
 
 @property (strong, nonatomic, readwrite) EYBaseVideoPlayer *videoPlayer;
+@property (weak, nonatomic) UIImageView *videoImageView;
 
 @end
 
@@ -29,6 +30,17 @@
     self.gk_navigationBar.hidden = YES;
     
     self.view.backgroundColor = EYColorClear;
+    
+    //2.图片
+    UIImageView *videoImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:videoImageView];
+    self.videoImageView = videoImageView;
+}
+
+- (void)setVideoModel:(EYVideoModel *)videoModel {
+    _videoModel = videoModel;
+    
+    [self.videoImageView ey_setImageWithURL:[NSURL URLWithString:videoModel.tt_video_img_normal] placeholderImage:[UIImage imageNamed:@"common_placeholder"]];
 }
 
 - (void)startPlayWithURLString:(NSString *)URLString {

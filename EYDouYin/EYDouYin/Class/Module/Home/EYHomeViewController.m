@@ -190,6 +190,8 @@
         self.currentVideoIndex++;
         EYLog(@"第二个视频==%lu", self.currentVideoIndex);
         self.currentPlayViewController = self.centerVC;
+        
+        //设置图片
         return;
     }
     
@@ -318,10 +320,6 @@
         [self.centerVC stopPlay];
         [self.bottomVC stopPlay];
     }
-    
-//    if (self.currentPlayViewController.videoPlayer.isPlaying) {//正在播放当前的视频(小幅度滑动)
-//        return;
-//    }
     
     //2.播放当前界面显示的对应视频
     EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
