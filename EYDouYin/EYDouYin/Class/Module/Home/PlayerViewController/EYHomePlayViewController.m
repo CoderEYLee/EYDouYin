@@ -45,7 +45,6 @@
     
     //3.播放按钮
     UIButton *playbutton = [[UIButton alloc] initWithFrame:self.view.bounds];
-//    [playbutton setImage:[UIImage ] forState:UIControlStateNormal];
     [playbutton setImage:[UIImage imageNamed:@"common_video_pause"] forState:UIControlStateSelected];
     playbutton.selected = NO;
     [playbutton addTarget:self action:@selector(tapPlayButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -57,18 +56,19 @@
     // 1.恢复按钮状态
     self.playbutton.selected = NO;
     
+    //2.缓存视频
+    self.videoPlayer.isAutoPlay = NO;
+    [self.videoPlayer startPlayWithURLString:videoModel.tt_video_name];
+    
     if (_videoModel == videoModel) {
         EYLog(@"已经设置过了视频的首帧==%@==%@", self, videoModel.tt_video_name);
         return;
     }
     _videoModel = videoModel;
     
-    //2.视频首帧图片
+    //3.视频首帧图片
     [self.videoImageView ey_setImageWithURL:[NSURL URLWithString:videoModel.tt_video_img_normal] placeholderImage:[UIImage imageNamed:@"common_placeholder"]];
     
-    //3.缓存视频
-    self.videoPlayer.isAutoPlay = NO;
-    [self.videoPlayer startPlayWithURLString:videoModel.tt_video_name];
 }
 
 #pragma mark - Public Methods
