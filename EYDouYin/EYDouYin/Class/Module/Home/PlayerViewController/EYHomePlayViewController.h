@@ -7,7 +7,6 @@
 //  视频流中每一个界面控制器
 
 #import "EYBaseViewController.h"
-#import "EYBaseVideoPlayer.h"
 #import "EYVideoModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -36,6 +35,11 @@ NS_ASSUME_NONNULL_BEGIN
  停止播放
  */
 - (void)stopPlay;
+
+/**
+ 移除播放
+ */
+- (void)removePlay;
 
 @end
 

@@ -119,6 +119,15 @@
     }
 }
 
+/**
+ 移除播放(播放出现问题时候使用, 会销毁播放器)
+ */
+- (void)removePlay {
+    [self.txVodPlayer removeVideoWidget];
+    self.TX_URLString = nil;
+    self.delegate = nil;
+}
+
 #pragma mark - TXVodPlayListener
 /**
  * 点播事件通知

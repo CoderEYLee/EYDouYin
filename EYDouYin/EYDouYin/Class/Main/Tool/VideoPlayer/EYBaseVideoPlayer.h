@@ -92,6 +92,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)stopPlay;
 
+/**
+ 移除播放(播放出现问题时候使用, 会销毁播放器)
+ */
+- (void)removePlay;
+
 @property (nonatomic,weak)id <EYBaseVideoPlayerDelegate>delegate;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "EYHomePlayViewController.h"
+#import "EYBaseVideoPlayer.h"
 
 @interface EYHomePlayViewController () <EYBaseVideoPlayerDelegate>
 
@@ -54,7 +55,7 @@
 }
 
 - (void)setVideoModel:(EYVideoModel *)videoModel {
-    // 恢复按钮状态
+    // 1.恢复按钮状态
     self.playbutton.selected = NO;
     
     if (_videoModel == videoModel) {
@@ -63,8 +64,11 @@
     }
     _videoModel = videoModel;
     
-    //视频首帧图片
+    //2.视频首帧图片
     [self.videoImageView ey_setImageWithURL:[NSURL URLWithString:videoModel.tt_video_img_normal] placeholderImage:[UIImage imageNamed:@"common_placeholder"]];
+    
+    //3.缓存视频
+    [self.videoPlayer startPlayWithURLString:videoModel.tt_video_name];
 }
 
 #pragma mark - Public Methods
@@ -100,6 +104,13 @@
  */
 - (void)stopPlay {
     [self.videoPlayer stopPlay];
+}
+
+/**
+ 移除播放
+ */
+- (void)removePlay {
+    [self.videoPlayer removePlay];
 }
 
 #pragma mark - Private Methods
@@ -154,7 +165,7 @@
     if (nil == _videoPlayer) {
         EYBaseVideoPlayer *videoPlayer = [[EYBaseVideoPlayer alloc] init];
         videoPlayer.loop = YES;
-        videoPlayer.isAutoPlay = YES;
+        videoPlayer.isAutoPlay = NO;
         videoPlayer.renderMode = RENDER_MODE_FILL_SCREEN;
         videoPlayer.dissablePlaySameVideo = YES;
         videoPlayer.delegate = self;
