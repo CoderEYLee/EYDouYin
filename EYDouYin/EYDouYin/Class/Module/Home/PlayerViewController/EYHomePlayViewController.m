@@ -33,8 +33,12 @@
     
     //2.图片
     UIImageView *videoImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    videoImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:videoImageView];
     self.videoImageView = videoImageView;
+    
+    //3.播放器
+    [self.videoPlayer setupVideoWidget:videoImageView insertIndex:0];
 }
 
 - (void)setVideoModel:(EYVideoModel *)videoModel {
@@ -69,7 +73,6 @@
         videoPlayer.renderMode = RENDER_MODE_FILL_SCREEN;
         videoPlayer.dissablePlaySameVideo = YES;
         videoPlayer.delegate = self;
-        [videoPlayer setupVideoWidget:self.view insertIndex:0];
         _videoPlayer = videoPlayer;
     }
     return _videoPlayer;
