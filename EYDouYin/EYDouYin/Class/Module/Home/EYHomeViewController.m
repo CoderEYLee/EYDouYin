@@ -46,7 +46,7 @@
     [self addNotification];
     
     //3.模拟网络数据
-    [self loadNetData];
+    [self requestVideo];
 }
 
 //1.初始化界面
@@ -108,8 +108,7 @@
 
 #pragma mark - HTTP
 //2.请求网络数据
-- (void)loadNetData {
-    
+- (void)requestVideo {
     NSMutableArray *array = [EYVideoModel mj_objectArrayWithFilename:@"EYVideoArray.plist"];
     
     [self.arrarM addObjectsFromArray:[array subarrayWithRange:NSMakeRange(0, 2)]];

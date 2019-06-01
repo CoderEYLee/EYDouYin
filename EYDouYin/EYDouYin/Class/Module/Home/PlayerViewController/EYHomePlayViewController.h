@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 视频模型
 @property (strong, nonatomic) EYVideoModel *videoModel;
 
+/// startPlay后是否立即播放，默认NO
+@property (assign, nonatomic) BOOL isAutoPlay;
+
 /**
  开始播放视频
  */
