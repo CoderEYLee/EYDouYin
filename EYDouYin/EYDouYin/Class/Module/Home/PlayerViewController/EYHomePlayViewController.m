@@ -32,7 +32,6 @@
 }
 
 - (void)startPlayWithURLString:(NSString *)URLString {
-    EYLog(@"开始播放");
     [self.videoPlayer startPlayWithURLString:URLString];
 }
 
@@ -43,8 +42,6 @@
 #pragma mark - EYBaseVideoPlayerDelegate
 - (void)baseVideoPlayerOnNetStatus:(EYBaseVideoPlayer *)baseVideoPlayer withParam:(NSDictionary *)param {
     // EYLog(@"baseVideoPlayerOnNetStatus==%@", baseVideoPlayer);
-    
-    
 }
 
 - (void)baseVideoPlayerOnPlayEvent:(EYBaseVideoPlayer *)baseVideoPlayer event:(int)EvtID withParam:(NSDictionary *)param {
@@ -58,6 +55,7 @@
         videoPlayer.loop = YES;
         videoPlayer.isAutoPlay = YES;
         videoPlayer.renderMode = RENDER_MODE_FILL_SCREEN;
+        videoPlayer.dissablePlaySameVideo = YES;
         videoPlayer.delegate = self;
         [videoPlayer setupVideoWidget:self.view insertIndex:0];
         _videoPlayer = videoPlayer;
