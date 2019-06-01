@@ -282,17 +282,7 @@
         } else if (self.toptopVC.view.mj_y == EYScreenHeight) {// 下(上)中 -> 上(中)下
             [self topCenterBottom];
         } else {// 中(下)上 -> 下(上)中
-            self.bottomVC.view.mj_y = 0;
-            self.toptopVC.view.mj_y = EYScreenHeight;
-            self.centerVC.view.mj_y = EYScreenHeight * 2;
-            
-            //1.设置图片
-            self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-            self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex];
-            self.centerVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
-            
-            //2.设置当前播放器
-            self.currentPlayViewController = self.toptopVC;
+            [self bottomTopCenter];
         }
         
         [self stopPlayAll];
@@ -387,7 +377,7 @@
     self.bottomVC.view.mj_y = EYScreenHeight;
     self.toptopVC.view.mj_y = EYScreenHeight * 2;
     
-    //2.设置图片
+    //2.设置图片+缓存
     self.centerVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
     self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex];
     self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
@@ -398,7 +388,18 @@
 
 // 下 + 上 + 中
 - (void)bottomTopCenter {
+    //1.修改位置
+    self.bottomVC.view.mj_y = 0;
+    self.toptopVC.view.mj_y = EYScreenHeight;
+    self.centerVC.view.mj_y = EYScreenHeight * 2;
     
+    //2.设置图片+缓存
+    self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
+    self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex];
+    self.centerVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
+    
+    //2.设置当前播放器
+    self.currentPlayViewController = self.toptopVC;
 }
 
 // 停止播放其他两个控制器
