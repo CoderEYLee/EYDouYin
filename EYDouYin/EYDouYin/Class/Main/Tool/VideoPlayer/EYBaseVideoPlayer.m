@@ -234,6 +234,7 @@
 }
 
 - (void)dealloc {
+    self.txVodPlayer = nil;
     EYLog(@"TXVodPlayer -- dealloc");
 }
 

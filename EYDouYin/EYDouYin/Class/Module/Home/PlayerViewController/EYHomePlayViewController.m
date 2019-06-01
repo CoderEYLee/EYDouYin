@@ -175,7 +175,6 @@
 }
 
 - (void)dealloc {
-    [self.videoPlayer stopPlay];
     self.videoPlayer = nil;
 }
 
