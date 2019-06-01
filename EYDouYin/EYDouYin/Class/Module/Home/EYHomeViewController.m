@@ -97,21 +97,44 @@
     [scrollView addSubview:bottomVC.view];
 }
 
+#pragma mark - HTTP
 //2.请求网络数据
 - (void)loadNetData {
     
     NSMutableArray *array = [EYVideoModel mj_objectArrayWithFilename:@"EYVideoArray.plist"];
     
-    if (array.count < 3) {
-        return;
-    }
+    [self.arrarM addObjectsFromArray:[array subarrayWithRange:NSMakeRange(0, 2)]];
     
-    [self.arrarM addObjectsFromArray:array];
+    //首次设置 contentSize
+    NSUInteger count = self.arrarM.count;
+    if (count > 3) { count = 3; }
+    self.scrollView.contentSize = CGSizeMake(EYScreenWidth, EYScreenHeight * count);
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //开始播放第0个
         self.currentPlayViewController = self.toptopVC;
         [self.currentPlayViewController startPlayWithURLString:self.arrarM.firstObject.tt_video_name];
+    });
+}
+
+//请求更多数据(修改滚动范围)
+- (void)getMoreVideoChangeContentSize {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSMutableArray *array = [EYVideoModel mj_objectArrayWithFilename:@"EYVideoArray.plist"];
+        [self.arrarM addObjectsFromArray:[array subarrayWithRange:NSMakeRange(self.arrarM.count, 3)]];
+        //再次设置 contentSize
+        NSUInteger count = self.arrarM.count;
+        EYLog(@"请求更多数据(修改滚动范围)现在数组个数为**%lu**", count);
+        if (count > 3) { count = 3; }
+        self.scrollView.contentSize = CGSizeMake(EYScreenWidth, EYScreenHeight * count);
+    });
+}
+
+// 获取更多视频
+- (void)requestMoreVideo {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSMutableArray *array = [EYVideoModel mj_objectArrayWithFilename:@"EYVideoArray.plist"];
+        [self.arrarM addObjectsFromArray:[array subarrayWithRange:NSMakeRange(self.arrarM.count, 6)]];
     });
 }
 
@@ -132,12 +155,32 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (self.arrarM.count <= 3) {//小于等于3个不做处理
+    CGFloat contentOffsetY = scrollView.contentOffset.y;
+    
+    if (self.arrarM.count <= 3) {//小于等于3个只处理逻辑不处理界面
+        if (contentOffsetY == 0) {
+            self.currentVideoIndex = 0;
+            self.currentPlayViewController = self.toptopVC;
+            EYLog(@"小于等于3个第%lu个视频", self.currentVideoIndex);
+        } else if(contentOffsetY == EYScreenHeight) {
+            self.currentVideoIndex = 1;
+            self.currentPlayViewController = self.centerVC;
+            EYLog(@"小于等于3个第%lu个视频", self.currentVideoIndex);
+            // 获取更多数据
+            [self getMoreVideoChangeContentSize];
+        } else if(contentOffsetY == EYScreenHeight * 2) {
+            self.currentVideoIndex = 2;
+            self.currentPlayViewController = self.bottomVC;
+            EYLog(@"小于等于3个第%lu个视频", self.currentVideoIndex);
+        } else {
+//            EYLog(@"小于等于3个其他位置==%f", contentOffsetY);
+        }
+        
+        //不处理界面交换
         return;
     }
     
-    CGFloat contentOffsetY = scrollView.contentOffset.y;
-    
+    //第一次滚动数组大于3 第 0 个
     if (self.currentVideoIndex == 0 && contentOffsetY < EYScreenHeight) {
         return;
     }
@@ -150,7 +193,7 @@
         return;
     }
     
-    // 倒数第二个
+    //倒数第二个
     if (self.currentVideoIndex == self.arrarM.count - 1 && contentOffsetY == EYScreenHeight) {
         self.currentVideoIndex--;
         EYLog(@"看完最后一个 回看倒数第二个**%lu**", self.currentVideoIndex);
@@ -162,6 +205,11 @@
         } else {//正好
             self.currentPlayViewController = self.centerVC;
         }
+        return;
+    }
+    
+    //最后一个
+    if (self.currentVideoIndex == self.arrarM.count - 1) {
         return;
     }
     
@@ -271,9 +319,9 @@
         [self.bottomVC stopPlay];
     }
     
-    if (self.currentPlayViewController.videoPlayer.isPlaying) {//正在播放当前的视频(小幅度滑动)
-        return;
-    }
+//    if (self.currentPlayViewController.videoPlayer.isPlaying) {//正在播放当前的视频(小幅度滑动)
+//        return;
+//    }
     
     //2.播放当前界面显示的对应视频
     EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
