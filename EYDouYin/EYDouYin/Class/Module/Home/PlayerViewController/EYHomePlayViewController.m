@@ -13,6 +13,8 @@
 @property (strong, nonatomic, readwrite) EYBaseVideoPlayer *videoPlayer;
 @property (weak, nonatomic) UIImageView *videoImageView;
 
+@property (weak, nonatomic, readwrite) UIButton *playbutton;
+
 @end
 
 @implementation EYHomePlayViewController
@@ -39,6 +41,15 @@
     
     //3.播放器
     [self.videoPlayer setupVideoWidget:videoImageView insertIndex:0];
+    
+    //3.播放按钮
+    UIButton *playbutton = [[UIButton alloc] initWithFrame:self.view.bounds];
+//    [playbutton setImage:[UIImage ] forState:UIControlStateNormal];
+    [playbutton setImage:[UIImage imageNamed:@"common_video_pause"] forState:UIControlStateSelected];
+    playbutton.selected = NO;
+    [playbutton addTarget:self action:@selector(tapPlayButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:playbutton];
+    self.playbutton = playbutton;
 }
 
 - (void)setVideoModel:(EYVideoModel *)videoModel {
@@ -52,21 +63,50 @@
     [self.videoImageView ey_setImageWithURL:[NSURL URLWithString:videoModel.tt_video_img_normal] placeholderImage:[UIImage imageNamed:@"common_placeholder"]];
 }
 
-- (void)startPlayWithURLString:(NSString *)URLString {
-    [self.videoPlayer startPlayWithURLString:URLString];
-}
-
-- (void)stopPlay {
-    [self.videoPlayer stopPlay];
+- (void)tapPlayButton:(UIButton *)button {
+    button.selected = !button.isSelected;
+    
+    if (button.isSelected) {//暂停播放
+        [self.videoPlayer pausePlay];
+    } else {//恢复播放
+        [self.videoPlayer resumePlay];
+    }
 }
 
 #pragma mark - EYBaseVideoPlayerDelegate
 - (void)baseVideoPlayerOnNetStatus:(EYBaseVideoPlayer *)baseVideoPlayer withParam:(NSDictionary *)param {
-    // EYLog(@"baseVideoPlayerOnNetStatus==%@", baseVideoPlayer);
+//     EYLog(@"baseVideoPlayerOnNetStatus==%@", baseVideoPlayer);
 }
 
 - (void)baseVideoPlayerOnPlayEvent:(EYBaseVideoPlayer *)baseVideoPlayer event:(int)EvtID withParam:(NSDictionary *)param {
-    // EYLog(@"baseVideoPlayerOnPlayEvent");
+//    EYLog(@"baseVideoPlayerOnPlayEvent");
+    switch (EvtID) {
+        case PLAY_EVT_PLAY_LOADING:{// loading
+            
+            break;
+        }
+        case PLAY_EVT_PLAY_BEGIN:{// 开始播放
+            
+            break;
+        }
+        case PLAY_EVT_PLAY_END:{// 播放结束
+            
+            break;
+        }
+        case PLAY_ERR_NET_DISCONNECT:{// 失败，多次重连无效
+            
+            break;
+        }
+        case PLAY_EVT_PLAY_PROGRESS:{// 进度
+//            float currTime = [param[EVT_PLAY_PROGRESS] floatValue];
+//            EYLog(@"PLAY_EVT_PLAY_PROGRESS==%f==%d", currTime, baseVideoPlayer.isPlaying);
+//            self.playbutton.selected = !baseVideoPlayer.isPlaying;
+            break;
+        }
+            
+        default:
+            break;
+    }
 }
 
 #pragma mark - 懒加载
