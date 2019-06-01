@@ -279,13 +279,14 @@
         //1.修改位置
         if (self.toptopVC.view.mj_y == 0) {// 上(中)下 -> 中(下)上
             [self centerBottomTop];
+            [self stopPlayAll];
         } else if (self.toptopVC.view.mj_y == EYScreenHeight) {// 下(上)中 -> 上(中)下
             [self topCenterBottom];
         } else {// 中(下)上 -> 下(上)中
             [self bottomTopCenter];
+            [self stopPlayAll];
         }
         
-        [self stopPlayAll];
         //2.滚动位置
         scrollView.contentOffset = CGPointMake(0, EYScreenHeight);
         
@@ -315,15 +316,14 @@
         //1.修改位置
         if (self.toptopVC.view.mj_y == 0) {// 上(中)下 -> 下(上)中
             [self bottomTopCenter];
+            [self stopPlayAll];
         } else if (self.toptopVC.view.mj_y == EYScreenHeight) {// 下(上)中 -> 中(下)上
-            //EYLog(@"8888888888888");
             [self centerBottomTop];
+            [self stopPlayAll];
         } else {// 中(下)上 -> 上(中)下
-            //EYLog(@"9999999999999");
             [self topCenterBottom];
         }
         
-        [self stopPlayAll];
         //2.滚动位置
         scrollView.contentOffset = CGPointMake(0, EYScreenHeight);
         EYLog(@"上一个视频**%lu**", self.currentVideoIndex);
@@ -351,12 +351,15 @@
     self.bottomVC.view.mj_y = EYScreenHeight * 2;
     
     //2.设置图片+缓存
+    [self.toptopVC stopPlay];
     self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-    self.centerVC.videoModel = self.arrarM[self.currentVideoIndex];
-    self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
     
+    self.centerVC.videoModel = self.arrarM[self.currentVideoIndex];
     //3.设置当前播放器
     self.currentPlayViewController = self.centerVC;
+    
+    [self.bottomVC stopPlay];
+    self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
 }
 
 // 中 + 下 + 上
