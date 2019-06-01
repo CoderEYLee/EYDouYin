@@ -81,7 +81,7 @@
     [self addChildViewController:toptopVC];
     self.toptopVC = toptopVC;
     toptopVC.view.frame = EYScreenBounds;
-    toptopVC.view.backgroundColor = EYColorRed;
+//    toptopVC.view.backgroundColor = EYColorRed;
     [scrollView addSubview:toptopVC.view];
     
     //4.1 中
@@ -89,7 +89,7 @@
     [self addChildViewController:centerVC];
     self.centerVC = centerVC;
     centerVC.view.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
-    centerVC.view.backgroundColor = EYColorGreen;
+//    centerVC.view.backgroundColor = EYColorGreen;
     [scrollView addSubview:centerVC.view];
     
     //4.1 下
@@ -110,8 +110,7 @@
 //2.请求网络数据
 - (void)requestVideo {
     NSMutableArray *array = [EYVideoModel mj_objectArrayWithFilename:@"EYVideoArray.plist"];
-    
-    [self.arrarM addObjectsFromArray:[array subarrayWithRange:NSMakeRange(0, 2)]];
+    [self.arrarM addObjectsFromArray:[array subarrayWithRange:NSMakeRange(0, 12)]];
     
     //首次设置 contentSize
     NSUInteger count = self.arrarM.count;
@@ -119,12 +118,18 @@
     self.scrollView.contentSize = CGSizeMake(EYScreenWidth, EYScreenHeight * count);
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        //1.设置图片
+        //1.设置图片&缓存视频
         self.toptopVC.videoModel = self.arrarM.firstObject;
+        self.centerVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
+        self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 2];
         
-        //2.开始播放第0个
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //2.开始播放第0个
+            [self.toptopVC resumePlay];
+        });
+
+        //3.设置当前控制器
         self.currentPlayViewController = self.toptopVC;
-        [self.currentPlayViewController startPlay];
     });
 }
 
@@ -212,9 +217,10 @@
         self.currentVideoIndex++;
         
         //1.设置图片(中 + 下)
+        self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
         self.centerVC.videoModel = self.arrarM[self.currentVideoIndex];
         self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
-
+        
         //2.设为当前控制器
         self.currentPlayViewController = self.centerVC;
         EYLog(@"第二个视频==%lu", self.currentVideoIndex);
@@ -372,17 +378,24 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
     
     EYLog(@"需要播放的下标为**%lu**", self.currentVideoIndex);
+    [self.currentPlayViewController resumePlay];
     
     //1.清除之前的播放
     if (self.toptopVC == self.currentPlayViewController) {
-        [self.centerVC stopPlay];
-        [self.bottomVC stopPlay];
+        [self stopPlayWithVC:self.centerVC];
+        [self stopPlayWithVC:self.bottomVC];
+//        [self.centerVC stopPlay];
+//        [self.bottomVC stopPlay];
     } else if (self.centerVC == self.currentPlayViewController) {
-        [self.toptopVC stopPlay];
-        [self.bottomVC stopPlay];
+        [self stopPlayWithVC:self.toptopVC];
+        [self stopPlayWithVC:self.bottomVC];
+//        [self.toptopVC stopPlay];
+//        [self.bottomVC stopPlay];
     } else if (self.bottomVC == self.currentPlayViewController) {
-        [self.toptopVC stopPlay];
-        [self.centerVC stopPlay];
+        [self stopPlayWithVC:self.toptopVC];
+        [self stopPlayWithVC:self.centerVC];
+//        [self.toptopVC stopPlay];
+//        [self.centerVC stopPlay];
     } else {
         [self.toptopVC stopPlay];
         [self.centerVC stopPlay];
@@ -390,8 +403,17 @@
     }
     
     //2.播放当前界面显示的对应视频
-    EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
-    [self.currentPlayViewController startPlay];
+//    EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.currentPlayViewController resumePlay];
+//    });
+}
+
+// 停止播放
+- (void)stopPlayWithVC:(EYHomePlayViewController *)vc {
+    if (vc.isAutoPlay) {//播放过
+        [vc stopPlay];
+    }
 }
 
 #pragma mark - 懒加载

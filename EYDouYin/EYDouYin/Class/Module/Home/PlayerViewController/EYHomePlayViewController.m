@@ -58,7 +58,7 @@
     self.playbutton.selected = NO;
     
     if (_videoModel == videoModel) {
-        EYLog(@"已经设置过了视频的首帧");
+        EYLog(@"已经设置过了视频的首帧==%@==%@", self, videoModel.tt_video_name);
         return;
     }
     _videoModel = videoModel;
@@ -81,12 +81,8 @@
 /**
  开始播放视频
  */
-- (void)startPlay {
-    if (self.videoModel.tt_video_name.length == 0) {
-        EYLog(@"没有视频地址,出现错误了");
-        return;
-    }
-    [self.videoPlayer startPlayWithURLString:self.videoModel.tt_video_name];
+- (void)startPlayWithURLString:(NSString *)TX_URLString {
+    [self.videoPlayer startPlayWithURLString:TX_URLString];
 }
 
 /**

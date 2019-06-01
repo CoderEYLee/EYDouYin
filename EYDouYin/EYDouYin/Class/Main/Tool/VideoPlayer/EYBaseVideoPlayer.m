@@ -75,15 +75,15 @@
     int result = [self.txVodPlayer startPlay:TX_URLString];
     if (self.isAutoPlay) {
         if (result == 0) {
-            EYLog(@"开始播放成功==%@" , TX_URLString);
+            EYLog(@"开始播放成功==%@==%@", self, TX_URLString);
         } else {
-            EYLog(@"开始播放失败==%@", TX_URLString);
+            EYLog(@"开始播放失败==%@==%@", self, TX_URLString);
         }
     } else {
         if (result == 0) {
-            EYLog(@"开始缓存成功==%@" , TX_URLString);
+            EYLog(@"开始缓存成功==%@==%@",self, TX_URLString);
         } else {
-            EYLog(@"开始缓存失败==%@", TX_URLString);
+            EYLog(@"开始缓存失败==%@==%@",self, TX_URLString);
         }
     }
 }
@@ -103,7 +103,7 @@
  */
 - (void)resumePlay {
     if (self.txVodPlayer.isPlaying == NO) {
-        EYLog(@"恢复播放==%@", self.TX_URLString);
+        EYLog(@"恢复播放==%@==%@", self, self.TX_URLString);
         [self.txVodPlayer resume];
     }
 }
@@ -121,9 +121,9 @@
     
     self.TX_URLString = nil;
     if (result == 0) {
-        EYLog(@"停止播放成功==%@", self.TX_URLString);
+        EYLog(@"停止播放成功==%@==%@", self, self.TX_URLString);
     } else {
-        EYLog(@"停止播放失败==%@", self.TX_URLString);
+        EYLog(@"停止播放失败==%@==%@", self, self.TX_URLString);
     }
 }
 
