@@ -10,15 +10,16 @@
 
 @interface EYHomePlayViewController () <EYBaseVideoPlayerDelegate>
 
-@property (strong, nonatomic, readwrite) EYBaseVideoPlayer *videoPlayer;
+@property (strong, nonatomic) EYBaseVideoPlayer *videoPlayer;
 @property (weak, nonatomic) UIImageView *videoImageView;
 
-@property (weak, nonatomic, readwrite) UIButton *playbutton;
+@property (weak, nonatomic) UIButton *playbutton;
 
 @end
 
 @implementation EYHomePlayViewController
 
+#pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -53,6 +54,8 @@
 }
 
 - (void)setVideoModel:(EYVideoModel *)videoModel {
+    // 恢复按钮状态
+    self.playbutton.selected = NO;
     
     if (_videoModel == videoModel) {
         EYLog(@"已经设置过了视频的首帧");
@@ -60,9 +63,46 @@
     }
     _videoModel = videoModel;
     
+    //视频首帧图片
     [self.videoImageView ey_setImageWithURL:[NSURL URLWithString:videoModel.tt_video_img_normal] placeholderImage:[UIImage imageNamed:@"common_placeholder"]];
 }
 
+#pragma mark - Public Methods
+/**
+ 开始播放视频
+ */
+- (void)startPlay {
+    if (self.videoModel.tt_video_name.length == 0) {
+        EYLog(@"没有视频地址,出现错误了");
+        return;
+    }
+    [self.videoPlayer startPlayWithURLString:self.videoModel.tt_video_name];
+}
+
+/**
+ 暂停播放
+ */
+- (void)pausePlay {
+    [self.videoPlayer pausePlay];
+    
+    self.playbutton.selected = YES;
+}
+
+/**
+ 恢复播放
+ */
+- (void)resumePlay {
+    [self.videoPlayer resumePlay];
+}
+
+/**
+ 停止播放
+ */
+- (void)stopPlay {
+    [self.videoPlayer stopPlay];
+}
+
+#pragma mark - Private Methods
 - (void)tapPlayButton:(UIButton *)button {
     button.selected = !button.isSelected;
     

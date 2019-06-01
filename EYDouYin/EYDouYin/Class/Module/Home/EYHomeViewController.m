@@ -125,7 +125,7 @@
         
         //2.开始播放第0个
         self.currentPlayViewController = self.toptopVC;
-        [self.currentPlayViewController.videoPlayer startPlayWithURLString:self.arrarM.firstObject.tt_video_name];
+        [self.currentPlayViewController startPlay];
     });
 }
 
@@ -153,8 +153,7 @@
 #pragma mark - Notification
 - (void)receiveEYScrollLeftPushNotification:(NSNotification *)noti {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.currentPlayViewController.videoPlayer pausePlay];
-        self.currentPlayViewController.playbutton.selected = YES;
+        [self.currentPlayViewController pausePlay];
         
         EYMeViewController *vc = [[EYMeViewController alloc] init];
         vc.jumpType = EYJumpTypeHomeToMe;
@@ -377,23 +376,23 @@
     
     //1.清除之前的播放
     if (self.toptopVC == self.currentPlayViewController) {
-        [self.centerVC.videoPlayer stopPlay];
-        [self.bottomVC.videoPlayer stopPlay];
+        [self.centerVC stopPlay];
+        [self.bottomVC stopPlay];
     } else if (self.centerVC == self.currentPlayViewController) {
-        [self.toptopVC.videoPlayer stopPlay];
-        [self.bottomVC.videoPlayer stopPlay];
+        [self.toptopVC stopPlay];
+        [self.bottomVC stopPlay];
     } else if (self.bottomVC == self.currentPlayViewController) {
-        [self.toptopVC.videoPlayer stopPlay];
-        [self.centerVC.videoPlayer stopPlay];
+        [self.toptopVC stopPlay];
+        [self.centerVC stopPlay];
     } else {
-        [self.toptopVC.videoPlayer stopPlay];
-        [self.centerVC.videoPlayer stopPlay];
-        [self.bottomVC.videoPlayer stopPlay];
+        [self.toptopVC stopPlay];
+        [self.centerVC stopPlay];
+        [self.bottomVC stopPlay];
     }
     
     //2.播放当前界面显示的对应视频
     EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
-    [self.currentPlayViewController.videoPlayer startPlayWithURLString:videoModel.tt_video_name];
+    [self.currentPlayViewController startPlay];
 }
 
 #pragma mark - 懒加载

@@ -14,11 +14,28 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EYHomePlayViewController : EYBaseViewController
 
-@property (strong, nonatomic, readonly) EYBaseVideoPlayer *videoPlayer;
-@property (weak, nonatomic, readonly) UIButton *playbutton;
-
 // 视频模型
 @property (strong, nonatomic) EYVideoModel *videoModel;
+
+/**
+ 开始播放视频
+ */
+- (void)startPlay;
+
+/**
+ 暂停播放
+ */
+- (void)pausePlay;
+
+/**
+ 恢复播放
+ */
+- (void)resumePlay;
+
+/**
+ 停止播放
+ */
+- (void)stopPlay;
 
 @end
 
