@@ -10,4 +10,9 @@
 
 #pragma mark - 通用枚举
 
+typedef NS_ENUM(NSInteger, EYJumpType) {
+    EYJumpTypeDefault,      // 默认值
+    EYJumpTypeHomeToMe,     // 首页->我的
+};
+
 UIKIT_EXTERN NSString *const TTOSSAPPStoreEndpoint;

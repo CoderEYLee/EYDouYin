@@ -16,6 +16,7 @@
 #import "EYPods.h"              //Pods 文件
 #import "EYSizeFontConstant.h"  //字体大小常量文件
 #import "EYConstant.h"          //常量文件
+#import "EYNotificationTool.h"  //通知文件
 
 #pragma mark - 项目通用文件
 #import "EYManager.h"

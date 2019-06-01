@@ -11,6 +11,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "EYHomePlayViewController.h"
 #import "EYVideoModel.h"
+#import "EYMeViewController.h"
 
 @interface EYHomeViewController () <UIScrollViewDelegate>
 
@@ -41,7 +42,10 @@
     //1.初始化界面
     [self setupUI];
     
-    //2.模拟网络数据
+    //2.添加通知
+    [self addNotification];
+    
+    //3.模拟网络数据
     [self loadNetData];
 }
 
@@ -93,8 +97,13 @@
     [self addChildViewController:bottomVC];
     self.bottomVC = bottomVC;
     bottomVC.view.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
-    bottomVC.view.backgroundColor = EYColorBlue;
+//    bottomVC.view.backgroundColor = EYColorBlue;
     [scrollView addSubview:bottomVC.view];
+}
+
+//2.添加通知
+- (void)addNotification {
+    [EYNotificationTool ey_addEYScrollLeftPushNotificationObserver:self selector:@selector(receiveEYScrollLeftPushNotification:)];
 }
 
 #pragma mark - HTTP
@@ -138,6 +147,15 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSMutableArray *array = [EYVideoModel mj_objectArrayWithFilename:@"EYVideoArray.plist"];
         [self.arrarM addObjectsFromArray:[array subarrayWithRange:NSMakeRange(self.arrarM.count, 6)]];
+    });
+}
+
+#pragma mark - Notification
+- (void)receiveEYScrollLeftPushNotification:(NSNotification *)noti {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        EYMeViewController *vc = [[EYMeViewController alloc] init];
+        vc.jumpType = EYJumpTypeHomeToMe;
+        [self.navigationController pushViewController:vc animated:YES];
     });
 }
 

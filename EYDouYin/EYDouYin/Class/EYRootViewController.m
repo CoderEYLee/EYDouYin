@@ -10,7 +10,6 @@
 #import "EYFindViewController.h"
 #import "EYTabBarController.h"
 #import "EYNavigationController.h"
-#import "EYHomeWorksViewController.h"
 
 @interface EYRootViewController () <UIScrollViewDelegate, GKViewControllerPushDelegate, EYTabBarControllerDelegate, UITabBarControllerDelegate>
 
@@ -50,8 +49,7 @@
 #pragma mark - GKViewControllerPushDelegate
 - (void)pushToNextViewController {
     if (self.selecetdIndex == EYTabBarViewTypeHome) {
-        EYHomeWorksViewController *vc = [[EYHomeWorksViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        [EYNotificationTool ey_postEYScrollLeftPushNotificationUserInfo:nil];
     }
 }
 

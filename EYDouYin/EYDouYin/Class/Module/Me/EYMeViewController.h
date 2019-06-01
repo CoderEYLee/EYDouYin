@@ -10,4 +10,7 @@
 
 @interface EYMeViewController : EYBaseViewController
 
+// 跳转方式
+@property (assign, nonatomic) EYJumpType jumpType;
+
 @end

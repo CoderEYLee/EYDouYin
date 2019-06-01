@@ -12,12 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EYNotificationTool : NSObject
 
-//#pragma mark - 是否能
-//+ (void)tt_addEYNotificationObserver:(id)observer selector:(SEL)aSelector;
-//
-//+ (void)tt_postEYNotificationUserInfo:(nullable NSDictionary *)aUserInfo;
-//
-//+ (void)tt_removeEYNotificationObserver:(id)observer;
+#pragma mark - 首页左滑成功触发的通知
++ (void)ey_addEYScrollLeftPushNotificationObserver:(id)observer selector:(SEL)aSelector;
+
++ (void)ey_postEYScrollLeftPushNotificationUserInfo:(nullable NSDictionary *)aUserInfo;
+
++ (void)ey_removeEYScrollLeftPushNotificationObserver:(id)observer;
 
 @end
 

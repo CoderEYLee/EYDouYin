@@ -31,24 +31,19 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     [self.tableView reloadData];
  }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-//    self.gk_navLineHidden = YES;
-}
-
 //1. 初始化界面
 - (void)setupUI {
 //    self.navigationController.navigationBar.backgroundColor = EYColorClear;
     //1.隐藏分割线
-    [self hideNavLine];
-//    self.gk_navTitle = @"我的";
-//    self.gk_navShadowColor = EYColorClear;
+    self.gk_navLineHidden = YES;
+    self.gk_navTitle = @"我的";
     
-    //1.底部 view
-    UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, EYScreenHeight - EYTabBarHomeIndicatorHeight, EYScreenWidth, EYTabBarHomeIndicatorHeight)];
-    bottomView.backgroundColor = EYColorBlack;
-    [self.view addSubview:bottomView];
+    if (self.jumpType == EYJumpTypeDefault) {
+        //底部 view
+        UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, EYScreenHeight - EYTabBarHomeIndicatorHeight, EYScreenWidth, EYTabBarHomeIndicatorHeight)];
+        bottomView.backgroundColor = EYColorBlack;
+        [self.view addSubview:bottomView];
+    }
 }
 
 #pragma mark - UITableViewDataSource
