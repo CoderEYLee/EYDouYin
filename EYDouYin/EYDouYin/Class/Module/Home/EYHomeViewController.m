@@ -276,6 +276,13 @@
     EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
     EYLog(@"需要播放的下标为**%lu**%@", self.currentVideoIndex, videoModel.tt_video_name);
     [self.currentPlayViewController resumePlay];
+    
+    if ([videoModel.tt_video_name isEqualToString:self.currentPlayViewController.videoModel.tt_video_name]) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showSuccessWithStatus:@"播放的视频正确"];
+    } else {
+        [SVProgressHUD showErrorWithStatus:@"播放的视频错误"];
+    }
 }
 
 #pragma mark - Private Methods
