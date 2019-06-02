@@ -346,29 +346,29 @@
 - (void)lastVideo {
     NSUInteger remainder = self.arrarM.count % 3;
     if (remainder == 1) {//多一个
-//        self.centerVC.videoModel = self.arrarM[self.currentVideoIndex - 2];
-//        self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-//        self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex];
+        [self.centerVC stopPlay];
+        self.centerVC.videoModel = self.arrarM[self.currentVideoIndex - 2];
+        
+        [self.bottomVC stopPlay];
+        self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
         
         self.currentPlayViewController = self.toptopVC;
-        [self stopPlayWithVC:self.centerVC];
-        [self stopPlayWithVC:self.bottomVC];
     } else if (remainder == 2) {//多两个
-//        self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 2];
-//        self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-//        self.centerVC.videoModel = self.arrarM[self.currentVideoIndex];
+        [self.bottomVC stopPlay];
+        self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 2];
+        
+        [self.toptopVC stopPlay];
+        self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
         
         self.currentPlayViewController = self.centerVC;
-        [self stopPlayWithVC:self.toptopVC];
-        [self stopPlayWithVC:self.bottomVC];
     } else {//正好
-//        self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 2];
-//        self.centerVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-//        self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex];
+        [self.toptopVC stopPlay];
+        self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 2];
+        
+        [self.centerVC stopPlay];
+        self.centerVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
         
         self.currentPlayViewController = self.bottomVC;
-        [self stopPlayWithVC:self.toptopVC];
-        [self stopPlayWithVC:self.centerVC];
     }
 }
 
