@@ -207,12 +207,12 @@
         return;
     }
     
-    //第一次滚动数组大于3 第 0 个
+    //正常看 第一个
     if (self.currentVideoIndex == 0 && contentOffsetY < EYScreenHeight) {
         return;
     }
     
-    // 第二个
+    // 正常看 第二个
     if (self.currentVideoIndex == 0 && contentOffsetY == EYScreenHeight) {
         self.currentVideoIndex++;
         [self topCenterBottom];
@@ -220,7 +220,7 @@
         return;
     }
     
-    //倒数第二个
+    //回看倒数第二个
     if (self.currentVideoIndex == self.arrarM.count - 1 && contentOffsetY == EYScreenHeight) {
         self.currentVideoIndex--;
         
