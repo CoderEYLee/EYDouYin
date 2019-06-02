@@ -215,15 +215,7 @@
     // 第二个
     if (self.currentVideoIndex == 0 && contentOffsetY == EYScreenHeight) {
         self.currentVideoIndex++;
-        
-        //1.设置图片(中 + 下)
-        self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-        self.centerVC.videoModel = self.arrarM[self.currentVideoIndex];
-        self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
-        
-        //2.设为当前控制器
-        self.currentPlayViewController = self.centerVC;
-        [self stopPlayAll];
+        [self topCenterBottom];
         EYLog(@"第二个视频==%lu", self.currentVideoIndex);
         return;
     }
@@ -233,16 +225,7 @@
         self.currentVideoIndex--;
         
         EYLog(@"看完最后一个 回看倒数第二个**%lu**", self.currentVideoIndex);
-        NSUInteger remainder = self.arrarM.count % 3;
-        if (remainder == 1) {//多一个
-            self.currentPlayViewController = self.bottomVC;
-        } else if (remainder == 2) {//多两个
-            self.currentPlayViewController = self.toptopVC;
-        } else {//正好
-            self.currentPlayViewController = self.centerVC;
-        }
-        
-        [self stopPlayAll];
+        [self goBackToPenultimateVideo];
         return;
     }
     
@@ -290,6 +273,7 @@
     } else if (contentOffsetY <= 0) {//上一个视频
         if (self.currentVideoIndex == 1) {
             self.currentVideoIndex = 0;
+            EYLog(@"回翻到第一个视频**%lu**,可以进行下拉刷新的操作了", self.currentVideoIndex);
             [self goBackToFirstVideo];
         } else {
             self.currentVideoIndex--;
@@ -378,6 +362,36 @@
     self.currentPlayViewController = self.toptopVC;
 }
 
+// 回翻到倒数第二个视频
+- (void)goBackToPenultimateVideo {
+    NSUInteger remainder = self.arrarM.count % 3;
+    if (remainder == 1) {//多一个
+        [self.centerVC stopPlay];
+        self.centerVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
+        
+        self.currentPlayViewController = self.bottomVC;
+        
+        [self.toptopVC stopPlay];
+        self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
+    } else if (remainder == 2) {//多两个
+        [self.bottomVC stopPlay];
+        self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
+        
+        self.currentPlayViewController = self.toptopVC;
+        
+        [self.centerVC stopPlay];
+        self.centerVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
+    } else {//正好
+        [self.toptopVC stopPlay];
+        self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
+        
+        self.currentPlayViewController = self.centerVC;
+        
+        [self.bottomVC stopPlay];
+        self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
+    }
+}
+
 // 回翻到第一个视频
 - (void)goBackToFirstVideo {
     //1.修改位置
@@ -396,8 +410,6 @@
     
     //3.设置当前播放器
     self.currentPlayViewController = self.toptopVC;
-    
-    EYLog(@"回翻到第一个视频**%lu**,可以进行下拉刷新的操作了", self.currentVideoIndex);
 }
 
 // 停止播放其他两个控制器
