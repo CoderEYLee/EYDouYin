@@ -107,7 +107,7 @@
 }
 
 #pragma mark - HTTP
-//2.请求网络数据
+//3.请求网络数据
 - (void)requestVideo {
     NSMutableArray *array = [EYVideoModel mj_objectArrayWithFilename:@"EYVideoArray.plist"];
     [self.arrarM addObjectsFromArray:[array subarrayWithRange:NSMakeRange(0, 12)]];
@@ -271,10 +271,10 @@
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {// 滚动停止了
-    EYLog(@"需要播放的下标为**%lu**", self.currentVideoIndex);
     
-    //2.播放当前界面显示的对应视频
-    //    EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
+    //1.播放当前界面显示的对应视频
+    EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
+    EYLog(@"需要播放的下标为**%lu**%@", self.currentVideoIndex, videoModel.tt_video_name);
     [self.currentPlayViewController resumePlay];
 }
 
@@ -421,14 +421,6 @@
     
     //3.设置当前播放器
     self.currentPlayViewController = self.toptopVC;
-}
-
-- (void)stopPlayWithVC:(EYHomePlayViewController *)vc {
-    //1.停止播放
-    [vc stopPlay];
-    
-    //2.重新缓存
-    vc.videoModel = vc.videoModel;
 }
 
 #pragma mark - 懒加载
