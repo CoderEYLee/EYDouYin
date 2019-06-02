@@ -239,27 +239,7 @@
         
         if (self.currentVideoIndex == self.arrarM.count - 1) {//最后一个
             EYLog(@"向下看 看到最后一个**%lu**", self.currentVideoIndex);
-            NSUInteger remainder = self.arrarM.count % 3;
-            if (remainder == 1) {//多一个
-//                self.centerVC.videoModel = self.arrarM[self.currentVideoIndex - 2];
-//                self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-//                self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex];
-                
-                self.currentPlayViewController = self.toptopVC;
-            } else if (remainder == 2) {//多两个
-//                self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 2];
-//                self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-//                self.centerVC.videoModel = self.arrarM[self.currentVideoIndex];
-                
-                self.currentPlayViewController = self.centerVC;
-            } else {//正好
-//                self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 2];
-//                self.centerVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
-//                self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex];
-                
-                self.currentPlayViewController = self.bottomVC;
-            }
-            [self stopPlayAll];
+            [self lastVideo];
         } else {
             if (self.toptopVC.view.mj_y == 0) {// 上(中)下 -> 中(下)上
                 [self centerBottomTop];
@@ -362,6 +342,37 @@
     self.currentPlayViewController = self.toptopVC;
 }
 
+#pragma mark - 正常看
+- (void)lastVideo {
+    NSUInteger remainder = self.arrarM.count % 3;
+    if (remainder == 1) {//多一个
+//        self.centerVC.videoModel = self.arrarM[self.currentVideoIndex - 2];
+//        self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
+//        self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex];
+        
+        self.currentPlayViewController = self.toptopVC;
+        [self stopPlayWithVC:self.centerVC];
+        [self stopPlayWithVC:self.bottomVC];
+    } else if (remainder == 2) {//多两个
+//        self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 2];
+//        self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
+//        self.centerVC.videoModel = self.arrarM[self.currentVideoIndex];
+        
+        self.currentPlayViewController = self.centerVC;
+        [self stopPlayWithVC:self.toptopVC];
+        [self stopPlayWithVC:self.bottomVC];
+    } else {//正好
+//        self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 2];
+//        self.centerVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
+//        self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex];
+        
+        self.currentPlayViewController = self.bottomVC;
+        [self stopPlayWithVC:self.toptopVC];
+        [self stopPlayWithVC:self.centerVC];
+    }
+}
+
+#pragma mark - 回看
 // 回翻到倒数第二个视频
 - (void)goBackToPenultimateVideo {
     NSUInteger remainder = self.arrarM.count % 3;
@@ -410,23 +421,6 @@
     
     //3.设置当前播放器
     self.currentPlayViewController = self.toptopVC;
-}
-
-// 停止播放其他两个控制器
-- (void)stopPlayAll {
-    //1.清除之前的播放
-    if (self.toptopVC == self.currentPlayViewController) {
-        [self stopPlayWithVC:self.centerVC];
-        [self stopPlayWithVC:self.bottomVC];
-    } else if (self.centerVC == self.currentPlayViewController) {
-        [self stopPlayWithVC:self.toptopVC];
-        [self stopPlayWithVC:self.bottomVC];
-    } else if (self.bottomVC == self.currentPlayViewController) {
-        [self stopPlayWithVC:self.toptopVC];
-        [self stopPlayWithVC:self.centerVC];
-    } else {
-
-    }
 }
 
 - (void)stopPlayWithVC:(EYHomePlayViewController *)vc {
