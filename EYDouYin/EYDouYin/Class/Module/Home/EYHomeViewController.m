@@ -103,6 +103,7 @@
 
 //2.添加通知
 - (void)addNotification {
+    //1.左滑手势
     [EYNotificationTool ey_addEYScrollLeftPushNotificationObserver:self selector:@selector(receiveEYScrollLeftPushNotification:)];
     
     //3.程序变为活跃状态
