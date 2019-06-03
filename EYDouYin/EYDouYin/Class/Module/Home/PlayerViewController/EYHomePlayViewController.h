@@ -44,6 +44,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)removePlay;
 
+/// 是否正在播放
+@property (assign, nonatomic, readonly) BOOL isPlaying;
+
 @end
 
 NS_ASSUME_NONNULL_END

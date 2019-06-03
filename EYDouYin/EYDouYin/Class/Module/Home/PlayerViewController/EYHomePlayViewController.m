@@ -123,6 +123,10 @@
     self.isAutoPlay = NO;
 }
 
+- (BOOL)isPlaying {
+    return self.videoPlayer.isPlaying;
+}
+
 #pragma mark - Private Methods
 - (void)tapPlayButton:(UIButton *)button {
     button.selected = !button.isSelected;

@@ -56,14 +56,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setupVideoWidget:(UIView *)view insertIndex:(unsigned int)idx;
 
-/**
- 是否正在播放
- */
+/// 是否正在播放
 @property (assign, nonatomic, readonly) BOOL isPlaying;
 
-/**
- 当前播放的URL
- */
+/// 当前播放的URL
 @property (copy, nonatomic, readonly) NSString *TX_URLString;
 
 #pragma mark - 播放相关

@@ -104,13 +104,19 @@
 //2.添加通知
 - (void)addNotification {
     [EYNotificationTool ey_addEYScrollLeftPushNotificationObserver:self selector:@selector(receiveEYScrollLeftPushNotification:)];
+    
+    //3.程序变为活跃状态
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
+    
+    //3.程序进入后台
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
 }
 
 #pragma mark - HTTP
 //3.请求网络数据
 - (void)requestVideo {
     NSMutableArray *array = [EYVideoModel mj_objectArrayWithFilename:@"EYVideoArray.plist"];
-    [self.arrarM addObjectsFromArray:[array subarrayWithRange:NSMakeRange(0, 12)]];
+    [self.arrarM addObjectsFromArray:[array subarrayWithRange:NSMakeRange(0, 11)]];
     
     //首次设置 contentSize
     NSUInteger count = self.arrarM.count;
@@ -163,6 +169,20 @@
         vc.jumpType = EYJumpTypeHomeToMe;
         [self.navigationController pushViewController:vc animated:YES];
     });
+}
+
+- (void)appDidBecomeActive:(NSNotification *)noti {
+    EYLog(@"程序已经变成活跃状态");
+    
+    [self.currentPlayViewController resumePlay];
+}
+
+- (void)appWillResignActive:(NSNotification *)noti {
+    EYLog(@"程序将会失去活跃状态");
+    
+    if (self.currentPlayViewController.isPlaying) {
+        [self.currentPlayViewController pausePlay];
+    }
 }
 
 #pragma mark - Private Methods

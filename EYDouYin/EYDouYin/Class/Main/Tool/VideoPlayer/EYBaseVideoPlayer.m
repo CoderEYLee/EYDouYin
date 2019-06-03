@@ -241,7 +241,7 @@
 //程序将会失去活跃状态
 - (void)appWillResignActive:(NSNotification *)noti {
     EYLog(@"程序将会失去活跃状态");
-    [self pausePlay];
+//    [self pausePlay];
 }
 
 - (void)dealloc {
