@@ -113,6 +113,14 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    if (self.currentPlayViewController.isPlaying) {
+        [self.currentPlayViewController pausePlay];
+    }
+}
+
 #pragma mark - HTTP
 //3.请求网络数据
 - (void)requestVideo {
@@ -175,7 +183,9 @@
 - (void)appDidBecomeActive:(NSNotification *)noti {
     EYLog(@"程序已经变成活跃状态");
     
-    [self.currentPlayViewController resumePlay];
+    if (self.gk_visibleViewControllerIfExist == self) {
+        [self.currentPlayViewController resumePlay];
+    }
 }
 
 - (void)appWillResignActive:(NSNotification *)noti {
