@@ -68,6 +68,7 @@
 		6085A1712189B8F800637F31 /* EYCollectionViewOtherController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */; };
 		6085A174218AA91600637F31 /* EYFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A173218AA91600637F31 /* EYFlowLayout.m */; };
 		608F940A218FEDF600AD00EB /* EYManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 608F9409218FEDF600AD00EB /* EYManager.m */; };
+		609C575822B257980010AF7D /* EYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 609C575722B257980010AF7D /* EYProgressHUD.m */; };
 		60AFD6A8229292F1005C4742 /* EYLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AFD6A7229292F1005C4742 /* EYLanguageTool.m */; };
 		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
 		60BBC6892104D83400DEEA34 /* EYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6842104D83400DEEA34 /* EYNavigationController.m */; };
@@ -225,6 +226,8 @@
 		6085A173218AA91600637F31 /* EYFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFlowLayout.m; sourceTree = "<group>"; };
 		608F9408218FEDF600AD00EB /* EYManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYManager.h; sourceTree = "<group>"; };
 		608F9409218FEDF600AD00EB /* EYManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYManager.m; sourceTree = "<group>"; };
+		609C575622B257980010AF7D /* EYProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYProgressHUD.h; sourceTree = "<group>"; };
+		609C575722B257980010AF7D /* EYProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYProgressHUD.m; sourceTree = "<group>"; };
 		60AFD696229244FD005C4742 /* EYDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYDefine.h; sourceTree = "<group>"; };
 		60AFD699229245A4005C4742 /* EYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCategory.h; sourceTree = "<group>"; };
 		60AFD69C229245FD005C4742 /* EYPods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPods.h; sourceTree = "<group>"; };
@@ -447,13 +450,6 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
-		6055AD392116AD7C005DC856 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		6055AD3A2116B03E005DC856 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,11 +601,11 @@
 		6075415D2104CCD200EB258D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				609C575222B257520010AF7D /* View */,
 				60AFD6A5229292D0005C4742 /* Manager */,
 				6076A1752150CF5E002ED551 /* ThirdLib */,
 				60BBC6822104D83400DEEA34 /* ViewController */,
 				601815BD229BB90E006598F6 /* TabBarController */,
-				6055AD392116AD7C005DC856 /* View */,
 				607541602104CD6600EB258D /* Tool */,
 				6075415F2104CD2900EB258D /* Category */,
 				607541702104D1EB00EB258D /* Other */,
@@ -709,6 +705,15 @@
 				6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */,
 			);
 			path = "UICollectionView 其他布局使用";
+			sourceTree = "<group>";
+		};
+		609C575222B257520010AF7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				609C575622B257980010AF7D /* EYProgressHUD.h */,
+				609C575722B257980010AF7D /* EYProgressHUD.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		60AFD6A5229292D0005C4742 /* Manager */ = {
@@ -1079,6 +1084,7 @@
 				60BBC6892104D83400DEEA34 /* EYNavigationController.m in Sources */,
 				601B032821056E6900489E96 /* EYFollowViewController.m in Sources */,
 				60BBC68E2104D8D200DEEA34 /* EYRootViewController.m in Sources */,
+				609C575822B257980010AF7D /* EYProgressHUD.m in Sources */,
 				60752B75218717B8001B857C /* EYWaterflowViewCell.m in Sources */,
 				60C4008E218C1DB600B07E4A /* EYCollectionDetailViewController.m in Sources */,
 				6076A1792150CFD8002ED551 /* DispatchTimer.m in Sources */,

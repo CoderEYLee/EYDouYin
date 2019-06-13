@@ -36,5 +36,6 @@ pod 'Bugly', '2.5.0'                #Bugly
 pod 'Masonry', '1.1.0'              #自动布局
 pod 'TXLiteAVSDK_Player', '6.3.7088'
     # 腾讯云播放器-独立播放器
+pod 'GDataXML-HTML', '1.4.1'           # 解析 XML/EXCEL
 
 end

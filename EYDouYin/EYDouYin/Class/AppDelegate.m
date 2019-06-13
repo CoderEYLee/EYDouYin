@@ -24,35 +24,14 @@
 
 #pragma mark - Life Cycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    // 1.键盘设置
-    [self setupKeyboard];
-
-    // 2.SVProgressHUD
-    [self setupSVProgressHUD];
-
-    // 3.语言
+    // 1.语言
     [self setupLanguage];
 
-    // 4.设置导航条
-    [self setupGKNavigationBar];
-
-    // 5.Bugly
-    [self setupBugly];
-
-    // 6.iflyMSC
-    [self setupIflyMSC];
-
-    // 7.SDWebImage
-    [self setupSDWebImage];
-
-//    // [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
-    
-    //8.腾讯播放器
-    [self setupTXpPlayer];
-
-    // 9.设置启动页面
+    // 2.设置启动页面
     [self launchViewController];
+    
+    // 3.初始化其他信息
+    [self setupOtherInfo];
 
     //启动图时间
     sleep(2);
@@ -86,53 +65,44 @@
 }
 
 #pragma mark - 程序启动设置
-// 1.键盘设置
-- (void)setupKeyboard {
-    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
-    manager.shouldResignOnTouchOutside = YES; // 点击背景收起键盘，默认NO
-    manager.enableAutoToolbar = NO; // IQKeyboardManager提供的键盘上面默认会有“前一个”“后一个”“完成”这样的辅助按钮。如果你不需要，可以将这个enableAutoToolbar属性设置为NO，这样就不会显示了。默认YES
-}
-
-// 2.SVProgressHUD
-- (void)setupSVProgressHUD {
-    [SVProgressHUD setMinimumDismissTimeInterval:1.5];
-    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];//后面的大背景是透明色
-//    [SVProgressHUD setInfoImage:[UIImage imageNamed:@""]];//提示的图片
-//    [SVProgressHUD setImageViewSize:CGSizeMake(0, -1)];//提示的图片大小
-    [SVProgressHUD setBackgroundColor:EYColorRGBHexAlpha(0x000000, 0.5)];// 弹出框背景颜色
-    [SVProgressHUD setCornerRadius:5.0];
-    [SVProgressHUD setForegroundColor:EYColorWhite];//进度&文字颜色
-    [SVProgressHUD setFont:EYSizeFont14];//字体
-    [SVProgressHUD setRingThickness:3.0];// 进度条的宽度
-}
-
-// 3.语言
+// 1.语言
 - (void)setupLanguage {
     [EYLanguageTool setDefaultAppLanguage];
 }
 
-// 4.设置导航条
-- (void)setupGKNavigationBar {
+//2.初始化其他信息
+- (void)setupOtherInfo {
+    //2.1 键盘
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.shouldResignOnTouchOutside = YES; // 点击背景收起键盘，默认NO
+    manager.enableAutoToolbar = NO; // IQKeyboardManager提供的键盘上面默认会有“前一个”“后一个”“完成”这样的辅助按钮。如果你不需要，可以将这个enableAutoToolbar属性设置为NO，这样就不会显示了。默认YES
+    
+    //2.2 提示框
+    [EYProgressHUD setMinimumDismissTimeInterval:1.5];
+    [EYProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];//后面的大背景是透明色
+    //    [EYProgressHUD setInfoImage:[UIImage imageNamed:@""]];//提示的图片
+    //    [EYProgressHUD setImageViewSize:CGSizeMake(0, -1)];//提示的图片大小
+    [EYProgressHUD setBackgroundColor:EYColorRGBHexAlpha(0x000000, 0.5)];// 弹出框背景颜色
+    [EYProgressHUD setCornerRadius:5.0];
+    [EYProgressHUD setForegroundColor:EYColorWhite];//进度&文字颜色
+    [EYProgressHUD setFont:EYSizeFont14];//字体
+    [EYProgressHUD setRingThickness:3.0];// 进度条的宽度
+    
+    // 2.3 设置导航条
     GKNavigationBarConfigure *configure =  [GKNavigationBarConfigure sharedInstance];
     configure.backgroundColor = EYColorClear;
     configure.titleColor = EYColorWhite;
     configure.titleFont = EYSizeFont17;
     configure.backStyle = GKNavigationBarBackStyleWhite;
-}
-
-// 5.Bugly
-- (void)setupBugly {
-//    [Bugly startWithAppId:Bugly_APP_ID];
-}
-
-// 6.iflyMSC
-- (void)setupIflyMSC {
-//    [IFlyDebugLog setShowLog:NO];//关闭log
-//    [IFlySpeechUtility createUtility:[NSString stringWithFormat:@"appid=%@",IflyMSC_APP_ID]];
-}
-
-// 7.SDWebImage
-- (void)setupSDWebImage {
+    
+    // 2.4 Bugly
+    // [Bugly startWithAppId:Bugly_APP_ID];
+    
+    // 2.5 iflyMSC
+    //[IFlyDebugLog setShowLog:NO];//关闭log
+    //[IFlySpeechUtility createUtility:[NSString stringWithFormat:@"appid=%@",IflyMSC_APP_ID]];
+    
+    // 2.6 SDWebImage
     SDImageCacheConfig *imageCacheConfig = [SDImageCacheConfig defaultCacheConfig];
     //1.图片磁盘最大过期时间
     imageCacheConfig.maxDiskAge = 60 * 60 * 24 * 7;
@@ -142,16 +112,14 @@
     imageCacheConfig.maxMemoryCount = 20;
     // 最大内存消耗 50M
     imageCacheConfig.maxMemoryCost = 1024 * 1024 * 50;
-}
-
-// 8.腾讯独立播放器
-- (void)setupTXpPlayer {
+    
+    // 2.7 腾讯播放器
     // 设置LOG信息
     [TXLiveBase setLogLevel:LOGLEVEL_NULL];
     [TXLiveBase setConsoleEnabled:NO];
 }
 
-// 9.设置启动页面
+// 2.设置启动页面
 - (void)launchViewController {
 
     self.window = [[UIWindow alloc] initWithFrame:EYScreenBounds];
@@ -168,16 +136,6 @@
 
 #pragma mark - Public Methods
 #pragma mark - Private Methods
-// 初始化 app 语言环境
-- (void)setUpAppLanguage {
-    if ([EYUserDefaults stringForKey:EYAppLanguage].length == 0) {
-        NSString * language = NSLocale.preferredLanguages.firstObject;
-        if (![language hasPrefix:@"en"]) {
-            language = @"zh-Hans";
-        }
-        [EYUserDefaults setObject:language forKey:EYAppLanguage];
-    }
-}
 // AFN 的网络监控
 - (void)handleAFNetConnect {
     // 开启网络指示器
