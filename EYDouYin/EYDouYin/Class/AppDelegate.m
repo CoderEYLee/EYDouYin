@@ -37,8 +37,6 @@
     sleep(2);
 
     EYLog(@"AppDelegate--1111111--->程序启动了");
-    
-//    [self openAnimation];
 
     return YES;
 }
@@ -168,31 +166,6 @@
 
     // 开始监听
     [manager.reachabilityManager startMonitoring];
-}
-
-// 开机动画
--(void)openAnimation {
-    NSString *gifPath = [[NSBundle mainBundle] pathForResource:@"openAnimation" ofType:@"gif"];
-    UIImage *gif = [UIImage sd_imageWithGIFData:[NSData dataWithContentsOfFile:gifPath]];
-    UIImageView *gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
-    gifImageView.contentMode = UIViewContentModeScaleAspectFill;
-    gifImageView.image = gif;
-    [_window addSubview:gifImageView];
-
-    NSString *lastFramePath = [[NSBundle mainBundle] pathForResource:@"lastFrame" ofType:@"png"];
-    UIImage *lastFrame = [UIImage imageWithContentsOfFile:lastFramePath];
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        gifImageView.image = lastFrame;
-
-        [UIView animateWithDuration:1.0 animations:^{
-            gifImageView.center = self.window.center;
-            gifImageView.bounds = CGRectMake(0, 0, kScreenWidth*2, kScreenHeight*2);
-            gifImageView.alpha = 0.0;
-        } completion:^(BOOL finished) {
-            [gifImageView removeFromSuperview];
-        }];
-    });
 }
 
 // 收到内存警告

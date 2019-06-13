@@ -81,8 +81,6 @@
 		60C40091218C269C00B07E4A /* UIImageView+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */; };
 		60EBB269216DE0420016ED6D /* EYZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBB268216DE0420016ED6D /* EYZFPlayerControlView.m */; };
 		60EBB26C216DFC680016ED6D /* EYZFPortraitControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBB26B216DFC680016ED6D /* EYZFPortraitControlView.m */; };
-		60ED6DFA215F6DD600381DBD /* openAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60ED6DF9215F6DD600381DBD /* openAnimation.gif */; };
-		60ED6DFC215F6EBB00381DBD /* lastFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = 60ED6DFB215F6EBB00381DBD /* lastFrame.png */; };
 		60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77AB211F5239004133A6 /* EYFindTopView.m */; };
 		60EE77AF211F52A4004133A6 /* EYFindTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60EE77AE211F52A4004133A6 /* EYFindTopView.xib */; };
 		60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77B221201CE8004133A6 /* EYTestViewController.m */; };
@@ -256,8 +254,6 @@
 		60EBB268216DE0420016ED6D /* EYZFPlayerControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYZFPlayerControlView.m; sourceTree = "<group>"; };
 		60EBB26A216DFC680016ED6D /* EYZFPortraitControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYZFPortraitControlView.h; sourceTree = "<group>"; };
 		60EBB26B216DFC680016ED6D /* EYZFPortraitControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYZFPortraitControlView.m; sourceTree = "<group>"; };
-		60ED6DF9215F6DD600381DBD /* openAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = openAnimation.gif; sourceTree = "<group>"; };
-		60ED6DFB215F6EBB00381DBD /* lastFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lastFrame.png; sourceTree = "<group>"; };
 		60EE77AA211F5239004133A6 /* EYFindTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFindTopView.h; sourceTree = "<group>"; };
 		60EE77AB211F5239004133A6 /* EYFindTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFindTopView.m; sourceTree = "<group>"; };
 		60EE77AE211F52A4004133A6 /* EYFindTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYFindTopView.xib; sourceTree = "<group>"; };
@@ -454,8 +450,6 @@
 			isa = PBXGroup;
 			children = (
 				607541332104CC4C00EB258D /* Assets.xcassets */,
-				60ED6DF9215F6DD600381DBD /* openAnimation.gif */,
-				60ED6DFB215F6EBB00381DBD /* lastFrame.png */,
 				6000D871213D1CFB00491BB7 /* Localizable.strings */,
 			);
 			path = Resource;
@@ -964,10 +958,8 @@
 				60752B542186E205001B857C /* EYWaterFallViewController.xib in Resources */,
 				60EE77B82120282C004133A6 /* EYTestViewView.xib in Resources */,
 				60752B642186F230001B857C /* Shops.plist in Resources */,
-				60ED6DFA215F6DD600381DBD /* openAnimation.gif in Resources */,
 				6085A16021897A4B00637F31 /* EYWaterflowShopCell2.xib in Resources */,
 				6076A15D2148E097002ED551 /* ChinLab_en.json in Resources */,
-				60ED6DFC215F6EBB00381DBD /* lastFrame.png in Resources */,
 				60C4008B218BFCF000B07E4A /* EYCollectionArray.plist in Resources */,
 				60752B3C2181EC78001B857C /* EYMeViewControllerSourceArray.plist in Resources */,
 				607541342104CC4C00EB258D /* Assets.xcassets in Resources */,
