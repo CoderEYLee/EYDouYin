@@ -10,6 +10,7 @@
 #import "EYFindViewController.h"
 #import "EYTabBarController.h"
 #import "EYNavigationController.h"
+#import "EYHomeViewController.h"
 #import "EYMeViewController.h"
 
 @interface EYRootViewController () <UIScrollViewDelegate, GKViewControllerPushDelegate, EYTabBarControllerDelegate, UITabBarControllerDelegate>
@@ -49,7 +50,9 @@
 
 #pragma mark - GKViewControllerPushDelegate
 - (void)pushToNextViewController {
-//    [self.currentPlayViewController pausePlay];
+     EYHomeViewController *homeViewController = self.childViewControllers.firstObject.childViewControllers.firstObject.childViewControllers.firstObject;
+    NSString *video_id = homeViewController.currentPlayViewController.videoModel.video_id;
+    EYLog(@"123456==%@", video_id);
     
     EYMeViewController *vc = [[EYMeViewController alloc] init];
     vc.jumpType = EYJumpTypeHomeToMe;

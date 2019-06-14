@@ -24,8 +24,9 @@
 
 // 当前屏幕所处的下标
 @property (assign, nonatomic) NSUInteger currentVideoIndex;
+
 // 当前屏幕所属的控制器
-@property (weak, nonatomic) EYHomePlayViewController *currentPlayViewController;
+@property (weak, nonatomic, readwrite) EYHomePlayViewController *currentPlayViewController;
 
 @end
 
