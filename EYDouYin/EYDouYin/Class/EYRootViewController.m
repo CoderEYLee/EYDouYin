@@ -65,38 +65,6 @@
     }
 }
 
-#pragma mark - UIScrollViewDelegate
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    // EYLog(@"底部的 scrollView已经结束拖拽--");
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    CGFloat offsetX = scrollView.contentOffset.x;
-//     EYLog(@"底部的 scrollView已经滚动了--scrollView 的偏移位置%f", offsetX);
-}
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    if (!EYSCREENSIZE_IS_IPhoneX_All) {
-        [UIApplication sharedApplication].statusBarHidden = NO;
-    }
-}
-
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    // EYLog(@"底部的 scrollView将会开始减速==%@", NSStringFromCGPoint(scrollView.contentOffset));
-}
-
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    //EYLog(@"底部的 scrollView已经结束减速--%@", NSStringFromCGPoint(scrollView.contentOffset));
-    CGFloat x = scrollView.contentOffset.x;
-    if (x == EYScreenWidth) {
-        if (!EYSCREENSIZE_IS_IPhoneX_All) {
-            [UIApplication sharedApplication].statusBarHidden = YES;
-        }
-    } else {
-
-    }
-}
-
 - (void)dealloc {
     // 清空左滑代理
     self.gk_pushDelegate = nil;
