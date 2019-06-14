@@ -83,36 +83,6 @@
     
     //返回状态
     return YES;
-    
-//
-//    if (EYSCREENSIZE_IS_IPhoneX_All) {
-//        if (selectedIndex == EYTabBarViewTypePlus) {//弹出发布界面
-//            [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
-//        } else {
-//            self.selectedIndex = selectedIndex;
-//        }
-//    } else {
-//        EYNavigationController * homeNavi = self.viewControllers.firstObject;
-//        EYHomeViewController *homeVC = (EYHomeViewController *)homeNavi.viewControllers.firstObject;
-//
-//        if (selectedIndex == EYTabBarViewTypeHome) {
-//            if (!EYSCREENSIZE_IS_IPhoneX_All) {
-//                if (homeVC.type == EYHomeViewControllerButtonTypeRecommend) {
-//                    tabBarView.backgroundColor = [UIColor clearColor];
-//                } else {
-//                    tabBarView.backgroundColor = [UIColor blackColor];
-//                }
-//            }
-//            self.selectedIndex = selectedIndex;
-//        } else if (selectedIndex == EYTabBarViewTypePlus) {//弹出发布界面
-//            [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
-//        } else {//禁止滚动
-//            tabBarView.backgroundColor = [UIColor blackColor];
-//            self.selectedIndex = selectedIndex;
-//            [UIApplication sharedApplication].statusBarHidden = NO;
-//        }
-//    }
-//
 }
 
 #pragma mark - UITabBarDelegate
