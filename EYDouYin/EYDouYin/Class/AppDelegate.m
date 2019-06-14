@@ -68,7 +68,22 @@
     [EYLanguageTool setDefaultAppLanguage];
 }
 
-//2.初始化其他信息
+// 2.设置启动页面
+- (void)launchViewController {
+    
+    self.window = [[UIWindow alloc] initWithFrame:EYScreenBounds];
+    self.window.backgroundColor = EYColor2A2B33;
+    
+    EYRootViewController *rootVC= [[EYRootViewController alloc] init];
+    EYNavigationController *navi = [[EYNavigationController alloc] initWithRootViewController:rootVC];
+    navi.gk_openScrollLeftPush = YES;
+    
+    self.window.rootViewController = navi;
+    self.rootViewController = rootVC;
+    [self.window makeKeyAndVisible];
+}
+
+//3.初始化其他信息
 - (void)setupOtherInfo {
     //2.1 键盘
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
@@ -115,21 +130,6 @@
     // 设置LOG信息
     [TXLiveBase setLogLevel:LOGLEVEL_NULL];
     [TXLiveBase setConsoleEnabled:NO];
-}
-
-// 2.设置启动页面
-- (void)launchViewController {
-
-    self.window = [[UIWindow alloc] initWithFrame:EYScreenBounds];
-    self.window.backgroundColor = EYColor2A2B33;
-    
-    EYRootViewController *rootVC= [[EYRootViewController alloc] init];
-    EYNavigationController *navi = [[EYNavigationController alloc] initWithRootViewController:rootVC];
-    navi.gk_openScrollLeftPush = YES;
-    
-    self.window.rootViewController = navi;
-    self.rootViewController = rootVC;
-    [self.window makeKeyAndVisible];
 }
 
 #pragma mark - Public Methods
