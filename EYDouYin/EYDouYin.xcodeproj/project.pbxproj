@@ -69,6 +69,9 @@
 		6085A174218AA91600637F31 /* EYFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A173218AA91600637F31 /* EYFlowLayout.m */; };
 		608F940A218FEDF600AD00EB /* EYManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 608F9409218FEDF600AD00EB /* EYManager.m */; };
 		609C575822B257980010AF7D /* EYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 609C575722B257980010AF7D /* EYProgressHUD.m */; };
+		60AAFC7722B27DE600F30A9B /* sheet1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 60AAFC7622B27DE600F30A9B /* sheet1.xml */; };
+		60AAFC7C22B374E800F30A9B /* EYExcelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AAFC7B22B374E800F30A9B /* EYExcelTool.m */; };
+		60AAFC7F22B375C300F30A9B /* EYExcelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AAFC7E22B375C300F30A9B /* EYExcelModel.m */; };
 		60AFD6A8229292F1005C4742 /* EYLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AFD6A7229292F1005C4742 /* EYLanguageTool.m */; };
 		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
 		60BBC6892104D83400DEEA34 /* EYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6842104D83400DEEA34 /* EYNavigationController.m */; };
@@ -226,6 +229,11 @@
 		608F9409218FEDF600AD00EB /* EYManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYManager.m; sourceTree = "<group>"; };
 		609C575622B257980010AF7D /* EYProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYProgressHUD.h; sourceTree = "<group>"; };
 		609C575722B257980010AF7D /* EYProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYProgressHUD.m; sourceTree = "<group>"; };
+		60AAFC7622B27DE600F30A9B /* sheet1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = sheet1.xml; path = ../../../Resource/sheet1.xml; sourceTree = "<group>"; };
+		60AAFC7A22B374E800F30A9B /* EYExcelTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYExcelTool.h; sourceTree = "<group>"; };
+		60AAFC7B22B374E800F30A9B /* EYExcelTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYExcelTool.m; sourceTree = "<group>"; };
+		60AAFC7D22B375C300F30A9B /* EYExcelModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYExcelModel.h; sourceTree = "<group>"; };
+		60AAFC7E22B375C300F30A9B /* EYExcelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYExcelModel.m; sourceTree = "<group>"; };
 		60AFD696229244FD005C4742 /* EYDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYDefine.h; sourceTree = "<group>"; };
 		60AFD699229245A4005C4742 /* EYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCategory.h; sourceTree = "<group>"; };
 		60AFD69C229245FD005C4742 /* EYPods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPods.h; sourceTree = "<group>"; };
@@ -334,7 +342,6 @@
 				602A385F22A1141000D6DB0D /* PlayerViewController */,
 				602A385E22A113B700D6DB0D /* Work */,
 				602A385D22A1139700D6DB0D /* City */,
-				6076A1632148FA27002ED551 /* Model */,
 				60B2FAE1213915A00046D13D /* View */,
 			);
 			path = Home;
@@ -610,6 +617,7 @@
 		6075415E2104CCFF00EB258D /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				6076A1632148FA27002ED551 /* Model */,
 				601B03162104DDC900489E96 /* Find */,
 				601B031C21056DE400489E96 /* Home */,
 				601B031B21056DE400489E96 /* Like */,
@@ -633,6 +641,7 @@
 		607541602104CD6600EB258D /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				60AAFC7922B374CF00F30A9B /* Excel */,
 				602A386622A11F7900D6DB0D /* VideoPlayer */,
 				602DEE56229E56E5006B61A3 /* Language */,
 				602DEE58229E5723006B61A3 /* Notification */,
@@ -667,7 +676,8 @@
 				602A386322A11A4100D6DB0D /* EYVideoModel.h */,
 				602A386422A11A4100D6DB0D /* EYVideoModel.m */,
 			);
-			path = Model;
+			name = Model;
+			path = Home/Model;
 			sourceTree = "<group>";
 		};
 		6076A1752150CF5E002ED551 /* ThirdLib */ = {
@@ -708,6 +718,18 @@
 				609C575722B257980010AF7D /* EYProgressHUD.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		60AAFC7922B374CF00F30A9B /* Excel */ = {
+			isa = PBXGroup;
+			children = (
+				60AAFC7622B27DE600F30A9B /* sheet1.xml */,
+				60AAFC7A22B374E800F30A9B /* EYExcelTool.h */,
+				60AAFC7B22B374E800F30A9B /* EYExcelTool.m */,
+				60AAFC7D22B375C300F30A9B /* EYExcelModel.h */,
+				60AAFC7E22B375C300F30A9B /* EYExcelModel.m */,
+			);
+			path = Excel;
 			sourceTree = "<group>";
 		};
 		60AFD6A5229292D0005C4742 /* Manager */ = {
@@ -953,6 +975,7 @@
 				60EE77AF211F52A4004133A6 /* EYFindTopView.xib in Resources */,
 				6000D86F213D1CFB00491BB7 /* Localizable.strings in Resources */,
 				602A387122A12BCD00D6DB0D /* EYVideoArray.plist in Resources */,
+				60AAFC7722B27DE600F30A9B /* sheet1.xml in Resources */,
 				607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */,
 				60752B6D2186F49A001B857C /* EYShopCell.xib in Resources */,
 				60752B542186E205001B857C /* EYWaterFallViewController.xib in Resources */,
@@ -1052,6 +1075,7 @@
 				602A3839229FA8FB00D6DB0D /* EYFollowListViewController.m in Sources */,
 				60752B6C2186F49A001B857C /* EYShopCell.m in Sources */,
 				60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */,
+				60AAFC7C22B374E800F30A9B /* EYExcelTool.m in Sources */,
 				6085A174218AA91600637F31 /* EYFlowLayout.m in Sources */,
 				6012FD70215A36BF004A3083 /* UIView+EYCornerRadius.m in Sources */,
 				60752B682186F3CE001B857C /* EYShop.m in Sources */,
@@ -1081,6 +1105,7 @@
 				60C4008E218C1DB600B07E4A /* EYCollectionDetailViewController.m in Sources */,
 				6076A1792150CFD8002ED551 /* DispatchTimer.m in Sources */,
 				60C40091218C269C00B07E4A /* UIImageView+EYSDWebImage.m in Sources */,
+				60AAFC7F22B375C300F30A9B /* EYExcelModel.m in Sources */,
 				60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */,
 				60EBB269216DE0420016ED6D /* EYZFPlayerControlView.m in Sources */,
 				606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */,
