@@ -10,7 +10,6 @@
 #import "EYHomeCityViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "EYHomePlayViewController.h"
-#import "EYVideoModel.h"
 #import "EYMeViewController.h"
 
 @interface EYHomeViewController () <UIScrollViewDelegate>

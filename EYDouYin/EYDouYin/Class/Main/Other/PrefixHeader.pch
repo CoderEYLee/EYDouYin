@@ -17,7 +17,8 @@
 #import "EYSizeFontConstant.h"  //字体大小常量文件
 #import "EYConstant.h"          //常量文件
 #import "EYNotificationTool.h"  //通知文件
-#import "EYProgressHUD.h"
+#import "EYProgressHUD.h"       //提示框
+#import "EYVideoModel.h"        //视频模型
 
 #pragma mark - 项目通用文件
 #import "EYManager.h"

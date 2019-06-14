@@ -7,7 +7,6 @@
 //  视频流中每一个界面控制器
 
 #import "EYBaseViewController.h"
-#import "EYVideoModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
