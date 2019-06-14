@@ -102,13 +102,10 @@
 
 //2.添加通知
 - (void)addNotification {
-    //1.左滑手势
-    [EYNotificationTool ey_addEYScrollLeftPushNotificationObserver:self selector:@selector(receiveEYScrollLeftPushNotification:)];
-    
-    //3.程序变为活跃状态
+    //1.程序变为活跃状态
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
     
-    //3.程序进入后台
+    //2.程序进入后台
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
 }
 
@@ -169,16 +166,6 @@
 }
 
 #pragma mark - Notification
-- (void)receiveEYScrollLeftPushNotification:(NSNotification *)noti {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.currentPlayViewController pausePlay];
-        
-        EYMeViewController *vc = [[EYMeViewController alloc] init];
-        vc.jumpType = EYJumpTypeHomeToMe;
-        [self.navigationController pushViewController:vc animated:YES];
-    });
-}
-
 - (void)appDidBecomeActive:(NSNotification *)noti {
     EYLog(@"程序已经变成活跃状态");
     

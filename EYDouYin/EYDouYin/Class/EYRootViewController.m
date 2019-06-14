@@ -10,6 +10,7 @@
 #import "EYFindViewController.h"
 #import "EYTabBarController.h"
 #import "EYNavigationController.h"
+#import "EYMeViewController.h"
 
 @interface EYRootViewController () <UIScrollViewDelegate, GKViewControllerPushDelegate, EYTabBarControllerDelegate, UITabBarControllerDelegate>
 
@@ -48,9 +49,11 @@
 
 #pragma mark - GKViewControllerPushDelegate
 - (void)pushToNextViewController {
-    if (self.selecetdIndex == EYTabBarViewTypeHome) {
-        [EYNotificationTool ey_postEYScrollLeftPushNotificationUserInfo:nil];
-    }
+//    [self.currentPlayViewController pausePlay];
+    
+    EYMeViewController *vc = [[EYMeViewController alloc] init];
+    vc.jumpType = EYJumpTypeHomeToMe;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - EYTabBarControllerDelegate
