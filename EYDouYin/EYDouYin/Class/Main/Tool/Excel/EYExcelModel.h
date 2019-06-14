@@ -12,8 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EYExcelModel : NSObject
 
+/**
+ 名称
+ */
 @property (copy, nonatomic) NSString *tt_name;
 
+/**
+ 次数
+ */
 @property (copy, nonatomic) NSString *tt_count;
 
 @end

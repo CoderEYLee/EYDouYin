@@ -53,7 +53,6 @@
     EYLog(@"444444444444--->程序已经进入后台");
 }
 
-
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     EYLog(@"555555555555--->程序将会进入前台");
 }
@@ -132,7 +131,6 @@
     [TXLiveBase setConsoleEnabled:NO];
 }
 
-#pragma mark - Public Methods
 #pragma mark - Private Methods
 // AFN 的网络监控
 - (void)handleAFNetConnect {
@@ -183,11 +181,5 @@
         EYLog(@"收到内存警告清理磁盘缓存结束");
     }];
 }
-
-#pragma mark - Override Methods
-#pragma mark - Net Work
-#pragma mark - DataSource
-#pragma mark - Delegate
-#pragma mark - Getters & Setters
 
 @end

@@ -51,34 +51,34 @@
  
  @return 拼接后的完整路径
  */
-- (instancetype)insertImagePathString_normal;
+- (instancetype _Nonnull)insertImagePathString_normal;
 
 /**
  图片名称拼接成为完成路径(阿里云,缩略图)
  
  @return 拼接后的完整路径
  */
-- (instancetype)insertImagePathString_thumbnail;
+- (instancetype _Nonnull)insertImagePathString_thumbnail;
 
 /**
  拼接Document路径
  
  @return 拼接后的完整路径
  */
-- (instancetype)insertDocumentPathString;
+- (instancetype _Nonnull)insertDocumentPathString;
 
 /**
  将文件名前插入对应的路径
  
  @return 拼接后的完整路径
  */
-- (instancetype)insertTempPathString;
+- (instancetype _Nonnull)insertTempPathString;
 
 /**
  将视频拼接对应路径后,再拼接路径
  
  @return 返回视频首帧的图片地址
  */
-- (instancetype)firstImageFromVideo;
+- (instancetype _Nonnull)firstImageFromVideo;
 
 @end

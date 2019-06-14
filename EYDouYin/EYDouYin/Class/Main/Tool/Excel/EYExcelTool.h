@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
   开始解析 Excel
  */
-- (void)startParseExcel;
++ (void)startParseExcel;
 
 @end
 
