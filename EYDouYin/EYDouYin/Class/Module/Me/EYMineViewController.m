@@ -19,7 +19,7 @@
 
 @implementation EYMineViewController
 //背景图的最大高度
-const CGFloat EYBackImageViewHeight = 250;
+const CGFloat EYBackImageViewHeight = 300;
 static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 - (void)viewDidLoad {
@@ -64,7 +64,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         } else {
             self.automaticallyAdjustsScrollViewInsets = NO;
         }
-        tableView.contentInset = UIEdgeInsetsMake(EYBackImageViewHeight * 0.5, 0, 0, 0);
+        tableView.contentInset = UIEdgeInsetsMake(EYBackImageViewHeight * 0.4, 0, 0, 0);
         [self.view addSubview:tableView];
         self.tableView = tableView;
         
@@ -110,17 +110,15 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // 向下拽了多少距离
     CGFloat contentOffsetY = -scrollView.contentOffset.y;
-    if (contentOffsetY <= EYBackImageViewHeight * 0.5) {//起始位置
+    if (contentOffsetY <= EYBackImageViewHeight * 0.4) {//起始位置
         EYLog(@"起始位置==%f", contentOffsetY);
-//        self.backImageView.frame = CGRectMake(0, 0, EYScreenWidth, EYBackImageViewHeight);
+        self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth, EYBackImageViewHeight);
     } else if (contentOffsetY >= EYBackImageViewHeight) {//向下拽的最大位置
         scrollView.contentOffset = CGPointMake(0, -EYBackImageViewHeight);
-        CGFloat scale = EYBackImageViewHeight * 0.4;
-        EYLog(@"向下拽的最大位置==%f==%f", contentOffsetY, scale);
-//        self.backImageView.frame = CGRectMake(-scale * 0.5, 0, EYScreenWidth + scale, EYBackImageViewHeight + scale);
+        CGFloat scale = 0.3;
+        self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth * (1 + scale), EYBackImageViewHeight * (1 + scale));
     } else {//需要放大图片
-        CGFloat scale = (1 - (EYBackImageViewHeight - contentOffsetY) / (EYBackImageViewHeight * 0.5)) * 0.4;
-//        self.backImageView.center = CGPointMake(EYScreenWidth * 0.5, 0);
+        CGFloat scale = (1 - (EYBackImageViewHeight - contentOffsetY) / (EYBackImageViewHeight * 0.6)) * 0.3;
         self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth * (1 + scale), EYBackImageViewHeight * (1 + scale));
     }
 }
