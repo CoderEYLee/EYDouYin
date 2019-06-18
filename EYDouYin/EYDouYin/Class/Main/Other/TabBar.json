@@ -20,7 +20,7 @@
     "needNavi" : 1
   },
   {
-    "className" : "EYMeViewController",
+    "className" : "EYMineViewController",
     "title"     : "我",
     "needNavi" : 1
   }

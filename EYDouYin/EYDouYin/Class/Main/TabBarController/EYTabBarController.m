@@ -10,8 +10,6 @@
 #import "EYHomeViewController.h"
 #import "EYFollowViewController.h"
 #import "EYSendViewController.h"
-#import "EYMessageViewController.h"
-#import "EYMeViewController.h"
 #import "EYNavigationController.h"
 #import "EYRootViewController.h"
 

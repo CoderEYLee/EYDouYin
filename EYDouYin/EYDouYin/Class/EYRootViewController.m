@@ -11,7 +11,7 @@
 #import "EYTabBarController.h"
 #import "EYNavigationController.h"
 #import "EYHomeViewController.h"
-#import "EYMeViewController.h"
+#import "EYMineViewController.h"
 
 @interface EYRootViewController () <UIScrollViewDelegate, GKViewControllerPushDelegate, EYTabBarControllerDelegate, UITabBarControllerDelegate>
 
@@ -54,7 +54,7 @@
     NSString *video_id = homeViewController.currentPlayViewController.videoModel.video_id;
     EYLog(@"123456==%@", video_id);
     
-    EYMeViewController *vc = [[EYMeViewController alloc] init];
+    EYMineViewController *vc = [[EYMineViewController alloc] init];
     vc.jumpType = EYJumpTypeHomeToMe;
     [self.navigationController pushViewController:vc animated:YES];
 }
