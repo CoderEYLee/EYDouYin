@@ -12,8 +12,6 @@
 #import <AFNetworkActivityIndicatorManager.h>
 #import "EYRootViewController.h"
 
-//#import <AVKit/AVKit.h>
-
 @interface AppDelegate ()
 
 @property (weak, nonatomic, readwrite) EYRootViewController *rootViewController;

@@ -28,6 +28,7 @@
 		6055AD3C2116B382005DC856 /* TabBar.json in Resources */ = {isa = PBXBuildFile; fileRef = 6055AD3B2116B382005DC856 /* TabBar.json */; };
 		6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD3E2116B929005DC856 /* NSString+EYExtension.m */; };
 		6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD412116CD21005DC856 /* EYTabBarView.m */; };
+		605EECAE22B8E34B0001610D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605EECAD22B8E34B0001610D /* File.swift */; };
 		606B658A219182130059D1F7 /* UIButton+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */; };
 		606B658D2191883B0059D1F7 /* UIImage+EYAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B658C2191883B0059D1F7 /* UIImage+EYAddition.m */; };
 		606B6590219189310059D1F7 /* UIButton+EYAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B658F219189310059D1F7 /* UIButton+EYAddition.m */; };
@@ -152,6 +153,7 @@
 		6055AD3E2116B929005DC856 /* NSString+EYExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+EYExtension.m"; sourceTree = "<group>"; };
 		6055AD402116CD21005DC856 /* EYTabBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYTabBarView.h; sourceTree = "<group>"; };
 		6055AD412116CD21005DC856 /* EYTabBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYTabBarView.m; sourceTree = "<group>"; };
+		605EECAD22B8E34B0001610D /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		606B6588219182130059D1F7 /* UIButton+EYSDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+EYSDWebImage.h"; sourceTree = "<group>"; };
 		606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EYSDWebImage.m"; sourceTree = "<group>"; };
 		606B658B2191883B0059D1F7 /* UIImage+EYAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EYAddition.h"; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				60752B482186A37A001B857C /* iOS锁使用 */,
 				60752B4C2186DFC2001B857C /* 瀑布流 */,
 				6085A1612189A81100637F31 /* UICollectionView 其他布局使用 */,
+				605EECAC22B8E08D0001610D /* 微博首页(Swift) */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -460,6 +463,14 @@
 				6000D871213D1CFB00491BB7 /* Localizable.strings */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		605EECAC22B8E08D0001610D /* 微博首页(Swift) */ = {
+			isa = PBXGroup;
+			children = (
+				605EECAD22B8E34B0001610D /* File.swift */,
+			);
+			path = "微博首页(Swift)";
 			sourceTree = "<group>";
 		};
 		60752B3F2182C500001B857C /* SJVideoPlayer使用 */ = {
@@ -1087,6 +1098,7 @@
 				6085A1672189A94900637F31 /* EYCircleLayout.m in Sources */,
 				606E6FAA21284FF400ABEB83 /* EYBaseCollectionViewController.m in Sources */,
 				606B658D2191883B0059D1F7 /* UIImage+EYAddition.m in Sources */,
+				605EECAE22B8E34B0001610D /* File.swift in Sources */,
 				601B03192104DDED00489E96 /* EYFindViewController.m in Sources */,
 				6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */,
 				602DEE5B229E5756006B61A3 /* EYNotificationTool.m in Sources */,
@@ -1344,6 +1356,7 @@
 		607541572104CC4C00EB258D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PYJ3M9TJFN;
@@ -1363,6 +1376,7 @@
 		607541582104CC4C00EB258D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PYJ3M9TJFN;
@@ -1382,6 +1396,7 @@
 		6075415A2104CC4C00EB258D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PYJ3M9TJFN;
 				INFOPLIST_FILE = EYDouYinUITests/Info.plist;
@@ -1400,6 +1415,7 @@
 		6075415B2104CC4C00EB258D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PYJ3M9TJFN;
 				INFOPLIST_FILE = EYDouYinUITests/Info.plist;

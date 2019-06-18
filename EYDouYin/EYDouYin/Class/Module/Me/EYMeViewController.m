@@ -33,7 +33,6 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
 
 //1. 初始化界面
 - (void)setupUI {
-//    self.navigationController.navigationBar.backgroundColor = EYColorClear;
     //1.隐藏分割线
     self.gk_navLineHidden = YES;
     self.gk_navTitle = @"我的";
