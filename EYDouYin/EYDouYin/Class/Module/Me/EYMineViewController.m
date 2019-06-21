@@ -32,10 +32,13 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 //1. 初始化界面
 - (void)setupUI {
     //1.隐藏分割线
-    self.gk_navLineHidden = YES;
+//    self.gk_navLineHidden = YES;
 //    self.gk_navTitle = @"我的";
     
     if (self.jumpType == EYJumpTypeDefault) {
+        //1.隐藏导航
+        self.gk_navigationBar.hidden = YES;
+        
         //背景图片(放大)
         UIImageView *backImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewHeight * 0.5)];
         backImageView.image = [UIImage imageNamed:@"common_placeholder_mine"];
@@ -73,10 +76,40 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         bottomView.backgroundColor = EYColorBlack;
         [self.view addSubview:bottomView];
     } else {
+        //1.隐藏导航
+        self.gk_navigationBar.hidden = NO;
+        
+        //背景图片(放大)
+        UIImageView *backImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewHeight * 0.5)];
+        backImageView.image = [UIImage imageNamed:@"common_placeholder_mine"];
+        backImageView.contentMode = UIViewContentModeScaleAspectFill;
+        backImageView.layer.anchorPoint = CGPointMake(0.5, 0);
+        backImageView.center = CGPointMake(EYScreenWidth * 0.5, 0);
+        backImageView.size = CGSizeMake(EYScreenWidth, EYBackImageViewHeight);
+        [self.view addSubview:backImageView];
+        self.backImageView = backImageView;
+        
         //2.UITableView
-        UITableView *tabelView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYScreenHeight - EYTabBarHomeIndicatorHeight) style:UITableViewStyleGrouped];
-        [self.view addSubview:tabelView];
-        self.tableView = tabelView;
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYScreenHeight) style:UITableViewStylePlain];
+        tableView.showsHorizontalScrollIndicator = NO;
+        tableView.showsVerticalScrollIndicator = YES;
+        tableView.dataSource = self;
+        tableView.delegate = self;
+        //背景颜色
+        tableView.backgroundColor = EYColorClear;
+        //取消分割线
+        tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        tableView.estimatedRowHeight = 100;
+        // 设置偏移量为0
+        if (@available(iOS 11.0, *)) {
+            tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
+        tableView.contentInset = UIEdgeInsetsMake(EYBackImageViewHeight * 0.4, 0, 0, 0);
+        [self.view addSubview:tableView];
+        self.tableView = tableView;
     }
 }
 
