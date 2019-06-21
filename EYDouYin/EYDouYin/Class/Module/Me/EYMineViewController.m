@@ -37,7 +37,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     
     if (self.jumpType == EYJumpTypeDefault) {
         //背景图片(放大)
-        UIImageView *backImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewHeight)];
+        UIImageView *backImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewHeight * 0.5)];
         backImageView.image = [UIImage imageNamed:@"common_placeholder_mine"];
         backImageView.contentMode = UIViewContentModeScaleAspectFill;
         backImageView.layer.anchorPoint = CGPointMake(0.5, 0);
@@ -111,14 +111,13 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     // 向下拽了多少距离
     CGFloat contentOffsetY = -scrollView.contentOffset.y;
     if (contentOffsetY <= EYBackImageViewHeight * 0.4) {//起始位置
-        EYLog(@"起始位置==%f", contentOffsetY);
         self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth, EYBackImageViewHeight);
     } else if (contentOffsetY >= EYBackImageViewHeight) {//向下拽的最大位置
         scrollView.contentOffset = CGPointMake(0, -EYBackImageViewHeight);
-        CGFloat scale = 0.3;
+        CGFloat scale = 0.2;
         self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth * (1 + scale), EYBackImageViewHeight * (1 + scale));
     } else {//需要放大图片
-        CGFloat scale = (1 - (EYBackImageViewHeight - contentOffsetY) / (EYBackImageViewHeight * 0.6)) * 0.3;
+        CGFloat scale = (1 - (EYBackImageViewHeight - contentOffsetY) / (EYBackImageViewHeight * 0.6)) * 0.2;
         self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth * (1 + scale), EYBackImageViewHeight * (1 + scale));
     }
 }
