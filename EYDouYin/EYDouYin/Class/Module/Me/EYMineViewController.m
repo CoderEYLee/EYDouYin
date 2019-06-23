@@ -19,7 +19,7 @@
 
 @implementation EYMineViewController
 //背景图的最大高度
-const CGFloat EYBackImageViewHeight = 300;
+const CGFloat EYBackImageViewHeight = 310;
 static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 - (void)viewDidLoad {
@@ -40,9 +40,9 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         self.gk_navigationBar.hidden = YES;
         
         //背景图片(放大)
-        UIImageView *backImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewHeight * 0.5)];
+        UIImageView *backImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewHeight)];
         backImageView.image = [UIImage imageNamed:@"common_placeholder_mine"];
-        backImageView.contentMode = UIViewContentModeScaleAspectFill;
+        backImageView.contentMode = UIViewContentModeScaleAspectFit;
         backImageView.layer.anchorPoint = CGPointMake(0.5, 0);
         backImageView.center = CGPointMake(EYScreenWidth * 0.5, 0);
         backImageView.size = CGSizeMake(EYScreenWidth, EYBackImageViewHeight);
@@ -67,7 +67,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         } else {
             self.automaticallyAdjustsScrollViewInsets = NO;
         }
-        tableView.contentInset = UIEdgeInsetsMake(EYBackImageViewHeight * 0.4, 0, 0, 0);
+        tableView.contentInset = UIEdgeInsetsMake(EYBackImageViewHeight * 0.6, 0, 0, 0);
         [self.view addSubview:tableView];
         self.tableView = tableView;
         
@@ -82,7 +82,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         //背景图片(放大)
         UIImageView *backImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewHeight * 0.5)];
         backImageView.image = [UIImage imageNamed:@"common_placeholder_mine"];
-        backImageView.contentMode = UIViewContentModeScaleAspectFill;
+        backImageView.contentMode = UIViewContentModeScaleAspectFit;
         backImageView.layer.anchorPoint = CGPointMake(0.5, 0);
         backImageView.center = CGPointMake(EYScreenWidth * 0.5, 0);
         backImageView.size = CGSizeMake(EYScreenWidth, EYBackImageViewHeight);
@@ -107,7 +107,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         } else {
             self.automaticallyAdjustsScrollViewInsets = NO;
         }
-        tableView.contentInset = UIEdgeInsetsMake(EYBackImageViewHeight * 0.4, 0, 0, 0);
+        tableView.contentInset = UIEdgeInsetsMake(EYBackImageViewHeight * 0.6, 0, 0, 0);
         [self.view addSubview:tableView];
         self.tableView = tableView;
     }
@@ -143,14 +143,14 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // 向下拽了多少距离
     CGFloat contentOffsetY = -scrollView.contentOffset.y;
-    if (contentOffsetY <= EYBackImageViewHeight * 0.4) {//起始位置
+    if (contentOffsetY <= EYBackImageViewHeight * 0.6) {//起始位置
         self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth, EYBackImageViewHeight);
     } else if (contentOffsetY >= EYBackImageViewHeight) {//向下拽的最大位置
         scrollView.contentOffset = CGPointMake(0, -EYBackImageViewHeight);
         CGFloat scale = 0.2;
         self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth * (1 + scale), EYBackImageViewHeight * (1 + scale));
     } else {//需要放大图片
-        CGFloat scale = (1 - (EYBackImageViewHeight - contentOffsetY) / (EYBackImageViewHeight * 0.6)) * 0.2;
+        CGFloat scale = (1 - (EYBackImageViewHeight - contentOffsetY) / (EYBackImageViewHeight * 0.4)) * 0.2;
         self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth * (1 + scale), EYBackImageViewHeight * (1 + scale));
     }
 }
