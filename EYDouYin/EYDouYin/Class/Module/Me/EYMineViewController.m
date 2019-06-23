@@ -40,6 +40,10 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     if (self.jumpType == EYJumpTypeDefault) {
         //1.隐藏导航
         self.gk_navigationBar.hidden = YES;
+        //1.1 顶部视图
+        UIButton *settingButton = [[UIButton alloc] initWithFrame:CGRectMake(EYScreenWidth - 64, EYStatusBarHeight, 44, 44)];
+        settingButton.backgroundColor = EYColorRandom;
+        [self.view addSubview:settingButton];
         
         //4.底部 view
         UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, EYScreenHeight - EYTabBarHomeIndicatorHeight, EYScreenWidth, EYTabBarHomeIndicatorHeight)];
@@ -56,7 +60,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     backImageView.contentMode = UIViewContentModeScaleAspectFit;
     backImageView.layer.anchorPoint = CGPointMake(0.5, 0);
     backImageView.center = CGPointMake(EYScreenWidth * 0.5, 0);
-    [self.view addSubview:backImageView];
+    [self.view insertSubview:backImageView atIndex:0];
     self.backImageView = backImageView;
     
     //3.UITableView
@@ -82,7 +86,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     tableView.contentInset = UIEdgeInsetsMake(EYBackImageViewRealHeight * EYBackImageViewBeginScale, 0, 0, 0);
-    [self.view addSubview:tableView];
+    [self.view insertSubview:tableView aboveSubview:backImageView];
     self.tableView = tableView;
 }
 
