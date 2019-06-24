@@ -33,11 +33,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 //1. 初始化界面
 - (void)setupUI {
-    //1.隐藏分割线
-//
-//    self.gk_navTitle = @"我的";
-    
-    if (self.jumpType == EYJumpTypeDefault) {
+    if (self.jumpType == EYJumpTypeDefault) {//自己的界面
         //1.隐藏导航
         self.gk_navigationBar.hidden = YES;
         //1.1 顶部视图
@@ -60,6 +56,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     backImageView.contentMode = UIViewContentModeScaleAspectFit;
     backImageView.layer.anchorPoint = CGPointMake(0.5, 0);
     backImageView.center = CGPointMake(EYScreenWidth * 0.5, 0);
+    backImageView.size = CGSizeMake(EYScreenWidth, EYBackImageViewRealHeight);
     [self.view insertSubview:backImageView atIndex:0];
     self.backImageView = backImageView;
     
@@ -118,17 +115,33 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    // 向下拽了多少距离
-    CGFloat contentOffsetY = -scrollView.contentOffset.y;
-    if (contentOffsetY <= EYBackImageViewRealHeight * EYBackImageViewBeginScale) {//起始位置
+    //偏移量
+    CGFloat contentOffsetY = scrollView.contentOffset.y;
+    
+    // 1.背景图放大效果
+    CGFloat distance = -contentOffsetY;
+    if (distance <= EYBackImageViewRealHeight * EYBackImageViewBeginScale) {//起始位置
         self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth, EYBackImageViewRealHeight);
-    } else if (contentOffsetY >= EYBackImageViewRealHeight) {//向下拽的最大位置
+    } else if (distance >= EYBackImageViewRealHeight) {//向下拽的最大位置
         scrollView.contentOffset = CGPointMake(0, -EYBackImageViewRealHeight);
         CGFloat scale = 0.2;
         self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth * (1 + scale), EYBackImageViewRealHeight * (1 + scale));
     } else {//需要放大图片
-        CGFloat scale = (1 - (EYBackImageViewRealHeight - contentOffsetY) / (EYBackImageViewRealHeight * (1 - EYBackImageViewBeginScale))) * 0.2;
+        CGFloat scale = (1 - (EYBackImageViewRealHeight - distance) / (EYBackImageViewRealHeight * (1 - EYBackImageViewBeginScale))) * 0.2;
         self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth * (1 + scale), EYBackImageViewRealHeight * (1 + scale));
+    }
+    
+    EYLog(@"00000000000==%f", contentOffsetY);
+    //2.导航栏的颜色变化
+    if (contentOffsetY < 100) {//0
+        EYLog(@"111111111111");
+        self.gk_navBarAlpha = 0.0;
+    } else if (contentOffsetY >= 100 && contentOffsetY <= 200) {
+        EYLog(@"222222222222");
+        self.gk_navBarAlpha = 0.5;
+    } else {//1
+        EYLog(@"333333333333");
+        self.gk_navBarAlpha = 1.0;
     }
 }
 
