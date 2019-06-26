@@ -50,13 +50,15 @@
 
 #pragma mark - GKViewControllerPushDelegate
 - (void)pushToNextViewController {
-     EYHomeViewController *homeViewController = self.childViewControllers.firstObject.childViewControllers.firstObject.childViewControllers.firstObject;
-    NSString *video_id = homeViewController.currentPlayViewController.videoModel.video_id;
-    EYLog(@"123456==%@", video_id);
-    
-    EYMineViewController *vc = [[EYMineViewController alloc] init];
-    vc.jumpType = EYJumpTypeHomeToMe;
-    [self.navigationController pushViewController:vc animated:YES];
+    if (self.selecetdIndex == EYTabBarViewTypeHome) {
+        EYHomeViewController *homeViewController = self.childViewControllers.firstObject.childViewControllers.firstObject.childViewControllers.firstObject;
+        NSString *video_id = homeViewController.currentPlayViewController.videoModel.video_id;
+        EYLog(@"123456==%@", video_id);
+        
+        EYMineViewController *vc = [[EYMineViewController alloc] init];
+        vc.jumpType = EYJumpTypeHomeToMe;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 #pragma mark - EYTabBarControllerDelegate
