@@ -7,6 +7,8 @@
 //
 
 #import "EYMineViewController.h"
+#import "EYMineCell.h"
+#import "EYMeViewController.h"
 
 @interface EYMineViewController() <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 
@@ -39,6 +41,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         //1.1 顶部视图
         UIButton *settingButton = [[UIButton alloc] initWithFrame:CGRectMake(EYScreenWidth - 64, EYStatusBarHeight, 44, 44)];
         settingButton.backgroundColor = EYColorRandom;
+        [settingButton addTarget:self action:@selector(trapSettingButton:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:settingButton];
         
         //4.底部 view
@@ -76,6 +79,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     tableView.rowHeight = UITableViewAutomaticDimension;
     tableView.estimatedRowHeight = 100;
+    [tableView registerClass:[EYMineCell class] forCellReuseIdentifier:EYMineViewControllerCellID];
     // 设置偏移量为0
     if (@available(iOS 11.0, *)) {
         tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -85,6 +89,12 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     tableView.contentInset = UIEdgeInsetsMake(EYBackImageViewRealHeight * EYBackImageViewBeginScale, 0, 0, 0);
     [self.view insertSubview:tableView aboveSubview:backImageView];
     self.tableView = tableView;
+}
+
+#pragma mark - Private Methods
+- (void)trapSettingButton:(UIButton *)button {
+    EYMeViewController *vc = [[EYMeViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - UITableViewDataSource
@@ -98,12 +108,6 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:EYMineViewControllerCellID];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:EYMineViewControllerCellID];
-    }
-    
-    cell.backgroundColor = EYColorRandom;
     
     return cell;
 }

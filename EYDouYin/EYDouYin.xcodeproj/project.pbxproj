@@ -17,6 +17,7 @@
 		601B032821056E6900489E96 /* EYFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032721056E6900489E96 /* EYFollowViewController.m */; };
 		601B032B21056E7700489E96 /* EYMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032A21056E7700489E96 /* EYMeViewController.m */; };
 		601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032D21056E8600489E96 /* EYMessageViewController.m */; };
+		6026FA5122C07DE200C7F18B /* EYMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6026FA5022C07DE100C7F18B /* EYMineCell.m */; };
 		602A3839229FA8FB00D6DB0D /* EYFollowListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A3838229FA8FB00D6DB0D /* EYFollowListViewController.m */; };
 		602A383C229FA91A00D6DB0D /* EYFollowFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A383B229FA91A00D6DB0D /* EYFollowFriendViewController.m */; };
 		602A386222A1143400D6DB0D /* EYHomePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A386122A1143400D6DB0D /* EYHomePlayViewController.m */; };
@@ -134,6 +135,8 @@
 		601B032A21056E7700489E96 /* EYMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMeViewController.m; sourceTree = "<group>"; };
 		601B032C21056E8600489E96 /* EYMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMessageViewController.h; sourceTree = "<group>"; };
 		601B032D21056E8600489E96 /* EYMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMessageViewController.m; sourceTree = "<group>"; };
+		6026FA4F22C07DE100C7F18B /* EYMineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMineCell.h; sourceTree = "<group>"; };
+		6026FA5022C07DE100C7F18B /* EYMineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMineCell.m; sourceTree = "<group>"; };
 		602A3837229FA8FB00D6DB0D /* EYFollowListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFollowListViewController.h; sourceTree = "<group>"; };
 		602A3838229FA8FB00D6DB0D /* EYFollowListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFollowListViewController.m; sourceTree = "<group>"; };
 		602A383A229FA91A00D6DB0D /* EYFollowFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFollowFriendViewController.h; sourceTree = "<group>"; };
@@ -357,6 +360,8 @@
 			children = (
 				605EECAF22B8E3B80001610D /* EYMineViewController.h */,
 				605EECB022B8E3B80001610D /* EYMineViewController.m */,
+				6026FA4F22C07DE100C7F18B /* EYMineCell.h */,
+				6026FA5022C07DE100C7F18B /* EYMineCell.m */,
 				601B032921056E7700489E96 /* EYMeViewController.h */,
 				601B032A21056E7700489E96 /* EYMeViewController.m */,
 				60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */,
@@ -1072,6 +1077,7 @@
 				601B032B21056E7700489E96 /* EYMeViewController.m in Sources */,
 				60EE77BF21204188004133A6 /* NSObject+EYRuntime.m in Sources */,
 				60752B532186E205001B857C /* EYWaterFallViewController.m in Sources */,
+				6026FA5122C07DE200C7F18B /* EYMineCell.m in Sources */,
 				60C40089218BFB9B00B07E4A /* EYCollectionViewController.m in Sources */,
 				60EE77B62120217D004133A6 /* UIBarButtonItem+EYExtension.m in Sources */,
 				60752B422182C533001B857C /* EYSJVideoPlayerViewController.m in Sources */,
