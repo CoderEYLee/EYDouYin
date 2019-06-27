@@ -48,8 +48,6 @@
     return UIInterfaceOrientationMaskPortrait;
 }
 
-#pragma mark - 懒加载
-
 #pragma mark - GKViewControllerPushDelegate
 - (void)pushToNextViewController {
     if (self.selecetdIndex == EYTabBarViewTypeHome) {

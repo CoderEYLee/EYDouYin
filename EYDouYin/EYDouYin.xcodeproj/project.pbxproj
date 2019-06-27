@@ -311,6 +311,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		600CE7EF22C5279A00DF6751 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				601B032921056E7700489E96 /* EYMeViewController.h */,
+				601B032A21056E7700489E96 /* EYMeViewController.m */,
+				60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */,
+				60C40086218BFB2200B07E4A /* Collection */,
+				60752B3F2182C500001B857C /* SJVideoPlayer使用 */,
+				60752B4421832233001B857C /* ZFPlayer使用 */,
+				60752B482186A37A001B857C /* iOS锁使用 */,
+				60752B4C2186DFC2001B857C /* 瀑布流 */,
+				6085A1612189A81100637F31 /* UICollectionView 其他布局使用 */,
+				605EECAC22B8E08D0001610D /* 微博首页(Swift) */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		601815BD229BB90E006598F6 /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,16 +379,7 @@
 				605EECB022B8E3B80001610D /* EYMineViewController.m */,
 				6026FA4F22C07DE100C7F18B /* EYMineCell.h */,
 				6026FA5022C07DE100C7F18B /* EYMineCell.m */,
-				601B032921056E7700489E96 /* EYMeViewController.h */,
-				601B032A21056E7700489E96 /* EYMeViewController.m */,
-				60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */,
-				60C40086218BFB2200B07E4A /* Collection */,
-				60752B3F2182C500001B857C /* SJVideoPlayer使用 */,
-				60752B4421832233001B857C /* ZFPlayer使用 */,
-				60752B482186A37A001B857C /* iOS锁使用 */,
-				60752B4C2186DFC2001B857C /* 瀑布流 */,
-				6085A1612189A81100637F31 /* UICollectionView 其他布局使用 */,
-				605EECAC22B8E08D0001610D /* 微博首页(Swift) */,
+				600CE7EF22C5279A00DF6751 /* Setting */,
 			);
 			path = Me;
 			sourceTree = "<group>";
