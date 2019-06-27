@@ -14,8 +14,6 @@
 
 @interface AppDelegate ()
 
-@property (weak, nonatomic, readwrite) EYRootViewController *rootViewController;
-
 @end
 
 @implementation AppDelegate
@@ -76,7 +74,6 @@
     navi.gk_openScrollLeftPush = YES;
     
     self.window.rootViewController = navi;
-    self.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
 }
 
@@ -153,7 +150,7 @@
             case AFNetworkReachabilityStatusReachableViaWWAN:
             case AFNetworkReachabilityStatusReachableViaWiFi: {
                 [operationQueue setSuspended:NO];   //恢复所有的网络请求
-                NSLog(@"有网络");
+                EYLog(@"有网络");
                 break;
             }
             default: break;
