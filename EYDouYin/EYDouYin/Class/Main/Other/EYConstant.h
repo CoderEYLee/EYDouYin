@@ -12,7 +12,15 @@
 
 typedef NS_ENUM(NSInteger, EYJumpType) {
     EYJumpTypeDefault,      // 默认值
-    EYJumpTypeHomeToMe,     // 首页->我的
+    
+    #pragma mark - 界面上的按钮
+    
+    
+    #pragma mark - 跳转方式
+    //其他地方--->首页
+    
+    //其他地方--->我的
+    EYJumpTypeHomeToMe,     // 首页--->我的
 };
 
 #pragma mark - 阿里云
