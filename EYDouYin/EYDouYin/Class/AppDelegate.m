@@ -96,11 +96,18 @@
     [EYProgressHUD setRingThickness:3.0];// 进度条的宽度
     
     // 2.3 设置导航条
-    GKNavigationBarConfigure *configure =  [GKNavigationBarConfigure sharedInstance];
-    configure.backgroundColor = EYColorClear;
-    configure.titleColor = EYColorWhite;
-    configure.titleFont = EYSizeFont17;
-    configure.backStyle = GKNavigationBarBackStyleWhite;
+    [[GKNavigationBarConfigure sharedInstance] setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
+        configure.backgroundColor = EYColorClear;
+        configure.titleColor = EYColorWhite;
+        configure.titleFont = EYSizeFont17;
+        configure.backStyle = GKNavigationBarBackStyleWhite;
+        
+        configure.gk_translationX = 15;
+        configure.gk_translationY = 20;
+        configure.gk_scaleX = 0.90;
+        configure.gk_scaleY = 0.92;
+        configure.gk_disableFixSpaceClassNames = @[@"TZImagePickerController", @"UIImagePickerController"];
+    }];
     
     // 2.4 Bugly
     // [Bugly startWithAppId:Bugly_APP_ID];

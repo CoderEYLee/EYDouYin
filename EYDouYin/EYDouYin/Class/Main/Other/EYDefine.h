@@ -40,21 +40,32 @@
 #define EYSCREENSIZE_IS_55  (EYUI_IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 736.0 || [[UIScreen mainScreen] bounds].size.width == 736.0)
 
 //判断iPHoneXR
-#define EYSCREENSIZE_IS_XR ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) && !EYUI_IS_IPAD : NO)
+#define EYSCREENSIZE_IS_XR ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) && EYUI_IS_IPHONE : NO)
 
 //判断iPHoneX或者iPHoneXs
-#define EYSCREENSIZE_IS_X ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) && !EYUI_IS_IPAD : NO)
+#define EYSCREENSIZE_IS_X ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) && EYUI_IS_IPHONE : NO)
 
 //判断iPhoneXs Max
-#define EYSCREENSIZE_IS_XS_MAX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) && !EYUI_IS_IPAD : NO)
-//判断X系列
-#define EYSCREENSIZE_IS_IPhoneX_All (EYSCREENSIZE_IS_XR || EYSCREENSIZE_IS_X || EYSCREENSIZE_IS_XS_MAX)
+#define EYSCREENSIZE_IS_XS_MAX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) && EYUI_IS_IPHONE : NO)
+
+// 判断是否是iPhone X系列
+#define EYSCREENSIZE_IS_IPhoneX_All      ([UIScreen instancesRespondToSelector:@selector(currentMode)] ?\
+(\
+CGSizeEqualToSize(CGSizeMake(375, 812), [UIScreen mainScreen].bounds.size)\
+||\
+CGSizeEqualToSize(CGSizeMake(812, 375),[UIScreen mainScreen].bounds.size)\
+||\
+CGSizeEqualToSize(CGSizeMake(414, 896),[UIScreen mainScreen].bounds.size)\
+||\
+CGSizeEqualToSize(CGSizeMake(896, 414),[UIScreen mainScreen].bounds.size))\
+:\
+NO)
 
 //获取当前屏幕的尺寸
-#define EYScreenBounds ([UIScreen mainScreen].bounds)
-#define EYScreenSize  (EYScreenBounds.size)
-#define EYScreenWidth (EYScreenSize.width)
-#define EYScreenHeight (EYScreenSize.height)
+#define EYScreenBounds  ([UIScreen mainScreen].bounds)
+#define EYScreenSize    ([UIScreen mainScreen].bounds.size)
+#define EYScreenWidth   ([UIScreen mainScreen].bounds.size.width)
+#define EYScreenHeight  ([UIScreen mainScreen].bounds.size.height)
 
 //电池栏的高度
 #define EYStatusBarHeight (EYSCREENSIZE_IS_IPhoneX_All ? (44) : (20))
