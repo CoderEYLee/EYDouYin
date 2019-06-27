@@ -7,11 +7,12 @@
 //
 
 #import "EYTabBarController.h"
+#import "EYNavigationController.h"
 #import "EYHomeViewController.h"
 #import "EYFollowViewController.h"
 #import "EYSendViewController.h"
-#import "EYNavigationController.h"
-#import "EYRootViewController.h"
+#import "EYMessageViewController.h"
+#import "EYMineViewController.h"
 
 @interface EYTabBarController () <EYTabBarViewDelegate>
 
@@ -30,19 +31,28 @@
 
 #pragma mark - 初始化 UI
 - (void)setupViewController {
-    NSArray *array = @"TabBar.json".ey_loadLocalJSONFile;
-
     NSMutableArray *arrayM = [NSMutableArray array];
+    
+    //0.首页
+    EYHomeViewController *homeVC = [[EYHomeViewController alloc] init];
+    [arrayM addObject:[[EYNavigationController alloc] initWithRootViewController:homeVC]];
+    
+    //1.关注
+    EYFollowViewController *followVC = [[EYFollowViewController alloc] init];
+    [arrayM addObject:[[EYNavigationController alloc] initWithRootViewController:followVC]];
+    
+    //2.占位控制器
+    UIViewController *placeholderVC = [[UIViewController alloc] init];
+    [arrayM addObject:[[EYNavigationController alloc] initWithRootViewController:placeholderVC]];
+        
+    //3.消息
+    EYMessageViewController *messageVC = [[EYMessageViewController alloc] init];
+    [arrayM addObject:[[EYNavigationController alloc] initWithRootViewController:messageVC]];
 
-    for (NSDictionary * dictionary in array) {
-        UIViewController *viewController = [[NSClassFromString(dictionary[@"className"]) alloc] init];
-        if ([dictionary[@"needNavi"] boolValue]) {
-            [arrayM addObject:[[EYNavigationController alloc] initWithRootViewController:viewController]];
-        } else {
-            [arrayM addObject:viewController];
-        }
-    }
-
+    //4.我
+    EYMineViewController *mineVC = [[EYMineViewController alloc] init];
+    [arrayM addObject:[[EYNavigationController alloc] initWithRootViewController:mineVC]];
+        
     self.viewControllers = arrayM;
 }
 
