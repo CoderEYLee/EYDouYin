@@ -19,15 +19,12 @@
  *
  *  @return 创建完的item
  */
-+ (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage {
++ (UIBarButtonItem *)ey_itemWithTarget:(id)target action:(SEL)action image:(NSString *)image {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    // 设置图片
     [button setBackgroundImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
-    [button setBackgroundImage:[UIImage imageNamed:highImage] forState:UIControlStateHighlighted];
-    button.adjustsImageWhenHighlighted = NO;
-    // 设置尺寸
-    button.size = button.currentBackgroundImage.size;
+    [button sizeToFit];
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
+
 @end

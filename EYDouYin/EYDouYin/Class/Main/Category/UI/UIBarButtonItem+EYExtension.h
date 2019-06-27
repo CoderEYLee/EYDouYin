@@ -10,6 +10,6 @@
 
 @interface UIBarButtonItem (EYExtension)
 
-+ (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage;
++ (UIBarButtonItem *)ey_itemWithTarget:(id)target action:(SEL)action image:(NSString *)image;
 
 @end
