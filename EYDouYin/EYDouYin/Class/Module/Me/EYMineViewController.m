@@ -37,12 +37,16 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 - (void)setupUI {
     if (self.jumpType == EYJumpTypeDefault) {//自己的界面
         //1.隐藏导航
-        self.gk_navigationBar.hidden = YES;
-        //1.1 顶部视图
-        UIButton *settingButton = [[UIButton alloc] initWithFrame:CGRectMake(EYScreenWidth - 64, EYStatusBarHeight, 44, 44)];
-        settingButton.backgroundColor = EYColorRandom;
-        [settingButton addTarget:self action:@selector(trapSettingButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:settingButton];
+//        self.gk_navigationBar.hidden = YES;
+//        self.gk_navigationBar.userInteractionEnabled = NO;
+        //1.1 右侧设置按钮
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+        [button addTarget:self action:@selector(tapSettingButton:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:[UIImage imageNamed:@"mine_setting"] forState:UIControlStateNormal];
+        [UIBarButtonItem itemWithTitle:nil image:nil target:nil action:nil];
+        self.gk_navRightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+        button.backgroundColor = EYColorRGBHex(0x222434);
+        button.layer.cornerRadius = 22.0;
         
         //4.底部 view
         UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, EYScreenHeight - EYTabBarHomeIndicatorHeight, EYScreenWidth, EYTabBarHomeIndicatorHeight)];
@@ -60,6 +64,9 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     backImageView.layer.anchorPoint = CGPointMake(0.5, 0);
     backImageView.center = CGPointMake(EYScreenWidth * 0.5, 0);
     backImageView.size = CGSizeMake(EYScreenWidth, EYBackImageViewRealHeight);
+    backImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackImageView:)];
+    [backImageView addGestureRecognizer:tapGesture];
     [self.view insertSubview:backImageView atIndex:0];
     self.backImageView = backImageView;
     
@@ -92,9 +99,13 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 }
 
 #pragma mark - Private Methods
-- (void)trapSettingButton:(UIButton *)button {
+- (void)tapSettingButton:(UIButton *)button {
     EYMeViewController *vc = [[EYMeViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)tapBackImageView:(UITapGestureRecognizer *)tapGesture {
+    EYLog(@"更换背景图片");
 }
 
 #pragma mark - UITableViewDataSource
@@ -135,7 +146,10 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth * (1 + scale), EYBackImageViewRealHeight * (1 + scale));
     }
     
-    EYLog(@"00000000000==%f", contentOffsetY);
+    EYLog(@"00000000000==%f", distance);
+    //默认位置
+    CGFloat beginOffSetY = EYBackImageViewRealHeight * EYBackImageViewBeginScale;
+    
     //2.导航栏的颜色变化
     if (contentOffsetY < 100) {//0
         EYLog(@"111111111111");
