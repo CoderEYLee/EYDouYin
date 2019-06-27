@@ -101,6 +101,7 @@
         configure.titleColor = EYColorWhite;
         configure.titleFont = EYSizeFont17;
         configure.backStyle = GKNavigationBarBackStyleWhite;
+        configure.gk_navItemRightSpace = 20.0;
         
         configure.gk_translationX = 15;
         configure.gk_translationY = 20;
