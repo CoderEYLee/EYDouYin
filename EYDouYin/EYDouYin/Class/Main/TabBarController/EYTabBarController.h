@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "EYTabBarView.h"
+@class EYHomeViewController;
 
 @class EYTabBarController;
 
@@ -18,6 +19,9 @@
 @end
 
 @interface EYTabBarController : UITabBarController
+
+@property (weak, nonatomic) EYHomeViewController *homeVC;
+
 
 @property (nullable, nonatomic, weak) id <EYTabBarControllerDelegate, UITabBarControllerDelegate> delegate;
 

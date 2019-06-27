@@ -15,6 +15,8 @@
 
 @interface EYRootViewController () <UIScrollViewDelegate, GKViewControllerPushDelegate, EYTabBarControllerDelegate, UITabBarControllerDelegate>
 
+@property (weak, nonatomic) EYTabBarController *tabBarVC;
+
 @property (assign, nonatomic) EYTabBarViewType selecetdIndex;
 
 @end
@@ -35,11 +37,11 @@
 - (void)setupUI {
     self.gk_navigationBar.hidden = YES;
     
-    EYTabBarController *tabbarController = [[EYTabBarController alloc] init];
-    tabbarController.view.frame = self.view.bounds;
-    tabbarController.delegate = self;
-    [self addChildViewController:tabbarController];
-    [self.view addSubview:tabbarController.view];
+    EYTabBarController *tabBarVC = [[EYTabBarController alloc] init];
+    self.tabBarVC = tabBarVC;
+    tabBarVC.delegate = self;
+    [self addChildViewController:tabBarVC];
+    [self.view addSubview:tabBarVC.view];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {//控制EYTabBarController的方向
@@ -51,9 +53,8 @@
 #pragma mark - GKViewControllerPushDelegate
 - (void)pushToNextViewController {
     if (self.selecetdIndex == EYTabBarViewTypeHome) {
-        EYHomeViewController *homeViewController = self.childViewControllers.firstObject.childViewControllers.firstObject.childViewControllers.firstObject;
-        NSString *video_id = homeViewController.currentPlayViewController.videoModel.video_id;
-        EYLog(@"123456==%@", video_id);
+        NSString *user_id = self.tabBarVC.homeVC.currentPlayViewController.videoModel.user_id;
+        EYLog(@"123456==%@", user_id);
         
         EYMineViewController *vc = [[EYMineViewController alloc] init];
         vc.jumpType = EYJumpTypeHomeToMe;

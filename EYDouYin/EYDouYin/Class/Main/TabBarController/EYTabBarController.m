@@ -36,6 +36,7 @@
     //0.首页
     EYHomeViewController *homeVC = [[EYHomeViewController alloc] init];
     [arrayM addObject:[[EYNavigationController alloc] initWithRootViewController:homeVC]];
+    self.homeVC = homeVC;
     
     //1.关注
     EYFollowViewController *followVC = [[EYFollowViewController alloc] init];
