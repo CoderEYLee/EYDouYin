@@ -125,7 +125,7 @@
         [self.contentView addSubview:signatureButton];
         [signatureButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(userHeaderButton);
-            make.top.mas_equalTo(lineLabel.mas_bottom).mas_offset(EYMineCellMargin);
+            make.top.mas_equalTo(lineLabel.mas_bottom).mas_offset(10);
         }];
         
         //2.2 年龄
@@ -140,8 +140,7 @@
         [self.contentView addSubview:ageButton];
         [ageButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(userHeaderButton);
-            make.top.mas_equalTo(signatureButton.mas_bottom).mas_offset(EYMineCellMargin);
-            make.bottom.mas_equalTo(-300);
+            make.top.mas_equalTo(signatureButton.mas_bottom).mas_offset(10);
         }];
         
         //2.3 定位
@@ -172,6 +171,17 @@
         [schoolButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(locationButton.mas_right).mas_offset(5);
             make.top.mas_equalTo(ageButton);
+        }];
+        
+        //2.4 获赞
+        UIButton *toMeLikeButton = [[UIButton alloc] init];
+        [toMeLikeButton setAttributedTitle:[self createAttributedStringWithCount:@"100.3W" withTitle:@"获赞"] forState:UIControlStateNormal];
+        [toMeLikeButton addTarget:self action:@selector(tapToMeLikeButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.contentView addSubview:toMeLikeButton];
+        [toMeLikeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(userHeaderButton);
+            make.top.mas_equalTo(schoolButton.mas_bottom).mas_offset(EYMineCellMargin);
+            make.bottom.mas_equalTo(-300);
         }];
     }
     return self;
@@ -222,11 +232,36 @@
     [self tapButtonWithJumpType:EYJumpTypeMineSchoolButton];
 }
 
+- (void)tapToMeLikeButton:(UIButton *)button {
+    [self tapButtonWithJumpType:EYJumpTypeMineToMeLikeButton];
+}
+
 #pragma mark - 回调 delegate
 - (void)tapButtonWithJumpType:(EYJumpType)jumpType {
     if (self.delegate && [self.delegate respondsToSelector:@selector(mineCell:didSelectedButton:)]) {
         [self.delegate mineCell:self didSelectedButton:jumpType];
     }
+}
+
+#pragma mark - 富文本处理
+- (NSAttributedString *)createAttributedStringWithCount:(NSString *)count withTitle:(NSString *)title {
+    
+    // 个数
+    NSMutableDictionary *countAttributeDictionary = [NSMutableDictionary dictionary];
+    countAttributeDictionary[NSForegroundColorAttributeName] = EYColorWhite;
+    countAttributeDictionary[NSFontAttributeName] = EYSizeFont18;
+    
+    // title
+    NSMutableDictionary *titleAttributeDictionary = [NSMutableDictionary dictionary];
+    titleAttributeDictionary[NSForegroundColorAttributeName] = EYColorRGBHexAlpha(0xFEFEFE, 0.6);
+    titleAttributeDictionary[NSFontAttributeName] = EYSizeFont13;
+    
+    // 最后生成的富文本
+    NSMutableAttributedString *lastAttributedStringM = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ ", count] attributes:countAttributeDictionary]];
+    
+    [lastAttributedStringM appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:titleAttributeDictionary]];
+    
+    return [[NSAttributedString alloc] initWithAttributedString:lastAttributedStringM];
 }
 
 @end
