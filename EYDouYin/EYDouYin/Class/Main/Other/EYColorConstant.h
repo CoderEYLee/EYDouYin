@@ -41,9 +41,9 @@
 #define EYColorWhite0_8    [UIColor colorWithWhite:1.0 alpha:0.8]
 #define EYColorWhite0_9    [UIColor colorWithWhite:1.0 alpha:0.9]
 
+#define EYColorTheme        EYColorRGBHex(0x161822) //主题背景色(抖音)
 #define EYColor333333       EYColorRGBHex(0x333333)
 #define EYColor666666       EYColorRGBHex(0x666666)
 #define EYColor999999       EYColorRGBHex(0x999999)
-#define EYColor2A2B33       EYColorRGBHex(0x2A2B33) //主题背景色
 #define EYColorFFCC00       EYColorRGBHex(0xFFCC00) //主题黄色
 #define EYColorFFCC00_0_3   EYColorRGBHexAlpha(0xFFCC00, 0.3) //主题黄色0.3

@@ -59,7 +59,7 @@
  */
 - (void)setupBaseUI {
     // 1.设置背景颜色
-    self.view.backgroundColor = EYColor2A2B33;
+    self.view.backgroundColor = EYColorTheme;
     
 }
 

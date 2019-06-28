@@ -67,7 +67,7 @@
 - (void)launchViewController {
     
     self.window = [[UIWindow alloc] initWithFrame:EYScreenBounds];
-    self.window.backgroundColor = EYColor2A2B33;
+    self.window.backgroundColor = EYColorTheme;
     
     EYRootViewController *rootVC= [[EYRootViewController alloc] init];
     EYNavigationController *navi = [[EYNavigationController alloc] initWithRootViewController:rootVC];

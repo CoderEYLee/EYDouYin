@@ -274,7 +274,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (copy, nonatomic) NSString *tt_user_image;
 
-
 @end
 
 NS_ASSUME_NONNULL_END

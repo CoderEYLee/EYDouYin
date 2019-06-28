@@ -26,7 +26,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.backgroundColor = EYColorRandom;
+        self.backgroundColor = EYColorTheme;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         //1.顶部
@@ -87,8 +87,31 @@
         self.nickNameLabel = nickNameLabel;
         [nickNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(userHeaderButton);
-            make.top.mas_equalTo(userHeaderButton.mas_bottom).mas_offset(20);
-            make.bottom.mas_equalTo(-320);
+            make.top.mas_equalTo(userHeaderButton.mas_bottom).mas_offset(EYMineCellMargin);
+            make.right.mas_equalTo(-EYMineCellMargin);
+        }];
+        
+        //1.5抖音号
+        UILabel *douyinNumberLabel = [[UILabel alloc] init];
+        douyinNumberLabel.text = @"抖音号: 970478306";
+        douyinNumberLabel.textColor = EYColorWhite;
+        douyinNumberLabel.font = EYSizeFont15;
+        [self.contentView addSubview:douyinNumberLabel];
+        [douyinNumberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(userHeaderButton);
+            make.top.mas_equalTo(nickNameLabel.mas_bottom).mas_offset(10);
+        }];
+        
+        //1.6 分割线
+        UILabel *lineLabel = [[UILabel alloc] init];
+        lineLabel.backgroundColor = EYColorWhite0_05;
+        [self.contentView addSubview:lineLabel];
+        [lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(userHeaderButton);
+            make.top.mas_equalTo(douyinNumberLabel.mas_bottom).mas_offset(EYMineCellMargin);
+            make.right.mas_equalTo(-EYMineCellMargin);
+            make.height.mas_equalTo(1);
+            make.bottom.mas_equalTo(-300);
         }];
         
         //2.个人简介
@@ -102,7 +125,7 @@
 - (void)setUserModel:(EYUserModel *)userModel {
     _userModel = userModel;
     
-    [self.userHeaderButton ey_setImageWithURL:[NSURL URLWithString:userModel.user_id] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@""] options:0];
+    [self.userHeaderButton ey_setImageWithURL:[NSURL URLWithString:userModel.tt_user_image] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@""] options:0];
 //    @property (weak, nonatomic) UIButton *userHeaderButton;
 //    @property (weak, nonatomic) UIButton *profileButton;
 //    @property (weak, nonatomic) UIButton *focusButton;

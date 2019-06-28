@@ -13,7 +13,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if ([super initWithFrame:frame]) {
-        self.backgroundColor = EYColor2A2B33;
+        self.backgroundColor = EYColorTheme;
         UILabel *tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, EYScreenHeight * 0.5-100, EYScreenWidth, 100)];
         tipLabel.text = EYLocalized(@"tt_placeholder_14");
         tipLabel.textAlignment = NSTextAlignmentCenter;
