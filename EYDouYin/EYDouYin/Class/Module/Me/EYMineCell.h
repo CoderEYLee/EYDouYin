@@ -9,8 +9,17 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@class EYMineCell;
+
+@protocol EYMineCellDelegate<NSObject>
+@optional
+- (void)mineCell:(EYMineCell *)cell didSelectedButton:(EYJumpType)jumpTpye;
+
+@end
 
 @interface EYMineCell : UITableViewCell
+
+@property (weak, nonatomic) id <EYMineCellDelegate> delegate;
 
 @end
 

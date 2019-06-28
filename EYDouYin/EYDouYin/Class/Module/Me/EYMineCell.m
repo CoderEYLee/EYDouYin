@@ -21,6 +21,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.backgroundColor = EYColorRandom;
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         //1.顶部
         //1.1用户个人头像按钮
@@ -91,18 +92,29 @@
 
 - (void)tapUserHeaderButton:(UIButton *)button {
     EYLog(@"用户点击了头像按钮==%@", button);
+    [self tapButtonWithJumpType:EYJumpTypeMineUserHeaderButton];
 }
 
 - (void)tapProfileButton:(UIButton *)button {
     EYLog(@"用户点击了编辑资料按钮==%@", button);
+    [self tapButtonWithJumpType:EYJumpTypeMineProfileButton];
 }
 
 - (void)tapFocusButton:(UIButton *)button {
     EYLog(@"用户点击了关注按钮==%@", button);
+    [self tapButtonWithJumpType:EYJumpTypeMineFocusButton];
 }
 
 - (void)tapAddFriendButton:(UIButton *)button {
     EYLog(@"用户点击了添加好友按钮==%@", button);
+    [self tapButtonWithJumpType:EYJumpTypeMineAddFriendButton];
+}
+
+#pragma mark - 回调 delegate
+- (void)tapButtonWithJumpType:(EYJumpType)jumpType {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(mineCell:didSelectedButton:)]) {
+        [self.delegate mineCell:self didSelectedButton:jumpType];
+    }
 }
 
 @end
