@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EYUserModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class EYMineCell;
@@ -20,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EYMineCell : UITableViewCell
 
 @property (weak, nonatomic) id <EYMineCellDelegate> delegate;
+
+@property (strong, nonatomic) EYUserModel *userModel;
 
 @end
 

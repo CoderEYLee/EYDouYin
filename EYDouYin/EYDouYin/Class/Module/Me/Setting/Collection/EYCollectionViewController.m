@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.array = [EYManager sharedManager].collectionArray;
+    self.array = [EYManager manager].collectionArray;
     [self.tableView reloadData];
 }
 

@@ -18,7 +18,10 @@
 #import "EYConstant.h"          //常量文件
 #import "EYNotificationTool.h"  //通知文件
 #import "EYProgressHUD.h"       //提示框
+#import "EYUserModel.h"         //用户模型
 #import "EYVideoModel.h"        //视频模型
+#import "EYHTTPManager+EYCategory.h"//网络请求
+#import "EYDeviceInformation.h" //设备信息
 
 #pragma mark - 项目通用文件
 #import "EYManager.h"

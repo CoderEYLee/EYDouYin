@@ -56,13 +56,24 @@
 		6075413A2104CC4C00EB258D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 607541392104CC4C00EB258D /* main.m */; };
 		607541442104CC4C00EB258D /* EYDouYinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 607541432104CC4C00EB258D /* EYDouYinTests.m */; };
 		6075414F2104CC4C00EB258D /* EYDouYinUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6075414E2104CC4C00EB258D /* EYDouYinUITests.m */; };
-		6075416D2104CFE000EB258D /* EYHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6075416C2104CFE000EB258D /* EYHttpManager.m */; };
 		6075416F2104D15F00EB258D /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 6075416E2104D15F00EB258D /* Foundation+Log.m */; };
 		6076A15D2148E097002ED551 /* ChinLab_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 6076A15C2148E096002ED551 /* ChinLab_en.json */; };
 		6076A16B214A05BF002ED551 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6076A16A214A05BF002ED551 /* MediaPlayer.framework */; };
 		6076A171214A4D26002ED551 /* EYHomeCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A170214A4D26002ED551 /* EYHomeCityViewController.m */; };
 		6076A1792150CFD8002ED551 /* DispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A1782150CFD8002ED551 /* DispatchTimer.m */; };
 		6076A1802150FE71002ED551 /* EYHomeWorksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A17F2150FE71002ED551 /* EYHomeWorksViewController.m */; };
+		6080A65E22C60898003EC084 /* EYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A65D22C60898003EC084 /* EYUserModel.m */; };
+		6080A66D22C613D7003EC084 /* EYHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A66122C613D7003EC084 /* EYHTTPManager.m */; };
+		6080A66E22C613D7003EC084 /* EYHTTPManager+EYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A66222C613D7003EC084 /* EYHTTPManager+EYCategory.m */; };
+		6080A66F22C613D7003EC084 /* TTOSSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A66622C613D7003EC084 /* TTOSSManager.m */; };
+		6080A67022C613D7003EC084 /* EYManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A66922C613D7003EC084 /* EYManager.m */; };
+		6080A67122C613D7003EC084 /* EYFMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A66B22C613D7003EC084 /* EYFMDBManager.m */; };
+		6080A67822C614BC003EC084 /* EYFMDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A67622C614BC003EC084 /* EYFMDBTool.m */; };
+		6080A67B22C61510003EC084 /* EYClickPointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A67A22C61510003EC084 /* EYClickPointModel.m */; };
+		6080A67E22C6157C003EC084 /* EYUserModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A67C22C6157C003EC084 /* EYUserModelTool.m */; };
+		6080A68722C61C8D003EC084 /* EYServiceUpdateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A68622C61C8D003EC084 /* EYServiceUpdateView.m */; };
+		6080A68B22C61E4E003EC084 /* EYDeviceInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A68A22C61E4D003EC084 /* EYDeviceInformation.m */; };
+		6080A68E22C61EBB003EC084 /* NSDate+EYFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A68D22C61EBA003EC084 /* NSDate+EYFormat.m */; };
 		6085A15B21897A2800637F31 /* EYWaterflowShopCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A15A21897A2800637F31 /* EYWaterflowShopCell1.m */; };
 		6085A15E21897A3C00637F31 /* EYWaterflowShopCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A15D21897A3C00637F31 /* EYWaterflowShopCell2.m */; };
 		6085A16021897A4B00637F31 /* EYWaterflowShopCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6085A15F21897A4B00637F31 /* EYWaterflowShopCell2.xib */; };
@@ -70,7 +81,6 @@
 		6085A1702189B8F800637F31 /* EYCollectionViewOtherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A16E2189B8F800637F31 /* EYCollectionViewOtherController.m */; };
 		6085A1712189B8F800637F31 /* EYCollectionViewOtherController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */; };
 		6085A174218AA91600637F31 /* EYFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A173218AA91600637F31 /* EYFlowLayout.m */; };
-		608F940A218FEDF600AD00EB /* EYManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 608F9409218FEDF600AD00EB /* EYManager.m */; };
 		609C575822B257980010AF7D /* EYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 609C575722B257980010AF7D /* EYProgressHUD.m */; };
 		60AAFC7722B27DE600F30A9B /* sheet1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 60AAFC7622B27DE600F30A9B /* sheet1.xml */; };
 		60AAFC7C22B374E800F30A9B /* EYExcelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AAFC7B22B374E800F30A9B /* EYExcelTool.m */; };
@@ -207,8 +217,6 @@
 		6075414A2104CC4C00EB258D /* EYDouYinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EYDouYinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6075414E2104CC4C00EB258D /* EYDouYinUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYDouYinUITests.m; sourceTree = "<group>"; };
 		607541502104CC4C00EB258D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6075416B2104CFE000EB258D /* EYHttpManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHttpManager.h; sourceTree = "<group>"; };
-		6075416C2104CFE000EB258D /* EYHttpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHttpManager.m; sourceTree = "<group>"; };
 		6075416E2104D15F00EB258D /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		607541712104D33F00EB258D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		607541722104D36800EB258D /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
@@ -221,6 +229,30 @@
 		6076A1782150CFD8002ED551 /* DispatchTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchTimer.m; sourceTree = "<group>"; };
 		6076A17E2150FE71002ED551 /* EYHomeWorksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeWorksViewController.h; sourceTree = "<group>"; };
 		6076A17F2150FE71002ED551 /* EYHomeWorksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeWorksViewController.m; sourceTree = "<group>"; };
+		6080A65C22C60898003EC084 /* EYUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYUserModel.h; sourceTree = "<group>"; };
+		6080A65D22C60898003EC084 /* EYUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYUserModel.m; sourceTree = "<group>"; };
+		6080A66022C613D7003EC084 /* EYHTTPManager+EYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EYHTTPManager+EYCategory.h"; sourceTree = "<group>"; };
+		6080A66122C613D7003EC084 /* EYHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYHTTPManager.m; sourceTree = "<group>"; };
+		6080A66222C613D7003EC084 /* EYHTTPManager+EYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EYHTTPManager+EYCategory.m"; sourceTree = "<group>"; };
+		6080A66322C613D7003EC084 /* EYHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYHTTPManager.h; sourceTree = "<group>"; };
+		6080A66522C613D7003EC084 /* TTOSSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTOSSManager.h; sourceTree = "<group>"; };
+		6080A66622C613D7003EC084 /* TTOSSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTOSSManager.m; sourceTree = "<group>"; };
+		6080A66822C613D7003EC084 /* EYManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYManager.h; sourceTree = "<group>"; };
+		6080A66922C613D7003EC084 /* EYManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYManager.m; sourceTree = "<group>"; };
+		6080A66B22C613D7003EC084 /* EYFMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYFMDBManager.m; sourceTree = "<group>"; };
+		6080A66C22C613D7003EC084 /* EYFMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYFMDBManager.h; sourceTree = "<group>"; };
+		6080A67622C614BC003EC084 /* EYFMDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYFMDBTool.m; sourceTree = "<group>"; };
+		6080A67722C614BC003EC084 /* EYFMDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYFMDBTool.h; sourceTree = "<group>"; };
+		6080A67922C61510003EC084 /* EYClickPointModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYClickPointModel.h; sourceTree = "<group>"; };
+		6080A67A22C61510003EC084 /* EYClickPointModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYClickPointModel.m; sourceTree = "<group>"; };
+		6080A67C22C6157C003EC084 /* EYUserModelTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYUserModelTool.m; sourceTree = "<group>"; };
+		6080A67D22C6157C003EC084 /* EYUserModelTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYUserModelTool.h; sourceTree = "<group>"; };
+		6080A68522C61C8D003EC084 /* EYServiceUpdateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYServiceUpdateView.h; sourceTree = "<group>"; };
+		6080A68622C61C8D003EC084 /* EYServiceUpdateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYServiceUpdateView.m; sourceTree = "<group>"; };
+		6080A68922C61E4D003EC084 /* EYDeviceInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYDeviceInformation.h; sourceTree = "<group>"; };
+		6080A68A22C61E4D003EC084 /* EYDeviceInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYDeviceInformation.m; sourceTree = "<group>"; };
+		6080A68C22C61EBA003EC084 /* NSDate+EYFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+EYFormat.h"; sourceTree = "<group>"; };
+		6080A68D22C61EBA003EC084 /* NSDate+EYFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+EYFormat.m"; sourceTree = "<group>"; };
 		6085A15921897A2800637F31 /* EYWaterflowShopCell1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYWaterflowShopCell1.h; sourceTree = "<group>"; };
 		6085A15A21897A2800637F31 /* EYWaterflowShopCell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYWaterflowShopCell1.m; sourceTree = "<group>"; };
 		6085A15C21897A3C00637F31 /* EYWaterflowShopCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYWaterflowShopCell2.h; sourceTree = "<group>"; };
@@ -233,8 +265,6 @@
 		6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYCollectionViewOtherController.xib; sourceTree = "<group>"; };
 		6085A172218AA91600637F31 /* EYFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFlowLayout.h; sourceTree = "<group>"; };
 		6085A173218AA91600637F31 /* EYFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFlowLayout.m; sourceTree = "<group>"; };
-		608F9408218FEDF600AD00EB /* EYManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYManager.h; sourceTree = "<group>"; };
-		608F9409218FEDF600AD00EB /* EYManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYManager.m; sourceTree = "<group>"; };
 		609C575622B257980010AF7D /* EYProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYProgressHUD.h; sourceTree = "<group>"; };
 		609C575722B257980010AF7D /* EYProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYProgressHUD.m; sourceTree = "<group>"; };
 		60AAFC7622B27DE600F30A9B /* sheet1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = sheet1.xml; path = ../../../Resource/sheet1.xml; sourceTree = "<group>"; };
@@ -670,6 +700,7 @@
 		607541602104CD6600EB258D /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				6080A68822C61E4D003EC084 /* DeviceInformation */,
 				60AAFC7922B374CF00F30A9B /* Excel */,
 				602A386622A11F7900D6DB0D /* VideoPlayer */,
 				602DEE56229E56E5006B61A3 /* Language */,
@@ -701,9 +732,13 @@
 		6076A1632148FA27002ED551 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6080A65C22C60898003EC084 /* EYUserModel.h */,
+				6080A65D22C60898003EC084 /* EYUserModel.m */,
 				602A387022A12BCC00D6DB0D /* EYVideoArray.plist */,
 				602A386322A11A4100D6DB0D /* EYVideoModel.h */,
 				602A386422A11A4100D6DB0D /* EYVideoModel.m */,
+				6080A67922C61510003EC084 /* EYClickPointModel.h */,
+				6080A67A22C61510003EC084 /* EYClickPointModel.m */,
 			);
 			name = Model;
 			path = Home/Model;
@@ -726,6 +761,75 @@
 			path = DispatchTimer;
 			sourceTree = "<group>";
 		};
+		6080A65F22C613D7003EC084 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				6080A66022C613D7003EC084 /* EYHTTPManager+EYCategory.h */,
+				6080A66222C613D7003EC084 /* EYHTTPManager+EYCategory.m */,
+				6080A66322C613D7003EC084 /* EYHTTPManager.h */,
+				6080A66122C613D7003EC084 /* EYHTTPManager.m */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		6080A66422C613D7003EC084 /* OSS */ = {
+			isa = PBXGroup;
+			children = (
+				6080A66522C613D7003EC084 /* TTOSSManager.h */,
+				6080A66622C613D7003EC084 /* TTOSSManager.m */,
+			);
+			path = OSS;
+			sourceTree = "<group>";
+		};
+		6080A66722C613D7003EC084 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				6080A66822C613D7003EC084 /* EYManager.h */,
+				6080A66922C613D7003EC084 /* EYManager.m */,
+				6080A67D22C6157C003EC084 /* EYUserModelTool.h */,
+				6080A67C22C6157C003EC084 /* EYUserModelTool.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		6080A66A22C613D7003EC084 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				6080A66C22C613D7003EC084 /* EYFMDBManager.h */,
+				6080A66B22C613D7003EC084 /* EYFMDBManager.m */,
+				6080A67722C614BC003EC084 /* EYFMDBTool.h */,
+				6080A67622C614BC003EC084 /* EYFMDBTool.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		6080A68322C61C6C003EC084 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				609C575622B257980010AF7D /* EYProgressHUD.h */,
+				609C575722B257980010AF7D /* EYProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
+		6080A68422C61C8D003EC084 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6080A68522C61C8D003EC084 /* EYServiceUpdateView.h */,
+				6080A68622C61C8D003EC084 /* EYServiceUpdateView.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		6080A68822C61E4D003EC084 /* DeviceInformation */ = {
+			isa = PBXGroup;
+			children = (
+				6080A68922C61E4D003EC084 /* EYDeviceInformation.h */,
+				6080A68A22C61E4D003EC084 /* EYDeviceInformation.m */,
+			);
+			path = DeviceInformation;
+			sourceTree = "<group>";
+		};
 		6085A1612189A81100637F31 /* UICollectionView 其他布局使用 */ = {
 			isa = PBXGroup;
 			children = (
@@ -743,8 +847,8 @@
 		609C575222B257520010AF7D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				609C575622B257980010AF7D /* EYProgressHUD.h */,
-				609C575722B257980010AF7D /* EYProgressHUD.m */,
+				6080A68322C61C6C003EC084 /* ProgressHUD */,
+				6080A68422C61C8D003EC084 /* Service */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -765,10 +869,10 @@
 			isa = PBXGroup;
 			children = (
 				607541722104D36800EB258D /* Singleton.h */,
-				608F9408218FEDF600AD00EB /* EYManager.h */,
-				608F9409218FEDF600AD00EB /* EYManager.m */,
-				6075416B2104CFE000EB258D /* EYHttpManager.h */,
-				6075416C2104CFE000EB258D /* EYHttpManager.m */,
+				6080A66A22C613D7003EC084 /* FMDB */,
+				6080A65F22C613D7003EC084 /* HTTP */,
+				6080A66422C613D7003EC084 /* OSS */,
+				6080A66722C613D7003EC084 /* User */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -799,6 +903,8 @@
 			children = (
 				6075416E2104D15F00EB258D /* Foundation+Log.m */,
 				60752B3D2182C3F5001B857C /* NullSafe.m */,
+				6080A68C22C61EBA003EC084 /* NSDate+EYFormat.h */,
+				6080A68D22C61EBA003EC084 /* NSDate+EYFormat.m */,
 				6055AD3D2116B929005DC856 /* NSString+EYExtension.h */,
 				6055AD3E2116B929005DC856 /* NSString+EYExtension.m */,
 				60EE77BD21204188004133A6 /* NSObject+EYRuntime.h */,
@@ -1079,7 +1185,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				608F940A218FEDF600AD00EB /* EYManager.m in Sources */,
 				6055AD382116933E005DC856 /* UIView+Extension.m in Sources */,
 				60752B7821871838001B857C /* EYWaterflowView.m in Sources */,
 				601B032B21056E7700489E96 /* EYMeViewController.m in Sources */,
@@ -1089,23 +1194,31 @@
 				60C40089218BFB9B00B07E4A /* EYCollectionViewController.m in Sources */,
 				60EE77B62120217D004133A6 /* UIBarButtonItem+EYExtension.m in Sources */,
 				60752B422182C533001B857C /* EYSJVideoPlayerViewController.m in Sources */,
-				6075416D2104CFE000EB258D /* EYHttpManager.m in Sources */,
+				6080A66F22C613D7003EC084 /* TTOSSManager.m in Sources */,
 				60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */,
 				602A386222A1143400D6DB0D /* EYHomePlayViewController.m in Sources */,
 				60752B472183224E001B857C /* EYZFPlayerViewController.m in Sources */,
 				606B6590219189310059D1F7 /* UIButton+EYAddition.m in Sources */,
 				6085A1702189B8F800637F31 /* EYCollectionViewOtherController.m in Sources */,
 				60752B5A2186E39C001B857C /* EYWaterflowLayout.m in Sources */,
+				6080A68B22C61E4E003EC084 /* EYDeviceInformation.m in Sources */,
+				6080A66D22C613D7003EC084 /* EYHTTPManager.m in Sources */,
+				6080A68722C61C8D003EC084 /* EYServiceUpdateView.m in Sources */,
 				60EBB26C216DFC680016ED6D /* EYZFPortraitControlView.m in Sources */,
 				6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */,
 				6075413A2104CC4C00EB258D /* main.m in Sources */,
 				605EECB122B8E3B80001610D /* EYMineViewController.m in Sources */,
 				60752B3E2182C3F5001B857C /* NullSafe.m in Sources */,
+				6080A67022C613D7003EC084 /* EYManager.m in Sources */,
 				601B032221056E4E00489E96 /* EYSendViewController.m in Sources */,
 				601B032521056E5F00489E96 /* EYHomeViewController.m in Sources */,
+				6080A68E22C61EBB003EC084 /* NSDate+EYFormat.m in Sources */,
 				602A3839229FA8FB00D6DB0D /* EYFollowListViewController.m in Sources */,
 				60752B6C2186F49A001B857C /* EYShopCell.m in Sources */,
+				6080A67B22C61510003EC084 /* EYClickPointModel.m in Sources */,
 				60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */,
+				6080A67122C613D7003EC084 /* EYFMDBManager.m in Sources */,
+				6080A66E22C613D7003EC084 /* EYHTTPManager+EYCategory.m in Sources */,
 				60AAFC7C22B374E800F30A9B /* EYExcelTool.m in Sources */,
 				6085A174218AA91600637F31 /* EYFlowLayout.m in Sources */,
 				6012FD70215A36BF004A3083 /* UIView+EYCornerRadius.m in Sources */,
@@ -1134,9 +1247,12 @@
 				60BBC68E2104D8D200DEEA34 /* EYRootViewController.m in Sources */,
 				609C575822B257980010AF7D /* EYProgressHUD.m in Sources */,
 				60752B75218717B8001B857C /* EYWaterflowViewCell.m in Sources */,
+				6080A67822C614BC003EC084 /* EYFMDBTool.m in Sources */,
 				60C4008E218C1DB600B07E4A /* EYCollectionDetailViewController.m in Sources */,
 				6076A1792150CFD8002ED551 /* DispatchTimer.m in Sources */,
 				60C40091218C269C00B07E4A /* UIImageView+EYSDWebImage.m in Sources */,
+				6080A67E22C6157C003EC084 /* EYUserModelTool.m in Sources */,
+				6080A65E22C60898003EC084 /* EYUserModel.m in Sources */,
 				60AAFC7F22B375C300F30A9B /* EYExcelModel.m in Sources */,
 				60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */,
 				60EBB269216DE0420016ED6D /* EYZFPlayerControlView.m in Sources */,

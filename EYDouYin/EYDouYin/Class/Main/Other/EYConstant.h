@@ -30,7 +30,17 @@ typedef NS_ENUM(NSInteger, EYJumpType) {
     EYJumpTypeHomeToMe,                 // 首页--->我的
 };
 
+#pragma mark - 基地址
+UIKIT_EXTERN NSString *const TTAPPStoreURLString;
+
 #pragma mark - 阿里云
 
 UIKIT_EXTERN NSString *const TTOSSAPPStoreEndpoint;
 UIKIT_EXTERN NSString *const TTTXVodPlayConfigPath;
+UIKIT_EXTERN NSString *const TTOSSAPPStoreBucketName;
+UIKIT_EXTERN NSString *const TTOSSAvatarFileDirName;
+UIKIT_EXTERN NSString *const TTOSSVideoFileDirName;
+
+#pragma mark - 持久化存储的 Key
+UIKIT_EXTERN NSString *const TTVideoSearchHistory;
+UIKIT_EXTERN NSString *const TTReportSQLiteName;

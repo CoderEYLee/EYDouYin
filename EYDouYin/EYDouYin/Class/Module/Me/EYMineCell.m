@@ -12,6 +12,12 @@
 
 @interface EYMineCell()
 
+@property (weak, nonatomic) UIButton *userHeaderButton;
+@property (weak, nonatomic) UIButton *profileButton;
+@property (weak, nonatomic) UIButton *focusButton;
+@property (weak, nonatomic) UIButton *addFriendButton;
+@property (weak, nonatomic) UILabel *nickNameLabel;
+
 @end
 
 @implementation EYMineCell
@@ -30,6 +36,7 @@
         [userHeaderButton addTarget:self action:@selector(tapUserHeaderButton:) forControlEvents:UIControlEventTouchUpInside];
         userHeaderButton.backgroundColor = EYColorRandom;
         [self.contentView addSubview:userHeaderButton];
+        self.userHeaderButton = userHeaderButton;
         [userHeaderButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(EYMineCellMargin);
             make.top.mas_equalTo(-20);
@@ -41,6 +48,7 @@
         [profileButton addTarget:self action:@selector(tapProfileButton:) forControlEvents:UIControlEventTouchUpInside];
         profileButton.backgroundColor = EYColorRandom;
         [self.contentView addSubview:profileButton];
+        self.profileButton = profileButton;
         [profileButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(userHeaderButton.mas_right).mas_offset(20);
             make.centerY.mas_equalTo(userHeaderButton.mas_centerY);
@@ -53,6 +61,7 @@
         [focusButton addTarget:self action:@selector(tapFocusButton:) forControlEvents:UIControlEventTouchUpInside];
         focusButton.backgroundColor = EYColorRandom;
         [self.contentView addSubview:focusButton];
+        self.focusButton = focusButton;
         [focusButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.left.bottom.right.mas_equalTo(profileButton);
         }];
@@ -62,6 +71,7 @@
         [addFriendButton addTarget:self action:@selector(tapAddFriendButton:) forControlEvents:UIControlEventTouchUpInside];
         addFriendButton.backgroundColor = EYColorRandom;
         [self.contentView addSubview:addFriendButton];
+        self.addFriendButton = addFriendButton;
         [addFriendButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(profileButton);
             make.right.mas_equalTo(-EYMineCellMargin);
@@ -74,6 +84,7 @@
         nickNameLabel.textColor = EYColorWhite;
         nickNameLabel.font = EYSizeFont25;
         [self.contentView addSubview:nickNameLabel];
+        self.nickNameLabel = nickNameLabel;
         [nickNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(userHeaderButton);
             make.top.mas_equalTo(userHeaderButton.mas_bottom).mas_offset(20);
@@ -86,6 +97,17 @@
         
     }
     return self;
+}
+
+- (void)setUserModel:(EYUserModel *)userModel {
+    _userModel = userModel;
+    
+    [self.userHeaderButton ey_setImageWithURL:[NSURL URLWithString:userModel.user_id] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@""] options:0];
+//    @property (weak, nonatomic) UIButton *userHeaderButton;
+//    @property (weak, nonatomic) UIButton *profileButton;
+//    @property (weak, nonatomic) UIButton *focusButton;
+//    @property (weak, nonatomic) UIButton *addFriendButton;
+//    @property (weak, nonatomic) UILabel *nickNameLabel;
 }
 
 #pragma mark - Private Methods

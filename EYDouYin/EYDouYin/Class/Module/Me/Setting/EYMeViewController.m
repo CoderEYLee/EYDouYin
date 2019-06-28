@@ -23,7 +23,7 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.array = [EYManager sharedManager].meArray;
+    self.array = [EYManager manager].meArray;
     
     //1. 初始化界面
     [self setupUI];
