@@ -61,8 +61,6 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     UIImageView *backImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewRealHeight)];
     backImageView.image = [UIImage imageNamed:@"common_placeholder_mine"];
     backImageView.contentMode = UIViewContentModeScaleAspectFit;
-//    backImageView.layer.anchorPoint = CGPointMake(0.5, 0);
-//    backImageView.size = CGSizeMake(EYScreenWidth, EYBackImageViewRealHeight);
     backImageView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackImageView:)];
     [backImageView addGestureRecognizer:tapGesture];
@@ -165,10 +163,8 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 - (NSMutableArray *)arrayM {
     if (nil == _arrayM) {
         _arrayM = [NSMutableArray array];
-        for (int i = 0; i < 10; i++) {
-            [_arrayM addObject:@"1"];
-            [_arrayM addObject:@"2"];
-        }
+        [_arrayM addObject:@"1"];
+        [_arrayM addObject:@"2"];
     }
     return _arrayM;
 }
