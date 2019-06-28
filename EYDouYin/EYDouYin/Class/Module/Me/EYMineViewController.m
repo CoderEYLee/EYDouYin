@@ -10,7 +10,7 @@
 #import "EYMineCell.h"
 #import "EYMeViewController.h"
 
-@interface EYMineViewController() <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+@interface EYMineViewController() <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, EYMineCellDelegate>
 
 @property (nonatomic, weak) UIImageView *backImageView;
 
@@ -116,7 +116,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EYMineCell *cell = [tableView dequeueReusableCellWithIdentifier:EYMineViewControllerCellID];
-    
+    cell.delegate = self;
     return cell;
 }
 
@@ -157,6 +157,11 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 //        EYLog(@"333333333333");
 //        self.gk_navBarAlpha = 1.0;
 //    }
+}
+
+#pragma mark - EYMineCellDelegate
+- (void)mineCell:(EYMineCell *)cell didSelectedButton:(EYJumpType)jumpTpye {
+    EYLog(@"cell--delegate 回调==%@==%d", cell, jumpTpye);
 }
 
 #pragma mark - 懒加载

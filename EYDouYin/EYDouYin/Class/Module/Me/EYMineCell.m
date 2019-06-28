@@ -91,22 +91,18 @@
 #pragma mark - Private Methods
 
 - (void)tapUserHeaderButton:(UIButton *)button {
-    EYLog(@"用户点击了头像按钮==%@", button);
     [self tapButtonWithJumpType:EYJumpTypeMineUserHeaderButton];
 }
 
 - (void)tapProfileButton:(UIButton *)button {
-    EYLog(@"用户点击了编辑资料按钮==%@", button);
     [self tapButtonWithJumpType:EYJumpTypeMineProfileButton];
 }
 
 - (void)tapFocusButton:(UIButton *)button {
-    EYLog(@"用户点击了关注按钮==%@", button);
     [self tapButtonWithJumpType:EYJumpTypeMineFocusButton];
 }
 
 - (void)tapAddFriendButton:(UIButton *)button {
-    EYLog(@"用户点击了添加好友按钮==%@", button);
     [self tapButtonWithJumpType:EYJumpTypeMineAddFriendButton];
 }
 
