@@ -45,9 +45,10 @@
         
         //1.2.1 编辑资料
         UIButton *profileButton = [[UIButton alloc] init];
+        profileButton.backgroundColor = EYColorRGBHex(0x393A43);
         profileButton.layer.cornerRadius = 2.0;
+        [profileButton setTitle:@"编辑资料" forState:UIControlStateNormal];
         [profileButton addTarget:self action:@selector(tapProfileButton:) forControlEvents:UIControlEventTouchUpInside];
-        profileButton.backgroundColor = EYColorRandom;
         [self.contentView addSubview:profileButton];
         self.profileButton = profileButton;
         [profileButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -59,9 +60,9 @@
         
         //1.2.2 关注/取消关注按钮
         UIButton *focusButton = [[UIButton alloc] init];
+        focusButton.backgroundColor = EYColorRGBHex(0x393A43);
         focusButton.layer.cornerRadius = 2.0;
         [focusButton addTarget:self action:@selector(tapFocusButton:) forControlEvents:UIControlEventTouchUpInside];
-        focusButton.backgroundColor = EYColorRandom;
         [self.contentView addSubview:focusButton];
         self.focusButton = focusButton;
         [focusButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -70,9 +71,9 @@
         
         //1.3 添加好友按钮
         UIButton *addFriendButton = [[UIButton alloc] init];
+        addFriendButton.backgroundColor = EYColorRGBHex(0x393A43);
         addFriendButton.layer.cornerRadius = 2.0;
         [addFriendButton addTarget:self action:@selector(tapAddFriendButton:) forControlEvents:UIControlEventTouchUpInside];
-        addFriendButton.backgroundColor = EYColorRandom;
         [self.contentView addSubview:addFriendButton];
         self.addFriendButton = addFriendButton;
         [addFriendButton mas_makeConstraints:^(MASConstraintMaker *make) {
