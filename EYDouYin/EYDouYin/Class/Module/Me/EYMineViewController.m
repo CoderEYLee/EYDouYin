@@ -22,8 +22,8 @@
 @implementation EYMineViewController
 //背景图的真正高度
 const CGFloat EYBackImageViewRealHeight = 310;
-//背景图的开始显示比例
-const CGFloat EYBackImageViewBeginScale = 0.5;
+//背景图的开始显示比例 0.5
+const CGFloat EYBackImageViewBeginHeight = EYBackImageViewRealHeight * 0.5;
 static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 - (void)viewDidLoad {
@@ -61,9 +61,8 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     UIImageView *backImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewRealHeight)];
     backImageView.image = [UIImage imageNamed:@"common_placeholder_mine"];
     backImageView.contentMode = UIViewContentModeScaleAspectFit;
-    backImageView.layer.anchorPoint = CGPointMake(0.5, 0);
-    backImageView.center = CGPointMake(EYScreenWidth * 0.5, 0);
-    backImageView.size = CGSizeMake(EYScreenWidth, EYBackImageViewRealHeight);
+//    backImageView.layer.anchorPoint = CGPointMake(0.5, 0);
+//    backImageView.size = CGSizeMake(EYScreenWidth, EYBackImageViewRealHeight);
     backImageView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackImageView:)];
     [backImageView addGestureRecognizer:tapGesture];
@@ -93,7 +92,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    tableView.contentInset = UIEdgeInsetsMake(EYBackImageViewRealHeight * EYBackImageViewBeginScale, 0, 0, 0);
+    tableView.contentInset = UIEdgeInsetsMake(EYBackImageViewBeginHeight, 0, 0, 0);
     [self.view insertSubview:tableView aboveSubview:backImageView];
     self.tableView = tableView;
 }
@@ -118,7 +117,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:EYMineViewControllerCellID];
+    EYMineCell *cell = [tableView dequeueReusableCellWithIdentifier:EYMineViewControllerCellID];
     
     return cell;
 }
@@ -135,32 +134,31 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     
     // 1.背景图放大效果
     CGFloat distance = -contentOffsetY;
-    if (distance <= EYBackImageViewRealHeight * EYBackImageViewBeginScale) {//起始位置
-        self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth, EYBackImageViewRealHeight);
+//    EYLog(@"00000000000==%f", contentOffsetY);//距离屏幕顶部的距离
+    if (distance <= 0) {//出顶部屏幕
+        self.backImageView.frame = CGRectMake(0, - EYBackImageViewBeginHeight * 0.5, EYScreenWidth, EYBackImageViewRealHeight);
+    } else if (distance <= EYBackImageViewBeginHeight) {
+        self.backImageView.frame = CGRectMake(0, (distance - EYBackImageViewBeginHeight) * 0.5, EYScreenWidth, EYBackImageViewRealHeight);
     } else if (distance >= EYBackImageViewRealHeight) {//向下拽的最大位置
         scrollView.contentOffset = CGPointMake(0, -EYBackImageViewRealHeight);
-        CGFloat scale = 0.2;
-        self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth * (1 + scale), EYBackImageViewRealHeight * (1 + scale));
+        CGFloat scale = 1.2;
+        self.backImageView.frame = CGRectMake(EYScreenWidth * 0.5 * (1 - scale), 0, EYScreenWidth * scale, EYBackImageViewRealHeight * scale);
     } else {//需要放大图片
-        CGFloat scale = (1 - (EYBackImageViewRealHeight - distance) / (EYBackImageViewRealHeight * (1 - EYBackImageViewBeginScale))) * 0.2;
-        self.backImageView.bounds = CGRectMake(0, 0, EYScreenWidth * (1 + scale), EYBackImageViewRealHeight * (1 + scale));
+        CGFloat scale = 1.2 - 0.2 * (EYBackImageViewRealHeight - distance) / (EYBackImageViewRealHeight - EYBackImageViewBeginHeight);
+        self.backImageView.frame = CGRectMake(EYScreenWidth * 0.5 * (1 - scale), 0, EYScreenWidth * scale, EYBackImageViewRealHeight * scale);
     }
     
-    EYLog(@"00000000000==%f", distance);
-    //默认位置
-    CGFloat beginOffSetY = EYBackImageViewRealHeight * EYBackImageViewBeginScale;
-    
-    //2.导航栏的颜色变化
-    if (contentOffsetY < 100) {//0
-        EYLog(@"111111111111");
-        self.gk_navBarAlpha = 0.0;
-    } else if (contentOffsetY >= 100 && contentOffsetY <= 200) {
-        EYLog(@"222222222222");
-        self.gk_navBarAlpha = 0.5;
-    } else {//1
-        EYLog(@"333333333333");
-        self.gk_navBarAlpha = 1.0;
-    }
+//    //2.导航栏的颜色变化
+//    if (contentOffsetY < beginOffSetY) {//0
+//        EYLog(@"111111111111");
+//        self.gk_navBarAlpha = 0.0;
+//    } else if (contentOffsetY >= 100 && contentOffsetY <= 200) {
+//        EYLog(@"222222222222");
+//        self.gk_navBarAlpha = 0.5;
+//    } else {//1
+//        EYLog(@"333333333333");
+//        self.gk_navBarAlpha = 1.0;
+//    }
 }
 
 #pragma mark - 懒加载
