@@ -42,6 +42,7 @@
 #define EYColorWhite0_9    [UIColor colorWithWhite:1.0 alpha:0.9]
 
 #define EYColorTheme        EYColorRGBHex(0x161822) //主题背景色(抖音)
+#define EYColorSeparateLine EYColorRGBHex(0x32333D) //分割线色(抖音)
 #define EYColor333333       EYColorRGBHex(0x333333)
 #define EYColor666666       EYColorRGBHex(0x666666)
 #define EYColor999999       EYColorRGBHex(0x999999)

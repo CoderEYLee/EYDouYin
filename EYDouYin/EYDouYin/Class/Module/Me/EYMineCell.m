@@ -86,7 +86,7 @@
         UILabel *nickNameLabel = [[UILabel alloc] init];
         nickNameLabel.text = @"没有女朋友的程序员";
         nickNameLabel.textColor = EYColorWhite;
-        nickNameLabel.font = EYSizeFont25;
+        nickNameLabel.font = [UIFont systemFontOfSize:25.0 weight:UIFontWeightBold];
         [self.contentView addSubview:nickNameLabel];
         self.nickNameLabel = nickNameLabel;
         [nickNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -99,7 +99,7 @@
         UILabel *douyinNumberLabel = [[UILabel alloc] init];
         douyinNumberLabel.text = @"抖音号: 970478306";
         douyinNumberLabel.textColor = EYColorWhite;
-        douyinNumberLabel.font = EYSizeFont15;
+        douyinNumberLabel.font = EYSizeFont14;
         [self.contentView addSubview:douyinNumberLabel];
         [douyinNumberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(userHeaderButton);
@@ -108,20 +108,71 @@
         
         //1.6 分割线
         UILabel *lineLabel = [[UILabel alloc] init];
-        lineLabel.backgroundColor = EYColorWhite0_05;
+        lineLabel.backgroundColor = EYColorSeparateLine;
         [self.contentView addSubview:lineLabel];
         [lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(userHeaderButton);
             make.top.mas_equalTo(douyinNumberLabel.mas_bottom).mas_offset(EYMineCellMargin);
             make.right.mas_equalTo(-EYMineCellMargin);
             make.height.mas_equalTo(1);
-            make.bottom.mas_equalTo(-300);
         }];
         
         //2.个人简介
+        //2.1 简介
+        UIButton *signatureButton = [[UIButton alloc] init];
+        [signatureButton setTitle:@"你还没有填写个人简介，点击添加..." forState:UIControlStateNormal];
+        [signatureButton addTarget:self action:@selector(tapSignatureButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.contentView addSubview:signatureButton];
+        [signatureButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(userHeaderButton);
+            make.top.mas_equalTo(lineLabel.mas_bottom).mas_offset(EYMineCellMargin);
+        }];
         
+        //2.2 年龄
+        UIButton *ageButton = [[UIButton alloc] init];
+        ageButton.backgroundColor = EYColorRGBHex(0x393A43);
+        ageButton.layer.cornerRadius = 2.0;
+        [ageButton setTitle:@"27岁" forState:UIControlStateNormal];
+        [ageButton setTitleColor:EYColorWhite0_5 forState:UIControlStateNormal];
+        ageButton.titleLabel.font = EYSizeFont15;
+        ageButton.contentEdgeInsets = UIEdgeInsetsMake(5, 8, 5, 8);
+        [ageButton addTarget:self action:@selector(tapAgeButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.contentView addSubview:ageButton];
+        [ageButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(userHeaderButton);
+            make.top.mas_equalTo(signatureButton.mas_bottom).mas_offset(EYMineCellMargin);
+            make.bottom.mas_equalTo(-300);
+        }];
         
+        //2.3 定位
+        UIButton *locationButton = [[UIButton alloc] init];
+        locationButton.backgroundColor = EYColorRGBHex(0x393A43);
+        locationButton.layer.cornerRadius = 2.0;
+        [locationButton setTitle:@"河南.驻马店" forState:UIControlStateNormal];
+        [locationButton setTitleColor:EYColorWhite0_6 forState:UIControlStateNormal];
+        locationButton.titleLabel.font = EYSizeFont15;
+        locationButton.contentEdgeInsets = UIEdgeInsetsMake(5, 8, 5, 8);
+        [locationButton addTarget:self action:@selector(tapLocationButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.contentView addSubview:locationButton];
+        [locationButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(ageButton.mas_right).mas_offset(5);
+            make.top.mas_equalTo(ageButton);
+        }];
         
+        //2.3 学校
+        UIButton *schoolButton = [[UIButton alloc] init];
+        schoolButton.backgroundColor = EYColorRGBHex(0x393A43);
+        schoolButton.layer.cornerRadius = 2.0;
+        [schoolButton setTitle:@"青岛农业大学" forState:UIControlStateNormal];
+        [schoolButton setTitleColor:EYColorWhite0_6 forState:UIControlStateNormal];
+        schoolButton.titleLabel.font = EYSizeFont15;
+        schoolButton.contentEdgeInsets = UIEdgeInsetsMake(5, 8, 5, 8);
+        [schoolButton addTarget:self action:@selector(tapSchoolButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.contentView addSubview:schoolButton];
+        [schoolButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(locationButton.mas_right).mas_offset(5);
+            make.top.mas_equalTo(ageButton);
+        }];
     }
     return self;
 }
@@ -153,6 +204,22 @@
 
 - (void)tapAddFriendButton:(UIButton *)button {
     [self tapButtonWithJumpType:EYJumpTypeMineAddFriendButton];
+}
+
+- (void)tapSignatureButton:(UIButton *)button {
+    [self tapButtonWithJumpType:EYJumpTypeMineSignatureButton];
+}
+
+- (void)tapAgeButton:(UIButton *)button {
+    [self tapButtonWithJumpType:EYJumpTypeMineAgeButton];
+}
+
+- (void)tapLocationButton:(UIButton *)button {
+    [self tapButtonWithJumpType:EYJumpTypeMineLocationButton];
+}
+
+- (void)tapSchoolButton:(UIButton *)button {
+    [self tapButtonWithJumpType:EYJumpTypeMineSchoolButton];
 }
 
 #pragma mark - 回调 delegate

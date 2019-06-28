@@ -22,6 +22,11 @@ typedef NS_ENUM(NSInteger, EYJumpType) {
     EYJumpTypeMineProfileButton,        //用户编辑个人资料按钮
     EYJumpTypeMineFocusButton,          //用户关注按钮
     EYJumpTypeMineAddFriendButton,      //用户添加好友按钮
+    EYJumpTypeMineSignatureButton,      //用户修改个人简介按钮
+    EYJumpTypeMineAgeButton,            //用户修改年龄按钮
+    EYJumpTypeMineLocationButton,       //用户修改定位按钮
+    EYJumpTypeMineSchoolButton,         //用户修改学校按钮
+    
     
     #pragma mark - 跳转方式
     //其他地方--->首页

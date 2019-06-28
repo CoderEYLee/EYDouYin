@@ -22,8 +22,8 @@
 @implementation EYMineViewController
 //背景图的真正高度
 const CGFloat EYBackImageViewRealHeight = 310;
-//背景图的开始显示比例 0.5
-const CGFloat EYBackImageViewBeginHeight = EYBackImageViewRealHeight * 0.5;
+//背景图的开始显示比例 0.4
+const CGFloat EYBackImageViewBeginHeight = EYBackImageViewRealHeight * 0.4;
 static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 - (void)viewDidLoad {
