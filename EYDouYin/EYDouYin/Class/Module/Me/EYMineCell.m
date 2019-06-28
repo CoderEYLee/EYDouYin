@@ -45,6 +45,7 @@
         
         //1.2.1 编辑资料
         UIButton *profileButton = [[UIButton alloc] init];
+        profileButton.layer.cornerRadius = 2.0;
         [profileButton addTarget:self action:@selector(tapProfileButton:) forControlEvents:UIControlEventTouchUpInside];
         profileButton.backgroundColor = EYColorRandom;
         [self.contentView addSubview:profileButton];
@@ -58,6 +59,7 @@
         
         //1.2.2 关注/取消关注按钮
         UIButton *focusButton = [[UIButton alloc] init];
+        focusButton.layer.cornerRadius = 2.0;
         [focusButton addTarget:self action:@selector(tapFocusButton:) forControlEvents:UIControlEventTouchUpInside];
         focusButton.backgroundColor = EYColorRandom;
         [self.contentView addSubview:focusButton];
@@ -68,6 +70,7 @@
         
         //1.3 添加好友按钮
         UIButton *addFriendButton = [[UIButton alloc] init];
+        addFriendButton.layer.cornerRadius = 2.0;
         [addFriendButton addTarget:self action:@selector(tapAddFriendButton:) forControlEvents:UIControlEventTouchUpInside];
         addFriendButton.backgroundColor = EYColorRandom;
         [self.contentView addSubview:addFriendButton];
