@@ -28,8 +28,6 @@ class EYBaseSwiftViewController: GKNavigationBarViewController {
     var refreshControl: EYRefreshControl?
     /// 上拉刷新标记
     var isPullup = false
-
-    lazy var topView = UIView(frame: CGRect(x: 0, y: 0, width: EYScreenWidth, height: iPhoneX ? 44 : 20))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,7 +107,7 @@ extension EYBaseSwiftViewController {
     /// 设置表格视图 - 用户登录之后执行
     /// 子类重写此方法，因为子类不需要关心用户登录之前的逻辑
     @objc func setupTableView() {
-        tableView = UITableView(frame: CGRect(origin: CGPoint(x: 0, y: 88), size: EYScreenSize), style: .plain)
+        tableView = UITableView(frame: CGRect(origin: CGPoint(x: 0, y: EYScreenBarHeight), size: EYScreenSize), style: .plain)
 
         view.addSubview(tableView!)
         

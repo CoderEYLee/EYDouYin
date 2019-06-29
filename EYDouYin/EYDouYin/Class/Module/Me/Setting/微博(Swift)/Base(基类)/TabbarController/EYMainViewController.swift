@@ -219,7 +219,7 @@ extension EYMainViewController: UITabBarControllerDelegate {
             let vc = nav.children[0] as! EYHomeViewController
             
             // b) 滚动到顶部
-            vc.tableView?.setContentOffset(CGPoint(x: 0, y: iPhoneX ? -88 : -64), animated: true)
+            vc.tableView?.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
             
             // 4> 刷新数据 － 增加延迟，是保证表格先滚动到顶部再刷新
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {

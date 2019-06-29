@@ -3,14 +3,24 @@ import UIKit
 // 通知名称
 let EYPopoverChange = "EYPopoverChange"
 
+// MARK:- 屏幕尺寸
 let EYScreenBounds = UIScreen.main.bounds
 let EYScreenSize = UIScreen.main.bounds.size
 let EYScreenWidth = UIScreen.main.bounds.width
 let EYScreenHeight = UIScreen.main.bounds.height
 
-let iPhoneX = (EYScreenWidth == 375 && EYScreenHeight == 812)
+let EYIS_IPhoneX_All = (UIScreen.instancesRespond(to: #selector(getter: RunLoop.currentMode)) ? (__CGSizeEqualToSize(CGSize(width: 375, height: 812), UIScreen.main.bounds.size) || __CGSizeEqualToSize(CGSize(width: 812, height: 375), UIScreen.main.bounds.size) || __CGSizeEqualToSize(CGSize(width: 414, height: 896), UIScreen.main.bounds.size) || __CGSizeEqualToSize(CGSize(width: 896, height: 414), UIScreen.main.bounds.size)) : false)
 
-//Document路径
+// MARK: 状态栏高度
+let EYStateBarHeight = ((EYIS_IPhoneX_All) ? 44 : 20)
+
+// MARK: 顶部状态栏+导航高度
+let EYScreenBarHeight = ((EYIS_IPhoneX_All) ? 88 : 64)
+
+// MARK: 底部安全区域的高度
+let EYScreenSafeHeight = ((EYIS_IPhoneX_All) ? 34 : 0)
+
+/// Document路径
 let EYDocument = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
 
 // MARK:- 自定义打印方法
