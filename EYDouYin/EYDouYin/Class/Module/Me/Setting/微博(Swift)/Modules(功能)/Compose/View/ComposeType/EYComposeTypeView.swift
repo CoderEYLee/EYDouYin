@@ -180,7 +180,7 @@ private extension EYComposeTypeView {
             
             // 2> 设置动画属性
             anim.fromValue = btn.center.y
-            anim.toValue = btn.center.y + 350
+            anim.toValue = btn.center.y + 400
             
             // 设置时间
             anim.beginTime = CACurrentMediaTime() + CFTimeInterval(v.subviews.count - i) * 0.025
@@ -247,7 +247,7 @@ private extension EYComposeTypeView {
             let anim: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
             
             // 2> 设置动画属性
-            anim.fromValue = btn.center.y + 350
+            anim.fromValue = btn.center.y + 400
             anim.toValue = btn.center.y
             
             // 弹力系数，取值范围 0~20，数值越大，弹性越大，默认数值为4

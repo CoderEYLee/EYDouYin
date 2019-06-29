@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EYComposeTypeView" customModule="weiboSwift" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EYComposeTypeView" customModule="EYDouYin" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -25,7 +26,7 @@
                                 <rect key="frame" x="110.5" y="100" width="154" height="48"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="els-rm-fDP">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="589" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xob-XJ-wsa" userLabel="关闭按钮">
                                         <rect key="frame" x="175" y="9.5" width="25" height="25"/>
@@ -42,7 +43,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="xob-XJ-wsa" firstAttribute="centerY" secondItem="els-rm-fDP" secondAttribute="centerY" id="MzD-Wm-jbJ"/>
                                     <constraint firstItem="fjI-GJ-g3d" firstAttribute="centerX" secondItem="els-rm-fDP" secondAttribute="centerX" id="QBu-1C-Byc"/>
@@ -51,22 +52,22 @@
                                     <constraint firstItem="fjI-GJ-g3d" firstAttribute="centerY" secondItem="els-rm-fDP" secondAttribute="centerY" id="oQo-c8-5ou"/>
                                 </constraints>
                             </view>
-                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lh-82-Nw3">
-                                <rect key="frame" x="0.0" y="343" width="375" height="224"/>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2lh-82-Nw3">
+                                <rect key="frame" x="0.0" y="321" width="375" height="224"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="224" id="FSS-3h-Q03"/>
+                                    <constraint firstAttribute="height" constant="224" id="rOf-8e-yPT"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="els-rm-fDP" secondAttribute="trailing" id="3pv-8t-1bc"/>
-                            <constraint firstItem="2lh-82-Nw3" firstAttribute="leading" secondItem="xNa-sf-fAt" secondAttribute="leading" id="5Ch-bb-PuR"/>
+                            <constraint firstItem="2lh-82-Nw3" firstAttribute="leading" secondItem="xNa-sf-fAt" secondAttribute="leading" id="AgI-Tr-nzb"/>
                             <constraint firstItem="els-rm-fDP" firstAttribute="leading" secondItem="xNa-sf-fAt" secondAttribute="leading" id="Cs1-IQ-6oQ"/>
-                            <constraint firstAttribute="bottom" secondItem="els-rm-fDP" secondAttribute="bottom" id="P6V-85-djG"/>
+                            <constraint firstAttribute="trailing" secondItem="2lh-82-Nw3" secondAttribute="trailing" id="Dsy-1i-O5t"/>
+                            <constraint firstItem="els-rm-fDP" firstAttribute="bottom" secondItem="xNa-sf-fAt" secondAttribute="bottom" constant="-34" id="P6V-85-djG"/>
                             <constraint firstItem="VI8-72-3up" firstAttribute="top" secondItem="xNa-sf-fAt" secondAttribute="top" constant="100" id="eg7-QO-uKd"/>
-                            <constraint firstAttribute="trailing" secondItem="2lh-82-Nw3" secondAttribute="trailing" id="ph4-6h-Q4y"/>
-                            <constraint firstItem="els-rm-fDP" firstAttribute="top" secondItem="2lh-82-Nw3" secondAttribute="bottom" constant="56" id="ubn-aY-ZYi"/>
+                            <constraint firstItem="els-rm-fDP" firstAttribute="top" secondItem="2lh-82-Nw3" secondAttribute="bottom" constant="44" id="rXI-kH-35J"/>
                             <constraint firstItem="VI8-72-3up" firstAttribute="centerX" secondItem="xNa-sf-fAt" secondAttribute="centerX" id="uw5-tO-Doq"/>
                         </constraints>
                     </view>
@@ -80,13 +81,14 @@
                 <constraint firstAttribute="bottom" secondItem="t04-ai-HuZ" secondAttribute="bottom" id="Si8-1F-Ybb"/>
                 <constraint firstItem="t04-ai-HuZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nte-3K-tro"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="pCu-6w-WVl"/>
             <connections>
                 <outlet property="closeButtonCenterXCons" destination="Tt2-I0-cwY" id="jCP-dh-Fb9"/>
                 <outlet property="returnButton" destination="fjI-GJ-g3d" id="aTV-s4-rmW"/>
                 <outlet property="returnButtonCenterXCons" destination="QBu-1C-Byc" id="IjK-ej-43l"/>
                 <outlet property="scrollView" destination="2lh-82-Nw3" id="Tss-u2-Jmi"/>
             </connections>
-            <point key="canvasLocation" x="33.5" y="54.5"/>
+            <point key="canvasLocation" x="32.799999999999997" y="54.422788605697157"/>
         </view>
     </objects>
     <resources>
