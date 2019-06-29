@@ -107,7 +107,7 @@ extension EYBaseSwiftViewController {
     /// 设置表格视图 - 用户登录之后执行
     /// 子类重写此方法，因为子类不需要关心用户登录之前的逻辑
     @objc func setupTableView() {
-        tableView = UITableView(frame: CGRect(origin: CGPoint(x: 0, y: EYScreenBarHeight), size: EYScreenSize), style: .plain)
+        tableView = UITableView(frame: CGRect(x: 0, y: Int(EYScreenBarHeight), width: Int(EYScreenWidth), height: (Int(EYScreenHeight) - EYScreenBarHeight - 49 - EYScreenSafeHeight)), style: .plain)
 
         view.addSubview(tableView!)
         
