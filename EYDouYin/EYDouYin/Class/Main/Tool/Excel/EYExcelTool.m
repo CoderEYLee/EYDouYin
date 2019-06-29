@@ -7,7 +7,7 @@
 //
 
 #import "EYExcelTool.h"
-#import <GDataXML-HTML/GDataXMLNode.h>
+#import <GDataXML_HTML/GDataXMLNode.h>
 #import "EYExcelModel.h"
 
 @implementation EYExcelTool

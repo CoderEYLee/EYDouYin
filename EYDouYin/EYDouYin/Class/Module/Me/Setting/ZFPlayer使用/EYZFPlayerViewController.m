@@ -9,12 +9,12 @@
 #import "EYZFPlayerViewController.h"
 #import "ZFPlayer.h"
 #import "ZFAVPlayerManager.h"
-#import "EYZFPlayerControlView.h"
+#import "ZFPlayerControlView.h"
 
 @interface EYZFPlayerViewController ()
 
 @property (nonatomic, strong) UIView *containerView;
-@property (nonatomic, strong) EYZFPlayerControlView *controlView;
+@property (nonatomic, strong) ZFPlayerControlView *controlView;
 @property (nonatomic, strong) ZFPlayerController *player;
 
 @end
@@ -49,9 +49,9 @@
     return _containerView;
 }
 
-- (EYZFPlayerControlView *)controlView {
+- (ZFPlayerControlView *)controlView {
     if (!_controlView) {
-        _controlView = [[EYZFPlayerControlView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        _controlView = [[ZFPlayerControlView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
         _controlView.fastViewAnimated = YES;
     }
     return _controlView;

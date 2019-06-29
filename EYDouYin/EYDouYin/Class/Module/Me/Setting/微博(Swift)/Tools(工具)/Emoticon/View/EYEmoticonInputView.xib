@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="HCr-RH-hXS" customClass="EYEmoticonInputView" customModule="weiboSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="krf-c2-r6b">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="RfS-Ex-HwB" customClass="EYEmoticonLayout" customModule="weiboSwift" customModuleProvider="target">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="HCr-RH-hXS" id="5M5-Xb-4dF"/>
+                        <outlet property="delegate" destination="HCr-RH-hXS" id="Nmi-VA-mWM"/>
+                    </connections>
+                </collectionView>
+                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="BHb-HF-jKg">
+                    <rect key="frame" x="188" y="221" width="0.0" height="0.0"/>
+                </pageControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXU-ae-xK6" userLabel="底部工具栏" customClass="EYEmoticonToolbar" customModule="weiboSwift" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="213" width="375" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="B4d-LW-BXg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="gXU-ae-xK6" firstAttribute="top" secondItem="krf-c2-r6b" secondAttribute="bottom" id="KsM-8a-K5H"/>
+                <constraint firstAttribute="trailing" secondItem="krf-c2-r6b" secondAttribute="trailing" id="Mdg-Lc-yC5"/>
+                <constraint firstItem="gXU-ae-xK6" firstAttribute="leading" secondItem="HCr-RH-hXS" secondAttribute="leading" id="RLA-zf-w2q"/>
+                <constraint firstItem="krf-c2-r6b" firstAttribute="top" secondItem="HCr-RH-hXS" secondAttribute="top" id="WTx-yX-Yg2"/>
+                <constraint firstItem="gXU-ae-xK6" firstAttribute="top" secondItem="BHb-HF-jKg" secondAttribute="bottom" constant="-8" id="c9v-7z-o0X"/>
+                <constraint firstAttribute="trailing" secondItem="gXU-ae-xK6" secondAttribute="trailing" id="dCh-EQ-A6S"/>
+                <constraint firstItem="krf-c2-r6b" firstAttribute="leading" secondItem="HCr-RH-hXS" secondAttribute="leading" id="h0k-kw-5WU"/>
+                <constraint firstAttribute="bottom" secondItem="gXU-ae-xK6" secondAttribute="bottom" id="nVv-lT-YrA"/>
+                <constraint firstItem="BHb-HF-jKg" firstAttribute="centerX" secondItem="HCr-RH-hXS" secondAttribute="centerX" id="wEI-dD-t0w"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="krf-c2-r6b" id="p4o-gr-lYS"/>
+                <outlet property="pageControl" destination="BHb-HF-jKg" id="LkL-kU-Fuk"/>
+                <outlet property="toolbar" destination="gXU-ae-xK6" id="Zbr-Nj-Rfy"/>
+            </connections>
+            <point key="canvasLocation" x="24.5" y="-2.5"/>
+        </view>
+    </objects>
+</document>
