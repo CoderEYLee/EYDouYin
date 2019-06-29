@@ -78,15 +78,6 @@ class EYHomeViewController: EYBaseSwiftViewController {
             }
         }
     }
-    
-    /// 显示好友
-    @objc func showFriends() {
-
-        let vc = EYDemoViewController()
-        
-        // push 的动作是 nav 做的
-        navigationController?.pushViewController(vc, animated: true)
-    }
 }
 
 // MARK: - 表格数据源方法，具体的数据源方法实现，不需要 super
@@ -152,9 +143,6 @@ extension EYHomeViewController {
         
         super.setupTableView()
         
-        // 设置导航栏按钮
-        navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
-        
         // 注册原型 cell
         tableView?.register(UINib(nibName: "EYStatusNormalCell", bundle: nil), forCellReuseIdentifier: EYStatusNormalCellId)
         tableView?.register(UINib(nibName: "EYStatusRetweetedCell", bundle: nil), forCellReuseIdentifier: EYStatusRetweetedCellId)
@@ -167,20 +155,18 @@ extension EYHomeViewController {
         // 取消分隔线
         tableView?.separatorStyle = .none
         
-        setupNavTitle()
+//        setupNavTitle()
     }
     
     /// 设置导航栏标题
-    private func setupNavTitle() {
-        
-        let title = EYNetworkManager.shared.userAccount.screen_name
-        
-        let button = EYTitleButton(title: title)
-        
-        navItem.titleView = button
-        
-        button.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
-    }
+//    private func setupNavTitle() {
+//
+//        let title = EYNetworkManager.shared.userAccount.screen_name
+//
+//        let button = EYTitleButton(title: title)
+//
+//        button.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
+//    }
     
     @objc func clickTitleButton(btn: UIButton) {
         

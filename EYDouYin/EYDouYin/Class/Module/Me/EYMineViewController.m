@@ -35,10 +35,10 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 //1. 初始化界面
 - (void)setupUI {
+    //1.隐藏分割线
+    self.gk_navLineHidden = YES;
+    
     if (self.jumpType == EYJumpTypeDefault) {//自己的界面
-        //1.隐藏导航
-//        self.gk_navigationBar.hidden = YES;
-//        self.gk_navigationBar.userInteractionEnabled = NO;
         //1.1 右侧设置按钮
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
         [button addTarget:self action:@selector(tapSettingButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -53,8 +53,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         bottomView.backgroundColor = EYColorBlack;
         [self.view addSubview:bottomView];
     } else {
-        //1.隐藏分割线
-        self.gk_navLineHidden = YES;
+        
     }
     
     //2.背景图片(放大)

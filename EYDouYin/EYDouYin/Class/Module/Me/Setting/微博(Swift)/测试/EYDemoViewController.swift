@@ -34,6 +34,6 @@ extension EYDemoViewController {
         super.setupTableView()
         
         // 设置右侧的控制器
-        navItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(showNext))
+        gk_navRightBarButtonItem = UIBarButtonItem(title: "下一个", target: self, action: #selector(showNext))
     }
 }

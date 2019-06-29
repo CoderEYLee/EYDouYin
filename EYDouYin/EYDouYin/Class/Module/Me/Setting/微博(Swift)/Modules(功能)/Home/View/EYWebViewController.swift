@@ -33,14 +33,14 @@ extension EYWebViewController {
     override func setupTableView() {
         
         // 设置标题
-        navItem.title = "网页"
+        gk_navTitle = "网页"
         
         // 设置 webView
-        view.insertSubview(webView, belowSubview: navigationBar)
+        view.addSubview(webView)
         
         webView.backgroundColor = UIColor.white
         
         // 设置 contentInset
-        webView.scrollView.contentInset.top = navigationBar.bounds.height
+        webView.scrollView.contentInset.top = gk_navigationBar.bounds.height
     }
 }

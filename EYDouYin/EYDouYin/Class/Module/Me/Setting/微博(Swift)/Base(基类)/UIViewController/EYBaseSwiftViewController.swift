@@ -30,11 +30,6 @@ class EYBaseSwiftViewController: GKNavigationBarViewController {
     var isPullup = false
 
     lazy var topView = UIView(frame: CGRect(x: 0, y: 0, width: EYScreenWidth, height: iPhoneX ? 44 : 20))
-
-    /// 自定义导航条
-    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: self.topView.bounds.size.height, width: EYScreenWidth, height: 44))
-    /// 自定义的导航条目 - 以后设置导航栏内容，统一使用 navItem
-    lazy var navItem = UINavigationItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,13 +55,6 @@ class EYBaseSwiftViewController: GKNavigationBarViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    /// 重写 title 的 didSet
-    override var title: String? {
-        didSet {
-            navItem.title = title
-        }
-    }
-    
     /// 加载数据 - 具体的实现由子类负责
     @objc func loadData() {
         // 如果子类不实现任何方法，默认关闭刷新控件
@@ -83,8 +71,8 @@ extension EYBaseSwiftViewController {
         EYLog("登录成功 \(n)")
         
         // 登录前左边是注册，右边是登录
-        navItem.leftBarButtonItem = nil
-        navItem.rightBarButtonItem = nil
+//        navItem.leftBarButtonItem = nil
+//        navItem.rightBarButtonItem = nil
         
         // 更新 UI => 将访客视图替换为表格视图
         // 需要重新设置 view
@@ -111,8 +99,6 @@ extension EYBaseSwiftViewController {
 	func setupUI() {
         view.backgroundColor = UIColor.white
 
-        setupNavigationBar()
-
         if let dictionary = visitorInfoDictionary,
         let imageName = dictionary["imageName"] {
             imageName != "" || (imageName == "" && EYNetworkManager.shared.userLogon) ?
@@ -123,20 +109,13 @@ extension EYBaseSwiftViewController {
     /// 设置表格视图 - 用户登录之后执行
     /// 子类重写此方法，因为子类不需要关心用户登录之前的逻辑
     @objc func setupTableView() {
-        
-        tableView = UITableView(frame: view.bounds, style: .plain)
+        tableView = UITableView(frame: CGRect(origin: CGPoint(x: 0, y: 88), size: EYScreenSize), style: .plain)
 
-        view.insertSubview(tableView!, belowSubview: navigationBar)
+        view.addSubview(tableView!)
         
         // 设置数据源&代理 -> 目的：子类直接实现数据源方法
         tableView?.dataSource = self
         tableView?.delegate = self
-        
-        // 设置内容缩进
-        tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height,
-                                               left: 0,
-                                               bottom: 0,
-                                               right: 0)
 
         // 修改指示器的缩进 - 强行解包是为了拿到一个必有的 inset
         tableView?.scrollIndicatorInsets = tableView!.contentInset
@@ -157,7 +136,7 @@ extension EYBaseSwiftViewController {
         
         let visitorView = EYVisitorView(frame: view.bounds)
         
-        view.insertSubview(visitorView, belowSubview: navigationBar)
+        view.addSubview(visitorView)
         
         // 1. 设置访客视图信息
         visitorView.visitorInfo = visitorInfoDictionary
@@ -167,26 +146,8 @@ extension EYBaseSwiftViewController {
         visitorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
         
         // 3. 设置导航条按钮
-        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
-        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
-    }
-    
-    /// 设置导航条
-    private func setupNavigationBar() {
-        // 添加导航条
-        view.addSubview(navigationBar)
-        topView.backgroundColor = .white
-        view.insertSubview(topView, aboveSubview: navigationBar)
-        
-        // 将 item 设置给 bar
-        navigationBar.items = [navItem]
-        
-        // 1> 设置 navBar 整个背景的渲染颜色
-        navigationBar.barTintColor = .white
-        // 2> 设置 navBar 的字体颜色
-        navigationBar.titleTextAttributes = [.foregroundColor: UIColor.darkGray]
-        // 3> 设置系统按钮的文字渲染颜色
-        navigationBar.tintColor = UIColor.orange
+//        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+//        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
     }
 }
 
