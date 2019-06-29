@@ -59,9 +59,9 @@
 
 - (void)setupTabBar {
     // 1.设置 tabbar
-    [[UITabBar appearance] setShadowImage:[UIImage new]];
-    [[UITabBar appearance] setBackgroundImage:[UIImage new]];
-    [[UITabBar appearance] setBackgroundColor:EYColorClear];
+    [self.tabBar setShadowImage:[UIImage new]];
+    [self.tabBar setBackgroundImage:[UIImage new]];
+    [self.tabBar setBackgroundColor:EYColorClear];
 
     // 2.创建自定义的 view 添加到 tabBar
     EYTabBarView *tabBarView = [EYTabBarView tabBarView];

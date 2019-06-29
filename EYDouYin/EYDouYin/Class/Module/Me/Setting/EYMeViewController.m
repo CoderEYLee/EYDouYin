@@ -80,10 +80,8 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     NSDictionary *item = items[indexPath.row];
     NSString *vcName = item[@"vcName"];
     GKNavigationBarViewController *vc = [[NSClassFromString(vcName) alloc] init];
-    if ([vcName hasPrefix:@"EYDouYin."]) {
-        
-    } else {
-        vc.gk_navTitle = item[@"name"];
+    if ([vc isKindOfClass:GKNavigationBarViewController.class]) {
+       vc.gk_navTitle = item[@"name"];
     }
     [self.navigationController pushViewController:vc animated:YES];
 }
