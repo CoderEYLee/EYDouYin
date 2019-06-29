@@ -17,7 +17,7 @@
                 <key>name</key>
                 <string>微博(Swift 版本)</string>
                 <key>vcName</key>
-                <string>EYMainViewController</string>
+                <string>EYDouYin.EYMainViewController</string>
             </dict>
 		</array>
 	</dict>
