@@ -367,7 +367,7 @@ extension EYMainViewController {
             for: .normal)
         
         // 实例化导航控制器的时候，会调用 push 方法将 rootVC 压栈
-        let nav = EYNavigationController(rootViewController: vc)
+        let nav = EYNavigationSwiftController(rootViewController: vc)
         
         return nav
     }
