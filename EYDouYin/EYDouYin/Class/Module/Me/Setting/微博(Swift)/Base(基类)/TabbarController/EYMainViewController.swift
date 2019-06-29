@@ -144,7 +144,7 @@ class EYMainViewController: UITabBarController {
     /// 撰写按钮
 	lazy var composeButton: UIButton = UIButton.ey_imageButton(
         "tabbar_compose_icon_add",
-        backgroundImageName: "tabbar_compose_button")
+        backgroundImageName: "tabbar_compose_button_wb")
 }
 
 // MARK: - 新特性视图处理
