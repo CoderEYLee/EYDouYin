@@ -7,7 +7,6 @@
 //
 
 import GKNavigationBarViewController
-//import EYBaseViewController
 
 // 面试题：OC 中支持多继承吗？如果不支持，如何替代？答案：使用协议替代！
 // Swift 的写法更类似于多继承！

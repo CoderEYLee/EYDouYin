@@ -11,7 +11,6 @@ import SVProgressHUD
 import SwiftyJSON
 
 /// 主控制器
-@objc
 class EYMainViewController: UITabBarController {
 
     // 定时器

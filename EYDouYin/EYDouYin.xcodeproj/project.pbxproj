@@ -1394,10 +1394,10 @@
 			isa = PBXGroup;
 			children = (
 				6080A71622C744A5003EC084 /* EYStatusToolBar.swift */,
-				6080A71722C744A5003EC084 /* TitleButton */,
 				6080A71922C744A5003EC084 /* EYHomeViewController.swift */,
-				6080A71A22C744A5003EC084 /* Cell */,
 				6080A71F22C744A5003EC084 /* EYWebViewController.swift */,
+				6080A71722C744A5003EC084 /* TitleButton */,
+				6080A71A22C744A5003EC084 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
