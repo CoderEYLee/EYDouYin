@@ -13,7 +13,7 @@ private let EYStatusNormalCellId = "EYStatusNormalCellId"
 /// 被转发微博的可重用 cell id
 private let EYStatusRetweetedCellId = "EYStatusRetweetedCellId"
 
-class EYHomeViewController: EYBaseViewController {
+class EYHomeViewController: EYBaseSwiftViewController {
 
     /// 列表视图模型
 	lazy var listViewModel = EYStatusListViewModel()

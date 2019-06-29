@@ -14,7 +14,7 @@ private let EYProfileLabelCellId = "EYProfileLabelCellId"
 /// 有描述的可重用 cell id
 private let EYProfileDetailCellId = "EYProfileDetailCellId"
 
-class EYProfileViewController: EYBaseViewController
+class EYProfileViewController: EYBaseSwiftViewController
 {
     /// 我模型数组懒加载
     lazy var listViewModel = EYProfileListViewModel()

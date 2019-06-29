@@ -27,7 +27,7 @@ class EYNavigationController: UINavigationController {
             viewController.hidesBottomBarWhenPushed = true
             
             // 判断控制器的类型
-            if let vc = viewController as? EYBaseViewController {
+            if let vc = viewController as? EYBaseSwiftViewController {
                 
                 var title = "返回"
                 

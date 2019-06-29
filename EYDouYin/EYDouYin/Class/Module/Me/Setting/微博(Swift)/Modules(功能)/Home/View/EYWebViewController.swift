@@ -9,7 +9,7 @@
 import UIKit
 
 /// 网页控制器
-class EYWebViewController: EYBaseViewController {
+class EYWebViewController: EYBaseSwiftViewController {
 
 	lazy var webView = UIWebView(frame: UIScreen.main.bounds)
     

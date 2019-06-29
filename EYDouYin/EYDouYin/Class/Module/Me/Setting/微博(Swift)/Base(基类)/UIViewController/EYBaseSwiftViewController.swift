@@ -17,7 +17,7 @@ import UIKit
 // 2. extension 中不能重写`父类`本类的方法！重写父类方法，是子类的职责，扩展是对类的扩展！
 
 /// 所有主控制器的基类控制器
-class EYBaseViewController: UIViewController {
+class EYBaseSwiftViewController: UIViewController {
     
     /// 访客视图信息字典
     var visitorInfoDictionary: [String: String]?
@@ -75,7 +75,7 @@ class EYBaseViewController: UIViewController {
 }
 
 // MARK: - 访客视图监听方法
-extension EYBaseViewController {
+extension EYBaseSwiftViewController {
     
     /// 登录成功处理
     @objc func loginSuccess(n: Notification) {
@@ -106,7 +106,7 @@ extension EYBaseViewController {
 }
 
 // MARK: - 设置界面
-extension EYBaseViewController {
+extension EYBaseSwiftViewController {
     
 	func setupUI() {
         view.backgroundColor = UIColor.white
@@ -191,7 +191,7 @@ extension EYBaseViewController {
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
-extension EYBaseViewController: UITableViewDataSource, UITableViewDelegate {
+extension EYBaseSwiftViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0

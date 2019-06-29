@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EYDiscoverViewController: EYBaseViewController {
+class EYDiscoverViewController: EYBaseSwiftViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

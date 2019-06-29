@@ -10,7 +10,7 @@ import UIKit
 
 private let EYLiveCellId = "EYLiveCellId"
 
-class EYLiveViewController: EYBaseViewController {
+class EYLiveViewController: EYBaseSwiftViewController {
 
     /// 列表视图模型
     lazy var listViewModel = EYLiveListViewModel()
