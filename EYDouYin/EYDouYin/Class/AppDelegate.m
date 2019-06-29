@@ -38,6 +38,7 @@
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    // 暂时没有用到, 微博是用的是网页的授权
     return [WeiboSDK handleOpenURL:url delegate:self];
 }
 
@@ -193,11 +194,10 @@
 
 - (void)didReceiveWeiboRequest:(WBBaseRequest *)request {
     EYLog(@"didReceiveWeiboRequest==%@", request);
-    
 }
 
 - (void)didReceiveWeiboResponse:(WBBaseResponse *)response {
-    EYLog(@"didReceiveWeiboRequest==%@", response);
+    EYLog(@"didReceiveWeiboResponse==%@", response);
 }
 
 @end
