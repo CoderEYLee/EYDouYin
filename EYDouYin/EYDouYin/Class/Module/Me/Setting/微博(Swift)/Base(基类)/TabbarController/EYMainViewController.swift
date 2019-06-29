@@ -11,6 +11,7 @@ import SVProgressHUD
 import SwiftyJSON
 
 /// 主控制器
+@objc
 class EYMainViewController: UITabBarController {
 
     // 定时器
@@ -18,6 +19,11 @@ class EYMainViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        WeiboSDK.enableDebugMode(true)
+        WeiboSDK.registerApp(EYAppKey)
+        
+        
         setupChildControllers()
         setupComposeButton()
         setupTimer()
@@ -332,7 +338,7 @@ extension EYMainViewController {
         guard let clsName = dict["clsName"] as? String,
             let title = dict["title"] as? String,
             let imageName = dict["imageName"] as? String,
-            let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? EYBaseViewController.Type,
+            let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? EYBaseSwiftViewController.Type,
             let visitorDict = dict["visitorInfo"] as? [String: String]
         
             else {
@@ -365,5 +371,31 @@ extension EYMainViewController {
         let nav = EYNavigationController(rootViewController: vc)
         
         return nav
+    }
+}
+
+/// 加载json信息
+extension EYMainViewController {
+    
+    fileprivate func loadAppInfo() {
+        
+        // 1. 模拟异步
+        DispatchQueue.global().async {
+            
+            // 1> url
+            let url = Bundle.main.url(forResource: "main.json", withExtension: nil)
+            
+            // 2> data
+            let data = NSData(contentsOf: url!)
+            
+            // 3> 写入磁盘
+            let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+            let jsonPath = (docDir as NSString).appendingPathComponent("main.json")
+            
+            // 直接保存在沙盒，等待下一次程序启动使用！
+            data?.write(toFile: jsonPath, atomically: true)
+            
+            EYLog("应用程序加载完毕 \(jsonPath)")
+        }
     }
 }

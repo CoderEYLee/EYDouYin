@@ -6,7 +6,8 @@
 //  Copyright © 2016年 lieryang. All rights reserved.
 //
 
-import UIKit
+import GKNavigationBarViewController
+//import EYBaseViewController
 
 // 面试题：OC 中支持多继承吗？如果不支持，如何替代？答案：使用协议替代！
 // Swift 的写法更类似于多继承！
@@ -17,7 +18,7 @@ import UIKit
 // 2. extension 中不能重写`父类`本类的方法！重写父类方法，是子类的职责，扩展是对类的扩展！
 
 /// 所有主控制器的基类控制器
-class EYBaseSwiftViewController: UIViewController {
+class EYBaseSwiftViewController: GKNavigationBarViewController {
     
     /// 访客视图信息字典
     var visitorInfoDictionary: [String: String]?

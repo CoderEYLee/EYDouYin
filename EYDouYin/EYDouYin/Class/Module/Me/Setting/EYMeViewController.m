@@ -7,6 +7,7 @@
 //
 
 #import "EYMeViewController.h"
+#import "EYDouYin-Swift.h"
 
 @interface EYMeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -77,8 +78,13 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSArray *items = [self.array[indexPath.section] valueForKeyPath:@"items"];
     NSDictionary *item = items[indexPath.row];
-    EYBaseViewController *vc = [[NSClassFromString(item[@"vcName"]) alloc] init];
-    vc.gk_navTitle = item[@"name"];
+    NSString *vcName = item[@"vcName"];
+    GKNavigationBarViewController *vc = [[NSClassFromString(vcName) alloc] init];
+    if ([vcName hasPrefix:@"EYDouYin."]) {
+        
+    } else {
+        vc.gk_navTitle = item[@"name"];
+    }
     [self.navigationController pushViewController:vc animated:YES];
 }
 
