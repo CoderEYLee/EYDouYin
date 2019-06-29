@@ -69,8 +69,8 @@ extension EYBaseSwiftViewController {
         EYLog("登录成功 \(n)")
         
         // 登录前左边是注册，右边是登录
-//        navItem.leftBarButtonItem = nil
-//        navItem.rightBarButtonItem = nil
+        gk_navLeftBarButtonItem = nil
+        gk_navRightBarButtonItem = nil
         
         // 更新 UI => 将访客视图替换为表格视图
         // 需要重新设置 view
@@ -144,8 +144,8 @@ extension EYBaseSwiftViewController {
         visitorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
         
         // 3. 设置导航条按钮
-//        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
-//        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
+        gk_navLeftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+        gk_navRightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
     }
 }
 
