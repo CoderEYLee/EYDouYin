@@ -155,18 +155,18 @@ extension EYHomeViewController {
         // 取消分隔线
         tableView?.separatorStyle = .none
         
-//        setupNavTitle()
+        setupNavTitle()
     }
     
     /// 设置导航栏标题
-//    private func setupNavTitle() {
-//
-//        let title = EYNetworkManager.shared.userAccount.screen_name
-//
-//        let button = EYTitleButton(title: title)
-//
-//        button.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
-//    }
+    private func setupNavTitle() {
+
+        let title = EYNetworkManager.shared.userAccount.screen_name
+        let button = EYTitleButton(title: title)
+        button.center = CGPoint(x: EYScreenWidth / 2, y: CGFloat(EYStateBarHeight + 22))
+        button.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
+        gk_navigationBar.addSubview(button)
+    }
     
     @objc func clickTitleButton(btn: UIButton) {
         
