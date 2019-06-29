@@ -13,6 +13,12 @@
 				<key>vcName</key>
 				<string>EYCollectionViewController</string>
 			</dict>
+            <dict>
+                <key>name</key>
+                <string>微博(Swift 版本)</string>
+                <key>vcName</key>
+                <string>EYCollectionViewController</string>
+            </dict>
 		</array>
 	</dict>
 	<dict>

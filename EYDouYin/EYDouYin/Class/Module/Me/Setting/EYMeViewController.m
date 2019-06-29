@@ -36,13 +36,6 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     //1.隐藏分割线
     self.gk_navLineHidden = YES;
     self.gk_navTitle = @"我的";
-    
-    if (self.jumpType == EYJumpTypeDefault) {
-        //底部 view
-        UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, EYScreenHeight - EYTabBarHomeIndicatorHeight, EYScreenWidth, EYTabBarHomeIndicatorHeight)];
-        bottomView.backgroundColor = EYColorBlack;
-        [self.view addSubview:bottomView];
-    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -84,8 +77,9 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSArray *items = [self.array[indexPath.section] valueForKeyPath:@"items"];
     NSDictionary *item = items[indexPath.row];
-    Class vcClass = NSClassFromString(item[@"vcName"]);
-    [self.navigationController pushViewController:[[vcClass alloc] init] animated:YES];
+    EYBaseViewController *vc = [[NSClassFromString(item[@"vcName"]) alloc] init];
+    vc.gk_navTitle = item[@"name"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - 懒加载
