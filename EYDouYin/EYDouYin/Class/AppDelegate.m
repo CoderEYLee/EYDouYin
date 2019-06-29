@@ -12,7 +12,7 @@
 #import <AFNetworkActivityIndicatorManager.h>
 #import "EYRootViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <WeiboSDKDelegate>
 
 @end
 
@@ -35,6 +35,10 @@
     EYLog(@"AppDelegate--1111111--->程序启动了");
 
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    return [WeiboSDK handleOpenURL:url delegate:self];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -183,6 +187,17 @@
     [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
         EYLog(@"收到内存警告清理磁盘缓存结束");
     }];
+}
+
+#pragma mark - WeiboSDKDelegate
+
+- (void)didReceiveWeiboRequest:(WBBaseRequest *)request {
+    EYLog(@"didReceiveWeiboRequest==%@", request);
+    
+}
+
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response {
+    EYLog(@"didReceiveWeiboRequest==%@", response);
 }
 
 @end
