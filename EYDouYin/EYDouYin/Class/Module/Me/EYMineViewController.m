@@ -35,18 +35,19 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 //1. 初始化界面
 - (void)setupUI {
-    //1.隐藏分割线
-    self.gk_navLineHidden = YES;
+    //1.隐藏导航
+    self.gk_navigationBar.hidden = YES;
+    
+    //1.1 右侧设置按钮
+    CGFloat buttonWH = 30.0;
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(EYScreenWidth - 50, EYStatusBarAndNaviBarHeight - buttonWH * 0.5, buttonWH, buttonWH)];
+    [button addTarget:self action:@selector(tapSettingButton:) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"mine_setting"] forState:UIControlStateNormal];
+    button.backgroundColor = EYColorRGBHex(0x4C4D51);
+    button.layer.cornerRadius = 15.0;
+    [self.view addSubview:button];
     
     if (self.jumpType == EYJumpTypeDefault) {//自己的界面
-        //1.1 右侧设置按钮
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-        [button addTarget:self action:@selector(tapSettingButton:) forControlEvents:UIControlEventTouchUpInside];
-        [button setImage:[UIImage imageNamed:@"mine_setting"] forState:UIControlStateNormal];
-        button.backgroundColor = EYColorRGBHex(0x4C4D51);
-        button.layer.cornerRadius = 15.0;
-        self.gk_navRightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-        
         //4.底部 view
         UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, EYScreenHeight - EYTabBarHomeIndicatorHeight, EYScreenWidth, EYTabBarHomeIndicatorHeight)];
         bottomView.backgroundColor = EYColorBlack;
@@ -59,9 +60,6 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     UIImageView *backImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewRealHeight)];
     backImageView.image = [UIImage imageNamed:@"common_placeholder_mine"];
     backImageView.contentMode = UIViewContentModeScaleAspectFit;
-    backImageView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackImageView:)];
-    [backImageView addGestureRecognizer:tapGesture];
     [self.view insertSubview:backImageView atIndex:0];
     self.backImageView = backImageView;
     
@@ -88,7 +86,12 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    tableView.contentInset = UIEdgeInsetsMake(EYBackImageViewBeginHeight, 0, 0, 0);
+    
+    //tableHeaderView
+    UIButton *headerButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewBeginHeight)];
+    headerButton.backgroundColor = EYColorClear;
+    [headerButton addTarget:self action:@selector(tapHeaderButton:) forControlEvents:UIControlEventTouchUpInside];
+    tableView.tableHeaderView = headerButton;
     [self.view insertSubview:tableView aboveSubview:backImageView];
     self.tableView = tableView;
 }
@@ -99,8 +102,10 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)tapBackImageView:(UITapGestureRecognizer *)tapGesture {
+- (void)tapHeaderButton:(UIButton *)button {
     EYLog(@"更换背景图片");
+    
+    [EYProgressHUD showInfoWithStatus:@"更换背景图片"];
 }
 
 #pragma mark - UITableViewDataSource
@@ -128,19 +133,20 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     //偏移量
     CGFloat contentOffsetY = scrollView.contentOffset.y;
     
-    // 1.背景图放大效果
+    // 1.背景图放大效果(距离屏幕顶部的距离)
     CGFloat distance = -contentOffsetY;
-//    EYLog(@"00000000000==%f", contentOffsetY);//距离屏幕顶部的距离
-    if (distance <= 0) {//出顶部屏幕
-        self.backImageView.frame = CGRectMake(0, - EYBackImageViewBeginHeight * 0.5, EYScreenWidth, EYBackImageViewRealHeight);
-    } else if (distance <= EYBackImageViewBeginHeight) {
-        self.backImageView.frame = CGRectMake(0, (distance - EYBackImageViewBeginHeight) * 0.5, EYScreenWidth, EYBackImageViewRealHeight);
-    } else if (distance >= EYBackImageViewRealHeight) {//向下拽的最大位置
-        scrollView.contentOffset = CGPointMake(0, -EYBackImageViewRealHeight);
+//    EYLog(@"00000000000==%f", distance);//距离屏幕顶部的距离
+    
+    if (distance <= -EYBackImageViewBeginHeight) {//顶部视图完全遮住了
+        self.backImageView.frame = CGRectMake(0, -EYBackImageViewBeginHeight * 0.5, EYScreenWidth, EYBackImageViewRealHeight);
+    } else if (distance <= 0) {//顶部视图未完全展示
+         self.backImageView.frame = CGRectMake(0, distance * 0.5, EYScreenWidth, EYBackImageViewRealHeight);
+    } else if (distance >= EYBackImageViewRealHeight - EYBackImageViewBeginHeight) {//向下拽的最大位置
+        scrollView.contentOffset = CGPointMake(0, -(EYBackImageViewRealHeight - EYBackImageViewBeginHeight));
         CGFloat scale = 1.2;
         self.backImageView.frame = CGRectMake(EYScreenWidth * 0.5 * (1 - scale), 0, EYScreenWidth * scale, EYBackImageViewRealHeight * scale);
     } else {//需要放大图片
-        CGFloat scale = 1.2 - 0.2 * (EYBackImageViewRealHeight - distance) / (EYBackImageViewRealHeight - EYBackImageViewBeginHeight);
+        CGFloat scale = 1.0 + 0.2 * (distance) / (EYBackImageViewRealHeight - EYBackImageViewBeginHeight);
         self.backImageView.frame = CGRectMake(EYScreenWidth * 0.5 * (1 - scale), 0, EYScreenWidth * scale, EYBackImageViewRealHeight * scale);
     }
     
