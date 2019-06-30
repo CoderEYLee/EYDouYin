@@ -10,7 +10,47 @@
 #import "EYMineCell.h"
 #import "EYMeViewController.h"
 
-@interface EYMineViewController() <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, EYMineCellDelegate>
+//tableHeaderView
+@class EYMineViewControllerHeaderView;
+
+@protocol EYMineViewControllerHeaderViewDelegate<NSObject>
+@optional
+- (void)mineViewControllerHeaderViewDidTapHeaderButton:(EYMineViewControllerHeaderView *)view jumpType:(EYJumpType)jumpType;
+
+@end
+
+@interface EYMineViewControllerHeaderView : UIView
+
+@property (weak, nonatomic) id <EYMineViewControllerHeaderViewDelegate> delegate;
+
+@end
+
+@implementation EYMineViewControllerHeaderView
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        CGFloat height = frame.size.height;
+        self.backgroundColor = EYColorClear;
+        UIButton *headerButton = [[UIButton alloc] initWithFrame:CGRectMake(20, height - 20, 120, 120)];
+        headerButton.backgroundColor = EYColorClear;
+        headerButton.layer.cornerRadius = 60.0;
+        [headerButton addTarget:self action:@selector(tapHeaderButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:headerButton];
+        self.layer.masksToBounds = YES;
+    }
+    return self;
+}
+
+- (void)tapHeaderButton:(UIButton *)button {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(mineViewControllerHeaderViewDidTapHeaderButton:jumpType:)]) {
+        [self.delegate mineViewControllerHeaderViewDidTapHeaderButton:self jumpType:EYJumpTypeMineUserHeaderButton];
+    }
+}
+
+@end
+
+@interface EYMineViewController() <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, EYMineCellDelegate, EYMineViewControllerHeaderViewDelegate>
 
 @property (nonatomic, weak) UIImageView *backImageView;
 
@@ -88,10 +128,9 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     }
     
     //tableHeaderView
-    UIButton *headerButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewBeginHeight)];
-    headerButton.backgroundColor = EYColorClear;
-    [headerButton addTarget:self action:@selector(tapHeaderButton:) forControlEvents:UIControlEventTouchUpInside];
-    tableView.tableHeaderView = headerButton;
+    EYMineViewControllerHeaderView *headerView = [[EYMineViewControllerHeaderView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewBeginHeight)];
+    headerView.delegate = self;
+    tableView.tableHeaderView = headerView;
     [self.view insertSubview:tableView aboveSubview:backImageView];
     self.tableView = tableView;
 }
@@ -165,7 +204,12 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 #pragma mark - EYMineCellDelegate
 - (void)mineCell:(EYMineCell *)cell didSelectedButton:(EYJumpType)jumpTpye {
-    EYLog(@"cell--delegate 回调==%@==%d", cell, jumpTpye);
+    EYLog(@"cell--delegate 回调==%@==%lu", cell, jumpTpye);
+}
+
+#pragma mark - EYMineViewControllerHeaderViewDelegate
+- (void)mineViewControllerHeaderViewDidTapHeaderButton:(EYMineViewControllerHeaderView *)view jumpType:(EYJumpType)jumpTpye {
+    EYLog(@"headerView--delegate 回调==%@==%lu", view, jumpTpye);
 }
 
 #pragma mark - 懒加载

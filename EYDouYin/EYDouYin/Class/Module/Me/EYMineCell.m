@@ -34,7 +34,7 @@
         UIButton *userHeaderButton = [[UIButton alloc] init];
         userHeaderButton.layer.cornerRadius = 60.0;
         [userHeaderButton addTarget:self action:@selector(tapUserHeaderButton:) forControlEvents:UIControlEventTouchUpInside];
-        userHeaderButton.backgroundColor = EYColorRandom;
+        userHeaderButton.backgroundColor = EYColorRed;
         [self.contentView addSubview:userHeaderButton];
         self.userHeaderButton = userHeaderButton;
         [userHeaderButton mas_makeConstraints:^(MASConstraintMaker *make) {
