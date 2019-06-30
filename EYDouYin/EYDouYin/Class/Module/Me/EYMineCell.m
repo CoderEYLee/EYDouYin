@@ -13,6 +13,7 @@
 @interface EYMineCell()
 
 @property (weak, nonatomic) UIButton *userHeaderButton;
+@property (weak, nonatomic) UIImageView *userImageView;
 @property (weak, nonatomic) UIButton *profileButton;
 @property (weak, nonatomic) UIButton *focusButton;
 @property (weak, nonatomic) UIButton *addFriendButton;
@@ -32,15 +33,24 @@
         //1.顶部
         //1.1用户个人头像按钮
         UIButton *userHeaderButton = [[UIButton alloc] init];
-        userHeaderButton.layer.cornerRadius = 60.0;
+        userHeaderButton.layer.cornerRadius = 55.0;
         [userHeaderButton addTarget:self action:@selector(tapUserHeaderButton:) forControlEvents:UIControlEventTouchUpInside];
-        userHeaderButton.backgroundColor = EYColorRed;
+        userHeaderButton.backgroundColor = EYColorTheme;
         [self.contentView addSubview:userHeaderButton];
         self.userHeaderButton = userHeaderButton;
         [userHeaderButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(EYMineCellMargin);
             make.top.mas_equalTo(-20);
-            make.width.height.mas_equalTo(120);
+            make.width.height.mas_equalTo(110);
+        }];
+        //用户个人头像图片
+        UIImageView *userImageView = [[UIImageView alloc] init];
+        userImageView.layer.cornerRadius = 50.0;
+        [userHeaderButton addSubview:userImageView];
+        self.userImageView = userImageView;
+        [userImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.mas_equalTo(0);
+            make.width.height.mas_equalTo(100);
         }];
         
         //1.2.1 编辑资料
@@ -52,7 +62,7 @@
         [self.contentView addSubview:profileButton];
         self.profileButton = profileButton;
         [profileButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(userHeaderButton.mas_right).mas_offset(20);
+            make.left.mas_equalTo(userHeaderButton.mas_right).mas_offset(10);
             make.centerY.mas_equalTo(userHeaderButton.mas_centerY);
             make.right.mas_equalTo(-74);
             make.height.mas_equalTo(44);
@@ -190,7 +200,8 @@
 - (void)setUserModel:(EYUserModel *)userModel {
     _userModel = userModel;
     
-    [self.userHeaderButton ey_setImageWithURL:[NSURL URLWithString:userModel.tt_user_image] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@""] options:0];
+    [self.userImageView sd_setImageWithURL:[NSURL URLWithString:userModel.tt_user_image] placeholderImage:[UIImage imageNamed:@"commom_user_default"]];
+    
 //    @property (weak, nonatomic) UIButton *userHeaderButton;
 //    @property (weak, nonatomic) UIButton *profileButton;
 //    @property (weak, nonatomic) UIButton *focusButton;

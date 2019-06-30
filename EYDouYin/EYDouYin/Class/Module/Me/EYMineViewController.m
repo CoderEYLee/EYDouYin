@@ -32,9 +32,9 @@
     if (self) {
         CGFloat height = frame.size.height;
         self.backgroundColor = EYColorClear;
-        UIButton *headerButton = [[UIButton alloc] initWithFrame:CGRectMake(20, height - 20, 120, 120)];
+        UIButton *headerButton = [[UIButton alloc] initWithFrame:CGRectMake(20, height - 20, 110, 110)];
         headerButton.backgroundColor = EYColorClear;
-        headerButton.layer.cornerRadius = 60.0;
+        headerButton.layer.cornerRadius = 55.0;
         [headerButton addTarget:self action:@selector(tapHeaderButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:headerButton];
         self.layer.masksToBounds = YES;
@@ -56,6 +56,9 @@
 
 @property (weak, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *arrayM;
+
+// 根据 user_id 获取的用户信息
+@property (strong, nonatomic) EYUserModel *userModel;
 
 @end
 
@@ -158,6 +161,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EYMineCell *cell = [tableView dequeueReusableCellWithIdentifier:EYMineViewControllerCellID];
+    cell.userModel = self.userModel;
     cell.delegate = self;
     return cell;
 }

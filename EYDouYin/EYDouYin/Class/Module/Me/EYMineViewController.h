@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 跳转方式
 @property (assign, nonatomic) EYJumpType jumpType;
 
+// 传递过来的 user_id
+@property (copy, nonatomic) NSString *user_id;
+
 @end
 
 NS_ASSUME_NONNULL_END
