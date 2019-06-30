@@ -152,6 +152,14 @@ static EYHTTPManager *_HTTPManager = nil;
 
             break;
         }
+        case 10000: {//系统错误
+            // 回调失败
+            if (failure) {
+                NSError *error;
+                failure(error);
+            }
+            break;
+        }
         case 10030: { //访问过于频繁
             EYLog(@"EYHTTPManager==访问过于频繁");
             if (success) {
@@ -227,7 +235,14 @@ static EYHTTPManager *_HTTPManager = nil;
 
                 break;
             }
-//            case 10000: //系统错误
+            case 10000: {//系统错误
+                // 回调失败
+                if (failure) {
+                    NSError *error;
+                    failure(error);
+                }
+                break;
+            }
 //            case 10001: //参数不能为空
 //            case 10005: //发送过于频繁
 //            case 10030: //访问过于频繁
