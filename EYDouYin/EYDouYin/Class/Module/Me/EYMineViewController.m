@@ -40,13 +40,12 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     
     if (self.jumpType == EYJumpTypeDefault) {//自己的界面
         //1.1 右侧设置按钮
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
         [button addTarget:self action:@selector(tapSettingButton:) forControlEvents:UIControlEventTouchUpInside];
         [button setImage:[UIImage imageNamed:@"mine_setting"] forState:UIControlStateNormal];
-        [UIBarButtonItem itemWithTitle:nil image:nil target:nil action:nil];
+        button.backgroundColor = EYColorRGBHex(0x4C4D51);
+        button.layer.cornerRadius = 15.0;
         self.gk_navRightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-        button.backgroundColor = EYColorRGBHex(0x222434);
-        button.layer.cornerRadius = 22.0;
         
         //4.底部 view
         UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, EYScreenHeight - EYTabBarHomeIndicatorHeight, EYScreenWidth, EYTabBarHomeIndicatorHeight)];
