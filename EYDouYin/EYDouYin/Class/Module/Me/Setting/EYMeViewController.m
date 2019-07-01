@@ -7,6 +7,7 @@
 //
 
 #import "EYMeViewController.h"
+#import "EYExcelTool.h"
 #import "EYDouYin-Swift.h"
 
 @interface EYMeViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -30,6 +31,8 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     [self setupUI];
     
     [self.tableView reloadData];
+    
+    [EYExcelTool startParseExcel];
  }
 
 //1. 初始化界面

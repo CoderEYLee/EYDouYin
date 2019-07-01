@@ -119,7 +119,7 @@
 - (UIImage *)dummyImage {
     
     NSString *key = _photos.urls[_photos.selectedIndex];
-    SDImageCache *imageCache = [SDWebImageManager sharedManager].imageCache;
+    SDImageCache *imageCache = (SDImageCache *)[SDWebImageManager sharedManager].imageCache;
     UIImage *image = [imageCache imageFromDiskCacheForKey:key];
     
     if (image == nil) {
