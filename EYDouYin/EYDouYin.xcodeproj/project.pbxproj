@@ -1549,10 +1549,10 @@
 			isa = PBXGroup;
 			children = (
 				6080A74522C744A5003EC084 /* EYLiveViewController.swift */,
-				6080A74622C744A5003EC084 /* Cell */,
 				6080A74922C744A5003EC084 /* EmmitParticles.swift */,
 				6080A74A22C744A5003EC084 /* EYLivePlayerVideoViewController.swift */,
 				6080A74B22C744A5003EC084 /* EYLivePlayerVideoViewController.xib */,
+				6080A74622C744A5003EC084 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
