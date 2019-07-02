@@ -79,6 +79,9 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+    return;
     NSArray *items = [self.array[indexPath.section] valueForKeyPath:@"items"];
     NSDictionary *item = items[indexPath.row];
     NSString *vcName = item[@"vcName"];

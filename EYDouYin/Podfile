@@ -45,4 +45,8 @@ pod 'FMDB', '2.7.5'                 # 数据库存储
 pod 'IJKMediaFramework', '0.1.2'
 pod "Weibo_SDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
 
+flutter_application_path = '../my_flutter/'
+
+eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
+
 end

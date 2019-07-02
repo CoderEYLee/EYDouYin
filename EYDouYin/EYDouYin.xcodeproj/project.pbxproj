@@ -1755,6 +1755,7 @@
 				607541252104CC4B00EB258D /* Resources */,
 				512D6D5B7433F633BD00A0D6 /* [CP] Copy Pods Resources */,
 				7164FAC7CBD575C447A17FE0 /* [CP] Embed Pods Frameworks */,
+				601DE50322CB028B00C99E5E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1947,6 +1948,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		601DE50322CB028B00C99E5E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n\n\"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed\n";
 		};
 		7164FAC7CBD575C447A17FE0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2305,9 +2323,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3A5H5A6LD7;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/lieryang/个人/iOS项目/EYDouYin/EYDouYin/EYDouYin/Class/Main/Other/PrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"FLUTTER_BUILD_MODE=Debug",
+				);
 				INFOPLIST_FILE = EYDouYin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2337,9 +2360,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3A5H5A6LD7;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/lieryang/个人/iOS项目/EYDouYin/EYDouYin/EYDouYin/Class/Main/Other/PrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"FLUTTER_BUILD_MODE=Release",
+				);
 				INFOPLIST_FILE = EYDouYin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

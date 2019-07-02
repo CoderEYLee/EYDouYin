@@ -12,6 +12,8 @@
 #import <AFNetworkActivityIndicatorManager.h>
 #import "EYRootViewController.h"
 
+//#import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h> // Only if you have Flutter Plugins
+
 @interface AppDelegate () <WeiboSDKDelegate>
 
 @end
@@ -28,6 +30,8 @@
     
     // 3.初始化其他信息
     [self setupOtherInfo];
+    
+    self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
 
     //启动图时间
     sleep(2);
