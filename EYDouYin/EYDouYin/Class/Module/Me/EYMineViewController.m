@@ -48,6 +48,14 @@
     }
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(mineViewControllerHeaderViewDidTapHeaderButton:jumpType:)]) {
+        [self.delegate mineViewControllerHeaderViewDidTapHeaderButton:self jumpType:EYJumpTypeMineUserHeaderButton];
+    }
+}
+
 @end
 
 @interface EYMineViewController() <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, EYMineCellDelegate, EYMineViewControllerHeaderViewDelegate>
