@@ -27,7 +27,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  // 创建一个给native的channel (类似iOS的通知）
+  // 创建一个给原生(OC)通道 (类似iOS的通知）
   static const methodChannel = const MethodChannel('com.pages.your/native_get');
 
   int _counter = 0;
@@ -67,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       // 类型判断
       if (result is int) {
+        print("OC回调给 Flutter $result");
         _counter = result;
       }
     });

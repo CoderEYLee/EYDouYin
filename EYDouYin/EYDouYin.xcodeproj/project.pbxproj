@@ -24,6 +24,7 @@
 		602A386922A11F8600D6DB0D /* EYBaseVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A386822A11F8600D6DB0D /* EYBaseVideoPlayer.m */; };
 		602A387122A12BCD00D6DB0D /* EYVideoArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 602A387022A12BCC00D6DB0D /* EYVideoArray.plist */; };
 		602DEE5B229E5756006B61A3 /* EYNotificationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 602DEE5A229E5756006B61A3 /* EYNotificationTool.m */; };
+		603DADF622CBA6EB00D61E5D /* EYFlutterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603DADF522CBA6EB00D61E5D /* EYFlutterViewController.m */; };
 		6055AD382116933E005DC856 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD372116933E005DC856 /* UIView+Extension.m */; };
 		6055AD3C2116B382005DC856 /* TabBar.json in Resources */ = {isa = PBXBuildFile; fileRef = 6055AD3B2116B382005DC856 /* TabBar.json */; };
 		6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD3E2116B929005DC856 /* NSString+EYExtension.m */; };
@@ -263,6 +264,8 @@
 		602A387022A12BCC00D6DB0D /* EYVideoArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EYVideoArray.plist; sourceTree = "<group>"; };
 		602DEE59229E5756006B61A3 /* EYNotificationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYNotificationTool.h; sourceTree = "<group>"; };
 		602DEE5A229E5756006B61A3 /* EYNotificationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYNotificationTool.m; sourceTree = "<group>"; };
+		603DADF422CBA6EB00D61E5D /* EYFlutterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFlutterViewController.h; sourceTree = "<group>"; };
+		603DADF522CBA6EB00D61E5D /* EYFlutterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFlutterViewController.m; sourceTree = "<group>"; };
 		6055AD362116933E005DC856 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		6055AD372116933E005DC856 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		6055AD3B2116B382005DC856 /* TabBar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TabBar.json; sourceTree = "<group>"; };
@@ -566,6 +569,7 @@
 				601B032921056E7700489E96 /* EYMeViewController.h */,
 				601B032A21056E7700489E96 /* EYMeViewController.m */,
 				60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */,
+				603DADF322CBA6CD00D61E5D /* Flutter */,
 				60C40086218BFB2200B07E4A /* Collection */,
 				6080A69922C74427003EC084 /* 微博(Swift) */,
 				60752B3F2182C500001B857C /* SJVideoPlayer使用 */,
@@ -721,6 +725,15 @@
 				602DEE5A229E5756006B61A3 /* EYNotificationTool.m */,
 			);
 			path = Notification;
+			sourceTree = "<group>";
+		};
+		603DADF322CBA6CD00D61E5D /* Flutter */ = {
+			isa = PBXGroup;
+			children = (
+				603DADF422CBA6EB00D61E5D /* EYFlutterViewController.h */,
+				603DADF522CBA6EB00D61E5D /* EYFlutterViewController.m */,
+			);
+			path = Flutter;
 			sourceTree = "<group>";
 		};
 		6055AD3A2116B03E005DC856 /* Resource */ = {
@@ -2057,6 +2070,7 @@
 				6080A79D22C744A5003EC084 /* EYComposeTextView.swift in Sources */,
 				6080A77C22C744A5003EC084 /* UIBarButtonItem+Extensions.swift in Sources */,
 				6080A79922C744A5003EC084 /* EYStatusCell.swift in Sources */,
+				603DADF622CBA6EB00D61E5D /* EYFlutterViewController.m in Sources */,
 				6080A75122C744A5003EC084 /* EYNavigationSwiftController.swift in Sources */,
 				60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */,
 				6080A78222C744A5003EC084 /* EYEmoticonAttachment.swift in Sources */,
