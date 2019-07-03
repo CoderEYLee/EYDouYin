@@ -91,7 +91,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     
     //1.1 右侧设置按钮
     CGFloat buttonWH = 30.0;
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(EYScreenWidth - 50, EYStatusBarAndNaviBarHeight - buttonWH * 0.5, buttonWH, buttonWH)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(EYScreenWidth - 50, EYStatusBarHeight + (44 - buttonWH) * 0.5, buttonWH, buttonWH)];
     [button addTarget:self action:@selector(tapSettingButton:) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"mine_setting"] forState:UIControlStateNormal];
     button.backgroundColor = EYColorRGBHex(0x4C4D51);

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EYCollectionDetailViewController : EYBaseViewController
 
-@property (copy, nonatomic) NSString *content_url;
+@property (copy, nonatomic) NSDictionary *dictionary;
 
 @end
 

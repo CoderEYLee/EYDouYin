@@ -58,7 +58,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSDictionary *item = self.array[indexPath.row];
     EYCollectionDetailViewController *vc = [[EYCollectionDetailViewController alloc] init];
-    vc.content_url = item[@"content_url"];
+    vc.dictionary = item;
     if (item[@"lock"]) {
         //添加提示框
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您正在访问内部优惠券" preferredStyle:UIAlertControllerStyleAlert];
@@ -77,7 +77,7 @@
                 if (text.length) {
                     NSString *urlString = item[@"content_url"];
                     urlString = [urlString stringByReplacingOccurrencesOfString:@"baidu" withString:text options:NSRegularExpressionSearch range:NSMakeRange(0, urlString.length - 1)];
-                    vc.content_url = urlString;
+                    vc.dictionary = @{@"title": item[@"title"], @"content_url": urlString};
                 }
                 [self.navigationController pushViewController:vc animated:YES];
             }

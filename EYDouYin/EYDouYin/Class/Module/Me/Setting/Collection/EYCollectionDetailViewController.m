@@ -20,23 +20,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSLog(@"self.content_url-----%@", self.content_url);
+    NSLog(@"self.content_url-----%@", self.dictionary[@"content_url"]);
 
 //    NSHTTPCookie *cookieWID = [NSHTTPCookie cookieWithProperties:[NSDictionary dictionaryWithObjectsAndKeys: @"wid" ,NSHTTPCookieName, WID,NSHTTPCookieValue, @"www.google.com",NSHTTPCookieDomain, @"",NSHTTPCookiePath, @"false",@"HttpOnly", nil]];
 
+    self.gk_navTitle = self.dictionary[@"title"];
+    
     WKWebViewConfiguration*config = [[WKWebViewConfiguration alloc]init];
     config.selectionGranularity = WKSelectionGranularityCharacter;
-    WKWebView *webView = [[WKWebView alloc] initWithFrame:EYScreenBounds configuration:config];
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) configuration:config];
     webView.navigationDelegate = self;
     webView.scrollView.delegate = self;
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.dictionary[@"content_url"]]];
+    [webView loadRequest:request];
     [self.view addSubview:webView];
     self.webView = webView;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.content_url]];
-    [self.webView loadRequest:request];
 }
 
 #pragma mark - WKNavigationDelegate
@@ -51,7 +53,7 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
 
     WKNavigationActionPolicy policy = WKNavigationActionPolicyCancel;
-    if (webView && [webView.URL.absoluteString isEqualToString:self.content_url]) {
+    if (webView && [webView.URL.absoluteString isEqualToString:self.dictionary[@"content_url"]]) {
          policy = WKNavigationActionPolicyAllow;
     }
     EYLog(@"网页即将开始加载-->%@", navigationAction);
@@ -79,7 +81,7 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler  {
     EYLog(@"在收到响应后,决定是否跳转,是否把这个链接加载到webView 上-->%@", navigationResponse);
     WKNavigationResponsePolicy policy = WKNavigationResponsePolicyCancel;
-    if (webView && [webView.URL.absoluteString isEqualToString:self.content_url]) {
+    if (webView && [webView.URL.absoluteString isEqualToString:self.dictionary[@"content_url"]]) {
         policy = WKNavigationResponsePolicyAllow;
     }
     decisionHandler(policy);
