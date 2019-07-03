@@ -19,6 +19,12 @@
                 <key>vcName</key>
                 <string>EYDouYin.EYMainViewController</string>
             </dict>
+            <dict>
+                <key>name</key>
+                <string>Flutter</string>
+                <key>vcName</key>
+                <string>FlutterViewController</string>
+            </dict>
 		</array>
 	</dict>
 	<dict>

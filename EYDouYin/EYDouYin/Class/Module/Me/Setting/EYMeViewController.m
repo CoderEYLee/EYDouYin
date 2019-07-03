@@ -80,30 +80,53 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    [self pushFlutterViewController];
-    return;
     NSArray *items = [self.array[indexPath.section] valueForKeyPath:@"items"];
     NSDictionary *item = items[indexPath.row];
     NSString *vcName = item[@"vcName"];
-    GKNavigationBarViewController *vc = [[NSClassFromString(vcName) alloc] init];
-    if ([vc isKindOfClass:GKNavigationBarViewController.class]) {
-       vc.gk_navTitle = item[@"name"];
+    
+    if ([vcName isEqualToString:@"FlutterViewController"]) {
+        [self pushFlutterViewController];
+    } else {
+        GKNavigationBarViewController *vc = [[NSClassFromString(vcName) alloc] init];
+        if ([vc isKindOfClass:GKNavigationBarViewController.class]) {
+            vc.gk_navTitle = item[@"name"];
+        }
+        [self.navigationController pushViewController:vc animated:YES];
     }
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
+// 进入 Fulutter 界面
 - (void)pushFlutterViewController {
     FlutterViewController *flutterViewController = [[FlutterViewController alloc] initWithNibName:nil bundle:nil];
-    [flutterViewController setFlutterViewDidRenderCallback:^{
-        EYLog(@"setFlutterViewDidRenderCallback");
-    }];
+    
+    // 设置路由名字 跳转到不同的flutter界面
+    /*flutter代码*/
+    /*
+     import 'dart:ui';
+     
+     void main() => runApp(_widgetForRoute(window.defaultRouteName));
+     
+     Widget _widgetForRoute(String route) {
+     switch (route) {
+     case 'myApp':
+     return new MyApp();
+     case 'home':
+     return new HomePage();
+     default:
+     return Center(
+     child: Text('Unknown route: $route', textDirection: TextDirection.ltr),
+     );
+     }
+     }
+     */
     
     __weak typeof(self) weakSelf = self;
 
     // 要与main.dart中一致
     NSString *channelName = @"com.pages.your/native_get";
     FlutterMethodChannel *methodChannel = [FlutterMethodChannel methodChannelWithName:channelName binaryMessenger:flutterViewController];
+    
+    // Flutter 主动与 iOS 原生交互
     [methodChannel setMethodCallHandler:^(FlutterMethodCall* _Nonnull call, FlutterResult  _Nonnull result) {
         // call.method 获取 flutter 给回到的方法名，要匹配到 channelName 对应的多个 发送方法名，一般需要判断区分
         // call.arguments 获取到 flutter 给到的参数，（比如跳转到另一个页面所需要参数）
