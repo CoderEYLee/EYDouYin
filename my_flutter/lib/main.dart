@@ -110,6 +110,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
+              naviTitle
+            ),
+            Text(
               'You have pushed the button this many times:',
             ),
             Text(

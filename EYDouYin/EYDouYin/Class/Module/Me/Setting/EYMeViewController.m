@@ -46,7 +46,7 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
 // 进入 Fulutter 界面
 - (void)pushFlutterViewController {
     FlutterViewController *flutterViewController = [[FlutterViewController alloc] initWithNibName:nil bundle:nil];
-    
+    flutterViewController.view.backgroundColor = EYColorTheme;
     // 设置路由名字 跳转到不同的flutter界面
     /*flutter代码*/
     /*
@@ -181,7 +181,6 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     EYLog(@"123 onCancelWithArguments==%@", arguments);
     return nil;
 }
-
 
 #pragma mark - 懒加载
 - (UITableView *)tableView {
