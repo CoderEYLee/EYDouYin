@@ -40,9 +40,11 @@
     static NSString * ID = @"EYCollectionViewControllerCellID";
 
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
-
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell.backgroundColor = EYColorClear;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.textLabel.textColor = EYColorWhite;
     }
 
     NSDictionary *item = self.array[indexPath.row];
@@ -89,10 +91,12 @@
 - (UITableView *)tableView {
     if (_tableView == nil) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) style:UITableViewStylePlain];
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        tableView.backgroundColor = EYColorClear;
         tableView.dataSource = self;
         tableView.delegate = self;
         if (@available(iOS 11.0, *)) {
-            tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//            tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         } else {
             self.automaticallyAdjustsScrollViewInsets = NO;
         }
