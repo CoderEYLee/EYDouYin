@@ -206,6 +206,8 @@
 		60EE77B82120282C004133A6 /* EYTestViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60EE77B72120282C004133A6 /* EYTestViewView.xib */; };
 		60EE77BF21204188004133A6 /* NSObject+EYRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77BE21204188004133A6 /* NSObject+EYRuntime.m */; };
 		60F3201122CDF83000B86161 /* EYRNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F3201022CDF83000B86161 /* EYRNViewController.m */; };
+		60F3201922CE040900B86161 /* index.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 60F3201822CE040900B86161 /* index.jsbundle */; };
+		60F3201B22CE041200B86161 /* index.jsbundle.meta in Resources */ = {isa = PBXBuildFile; fileRef = 60F3201A22CE041200B86161 /* index.jsbundle.meta */; };
 		6749C7643083D80B46377F2A /* Pods_EYDouYin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF4547C5200AAEC1524E726 /* Pods_EYDouYin.framework */; };
 /* End PBXBuildFile section */
 
@@ -535,6 +537,8 @@
 		60EE77BE21204188004133A6 /* NSObject+EYRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EYRuntime.m"; sourceTree = "<group>"; };
 		60F3200F22CDF83000B86161 /* EYRNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYRNViewController.h; sourceTree = "<group>"; };
 		60F3201022CDF83000B86161 /* EYRNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYRNViewController.m; sourceTree = "<group>"; };
+		60F3201822CE040900B86161 /* index.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.jsbundle; sourceTree = "<group>"; };
+		60F3201A22CE041200B86161 /* index.jsbundle.meta */ = {isa = PBXFileReference; lastKnownFileType = file; path = index.jsbundle.meta; sourceTree = "<group>"; };
 		97A2A75C3787089F0E951A39 /* libPods-EYDouYinTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EYDouYinTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -834,6 +838,7 @@
 		607541292104CC4B00EB258D /* EYDouYin */ = {
 			isa = PBXGroup;
 			children = (
+				60F3201722CE039A00B86161 /* bundle */,
 				6075415C2104CC8C00EB258D /* Class */,
 				607541382104CC4C00EB258D /* Info.plist */,
 			);
@@ -1738,6 +1743,15 @@
 			path = ReactNative;
 			sourceTree = "<group>";
 		};
+		60F3201722CE039A00B86161 /* bundle */ = {
+			isa = PBXGroup;
+			children = (
+				60F3201822CE040900B86161 /* index.jsbundle */,
+				60F3201A22CE041200B86161 /* index.jsbundle.meta */,
+			);
+			path = bundle;
+			sourceTree = "<group>";
+		};
 		6C135B6B8657BEA513DBC0C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1879,6 +1893,7 @@
 				6080A7A222C744A5003EC084 /* EYComposeTypeView.xib in Resources */,
 				607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */,
 				60752B6D2186F49A001B857C /* EYShopCell.xib in Resources */,
+				60F3201922CE040900B86161 /* index.jsbundle in Resources */,
 				6080A75022C744A5003EC084 /* api.ehomeclouds.com.cn.cer in Resources */,
 				6080A76D22C744A5003EC084 /* EYRefreshView.xib in Resources */,
 				6080A79822C744A5003EC084 /* EYStatusNormalCell.xib in Resources */,
@@ -1896,6 +1911,7 @@
 				6080A79B22C744A5003EC084 /* Home.xcassets in Resources */,
 				6076A15D2148E097002ED551 /* ChinLab_en.json in Resources */,
 				6080A75622C744A5003EC084 /* NewFeature.xcassets in Resources */,
+				60F3201B22CE041200B86161 /* index.jsbundle.meta in Resources */,
 				6080A7A422C744A5003EC084 /* Compose.xcassets in Resources */,
 				60C4008B218BFCF000B07E4A /* EYCollectionArray.plist in Resources */,
 				6080A78522C744A5003EC084 /* EYEmoticonInputView.xib in Resources */,

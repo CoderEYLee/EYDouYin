@@ -10,6 +10,7 @@ import {
 
 export default class NativeAPP extends Component {
   render() {
+    console.log('renderrenderrenderrender');
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
