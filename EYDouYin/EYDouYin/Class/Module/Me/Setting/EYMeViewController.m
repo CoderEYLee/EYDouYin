@@ -9,7 +9,7 @@
 #import "EYMeViewController.h"
 #import "EYExcelTool.h"
 #import "EYDouYin-Swift.h"
-#import "EYFlutterViewController.h"
+#import <Flutter/Flutter.h>
 
 @interface EYMeViewController () <UITableViewDataSource, UITableViewDelegate, FlutterStreamHandler>
 
