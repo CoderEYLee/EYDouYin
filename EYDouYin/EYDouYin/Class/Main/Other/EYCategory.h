@@ -14,5 +14,5 @@
 #import "UIImageView+EYSDWebImage.h"
 #import "UIButton+EYSDWebImage.h"
 #import "UIImage+EYAddition.h"
-#import "UIButton+EYAddition.h"
+#import "UIButton+EYAdditionOC.h"
 #import "NSDate+EYFormat.h"

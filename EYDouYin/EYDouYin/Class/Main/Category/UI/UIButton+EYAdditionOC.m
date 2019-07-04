@@ -1,14 +1,14 @@
 //
-//  UIButton+EYAddition.m
+//  UIButton+EYAdditionOC.m
 //  EYDouYin
 //
 //  Created by 李二洋 on 2018/11/6.
 //  Copyright © 2018年 李二洋. All rights reserved.
 //
 
-#import "UIButton+EYAddition.h"
+#import "UIButton+EYAdditionOC.h"
 
-@implementation UIButton (EYAddition)
+@implementation UIButton (EYAdditionOC)
 
 - (void)changButtonWithLineColor:(UIColor *)lineColor lineWidth:(CGFloat)lineWidth {
     CGFloat width = self.bounds.size.width;

@@ -1,5 +1,5 @@
 //
-//  UIButton+EYAddition.h
+//  UIButton+EYAdditionOC.h
 //  EYDouYin
 //
 //  Created by 李二洋 on 2018/11/6.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIButton (EYAddition)
+@interface UIButton (EYAdditionOC)
 
 /**
  处理按钮

@@ -226,7 +226,7 @@
     _pageCountButton.hidden = (_photos.urls.count == 1);
     
     NSMutableAttributedString *attributeText = [[NSMutableAttributedString alloc]
-                                                initWithString:[NSString stringWithFormat:@"%zd", index + 1]
+                                                initWithString:[NSString stringWithFormat:@"%d", index + 1]
                                                 attributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:18],
                                                              NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [attributeText appendAttributedString:[[NSAttributedString alloc]

@@ -121,7 +121,7 @@
  @return 字符串
  */
 + (NSString *)tt_stringPhoneTimeStampWithCurrentDate {
-    return [NSString stringWithFormat:@"%ld", (NSInteger)[[NSDate date] timeIntervalSince1970]];
+    return [NSString stringWithFormat:@"%d", (NSInteger)[[NSDate date] timeIntervalSince1970]];
 }
 
 #pragma mark - NSDate
