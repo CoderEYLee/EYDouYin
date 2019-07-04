@@ -21,7 +21,13 @@
             </dict>
             <dict>
                 <key>name</key>
-                <string>Flutter</string>
+                <string>Flutter(Flutter 语言)</string>
+                <key>vcName</key>
+                <string>FlutterViewController</string>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>ReactNative(ReactNative 语言)</string>
                 <key>vcName</key>
                 <string>FlutterViewController</string>
             </dict>

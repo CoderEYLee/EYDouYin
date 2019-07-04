@@ -10,6 +10,8 @@
 #import "EYExcelTool.h"
 #import "EYDouYin-Swift.h"
 #import <Flutter/Flutter.h>
+#import <React/RCTRootView.h>
+#import "EYRNViewController.h"
 
 @interface EYMeViewController () <UITableViewDataSource, UITableViewDelegate, FlutterStreamHandler>
 
@@ -118,6 +120,14 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     [self.navigationController.view.layer addAnimation:animation forKey:kCATransition];
     [self.navigationController pushViewController:flutterViewController animated:NO];
 }
+    
+- (void)pushReactNative {
+    NSURL *jsonCodeUrl = [NSURL URLWithString:@"http://127.0.0.1:8081/index.ios.bundle?platform=ios&dev=true"];
+    RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsonCodeUrl moduleName:@"EYDouYin" initialProperties:nil launchOptions:nil];
+    EYRNViewController *rnVc = [[EYRNViewController alloc] init];
+    rnVc.view = rootView;
+    [self.navigationController pushViewController:rnVc animated:YES];
+}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -160,6 +170,9 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     NSDictionary *item = items[indexPath.row];
     NSString *vcName = item[@"vcName"];
     
+    [self pushReactNative];
+    
+    return;
     if ([vcName isEqualToString:@"FlutterViewController"]) {
         [self pushFlutterViewController];
     } else {

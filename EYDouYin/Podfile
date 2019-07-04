@@ -49,4 +49,27 @@ pod "Weibo_SDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
 flutter_application_path = '../my_flutter/'
 eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
 
+#pragma mark - React-Native
+# 'node_modules'目录一般位于根目录中
+# 但是如果你的结构不同，那你就要根据实际路径修改下面的`:path`
+pod 'Yoga', :path => './node_modules/react-native/ReactCommon/yoga/yoga.podspec'
+pod 'React', :path => './node_modules/react-native', :subspecs => [
+'Core',
+'RCTText',
+'RCTNetwork',
+'RCTWebSocket', # 这个模块是用于调试功能的
+#'ART',
+'DevSupport',
+#'RCTActionSheet',
+#'RCTGeolocation',
+#'RCTImage',
+#'RCTPushNotification',
+#'RCTSettings',
+#'RCTVibration',
+#'RCTLinkingIOS',
+#'BatchedBridge',
+# 在这里继续添加你所需要的模块
+
+]
+
 end
