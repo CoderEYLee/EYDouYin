@@ -34,9 +34,10 @@
 #if RCT_DEV
     [bridge moduleForClass:[RCTDevLoadingView class]];
 #endif
+    NSDictionary *properties = @{@"name": @"zhangsan"};
     RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                      moduleName:@"EYDouYin"
-                                              initialProperties:nil];
+                                              initialProperties:properties];
     
     rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
     self.view = rootView;
