@@ -13,6 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EYMeItemsModel : NSObject
 
 /**
+ 开发语言
+ */
+@property (copy, nonatomic) NSString *language;
+
+/**
  标题
  */
 @property (copy, nonatomic) NSString *name;

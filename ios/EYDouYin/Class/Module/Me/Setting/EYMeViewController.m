@@ -162,16 +162,20 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSArray *items = self.arrayM[indexPath.section].items;
     EYMeItemsModel *itemModel = items[indexPath.row];
-    NSString *vcName = itemModel.vcName;
+    NSString *language = itemModel.language;
     
-    if ([vcName isEqualToString:@"FlutterViewController"]) {
-        [self pushFlutterViewController];
-    } else {
-        GKNavigationBarViewController *vc = [[NSClassFromString(vcName) alloc] init];
+    if ([language isEqualToString:@"OC"]) {
+        GKNavigationBarViewController *vc = [[NSClassFromString(itemModel.vcName) alloc] init];
         if ([vc isKindOfClass:GKNavigationBarViewController.class]) {
             vc.gk_navTitle = itemModel.name;
         }
         [self.navigationController pushViewController:vc animated:YES];
+    } else if ([language isEqualToString:@"Swift"]) {
+        [self pushFlutterViewController];
+    } else if ([language isEqualToString:@"Flutter"]) {
+        [self pushFlutterViewController];
+    } else {
+        
     }
 }
 
