@@ -3,14 +3,10 @@
     "version": "0.0.1",
     "private": true,
     "scripts": {
-        "start": "node node_modules/react-native/local-cli/cli.js start",
-        "test": "jest"
+        "start": "yarn react-native start"
     },
     "dependencies": {
-        "react": "16.0.0-alpha.6",
-        "react-native": "0.44.3"
-    },
-    "jest": {
-        "preset": "react-native"
+        "react": "16.8.3",
+        "react-native": "0.59.8"
     }
 }

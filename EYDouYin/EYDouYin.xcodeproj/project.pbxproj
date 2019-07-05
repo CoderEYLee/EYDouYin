@@ -16,7 +16,6 @@
 		601B032821056E6900489E96 /* EYFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032721056E6900489E96 /* EYFollowViewController.m */; };
 		601B032B21056E7700489E96 /* EYMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032A21056E7700489E96 /* EYMeViewController.m */; };
 		601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032D21056E8600489E96 /* EYMessageViewController.m */; };
-		601C8C8D22CDE51200106CB1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 601C8C8C22CDE51200106CB1 /* libc++.tbd */; };
 		6026FA5122C07DE200C7F18B /* EYMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6026FA5022C07DE100C7F18B /* EYMineCell.m */; };
 		602A3839229FA8FB00D6DB0D /* EYFollowListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A3838229FA8FB00D6DB0D /* EYFollowListViewController.m */; };
 		602A383C229FA91A00D6DB0D /* EYFollowFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A383B229FA91A00D6DB0D /* EYFollowFriendViewController.m */; };
@@ -547,7 +546,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				601C8C8D22CDE51200106CB1 /* libc++.tbd in Frameworks */,
 				6076A16B214A05BF002ED551 /* MediaPlayer.framework in Frameworks */,
 				6749C7643083D80B46377F2A /* Pods_EYDouYin.framework in Frameworks */,
 			);

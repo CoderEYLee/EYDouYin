@@ -1,15 +1,13 @@
 /**
- * Copyright 2013-2015, Facebook, Inc.
- * All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 'use strict';
 
-var gutil = require('gulp-util');
+var PluginError = require('plugin-error');
 var through = require('through2');
 var fs = require('fs');
 var path = require('path');
@@ -21,7 +19,7 @@ var PLUGIN_NAME = 'module-map';
 module.exports = function(opts) {
   // Assume file is a string for now
   if (!opts || !('moduleMapFile' in opts && 'prefix' in opts)) {
-    throw new gutil.PluginError(
+    throw new PluginError(
       PLUGIN_NAME,
       'Missing options. Ensure you pass an object with `moduleMapFile` and `prefix`'
     );
@@ -37,7 +35,7 @@ module.exports = function(opts) {
     }
 
     if (file.isStream()) {
-      cb(new gutil.PluginError('module-map', 'Streaming not supported'));
+      cb(new PluginError('module-map', 'Streaming not supported'));
       return;
     }
 
@@ -48,7 +46,7 @@ module.exports = function(opts) {
       if (moduleMap.hasOwnProperty(name)) {
         this.emit(
           'error',
-          new gutil.PluginError(
+          new PluginError(
             PLUGIN_NAME,
             'Duplicate module found: ' + name + ' at ' + file.path + ' and ' +
               moduleMap[name]
