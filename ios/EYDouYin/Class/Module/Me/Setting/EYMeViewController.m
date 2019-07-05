@@ -11,12 +11,13 @@
 #import "EYDouYin-Swift.h"
 #import <Flutter/Flutter.h>
 #import "EYRNViewController.h"
+#import "EYMeModel.h"
 
 @interface EYMeViewController () <UITableViewDataSource, UITableViewDelegate, FlutterStreamHandler>
 
 @property (weak, nonatomic) UITableView *tableView;
 
-@property (strong, nonatomic) NSArray *array;
+@property (strong, nonatomic) NSMutableArray <EYMeModel *>*arrayM;
 
 @end
 
@@ -26,8 +27,6 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.array = [EYManager manager].meArray;
     
     //1. 初始化界面
     [self setupUI];
@@ -127,11 +126,11 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.array.count;
+    return self.arrayM.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self.array[section] valueForKeyPath:@"items"] count];
+    return [[self.arrayM[section] valueForKeyPath:@"items"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -143,38 +142,34 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
         cell.textLabel.textColor = EYColorWhite;
     }
 
-    NSArray *items = [self.array[indexPath.section] valueForKeyPath:@"items"];
-    NSDictionary *item = items[indexPath.row];
-    cell.textLabel.text = item[@"name"];
+    NSArray *items = self.arrayM[indexPath.section].items;
+    EYMeItemsModel *itemModel = items[indexPath.row];
+    cell.textLabel.text = itemModel.name;
 
     return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSDictionary *group = self.array[section];
-    return group[@"groupName"];
+    return self.arrayM[section].groupName;
 }
 
 - (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    return [self.array valueForKeyPath:@"groupName"];
+    return [self.arrayM valueForKeyPath:@"groupName"];
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSArray *items = [self.array[indexPath.section] valueForKeyPath:@"items"];
-    NSDictionary *item = items[indexPath.row];
-    NSString *vcName = item[@"vcName"];
+    NSArray *items = self.arrayM[indexPath.section].items;
+    EYMeItemsModel *itemModel = items[indexPath.row];
+    NSString *vcName = itemModel.vcName;
     
-    [self pushReactNative];
-    
-    return;
     if ([vcName isEqualToString:@"FlutterViewController"]) {
         [self pushFlutterViewController];
     } else {
         GKNavigationBarViewController *vc = [[NSClassFromString(vcName) alloc] init];
         if ([vc isKindOfClass:GKNavigationBarViewController.class]) {
-            vc.gk_navTitle = item[@"name"];
+            vc.gk_navTitle = itemModel.name;
         }
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -216,6 +211,13 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
         _tableView = tableView;
     }
     return _tableView;
+}
+
+- (NSMutableArray<EYMeModel *> *)arrayM {
+    if (nil == _arrayM) {
+        _arrayM = [EYMeModel mj_objectArrayWithFilename:@"EYMeViewControllerSourceArray.plist"];
+    }
+    return _arrayM;
 }
 
 @end

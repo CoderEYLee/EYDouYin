@@ -18,6 +18,7 @@
 		601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032D21056E8600489E96 /* EYMessageViewController.m */; };
 		602112B522CF18EA00510A74 /* index.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 602112B422CF18EA00510A74 /* index.jsbundle */; };
 		602112B822CF30AF00510A74 /* EYCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 602112B722CF30AF00510A74 /* EYCollectionModel.m */; };
+		602112BB22CF37E800510A74 /* EYMeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 602112BA22CF37E800510A74 /* EYMeModel.m */; };
 		6026FA5122C07DE200C7F18B /* EYMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6026FA5022C07DE100C7F18B /* EYMineCell.m */; };
 		602A3839229FA8FB00D6DB0D /* EYFollowListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A3838229FA8FB00D6DB0D /* EYFollowListViewController.m */; };
 		602A383C229FA91A00D6DB0D /* EYFollowFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A383B229FA91A00D6DB0D /* EYFollowFriendViewController.m */; };
@@ -255,6 +256,8 @@
 		602112B422CF18EA00510A74 /* index.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.jsbundle; sourceTree = "<group>"; };
 		602112B622CF30AF00510A74 /* EYCollectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCollectionModel.h; sourceTree = "<group>"; };
 		602112B722CF30AF00510A74 /* EYCollectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCollectionModel.m; sourceTree = "<group>"; };
+		602112B922CF37E800510A74 /* EYMeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMeModel.h; sourceTree = "<group>"; };
+		602112BA22CF37E800510A74 /* EYMeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMeModel.m; sourceTree = "<group>"; };
 		6026FA4F22C07DE100C7F18B /* EYMineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMineCell.h; sourceTree = "<group>"; };
 		6026FA5022C07DE100C7F18B /* EYMineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMineCell.m; sourceTree = "<group>"; };
 		602A3837229FA8FB00D6DB0D /* EYFollowListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFollowListViewController.h; sourceTree = "<group>"; };
@@ -574,6 +577,8 @@
 			children = (
 				601B032921056E7700489E96 /* EYMeViewController.h */,
 				601B032A21056E7700489E96 /* EYMeViewController.m */,
+				602112B922CF37E800510A74 /* EYMeModel.h */,
+				602112BA22CF37E800510A74 /* EYMeModel.m */,
 				60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */,
 				60F3200C22CDF7FB00B86161 /* ReactNative */,
 				60C40086218BFB2200B07E4A /* Collection */,
@@ -2049,6 +2054,7 @@
 				6080A76A22C744A5003EC084 /* EYRefreshView.swift in Sources */,
 				60752B472183224E001B857C /* EYZFPlayerViewController.m in Sources */,
 				6080A7AB22C744A5003EC084 /* EYProfileCell.swift in Sources */,
+				602112BB22CF37E800510A74 /* EYMeModel.m in Sources */,
 				6080A7B122C744A5003EC084 /* EYCreator.swift in Sources */,
 				606B6590219189310059D1F7 /* UIButton+EYAdditionOC.m in Sources */,
 				6080A78822C744A5003EC084 /* EYEmoticonInputView.swift in Sources */,

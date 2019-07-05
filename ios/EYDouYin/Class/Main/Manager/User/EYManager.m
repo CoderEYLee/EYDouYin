@@ -12,8 +12,6 @@
 @interface EYManager()
 
 @property (strong, nonatomic, readwrite) EYUserModel *userModel;
-@property (strong, nonatomic, readwrite) NSArray *meArray;
-@property (strong, nonatomic, readwrite) NSArray *collectionArray;
 
 @end
 
@@ -51,8 +49,6 @@ static EYManager *_manager = nil;
     self = [super init];
     if (self) {
         // 初始化
-        self.meArray = @"EYMeViewControllerSourceArray.plist".ey_loadLocalPlistFileArray;
-        self.collectionArray = @"EYCollectionArray.plist".ey_loadLocalPlistFileArray;
     }
     return self;
 }

@@ -28,12 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)saveUserModel:(EYUserModel *)userModel;
 
-// EYMeViewController控制器使用
-@property (strong, nonatomic, readonly) NSArray *meArray;
-
-// EYCollectionViewController控制器使用
-@property (strong, nonatomic, readonly) NSArray *collectionArray;
-
 #pragma mark -- 用户上传过的视频 --
 //查找是否上传过该视频，上传过返回yes未上传返回no
 - (BOOL)search_video_tag:(NSString *)video_tag;
