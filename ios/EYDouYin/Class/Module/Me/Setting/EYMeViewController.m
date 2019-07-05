@@ -164,16 +164,16 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     EYMeItemsModel *itemModel = items[indexPath.row];
     NSString *language = itemModel.language;
     
-    if ([language isEqualToString:@"OC"]) {
+    if ([language isEqualToString:@"OC"] || [language isEqualToString:@"Swift"]) {
         GKNavigationBarViewController *vc = [[NSClassFromString(itemModel.vcName) alloc] init];
         if ([vc isKindOfClass:GKNavigationBarViewController.class]) {
             vc.gk_navTitle = itemModel.name;
         }
         [self.navigationController pushViewController:vc animated:YES];
-    } else if ([language isEqualToString:@"Swift"]) {
-        [self pushFlutterViewController];
     } else if ([language isEqualToString:@"Flutter"]) {
         [self pushFlutterViewController];
+    } else if ([language isEqualToString:@"RN"]) {
+        [self pushReactNative];
     } else {
         
     }
