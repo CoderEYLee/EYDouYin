@@ -8,7 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		6000D86F213D1CFB00491BB7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6000D871213D1CFB00491BB7 /* Localizable.strings */; };
+		6002BD8A22D33F5800945DC3 /* EYLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6002BD8822D33F5800945DC3 /* EYLanguageTool.m */; };
 		6012FD70215A36BF004A3083 /* UIView+EYCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012FD6F215A36BF004A3083 /* UIView+EYCornerRadius.m */; };
+		6014B0BB22D10B03003DC224 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014B0BA22D10B03003DC224 /* libz.tbd */; };
+		6014B0BD22D10B12003DC224 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014B0BC22D10B12003DC224 /* libbz2.tbd */; };
+		6014B0BF22D10B20003DC224 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014B0BE22D10B20003DC224 /* libiconv.tbd */; };
+		6014B0C122D10B30003DC224 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014B0C022D10B30003DC224 /* AudioToolbox.framework */; };
+		6014B0C322D10B3B003DC224 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014B0C222D10B3B003DC224 /* CoreMedia.framework */; };
+		6014B0C522D10B47003DC224 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014B0C422D10B46003DC224 /* VideoToolbox.framework */; };
 		601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B03142104DCBD00489E96 /* EYTabBarController.m */; };
 		601B03192104DDED00489E96 /* EYFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B03182104DDED00489E96 /* EYFindViewController.m */; };
 		601B032221056E4E00489E96 /* EYSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032121056E4E00489E96 /* EYSendViewController.m */; };
@@ -191,7 +198,6 @@
 		60AAFC7722B27DE600F30A9B /* sheet1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 60AAFC7622B27DE600F30A9B /* sheet1.xml */; };
 		60AAFC7C22B374E800F30A9B /* EYExcelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AAFC7B22B374E800F30A9B /* EYExcelTool.m */; };
 		60AAFC7F22B375C300F30A9B /* EYExcelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AAFC7E22B375C300F30A9B /* EYExcelModel.m */; };
-		60AFD6A8229292F1005C4742 /* EYLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AFD6A7229292F1005C4742 /* EYLanguageTool.m */; };
 		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
 		60BBC6892104D83400DEEA34 /* EYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6842104D83400DEEA34 /* EYNavigationController.m */; };
 		60BBC68B2104D83400DEEA34 /* EYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6862104D83400DEEA34 /* EYBaseViewController.m */; };
@@ -236,8 +242,16 @@
 		6000D86C213D1C6700491BB7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6000D870213D1CFB00491BB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6000D872213D1CFF00491BB7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6002BD8822D33F5800945DC3 /* EYLanguageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYLanguageTool.m; sourceTree = "<group>"; };
+		6002BD8922D33F5800945DC3 /* EYLanguageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYLanguageTool.h; sourceTree = "<group>"; };
 		6012FD6E215A36BF004A3083 /* UIView+EYCornerRadius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+EYCornerRadius.h"; sourceTree = "<group>"; };
 		6012FD6F215A36BF004A3083 /* UIView+EYCornerRadius.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+EYCornerRadius.m"; sourceTree = "<group>"; };
+		6014B0BA22D10B03003DC224 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		6014B0BC22D10B12003DC224 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		6014B0BE22D10B20003DC224 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		6014B0C022D10B30003DC224 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6014B0C222D10B3B003DC224 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		6014B0C422D10B46003DC224 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		601B03132104DCBD00489E96 /* EYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYTabBarController.h; sourceTree = "<group>"; };
 		601B03142104DCBD00489E96 /* EYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYTabBarController.m; sourceTree = "<group>"; };
 		601B03172104DDED00489E96 /* EYFindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFindViewController.h; sourceTree = "<group>"; };
@@ -511,8 +525,6 @@
 		60AFD69C229245FD005C4742 /* EYPods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPods.h; sourceTree = "<group>"; };
 		60AFD69F2292476C005C4742 /* EYColorConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYColorConstant.h; sourceTree = "<group>"; };
 		60AFD6A2229247BB005C4742 /* EYSizeFontConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYSizeFontConstant.h; sourceTree = "<group>"; };
-		60AFD6A6229292F1005C4742 /* EYLanguageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EYLanguageTool.h; path = ../EYLanguageTool.h; sourceTree = "<group>"; };
-		60AFD6A7229292F1005C4742 /* EYLanguageTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EYLanguageTool.m; path = ../EYLanguageTool.m; sourceTree = "<group>"; };
 		60B2FAC32137D5B40046D13D /* EYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPerson.h; sourceTree = "<group>"; };
 		60B2FAC42137D5B40046D13D /* EYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPerson.m; sourceTree = "<group>"; };
 		60BBC6832104D83400DEEA34 /* EYBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYBaseViewController.h; sourceTree = "<group>"; };
@@ -550,6 +562,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6014B0BB22D10B03003DC224 /* libz.tbd in Frameworks */,
+				6014B0BD22D10B12003DC224 /* libbz2.tbd in Frameworks */,
+				6014B0BF22D10B20003DC224 /* libiconv.tbd in Frameworks */,
+				6014B0C122D10B30003DC224 /* AudioToolbox.framework in Frameworks */,
+				6014B0C322D10B3B003DC224 /* CoreMedia.framework in Frameworks */,
+				6014B0C522D10B47003DC224 /* VideoToolbox.framework in Frameworks */,
 				6076A16B214A05BF002ED551 /* MediaPlayer.framework in Frameworks */,
 				6749C7643083D80B46377F2A /* Pods_EYDouYin.framework in Frameworks */,
 			);
@@ -572,6 +590,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6002BD8722D33F5800945DC3 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				6002BD8822D33F5800945DC3 /* EYLanguageTool.m */,
+				6002BD8922D33F5800945DC3 /* EYLanguageTool.h */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
 		600CE7EF22C5279A00DF6751 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -718,15 +745,6 @@
 				602A386822A11F8600D6DB0D /* EYBaseVideoPlayer.m */,
 			);
 			path = VideoPlayer;
-			sourceTree = "<group>";
-		};
-		602DEE56229E56E5006B61A3 /* Language */ = {
-			isa = PBXGroup;
-			children = (
-				60AFD6A6229292F1005C4742 /* EYLanguageTool.h */,
-				60AFD6A7229292F1005C4742 /* EYLanguageTool.m */,
-			);
-			path = Language;
 			sourceTree = "<group>";
 		};
 		602DEE58229E5723006B61A3 /* Notification */ = {
@@ -923,10 +941,10 @@
 		607541602104CD6600EB258D /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				6002BD8722D33F5800945DC3 /* Language */,
 				6080A68822C61E4D003EC084 /* DeviceInformation */,
 				60AAFC7922B374CF00F30A9B /* Excel */,
 				602A386622A11F7900D6DB0D /* VideoPlayer */,
-				602DEE56229E56E5006B61A3 /* Language */,
 				602DEE58229E5723006B61A3 /* Notification */,
 			);
 			path = Tool;
@@ -1760,6 +1778,12 @@
 		6C135B6B8657BEA513DBC0C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6014B0C422D10B46003DC224 /* VideoToolbox.framework */,
+				6014B0C222D10B3B003DC224 /* CoreMedia.framework */,
+				6014B0C022D10B30003DC224 /* AudioToolbox.framework */,
+				6014B0BE22D10B20003DC224 /* libiconv.tbd */,
+				6014B0BC22D10B12003DC224 /* libbz2.tbd */,
+				6014B0BA22D10B03003DC224 /* libz.tbd */,
 				601C8C8C22CDE51200106CB1 /* libc++.tbd */,
 				6076A16A214A05BF002ED551 /* MediaPlayer.framework */,
 				97A2A75C3787089F0E951A39 /* libPods-EYDouYinTests.a */,
@@ -2126,6 +2150,7 @@
 				6085A1672189A94900637F31 /* EYCircleLayout.m in Sources */,
 				6080A7A622C744A5003EC084 /* EYProfileViewModel.swift in Sources */,
 				606E6FAA21284FF400ABEB83 /* EYBaseCollectionViewController.m in Sources */,
+				6002BD8A22D33F5800945DC3 /* EYLanguageTool.m in Sources */,
 				606B658D2191883B0059D1F7 /* UIImage+EYAddition.m in Sources */,
 				6080A7B222C744A5003EC084 /* EYLiveViewController.swift in Sources */,
 				6080A75922C744A5003EC084 /* EYVisitorView.swift in Sources */,
@@ -2144,7 +2169,6 @@
 				601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */,
 				60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */,
 				602A386922A11F8600D6DB0D /* EYBaseVideoPlayer.m in Sources */,
-				60AFD6A8229292F1005C4742 /* EYLanguageTool.m in Sources */,
 				6080A7AF22C744A5003EC084 /* EYLike+Extension.swift in Sources */,
 				6080A7AD22C744A5003EC084 /* EYLiveViewModel.swift in Sources */,
 				6080A75B22C744A5003EC084 /* EYMainViewController.swift in Sources */,
@@ -2371,11 +2395,49 @@
 					"COCOAPODS=1",
 					"FLUTTER_BUILD_MODE=Debug",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AliyunOSSiOS/AliyunOSSiOS.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DoubleConversion/DoubleConversion.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant/FlutterPluginRegistrant.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Folly/folly.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GDataXML-HTML/GDataXML_HTML.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GKNavigationBarViewController/GKNavigationBarViewController.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJExtension/MJExtension.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React/React.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD/SVProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYCache/YYCache.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYCategories/YYCategories.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ZFPlayer/ZFPlayer.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/glog/glog.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/pop/pop.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/yoga/yoga.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Weibo_SDK\"",
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
+					"${PODS_ROOT}/TXLiteAVSDK_Player/TXLiteAVSDK_Player/SDK/TXLiteAVSDK_Player.framework/Headers/",
+					"$(PROJECT_DIR)/EYDouYin/Class/Main/Tool/FFmpeg-iOS/include",
+				);
 				INFOPLIST_FILE = EYDouYin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EYDouYin/Class/Main/Tool/FFmpeg-iOS/lib",
 				);
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = EY.OC1;
@@ -2408,11 +2470,49 @@
 					"COCOAPODS=1",
 					"FLUTTER_BUILD_MODE=Release",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AliyunOSSiOS/AliyunOSSiOS.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DoubleConversion/DoubleConversion.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FlutterPluginRegistrant/FlutterPluginRegistrant.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Folly/folly.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GDataXML-HTML/GDataXML_HTML.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GKNavigationBarViewController/GKNavigationBarViewController.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJExtension/MJExtension.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/React/React.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD/SVProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYCache/YYCache.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYCategories/YYCategories.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ZFPlayer/ZFPlayer.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/glog/glog.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/pop/pop.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/yoga/yoga.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Weibo_SDK\"",
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
+					"${PODS_ROOT}/TXLiteAVSDK_Player/TXLiteAVSDK_Player/SDK/TXLiteAVSDK_Player.framework/Headers/",
+					"$(PROJECT_DIR)/EYDouYin/Class/Main/Tool/FFmpeg-iOS/include",
+				);
 				INFOPLIST_FILE = EYDouYin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EYDouYin/Class/Main/Tool/FFmpeg-iOS/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = EY.OC1;
 				PRODUCT_NAME = "$(TARGET_NAME)";

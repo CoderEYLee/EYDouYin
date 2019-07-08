@@ -9,6 +9,8 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#ifdef __OBJC__
+
 #pragma mark - 工程配置文件
 #import "EYCategory.h"          //分类文件
 #import "EYColorConstant.h"     //颜色常量文件
@@ -26,5 +28,7 @@
 #pragma mark - 项目通用文件
 #import "EYManager.h"
 #import "EYTestViewController.h"
+
+#endif
 
 #endif /* PrefixHeader_pch */
