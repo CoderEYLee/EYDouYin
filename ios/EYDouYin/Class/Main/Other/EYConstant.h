@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, EYJumpType) {
     
     
     //我的
+    EYJumpTypeMineUserBackImageButton,  //用户背景图片按钮
     EYJumpTypeMineUserHeaderButton,     //用户头像按钮
     EYJumpTypeMineProfileButton,        //用户编辑个人资料按钮
     EYJumpTypeMineFocusButton,          //用户关注按钮

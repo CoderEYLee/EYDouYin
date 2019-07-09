@@ -9,6 +9,7 @@
 #import "EYMineViewController.h"
 #import "EYMineCell.h"
 #import "EYMeViewController.h"
+#import "EYPhotoModel.h"
 
 //tableHeaderView
 @class EYMineViewControllerHeaderView;
@@ -52,13 +53,25 @@
     [super touchesBegan:touches withEvent:event];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(mineViewControllerHeaderViewDidTapHeaderButton:jumpType:)]) {
-        [self.delegate mineViewControllerHeaderViewDidTapHeaderButton:self jumpType:EYJumpTypeMineUserHeaderButton];
+        [self.delegate mineViewControllerHeaderViewDidTapHeaderButton:self jumpType:EYJumpTypeMineUserBackImageButton];
     }
 }
 
 @end
 
-@interface EYMineViewController() <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, EYMineCellDelegate, EYMineViewControllerHeaderViewDelegate>
+typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
+    NYTViewControllerPhotoIndexCustomEverything = 1,
+    NYTViewControllerPhotoIndexLongCaption = 2,
+    NYTViewControllerPhotoIndexDefaultLoadingSpinner = 3,
+    NYTViewControllerPhotoIndexNoReferenceView = 4,
+    NYTViewControllerPhotoIndexCustomMaxZoomScale = 5,
+    NYTViewControllerPhotoIndexGif = 6,
+    NYTViewControllerPhotoCount,
+};
+
+@interface EYMineViewController() <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, EYMineCellDelegate, EYMineViewControllerHeaderViewDelegate, NYTPhotosViewControllerDelegate>
+
+@property (nonatomic) NYTPhotoViewerArrayDataSource *dataSource;
 
 @property (nonatomic, weak) UIImageView *backImageView;
 
@@ -152,12 +165,6 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)tapHeaderButton:(UIButton *)button {
-    EYLog(@"更换背景图片");
-    
-    [EYProgressHUD showInfoWithStatus:@"更换背景图片"];
-}
-
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -222,7 +229,172 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 #pragma mark - EYMineViewControllerHeaderViewDelegate
 - (void)mineViewControllerHeaderViewDidTapHeaderButton:(EYMineViewControllerHeaderView *)view jumpType:(EYJumpType)jumpTpye {
     EYLog(@"headerView--delegate 回调==%@==%lu", view, jumpTpye);
+    
+    switch (jumpTpye) {
+        case EYJumpTypeMineUserBackImageButton: {//用户背景图片按钮
+            EYLog(@"更换背景图片");
+            [EYProgressHUD showInfoWithStatus:@"更换背景图片"];
+            
+            self.dataSource = [self.class newTimesBuildingDataSource];
+            
+            EYLog(@"1231 %@", self.dataSource);
+            
+            NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithDataSource:self.dataSource initialPhoto:nil delegate:self];
+            
+            [self presentViewController:photosViewController animated:YES completion:nil];
+            
+            [self updateImagesOnPhotosViewController:photosViewController afterDelayWithDataSource:self.dataSource];
+            
+            BOOL demonstrateDataSourceSwitchAfterTenSeconds = YES;
+            if (demonstrateDataSourceSwitchAfterTenSeconds) {
+                [self switchDataSourceOnPhotosViewController:photosViewController afterDelayWithDataSource:self.dataSource];
+            }
+            
+            break;
+        }
+        case EYJumpTypeMineUserHeaderButton: {//用户头像按钮
+            EYLog(@"更换用户头像");
+            [EYProgressHUD showInfoWithStatus:@"更换用户头像"];
+            break;
+        }
+            
+        default:
+            break;
+    }
 }
+
+- (void)updateImagesOnPhotosViewController:(NYTPhotosViewController *)photosViewController afterDelayWithDataSource:(NYTPhotoViewerArrayDataSource *)dataSource {
+    if (dataSource != self.dataSource) {
+        return;
+    }
+    
+    CGFloat updateImageDelay = 5.0;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(updateImageDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        for (EYPhotoModel *photo in dataSource.photos) {
+            if (!photo.image && !photo.imageData) {
+                photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
+                photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:@"Photo which previously had a loading spinner (to see the spinner, reopen the photo viewer and scroll to this photo)" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
+                [photosViewController updatePhoto:photo];
+                EYLog(@"1232 %@", self.dataSource);
+            }
+        }
+    });
+}
+
+// This method simulates completely swapping out the data source, after 10 seconds.
+- (void)switchDataSourceOnPhotosViewController:(NYTPhotosViewController *)photosViewController afterDelayWithDataSource:(NYTPhotoViewerArrayDataSource *)dataSource {
+    if (dataSource != self.dataSource) {
+        return;
+    }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        EYPhotoModel *photoWithLongCaption = (EYPhotoModel *)dataSource[NYTViewControllerPhotoIndexLongCaption];
+        photosViewController.delegate = nil; // delegate methods in this VC are intended for use with the TimesBuildingDataSource
+        self.dataSource = [self.class newVariedDataSourceIncludingPhoto:photoWithLongCaption];
+        photosViewController.dataSource = self.dataSource;
+        EYLog(@"1233 %@", self.dataSource);
+        [photosViewController reloadPhotosAnimated:YES];
+    });
+}
+
+/// A second set of test photos, to demonstrate reloading the entire data source.
++ (NYTPhotoViewerArrayDataSource *)newVariedDataSourceIncludingPhoto:(EYPhotoModel *)photo {
+    NSMutableArray *photos = [NSMutableArray array];
+    
+    [photos addObject:({
+        EYPhotoModel *p = [EYPhotoModel new];
+        p.image = [UIImage imageNamed:@"Chess"];
+        p.attributedCaptionTitle = [self attributedTitleFromString:@"Chess"];
+        p.attributedCaptionCredit = [self attributedCreditFromString:@"Photo: Chris Dzombak"];
+        p;
+    })];
+    
+    [photos addObject:({
+        EYPhotoModel *p = photo;
+        photo.attributedCaptionTitle = nil;
+        p.attributedCaptionSummary = [self attributedSummaryFromString:@"This photo’s caption has changed in the data source."];
+        p;
+    })];
+    
+    return [NYTPhotoViewerArrayDataSource dataSourceWithPhotos:photos];
+}
+
+#pragma mark - NYTPhotosViewControllerDelegate
+- (void)photosViewControllerWillDismiss:(NYTPhotosViewController *)photosViewController {
+    EYLog(@"photosViewControllerWillDismiss");
+}
+
+#pragma mark - Sample Data Sources
+
++ (NYTPhotoViewerArrayDataSource *)newTimesBuildingDataSource {
+    NSMutableArray *photos = [NSMutableArray array];
+    
+    for (NSUInteger i = 0; i < 7; i++) {
+        EYPhotoModel *photo = [EYPhotoModel new];
+        
+        if (i == NYTViewControllerPhotoIndexGif) {
+            photo.imageData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"giphy" ofType:@"gif"]];
+        } else if (i == NYTViewControllerPhotoIndexCustomEverything || i == NYTViewControllerPhotoIndexDefaultLoadingSpinner) {
+            // no-op, left here for clarity:
+            photo.image = [UIImage imageNamed:@""];
+        } else {
+            photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
+        }
+        
+        if (i == NYTViewControllerPhotoIndexCustomEverything) {
+            photo.placeholderImage = [UIImage imageNamed:@"NYTimesBuildingPlaceholder"];
+        }
+        
+        NSString *caption = @"<photo summary>";
+        switch ((NYTViewControllerPhotoIndex)i) {
+            case NYTViewControllerPhotoIndexCustomEverything:
+                caption = @"Photo with custom everything";
+                break;
+            case NYTViewControllerPhotoIndexLongCaption:
+                caption = @"Photo with long caption.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum maximus laoreet vehicula. Maecenas elit quam, pellentesque at tempor vel, tempus non sem. Vestibulum ut aliquam elit. Vivamus rhoncus sapien turpis, at feugiat augue luctus id. Nulla mi urna, viverra sed augue malesuada, bibendum bibendum massa. Cras urna nibh, lacinia vitae feugiat eu, consectetur a tellus. Morbi venenatis nunc sit amet varius pretium. Duis eget sem nec nulla lobortis finibus. Nullam pulvinar gravida est eget tristique. Curabitur faucibus nisl eu diam ullamcorper, at pharetra eros dictum. Suspendisse nibh urna, ultrices a augue a, euismod mattis felis. Ut varius tortor ac efficitur pellentesque. Mauris sit amet rhoncus dolor. Proin vel porttitor mi. Pellentesque lobortis interdum turpis, vitae tincidunt purus vestibulum vel. Phasellus tincidunt vel mi sit amet congue.";
+                break;
+            case NYTViewControllerPhotoIndexDefaultLoadingSpinner:
+                caption = @"Photo with loading spinner";
+                break;
+            case NYTViewControllerPhotoIndexNoReferenceView:
+                caption = @"Photo without reference view";
+                break;
+            case NYTViewControllerPhotoIndexCustomMaxZoomScale:
+                caption = @"Photo with custom maximum zoom scale";
+                break;
+            case NYTViewControllerPhotoIndexGif:
+                caption = @"Animated GIF";
+                break;
+            case NYTViewControllerPhotoCount:
+                // this case statement intentionally left blank.
+                break;
+        }
+        
+        photo.attributedCaptionTitle = [self attributedTitleFromString:@(i + 1).stringValue];
+        photo.attributedCaptionSummary = [self attributedSummaryFromString:caption];
+        
+        if (i != NYTViewControllerPhotoIndexGif) {
+            photo.attributedCaptionCredit = [self attributedCreditFromString:@"Photo: Nic Lehoux"];
+        }
+        
+        [photos addObject:photo];
+    }
+    
+    return [NYTPhotoViewerArrayDataSource dataSourceWithPhotos:photos];
+}
+
++ (NSAttributedString *)attributedTitleFromString:(NSString *)caption {
+    return [[NSAttributedString alloc] initWithString:caption attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
+}
+
++ (NSAttributedString *)attributedSummaryFromString:(NSString *)summary {
+    return [[NSAttributedString alloc] initWithString:summary attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
+}
+
++ (NSAttributedString *)attributedCreditFromString:(NSString *)credit {
+    return [[NSAttributedString alloc] initWithString:credit attributes:@{NSForegroundColorAttributeName: [UIColor grayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1]}];
+}
+
 
 #pragma mark - 懒加载
 - (NSMutableArray *)arrayM {

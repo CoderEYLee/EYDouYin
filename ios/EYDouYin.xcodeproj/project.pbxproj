@@ -23,6 +23,7 @@
 		601B032821056E6900489E96 /* EYFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032721056E6900489E96 /* EYFollowViewController.m */; };
 		601B032B21056E7700489E96 /* EYMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032A21056E7700489E96 /* EYMeViewController.m */; };
 		601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032D21056E8600489E96 /* EYMessageViewController.m */; };
+		601EB04C22D4DE6600A0DB95 /* EYPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 601EB04B22D4DE6600A0DB95 /* EYPhotoModel.m */; };
 		602112B522CF18EA00510A74 /* index.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 602112B422CF18EA00510A74 /* index.jsbundle */; };
 		602112B822CF30AF00510A74 /* EYCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 602112B722CF30AF00510A74 /* EYCollectionModel.m */; };
 		602112BB22CF37E800510A74 /* EYMeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 602112BA22CF37E800510A74 /* EYMeModel.m */; };
@@ -282,6 +283,8 @@
 		601B032C21056E8600489E96 /* EYMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMessageViewController.h; sourceTree = "<group>"; };
 		601B032D21056E8600489E96 /* EYMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMessageViewController.m; sourceTree = "<group>"; };
 		601C8C8C22CDE51200106CB1 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		601EB04A22D4DE6600A0DB95 /* EYPhotoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPhotoModel.h; sourceTree = "<group>"; };
+		601EB04B22D4DE6600A0DB95 /* EYPhotoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPhotoModel.m; sourceTree = "<group>"; };
 		602112B422CF18EA00510A74 /* index.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.jsbundle; sourceTree = "<group>"; };
 		602112B622CF30AF00510A74 /* EYCollectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCollectionModel.h; sourceTree = "<group>"; };
 		602112B722CF30AF00510A74 /* EYCollectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCollectionModel.m; sourceTree = "<group>"; };
@@ -851,6 +854,15 @@
 			path = Send;
 			sourceTree = "<group>";
 		};
+		601EB04922D4DE3400A0DB95 /* PhotoBrower */ = {
+			isa = PBXGroup;
+			children = (
+				601EB04A22D4DE6600A0DB95 /* EYPhotoModel.h */,
+				601EB04B22D4DE6600A0DB95 /* EYPhotoModel.m */,
+			);
+			path = PhotoBrower;
+			sourceTree = "<group>";
+		};
 		602A3835229FA82800D6DB0D /* Follow */ = {
 			isa = PBXGroup;
 			children = (
@@ -1099,6 +1111,7 @@
 		607541602104CD6600EB258D /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				601EB04922D4DE3400A0DB95 /* PhotoBrower */,
 				60B00E8522D39B5900941A14 /* FFmpeg-iOS */,
 				6002BD8722D33F5800945DC3 /* Language */,
 				6080A68822C61E4D003EC084 /* DeviceInformation */,
@@ -2495,6 +2508,7 @@
 				60752B3E2182C3F5001B857C /* NullSafe.m in Sources */,
 				6080A67022C613D7003EC084 /* EYManager.m in Sources */,
 				6080A76222C744A5003EC084 /* UIScreen+EYAddition.m in Sources */,
+				601EB04C22D4DE6600A0DB95 /* EYPhotoModel.m in Sources */,
 				601B032221056E4E00489E96 /* EYSendViewController.m in Sources */,
 				601B032521056E5F00489E96 /* EYHomeViewController.m in Sources */,
 				6080A68E22C61EBB003EC084 /* NSDate+EYFormat.m in Sources */,
