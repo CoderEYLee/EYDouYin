@@ -9,7 +9,6 @@
 #import "EYMineViewController.h"
 #import "EYMineCell.h"
 #import "EYMeViewController.h"
-#import "EYPhotoModel.h"
 
 //tableHeaderView
 @class EYMineViewControllerHeaderView;
@@ -59,19 +58,7 @@
 
 @end
 
-typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
-    NYTViewControllerPhotoIndexCustomEverything = 1,
-    NYTViewControllerPhotoIndexLongCaption = 2,
-    NYTViewControllerPhotoIndexDefaultLoadingSpinner = 3,
-    NYTViewControllerPhotoIndexNoReferenceView = 4,
-    NYTViewControllerPhotoIndexCustomMaxZoomScale = 5,
-    NYTViewControllerPhotoIndexGif = 6,
-    NYTViewControllerPhotoCount,
-};
-
-@interface EYMineViewController() <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, EYMineCellDelegate, EYMineViewControllerHeaderViewDelegate, NYTPhotosViewControllerDelegate>
-
-@property (nonatomic) NYTPhotoViewerArrayDataSource *dataSource;
+@interface EYMineViewController() <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, EYMineCellDelegate, EYMineViewControllerHeaderViewDelegate>
 
 @property (nonatomic, weak) UIImageView *backImageView;
 
@@ -234,16 +221,6 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         case EYJumpTypeMineUserBackImageButton: {//用户背景图片按钮
             EYLog(@"更换背景图片");
             
-            EYPhotoModel *photo1 = [[EYPhotoModel alloc] init];
-            photo1.image = [UIImage imageNamed:@"1"];
-            
-            EYPhotoModel *photo2 = [[EYPhotoModel alloc] init];
-            photo2.image = [UIImage imageNamed:@"1"];
-            
-            self.dataSource = [NYTPhotoViewerArrayDataSource dataSourceWithPhotos:@[photo1, photo2]];
-            NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithDataSource:self.dataSource initialPhoto:photo2 delegate:self];
-            [self presentViewController:photosViewController animated:YES completion:nil];
-            
             break;
         }
         case EYJumpTypeMineUserHeaderButton: {//用户头像按钮
@@ -255,12 +232,6 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         default:
             break;
     }
-}
-
-#pragma mark - NYTPhotosViewControllerDelegate
-// 右上角分享按钮点击
-- (BOOL)photosViewController:(NYTPhotosViewController *)photosViewController handleActionButtonTappedForPhoto:(id<NYTPhoto>)photo {
-    return NO;
 }
 
 #pragma mark - 懒加载

@@ -42,7 +42,7 @@ pod 'lottie-ios', '2.5.3'           # JSON 动画
 
 #pod 'MWPhotoBrowser', '2.1.2'       # 图片浏览器(加载网络图片)8.6k
 #pod 'IDMPhotoBrowser', '1.11.3'     # 图片浏览器(加载网络图片)2.7k
-pod 'NYTPhotoViewer', '2.0.0'
+#pod 'NYTPhotoViewer', '2.0.0'        # 不建议使用 没有直接设置网络地址去加载图片的方式只能自己处理图片加载然后更新界面
 
 
 
