@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EYPhotoModel : NSObject
+@interface EYPhotoModel : NSObject <NYTPhoto>
 
 // Redeclare all the properties as readwrite for sample/testing purposes.
 @property (nonatomic) UIImage *image;
