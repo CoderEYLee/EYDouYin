@@ -16,6 +16,7 @@
 		6014B0C122D10B30003DC224 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014B0C022D10B30003DC224 /* AudioToolbox.framework */; };
 		6014B0C322D10B3B003DC224 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014B0C222D10B3B003DC224 /* CoreMedia.framework */; };
 		6014B0C522D10B47003DC224 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6014B0C422D10B46003DC224 /* VideoToolbox.framework */; };
+		6016065922D5F2A70082B278 /* EYTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6016065822D5F2A70082B278 /* EYTestView.m */; };
 		601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B03142104DCBD00489E96 /* EYTabBarController.m */; };
 		601B03192104DDED00489E96 /* EYFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B03182104DDED00489E96 /* EYFindViewController.m */; };
 		601B032221056E4E00489E96 /* EYSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032121056E4E00489E96 /* EYSendViewController.m */; };
@@ -213,7 +214,6 @@
 		60B00F2022D39B5900941A14 /* ffmpeg_videotoolbox.c in Sources */ = {isa = PBXBuildFile; fileRef = 60B00F1322D39B5900941A14 /* ffmpeg_videotoolbox.c */; };
 		60B00F2622D39BB300941A14 /* TTFFmpegConverOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B00F2222D39BB200941A14 /* TTFFmpegConverOC.m */; };
 		60B00F2722D39BB300941A14 /* TTFFmpegManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B00F2322D39BB200941A14 /* TTFFmpegManager.m */; };
-		60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B2FAC42137D5B40046D13D /* EYPerson.m */; };
 		60BBC6892104D83400DEEA34 /* EYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6842104D83400DEEA34 /* EYNavigationController.m */; };
 		60BBC68B2104D83400DEEA34 /* EYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6862104D83400DEEA34 /* EYBaseViewController.m */; };
 		60BBC68E2104D8D200DEEA34 /* EYRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC68D2104D8D200DEEA34 /* EYRootViewController.m */; };
@@ -267,6 +267,8 @@
 		6014B0C022D10B30003DC224 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		6014B0C222D10B3B003DC224 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		6014B0C422D10B46003DC224 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		6016065722D5F2A70082B278 /* EYTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYTestView.h; sourceTree = "<group>"; };
+		6016065822D5F2A70082B278 /* EYTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYTestView.m; sourceTree = "<group>"; };
 		601B03132104DCBD00489E96 /* EYTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYTabBarController.h; sourceTree = "<group>"; };
 		601B03142104DCBD00489E96 /* EYTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYTabBarController.m; sourceTree = "<group>"; };
 		601B03172104DDED00489E96 /* EYFindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFindViewController.h; sourceTree = "<group>"; };
@@ -676,8 +678,6 @@
 		60B00F2322D39BB200941A14 /* TTFFmpegManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFFmpegManager.m; sourceTree = "<group>"; };
 		60B00F2422D39BB200941A14 /* TTFFmpegManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFFmpegManager.h; sourceTree = "<group>"; };
 		60B00F2522D39BB200941A14 /* TTFFmpegConverOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFFmpegConverOC.h; sourceTree = "<group>"; };
-		60B2FAC32137D5B40046D13D /* EYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPerson.h; sourceTree = "<group>"; };
-		60B2FAC42137D5B40046D13D /* EYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPerson.m; sourceTree = "<group>"; };
 		60BBC6832104D83400DEEA34 /* EYBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYBaseViewController.h; sourceTree = "<group>"; };
 		60BBC6842104D83400DEEA34 /* EYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYNavigationController.m; sourceTree = "<group>"; };
 		60BBC6862104D83400DEEA34 /* EYBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYBaseViewController.m; sourceTree = "<group>"; };
@@ -2147,8 +2147,8 @@
 		60EE77B021201CCD004133A6 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				60B2FAC32137D5B40046D13D /* EYPerson.h */,
-				60B2FAC42137D5B40046D13D /* EYPerson.m */,
+				6016065722D5F2A70082B278 /* EYTestView.h */,
+				6016065822D5F2A70082B278 /* EYTestView.m */,
 				60EE77B121201CE8004133A6 /* EYTestViewController.h */,
 				60EE77B221201CE8004133A6 /* EYTestViewController.m */,
 				60EE77B72120282C004133A6 /* EYTestViewView.xib */,
@@ -2601,8 +2601,8 @@
 				6080A67E22C6157C003EC084 /* EYUserModelTool.m in Sources */,
 				6080A79222C744A5003EC084 /* EYStatus.swift in Sources */,
 				6080A65E22C60898003EC084 /* EYUserModel.m in Sources */,
+				6016065922D5F2A70082B278 /* EYTestView.m in Sources */,
 				60AAFC7F22B375C300F30A9B /* EYExcelModel.m in Sources */,
-				60B2FAC52137D5B40046D13D /* EYPerson.m in Sources */,
 				606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */,
 				6080A78C22C744A5003EC084 /* EYUserAccount.swift in Sources */,
 				60B00F2722D39BB300941A14 /* TTFFmpegManager.m in Sources */,

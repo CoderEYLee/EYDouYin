@@ -148,6 +148,10 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 #pragma mark - Private Methods
 - (void)tapSettingButton:(UIButton *)button {
+    EYTestViewController *vc1 = [[EYTestViewController alloc] init];
+    [self.navigationController pushViewController:vc1 animated:YES];
+    
+    return;
     EYMeViewController *vc = [[EYMeViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }

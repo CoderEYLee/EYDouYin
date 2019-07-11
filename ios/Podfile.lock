@@ -93,6 +93,7 @@ PODS:
     - YYCategories/no-arc (= 1.0.4)
   - YYCategories/no-arc (1.0.4)
   - YYModel (1.0.4)
+  - YYText (1.0.7)
   - ZFPlayer (3.1.5):
     - ZFPlayer/Core (= 3.1.5)
   - ZFPlayer/AVPlayer (3.1.5):
@@ -138,6 +139,7 @@ DEPENDENCIES:
   - YYCache (= 1.0.4)
   - YYCategories (= 1.0.4)
   - YYModel (= 1.0.4)
+  - YYText (= 1.0.7)
   - ZFPlayer (= 3.1.5)
   - ZFPlayer/AVPlayer (~> 3.0)
   - ZFPlayer/ControlView (~> 3.0)
@@ -167,6 +169,7 @@ SPEC REPOS:
     - YYCache
     - YYCategories
     - YYModel
+    - YYText
     - ZFPlayer
 
 EXTERNAL SOURCES:
@@ -224,8 +227,9 @@ SPEC CHECKSUMS:
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFPlayer: 8273a62fcc76f451db043ce640434d5f8799c09a
 
-PODFILE CHECKSUM: 8c94a32e342d7bda57628feae1bdff8bcdf9ae0e
+PODFILE CHECKSUM: 1246cf6a659d1728743905449a8cc259c0f181b8
 
 COCOAPODS: 1.7.3

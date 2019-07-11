@@ -7,6 +7,7 @@
 //
 
 #import "EYTestViewController.h"
+#import "EYTestView.h"
 
 @interface EYTestViewController ()
 
@@ -18,25 +19,21 @@
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor grayColor];
-    id<UIGestureRecognizerDelegate> target = self.navigationController.interactivePopGestureRecognizer.delegate;
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:NSSelectorFromString(@"handleNavigationTransition:")];
-    [self.view addGestureRecognizer:pan];
-
-    if (!EYSCREENSIZE_IS_IPhoneX_All) {
-        [UIApplication sharedApplication].statusBarHidden = NO;
-    }
-
-    UILabel * label = [[UILabel alloc] init];
-    label.text = @"这是一个测试界面";
-    [label sizeToFit];
-    label.center = self.view.center;
-    [self.view addSubview:label];
+ 
+    //1. 初始化界面
+    [self setupUI];
 }
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [super touchesBegan:touches withEvent:event];
-
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+//1. 初始化界面
+- (void)setupUI {
+    self.view.backgroundColor = EYColorRandom;
+    
+    EYTestView *redView = [[EYTestView alloc] init];
+    redView.backgroundColor = EYColorRed;
+    EYVideoModel *videoModel = [[EYVideoModel alloc] init];
+    videoModel.video_title = @"123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890";
+    redView.videoModel = videoModel;
+    [self.view addSubview:redView];
 }
 
 @end
