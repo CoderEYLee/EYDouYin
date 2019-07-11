@@ -30,8 +30,6 @@
     
     // 3.初始化其他信息
     [self setupOtherInfo];
-    
-    self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
 
     //启动图时间
     sleep(2);
@@ -137,10 +135,12 @@
     // 最大内存消耗 50M
     imageCacheConfig.maxMemoryCost = 1024 * 1024 * 50;
     
-    // 2.7 腾讯播放器
-    // 设置LOG信息
+    // 2.7 腾讯播放器 设置LOG信息
     [TXLiveBase setLogLevel:LOGLEVEL_NULL];
     [TXLiveBase setConsoleEnabled:NO];
+    
+    // 2.8Flutter初始化
+    self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
 }
 
 #pragma mark - Private Methods
