@@ -34,7 +34,8 @@
 #if RCT_DEV
     [bridge moduleForClass:[RCTDevLoadingView class]];
 #endif
-    NSDictionary *properties = @{@"name": @"zhangsan"};
+    NSMutableDictionary *properties = [NSMutableDictionary dictionary];
+    properties[@"user_id"] = [EYManager manager].userModel.user_id;
     RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                      moduleName:@"EYDouYin"
                                               initialProperties:properties];
