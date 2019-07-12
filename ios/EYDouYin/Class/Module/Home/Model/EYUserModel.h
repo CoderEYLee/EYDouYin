@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EYUserModel : NSObject
 
+/**
+ 所处环境
+ */
+@property (copy, nonatomic) NSString *environment;
+
 @property (copy, nonatomic) NSString *user_id;
 /**
  用户 用户关系 0:无关系 1:关注关系 2:粉丝关系 3:互相关注关系 4:拉黑关系 5:被拉黑关系 6:相互拉黑

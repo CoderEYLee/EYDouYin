@@ -9,11 +9,23 @@ import {
 } from 'react-native';
 
 export default class NativeAPP extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      user_id: props && props.user_id,
+      showText: true
+    };
+
+    console.log('RN:李二洋:RN', this.state.user_id);
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          123Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
