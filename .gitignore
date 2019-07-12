@@ -61,3 +61,4 @@ fastlane/screenshots
 
 iOSInjectionProject/
 EYDouYin/node_modules/
+ios/Podfile.lock
