@@ -713,20 +713,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60B00F1422D39B5900941A14 /* libavutil.a in Frameworks */,
 				6014B0BB22D10B03003DC224 /* libz.tbd in Frameworks */,
 				6014B0BD22D10B12003DC224 /* libbz2.tbd in Frameworks */,
-				60B00F1722D39B5900941A14 /* libavformat.a in Frameworks */,
 				6014B0BF22D10B20003DC224 /* libiconv.tbd in Frameworks */,
-				6014B0C122D10B30003DC224 /* AudioToolbox.framework in Frameworks */,
+				60B00F1422D39B5900941A14 /* libavutil.a in Frameworks */,
+				60B00F1722D39B5900941A14 /* libavformat.a in Frameworks */,
 				60B00F1A22D39B5900941A14 /* libswscale.a in Frameworks */,
-				6014B0C322D10B3B003DC224 /* CoreMedia.framework in Frameworks */,
 				60B00F1522D39B5900941A14 /* libavfilter.a in Frameworks */,
-				6014B0C522D10B47003DC224 /* VideoToolbox.framework in Frameworks */,
 				60B00F1622D39B5900941A14 /* libavcodec.a in Frameworks */,
-				6076A16B214A05BF002ED551 /* MediaPlayer.framework in Frameworks */,
 				60B00F1822D39B5900941A14 /* libavdevice.a in Frameworks */,
 				60B00F1922D39B5900941A14 /* libswresample.a in Frameworks */,
+				6014B0C122D10B30003DC224 /* AudioToolbox.framework in Frameworks */,
+				6014B0C322D10B3B003DC224 /* CoreMedia.framework in Frameworks */,
+				6014B0C522D10B47003DC224 /* VideoToolbox.framework in Frameworks */,
+				6076A16B214A05BF002ED551 /* MediaPlayer.framework in Frameworks */,
 				6749C7643083D80B46377F2A /* Pods_EYDouYin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
