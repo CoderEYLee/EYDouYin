@@ -20,3 +20,4 @@
 #import <Masonry.h>
 #import <TXLiveBase.h>
 #import <Weibo_SDK/WeiboSDK.h>
+#import <YYText.h>
