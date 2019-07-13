@@ -4,7 +4,7 @@
 # This file should be version controlled and should not be manually edited.
 
 version:
-  revision: 3badcf51a435e729f3d248452a253709bab26fc2
+  revision: 90326b6184d3ada2c5be61a9086578cacca8d9ad
   channel: master
 
 project_type: module
