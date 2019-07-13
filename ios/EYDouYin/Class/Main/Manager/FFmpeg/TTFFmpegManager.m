@@ -4,7 +4,7 @@
 //
 //  Created by 李二洋 on 2019/7/6.
 //  Copyright © 2019 TaoTie. All rights reserved.
-//
+//  该文件为 FFmpeg 执行指令的单例类, 调用对应的方法就行
 
 #import "TTFFmpegManager.h"
 #import "ffmpeg.h"
