@@ -86,31 +86,37 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 //1. 初始化界面
 - (void)setupUI {
-    //1.隐藏导航
-    self.gk_navigationBar.hidden = YES;
-    
-    //1.1 右侧设置按钮
-    CGFloat buttonWH = 30.0;
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(EYScreenWidth - 50, EYStatusBarHeight + (44 - buttonWH) * 0.5, buttonWH, buttonWH)];
-    [button addTarget:self action:@selector(tapSettingButton:) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"mine_setting"] forState:UIControlStateNormal];
-    button.backgroundColor = EYColorRGBHex(0x4C4D51);
-    button.layer.cornerRadius = 15.0;
-    [self.view addSubview:button];
-    
     if (self.jumpType == EYJumpTypeDefault) {//自己的界面
-        //4.底部 view
+        //1.1 右侧设置按钮
+        CGFloat buttonWH = 30.0;
+        UIButton *settingButton = [[UIButton alloc] initWithFrame:CGRectMake(EYScreenWidth - 50, EYStatusBarHeight + (44 - buttonWH) * 0.5, buttonWH, buttonWH)];
+        [settingButton addTarget:self action:@selector(tapSettingButton:) forControlEvents:UIControlEventTouchUpInside];
+        [settingButton setImage:[UIImage imageNamed:@"mine_setting"] forState:UIControlStateNormal];
+        settingButton.backgroundColor = EYColorRGBHex(0x4C4D51);
+        settingButton.layer.cornerRadius = 15.0;
+        [self.view addSubview:settingButton];
+        
+        //底部 view
         UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, EYScreenHeight - EYTabBarHomeIndicatorHeight, EYScreenWidth, EYTabBarHomeIndicatorHeight)];
         bottomView.backgroundColor = EYColorBlack;
         [self.view addSubview:bottomView];
-    } else {
         
+        //隐藏导航
+        self.gk_navigationBar.hidden = YES;
+    } else {//其他渠道进入
+        if ([[EYManager manager].userModel.user_id isEqualToString:self.user_id] == NO) {
+            self.gk_navRightBarButtonItem = [UIBarButtonItem itemWithImageName:@"mine_setting" target:self action:@selector(tapMoreButton:)];
+        }
+        
+        //显示导航
+        self.gk_navigationBar.hidden =  NO;
     }
     
     //2.背景图片(放大)
     UIImageView *backImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewRealHeight)];
     backImageView.image = [UIImage imageNamed:@"common_placeholder_mine"];
-    backImageView.contentMode = UIViewContentModeScaleAspectFit;
+    backImageView.layer.masksToBounds = YES;
+    backImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view insertSubview:backImageView atIndex:0];
     self.backImageView = backImageView;
     
@@ -148,11 +154,12 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 #pragma mark - Private Methods
 - (void)tapSettingButton:(UIButton *)button {
-//    EYTestViewController *vc1 = [[EYTestViewController alloc] init];
-//    [self.navigationController pushViewController:vc1 animated:YES];
-//    
-//    return;
     EYMeViewController *vc = [[EYMeViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)tapMoreButton:(UIButton *)button {
+    EYTestViewController *vc = [[EYTestViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
