@@ -29,13 +29,13 @@
 }
 
 - (void)ey_LearnUploadVersionWithParameters:(id)parameters success:(void (^)(id _Nullable))success failure:(void (^)(NSError * _Nonnull))failure {
-    // [self ey_POST:@"" parameters:parameters success:success failure:failure];
+     [self ey_POST:@"" parameters:parameters success:success failure:failure];
 }
 
 - (void)ey_PickStepOnWithParameters:(id)parameters success:(void (^)(id _Nullable))success failure:(void (^)(NSError * _Nonnull))failure {
     if ([parameters[@"like_object"] integerValue]==1) {
         if ([parameters[@"like_type"] integerValue] == 1 || [parameters[@"like_type"] integerValue] == 3) {
-            [EYNotificationTool ey_POSTTTPickStepOnNotificationUserInfo:parameters];
+            [EYNotificationTool ey_postTTPickStepOnNotificationUserInfo:parameters];
         }
     }
     [self ey_POST:@"" parameters:parameters success:success failure:failure];
@@ -137,7 +137,7 @@
     [self ey_POST:@"" parameters:parameters success:^(id  _Nullable responseObject) {
         NSInteger state = [responseObject[@"state"] integerValue];
         if (state == 0) {
-            [EYNotificationTool ey_POSTTTUpdateUserInfoNotificationUserInfo:responseObject[@"data"]];
+            [EYNotificationTool ey_postTTUpdateUserInfoNotificationUserInfo:responseObject[@"data"]];
         }
 
         if (success) {
@@ -156,10 +156,10 @@
         if (stateValue == 0) {//请求成功处理数据
             NSInteger type = [parameters[@"type"] integerValue];
             if (type == 1) {//关注请求
-                [EYNotificationTool ey_POSTTTUserFocusAndCancelNotificationUserInfo:parameters];
+                [EYNotificationTool ey_postTTUserFocusAndCancelNotificationUserInfo:parameters];
                 [EYProgressHUD showInfoWithStatus:EYLocalized(@"tt_0092_0")];
             } else if (type == 2) {//取消关注
-                [EYNotificationTool ey_POSTTTUserFocusAndCancelNotificationUserInfo:parameters];
+                [EYNotificationTool ey_postTTUserFocusAndCancelNotificationUserInfo:parameters];
                 [EYProgressHUD showInfoWithStatus:EYLocalized(@"tt_0094_0")];
             } else {//暂时没有
 
@@ -204,7 +204,7 @@
             NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:parameters];
             userInfo[@"type"] = @"1";
             //            [[EYManager manager] removeAttentionUserWithUserid:parameters[@"black_user_id"]];
-            [EYNotificationTool ey_POSTTTUserBlackAndCancelNotificationUserInfo:userInfo];
+            [EYNotificationTool ey_postTTUserBlackAndCancelNotificationUserInfo:userInfo];
             [EYProgressHUD showInfoWithStatus:EYLocalized(@"tt_0114_0")];
         }
         if (success) {
@@ -219,7 +219,7 @@
         if (state == 0) {//请求成功处理数据
             NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:parameters];
             userInfo[@"type"] = @"2";
-            [EYNotificationTool ey_POSTTTUserBlackAndCancelNotificationUserInfo:userInfo];
+            [EYNotificationTool ey_postTTUserBlackAndCancelNotificationUserInfo:userInfo];
             [EYProgressHUD showInfoWithStatus:EYLocalized(@"tt_0127_0")];
         }
         if (success) {

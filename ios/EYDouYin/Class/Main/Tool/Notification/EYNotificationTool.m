@@ -138,22 +138,6 @@ NSString *const TTPickStepOnNotification = @"TTPickStepOnNotification";
     [EYNotificationCenter removeObserver:observer name:TTPickStepOnNotification object:nil];
 }
 
-#pragma mark - 用户字幕显示调整
-//NSString *const TTSubtitleStateNotification = @"TTSubtitleStateNotification";
-//+ (void)ey_addTTSubtitleStateNotificationObserver:(id)observer selector:(SEL)aSelector {
-//    [EYNotificationCenter addObserver:observer selector:aSelector name:TTSubtitleStateNotification object:nil];
-//}
-//
-//+ (void)ey_postTTSubtitleStateNotificationUserInfo:(nullable NSDictionary *)aUserInfo {
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        [EYNotificationCenter postNotificationName:TTSubtitleStateNotification object:nil userInfo:aUserInfo];
-//    });
-//}
-//
-//+ (void)ey_removeTTSubtitleStateNotificationObserver:(id)observer {
-//    [EYNotificationCenter removeObserver:observer name:TTSubtitleStateNotification object:nil];
-//}
-
 #pragma mark - 小红点提示的通知
 NSString *const TTRedTipsNotification = @"TTRedTipsNotification";
 + (void)ey_addTTRedTipsNotificationObserver:(id)observer selector:(SEL)aSelector {

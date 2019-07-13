@@ -68,13 +68,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)ey_removeTTPickStepOnNotificationObserver:(id)observer;
 
-#pragma mark - 用户字幕显示调整
-//+ (void)ey_addTTSubtitleStateNotificationObserver:(id)observer selector:(SEL)aSelector;
-//
-//+ (void)ey_postTTSubtitleStateNotificationUserInfo:(nullable NSDictionary *)aUserInfo;
-//
-//+ (void)ey_removeTTSubtitleStateNotificationObserver:(id)observer;
-
 #pragma mark - 小红点提示的通知
 + (void)ey_addTTRedTipsNotificationObserver:(id)observer selector:(SEL)aSelector;
 
