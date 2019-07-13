@@ -200,7 +200,7 @@
 - (void)setUserModel:(EYUserModel *)userModel {
     _userModel = userModel;
     
-    [self.userImageView sd_setImageWithURL:[NSURL URLWithString:userModel.tt_user_image] placeholderImage:[UIImage imageNamed:@"commom_user_default"]];
+    [self.userImageView sd_setImageWithURL:[NSURL URLWithString:userModel.ey_user_image] placeholderImage:[UIImage imageNamed:@"commom_user_default"]];
     
 //    @property (weak, nonatomic) UIButton *userHeaderButton;
 //    @property (weak, nonatomic) UIButton *profileButton;

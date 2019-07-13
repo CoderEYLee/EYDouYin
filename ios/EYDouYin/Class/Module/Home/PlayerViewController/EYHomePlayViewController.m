@@ -60,10 +60,10 @@
     
     //2.缓存视频
     self.videoPlayer.isAutoPlay = NO;
-    [self.videoPlayer startPlayWithURLString:videoModel.tt_video_name];
+    [self.videoPlayer startPlayWithURLString:videoModel.ey_video_name];
     
     //3.视频首帧图片
-    [self.videoImageView ey_setImageWithURL:[NSURL URLWithString:videoModel.tt_video_img_normal] placeholderImage:[UIImage imageNamed:@"common_placeholder"]];
+    [self.videoImageView ey_setImageWithURL:[NSURL URLWithString:videoModel.ey_video_img_normal] placeholderImage:[UIImage imageNamed:@"common_placeholder"]];
 }
 
 #pragma mark - Public Methods

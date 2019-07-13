@@ -129,7 +129,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  视频 喜欢数描述(根据like字段产生)
  */
-@property (copy, nonatomic, readonly) NSString *cl_like;
+@property (copy, nonatomic, readonly) NSString *ey_like;
 
 /**
  是否拉取过关系 yes拉取过 no未拉取
@@ -139,22 +139,22 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  自定义字段 视频正常图(阿里云对应图片, 正常图)
  */
-@property (nonatomic, copy) NSString *tt_video_img_normal;
+@property (nonatomic, copy) NSString *ey_video_img_normal;
 
 /**
  自定义字段 视频缩略图(阿里云对应图片, 缩略图)
  */
-@property (nonatomic, copy) NSString *tt_video_img_thumbnail;
+@property (nonatomic, copy) NSString *ey_video_img_thumbnail;
 
 /**
  自定义字段 视频地址(阿里云对应视频)
  */
-@property (nonatomic, copy) NSString *tt_video_name;
+@property (nonatomic, copy) NSString *ey_video_name;
 
 /**
  自定义字段 用户头像(阿里云对应图片, 缩略图)
  */
-@property (nonatomic, copy) NSString *tt_user_image;
+@property (nonatomic, copy) NSString *ey_user_image;
 
 @end
 

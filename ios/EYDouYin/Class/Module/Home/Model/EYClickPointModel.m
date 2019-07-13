@@ -20,7 +20,7 @@
     self = [super init];
     if (self) {
         _user_id = [EYManager manager].userModel.user_id;
-        _create_time = [NSDate tt_stringPhoneTimeStampWithCurrentDate];
+        _create_time = [NSDate ey_stringPhoneTimeStampWithCurrentDate];
     }
     return self;
 }

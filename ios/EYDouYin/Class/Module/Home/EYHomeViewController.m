@@ -291,10 +291,10 @@
     
     //1.播放当前界面显示的对应视频
     EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
-    EYLog(@"需要播放的下标为**%lu**%@", self.currentVideoIndex, videoModel.tt_video_name);
+    EYLog(@"需要播放的下标为**%lu**%@", self.currentVideoIndex, videoModel.ey_video_name);
     [self.currentPlayViewController resumePlay];
     
-    if ([videoModel.tt_video_name isEqualToString:self.currentPlayViewController.videoModel.tt_video_name]) {
+    if ([videoModel.ey_video_name isEqualToString:self.currentPlayViewController.videoModel.ey_video_name]) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"播放的视频正确"];
     } else {

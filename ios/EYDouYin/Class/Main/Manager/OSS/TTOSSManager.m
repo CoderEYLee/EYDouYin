@@ -59,7 +59,7 @@ static TTOSSManager *_OSSmanager = nil;
             dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
 
             NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-            [[EYHTTPManager manager] tt_GetAuthFileTokenWithParameters:parameters success:^(id  _Nullable responseObject) {
+            [[EYHTTPManager manager] ey_GetAuthFileTokenWithParameters:parameters success:^(id  _Nullable responseObject) {
                 dictionary = responseObject;
                 dispatch_semaphore_signal(semaphore);
             } failure:^(NSError * _Nonnull error) {
@@ -90,7 +90,7 @@ static TTOSSManager *_OSSmanager = nil;
  @param success 成功的回调
  @param failure 失败的回调
  */
-- (void)tt_asyncPutImage:(UIImage *)image progress:(void (^)(CGFloat))progress success:(nullable void (^)(id _Nullable))success failure:(nullable void (^)(NSError * _Nonnull))failure {
+- (void)ey_asyncPutImage:(UIImage *)image progress:(void (^)(CGFloat))progress success:(nullable void (^)(id _Nullable))success failure:(nullable void (^)(NSError * _Nonnull))failure {
     // user_id 后四位+时间戳
     NSMutableString *objectKey = [NSMutableString stringWithString:TTOSSAvatarFileDirName];
     NSString *user_id = [EYManager manager].userModel.user_id;
@@ -146,7 +146,7 @@ static TTOSSManager *_OSSmanager = nil;
  @param success 成功的回调
  @param failure 失败的回调
  */
-- (void)tt_resumableUploadWithLocalFilePath:(NSString *)localFilePath parameters:(NSDictionary *)parameters progress:(void (^)(CGFloat))progress success:(void (^)(id _Nullable))success failure:(void (^)(NSError * _Nonnull))failure {
+- (void)ey_resumableUploadWithLocalFilePath:(NSString *)localFilePath parameters:(NSDictionary *)parameters progress:(void (^)(CGFloat))progress success:(void (^)(id _Nullable))success failure:(void (^)(NSError * _Nonnull))failure {
 
     if (self.resumableState == TTOSSManagerResumableStateUploading) {//正在上传状态
         dispatch_async(dispatch_get_main_queue(), ^{

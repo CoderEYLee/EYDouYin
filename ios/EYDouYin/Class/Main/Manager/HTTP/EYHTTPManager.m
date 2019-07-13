@@ -81,33 +81,30 @@ static EYHTTPManager *_HTTPManager = nil;
         }
 
         //监听网络状态
-        [self tt_netWorkState];
+        [self ey_netWorkState];
     }
     return self;
 }
 
 #pragma mark - 更新请求头
-- (void)tt_updateHTTPHeaderField:(NSDictionary *)headerField {
+- (void)ey_updateHTTPHeaderField:(NSDictionary *)headerField {
     for (NSString *key in headerField.allKeys) {
         [self.afManager.requestSerializer setValue:[headerField valueForKey:key] forHTTPHeaderField:key];
     }
 }
 
 #pragma mark - 公共方法
-- (void)tt_GET:(NSString *)URLString parameters:(nullable id)parameters success:(nullable void (^)(id _Nullable))success failure:(nullable void (^)(NSError * _Nonnull))failure {
-    EYLog(@"发起GET请求------>\nURL------->%@%@\nparameters------>%@\n", self.afManager.baseURL, URLString, parameters);
-
-    [self.afManager GET:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        EYLog(@"GET请求回调成功\nURL--->%@%@\nresponseObject--->%@", self.afManager.baseURL, URLString, responseObject);
-        success(responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        EYLog(@"GET请求回调失败\nURL--->%@%@\nerror--->%@", self.afManager.baseURL, URLString, error);
-        failure(error);
-    }];
-}
-
-- (void)tt_POST:(NSString *)URLString parameters:(nullable id)parameters success:(nullable void (^)(id _Nullable))success failure:(nullable void (^)(NSError * _Nonnull))failure {
+- (void)ey_POST:(NSString *)URLString parameters:(nullable id)parameters success:(nullable void (^)(id _Nullable))success failure:(nullable void (^)(NSError * _Nonnull))failure {
     EYLog(@"发起POST请求--->\nURL--->%@%@\n请求头--->%@\nparameters--->%@\n", self.afManager.baseURL, URLString, self.afManager.requestSerializer.HTTPRequestHeaders, parameters);
+    if (success) {
+        NSMutableDictionary *response = [NSMutableDictionary dictionary];
+        success(response);
+    }
+    
+    return;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored"-Code will never be executed"
+    
     [self.afManager POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         EYLog(@"POST请求回调成功\nURL--->%@%@\nresponseObject--->%@", self.afManager.baseURL, URLString, responseObject);
         [self handle:URLString parameters:parameters response:responseObject success:success failure:failure];
@@ -117,13 +114,11 @@ static EYHTTPManager *_HTTPManager = nil;
             failure(error);
         }
     }];
-}
-
-- (void)tt_PUT:(NSString *)URLString parameters:(nullable id)parameters success:(nullable void (^)(id _Nullable))success failure:(nullable void (^)(NSError * _Nonnull))failure {
     
+#pragma clang diagnostic pop
 }
 
-- (void)tt_DOWN:(NSString *)URLString progress:(void (^)(NSProgress * _Nonnull))downloadProgressBlock destination:(NSURL * _Nonnull (^)(NSURL * _Nonnull, NSURLResponse * _Nonnull))destination completionHandler:(void (^)(NSURLResponse * _Nonnull, NSURL * _Nullable, NSError * _Nullable))completionHandler {
+- (void)ey_DOWN:(NSString *)URLString progress:(void (^)(NSProgress * _Nonnull))downloadProgressBlock destination:(NSURL * _Nonnull (^)(NSURL * _Nonnull, NSURLResponse * _Nonnull))destination completionHandler:(void (^)(NSURLResponse * _Nonnull, NSURL * _Nullable, NSError * _Nullable))completionHandler {
     EYLog(@"发起下载请求--->\nURL--->%@", URLString);
     [[self.afDownManager downloadTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:URLString]] progress:downloadProgressBlock destination:destination completionHandler:completionHandler] resume];
 }
@@ -192,7 +187,7 @@ static EYHTTPManager *_HTTPManager = nil;
         case 10025: {// access_token过期
             [self getTokenSuccess:^(id  _Nullable responseObject) {
                 EYLog(@"请求 access_token 成功了--%@--> 发起上次请求--", responseObject);
-                [self tt_POST:URLString parameters:parameters success:success failure:failure];
+                [self ey_POST:URLString parameters:parameters success:success failure:failure];
             } failure:failure];
             break;
         }
@@ -209,10 +204,8 @@ static EYHTTPManager *_HTTPManager = nil;
 - (void)getTokenSuccess:(void (^)(id _Nullable))success failure:(void (^)(NSError *))failure {
 
     NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
-    parameters[@"user_id"] = [EYManager manager].userModel.user_id;
-    parameters[@"session_key"] = [EYManager manager].userModel.session_key;
     
-    NSString *URLString = @"/userApi/user_GetToken.php";
+    NSString *URLString = @"";
 
     EYLog(@"getToken请求--%@%@--%@-", self.afManager.baseURL, URLString, parameters);
     [self.afManager POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -231,7 +224,9 @@ static EYHTTPManager *_HTTPManager = nil;
                 [[EYManager manager] saveUserModel:[EYUserModel mj_objectWithKeyValues:dictionaryM]];
 
                 //3.回调成功
-                success(responseObject);
+                if (success) {
+                    success(responseObject);
+                }
 
                 break;
             }
@@ -277,7 +272,9 @@ static EYHTTPManager *_HTTPManager = nil;
             }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        failure(error);
+        if (failure) {
+            failure(error);
+        }
     }];
 }
 
@@ -290,7 +287,7 @@ static EYHTTPManager *_HTTPManager = nil;
 }
 
 //监听网络状态
-- (void)tt_netWorkState {
+- (void)ey_netWorkState {
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
     [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         switch (status) {

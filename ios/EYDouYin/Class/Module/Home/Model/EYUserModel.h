@@ -252,32 +252,32 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  自定义字段 获赞
  */
-@property (copy, nonatomic) NSString *tt_like_remind_time;
+@property (copy, nonatomic) NSString *ey_like_remind_time;
 
 /**
  自定义字段 评论/回复
  */
-@property (copy, nonatomic) NSString *tt_comment_remind_time;
+@property (copy, nonatomic) NSString *ey_comment_remind_time;
 
 /**
  自定义字段 新增粉丝
  */
-@property (copy, nonatomic) NSString *tt_follow_remind_time;
+@property (copy, nonatomic) NSString *ey_follow_remind_time;
 
 /**
  自定义字段 消息助手
  */
-@property (copy, nonatomic) NSString *tt_message_time_taotie;
+@property (copy, nonatomic) NSString *ey_message_time_taotie;
 
 /**
  自定义字段 系统消息
  */
-@property (copy, nonatomic) NSString *tt_message_time_system;
+@property (copy, nonatomic) NSString *ey_message_time_system;
 
 /**
  自定义字段 用户头像(阿里云对应图片, 缩略图)
  */
-@property (copy, nonatomic) NSString *tt_user_image;
+@property (copy, nonatomic) NSString *ey_user_image;
 
 @end
 

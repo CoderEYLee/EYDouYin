@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, TTOSSManagerResumableState) {
  @param success 成功的回调
  @param failure 失败的回调
  */
-- (void)tt_asyncPutImage:(UIImage *)image progress:(nullable void (^)(CGFloat precent))progress success:(nullable void (^)(id _Nullable responseObject))success failure:(nullable void (^)(NSError *error))failure;
+- (void)ey_asyncPutImage:(UIImage *)image progress:(nullable void (^)(CGFloat precent))progress success:(nullable void (^)(id _Nullable responseObject))success failure:(nullable void (^)(NSError *error))failure;
 
 /**
  断点续传
@@ -45,7 +45,7 @@ typedef NS_ENUM(NSUInteger, TTOSSManagerResumableState) {
  @param success 成功的回调
  @param failure 失败的回调
  */
-- (void)tt_resumableUploadWithLocalFilePath:(NSString *)localFilePath parameters:(NSDictionary *)parameters progress:(nullable void (^)(CGFloat precent))progress success:(nullable void (^)(id _Nullable responseObject))success failure:(nullable void (^)(NSError *error))failure;
+- (void)ey_resumableUploadWithLocalFilePath:(NSString *)localFilePath parameters:(NSDictionary *)parameters progress:(nullable void (^)(CGFloat precent))progress success:(nullable void (^)(id _Nullable responseObject))success failure:(nullable void (^)(NSError *error))failure;
 
 @end
 

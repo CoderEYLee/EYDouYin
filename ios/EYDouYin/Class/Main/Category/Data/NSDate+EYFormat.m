@@ -18,9 +18,9 @@
  @param formatterString 需要格式化的标准
  @return 返回格式化后的字符串
  */
-+ (NSString *)tt_stringWithTimeIntervalSince1970:(NSTimeInterval)interval withDateFormatter:(NSString *)formatterString {
++ (NSString *)ey_stringWithTimeIntervalSince1970:(NSTimeInterval)interval withDateFormatter:(NSString *)formatterString {
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:interval];
-    return [self tt_stringWithDate:date withDateFormatter:formatterString];
+    return [self ey_stringWithDate:date withDateFormatter:formatterString];
 }
 
 /**
@@ -30,7 +30,7 @@
  @param formatterString 需要格式化的标准
  @return 返回格式化后的字符串
  */
-+ (NSString *)tt_stringWithDate:(NSDate *)date withDateFormatter:(NSString *)formatterString {
++ (NSString *)ey_stringWithDate:(NSDate *)date withDateFormatter:(NSString *)formatterString {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = formatterString;
     NSString *dateString = [dateFormatter stringFromDate:date];
@@ -43,8 +43,8 @@
  @param date 任意时间
  @return 返回格式化后的字符串
  */
-+ (NSString *)tt_stringyyyyMMddHHmmssWithDate:(NSDate *)date {
-    return [self tt_stringWithDate:date withDateFormatter:@"yyyy-MM-dd HH:mm:ss"];
++ (NSString *)ey_stringyyyyMMddHHmmssWithDate:(NSDate *)date {
+    return [self ey_stringWithDate:date withDateFormatter:@"yyyy-MM-dd HH:mm:ss"];
 }
 
 /**
@@ -53,8 +53,8 @@
  @param date 任意时间
  @return 返回格式化后的字符串
  */
-+ (NSString *)tt_stringyyyyMMddHHmmWithDate:(NSDate *)date {
-    return [self tt_stringWithDate:date withDateFormatter:@"yyyy-MM-dd HH:mm"];
++ (NSString *)ey_stringyyyyMMddHHmmWithDate:(NSDate *)date {
+    return [self ey_stringWithDate:date withDateFormatter:@"yyyy-MM-dd HH:mm"];
 }
 
 /**
@@ -63,8 +63,8 @@
  @param date 任意时间
  @return 返回格式化后的字符串
  */
-+ (NSString *)tt_stringyyyyMMddWithDate:(NSDate *)date {
-    return [self tt_stringWithDate:date withDateFormatter:@"yyyy-MM-dd"];
++ (NSString *)ey_stringyyyyMMddWithDate:(NSDate *)date {
+    return [self ey_stringWithDate:date withDateFormatter:@"yyyy-MM-dd"];
 }
 
 /**
@@ -73,8 +73,8 @@
  @param date 任意时间
  @return 返回格式化后的字符串
  */
-+ (NSString *)tt_stringHHmmssWithDate:(NSDate *)date {
-    return [self tt_stringWithDate:date withDateFormatter:@"HH:mm:ss"];
++ (NSString *)ey_stringHHmmssWithDate:(NSDate *)date {
+    return [self ey_stringWithDate:date withDateFormatter:@"HH:mm:ss"];
 }
 
 #pragma mark - 当前手机时间
@@ -84,8 +84,8 @@
 
  @return 格式化后的字符串
  */
-+ (NSString *)tt_stringyyyyMMddHHmmssWithCurrentDate {
-    return [self tt_stringWithDate:[NSDate date] withDateFormatter:@"yyyy-MM-dd HH:mm:ss"];
++ (NSString *)ey_stringyyyyMMddHHmmssWithCurrentDate {
+    return [self ey_stringWithDate:[NSDate date] withDateFormatter:@"yyyy-MM-dd HH:mm:ss"];
 }
 
 /**
@@ -93,8 +93,8 @@
 
  @return 格式化后的字符串
  */
-+ (NSString *)tt_stringyyyyMMddHHmmWithCurrentDate {
-    return [self tt_stringWithDate:[NSDate date] withDateFormatter:@"yyyy-MM-dd HH:mm"];
++ (NSString *)ey_stringyyyyMMddHHmmWithCurrentDate {
+    return [self ey_stringWithDate:[NSDate date] withDateFormatter:@"yyyy-MM-dd HH:mm"];
 }
 
 /**
@@ -102,8 +102,8 @@
 
  @return 格式化后的字符串
  */
-+ (NSString *)tt_stringyyyyMMddWithCurrentDate {
-    return [self tt_stringWithDate:[NSDate date] withDateFormatter:@"yyyy-MM-dd"];
++ (NSString *)ey_stringyyyyMMddWithCurrentDate {
+    return [self ey_stringWithDate:[NSDate date] withDateFormatter:@"yyyy-MM-dd"];
 }
 
 /**
@@ -111,8 +111,8 @@
 
  @return 格式化后的字符串
  */
-+ (NSString *)tt_stringHHmmssWithCurrentDate {
-    return [self tt_stringWithDate:[NSDate date] withDateFormatter:@"HH:mm:ss"];
++ (NSString *)ey_stringHHmmssWithCurrentDate {
+    return [self ey_stringWithDate:[NSDate date] withDateFormatter:@"HH:mm:ss"];
 }
 
 /**
@@ -120,8 +120,8 @@
  
  @return 字符串
  */
-+ (NSString *)tt_stringPhoneTimeStampWithCurrentDate {
-    return [NSString stringWithFormat:@"%d", (NSInteger)[[NSDate date] timeIntervalSince1970]];
++ (NSString *)ey_stringPhoneTimeStampWithCurrentDate {
+    return [NSString stringWithFormat:@"%f", [[NSDate date] timeIntervalSince1970]];
 }
 
 #pragma mark - NSDate

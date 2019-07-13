@@ -37,7 +37,7 @@ MJCodingImplementation
 /**
  获赞
  */
-- (NSString *)tt_like_remind_time {
+- (NSString *)ey_like_remind_time {
     if ([self.user_contributor isEqualToString:@"zh"]) {
         //        /**
         //         用户 like_remind_zh_1 获赞_中文_贡献端
@@ -72,7 +72,7 @@ MJCodingImplementation
 /**
  评论/回复
  */
-- (NSString *)tt_comment_remind_time {
+- (NSString *)ey_comment_remind_time {
     if ([self.user_contributor isEqualToString:@"zh"]) {
         //    /**
         //     用户 comment_remind_zh_1 评论/回复_中文_贡献端
@@ -108,7 +108,7 @@ MJCodingImplementation
 /**
  新增粉丝
  */
-- (NSString *)tt_follow_remind_time {
+- (NSString *)ey_follow_remind_time {
     if ([self.user_contributor isEqualToString:@"zh"]) {
         //    /**
         //     用户 follow_remind_zh_1 新增粉丝_中文_贡献端
@@ -141,7 +141,7 @@ MJCodingImplementation
     return @"1554048000";
 }
 
-- (NSString *)tt_message_time_taotie {
+- (NSString *)ey_message_time_taotie {
     if ([self.user_contributor isEqualToString:@"zh"]) {
         //    /**
         //     用户 assistant_time_zh_1 消息助手_中文_贡献端
@@ -175,7 +175,7 @@ MJCodingImplementation
     return @"1554048000";
 }
 
-- (NSString *)tt_message_time_system {
+- (NSString *)ey_message_time_system {
     if ([self.user_contributor isEqualToString:@"zh"]) {
         //        /**
         //         用户 news_time_zh_1 系统消息_中文_贡献端
@@ -214,7 +214,7 @@ MJCodingImplementation
 /**
  自定义字段 用户头像(阿里云对应图片, 缩略图)
  */
-- (NSString *)tt_user_image {
+- (NSString *)ey_user_image {
     return self.user_image.insertImagePathString_thumbnail;
 }
 
