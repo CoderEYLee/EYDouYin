@@ -18,6 +18,7 @@
 @property (weak, nonatomic) UIButton *focusButton;
 @property (weak, nonatomic) UIButton *addFriendButton;
 @property (weak, nonatomic) UILabel *nickNameLabel;
+@property (weak, nonatomic, readwrite) UILabel *alphaLabel;
 
 @end
 
@@ -193,6 +194,16 @@
             make.top.mas_equalTo(schoolButton.mas_bottom).mas_offset(EYMineCellMargin);
             make.bottom.mas_equalTo(-300);
         }];
+        
+        //3.最上层颜色变化
+        UILabel *alphaLabel = [[UILabel alloc] init];
+        alphaLabel.backgroundColor = EYColorTheme;
+        alphaLabel.alpha = 0.0;
+        [self.contentView addSubview:alphaLabel];
+        self.alphaLabel = alphaLabel;
+        [alphaLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.top.right.bottom.mas_equalTo(0);
+        }];
     }
     return self;
 }
@@ -201,12 +212,6 @@
     _userModel = userModel;
     
     [self.userImageView sd_setImageWithURL:[NSURL URLWithString:userModel.ey_user_image] placeholderImage:[UIImage imageNamed:@"commom_user_default"]];
-    
-//    @property (weak, nonatomic) UIButton *userHeaderButton;
-//    @property (weak, nonatomic) UIButton *profileButton;
-//    @property (weak, nonatomic) UIButton *focusButton;
-//    @property (weak, nonatomic) UIButton *addFriendButton;
-//    @property (weak, nonatomic) UILabel *nickNameLabel;
 }
 
 #pragma mark - Private Methods

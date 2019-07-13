@@ -61,6 +61,7 @@
 @interface EYMineViewController() <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, EYMineCellDelegate, EYMineViewControllerHeaderViewDelegate>
 
 @property (nonatomic, weak) UIImageView *backImageView;
+@property (nonatomic, weak) EYMineCell *mineInfoCell;
 
 @property (weak, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *arrayM;
@@ -73,8 +74,10 @@
 @implementation EYMineViewController
 //背景图的真正高度
 const CGFloat EYBackImageViewRealHeight = 310;
-//背景图的开始显示比例 0.4
+//背景图的开始显示的高度
 const CGFloat EYBackImageViewBeginHeight = EYBackImageViewRealHeight * 0.45;
+//个人信息的 cell 的高度
+const CGFloat EYPersonInfoCellHeight = 300;
 static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 - (void)viewDidLoad {
@@ -105,11 +108,15 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         self.gk_navigationBar.hidden = YES;
     } else {//其他渠道进入
         if ([[EYManager manager].userModel.user_id isEqualToString:self.user_id] == NO) {
-            self.gk_navRightBarButtonItem = [UIBarButtonItem itemWithImageName:@"mine_setting" target:self action:@selector(tapMoreButton:)];
+            self.gk_navRightBarButtonItem = [UIBarButtonItem itemWithImageName:@"common_arrow_right" target:self action:@selector(tapMoreButton:)];
         }
         
+        self.gk_navTitle = self.user_id;
+        self.gk_navTintColor = EYColorRGBHexAlpha(0xFFFFFF, 0.0);
+        self.gk_navLineHidden = YES;
+        
         //显示导航
-        self.gk_navigationBar.hidden =  NO;
+        self.gk_navigationBar.hidden = NO;
     }
     
     //2.背景图片(放大)
@@ -174,6 +181,11 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EYMineCell *cell = [tableView dequeueReusableCellWithIdentifier:EYMineViewControllerCellID];
+    if (indexPath.row == 0) {//个人信息
+        self.mineInfoCell = cell;
+    } else {
+        
+    }
     cell.userModel = self.userModel;
     cell.delegate = self;
     return cell;
@@ -206,17 +218,16 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         self.backImageView.frame = CGRectMake(EYScreenWidth * 0.5 * (1 - scale), 0, EYScreenWidth * scale, EYBackImageViewRealHeight * scale);
     }
     
-//    //2.导航栏的颜色变化
-//    if (contentOffsetY < beginOffSetY) {//0
-//        EYLog(@"111111111111");
-//        self.gk_navBarAlpha = 0.0;
-//    } else if (contentOffsetY >= 100 && contentOffsetY <= 200) {
-//        EYLog(@"222222222222");
-//        self.gk_navBarAlpha = 0.5;
-//    } else {//1
-//        EYLog(@"333333333333");
-//        self.gk_navBarAlpha = 1.0;
-//    }
+    //2.导航栏的颜色变化
+    CGFloat beginAlphaHeight = EYPersonInfoCellHeight - 100;
+    if (contentOffsetY < beginAlphaHeight) {//0.0
+        self.mineInfoCell.alphaLabel.alpha = 0.0;
+    } else if (contentOffsetY >= beginAlphaHeight && contentOffsetY <= EYPersonInfoCellHeight) {
+        CGFloat scale = (contentOffsetY - beginAlphaHeight) / 100.0;
+        self.mineInfoCell.alphaLabel.alpha = scale;
+    } else {//1.0
+        self.mineInfoCell.alphaLabel.alpha = 1.0;
+    }
 }
 
 #pragma mark - EYMineCellDelegate

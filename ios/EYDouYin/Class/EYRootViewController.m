@@ -56,6 +56,7 @@
         
         EYMineViewController *vc = [[EYMineViewController alloc] init];
         vc.jumpType = EYJumpTypeHomeToMe;
+        vc.user_id = user_id;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

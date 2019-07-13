@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface EYMineCell : UITableViewCell
+@property (weak, nonatomic, readonly) UILabel *alphaLabel;
 
 @property (weak, nonatomic) id <EYMineCellDelegate> delegate;
 
