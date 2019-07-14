@@ -7,13 +7,13 @@ EYDouYin 该项目主体框架是模仿抖音框架实现
 ## 消息
 ## 个人
 ### 个人中心 与 Swift 语言、Flutter 语言、React Native 语言的混合开发
-
+   
 # 项目如何使用？
-
+   
 ## 第一步: clone 项目
-
+   
 方式一: (SSH)   
-```git clone git@github.com:lieryang/EYDouYin.git```
+```git clone git@github.com:lieryang/EYDouYin.git```   
 方式二: (HTTPS)    
 ```git clone https://github.com/lieryang/EYDouYin.git```   
 
