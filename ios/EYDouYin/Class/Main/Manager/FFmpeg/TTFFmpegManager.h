@@ -15,17 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)manager;
 
 /**
- 转换&压缩视频
+ 选择手机相册中的视频
  
- @param inputPath 输入视频路径
- @param outpath 输出视频路径
- @param processBlock 进度回调
- @param completionBlock 结束回调
+ @param parameters 限制的参数()
  */
-- (void)converVideoWithInputPath:(NSString *)inputPath
-                 outputPath:(NSString *)outpath
-               processBlock:(void (^)(float process))processBlock
-            completionBlock:(void (^)(NSError *error))completionBlock;
+- (void)selectVideoWithParameters:(NSDictionary *)parameters;
 
 // 设置总时长
 + (void)setDuration:(long long)time;

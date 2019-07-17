@@ -75,6 +75,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)ey_removeTTRedTipsNotificationObserver:(id)observer;
 
+#pragma mark - FFmpeg 转码视频的通知
++ (void)ey_addTTCompressNotificationObserver:(id)observer selector:(SEL)aSelector;
+
++ (void)ey_postTTCompressNotificationUserInfo:(nullable NSDictionary *)aUserInfo;
+
++ (void)ey_removeTTCompressNotificationObserver:(id)observer;
+
 #pragma mark - 取消所有注册的通知
 + (void)ey_removeAllNotificationObserver:(id)observer;
 

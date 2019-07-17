@@ -154,6 +154,22 @@ NSString *const TTRedTipsNotification = @"TTRedTipsNotification";
     [EYNotificationCenter removeObserver:observer name:TTRedTipsNotification object:nil];
 }
 
+#pragma mark - FFmpeg 转码视频的通知
+NSString *const TTCompressNotification = @"TTCompressNotification";
++ (void)ey_addTTCompressNotificationObserver:(id)observer selector:(SEL)aSelector {
+    [EYNotificationCenter addObserver:observer selector:aSelector name:TTCompressNotification object:nil];
+}
+
++ (void)ey_postTTCompressNotificationUserInfo:(nullable NSDictionary *)aUserInfo {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [EYNotificationCenter postNotificationName:TTCompressNotification object:nil userInfo:aUserInfo];
+    });
+}
+
++ (void)ey_removeTTCompressNotificationObserver:(id)observer {
+    [EYNotificationCenter removeObserver:observer name:TTCompressNotification object:nil];
+}
+
 #pragma mark - 取消所有注册的通知
 + (void)ey_removeAllNotificationObserver:(id)observer {
     [EYNotificationCenter removeObserver:observer];
