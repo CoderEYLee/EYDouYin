@@ -9,6 +9,12 @@
 #import "TTFFmpegManager.h"
 #import "ffmpeg.h"
 
+// 1.将视频从相册应用 copy 到项目中文件
+#define EYCopyVideoFilePath [NSTemporaryDirectory() stringByAppendingPathComponent:@"ey_CopyVideo.mp4"]
+
+// 2.将项目中文件进行 FFmpeg 转码后的文件(可以直接上传)
+#define EYSendVideoFilePath [NSTemporaryDirectory() stringByAppendingPathComponent:@"ey_SendVideo.mp4"]
+
 @interface TTFFmpegManager()
 
 @property (nonatomic, assign) BOOL isRuning;
@@ -75,10 +81,10 @@
     //选择完视频之后的回调
     [imagePickerVc setDidFinishPickingVideoHandle:^(UIImage *coverImage, PHAsset *asset) {
         CGFloat audioDurationSeconds = asset.duration;
-        if (audioDurationSeconds <= min_time) {
-            [TTProgressHUD showInfoWithStatus:[NSString stringWithFormat:TTLocalized(@"tt_0056_0"),(int)ceil(min_time)]];
-        } else if (audioDurationSeconds >= max_time) {
-            [TTProgressHUD showInfoWithStatus:[NSString stringWithFormat:TTLocalized(@"tt_0056_1"),(int)floor(max_time)]];
+        if (audioDurationSeconds <= min_time) {//视频太短了
+            
+        } else if (audioDurationSeconds >= max_time) {//视频太长了
+            
         } else {
             [self.coverDictionary addEntriesFromDictionary:parameters];
             self.coverDictionary[@"video_location_id"] = asset.localIdentifier;
@@ -86,7 +92,7 @@
             [self tt_getVideoOutputPathWithPHAsset:asset];
         }
     }];
-    [TTKeyWindow.rootViewController presentViewController:imagePickerVc animated:YES completion:nil];
+    [EYKeyWindow.rootViewController presentViewController:imagePickerVc animated:YES completion:nil];
 }
 
 /**
@@ -229,7 +235,7 @@
     //    String[] commands = new String[]{"-threads", "2", "-i", videoPath, "-c:v", "libx264", "-b:v", "1250K", "-crf", "30", "-preset", "superfast", "-y",
     //        "-acodec", "aac", "-vol", "500", outPath};
     
-    NSString *commandString = [NSString stringWithFormat:@"ffmpeg -threads 2 -i %@ -c:v h264 -b:v 1250K -s %@ -r 30 -vol 500 -y %@", inputPath, ratio, TTSendVideoFilePath];
+    NSString *commandString = [NSString stringWithFormat:@"ffmpeg -threads 2 -i %@ -c:v h264 -b:v 1250K -s %@ -r 30 -vol 500 -y %@", inputPath, ratio, EYSendVideoFilePath];
     
     // 放在子线程运行
     [[[NSThread alloc] initWithTarget:self selector:@selector(runCommand:) object:commandString] start];
@@ -286,7 +292,7 @@
         NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
         userInfo[@"state"] = @"1";
         userInfo[@"progress"] = @(process);
-        [TTNotificationTool tt_postTTCompressNotificationUserInfo:userInfo];
+        [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
     }
 }
 
@@ -303,7 +309,7 @@
         userInfo[@"progress"] = @(1.0);
     }
     EYLog(@"FFmpeg132456转换停止==");
-    [EYNotificationTool tt_postTTCompressNotificationUserInfo:userInfo];
+    [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
 }
 
 #pragma mark - 选取视频
@@ -331,7 +337,7 @@
     NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
     userInfo[@"state"] = @"0";
     userInfo[@"progress"] = @(0);
-    [TTNotificationTool tt_postTTCompressNotificationUserInfo:userInfo];
+    [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
     NSArray *presets = [AVAssetExportSession exportPresetsCompatibleWithAsset:videoAsset];
     if ([presets containsObject:presetName]) {
         AVAssetExportSession *session = [[AVAssetExportSession alloc] initWithAsset:videoAsset presetName:presetName];
@@ -339,7 +345,7 @@
         //        session.canPerformMultiplePassesOverSourceMediaData = YES;
         //        session.directoryForTemporaryFiles = [NSURL fileURLWithPath:CLPathTemp];
         
-        NSString *outputPath = TTSendVideoH264FilePath;
+        NSString *outputPath = EYCopyVideoFilePath;
         if ([[NSFileManager defaultManager] fileExistsAtPath:outputPath]) {
             [[NSFileManager defaultManager] removeItemAtPath:outputPath error:nil];
         }
@@ -352,7 +358,7 @@
             NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
             userInfo[@"state"] = @"3";
             userInfo[@"progress"] = @(1.0);
-            [TTNotificationTool tt_postTTCompressNotificationUserInfo:userInfo];
+            [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
             return;
         } else {
             session.outputFileType = [supportedTypeArray objectAtIndex:0];
@@ -368,7 +374,7 @@
             NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
             userInfo[@"state"] = @"1";
             userInfo[@"progress"] = @(compress_progress);
-            [TTNotificationTool tt_postTTCompressNotificationUserInfo:userInfo];
+            [ EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
             if (session.progress >= 1) {
                 dispatch_source_cancel(timer);
             }
@@ -385,7 +391,7 @@
                     NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
                     userInfo[@"state"] = @"3";
                     userInfo[@"progress"] = @(1.0);
-                    [TTNotificationTool tt_postTTCompressNotificationUserInfo:userInfo];
+                    [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
                 }
             });
         }];
@@ -394,7 +400,7 @@
         NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
         userInfo[@"state"] = @"3";
         userInfo[@"progress"] = @(1.0);
-        [TTNotificationTool tt_postTTCompressNotificationUserInfo:userInfo];
+        [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
     }
 }
 
