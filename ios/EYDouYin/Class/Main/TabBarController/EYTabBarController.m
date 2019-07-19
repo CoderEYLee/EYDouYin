@@ -83,7 +83,10 @@
     }
     
     if (selectedIndex == EYTabBarViewTypePlus) {//弹出发布界面
-        [[TTFFmpegManager manager] selectVideoWithParameters:nil];
+        NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+        parameters[@"min_time"] = @(0.5);
+        parameters[@"max_time"] = @(60.5);
+        [[TTFFmpegManager manager] selectVideoWithParameters:parameters];
 //        [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
         return NO;
     }
