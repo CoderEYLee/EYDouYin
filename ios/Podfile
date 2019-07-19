@@ -17,23 +17,23 @@ pod 'ZFPlayer/AVPlayer', '~> 3.0'
 #pod 'MPMoviePlayerController-Subtitles', '~> 2.2.2'
 
 pod 'AFNetworking', '3.2.1'         #网络请求
-pod 'Alamofire', '4.8.0'            #网络请求
+pod 'Alamofire', '4.8.2'            #网络请求
 pod 'SwiftyJSON', '5.0.0'           # Swift 转 JSON
-pod 'IQKeyboardManager', '6.3.0'    #键盘管理
+pod 'IQKeyboardManager', '6.4.0'    #键盘管理
 pod 'SVProgressHUD', '2.2.5'        #提示框
 pod 'YYModel', '1.0.4'              #字典转模型
 pod 'YYText', '1.0.7'               #富文本
 pod 'YYCategories', '1.0.4'         #分类
 pod 'YYCache', '1.0.4'              #缓存
 pod 'MJRefresh', '3.2.0'            #刷新
-pod 'MJExtension', '3.0.17'         #字典转模型
+pod 'MJExtension', '3.1.0'         #字典转模型
 pod 'pop', '1.0.12'                 #动画
 pod 'SDWebImage', '5.0.6'           #图片缓存
-pod 'GKNavigationBarViewController', '2.3.2' #抖音的左滑 push 效果
+pod 'GKNavigationBarViewController', '2.3.3' #抖音的左滑 push 效果
 #pod 'SJVideoPlayer', '2.5.7'       #播放器
 pod 'Bugly', '2.5.0'                #Bugly
 pod 'Masonry', '1.1.0'              #自动布局
-pod 'SnapKit', '4.0.1'              #自动布局
+pod 'SnapKit', '4.2.0'              #自动布局
 pod 'TXLiteAVSDK_Player', '6.3.7088'
     # 腾讯云播放器-独立播放器
 pod 'GDataXML-HTML', '1.4.1'        # 解析 XML/EXCEL
