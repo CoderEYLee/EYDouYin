@@ -51,7 +51,7 @@
     
     if (max_time == 0.0 || min_time >= max_time) {
         EYLog(@"时间限制有问题");
-        return;
+//        return;
     }
     //没有tmp创建tmp
     if (![[NSFileManager defaultManager] fileExistsAtPath:[NSHomeDirectory() stringByAppendingFormat:@"/tmp"]]) {
@@ -146,7 +146,7 @@
  转换&压缩视频
  
  @param inputPath 输入视频路径
- @param ratio 宽高比 720x1280
+ @param ratio 宽高比
  */
 - (void)converVideoWithInputPath:(NSString *)inputPath widthHeightRatio:(NSString *)ratio {
     NSString *commandString = [NSString stringWithFormat:@"ffmpeg -threads 2 -i %@ -vcodec copy -c:v h264 -b:v 1250K -s %@ -r 30 -vol 500 -y %@", inputPath, ratio, EYSendVideoFilePath];
@@ -225,10 +225,10 @@
 
 /**
  返回视频的信息
- ratio: 宽高比例(默认720x1280)
+ ratio: 宽高比例(默认540x960)
  
  @param phAsset 视频信息
- @return ratio: 宽高比例(默认720x1280)
+ @return ratio: 宽高比例(默认540x960)
  */
 - (NSString *)getOriginVideoPresetNameWithPHAsset:(PHAsset *)phAsset {
     //1.宽高比例

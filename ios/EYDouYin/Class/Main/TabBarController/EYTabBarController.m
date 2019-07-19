@@ -83,7 +83,8 @@
     }
     
     if (selectedIndex == EYTabBarViewTypePlus) {//弹出发布界面
-        [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
+        [[TTFFmpegManager manager] selectVideoWithParameters:nil];
+//        [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
         return NO;
     }
     

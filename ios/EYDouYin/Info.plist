@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>访问您的相册</string>
+	<string>访问您的相册应用</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>访问您的相册应用</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
