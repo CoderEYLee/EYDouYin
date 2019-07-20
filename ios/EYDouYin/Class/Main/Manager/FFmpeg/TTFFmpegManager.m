@@ -7,7 +7,7 @@
 //  该文件为 FFmpeg 执行指令的单例类, 调用对应的方法就行
 
 #import "TTFFmpegManager.h"
-#import "ffmpeg.h"
+//#import "ffmpeg.h"
 
 // 将项目中文件进行 FFmpeg 转码后的文件(可以直接上传)
 #define EYSendVideoFilePath [NSTemporaryDirectory() stringByAppendingPathComponent:@"ey_SendVideo.mp4"]
@@ -51,7 +51,7 @@
     
     if (max_time == 0.0 || min_time >= max_time) {
         EYLog(@"时间限制有问题");
-//        return;
+        return;
     }
     //没有tmp创建tmp
     if (![[NSFileManager defaultManager] fileExistsAtPath:[NSHomeDirectory() stringByAppendingFormat:@"/tmp"]]) {
@@ -63,7 +63,13 @@
     self.fileDuration = 0;
     [self.coverDictionary removeAllObjects];
     
+    //直接进入选择视频界面
     TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 columnNumber:3 delegate:nil pushPhotoPickerVc:YES];
+//    imagePickerVc.preferredLanguage = @"en";//英文环境
+//    imagePickerVc.allowPickingImage = NO;//不显示图片
+//    imagePickerVc.needShowStatusBar = YES;//显示电池栏
+//    imagePickerVc.allowTakeVideo = NO;//不能拍摄视频
+    
     //展示相册中的视频
     imagePickerVc.allowPickingVideo = YES;
     //不展示图片
@@ -76,13 +82,14 @@
     imagePickerVc.allowTakeVideo = NO;
     //语言
     imagePickerVc.preferredLanguage = @"en";
+    
     //选择完视频之后的回调
     [imagePickerVc setDidFinishPickingVideoHandle:^(UIImage *coverImage, PHAsset *asset) {
         CGFloat audioDurationSeconds = asset.duration;
-        if (audioDurationSeconds <= min_time) {
-            
-        } else if (audioDurationSeconds >= max_time) {
-            
+        if (audioDurationSeconds <= min_time) {//视频太短
+            EYLog(@"视频太短");
+        } else if (audioDurationSeconds >= max_time) {//视频太长
+            EYLog(@"视频太长");
         } else {
             [self.coverDictionary addEntriesFromDictionary:parameters];
             self.coverDictionary[@"video_location_id"] = asset.localIdentifier;
@@ -90,7 +97,7 @@
             //0.开始进行
             NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
             userInfo[@"state"] = @"0";
-            userInfo[@"progress"] = @(0);
+            userInfo[@"progress"] = @(0.0);
             [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
             
             //（下载）转码压缩
@@ -110,7 +117,7 @@
             resource = assetRes;
         }
     }
-    NSString * filePath = @"";
+    NSString *filePath = @"ey_outFile.mp4".insertTempPathString;
     NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
     
     if (asset.mediaType == PHAssetMediaTypeVideo || asset.mediaSubtypes == PHAssetMediaSubtypePhotoLive) {
@@ -123,11 +130,11 @@
             [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
         };
         //移除输出的文件
-        [[NSFileManager defaultManager] removeItemAtPath:filePath error: nil];
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
         [[PHAssetResourceManager defaultManager] writeDataForAssetResource:resource toFile:[NSURL fileURLWithPath:filePath] options:options completionHandler:^(NSError * _Nullable error) {
             if (error) {
                 userInfo[@"state"]     = @"3";
-                userInfo[@"progress"]  = @(1);
+                userInfo[@"progress"]  = @(1.0);
                 //发送进度
                 [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
             } else {
@@ -136,7 +143,7 @@
         }];
     } else {
         userInfo[@"state"]     = @"3";
-        userInfo[@"progress"]  = @(1);
+        userInfo[@"progress"]  = @(1.0);
         //发送进度
         [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
     }
@@ -179,7 +186,7 @@
     EYLog(@"FFmpeg 运行参数%@",commandString);
     
     // 传入指令数及指令数组
-    ffmpeg_main(argc, argv);
+//    ffmpeg_main(argc, argv);
     
     // 线程已杀死,下方的代码不会执行
 }
@@ -219,7 +226,7 @@
         userInfo[@"state"] = @"2";
         userInfo[@"progress"] = @(1.0);
     }
-    EYLog(@"FFmpeg132456转换停止==");
+    EYLog(@"FFmpeg 转换停止");
     [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
 }
 
