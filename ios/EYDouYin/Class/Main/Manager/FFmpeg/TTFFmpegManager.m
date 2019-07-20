@@ -7,7 +7,7 @@
 //  该文件为 FFmpeg 执行指令的单例类, 调用对应的方法就行
 
 #import "TTFFmpegManager.h"
-//#import "ffmpeg.h"
+#import "ffmpeg.h"
 
 // 将项目中文件进行 FFmpeg 转码后的文件(可以直接上传)
 #define EYSendVideoFilePath [NSTemporaryDirectory() stringByAppendingPathComponent:@"ey_SendVideo.mp4"]
@@ -186,7 +186,7 @@
     EYLog(@"FFmpeg 运行参数%@",commandString);
     
     // 传入指令数及指令数组
-//    ffmpeg_main(argc, argv);
+    ffmpeg_main(argc, argv);
     
     // 线程已杀死,下方的代码不会执行
 }
