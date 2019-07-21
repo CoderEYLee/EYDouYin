@@ -33,3 +33,28 @@ EYDouYin 该项目主体框架是模仿抖音框架实现
    
 ```cd ios```   
 ```pod install```   
+
+
+# 踩过的坑
+## 1.集成 FFmpeg
+本项目中使用的 FFmpeg 版本为 4.0.3 版本。  
+
+FFmpeg （地址：```https://github.com/FFmpeg/FFmpeg```  编译脚本地址: ```https://github.com/kewlbear/FFmpeg-iOS-build-script``` 注意对应的版本） 是跨平台的音视频处理技术，所有的（基本上）音视频的高级处理都会使用到，但是直接使用 FFmpeg 来处理视频操作过于复杂！
+所以很多的三方框架，都是在 FFmpeg 的基础上封装了一层，最著名的要数 bilibili 的 ijkplayer 了 (地址:  ```https://github.com/bilibili/ijkplayer``` ) 
+很多的三方框架就是基于bilibili 中的脚本生成的 IJKMediaFramework.framework 进行技术代码实现!   
+  
+1. 通过脚本生成需要的文件（FFmpeg-iOS文件夹）   
+2. 添加需要的头文件（放入FFmpeg-iOS文件夹）   
+   1 config.h   
+   2 ffmpeg.h   
+   3 ffmpeg.c   
+   4 cmdutils.h   
+   5 cmdutils.c   
+   6 ffmpeg_opt.c   
+   7 ffmpeg_filter.c   
+   8 ffmpeg_hw.c   
+   9 ffmpeg_videotoolbox.c   
+   这 9 个文件: 部分需要修改头文件引用和源代码实现    
+3. 项目 -> Build Setting -> Search Paths -> Header Search Paths   添加  ```$(PROJECT_DIR)/EYDouYin/Class/Main/Tool/FFmpeg-iOS/include```    
+   项目 -> Build Setting -> Search Paths -> Library Search Paths   添加  ```$(PROJECT_DIR)/EYDouYin/Class/Main/Tool/FFmpeg-iOS/lib```   
+  具体请看博客:  未完待续......
