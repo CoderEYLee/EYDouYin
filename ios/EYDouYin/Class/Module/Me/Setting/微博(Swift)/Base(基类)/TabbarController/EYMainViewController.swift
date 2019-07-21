@@ -19,8 +19,8 @@ class EYMainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        WeiboSDK.enableDebugMode(true)
-//        WeiboSDK.registerApp(EYAppKey)
+        WeiboSDK.enableDebugMode(true)
+        WeiboSDK.registerApp(EYAppKey)
         
         
         setupChildControllers()

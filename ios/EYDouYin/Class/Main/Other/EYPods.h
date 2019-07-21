@@ -20,4 +20,5 @@
 #import <Masonry.h>
 #import <TXLiveBase.h>
 #import <YYText.h>
+#import <WeiboSDK.h>
 #import <TZImagePickerController.h>

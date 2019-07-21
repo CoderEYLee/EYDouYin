@@ -6,4 +6,4 @@
 #import "EYAdditions.h"
 #import "EYPhotoBrowserController.h"
 #import "DMHeartFlyView.h"
-//#import <WeiboSDK.h>
+#import <WeiboSDK.h>

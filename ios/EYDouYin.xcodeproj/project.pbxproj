@@ -2205,6 +2205,7 @@
 				607541252104CC4B00EB258D /* Resources */,
 				7164FAC7CBD575C447A17FE0 /* [CP] Embed Pods Frameworks */,
 				601DE50322CB028B00C99E5E /* ShellScript */,
+				9384ED7CEF854FA4EC6D63AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2414,6 +2415,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9384ED7CEF854FA4EC6D63AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
