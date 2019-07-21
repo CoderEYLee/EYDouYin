@@ -14,6 +14,7 @@ pod 'ZFPlayer/ControlView', '~> 3.0'
 pod 'ZFPlayer/AVPlayer', '~> 3.0'
 # 因为项目中使用了 FFmpeg 和ijkplayer中使用的 FFmpeg 版本不同, 故不能同时存在,目前没有找到解决方案,暂时使用别的播放框架去实现
 #pod 'ZFPlayer/ijkplayer', '~> 3.0'
+#pod 'IJKMediaFramework', '0.1.2'
 
 #pod 'MPMoviePlayerController-Subtitles', '~> 2.2.2'
 
@@ -52,8 +53,6 @@ pod 'TZImagePickerController', '3.2.1' #本地选择图片与视频
 
 
 #pragma mark - 微博(Swift 版本)
-# 因为项目中使用了 FFmpeg 和IJKMediaFramework中使用的 FFmpeg 版本不同, 故不能同时存在,目前没有找到解决方案,暂时使用别的播放框架去实现
-#pod 'IJKMediaFramework', '0.1.2'
 pod "Weibo_SDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
 
 #pragma mark - React-Native
