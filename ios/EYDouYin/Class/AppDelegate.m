@@ -14,7 +14,7 @@
 
 //#import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h> // Only if you have Flutter Plugins
 
-@interface AppDelegate () <WeiboSDKDelegate>
+@interface AppDelegate () ///<WeiboSDKDelegate>
 
 @end
 
@@ -39,10 +39,10 @@
     return YES;
 }
 
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    // 暂时没有用到, 微博是用的是网页的授权
-    return [WeiboSDK handleOpenURL:url delegate:self];
-}
+//- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+//    // 暂时没有用到, 微博是用的是网页的授权
+//    return [WeiboSDK handleOpenURL:url delegate:self];
+//}
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     EYLog(@"222222222--->启动/后台回来");
@@ -196,12 +196,12 @@
 
 #pragma mark - WeiboSDKDelegate
 
-- (void)didReceiveWeiboRequest:(WBBaseRequest *)request {
-    EYLog(@"didReceiveWeiboRequest==%@", request);
-}
-
-- (void)didReceiveWeiboResponse:(WBBaseResponse *)response {
-    EYLog(@"didReceiveWeiboResponse==%@", response);
-}
+//- (void)didReceiveWeiboRequest:(WBBaseRequest *)request {
+//    EYLog(@"didReceiveWeiboRequest==%@", request);
+//}
+//
+//- (void)didReceiveWeiboResponse:(WBBaseResponse *)response {
+//    EYLog(@"didReceiveWeiboResponse==%@", response);
+//}
 
 @end

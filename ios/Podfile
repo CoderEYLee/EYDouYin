@@ -51,8 +51,8 @@ pod 'TZImagePickerController', '3.2.1' #本地选择图片与视频
 
 
 #pragma mark - 微博(Swift 版本)
-pod 'IJKMediaFramework', '0.1.2'
-pod "Weibo_SDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
+#pod 'IJKMediaFramework', '0.1.2'
+#pod "Weibo_SDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
 
 #pragma mark - React-Native
 # 'node_modules'目录一般位于根目录中

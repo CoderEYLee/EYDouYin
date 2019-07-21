@@ -7,14 +7,14 @@
 //  映客直播界面
 
 import UIKit
-import IJKMediaFramework
+//import IJKMediaFramework
 
 class EYLivePlayerVideoViewController: UIViewController {
 
     // 直播地址
     var url:String?
 
-    var ijkplayer: IJKFFMoviePlayerController?
+//    var ijkplayer: IJKFFMoviePlayerController?
 
     @IBAction func close() {
         navigationController?.popViewController(animated: true)
@@ -77,24 +77,24 @@ class EYLivePlayerVideoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        guard let ijplayer = ijkplayer else {
-            return
-        }
-
-        if ijplayer.isPlaying() {
-            return
-        }
-
-        ijplayer.prepareToPlay()
+//        guard let ijplayer = ijkplayer else {
+//            return
+//        }
+//
+//        if ijplayer.isPlaying() {
+//            return
+//        }
+//
+//        ijplayer.prepareToPlay()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
-        guard let ijplayer = ijkplayer else {
-            return
-        }
-        ijplayer.shutdown()
+//        guard let ijplayer = ijkplayer else {
+//            return
+//        }
+//        ijplayer.shutdown()
     }
 
     override func didReceiveMemoryWarning() {
@@ -114,17 +114,17 @@ extension EYLivePlayerVideoViewController
 
     private func setupPlayerView()  {
         //初始化IJ播放器的控制器
-        ijkplayer = IJKFFMoviePlayerController(contentURLString: url, with: nil)
-        //设置播放界面的大小 满屏
-		ijkplayer?.view.frame = EYScreenBounds
-
-        //设置log上报打印级别 实际测试没有什么效果
-        //默认为 k_IJK_LOG_DEFAULT
-        IJKFFMoviePlayerController.setLogReport(false)
-        IJKFFMoviePlayerController.setLogLevel(.init(k_IJK_LOG_ERROR.rawValue))
-
-        //插入到view的最下面
-        view.insertSubview(ijkplayer?.view ?? UIView(), at: 0)
+//        ijkplayer = IJKFFMoviePlayerController(contentURLString: url, with: nil)
+//        //设置播放界面的大小 满屏
+//        ijkplayer?.view.frame = EYScreenBounds
+//
+//        //设置log上报打印级别 实际测试没有什么效果
+//        //默认为 k_IJK_LOG_DEFAULT
+//        IJKFFMoviePlayerController.setLogReport(false)
+//        IJKFFMoviePlayerController.setLogLevel(.init(k_IJK_LOG_ERROR.rawValue))
+//
+//        //插入到view的最下面
+//        view.insertSubview(ijkplayer?.view ?? UIView(), at: 0)
     }
 	private func setupControlView()  {
 
