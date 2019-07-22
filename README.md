@@ -45,7 +45,7 @@ EYDouYin 该项目主体框架是模仿抖音框架实现
 ## 1.集成 FFmpeg
 本项目中使用的 FFmpeg 版本为 4.0.3 版本。  
 
-FFmpeg （地址：```https://github.com/FFmpeg/FFmpeg```  编译脚本地址: ```https://github.com/kewlbear/FFmpeg-iOS-build-script``` 注意对应的版本） 是跨平台的音视频处理技术，所有的（基本上）音视频的高级处理都会使用到，但是直接使用 FFmpeg 来处理视频操作过于复杂！
+FFmpeg （地址：https://github.com/FFmpeg/FFmpeg  编译脚本地址: https://github.com/kewlbear/FFmpeg-iOS-build-script 注意对应的版本） 是跨平台的音视频处理技术，所有的（基本上）音视频的高级处理都会使用到，但是直接使用 FFmpeg 来处理视频操作过于复杂！
 所以很多的三方框架，都是在 FFmpeg 的基础上封装了一层，最著名的要数 bilibili 的 ijkplayer 了 (地址:  ```https://github.com/bilibili/ijkplayer``` ) 
 很多的三方框架就是基于bilibili 中的脚本生成的 IJKMediaFramework.framework 进行技术代码实现!   
   
