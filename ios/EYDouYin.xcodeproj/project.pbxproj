@@ -1880,14 +1880,14 @@
 		60B3657922E36D2A00283241 /* FFmpeg-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				60B3657A22E36D2A00283241 /* cmdutils.h */,
-				60B3657B22E36D2A00283241 /* ffmpeg_opt.c */,
-				60B3657C22E36D2A00283241 /* ffmpeg.h */,
 				60B3657D22E36D2A00283241 /* config.h */,
+				60B3657C22E36D2A00283241 /* ffmpeg.h */,
+				60B365FD22E36D2A00283241 /* ffmpeg.c */,
+				60B3657A22E36D2A00283241 /* cmdutils.h */,
+				60B365FC22E36D2A00283241 /* cmdutils.c */,
+				60B3657B22E36D2A00283241 /* ffmpeg_opt.c */,
 				60B365FA22E36D2A00283241 /* ffmpeg_filter.c */,
 				60B365FB22E36D2A00283241 /* ffmpeg_hw.c */,
-				60B365FC22E36D2A00283241 /* cmdutils.c */,
-				60B365FD22E36D2A00283241 /* ffmpeg.c */,
 				60B3660622E36D2A00283241 /* ffmpeg_videotoolbox.c */,
 				60B3657E22E36D2A00283241 /* include */,
 				60B365FE22E36D2A00283241 /* lib */,
