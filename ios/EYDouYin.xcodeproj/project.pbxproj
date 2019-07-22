@@ -66,7 +66,6 @@
 		607541442104CC4C00EB258D /* EYDouYinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 607541432104CC4C00EB258D /* EYDouYinTests.m */; };
 		6075414F2104CC4C00EB258D /* EYDouYinUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6075414E2104CC4C00EB258D /* EYDouYinUITests.m */; };
 		6075416F2104D15F00EB258D /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 6075416E2104D15F00EB258D /* Foundation+Log.m */; };
-		6076A15D2148E097002ED551 /* ChinLab_en.json in Resources */ = {isa = PBXBuildFile; fileRef = 6076A15C2148E096002ED551 /* ChinLab_en.json */; };
 		6076A16B214A05BF002ED551 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6076A16A214A05BF002ED551 /* MediaPlayer.framework */; };
 		6076A171214A4D26002ED551 /* EYHomeCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A170214A4D26002ED551 /* EYHomeCityViewController.m */; };
 		6076A1792150CFD8002ED551 /* DispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A1782150CFD8002ED551 /* DispatchTimer.m */; };
@@ -222,6 +221,8 @@
 		60C4008B218BFCF000B07E4A /* EYCollectionArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C4008A218BFCF000B07E4A /* EYCollectionArray.plist */; };
 		60C4008E218C1DB600B07E4A /* EYCollectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */; };
 		60C40091218C269C00B07E4A /* UIImageView+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */; };
+		60C9F37222E55A1700450718 /* EYCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9F37122E55A1700450718 /* EYCustomViewController.m */; };
+		60C9F37522E55ABA00450718 /* EYCustomFitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9F37422E55ABA00450718 /* EYCustomFitView.m */; };
 		60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77AB211F5239004133A6 /* EYFindTopView.m */; };
 		60EE77AF211F52A4004133A6 /* EYFindTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60EE77AE211F52A4004133A6 /* EYFindTopView.xib */; };
 		60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77B221201CE8004133A6 /* EYTestViewController.m */; };
@@ -363,7 +364,6 @@
 		6075416E2104D15F00EB258D /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		607541712104D33F00EB258D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		607541722104D36800EB258D /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
-		6076A15C2148E096002ED551 /* ChinLab_en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ChinLab_en.json; sourceTree = "<group>"; };
 		6076A16A214A05BF002ED551 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		6076A16F214A4D26002ED551 /* EYHomeCityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeCityViewController.h; sourceTree = "<group>"; };
 		6076A170214A4D26002ED551 /* EYHomeCityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeCityViewController.m; sourceTree = "<group>"; };
@@ -693,6 +693,10 @@
 		60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCollectionDetailViewController.m; sourceTree = "<group>"; };
 		60C4008F218C269C00B07E4A /* UIImageView+EYSDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+EYSDWebImage.h"; sourceTree = "<group>"; };
 		60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+EYSDWebImage.m"; sourceTree = "<group>"; };
+		60C9F37022E55A1700450718 /* EYCustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCustomViewController.h; sourceTree = "<group>"; };
+		60C9F37122E55A1700450718 /* EYCustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCustomViewController.m; sourceTree = "<group>"; };
+		60C9F37322E55ABA00450718 /* EYCustomFitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCustomFitView.h; sourceTree = "<group>"; };
+		60C9F37422E55ABA00450718 /* EYCustomFitView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCustomFitView.m; sourceTree = "<group>"; };
 		60EE77AA211F5239004133A6 /* EYFindTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFindTopView.h; sourceTree = "<group>"; };
 		60EE77AB211F5239004133A6 /* EYFindTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFindTopView.m; sourceTree = "<group>"; };
 		60EE77AE211F52A4004133A6 /* EYFindTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYFindTopView.xib; sourceTree = "<group>"; };
@@ -766,13 +770,14 @@
 				602112BA22CF37E800510A74 /* EYMeModel.m */,
 				60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */,
 				60F3200C22CDF7FB00B86161 /* ReactNative */,
-				60C40086218BFB2200B07E4A /* Collection */,
-				6080A69922C74427003EC084 /* 微博(Swift) */,
+				60C40086218BFB2200B07E4A /* Collection(自己收藏) */,
+				6080A69922C74427003EC084 /* 微博(Swift版本) */,
 				60752B3F2182C500001B857C /* SJVideoPlayer使用 */,
 				60752B4421832233001B857C /* ZFPlayer使用 */,
 				60752B482186A37A001B857C /* iOS锁使用 */,
 				60752B4C2186DFC2001B857C /* 瀑布流 */,
 				6085A1612189A81100637F31 /* UICollectionView 其他布局使用 */,
+				60C9F36F22E559C300450718 /* 自定义 UIView */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1132,7 +1137,6 @@
 				60BBC68F2104D9D900DEEA34 /* EYConstant.h */,
 				60BBC6902104D9D900DEEA34 /* EYConstant.m */,
 				6055AD3B2116B382005DC856 /* TabBar.json */,
-				6076A15C2148E096002ED551 /* ChinLab_en.json */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1238,7 +1242,7 @@
 			path = DeviceInformation;
 			sourceTree = "<group>";
 		};
-		6080A69922C74427003EC084 /* 微博(Swift) */ = {
+		6080A69922C74427003EC084 /* 微博(Swift版本) */ = {
 			isa = PBXGroup;
 			children = (
 				6080A6A122C744A5003EC084 /* Base(基类) */,
@@ -1250,7 +1254,7 @@
 				6080A70522C744A5003EC084 /* Define(宏定义) */,
 				6080A69C22C744A5003EC084 /* 测试 */,
 			);
-			path = "微博(Swift)";
+			path = "微博(Swift版本)";
 			sourceTree = "<group>";
 		};
 		6080A69C22C744A5003EC084 /* 测试 */ = {
@@ -2103,7 +2107,7 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		60C40086218BFB2200B07E4A /* Collection */ = {
+		60C40086218BFB2200B07E4A /* Collection(自己收藏) */ = {
 			isa = PBXGroup;
 			children = (
 				60C4008A218BFCF000B07E4A /* EYCollectionArray.plist */,
@@ -2114,7 +2118,18 @@
 				60C4008C218C1DB600B07E4A /* EYCollectionDetailViewController.h */,
 				60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */,
 			);
-			path = Collection;
+			path = "Collection(自己收藏)";
+			sourceTree = "<group>";
+		};
+		60C9F36F22E559C300450718 /* 自定义 UIView */ = {
+			isa = PBXGroup;
+			children = (
+				60C9F37022E55A1700450718 /* EYCustomViewController.h */,
+				60C9F37122E55A1700450718 /* EYCustomViewController.m */,
+				60C9F37322E55ABA00450718 /* EYCustomFitView.h */,
+				60C9F37422E55ABA00450718 /* EYCustomFitView.m */,
+			);
+			path = "自定义 UIView";
 			sourceTree = "<group>";
 		};
 		60EE77A9211F51D1004133A6 /* Controller */ = {
@@ -2328,7 +2343,6 @@
 				60752B642186F230001B857C /* Shops.plist in Resources */,
 				6085A16021897A4B00637F31 /* EYWaterflowShopCell2.xib in Resources */,
 				6080A79B22C744A5003EC084 /* Home.xcassets in Resources */,
-				6076A15D2148E097002ED551 /* ChinLab_en.json in Resources */,
 				6080A75622C744A5003EC084 /* NewFeature.xcassets in Resources */,
 				6080A7A422C744A5003EC084 /* Compose.xcassets in Resources */,
 				60C4008B218BFCF000B07E4A /* EYCollectionArray.plist in Resources */,
@@ -2535,6 +2549,7 @@
 				6012FD70215A36BF004A3083 /* UIView+EYCornerRadius.m in Sources */,
 				60752B682186F3CE001B857C /* EYShop.m in Sources */,
 				601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */,
+				60C9F37222E55A1700450718 /* EYCustomViewController.m in Sources */,
 				606B658A219182130059D1F7 /* UIButton+EYSDWebImage.m in Sources */,
 				6080A76422C744A5003EC084 /* NSAttributedString+EYAdditon.m in Sources */,
 				6080A76322C744A5003EC084 /* NSString+EYBase64.m in Sources */,
@@ -2595,6 +2610,7 @@
 				6080A65E22C60898003EC084 /* EYUserModel.m in Sources */,
 				6016065922D5F2A70082B278 /* EYTestView.m in Sources */,
 				60AAFC7F22B375C300F30A9B /* EYExcelModel.m in Sources */,
+				60C9F37522E55ABA00450718 /* EYCustomFitView.m in Sources */,
 				606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */,
 				6080A78C22C744A5003EC084 /* EYUserAccount.swift in Sources */,
 				60B00F2722D39BB300941A14 /* TTFFmpegManager.m in Sources */,
