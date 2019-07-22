@@ -93,6 +93,14 @@
 				<key>vcName</key>
 				<string>EYCollectionViewOtherController</string>
 			</dict>
+            <dict>
+                <key>language</key>
+                <string>OC</string>
+                <key>name</key>
+                <string>自定义 UIview</string>
+                <key>vcName</key>
+                <string>EYCollectionViewOtherController</string>
+            </dict>
 		</array>
 	</dict>
 </array>
