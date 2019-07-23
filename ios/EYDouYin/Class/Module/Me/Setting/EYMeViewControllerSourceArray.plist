@@ -99,7 +99,7 @@
                 <key>name</key>
                 <string>自定义 UIview</string>
                 <key>vcName</key>
-                <string>EYCollectionViewOtherController</string>
+                <string>EYCustomViewController</string>
             </dict>
 		</array>
 	</dict>

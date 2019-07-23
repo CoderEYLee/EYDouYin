@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EYCustomFitView : UIView
 
+@property (strong, nonatomic) EYVideoModel *videoModel;
+
 @end
 
 NS_ASSUME_NONNULL_END
