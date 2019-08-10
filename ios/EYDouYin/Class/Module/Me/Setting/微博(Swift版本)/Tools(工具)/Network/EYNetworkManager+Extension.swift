@@ -198,15 +198,11 @@ extension EYNetworkManager
 //                    } else {
 //                        return (.cancelAuthenticationChallenge, nil)
 //                    }
-//                }
-//                    //认证客户端证书
-//                else if challenge.protectionSpace.authenticationMethod
+//                } else if challenge.protectionSpace.authenticationMethod
 //                    == NSURLAuthenticationMethodClientCertificate {
 //                    print("客户端证书认证！")//不接受认证
 //                    return (.cancelAuthenticationChallenge, nil);
-//                }
-//                    // 其它情况（不接受认证）
-//                else {
+//                } else {
 //                    print("其它情况（不接受认证）")
 //                    return (.cancelAuthenticationChallenge, nil)
 //                }

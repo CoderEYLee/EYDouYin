@@ -171,6 +171,25 @@ class EYNetworkManager: Session {
     ///   - completion: 完成回调[json(字典／数组), 是否成功]
     func request(method: EYHTTPMethod = .GET, style: EYHTTPStyle = .STATUS , URLString: String, parameters: [String: Any]?, encoding: ParameterEncoding = URLEncoding.default, completion: @escaping (AnyObject?, Bool)->()) {
         EYLog("\n method->\(method)\n style->\(style)\n URLString->\(URLString)\n parameters->\(String(describing: parameters))")
+        AF.request(URLString, method: method == .POST ? .post : .get, parameters: parameters, encoding: encoding).responseJSON { (data) in
+            let statusCode = data.response?.statusCode
+            if statusCode == 200 {
+                let value = data.value
+                EYLog("\n URLString->\(URLString)\n \(String(describing: value))")
+                completion(value as AnyObject, true)
+            } else if statusCode == 400  && style == .STATUS {
+                EYLog("Token 过期了")
+                EYUserAccount.deleteAccount()
+                // 发送通知，提示用户再次登录(本方法不知道被谁调用，谁接收到通知，谁处理！)
+                NotificationCenter.default.post(
+                    name: NSNotification.Name(rawValue: EYUserShouldLoginNotification),
+                    object: "bad token")
+                completion(nil, false)
+            } else {
+                EYLog("网络请求错误 \(String(describing: data.error))")
+                completion(nil, false)
+            }
+        }
 //        Alamofire.request(URLString, method: method == .POST ? .post : .get, parameters: parameters, encoding: encoding).responseJSON { (data) in
 //            if data.result.isSuccess {
 //                if data.response?.statusCode == 400 && style == .STATUS {
