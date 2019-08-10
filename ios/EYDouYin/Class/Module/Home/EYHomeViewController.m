@@ -80,7 +80,6 @@
     [self addChildViewController:toptopVC];
     self.toptopVC = toptopVC;
     toptopVC.view.frame = EYScreenBounds;
-//    toptopVC.view.backgroundColor = EYColorRed;
     [scrollView addSubview:toptopVC.view];
     
     //4.1 中
@@ -88,7 +87,6 @@
     [self addChildViewController:centerVC];
     self.centerVC = centerVC;
     centerVC.view.frame = CGRectMake(0, EYScreenHeight, EYScreenWidth, EYScreenHeight);
-//    centerVC.view.backgroundColor = EYColorGreen;
     [scrollView addSubview:centerVC.view];
     
     //4.1 下
@@ -96,7 +94,6 @@
     [self addChildViewController:bottomVC];
     self.bottomVC = bottomVC;
     bottomVC.view.frame = CGRectMake(0, EYScreenHeight * 2, EYScreenWidth, EYScreenHeight);
-//    bottomVC.view.backgroundColor = EYColorBlue;
     [scrollView addSubview:bottomVC.view];
 }
 
