@@ -159,7 +159,6 @@ class EYNetworkManager: NSObject {
                 EYLog("网络请求错误 \(String(describing: data.error))")
                 completion(nil, false)
             }
-            
 //            switch data.result {
 //                case .success(let value):
 //                    EYLog("发送微博成功了 \(value)")
