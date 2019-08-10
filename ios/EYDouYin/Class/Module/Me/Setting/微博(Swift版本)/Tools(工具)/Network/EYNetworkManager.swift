@@ -31,7 +31,7 @@ enum EYHTTPStyle {//http请求类型
 // MARK: ----------------------- 新浪微博 -----------------------
 
 /// 网络管理工具
-class EYNetworkManager: Session {
+class EYNetworkManager: NSObject {
 
     /// 静态区／常量／闭包
     /// 在第一次访问时，执行闭包，并且将结果保存在 shared 常量中
@@ -46,9 +46,29 @@ class EYNetworkManager: Session {
     // static: 类属性 这种方式最简洁
     // 这段代码会先调用了swift_once，接下来是swift_once_block_invoke中执行 Apple之前在文档中已经说过，“懒实例化”的全局变量会被自动放在dispatch_once块中
     static let shared: EYNetworkManager = EYNetworkManager()
+    
+    private var AFManager: Session = Session()
 
     /// 用户账户的懒加载属性
     lazy var userAccount = EYUserAccount()
+    
+    override init() {
+        
+        //要校验的域名数组
+        let evaluators: [String: ServerTrustEvaluating] = [
+            "api.ehomeclouds.com.cn": PublicKeysTrustEvaluator.init(
+                keys: [],
+                performDefaultValidation: true,
+                validateHost: true
+            )
+        ]
+        
+        let sessionConfiguration = URLSessionConfiguration.default
+        sessionConfiguration.timeoutIntervalForRequest = 20
+        AFManager = Session(configuration: sessionConfiguration, serverTrustManager: ServerTrustManager(evaluators: evaluators))
+        
+        super .init()
+    }
 
     /// 用户登录标记[计算型属性]
     var userLogon: Bool {
@@ -171,6 +191,40 @@ class EYNetworkManager: Session {
     ///   - completion: 完成回调[json(字典／数组), 是否成功]
     func request(method: EYHTTPMethod = .GET, style: EYHTTPStyle = .STATUS , URLString: String, parameters: [String: Any]?, encoding: ParameterEncoding = URLEncoding.default, completion: @escaping (AnyObject?, Bool)->()) {
         EYLog("\n method->\(method)\n style->\(style)\n URLString->\(URLString)\n parameters->\(String(describing: parameters))")
+        //        if (EYSecurityProtocol as NSString).isEqual(to: "https") {
+        //认证相关设置
+        //            SessionManager.default.delegate.sessionDidReceiveChallenge = { session, challenge in
+        //                //认证服务器证书
+        //                if challenge.protectionSpace.authenticationMethod
+        //                    == NSURLAuthenticationMethodServerTrust {
+        //                    print("服务端需要证书认证！")
+        //                    let serverTrust:SecTrust = challenge.protectionSpace.serverTrust!
+        //                    let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0)!
+        //                    let remoteCertificateData
+        //                        = CFBridgingRetain(SecCertificateCopyData(certificate))!
+        //                    let cerPath = Bundle.main.path(forResource: "api.ehomeclouds.com.cn", ofType: "cer")!
+        //                    let cerUrl = URL(fileURLWithPath:cerPath)
+        //                    let localCertificateData = try! Data(contentsOf: cerUrl)
+        //
+        //                    if (remoteCertificateData.isEqual(localCertificateData) == true) {
+        //                        let credential = URLCredential(trust: serverTrust)
+        //                        challenge.sender?.use(credential, for: challenge)
+        //                        return (URLSession.AuthChallengeDisposition.useCredential,
+        //                                URLCredential(trust: challenge.protectionSpace.serverTrust!))
+        //                    } else {
+        //                        return (.cancelAuthenticationChallenge, nil)
+        //                    }
+        //                } else if challenge.protectionSpace.authenticationMethod
+        //                    == NSURLAuthenticationMethodClientCertificate {
+        //                    print("客户端证书认证！")//不接受认证
+        //                    return (.cancelAuthenticationChallenge, nil);
+        //                } else {
+        //                    print("其它情况（不接受认证）")
+        //                    return (.cancelAuthenticationChallenge, nil)
+        //                }
+        //            }
+        //        }
+        
         AF.request(URLString, method: method == .POST ? .post : .get, parameters: parameters, encoding: encoding).validate().responseJSON { (data) in
             let statusCode = data.response?.statusCode
             if statusCode == 200 {
