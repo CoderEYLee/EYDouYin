@@ -60,6 +60,9 @@ class EYNetworkManager: NSObject {
                 keys: [],
                 performDefaultValidation: true,
                 validateHost: true
+            ),
+            "api.weibo.com": DefaultTrustEvaluator.init(
+                validateHost: true
             )
         ]
         
@@ -67,7 +70,7 @@ class EYNetworkManager: NSObject {
         sessionConfiguration.timeoutIntervalForRequest = 20
         AFManager = Session(configuration: sessionConfiguration, serverTrustManager: ServerTrustManager(evaluators: evaluators))
         
-        super .init()
+        super.init()
     }
 
     /// 用户登录标记[计算型属性]
@@ -133,51 +136,39 @@ class EYNetworkManager: NSObject {
     /// - parameter data:       要上传的二进制数据
     /// - parameter completion: 完成回调
     func upload(URLString: String, parameters: [String: AnyObject]?, name: String, data: Data, completion: @escaping (AnyObject?, Bool)->()) {
-        AF.upload(multipartFormData: { (multipartFormData) in
+        AFManager.upload(multipartFormData: { (multipartFormData) in
             for (key, value) in parameters ?? [:]{
                 multipartFormData.append((value.data(using: String.Encoding.utf8.rawValue))!, withName: key)
             }
             multipartFormData.append(data, withName: name, fileName: "xxx", mimeType: "application/octet-stream")
-        }, to: URLString).validate().responseJSON(completionHandler: { (dataResponse) in
-            switch dataResponse.result {
-                case .success(let value):
-                    EYLog("发送微博成功了 \(value)")
-                    completion(value as AnyObject, true)
-                case .failure(let error):
-                    EYLog("网络请求错误 \(error.localizedDescription)")
-                    completion(nil, false)
+        }, to: URLString).validate().responseJSON(completionHandler: { (data) in
+            let statusCode = data.response?.statusCode
+            if statusCode == 200 {
+                let value = data.value
+                EYLog("\n URLString->\(URLString)\n \(String(describing: value))")
+                completion(value as AnyObject, true)
+            } else if statusCode == 403 {
+                EYLog("Token 过期了")
+                EYUserAccount.deleteAccount()
+                // 发送通知，提示用户再次登录(本方法不知道被谁调用，谁接收到通知，谁处理！)
+                NotificationCenter.default.post(
+                    name: NSNotification.Name(rawValue: EYUserShouldLoginNotification),
+                    object: "bad token")
+                completion(nil, false)
+            } else {
+                EYLog("网络请求错误 \(String(describing: data.error))")
+                completion(nil, false)
             }
+            
+//            switch data.result {
+//                case .success(let value):
+//                    EYLog("发送微博成功了 \(value)")
+//                    completion(value as AnyObject, true)
+//                case .failure(let error):
+//                    EYLog("网络请求错误 \(error.localizedDescription)")
+//                    completion(nil, false)
+//            }
         })
-//        AF.upload(multipartFormData: { (multipartFormData) in
-//            for (key, value) in parameters ?? [:]{
-//                multipartFormData.append((value.data(using: String.Encoding.utf8.rawValue))!, withName: key)
-//            }
-//            multipartFormData.append(data, withName: name, fileName: "xxx", mimeType: "application/octet-stream")
-//        }, to: URLString) { (encodingResult) in
-//            switch encodingResult {
-//            case .success(let upload, _, _):
-//                upload.responseJSON { response in
-//                    EYLog("发送微博成功了")
-//                    if let value = response.value as? [String: AnyObject]{
-//                        EYLog("\(value)")
-//                        completion(value as AnyObject, true)
-//                    } else if response.response?.statusCode == 403 {
-//                        EYLog("Token 过期了")
-//
-//                        EYUserAccount.deleteAccount()
-//
-//                        // 发送通知，提示用户再次登录(本方法不知道被谁调用，谁接收到通知，谁处理！)
-//                        NotificationCenter.default.post(
-//                            name: NSNotification.Name(rawValue: EYUserShouldLoginNotification),
-//                            object: "bad token")
-//                        completion(nil, false)
-//                    }
-//                }
-//            case .failure(let encodingError):
-//                EYLog("网络请求错误 \(encodingError.localizedDescription))")
-//                completion(nil, false)
-//            }
-//        }
     }
 
     /// 封装 Alamofire 的 GET / POST 请求
@@ -191,40 +182,6 @@ class EYNetworkManager: NSObject {
     ///   - completion: 完成回调[json(字典／数组), 是否成功]
     func request(method: EYHTTPMethod = .GET, style: EYHTTPStyle = .STATUS , URLString: String, parameters: [String: Any]?, encoding: ParameterEncoding = URLEncoding.default, completion: @escaping (AnyObject?, Bool)->()) {
         EYLog("\n method->\(method)\n style->\(style)\n URLString->\(URLString)\n parameters->\(String(describing: parameters))")
-        //        if (EYSecurityProtocol as NSString).isEqual(to: "https") {
-        //认证相关设置
-        //            SessionManager.default.delegate.sessionDidReceiveChallenge = { session, challenge in
-        //                //认证服务器证书
-        //                if challenge.protectionSpace.authenticationMethod
-        //                    == NSURLAuthenticationMethodServerTrust {
-        //                    print("服务端需要证书认证！")
-        //                    let serverTrust:SecTrust = challenge.protectionSpace.serverTrust!
-        //                    let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0)!
-        //                    let remoteCertificateData
-        //                        = CFBridgingRetain(SecCertificateCopyData(certificate))!
-        //                    let cerPath = Bundle.main.path(forResource: "api.ehomeclouds.com.cn", ofType: "cer")!
-        //                    let cerUrl = URL(fileURLWithPath:cerPath)
-        //                    let localCertificateData = try! Data(contentsOf: cerUrl)
-        //
-        //                    if (remoteCertificateData.isEqual(localCertificateData) == true) {
-        //                        let credential = URLCredential(trust: serverTrust)
-        //                        challenge.sender?.use(credential, for: challenge)
-        //                        return (URLSession.AuthChallengeDisposition.useCredential,
-        //                                URLCredential(trust: challenge.protectionSpace.serverTrust!))
-        //                    } else {
-        //                        return (.cancelAuthenticationChallenge, nil)
-        //                    }
-        //                } else if challenge.protectionSpace.authenticationMethod
-        //                    == NSURLAuthenticationMethodClientCertificate {
-        //                    print("客户端证书认证！")//不接受认证
-        //                    return (.cancelAuthenticationChallenge, nil);
-        //                } else {
-        //                    print("其它情况（不接受认证）")
-        //                    return (.cancelAuthenticationChallenge, nil)
-        //                }
-        //            }
-        //        }
-        
         AFManager.request(URLString, method: method == .POST ? .post : .get, parameters: parameters, encoding: encoding).validate().responseJSON { (data) in
             let statusCode = data.response?.statusCode
             if statusCode == 200 {
