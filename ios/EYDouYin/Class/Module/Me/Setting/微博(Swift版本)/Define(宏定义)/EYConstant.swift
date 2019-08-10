@@ -114,11 +114,11 @@ let EYStatusPictureViewWidth = EYScreenWidth - 2 * EYStatusPictureViewOutterMarg
 let EYStatusPictureItemWidth = (EYStatusPictureViewWidth - 2 * EYStatusPictureViewInnerMargin) / 3
 
 // MARK: - 智能家居信息
-let EYSecurityProtocol = "http"
-let EYSmartHomeIP = EYSecurityProtocol + "://129.1.18.18:8080"
+//let EYSecurityProtocol = "http"
+//let EYSmartHomeIP = EYSecurityProtocol + "://129.1.18.18:8080"
 
-//let EYSecurityProtocol = "https"
-//let EYSmartHomeIP = EYSecurityProtocol + "://api.ehomeclouds.com.cn:10443"
+let EYSecurityProtocol = "https"
+let EYSmartHomeIP = EYSecurityProtocol + "://api.ehomeclouds.com.cn:10443"
 
 //登录
 let EYSmartHomeLogin = EYSmartHomeIP + "/noauth/user/credential"

@@ -56,8 +56,8 @@ class EYNetworkManager: NSObject {
         
         //要校验的域名数组
         let evaluators: [String: ServerTrustEvaluating] = [
-            "api.ehomeclouds.com.cn": PublicKeysTrustEvaluator.init(
-                keys: [],
+            "api.ehomeclouds.com.cn": PinnedCertificatesTrustEvaluator.init(
+                acceptSelfSignedCertificates: true,
                 performDefaultValidation: true,
                 validateHost: true
             ),
