@@ -118,7 +118,7 @@ class EYNetworkManager: Session {
                 multipartFormData.append((value.data(using: String.Encoding.utf8.rawValue))!, withName: key)
             }
             multipartFormData.append(data, withName: name, fileName: "xxx", mimeType: "application/octet-stream")
-        }, to: URLString).responseJSON(completionHandler: { (dataResponse) in
+        }, to: URLString).validate().responseJSON(completionHandler: { (dataResponse) in
             switch dataResponse.result {
                 case .success(let value):
                     EYLog("发送微博成功了 \(value)")
@@ -171,7 +171,7 @@ class EYNetworkManager: Session {
     ///   - completion: 完成回调[json(字典／数组), 是否成功]
     func request(method: EYHTTPMethod = .GET, style: EYHTTPStyle = .STATUS , URLString: String, parameters: [String: Any]?, encoding: ParameterEncoding = URLEncoding.default, completion: @escaping (AnyObject?, Bool)->()) {
         EYLog("\n method->\(method)\n style->\(style)\n URLString->\(URLString)\n parameters->\(String(describing: parameters))")
-        AF.request(URLString, method: method == .POST ? .post : .get, parameters: parameters, encoding: encoding).responseJSON { (data) in
+        AF.request(URLString, method: method == .POST ? .post : .get, parameters: parameters, encoding: encoding).validate().responseJSON { (data) in
             let statusCode = data.response?.statusCode
             if statusCode == 200 {
                 let value = data.value
