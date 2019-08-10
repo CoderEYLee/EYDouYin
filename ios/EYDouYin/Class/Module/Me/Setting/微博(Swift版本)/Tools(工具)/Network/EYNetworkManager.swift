@@ -31,7 +31,7 @@ enum EYHTTPStyle {//http请求类型
 // MARK: ----------------------- 新浪微博 -----------------------
 
 /// 网络管理工具
-class EYNetworkManager: SessionManager {
+class EYNetworkManager: Session {
 
     /// 静态区／常量／闭包
     /// 在第一次访问时，执行闭包，并且将结果保存在 shared 常量中
@@ -113,37 +113,51 @@ class EYNetworkManager: SessionManager {
     /// - parameter data:       要上传的二进制数据
     /// - parameter completion: 完成回调
     func upload(URLString: String, parameters: [String: AnyObject]?, name: String, data: Data, completion: @escaping (AnyObject?, Bool)->()) {
-        
-        Alamofire.upload(multipartFormData: { (multipartFormData) in
+        AF.upload(multipartFormData: { (multipartFormData) in
             for (key, value) in parameters ?? [:]{
                 multipartFormData.append((value.data(using: String.Encoding.utf8.rawValue))!, withName: key)
             }
             multipartFormData.append(data, withName: name, fileName: "xxx", mimeType: "application/octet-stream")
-        }, to: URLString) { (encodingResult) in
-            switch encodingResult {
-            case .success(let upload, _, _):
-                upload.responseJSON { response in
-                    EYLog("发送微博成功了")
-                    if let value = response.value as? [String: AnyObject]{
-                        EYLog("\(value)")
-                        completion(value as AnyObject, true)
-                    } else if response.response?.statusCode == 403 {
-                        EYLog("Token 过期了")
-                        
-                        EYUserAccount.deleteAccount()
-                        
-                        // 发送通知，提示用户再次登录(本方法不知道被谁调用，谁接收到通知，谁处理！)
-                        NotificationCenter.default.post(
-                            name: NSNotification.Name(rawValue: EYUserShouldLoginNotification),
-                            object: "bad token")
-                        completion(nil, false)
-                    }
-                }
-            case .failure(let encodingError):
-                EYLog("网络请求错误 \(encodingError.localizedDescription))")
-                completion(nil, false)
+        }, to: URLString).responseJSON(completionHandler: { (dataResponse) in
+            switch dataResponse.result {
+                case .success(let value):
+                    EYLog("发送微博成功了 \(value)")
+                    completion(value as AnyObject, true)
+                case .failure(let error):
+                    EYLog("网络请求错误 \(error.localizedDescription)")
+                    completion(nil, false)
             }
-        }
+        })
+//        AF.upload(multipartFormData: { (multipartFormData) in
+//            for (key, value) in parameters ?? [:]{
+//                multipartFormData.append((value.data(using: String.Encoding.utf8.rawValue))!, withName: key)
+//            }
+//            multipartFormData.append(data, withName: name, fileName: "xxx", mimeType: "application/octet-stream")
+//        }, to: URLString) { (encodingResult) in
+//            switch encodingResult {
+//            case .success(let upload, _, _):
+//                upload.responseJSON { response in
+//                    EYLog("发送微博成功了")
+//                    if let value = response.value as? [String: AnyObject]{
+//                        EYLog("\(value)")
+//                        completion(value as AnyObject, true)
+//                    } else if response.response?.statusCode == 403 {
+//                        EYLog("Token 过期了")
+//
+//                        EYUserAccount.deleteAccount()
+//
+//                        // 发送通知，提示用户再次登录(本方法不知道被谁调用，谁接收到通知，谁处理！)
+//                        NotificationCenter.default.post(
+//                            name: NSNotification.Name(rawValue: EYUserShouldLoginNotification),
+//                            object: "bad token")
+//                        completion(nil, false)
+//                    }
+//                }
+//            case .failure(let encodingError):
+//                EYLog("网络请求错误 \(encodingError.localizedDescription))")
+//                completion(nil, false)
+//            }
+//        }
     }
 
     /// 封装 Alamofire 的 GET / POST 请求
@@ -157,24 +171,24 @@ class EYNetworkManager: SessionManager {
     ///   - completion: 完成回调[json(字典／数组), 是否成功]
     func request(method: EYHTTPMethod = .GET, style: EYHTTPStyle = .STATUS , URLString: String, parameters: [String: Any]?, encoding: ParameterEncoding = URLEncoding.default, completion: @escaping (AnyObject?, Bool)->()) {
         EYLog("\n method->\(method)\n style->\(style)\n URLString->\(URLString)\n parameters->\(String(describing: parameters))")
-		Alamofire.request(URLString, method: method == .POST ? .post : .get, parameters: parameters, encoding: encoding).responseJSON { (data) in
-			if data.result.isSuccess {
-                if data.response?.statusCode == 400 && style == .STATUS {
-                    EYLog("Token 过期了")
-                    EYUserAccount.deleteAccount()
-                    // 发送通知，提示用户再次登录(本方法不知道被谁调用，谁接收到通知，谁处理！)
-                    NotificationCenter.default.post(
-                        name: NSNotification.Name(rawValue: EYUserShouldLoginNotification),
-                        object: "bad token")
-                    completion(nil, false)
-                } else if let value = data.value {
-                    EYLog("\n URLString->\(URLString)\n \(value)")
-                    completion(value as AnyObject, true)
-                }
-			} else {
-				EYLog("网络请求错误 \(String(describing: data.error))")
-				completion(nil, false)
-			}
-		}
+//        Alamofire.request(URLString, method: method == .POST ? .post : .get, parameters: parameters, encoding: encoding).responseJSON { (data) in
+//            if data.result.isSuccess {
+//                if data.response?.statusCode == 400 && style == .STATUS {
+//                    EYLog("Token 过期了")
+//                    EYUserAccount.deleteAccount()
+//                    // 发送通知，提示用户再次登录(本方法不知道被谁调用，谁接收到通知，谁处理！)
+//                    NotificationCenter.default.post(
+//                        name: NSNotification.Name(rawValue: EYUserShouldLoginNotification),
+//                        object: "bad token")
+//                    completion(nil, false)
+//                } else if let value = data.value {
+//                    EYLog("\n URLString->\(URLString)\n \(value)")
+//                    completion(value as AnyObject, true)
+//                }
+//            } else {
+//                EYLog("网络请求错误 \(String(describing: data.error))")
+//                completion(nil, false)
+//            }
+//        }
     }
 }

@@ -177,40 +177,40 @@ extension EYNetworkManager
     func login(parameters: [String: Any]?, completion: @escaping ([[String: AnyObject]]?, Bool)->()) {
         if (EYSecurityProtocol as NSString).isEqual(to: "https") {
             //认证相关设置
-            SessionManager.default.delegate.sessionDidReceiveChallenge = { session, challenge in
-                //认证服务器证书
-                if challenge.protectionSpace.authenticationMethod
-                    == NSURLAuthenticationMethodServerTrust {
-                    print("服务端需要证书认证！")
-                    let serverTrust:SecTrust = challenge.protectionSpace.serverTrust!
-                    let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0)!
-                    let remoteCertificateData
-                        = CFBridgingRetain(SecCertificateCopyData(certificate))!
-                    let cerPath = Bundle.main.path(forResource: "api.ehomeclouds.com.cn", ofType: "cer")!
-                    let cerUrl = URL(fileURLWithPath:cerPath)
-                    let localCertificateData = try! Data(contentsOf: cerUrl)
-
-                    if (remoteCertificateData.isEqual(localCertificateData) == true) {
-                        let credential = URLCredential(trust: serverTrust)
-                        challenge.sender?.use(credential, for: challenge)
-                        return (URLSession.AuthChallengeDisposition.useCredential,
-                                URLCredential(trust: challenge.protectionSpace.serverTrust!))
-                    } else {
-                        return (.cancelAuthenticationChallenge, nil)
-                    }
-                }
-                    //认证客户端证书
-                else if challenge.protectionSpace.authenticationMethod
-                    == NSURLAuthenticationMethodClientCertificate {
-                    print("客户端证书认证！")//不接受认证
-                    return (.cancelAuthenticationChallenge, nil);
-                }
-                    // 其它情况（不接受认证）
-                else {
-                    print("其它情况（不接受认证）")
-                    return (.cancelAuthenticationChallenge, nil)
-                }
-            }
+//            SessionManager.default.delegate.sessionDidReceiveChallenge = { session, challenge in
+//                //认证服务器证书
+//                if challenge.protectionSpace.authenticationMethod
+//                    == NSURLAuthenticationMethodServerTrust {
+//                    print("服务端需要证书认证！")
+//                    let serverTrust:SecTrust = challenge.protectionSpace.serverTrust!
+//                    let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0)!
+//                    let remoteCertificateData
+//                        = CFBridgingRetain(SecCertificateCopyData(certificate))!
+//                    let cerPath = Bundle.main.path(forResource: "api.ehomeclouds.com.cn", ofType: "cer")!
+//                    let cerUrl = URL(fileURLWithPath:cerPath)
+//                    let localCertificateData = try! Data(contentsOf: cerUrl)
+//
+//                    if (remoteCertificateData.isEqual(localCertificateData) == true) {
+//                        let credential = URLCredential(trust: serverTrust)
+//                        challenge.sender?.use(credential, for: challenge)
+//                        return (URLSession.AuthChallengeDisposition.useCredential,
+//                                URLCredential(trust: challenge.protectionSpace.serverTrust!))
+//                    } else {
+//                        return (.cancelAuthenticationChallenge, nil)
+//                    }
+//                }
+//                    //认证客户端证书
+//                else if challenge.protectionSpace.authenticationMethod
+//                    == NSURLAuthenticationMethodClientCertificate {
+//                    print("客户端证书认证！")//不接受认证
+//                    return (.cancelAuthenticationChallenge, nil);
+//                }
+//                    // 其它情况（不接受认证）
+//                else {
+//                    print("其它情况（不接受认证）")
+//                    return (.cancelAuthenticationChallenge, nil)
+//                }
+//            }
         }
 
         // 发起网络请求 直播类型
