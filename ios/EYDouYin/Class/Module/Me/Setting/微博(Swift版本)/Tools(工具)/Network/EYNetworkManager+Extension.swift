@@ -175,8 +175,8 @@ extension EYNetworkManager
 extension EYNetworkManager
 {
     func login(parameters: [String: Any]?, completion: @escaping ([[String: AnyObject]]?, Bool)->()) {
-        // 发起网络请求 直播类型
-        request(method: .POST, style: .SMARTHOME, URLString: EYSmartHomeLogin, parameters: parameters) { (json, isSuccess) in
+        // 发起网络请求
+        request(method: .POST, style: .SMARTHOME, URLString: EYSmartHomeLogin, parameters: parameters, encoding: JSONEncoding.default) { (json, isSuccess) in
             EYLog("\(String(describing: json))")
             let lives = json?["house"] as? [[String: AnyObject]]
             completion(lives, isSuccess)

@@ -183,9 +183,9 @@ class EYNetworkManager: NSObject {
         EYLog("\n method->\(method)\n style->\(style)\n URLString->\(URLString)\n parameters->\(String(describing: parameters))")
         AFManager.request(URLString, method: method == .POST ? .post : .get, parameters: parameters, encoding: encoding).validate().responseJSON { (data) in
             let statusCode = data.response?.statusCode
+            let value = data.value
+            EYLog("statusCode:\(String(describing: statusCode))\n URLString->\(URLString)\n \(String(describing: value))")
             if statusCode == 200 {
-                let value = data.value
-                EYLog("\n URLString->\(URLString)\n \(String(describing: value))")
                 completion(value as AnyObject, true)
             } else if statusCode == 400  && style == .STATUS {
                 EYLog("Token 过期了")
@@ -196,7 +196,6 @@ class EYNetworkManager: NSObject {
                     object: "bad token")
                 completion(nil, false)
             } else {
-                EYLog("网络请求错误 \(String(describing: data.error))")
                 completion(nil, false)
             }
         }
