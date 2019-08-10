@@ -225,7 +225,7 @@ class EYNetworkManager: NSObject {
         //            }
         //        }
         
-        AF.request(URLString, method: method == .POST ? .post : .get, parameters: parameters, encoding: encoding).validate().responseJSON { (data) in
+        AFManager.request(URLString, method: method == .POST ? .post : .get, parameters: parameters, encoding: encoding).validate().responseJSON { (data) in
             let statusCode = data.response?.statusCode
             if statusCode == 200 {
                 let value = data.value
@@ -244,24 +244,5 @@ class EYNetworkManager: NSObject {
                 completion(nil, false)
             }
         }
-//        Alamofire.request(URLString, method: method == .POST ? .post : .get, parameters: parameters, encoding: encoding).responseJSON { (data) in
-//            if data.result.isSuccess {
-//                if data.response?.statusCode == 400 && style == .STATUS {
-//                    EYLog("Token 过期了")
-//                    EYUserAccount.deleteAccount()
-//                    // 发送通知，提示用户再次登录(本方法不知道被谁调用，谁接收到通知，谁处理！)
-//                    NotificationCenter.default.post(
-//                        name: NSNotification.Name(rawValue: EYUserShouldLoginNotification),
-//                        object: "bad token")
-//                    completion(nil, false)
-//                } else if let value = data.value {
-//                    EYLog("\n URLString->\(URLString)\n \(value)")
-//                    completion(value as AnyObject, true)
-//                }
-//            } else {
-//                EYLog("网络请求错误 \(String(describing: data.error))")
-//                completion(nil, false)
-//            }
-//        }
     }
 }

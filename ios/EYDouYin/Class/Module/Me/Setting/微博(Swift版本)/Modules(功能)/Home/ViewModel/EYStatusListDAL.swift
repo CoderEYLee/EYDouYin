@@ -37,7 +37,7 @@ class EYStatusListDAL {
             return
         }
 
-        // 2. 加载网路数据
+        // 2. 加载网络数据
         EYNetworkManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
             
             // 判断网络请求是否成功
