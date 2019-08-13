@@ -140,6 +140,10 @@
     
     // 2.8Flutter初始化
     self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
+    
+    // 2.9UITableView的滚动条
+    UIScrollView.appearance.showsHorizontalScrollIndicator = NO;
+    UIScrollView.appearance.showsVerticalScrollIndicator= NO;
 }
 
 #pragma mark - Private Methods
