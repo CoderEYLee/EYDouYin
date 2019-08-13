@@ -60,6 +60,7 @@ static NSString *EYCustomViewViewControllerCellID = @"EYCustomViewViewController
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     EYLocalUseModel *localUseModel = self.arrayM[indexPath.row];
     UIViewController *vc = [[NSClassFromString(localUseModel.vcName) alloc] init];
+    vc.title = localUseModel.title;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
