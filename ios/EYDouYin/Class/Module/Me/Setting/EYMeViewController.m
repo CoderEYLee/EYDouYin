@@ -142,8 +142,8 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     }
 
     NSArray *items = self.arrayM[indexPath.section].items;
-    EYMeItemsModel *itemModel = items[indexPath.row];
-    cell.textLabel.text = itemModel.name;
+    EYLocalUseModel *localUseModel = items[indexPath.row];
+    cell.textLabel.text = localUseModel.name;
 
     return cell;
 }
@@ -160,13 +160,13 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSArray *items = self.arrayM[indexPath.section].items;
-    EYMeItemsModel *itemModel = items[indexPath.row];
-    NSString *language = itemModel.language;
+    EYLocalUseModel *localUseModel = items[indexPath.row];
+    NSString *language = localUseModel.language;
     
     if ([language isEqualToString:@"OC"] || [language isEqualToString:@"Swift"]) {
-        GKNavigationBarViewController *vc = [[NSClassFromString(itemModel.vcName) alloc] init];
+        GKNavigationBarViewController *vc = [[NSClassFromString(localUseModel.vcName) alloc] init];
         if ([vc isKindOfClass:GKNavigationBarViewController.class]) {
-            vc.gk_navTitle = itemModel.name;
+            vc.gk_navTitle = localUseModel.name;
         }
         [self.navigationController pushViewController:vc animated:YES];
     } else if ([language isEqualToString:@"Flutter"]) {

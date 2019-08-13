@@ -5,8 +5,8 @@
 	<dict>
 		<key>language</key>
 		<string>OC</string>
-		<key>name</key>
-		<string>View 中一个 YYLabel</string>
+		<key>title</key>
+		<string>UICollectionView测试headerView</string>
 		<key>vcName</key>
 		<string>EYCollectionViewController</string>
 	</dict>

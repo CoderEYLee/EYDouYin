@@ -8,14 +8,10 @@
 
 #import "EYLocalUseModel.h"
 
-@implementation EYMeItemsModel
-
-@end
-
 @implementation EYLocalUseModel
 
 + (NSDictionary *)mj_objectClassInArray {
-    return @{@"items": EYMeItemsModel.class};
+    return @{@"items": EYLocalUseModel.class};
 }
 
 @end
