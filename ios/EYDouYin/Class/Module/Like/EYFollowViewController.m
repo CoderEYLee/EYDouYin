@@ -82,8 +82,6 @@
     scrollView.contentSize = CGSizeMake(EYScreenWidth * 2, 0);
     scrollView.pagingEnabled = YES;
     scrollView.bounces = NO;
-//    scrollView.showsHorizontalScrollIndicator = NO;
-    scrollView.showsVerticalScrollIndicator = NO;
     scrollView.delegate = self;
     [self.view addSubview:scrollView];
     self.scrollView = scrollView;

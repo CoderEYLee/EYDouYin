@@ -37,7 +37,7 @@ static NSString *EYCustomViewViewControllerCellID = @"EYCustomViewViewController
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.arrayM.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -58,8 +58,6 @@ static NSString *EYCustomViewViewControllerCellID = @"EYCustomViewViewController
         UITableView * tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) style:UITableViewStylePlain];
         tableView.backgroundColor = EYColorClear;
         tableView.separatorStyle = UITableViewCellSelectionStyleNone;
-        tableView.showsHorizontalScrollIndicator = NO;
-        tableView.showsVerticalScrollIndicator = NO;
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = 100;
         //设置数据源和代理

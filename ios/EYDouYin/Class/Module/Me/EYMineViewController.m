@@ -133,8 +133,6 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         tableViewHeight -= EYTabBarHomeIndicatorHeight;
     }
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, tableViewHeight) style:UITableViewStylePlain];
-    tableView.showsHorizontalScrollIndicator = NO;
-    tableView.showsVerticalScrollIndicator = YES;
     tableView.dataSource = self;
     tableView.delegate = self;
     //背景颜色
