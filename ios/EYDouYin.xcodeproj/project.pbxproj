@@ -26,7 +26,6 @@
 		601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032D21056E8600489E96 /* EYMessageViewController.m */; };
 		602112B522CF18EA00510A74 /* index.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 602112B422CF18EA00510A74 /* index.jsbundle */; };
 		602112B822CF30AF00510A74 /* EYCollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 602112B722CF30AF00510A74 /* EYCollectionModel.m */; };
-		602112BB22CF37E800510A74 /* EYMeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 602112BA22CF37E800510A74 /* EYMeModel.m */; };
 		6026FA5122C07DE200C7F18B /* EYMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6026FA5022C07DE100C7F18B /* EYMineCell.m */; };
 		602A3839229FA8FB00D6DB0D /* EYFollowListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A3838229FA8FB00D6DB0D /* EYFollowListViewController.m */; };
 		602A383C229FA91A00D6DB0D /* EYFollowFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A383B229FA91A00D6DB0D /* EYFollowFriendViewController.m */; };
@@ -72,6 +71,7 @@
 		6076A1802150FE71002ED551 /* EYHomeWorksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A17F2150FE71002ED551 /* EYHomeWorksViewController.m */; };
 		607C2F2223024E5F000962C8 /* EYMeCustomViewArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 607C2F2123024E5F000962C8 /* EYMeCustomViewArray.plist */; };
 		607C2F2523024EF9000962C8 /* EYCustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 607C2F2423024EF9000962C8 /* EYCustomViewViewController.m */; };
+		607C2F2923025C61000962C8 /* EYLocalUseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 607C2F2823025C61000962C8 /* EYLocalUseModel.m */; };
 		6080A65E22C60898003EC084 /* EYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A65D22C60898003EC084 /* EYUserModel.m */; };
 		6080A66D22C613D7003EC084 /* EYHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A66122C613D7003EC084 /* EYHTTPManager.m */; };
 		6080A66E22C613D7003EC084 /* EYHTTPManager+EYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A66222C613D7003EC084 /* EYHTTPManager+EYCategory.m */; };
@@ -291,8 +291,6 @@
 		602112B422CF18EA00510A74 /* index.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.jsbundle; sourceTree = "<group>"; };
 		602112B622CF30AF00510A74 /* EYCollectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCollectionModel.h; sourceTree = "<group>"; };
 		602112B722CF30AF00510A74 /* EYCollectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCollectionModel.m; sourceTree = "<group>"; };
-		602112B922CF37E800510A74 /* EYMeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMeModel.h; sourceTree = "<group>"; };
-		602112BA22CF37E800510A74 /* EYMeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMeModel.m; sourceTree = "<group>"; };
 		6026FA4F22C07DE100C7F18B /* EYMineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMineCell.h; sourceTree = "<group>"; };
 		6026FA5022C07DE100C7F18B /* EYMineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMineCell.m; sourceTree = "<group>"; };
 		602A3837229FA8FB00D6DB0D /* EYFollowListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFollowListViewController.h; sourceTree = "<group>"; };
@@ -378,6 +376,8 @@
 		607C2F2123024E5F000962C8 /* EYMeCustomViewArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EYMeCustomViewArray.plist; sourceTree = "<group>"; };
 		607C2F2323024EF9000962C8 /* EYCustomViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCustomViewViewController.h; sourceTree = "<group>"; };
 		607C2F2423024EF9000962C8 /* EYCustomViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCustomViewViewController.m; sourceTree = "<group>"; };
+		607C2F2723025C61000962C8 /* EYLocalUseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYLocalUseModel.h; sourceTree = "<group>"; };
+		607C2F2823025C61000962C8 /* EYLocalUseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYLocalUseModel.m; sourceTree = "<group>"; };
 		6080A65C22C60898003EC084 /* EYUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYUserModel.h; sourceTree = "<group>"; };
 		6080A65D22C60898003EC084 /* EYUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYUserModel.m; sourceTree = "<group>"; };
 		6080A66022C613D7003EC084 /* EYHTTPManager+EYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EYHTTPManager+EYCategory.h"; sourceTree = "<group>"; };
@@ -774,8 +774,6 @@
 			children = (
 				601B032921056E7700489E96 /* EYMeViewController.h */,
 				601B032A21056E7700489E96 /* EYMeViewController.m */,
-				602112B922CF37E800510A74 /* EYMeModel.h */,
-				602112BA22CF37E800510A74 /* EYMeModel.m */,
 				60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */,
 				60F3200C22CDF7FB00B86161 /* ReactNative */,
 				60C40086218BFB2200B07E4A /* Collection(自己收藏) */,
@@ -1159,6 +1157,8 @@
 				602A386422A11A4100D6DB0D /* EYVideoModel.m */,
 				6080A67922C61510003EC084 /* EYClickPointModel.h */,
 				6080A67A22C61510003EC084 /* EYClickPointModel.m */,
+				607C2F2723025C61000962C8 /* EYLocalUseModel.h */,
+				607C2F2823025C61000962C8 /* EYLocalUseModel.m */,
 			);
 			name = Model;
 			path = Home/Model;
@@ -2507,7 +2507,6 @@
 				60752B472183224E001B857C /* EYZFPlayerViewController.m in Sources */,
 				60B3660822E36D2A00283241 /* ffmpeg_filter.c in Sources */,
 				6080A7AB22C744A5003EC084 /* EYProfileCell.swift in Sources */,
-				602112BB22CF37E800510A74 /* EYMeModel.m in Sources */,
 				6080A7B122C744A5003EC084 /* EYCreator.swift in Sources */,
 				606B6590219189310059D1F7 /* UIButton+EYAdditionOC.m in Sources */,
 				6080A78822C744A5003EC084 /* EYEmoticonInputView.swift in Sources */,
@@ -2628,6 +2627,7 @@
 				6080A79522C744A5003EC084 /* EYHomeViewController.swift in Sources */,
 				6076A1792150CFD8002ED551 /* DispatchTimer.m in Sources */,
 				60C40091218C269C00B07E4A /* UIImageView+EYSDWebImage.m in Sources */,
+				607C2F2923025C61000962C8 /* EYLocalUseModel.m in Sources */,
 				6080A75222C744A5003EC084 /* EYOAuthViewController.swift in Sources */,
 				6080A67E22C6157C003EC084 /* EYUserModelTool.m in Sources */,
 				6080A79222C744A5003EC084 /* EYStatus.swift in Sources */,

@@ -1,15 +1,16 @@
 //
-//  EYMeModel.h
+//  EYLocalUseModel.h
 //  EYDouYin
 //
-//  Created by 李二洋 on 2019/7/5.
+//  Created by 李二洋 on 2019/8/13.
 //  Copyright © 2019 李二洋. All rights reserved.
-//
+//  本地数据使用模型(方便界面显示)
 
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+//"我的"界面使用
 @interface EYMeItemsModel : NSObject
 
 /**
@@ -29,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface EYMeModel : NSObject
+@interface EYLocalUseModel : NSObject
 
 /**
  分组名称

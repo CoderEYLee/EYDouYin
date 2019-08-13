@@ -11,10 +11,13 @@
 @interface EYCustomViewViewController() <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *arrayM;
 
 @end
 
 @implementation EYCustomViewViewController
+
+static NSString *EYCustomViewViewControllerCellID = @"EYCustomViewViewControllerCellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,31 +31,53 @@
     
 }
 
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:EYCustomViewViewControllerCellID];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:EYCustomViewViewControllerCellID];
+    }
+    
+    cell.backgroundColor = EYColorRandom;
+    
+    return cell;
+}
+
 - (UITableView *)tableView {
     if (nil == _tableView) {
         //创建
         UITableView * tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) style:UITableViewStylePlain];
-        //背景颜色
         tableView.backgroundColor = EYColorClear;
-        //取消分割线
         tableView.separatorStyle = UITableViewCellSelectionStyleNone;
-        //滚动条
         tableView.showsHorizontalScrollIndicator = NO;
         tableView.showsVerticalScrollIndicator = NO;
         tableView.rowHeight = UITableViewAutomaticDimension;
-        tableView.estimatedRowHeight = 550;
+        tableView.estimatedRowHeight = 100;
         //设置数据源和代理
         tableView.dataSource = self;
         tableView.delegate = self;
-        // 添加
         [self.view addSubview:tableView];
-        
-//        [tableView registerClass:[TTMessageDetailCell class] forCellReuseIdentifier:TTMessageDetailViewControllerCellID];
         
         //赋值
         _tableView = tableView;
     }
     return _tableView;
+}
+
+- (NSMutableArray *)arrayM {
+    if (nil == _arrayM) {
+        _arrayM = [NSMutableArray array];
+    }
+    return _arrayM;
 }
 
 @end

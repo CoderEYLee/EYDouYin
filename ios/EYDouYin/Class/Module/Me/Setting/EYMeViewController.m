@@ -11,13 +11,12 @@
 #import "EYDouYin-Swift.h"
 #import <Flutter/Flutter.h>
 #import "EYRNViewController.h"
-#import "EYMeModel.h"
 
 @interface EYMeViewController () <UITableViewDataSource, UITableViewDelegate, FlutterStreamHandler>
 
 @property (weak, nonatomic) UITableView *tableView;
 
-@property (strong, nonatomic) NSMutableArray <EYMeModel *>*arrayM;
+@property (strong, nonatomic) NSMutableArray <EYLocalUseModel *>*arrayM;
 
 @end
 
@@ -212,9 +211,9 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     return _tableView;
 }
 
-- (NSMutableArray<EYMeModel *> *)arrayM {
+- (NSMutableArray<EYLocalUseModel *> *)arrayM {
     if (nil == _arrayM) {
-        _arrayM = [EYMeModel mj_objectArrayWithFilename:@"EYMeViewControllerSourceArray.plist"];
+        _arrayM = [EYLocalUseModel mj_objectArrayWithFilename:@"EYMeViewControllerSourceArray.plist"];
     }
     return _arrayM;
 }

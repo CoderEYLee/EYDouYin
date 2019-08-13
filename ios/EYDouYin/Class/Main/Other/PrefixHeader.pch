@@ -24,6 +24,7 @@
 #import "EYVideoModel.h"        //视频模型
 #import "EYHTTPManager+EYCategory.h"//网络请求
 #import "EYDeviceInformation.h" //设备信息
+#import "EYLocalUseModel.h"     //通用数据模型
 
 #pragma mark - 项目通用文件
 #import "EYManager.h"
