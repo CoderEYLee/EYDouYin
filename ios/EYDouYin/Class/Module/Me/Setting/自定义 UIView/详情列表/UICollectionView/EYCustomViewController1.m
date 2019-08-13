@@ -74,6 +74,8 @@ static NSString *EYCustomViewController1CellID = @"EYCustomViewController1CellID
 #pragma mark - 懒加载
 - (UICollectionView *)collectionView {
     if (nil == _collectionView) {
+        #pragma mark - 方式一
+        /*
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) collectionViewLayout:layout];
@@ -91,6 +93,25 @@ static NSString *EYCustomViewController1CellID = @"EYCustomViewController1CellID
         
         [self.view addSubview:collectionView];
         _collectionView = collectionView;
+         */
+        
+#pragma mark - 方式二
+         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+         layout.headerReferenceSize = CGSizeMake(EYScreenWidth, 300);
+         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) collectionViewLayout:layout];
+         collectionView.backgroundColor = EYColorClear;
+         collectionView.showsVerticalScrollIndicator = YES;
+         collectionView.dataSource = self;
+         collectionView.delegate = self;
+         [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EYCustomViewController1CellID];
+         
+         UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, collectionView.bounds.size.width, 300)];
+         headView.backgroundColor = EYColorRandom;
+         [collectionView addSubview:headView];
+         
+         [self.view addSubview:collectionView];
+         _collectionView = collectionView;
     }
     return _collectionView;
 }
@@ -98,7 +119,7 @@ static NSString *EYCustomViewController1CellID = @"EYCustomViewController1CellID
 - (NSMutableArray *)arrayM {
     if (nil == _arrayM) {
         _arrayM = [NSMutableArray array];
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 20; i++) {
             [_arrayM addObject:[NSString stringWithFormat:@"%d", i]];
         }
     }
