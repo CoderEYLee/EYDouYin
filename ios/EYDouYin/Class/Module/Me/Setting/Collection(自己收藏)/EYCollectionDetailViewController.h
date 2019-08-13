@@ -7,13 +7,12 @@
 //
 
 #import "EYBaseViewController.h"
-#import "EYCollectionModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EYCollectionDetailViewController : EYBaseViewController
 
-@property (strong, nonatomic) EYCollectionModel *collectionModel;
+@property (strong, nonatomic) EYLocalUseModel *localUseModel;
 
 @end
 

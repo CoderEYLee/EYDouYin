@@ -9,13 +9,12 @@
 
 #import "EYCollectionViewController.h"
 #import "EYCollectionDetailViewController.h"
-#import "EYCollectionModel.h"
 
 @interface EYCollectionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) UITableView *tableView;
 
-@property (strong, nonatomic) NSMutableArray <EYCollectionModel *>*arrayM;
+@property (strong, nonatomic) NSMutableArray <EYLocalUseModel *>*arrayM;
 
 @end
 
@@ -56,10 +55,10 @@ static NSString *EYCollectionViewControllerCellID = @"EYCollectionViewController
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    EYCollectionModel *collectionModel = self.arrayM[indexPath.row];
+    EYLocalUseModel *localUseModel = self.arrayM[indexPath.row];
     EYCollectionDetailViewController *vc = [[EYCollectionDetailViewController alloc] init];
-    vc.collectionModel = collectionModel;
-    if (collectionModel.lock) {
+    vc.localUseModel = localUseModel;
+    if (localUseModel.lock) {
         //添加提示框
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您正在访问内部优惠券" preferredStyle:UIAlertControllerStyleAlert];
         __weak typeof(alert) weakAlert = alert;
@@ -75,9 +74,9 @@ static NSString *EYCollectionViewControllerCellID = @"EYCollectionViewController
             if ([password.md2String isEqualToString:@"ec959feaadc86988b166247cd670dbaf"]) {
                 NSString *text = alert.textFields.lastObject.text;
                 if (text.length) {
-                    NSString *content_url = collectionModel.content_url;
-                    collectionModel.content_url = [content_url stringByReplacingOccurrencesOfString:@"baidu" withString:text options:NSRegularExpressionSearch range:NSMakeRange(0, content_url.length - 1)];
-                    vc.collectionModel = collectionModel;
+                    NSString *content_url = localUseModel.content_url;
+                    localUseModel.content_url = [content_url stringByReplacingOccurrencesOfString:@"baidu" withString:text options:NSRegularExpressionSearch range:NSMakeRange(0, content_url.length - 1)];
+                    vc.localUseModel = localUseModel;
                 }
                 [self.navigationController pushViewController:vc animated:YES];
             }
@@ -103,9 +102,9 @@ static NSString *EYCollectionViewControllerCellID = @"EYCollectionViewController
     return _tableView;
 }
 
-- (NSMutableArray<EYCollectionModel *> *)arrayM {
+- (NSMutableArray<EYLocalUseModel *> *)arrayM {
     if (nil == _arrayM) {
-        _arrayM = [EYCollectionModel mj_objectArrayWithFilename:@"EYCollectionArray.plist"];
+        _arrayM = [EYLocalUseModel mj_objectArrayWithFilename:@"EYCollectionArray.plist"];
     }
     return _arrayM;
 }
