@@ -26,6 +26,7 @@
 
 //1. 初始化界面
 - (void)setupUI {
+    self.gk_navTitle = @"UIView(YYLabel)计算高度自适应";
     self.view.backgroundColor = EYColorRandom;
     
     //1.初始化界面

@@ -6,9 +6,17 @@
 		<key>language</key>
 		<string>OC</string>
 		<key>title</key>
-		<string>UICollectionView测试headerView</string>
+		<string>UIView测试YYLabel</string>
 		<key>vcName</key>
-		<string>EYCollectionViewController</string>
+		<string>EYCustomViewController</string>
 	</dict>
+    <dict>
+        <key>language</key>
+        <string>OC</string>
+        <key>title</key>
+        <string>UICollectionView测试headerView</string>
+        <key>vcName</key>
+        <string>EYCustomViewController1</string>
+    </dict>
 </array>
 </plist>

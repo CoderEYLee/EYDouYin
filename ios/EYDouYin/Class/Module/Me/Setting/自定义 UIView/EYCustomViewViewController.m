@@ -45,9 +45,13 @@ static NSString *EYCustomViewViewControllerCellID = @"EYCustomViewViewController
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:EYCustomViewViewControllerCellID];
+        cell.backgroundColor = EYColorClear;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.textLabel.textColor = EYColorWhite;
     }
     
-    cell.backgroundColor = EYColorRandom;
+    EYLocalUseModel *localUseModel = self.arrayM[indexPath.row];
+    cell.textLabel.text = localUseModel.title;
     
     return cell;
 }
@@ -55,7 +59,8 @@ static NSString *EYCustomViewViewControllerCellID = @"EYCustomViewViewController
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     EYLocalUseModel *localUseModel = self.arrayM[indexPath.row];
-    EYLog(@"11111111==%@", localUseModel);
+    UIViewController *vc = [[NSClassFromString(localUseModel.vcName) alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - 懒加载
