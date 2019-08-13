@@ -1178,7 +1178,7 @@
 			path = DispatchTimer;
 			sourceTree = "<group>";
 		};
-		607C2F2623024F07000962C8 /* qwe */ = {
+		607C2F2623024F07000962C8 /* 详情列表 */ = {
 			isa = PBXGroup;
 			children = (
 				60C9F37022E55A1700450718 /* EYCustomViewController.h */,
@@ -1188,7 +1188,7 @@
 				60C9F37922E6B2A200450718 /* EYCustomFitView1.h */,
 				60C9F37A22E6B2A300450718 /* EYCustomFitView1.m */,
 			);
-			path = qwe;
+			path = "详情列表";
 			sourceTree = "<group>";
 		};
 		6080A65F22C613D7003EC084 /* HTTP */ = {
@@ -2143,7 +2143,7 @@
 				607C2F2123024E5F000962C8 /* EYMeCustomViewArray.plist */,
 				607C2F2323024EF9000962C8 /* EYCustomViewViewController.h */,
 				607C2F2423024EF9000962C8 /* EYCustomViewViewController.m */,
-				607C2F2623024F07000962C8 /* qwe */,
+				607C2F2623024F07000962C8 /* 详情列表 */,
 			);
 			path = "自定义 UIView";
 			sourceTree = "<group>";
