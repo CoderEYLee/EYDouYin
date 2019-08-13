@@ -77,11 +77,18 @@ static NSString *EYCustomViewController1CellID = @"EYCustomViewController1CellID
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) collectionViewLayout:layout];
+        collectionView.backgroundColor = EYColorClear;
         collectionView.showsVerticalScrollIndicator = YES;
         collectionView.dataSource = self;
         collectionView.delegate = self;
-        collectionView.backgroundColor = EYColorClear;
         [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EYCustomViewController1CellID];
+        
+        collectionView.contentInset = UIEdgeInsetsMake(300, 0, 0, 0);
+        
+        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, -300, collectionView.bounds.size.width, 300)];
+        headView.backgroundColor = EYColorRandom;
+        [collectionView addSubview:headView];
+        
         [self.view addSubview:collectionView];
         _collectionView = collectionView;
     }
