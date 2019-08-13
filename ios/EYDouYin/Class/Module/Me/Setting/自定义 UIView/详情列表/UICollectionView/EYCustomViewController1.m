@@ -39,7 +39,6 @@ static NSString *EYCustomViewController1CellID = @"EYCustomViewController1CellID
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:EYCustomViewController1CellID forIndexPath:indexPath];;
-//    cell.videoModel = self.arrayM[indexPath.row];
     cell.backgroundColor = EYColorRandom;
     
     return cell;
@@ -69,7 +68,7 @@ static NSString *EYCustomViewController1CellID = @"EYCustomViewController1CellID
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    EYLog(@"12it5yue56u");
+    EYLog(@"点击了 cell==%ld", indexPath.row);
 }
 
 #pragma mark - 懒加载
@@ -78,7 +77,6 @@ static NSString *EYCustomViewController1CellID = @"EYCustomViewController1CellID
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) collectionViewLayout:layout];
-        collectionView.showsHorizontalScrollIndicator = YES;
         collectionView.showsVerticalScrollIndicator = YES;
         collectionView.dataSource = self;
         collectionView.delegate = self;
