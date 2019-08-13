@@ -223,6 +223,15 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 #pragma mark - EYMineCellDelegate
 - (void)mineCell:(EYMineCell *)cell didSelectedButton:(EYJumpType)jumpTpye {
     EYLog(@"cell--delegate 回调==%@==%lu", cell, jumpTpye);
+    switch (jumpTpye) {
+        case EYJumpTypeMineUserHeaderButton: {//用户头像按钮
+            [SVProgressHUD showInfoWithStatus:@"更换用户头像"];
+            break;
+        }
+            
+        default:
+            break;
+    }
 }
 
 #pragma mark - EYMineViewControllerHeaderViewDelegate
@@ -231,8 +240,7 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     
     switch (jumpTpye) {
         case EYJumpTypeMineUserBackImageButton: {//用户背景图片按钮
-            EYLog(@"更换背景图片");
-            
+            [EYProgressHUD showInfoWithStatus:@"更换背景图片"];
             break;
         }
         case EYJumpTypeMineUserHeaderButton: {//用户头像按钮
