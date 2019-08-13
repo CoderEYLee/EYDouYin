@@ -2,13 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-    <dict>
-        <key>language</key>
-        <string>OC</string>
-        <key>name</key>
-        <string>自己收藏</string>
-        <key>vcName</key>
-        <string>EYCollectionViewController</string>
-    </dict>
+	<dict>
+		<key>language</key>
+		<string>OC</string>
+		<key>name</key>
+		<string>View 中一个 YYLabel</string>
+		<key>vcName</key>
+		<string>EYCollectionViewController</string>
+	</dict>
 </array>
 </plist>

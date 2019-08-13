@@ -11,7 +11,7 @@
 @interface EYCustomViewViewController() <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray *arrayM;
+@property (strong, nonatomic) NSMutableArray <EYLocalUseModel *>*arrayM;
 
 @end
 
@@ -28,7 +28,7 @@ static NSString *EYCustomViewViewControllerCellID = @"EYCustomViewViewController
 
 //1.初始化界面
 - (void)setupUI {
-    
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource
@@ -73,9 +73,9 @@ static NSString *EYCustomViewViewControllerCellID = @"EYCustomViewViewController
     return _tableView;
 }
 
-- (NSMutableArray *)arrayM {
+- (NSMutableArray<EYLocalUseModel *> *)arrayM {
     if (nil == _arrayM) {
-        _arrayM = [NSMutableArray array];
+        _arrayM = [EYLocalUseModel mj_objectArrayWithFilename:@"EYMeCustomViewArray.plist"];
     }
     return _arrayM;
 }
