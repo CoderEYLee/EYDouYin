@@ -69,11 +69,6 @@ static NSString *const EYCollectionViewOtherControllerCellID = @"EYCollectionVie
         // 2.创建UICollectionView
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 200, EYScreenWidth, 300) collectionViewLayout:layout];
         collectionView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        if (@available(iOS 11.0, *)) {
-            collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        } else {
-            self.automaticallyAdjustsScrollViewInsets = NO;
-        }
         collectionView.dataSource = self;
         collectionView.delegate = self;
         [collectionView registerNib:[UINib nibWithNibName:@"EYShopCell" bundle:nil] forCellWithReuseIdentifier:EYCollectionViewOtherControllerCellID];
