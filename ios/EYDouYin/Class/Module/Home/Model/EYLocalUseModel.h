@@ -42,6 +42,21 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (strong, nonatomic) NSArray <EYMeItemsModel *>*items;
 
+/**
+ 标题
+ */
+@property (copy, nonatomic) NSString *title;
+
+/**
+ 链接网址
+ */
+@property (copy, nonatomic) NSString *content_url;
+
+/**
+ 是否加密
+ */
+@property (assign, nonatomic) BOOL lock;
+
 @end
 
 NS_ASSUME_NONNULL_END
