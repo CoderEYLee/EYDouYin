@@ -3,18 +3,14 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>language</key>
-		<string>OC</string>
 		<key>title</key>
-		<string>UIView测试YYLabel</string>
+		<string>1、UIView(YYLabel)计算高度自适应</string>
 		<key>vcName</key>
 		<string>EYCustomViewController</string>
 	</dict>
     <dict>
-        <key>language</key>
-        <string>OC</string>
         <key>title</key>
-        <string>UICollectionView测试headerView</string>
+        <string>2、UICollectionView测试headerView</string>
         <key>vcName</key>
         <string>EYCustomViewController1</string>
     </dict>
