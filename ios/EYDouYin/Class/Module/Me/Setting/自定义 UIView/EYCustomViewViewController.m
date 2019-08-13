@@ -47,13 +47,6 @@
         // 添加
         [self.view addSubview:tableView];
         
-//        // 设置偏移量为0
-//        if (@available(iOS 11.0, *)) {
-//            tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//        } else {
-//            self.automaticallyAdjustsScrollViewInsets = NO;
-//        }
-        
 //        [tableView registerClass:[TTMessageDetailCell class] forCellReuseIdentifier:TTMessageDetailViewControllerCellID];
         
         //赋值

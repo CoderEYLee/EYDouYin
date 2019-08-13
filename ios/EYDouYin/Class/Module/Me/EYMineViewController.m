@@ -144,12 +144,6 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     tableView.rowHeight = UITableViewAutomaticDimension;
     tableView.estimatedRowHeight = 100;
     [tableView registerClass:[EYMineCell class] forCellReuseIdentifier:EYMineViewControllerCellID];
-    // 设置偏移量为0
-    if (@available(iOS 11.0, *)) {
-        tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    } else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
     
     //tableHeaderView
     EYMineViewControllerHeaderView *headerView = [[EYMineViewControllerHeaderView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewBeginHeight)];

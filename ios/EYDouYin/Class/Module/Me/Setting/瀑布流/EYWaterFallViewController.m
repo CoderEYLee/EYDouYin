@@ -141,11 +141,6 @@ static NSString *const EYWaterFallViewControllerShopCell2 = @"EYWaterFallViewCon
         // 2.创建UICollectionView
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 2*EYStatusBarHeight + EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) collectionViewLayout:layout];
         collectionView.backgroundColor = [UIColor whiteColor];
-        if (@available(iOS 11.0, *)) {
-            collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        } else {
-            self.automaticallyAdjustsScrollViewInsets = NO;
-        }
         collectionView.dataSource = self;
         collectionView.delegate = self;
         [collectionView registerNib:[UINib nibWithNibName:@"EYShopCell" bundle:nil] forCellWithReuseIdentifier:ID];
