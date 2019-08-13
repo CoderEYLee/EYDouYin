@@ -1,5 +1,5 @@
 //
-//  EYCustomFitView1.h
+//  EYCustomFitView2.h
 //  EYDouYin
 //
 //  Created by 李二洋 on 2019/7/23.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EYCustomFitView1 : UIView
+@interface EYCustomFitView2 : UIView
 
 @end
 
