@@ -57,7 +57,6 @@ static NSString *EYCustomViewViewControllerCellID = @"EYCustomViewViewController
         //创建
         UITableView * tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) style:UITableViewStylePlain];
         tableView.backgroundColor = EYColorClear;
-        tableView.separatorStyle = UITableViewCellSelectionStyleNone;
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = 100;
         //设置数据源和代理

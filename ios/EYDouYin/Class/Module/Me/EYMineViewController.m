@@ -137,8 +137,6 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     tableView.delegate = self;
     //背景颜色
     tableView.backgroundColor = EYColorClear;
-    //取消分割线
-    tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     tableView.rowHeight = UITableViewAutomaticDimension;
     tableView.estimatedRowHeight = 100;
     [tableView registerClass:[EYMineCell class] forCellReuseIdentifier:EYMineViewControllerCellID];
