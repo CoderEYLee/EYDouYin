@@ -8,37 +8,37 @@
 		<key>items</key>
 		<array>
 			<dict>
-                <key>language</key>
-                <string>OC</string>
+				<key>language</key>
+				<string>OC</string>
 				<key>name</key>
 				<string>自己收藏</string>
 				<key>vcName</key>
 				<string>EYCollectionViewController</string>
 			</dict>
-            <dict>
-                <key>language</key>
-                <string>Swift</string>
-                <key>name</key>
-                <string>微博(Swift 版本)</string>
-                <key>vcName</key>
-                <string>EYDouYin.EYMainViewController</string>
-            </dict>
-            <dict>
-                <key>language</key>
-                <string>Flutter</string>
-                <key>name</key>
-                <string>Flutter(Flutter 语言)</string>
-                <key>vcName</key>
-                <string>FlutterViewController</string>
-            </dict>
-            <dict>
-                <key>language</key>
-                <string>RN</string>
-                <key>name</key>
-                <string>ReactNative(ReactNative 语言)</string>
-                <key>vcName</key>
-                <string>FlutterViewController</string>
-            </dict>
+			<dict>
+				<key>language</key>
+				<string>Swift</string>
+				<key>name</key>
+				<string>微博(Swift 版本)</string>
+				<key>vcName</key>
+				<string>EYDouYin.EYMainViewController</string>
+			</dict>
+			<dict>
+				<key>language</key>
+				<string>Flutter</string>
+				<key>name</key>
+				<string>Flutter(Flutter 语言)</string>
+				<key>vcName</key>
+				<string>FlutterViewController</string>
+			</dict>
+			<dict>
+				<key>language</key>
+				<string>RN</string>
+				<key>name</key>
+				<string>ReactNative(ReactNative 语言)</string>
+				<key>vcName</key>
+				<string>FlutterViewController</string>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -47,16 +47,16 @@
 		<key>items</key>
 		<array>
 			<dict>
-                <key>language</key>
-                <string>OC</string>
+				<key>language</key>
+				<string>OC</string>
 				<key>name</key>
 				<string>SJVideoPlayer使用</string>
 				<key>vcName</key>
 				<string>EYSJVideoPlayerViewController</string>
 			</dict>
 			<dict>
-                <key>language</key>
-                <string>OC</string>
+				<key>language</key>
+				<string>OC</string>
 				<key>name</key>
 				<string>ZFPlayer使用</string>
 				<key>vcName</key>
@@ -70,37 +70,37 @@
 		<key>items</key>
 		<array>
 			<dict>
-                <key>language</key>
-                <string>OC</string>
+				<key>language</key>
+				<string>OC</string>
 				<key>name</key>
 				<string>iOS 锁使用</string>
 				<key>vcName</key>
 				<string>EYIOSLockViewController</string>
 			</dict>
 			<dict>
-                <key>language</key>
-                <string>OC</string>
+				<key>language</key>
+				<string>OC</string>
 				<key>name</key>
 				<string>瀑布流使用</string>
 				<key>vcName</key>
 				<string>EYWaterFallViewController</string>
 			</dict>
 			<dict>
-                <key>language</key>
-                <string>OC</string>
+				<key>language</key>
+				<string>OC</string>
 				<key>name</key>
 				<string>UICollectionView 其他布局使用</string>
 				<key>vcName</key>
 				<string>EYCollectionViewOtherController</string>
 			</dict>
-            <dict>
-                <key>language</key>
-                <string>OC</string>
-                <key>name</key>
-                <string>自定义 UIview</string>
-                <key>vcName</key>
-                <string>EYCustomViewController</string>
-            </dict>
+			<dict>
+				<key>language</key>
+				<string>OC</string>
+				<key>name</key>
+				<string>自定义 UIview</string>
+				<key>vcName</key>
+				<string>EYCustomViewViewController</string>
+			</dict>
 		</array>
 	</dict>
 </array>
