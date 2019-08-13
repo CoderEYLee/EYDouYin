@@ -18,7 +18,7 @@
     [super viewDidLoad];
     
     //1.初始化界面
-    [sel setupUI];
+    [self setupUI];
 }
 
 //1.初始化界面

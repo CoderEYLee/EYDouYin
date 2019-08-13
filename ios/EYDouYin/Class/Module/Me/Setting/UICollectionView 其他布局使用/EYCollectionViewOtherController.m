@@ -25,7 +25,7 @@ static NSString *const EYCollectionViewOtherControllerCellID = @"EYCollectionVie
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    
     [self.collectionView reloadData];
 }
 

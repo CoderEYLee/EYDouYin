@@ -164,10 +164,8 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     NSString *language = localUseModel.language;
     
     if ([language isEqualToString:@"OC"] || [language isEqualToString:@"Swift"]) {
-        GKNavigationBarViewController *vc = [[NSClassFromString(localUseModel.vcName) alloc] init];
-        if ([vc isKindOfClass:GKNavigationBarViewController.class]) {
-            vc.gk_navTitle = localUseModel.name;
-        }
+        UIViewController *vc = [[NSClassFromString(localUseModel.vcName) alloc] init];
+        vc.title = localUseModel.name;
         [self.navigationController pushViewController:vc animated:YES];
     } else if ([language isEqualToString:@"Flutter"]) {
         [self pushFlutterViewController];
