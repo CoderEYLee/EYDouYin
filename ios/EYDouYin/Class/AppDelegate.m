@@ -141,9 +141,10 @@
     // 2.8Flutter初始化
     self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
     
-    // 2.9UITableView的滚动条
+    // 2.9滚动条与分割线
     UIScrollView.appearance.showsHorizontalScrollIndicator = NO;
     UIScrollView.appearance.showsVerticalScrollIndicator= NO;
+    UITableView.appearance.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 #pragma mark - Private Methods

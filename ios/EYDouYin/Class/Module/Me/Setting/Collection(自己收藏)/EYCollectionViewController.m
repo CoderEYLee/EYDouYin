@@ -91,7 +91,6 @@ static NSString *EYCollectionViewControllerCellID = @"EYCollectionViewController
     if (_tableView == nil) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) style:UITableViewStylePlain];
         tableView.backgroundColor = EYColorClear;
-        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         tableView.dataSource = self;
         tableView.delegate = self;
         [self.view addSubview:tableView];
