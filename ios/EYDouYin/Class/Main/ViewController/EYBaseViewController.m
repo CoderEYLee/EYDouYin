@@ -61,6 +61,7 @@
     // 1.设置背景颜色
     self.view.backgroundColor = EYColorTheme;
     
+    self.gk_navTitle = self.title;
 }
 
 #pragma mark - 旋转方向

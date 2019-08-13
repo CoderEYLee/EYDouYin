@@ -23,7 +23,6 @@ typedef void (^XWBlock)(NSString *);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
 //    for (int i = 0; i < 10; i++) {
 //        [self lock1];
 //    }

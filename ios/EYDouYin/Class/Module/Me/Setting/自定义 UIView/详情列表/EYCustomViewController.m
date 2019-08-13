@@ -18,17 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor grayColor];
-    
     //1. 初始化界面
     [self setupUI];
 }
 
 //1. 初始化界面
 - (void)setupUI {
-    self.view.backgroundColor = EYColorRandom;
-    
-    //1.初始化界面
     EYCustomFitView *customFitView = [[EYCustomFitView alloc] init];
     customFitView.backgroundColor = EYColorRed;
     EYVideoModel *videoModel = [[EYVideoModel alloc] init];
