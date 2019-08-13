@@ -1,14 +1,14 @@
 //
-//  EYCustomViewController1.m
+//  EYCustomViewController2.m
 //  EYDouYin
 //
 //  Created by 李二洋 on 2019/8/13.
 //  Copyright © 2019 李二洋. All rights reserved.
 //
 
-#import "EYCustomViewController1.h"
+#import "EYCustomViewController2.h"
 
-@interface EYCustomViewController1 () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface EYCustomViewController2 () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *arrayM;
@@ -16,9 +16,9 @@
 
 @end
 
-@implementation EYCustomViewController1
+@implementation EYCustomViewController2
 
-static NSString *EYCustomViewController1CellID = @"EYCustomViewController1CellID";
+static NSString *EYCustomViewController2CellID = @"EYCustomViewController2CellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,7 +38,7 @@ static NSString *EYCustomViewController1CellID = @"EYCustomViewController1CellID
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:EYCustomViewController1CellID forIndexPath:indexPath];;
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:EYCustomViewController2CellID forIndexPath:indexPath];;
     cell.backgroundColor = EYColorRandom;
     
     return cell;
@@ -83,7 +83,7 @@ static NSString *EYCustomViewController1CellID = @"EYCustomViewController1CellID
         collectionView.showsVerticalScrollIndicator = YES;
         collectionView.dataSource = self;
         collectionView.delegate = self;
-        [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EYCustomViewController1CellID];
+        [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EYCustomViewController2CellID];
         
         collectionView.contentInset = UIEdgeInsetsMake(300, 0, 0, 0);
         
@@ -104,7 +104,7 @@ static NSString *EYCustomViewController1CellID = @"EYCustomViewController1CellID
          collectionView.showsVerticalScrollIndicator = YES;
          collectionView.dataSource = self;
          collectionView.delegate = self;
-         [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EYCustomViewController1CellID];
+         [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EYCustomViewController2CellID];
          
          UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, collectionView.bounds.size.width, 300)];
          headView.backgroundColor = EYColorRandom;

@@ -8,11 +8,11 @@
 		<key>vcName</key>
 		<string>EYCustomViewController</string>
 	</dict>
-    <dict>
-        <key>title</key>
-        <string>2、UICollectionView测试headerView</string>
-        <key>vcName</key>
-        <string>EYCustomViewController1</string>
-    </dict>
+	<dict>
+		<key>title</key>
+		<string>2、UICollectionView测试headerView</string>
+		<key>vcName</key>
+		<string>EYCustomViewController2</string>
+	</dict>
 </array>
 </plist>

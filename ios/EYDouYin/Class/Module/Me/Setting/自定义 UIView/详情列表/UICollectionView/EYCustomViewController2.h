@@ -1,5 +1,5 @@
 //
-//  EYCustomViewController1.h
+//  EYCustomViewController2.h
 //  EYDouYin
 //
 //  Created by 李二洋 on 2019/8/13.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EYCustomViewController1 : EYBaseViewController
+@interface EYCustomViewController2 : EYBaseViewController
 
 @end
 
