@@ -91,15 +91,12 @@ static NSString *EYCollectionViewControllerCellID = @"EYCollectionViewController
 - (UITableView *)tableView {
     if (_tableView == nil) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) style:UITableViewStylePlain];
-        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         tableView.backgroundColor = EYColorClear;
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        tableView.showsHorizontalScrollIndicator = NO;
+        tableView.showsVerticalScrollIndicator = NO;
         tableView.dataSource = self;
         tableView.delegate = self;
-        if (@available(iOS 11.0, *)) {
-//            tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        } else {
-            self.automaticallyAdjustsScrollViewInsets = NO;
-        }
         [self.view addSubview:tableView];
         _tableView = tableView;
     }

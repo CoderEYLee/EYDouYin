@@ -70,6 +70,8 @@
 		6076A171214A4D26002ED551 /* EYHomeCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A170214A4D26002ED551 /* EYHomeCityViewController.m */; };
 		6076A1792150CFD8002ED551 /* DispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A1782150CFD8002ED551 /* DispatchTimer.m */; };
 		6076A1802150FE71002ED551 /* EYHomeWorksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6076A17F2150FE71002ED551 /* EYHomeWorksViewController.m */; };
+		607C2F2223024E5F000962C8 /* EYMeCustomViewArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 607C2F2123024E5F000962C8 /* EYMeCustomViewArray.plist */; };
+		607C2F2523024EF9000962C8 /* EYCustomViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 607C2F2423024EF9000962C8 /* EYCustomViewViewController.m */; };
 		6080A65E22C60898003EC084 /* EYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A65D22C60898003EC084 /* EYUserModel.m */; };
 		6080A66D22C613D7003EC084 /* EYHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A66122C613D7003EC084 /* EYHTTPManager.m */; };
 		6080A66E22C613D7003EC084 /* EYHTTPManager+EYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080A66222C613D7003EC084 /* EYHTTPManager+EYCategory.m */; };
@@ -373,6 +375,9 @@
 		6076A1782150CFD8002ED551 /* DispatchTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchTimer.m; sourceTree = "<group>"; };
 		6076A17E2150FE71002ED551 /* EYHomeWorksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYHomeWorksViewController.h; sourceTree = "<group>"; };
 		6076A17F2150FE71002ED551 /* EYHomeWorksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomeWorksViewController.m; sourceTree = "<group>"; };
+		607C2F2123024E5F000962C8 /* EYMeCustomViewArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EYMeCustomViewArray.plist; sourceTree = "<group>"; };
+		607C2F2323024EF9000962C8 /* EYCustomViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCustomViewViewController.h; sourceTree = "<group>"; };
+		607C2F2423024EF9000962C8 /* EYCustomViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCustomViewViewController.m; sourceTree = "<group>"; };
 		6080A65C22C60898003EC084 /* EYUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYUserModel.h; sourceTree = "<group>"; };
 		6080A65D22C60898003EC084 /* EYUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYUserModel.m; sourceTree = "<group>"; };
 		6080A66022C613D7003EC084 /* EYHTTPManager+EYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EYHTTPManager+EYCategory.h"; sourceTree = "<group>"; };
@@ -1174,6 +1179,19 @@
 				6076A1782150CFD8002ED551 /* DispatchTimer.m */,
 			);
 			path = DispatchTimer;
+			sourceTree = "<group>";
+		};
+		607C2F2623024F07000962C8 /* qwe */ = {
+			isa = PBXGroup;
+			children = (
+				60C9F37022E55A1700450718 /* EYCustomViewController.h */,
+				60C9F37122E55A1700450718 /* EYCustomViewController.m */,
+				60C9F37322E55ABA00450718 /* EYCustomFitView.h */,
+				60C9F37422E55ABA00450718 /* EYCustomFitView.m */,
+				60C9F37922E6B2A200450718 /* EYCustomFitView1.h */,
+				60C9F37A22E6B2A300450718 /* EYCustomFitView1.m */,
+			);
+			path = qwe;
 			sourceTree = "<group>";
 		};
 		6080A65F22C613D7003EC084 /* HTTP */ = {
@@ -2127,12 +2145,10 @@
 		60C9F36F22E559C300450718 /* 自定义 UIView */ = {
 			isa = PBXGroup;
 			children = (
-				60C9F37022E55A1700450718 /* EYCustomViewController.h */,
-				60C9F37122E55A1700450718 /* EYCustomViewController.m */,
-				60C9F37322E55ABA00450718 /* EYCustomFitView.h */,
-				60C9F37422E55ABA00450718 /* EYCustomFitView.m */,
-				60C9F37922E6B2A200450718 /* EYCustomFitView1.h */,
-				60C9F37A22E6B2A300450718 /* EYCustomFitView1.m */,
+				607C2F2123024E5F000962C8 /* EYMeCustomViewArray.plist */,
+				607C2F2323024EF9000962C8 /* EYCustomViewViewController.h */,
+				607C2F2423024EF9000962C8 /* EYCustomViewViewController.m */,
+				607C2F2623024F07000962C8 /* qwe */,
 			);
 			path = "自定义 UIView";
 			sourceTree = "<group>";
@@ -2335,6 +2351,7 @@
 				602112B522CF18EA00510A74 /* index.jsbundle in Resources */,
 				6080A75022C744A5003EC084 /* api.ehomeclouds.com.cn.cer in Resources */,
 				6080A76D22C744A5003EC084 /* EYRefreshView.xib in Resources */,
+				607C2F2223024E5F000962C8 /* EYMeCustomViewArray.plist in Resources */,
 				6080A79822C744A5003EC084 /* EYStatusNormalCell.xib in Resources */,
 				6080A7B822C744A5003EC084 /* Live.xcassets in Resources */,
 				6080A75422C744A5003EC084 /* EYNewFeatureView.xib in Resources */,
@@ -2494,6 +2511,7 @@
 				6080A7B122C744A5003EC084 /* EYCreator.swift in Sources */,
 				606B6590219189310059D1F7 /* UIButton+EYAdditionOC.m in Sources */,
 				6080A78822C744A5003EC084 /* EYEmoticonInputView.swift in Sources */,
+				607C2F2523024EF9000962C8 /* EYCustomViewViewController.m in Sources */,
 				6080A75522C744A5003EC084 /* EYNewFeatureView.swift in Sources */,
 				6085A1702189B8F800637F31 /* EYCollectionViewOtherController.m in Sources */,
 				6080A76622C744A5003EC084 /* UIButton+EYAddition.m in Sources */,
