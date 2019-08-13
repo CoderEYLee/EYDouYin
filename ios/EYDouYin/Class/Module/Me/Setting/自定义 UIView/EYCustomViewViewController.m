@@ -52,6 +52,14 @@ static NSString *EYCustomViewViewControllerCellID = @"EYCustomViewViewController
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    EYLocalUseModel *localUseModel = self.arrayM[indexPath.row];
+    EYLog(@"11111111==%@", localUseModel);
+}
+
+#pragma mark - 懒加载
+
 - (UITableView *)tableView {
     if (nil == _tableView) {
         //创建

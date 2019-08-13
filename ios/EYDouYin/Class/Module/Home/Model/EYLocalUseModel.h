@@ -10,26 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-//"我的"界面使用
-@interface EYMeItemsModel : NSObject
-
-/**
- 开发语言
- */
-@property (copy, nonatomic) NSString *language;
-
-/**
- 标题
- */
-@property (copy, nonatomic) NSString *name;
-
-/**
- 控制器名称
- */
-@property (copy, nonatomic) NSString *vcName;
-
-@end
-
 @interface EYLocalUseModel : NSObject
 
 /**
@@ -40,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  具体信息数组
  */
-@property (strong, nonatomic) NSArray <EYMeItemsModel *>*items;
+@property (strong, nonatomic) NSArray <EYLocalUseModel *>*items;
 
 /**
  标题
@@ -56,6 +36,21 @@ NS_ASSUME_NONNULL_BEGIN
  是否加密
  */
 @property (assign, nonatomic) BOOL lock;
+
+/**
+ 开发语言
+ */
+@property (copy, nonatomic) NSString *language;
+
+/**
+ 标题
+ */
+@property (copy, nonatomic) NSString *name;
+
+/**
+ 控制器名称
+ */
+@property (copy, nonatomic) NSString *vcName;
 
 @end
 
