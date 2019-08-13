@@ -222,8 +222,8 @@
 		60C4008B218BFCF000B07E4A /* EYCollectionArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C4008A218BFCF000B07E4A /* EYCollectionArray.plist */; };
 		60C4008E218C1DB600B07E4A /* EYCollectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */; };
 		60C40091218C269C00B07E4A /* UIImageView+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */; };
-		60C9F37222E55A1700450718 /* EYCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9F37122E55A1700450718 /* EYCustomViewController.m */; };
-		60C9F37522E55ABA00450718 /* EYCustomFitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9F37422E55ABA00450718 /* EYCustomFitView.m */; };
+		60C9F37222E55A1700450718 /* EYCustomViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9F37122E55A1700450718 /* EYCustomViewController1.m */; };
+		60C9F37522E55ABA00450718 /* EYCustomFitView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9F37422E55ABA00450718 /* EYCustomFitView1.m */; };
 		60C9F37B22E6B2A300450718 /* EYCustomFitView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9F37A22E6B2A300450718 /* EYCustomFitView2.m */; };
 		60DBBD8A2302A2F200DD422E /* EYCustomViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DBBD892302A2F200DD422E /* EYCustomViewController2.m */; };
 		60EE77AC211F5239004133A6 /* EYFindTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77AB211F5239004133A6 /* EYFindTopView.m */; };
@@ -697,10 +697,10 @@
 		60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCollectionDetailViewController.m; sourceTree = "<group>"; };
 		60C4008F218C269C00B07E4A /* UIImageView+EYSDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+EYSDWebImage.h"; sourceTree = "<group>"; };
 		60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+EYSDWebImage.m"; sourceTree = "<group>"; };
-		60C9F37022E55A1700450718 /* EYCustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EYCustomViewController.h; path = ../EYCustomViewController.h; sourceTree = "<group>"; };
-		60C9F37122E55A1700450718 /* EYCustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EYCustomViewController.m; path = ../EYCustomViewController.m; sourceTree = "<group>"; };
-		60C9F37322E55ABA00450718 /* EYCustomFitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EYCustomFitView.h; path = ../EYCustomFitView.h; sourceTree = "<group>"; };
-		60C9F37422E55ABA00450718 /* EYCustomFitView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EYCustomFitView.m; path = ../EYCustomFitView.m; sourceTree = "<group>"; };
+		60C9F37022E55A1700450718 /* EYCustomViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EYCustomViewController1.h; path = ../EYCustomViewController1.h; sourceTree = "<group>"; };
+		60C9F37122E55A1700450718 /* EYCustomViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EYCustomViewController1.m; path = ../EYCustomViewController1.m; sourceTree = "<group>"; };
+		60C9F37322E55ABA00450718 /* EYCustomFitView1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EYCustomFitView1.h; path = ../EYCustomFitView1.h; sourceTree = "<group>"; };
+		60C9F37422E55ABA00450718 /* EYCustomFitView1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EYCustomFitView1.m; path = ../EYCustomFitView1.m; sourceTree = "<group>"; };
 		60C9F37922E6B2A200450718 /* EYCustomFitView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EYCustomFitView2.h; path = ../EYCustomFitView2.h; sourceTree = "<group>"; };
 		60C9F37A22E6B2A300450718 /* EYCustomFitView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EYCustomFitView2.m; path = ../EYCustomFitView2.m; sourceTree = "<group>"; };
 		60DBBD882302A2F200DD422E /* EYCustomViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCustomViewController2.h; sourceTree = "<group>"; };
@@ -2150,10 +2150,10 @@
 		60DBBD842302A29400DD422E /* YYLabel */ = {
 			isa = PBXGroup;
 			children = (
-				60C9F37022E55A1700450718 /* EYCustomViewController.h */,
-				60C9F37122E55A1700450718 /* EYCustomViewController.m */,
-				60C9F37322E55ABA00450718 /* EYCustomFitView.h */,
-				60C9F37422E55ABA00450718 /* EYCustomFitView.m */,
+				60C9F37022E55A1700450718 /* EYCustomViewController1.h */,
+				60C9F37122E55A1700450718 /* EYCustomViewController1.m */,
+				60C9F37322E55ABA00450718 /* EYCustomFitView1.h */,
+				60C9F37422E55ABA00450718 /* EYCustomFitView1.m */,
 			);
 			path = YYLabel;
 			sourceTree = "<group>";
@@ -2588,7 +2588,7 @@
 				6012FD70215A36BF004A3083 /* UIView+EYCornerRadius.m in Sources */,
 				60752B682186F3CE001B857C /* EYShop.m in Sources */,
 				601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */,
-				60C9F37222E55A1700450718 /* EYCustomViewController.m in Sources */,
+				60C9F37222E55A1700450718 /* EYCustomViewController1.m in Sources */,
 				606B658A219182130059D1F7 /* UIButton+EYSDWebImage.m in Sources */,
 				6080A76422C744A5003EC084 /* NSAttributedString+EYAdditon.m in Sources */,
 				6080A76322C744A5003EC084 /* NSString+EYBase64.m in Sources */,
@@ -2650,7 +2650,7 @@
 				6080A65E22C60898003EC084 /* EYUserModel.m in Sources */,
 				6016065922D5F2A70082B278 /* EYTestView.m in Sources */,
 				60AAFC7F22B375C300F30A9B /* EYExcelModel.m in Sources */,
-				60C9F37522E55ABA00450718 /* EYCustomFitView.m in Sources */,
+				60C9F37522E55ABA00450718 /* EYCustomFitView1.m in Sources */,
 				606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */,
 				6080A78C22C744A5003EC084 /* EYUserAccount.swift in Sources */,
 				60B00F2722D39BB300941A14 /* TTFFmpegManager.m in Sources */,
