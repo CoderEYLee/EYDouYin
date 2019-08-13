@@ -1,20 +1,20 @@
 //
-//  EYCustomFitView.m
+//  EYCustomFitView1.m
 //  EYDouYin
 //
 //  Created by 李二洋 on 2019/7/22.
 //  Copyright © 2019 李二洋. All rights reserved.
 //  YYLabel的自适应 UIlLabel 同理
 
-#import "EYCustomFitView.h"
+#import "EYCustomFitView1.h"
 
-@interface EYCustomFitView()
+@interface EYCustomFitView1()
 
 @property (weak, nonatomic) YYLabel *tt_titleLabel;
 
 @end
 
-@implementation EYCustomFitView
+@implementation EYCustomFitView1
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
