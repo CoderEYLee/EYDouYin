@@ -7,6 +7,7 @@
 //
 
 #import "EYCustomViewController2.h"
+#import "EYCustomFitView2.h"
 
 @interface EYCustomViewController2 () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -98,18 +99,20 @@ static NSString *EYCustomViewController2CellID = @"EYCustomViewController2CellID
 #pragma mark - 方式二
          UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
          layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-         layout.headerReferenceSize = CGSizeMake(EYScreenWidth, 300);
+         layout.headerReferenceSize = CGSizeMake(EYScreenWidth, 100);
          UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenHeight - EYStatusBarAndNaviBarHeight) collectionViewLayout:layout];
          collectionView.backgroundColor = EYColorClear;
          collectionView.showsVerticalScrollIndicator = YES;
          collectionView.dataSource = self;
          collectionView.delegate = self;
          [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EYCustomViewController2CellID];
-         
-         UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, collectionView.bounds.size.width, 300)];
-         headView.backgroundColor = EYColorRandom;
+        
+         EYCustomFitView2 *headView = [[EYCustomFitView2 alloc] init];
+         EYVideoModel *videoModel = [[EYVideoModel alloc] init];
+         videoModel.video_name = @"的熔岩区为我阿萨德刚放假的沙龙课聚光科技打给偶然间管他呢可根据滑动块就够了国家队进口国的接口规范和欧气软管田炯而过电动机开关机爱干净康拉德设计风格为偶家饿哦为要噶哈到付款了吗的熔岩区为我阿萨德刚放假的沙龙课聚光科技打给偶然间管他呢可根据滑动块就够了国家队进口国的接口规范和欧气软管田炯而过电动机开关机爱干净康拉德设计风格为偶家饿哦为要噶哈到付款了吗的熔岩区为我阿萨德刚放假的沙龙课聚光科技打给偶然间管他呢可根据滑动块就够了国家队进口国的接口规范和欧气软管田炯而过电动机开关机爱干净康拉德设计风格为偶家饿哦为要噶哈到付款了吗";
+         headView.videoModel = videoModel;
          [collectionView addSubview:headView];
-         
+        
          [self.view addSubview:collectionView];
          _collectionView = collectionView;
     }
