@@ -104,7 +104,7 @@
  */
 - (instancetype)insertAliYunPrefix {
     NSString *urlPath = [self stringByReplacingOccurrencesOfString:@" "withString:@"%20"];//转换空格
-    return [TTOSSAPPStoreEndpoint stringByAppendingPathComponent:urlPath];
+    return [TTOSSAPPStoreEndpoint stringByAppendingFormat:@"/%@", urlPath];
 }
 
 @end
