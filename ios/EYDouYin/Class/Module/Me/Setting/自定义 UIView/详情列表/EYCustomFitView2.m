@@ -20,6 +20,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         UILabel *tt_titleLabel = [[UILabel alloc] init];
+        tt_titleLabel.textColor = EYColorWhite;
         tt_titleLabel.numberOfLines = 0;
         tt_titleLabel.backgroundColor = EYColorBlue;
         [self addSubview:tt_titleLabel];
@@ -35,9 +36,9 @@
 - (void)setVideoModel:(EYVideoModel *)videoModel {
     _videoModel = videoModel;
     
-    self.tt_titleLabel.text = videoModel.video_title;
+    self.tt_titleLabel.text = videoModel.video_name;
     
-    self.frame = CGRectMake(0, 0, EYScreenWidth, 200 + 20);
+    self.frame = CGRectMake(0, 0, EYScreenWidth, 300 + 20);
 }
 
 @end

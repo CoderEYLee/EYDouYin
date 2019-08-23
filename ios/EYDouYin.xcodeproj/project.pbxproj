@@ -2161,10 +2161,10 @@
 		60DBBD872302A2CC00DD422E /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				60DBBD882302A2F200DD422E /* EYCustomViewController2.h */,
-				60DBBD892302A2F200DD422E /* EYCustomViewController2.m */,
 				60C9F37922E6B2A200450718 /* EYCustomFitView2.h */,
 				60C9F37A22E6B2A300450718 /* EYCustomFitView2.m */,
+				60DBBD882302A2F200DD422E /* EYCustomViewController2.h */,
+				60DBBD892302A2F200DD422E /* EYCustomViewController2.m */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";

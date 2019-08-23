@@ -29,7 +29,7 @@ pod 'GKNavigationBarViewController', '2.3.4' #抖音的左滑 push 效果
 pod 'IQKeyboardManager', '6.4.0'    #键盘管理
 pod 'lottie-ios', '2.5.3'           # JSON 动画
 pod 'Masonry', '1.1.0'              #自动布局
-pod 'MJExtension', '3.1.0'         #字典转模型
+pod 'MJExtension', '3.1.0'          #字典转模型
 pod 'MJRefresh', '3.2.0'            #刷新
 pod 'pop', '1.0.12'                 #动画
 pod 'SDWebImage', '5.1.0'           #图片缓存
