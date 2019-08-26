@@ -52,6 +52,13 @@ static NSString *EYCustomViewController2CellID2 = @"EYCustomViewController2CellI
     }
 }
 
+//设置每个item的尺寸
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat width = (EYScreenWidth - 16.0) / 3;
+    CGFloat height = width * 4 / 3;
+    return CGSizeMake(width, height);
+}
+
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     EYLog(@"点击了 cell==%ld", indexPath.row);
