@@ -19,15 +19,4 @@
     return self;
 }
 
-- (UICollectionViewLayoutAttributes*)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes*)layoutAttributes {
-    CGFloat width = (EYScreenWidth - 17.0) / 3.0;
-    
-    CGRect frame = layoutAttributes.frame;
-    frame.size.height = layoutAttributes.bounds.size.height;
-    layoutAttributes.frame = frame;
-
-    return [super preferredLayoutAttributesFittingAttributes:layoutAttributes];
-
-}
-
 @end
