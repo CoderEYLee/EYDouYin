@@ -2316,7 +2316,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = EY;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "李二洋";
 				TargetAttributes = {
 					607541262104CC4B00EB258D = {
@@ -2832,6 +2832,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
