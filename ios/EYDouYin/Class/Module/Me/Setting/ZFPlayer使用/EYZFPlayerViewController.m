@@ -49,7 +49,7 @@
 
 @interface EYZFPlayerViewController () <EYZFPlayerControlViewDelegate>
 
-@property (nonatomic, strong) ZFPlayerController *player;
+@property (nonatomic, strong) ZFPlayerController *playerController;
 
 @end
 
@@ -62,30 +62,31 @@
 }
 
 - (void)setupVideoView {
-    self.gk_navigationBar.hidden = YES;
+    self.gk_navLineHidden = YES;
     
     /// 播放器相关
     ZFAVPlayerManager *playerManager = [[ZFAVPlayerManager alloc] init];
     UIView *containerView = [[UIView alloc] initWithFrame:EYScreenBounds];
     containerView.backgroundColor = [UIColor blackColor];
-    self.player = [ZFPlayerController playerWithPlayerManager:playerManager containerView:containerView];
-    self.player.assetURL = [NSURL URLWithString:@"http://video.chinlab.com/CLXXXYE1539069802307.mp4"];
-    
-    EYZFPlayerControlView *eyZFPlayerControlView = [[EYZFPlayerControlView alloc] initWithFrame:EYScreenBounds];
-    eyZFPlayerControlView.delegate = self;
-    self.player.controlView = eyZFPlayerControlView;
+    ZFPlayerController *playerController = [ZFPlayerController playerWithPlayerManager:playerManager containerView:containerView];
+    playerController.assetURL = [NSURL URLWithString:@"http://video.chinlab.com/CLXXXYE1539069802307.mp4"];
+    self.playerController = playerController;
     
     //竖屏进入
-    [self.player enterPortraitFullScreen:YES animated:NO];
+    [self.view insertSubview:containerView atIndex:0];
+    [playerController enterPortraitFullScreen:NO animated:NO];
     
     //横屏进入
-//    [self.player enterLandscapeFullScreen:UIInterfaceOrientationLandscapeRight animated:YES];
+//    EYZFPlayerControlView *eyZFPlayerControlView = [[EYZFPlayerControlView alloc] initWithFrame:EYScreenBounds];
+//    eyZFPlayerControlView.delegate = self;
+//    playerController.controlView = eyZFPlayerControlView;
+//    [self.playerController enterLandscapeFullScreen:UIInterfaceOrientationLandscapeRight animated:YES];
 }
 
 #pragma mark - EYZFPlayerControlViewDelegate
 - (void)eyZFPlayerControlView:(EYZFPlayerControlView *)view didSelectedBackButton:(UIButton *)button {
     if (self.navigationController) {
-        [self.player enterFullScreen:NO animated:NO];
+        [self.playerController enterFullScreen:NO animated:NO];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
