@@ -7,9 +7,6 @@
 //
 
 #import "EYZFPlayerViewController.h"
-#import "ZFPlayer.h"
-#import "ZFAVPlayerManager.h"
-#import "ZFPlayerControlView.h"
 
 @class EYZFPlayerControlView;
 
