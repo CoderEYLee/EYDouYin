@@ -11,10 +11,47 @@
 #import "ZFAVPlayerManager.h"
 #import "ZFPlayerControlView.h"
 
-@interface EYZFPlayerViewController ()
+@class EYZFPlayerControlView;
 
-@property (nonatomic, strong) UIView *containerView;
-@property (nonatomic, strong) ZFPlayerControlView *controlView;
+@protocol EYZFPlayerControlViewDelegate<NSObject>
+@optional
+- (void)eyZFPlayerControlView:(EYZFPlayerControlView *)view didSelectedBackButton:(UIButton *)button;
+
+@end
+
+//控制播放层
+@interface EYZFPlayerControlView() <ZFPlayerMediaControl>
+
+@property (weak, nonatomic) id <EYZFPlayerControlViewDelegate>delegate;
+
+
+@end
+
+@implementation EYZFPlayerControlView
+
+@synthesize player;
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 44, 44)];
+        [backButton setImage:[UIImage imageNamed:@"common_arrow_left"] forState:UIControlStateNormal];
+        [backButton addTarget:self action:@selector(tapBackButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:backButton];
+    }
+    return self;
+}
+
+- (void)tapBackButton:(UIButton *)button {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(eyZFPlayerControlView:didSelectedBackButton:)]) {
+        [self.delegate eyZFPlayerControlView:self didSelectedBackButton:button];
+    }
+}
+
+@end
+
+@interface EYZFPlayerViewController () <EYZFPlayerControlViewDelegate>
+
 @property (nonatomic, strong) ZFPlayerController *player;
 
 @end
@@ -28,33 +65,27 @@
 }
 
 - (void)setupVideoView {
+    self.gk_navLineHidden = YES;
+    
     /// 播放器相关
     ZFAVPlayerManager *playerManager = [[ZFAVPlayerManager alloc] init];
-    self.player = [ZFPlayerController playerWithPlayerManager:playerManager containerView:self.containerView];
+    UIView *containerView = [[UIView alloc] initWithFrame:EYScreenBounds];
+    containerView.backgroundColor = [UIColor blackColor];
+    self.player = [ZFPlayerController playerWithPlayerManager:playerManager containerView:containerView];
     self.player.assetURL = [NSURL URLWithString:@"http://video.chinlab.com/CLXXXYE1539069802307.mp4"];
-    self.player.allowOrentitaionRotation = NO;
-    self.controlView.portraitControlView.topToolView.hidden = YES;
-    self.controlView.portraitControlView.playOrPauseBtn.hidden = YES;
-    self.controlView.portraitControlView.currentTimeLabel.hidden = YES;
-    self.controlView.portraitControlView.totalTimeLabel.hidden = YES;
-    self.player.controlView = self.controlView;
+    [self.player enterLandscapeFullScreen:UIInterfaceOrientationLandscapeRight animated:YES];
+    EYZFPlayerControlView *eyZFPlayerControlView = [[EYZFPlayerControlView alloc] initWithFrame:EYScreenBounds];
+    eyZFPlayerControlView.delegate = self;
+    self.player.controlView = eyZFPlayerControlView;
 }
 
-- (UIView *)containerView {
-    if (!_containerView) {
-        _containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYScreenHeight)];
-        _containerView.backgroundColor = [UIColor blackColor];
-        [self.view addSubview:_containerView];
+#pragma mark - EYZFPlayerControlViewDelegate
+- (void)eyZFPlayerControlView:(EYZFPlayerControlView *)view didSelectedBackButton:(UIButton *)button {
+    if (self.navigationController) {
+        [self.player enterFullScreen:NO animated:NO];
+        [self.navigationController popViewControllerAnimated:YES];
     }
-    return _containerView;
-}
-
-- (ZFPlayerControlView *)controlView {
-    if (!_controlView) {
-        _controlView = [[ZFPlayerControlView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-        _controlView.fastViewAnimated = YES;
-    }
-    return _controlView;
 }
 
 @end
+
