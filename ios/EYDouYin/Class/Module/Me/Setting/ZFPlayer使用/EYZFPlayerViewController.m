@@ -31,7 +31,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 44, 44)];
+        UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 44, 44)];
         [backButton setImage:[UIImage imageNamed:@"common_arrow_left"] forState:UIControlStateNormal];
         [backButton addTarget:self action:@selector(tapBackButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:backButton];
@@ -62,7 +62,7 @@
 }
 
 - (void)setupVideoView {
-    self.gk_navLineHidden = YES;
+    self.gk_navigationBar.hidden = YES;
     
     /// 播放器相关
     ZFAVPlayerManager *playerManager = [[ZFAVPlayerManager alloc] init];
@@ -70,9 +70,13 @@
     containerView.backgroundColor = [UIColor blackColor];
     self.player = [ZFPlayerController playerWithPlayerManager:playerManager containerView:containerView];
     self.player.assetURL = [NSURL URLWithString:@"http://video.chinlab.com/CLXXXYE1539069802307.mp4"];
+    
     EYZFPlayerControlView *eyZFPlayerControlView = [[EYZFPlayerControlView alloc] initWithFrame:EYScreenBounds];
     eyZFPlayerControlView.delegate = self;
     self.player.controlView = eyZFPlayerControlView;
+    
+    //竖屏进入
+    [self.player enterPortraitFullScreen:YES animated:NO];
     
     //横屏进入
 //    [self.player enterLandscapeFullScreen:UIInterfaceOrientationLandscapeRight animated:YES];
