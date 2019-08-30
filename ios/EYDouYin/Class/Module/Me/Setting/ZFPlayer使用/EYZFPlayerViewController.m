@@ -70,10 +70,12 @@
     containerView.backgroundColor = [UIColor blackColor];
     self.player = [ZFPlayerController playerWithPlayerManager:playerManager containerView:containerView];
     self.player.assetURL = [NSURL URLWithString:@"http://video.chinlab.com/CLXXXYE1539069802307.mp4"];
-    [self.player enterLandscapeFullScreen:UIInterfaceOrientationLandscapeRight animated:YES];
     EYZFPlayerControlView *eyZFPlayerControlView = [[EYZFPlayerControlView alloc] initWithFrame:EYScreenBounds];
     eyZFPlayerControlView.delegate = self;
     self.player.controlView = eyZFPlayerControlView;
+    
+    //横屏进入
+//    [self.player enterLandscapeFullScreen:UIInterfaceOrientationLandscapeRight animated:YES];
 }
 
 #pragma mark - EYZFPlayerControlViewDelegate
