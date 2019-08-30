@@ -10,6 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface EYZFPlayerControlView : UIView
+
+@end
+
 @interface EYZFPlayerViewController : EYBaseViewController
 
 @end
