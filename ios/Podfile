@@ -9,7 +9,7 @@ inhibit_all_warnings!
 target 'EYDouYin' do
 
 #pod 'AlicloudHTTPDNS', '~> 1.6.11'
-pod 'ZFPlayer', '3.1.5'
+pod 'ZFPlayer', '3.2.13'
 pod 'ZFPlayer/ControlView', '~> 3.0'
 pod 'ZFPlayer/AVPlayer', '~> 3.0'
 # 因为项目中使用了 FFmpeg 和ijkplayer中使用的 FFmpeg 版本不同, 故不能同时存在,目前没有找到解决方案,暂时使用别的播放框架去实现
