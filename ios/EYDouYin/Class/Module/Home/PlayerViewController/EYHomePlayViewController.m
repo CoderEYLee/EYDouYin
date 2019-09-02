@@ -8,6 +8,7 @@
 
 #import "EYHomePlayViewController.h"
 #import "EYBaseTXVideoPlayer.h"
+#import "EYLikeAnimation.h"
 
 @interface EYHomePlayViewController () <EYBaseTXVideoPlayerDelegate>
 
@@ -24,8 +25,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //1. 初始化界面
+    //1.初始化界面
     [self setupUI];
+    
+    //2.设置数据
+    [self setupData];
 }
 
 //1. 初始化界面
@@ -50,6 +54,10 @@
     [playbutton addTarget:self action:@selector(tapPlayButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:playbutton];
     self.playbutton = playbutton;
+}
+
+//2.设置数据
+- (void)setupData {
 }
 
 - (void)setVideoModel:(EYVideoModel *)videoModel {
