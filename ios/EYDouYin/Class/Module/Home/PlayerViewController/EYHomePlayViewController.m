@@ -7,11 +7,11 @@
 //
 
 #import "EYHomePlayViewController.h"
-#import "EYBaseVideoPlayer.h"
+#import "EYBaseTXVideoPlayer.h"
 
-@interface EYHomePlayViewController () <EYBaseVideoPlayerDelegate>
+@interface EYHomePlayViewController () <EYBaseTXVideoPlayerDelegate>
 
-@property (strong, nonatomic) EYBaseVideoPlayer *videoPlayer;
+@property (strong, nonatomic) EYBaseTXVideoPlayer *videoPlayer;
 @property (weak, nonatomic) UIImageView *videoImageView;
 
 @property (weak, nonatomic) UIButton *playbutton;
@@ -138,12 +138,12 @@
     }
 }
 
-#pragma mark - EYBaseVideoPlayerDelegate
-- (void)baseVideoPlayerOnNetStatus:(EYBaseVideoPlayer *)baseVideoPlayer withParam:(NSDictionary *)param {
+#pragma mark - EYBaseTXVideoPlayerDelegate
+- (void)baseVideoPlayerOnNetStatus:(EYBaseTXVideoPlayer *)baseVideoPlayer withParam:(NSDictionary *)param {
 //     EYLog(@"baseVideoPlayerOnNetStatus==%@", baseVideoPlayer);
 }
 
-- (void)baseVideoPlayerOnPlayEvent:(EYBaseVideoPlayer *)baseVideoPlayer event:(int)EvtID withParam:(NSDictionary *)param {
+- (void)baseVideoPlayerOnPlayEvent:(EYBaseTXVideoPlayer *)baseVideoPlayer event:(int)EvtID withParam:(NSDictionary *)param {
 //    EYLog(@"baseVideoPlayerOnPlayEvent");
     switch (EvtID) {
         case PLAY_EVT_PLAY_LOADING:{// loading
@@ -175,9 +175,9 @@
 }
 
 #pragma mark - 懒加载
-- (EYBaseVideoPlayer *)videoPlayer {
+- (EYBaseTXVideoPlayer *)videoPlayer {
     if (nil == _videoPlayer) {
-        EYBaseVideoPlayer *videoPlayer = [[EYBaseVideoPlayer alloc] init];
+        EYBaseTXVideoPlayer *videoPlayer = [[EYBaseTXVideoPlayer alloc] init];
         videoPlayer.loop = YES;
         videoPlayer.isAutoPlay = NO;
         videoPlayer.renderMode = RENDER_MODE_FILL_SCREEN;
