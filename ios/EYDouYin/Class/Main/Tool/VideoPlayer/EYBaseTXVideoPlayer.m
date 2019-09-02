@@ -1,16 +1,16 @@
 //
-//  EYBaseVideoPlayer.m
+//  EYBaseTXVideoPlayer.m
 //  TTEnglish
 //
 //  Created by 李二洋 on 2019/4/10.
 //  Copyright © 2019 TTEnglish. All rights reserved.
 //
 
-#import "EYBaseVideoPlayer.h"
+#import "EYBaseTXVideoPlayer.h"
 #import <TXLiteAVSDK_Player/TXLiveBase.h>
 
 
-@interface EYBaseVideoPlayer() <TXVodPlayListener>
+@interface EYBaseTXVideoPlayer() <TXVodPlayListener>
 
 // 腾讯SDK播放器
 @property (nonatomic, strong) TXVodPlayer *txVodPlayer;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation EYBaseVideoPlayer
+@implementation EYBaseTXVideoPlayer
 
 - (void)setIsAutoPlay:(BOOL)isAutoPlay {
     _isAutoPlay = isAutoPlay;

@@ -1,5 +1,5 @@
 //
-//  EYBaseVideoPlayer.h
+//  EYBaseTXVideoPlayer.h
 //  TTEnglish
 //
 //  Created by 李二洋 on 2019/4/10.
@@ -12,17 +12,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class EYBaseVideoPlayer;
+@class EYBaseTXVideoPlayer;
 
-@protocol EYBaseVideoPlayerDelegate<NSObject>
+@protocol EYBaseTXVideoPlayerDelegate<NSObject>
 
 @optional
-- (void)baseVideoPlayerOnPlayEvent:(EYBaseVideoPlayer *)baseVideoPlayer event:(int)EvtID withParam:(NSDictionary *)param;
-- (void)baseVideoPlayerOnNetStatus:(EYBaseVideoPlayer *)baseVideoPlayer withParam:(NSDictionary *)param;
+- (void)baseVideoPlayerOnPlayEvent:(EYBaseTXVideoPlayer *)baseVideoPlayer event:(int)EvtID withParam:(NSDictionary *)param;
+- (void)baseVideoPlayerOnNetStatus:(EYBaseTXVideoPlayer *)baseVideoPlayer withParam:(NSDictionary *)param;
 
 @end
 
-@interface EYBaseVideoPlayer : NSObject
+@interface EYBaseTXVideoPlayer : NSObject
 
 /// 是否循环播放 默认为NO
 @property (assign, nonatomic) BOOL loop;
@@ -89,7 +89,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)removePlay;
 
-@property (nonatomic,weak)id <EYBaseVideoPlayerDelegate>delegate;
+@property (nonatomic,weak)id <EYBaseTXVideoPlayerDelegate>delegate;
 
 @end
 

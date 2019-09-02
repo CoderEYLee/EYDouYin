@@ -30,7 +30,7 @@
 		602A383C229FA91A00D6DB0D /* EYFollowFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A383B229FA91A00D6DB0D /* EYFollowFriendViewController.m */; };
 		602A386222A1143400D6DB0D /* EYHomePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A386122A1143400D6DB0D /* EYHomePlayViewController.m */; };
 		602A386522A11A4100D6DB0D /* EYVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A386422A11A4100D6DB0D /* EYVideoModel.m */; };
-		602A386922A11F8600D6DB0D /* EYBaseVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A386822A11F8600D6DB0D /* EYBaseVideoPlayer.m */; };
+		602A386922A11F8600D6DB0D /* EYBaseTXVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A386822A11F8600D6DB0D /* EYBaseTXVideoPlayer.m */; };
 		602A387122A12BCD00D6DB0D /* EYVideoArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 602A387022A12BCC00D6DB0D /* EYVideoArray.plist */; };
 		602DEE5B229E5756006B61A3 /* EYNotificationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 602DEE5A229E5756006B61A3 /* EYNotificationTool.m */; };
 		6041F3A72319319B00EAED19 /* EYTableViewSizeToFitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6041F3A62319319B00EAED19 /* EYTableViewSizeToFitViewController.m */; };
@@ -301,8 +301,8 @@
 		602A386122A1143400D6DB0D /* EYHomePlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYHomePlayViewController.m; sourceTree = "<group>"; };
 		602A386322A11A4100D6DB0D /* EYVideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYVideoModel.h; sourceTree = "<group>"; };
 		602A386422A11A4100D6DB0D /* EYVideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYVideoModel.m; sourceTree = "<group>"; };
-		602A386722A11F8600D6DB0D /* EYBaseVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYBaseVideoPlayer.h; sourceTree = "<group>"; };
-		602A386822A11F8600D6DB0D /* EYBaseVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYBaseVideoPlayer.m; sourceTree = "<group>"; };
+		602A386722A11F8600D6DB0D /* EYBaseTXVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYBaseTXVideoPlayer.h; sourceTree = "<group>"; };
+		602A386822A11F8600D6DB0D /* EYBaseTXVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYBaseTXVideoPlayer.m; sourceTree = "<group>"; };
 		602A387022A12BCC00D6DB0D /* EYVideoArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EYVideoArray.plist; sourceTree = "<group>"; };
 		602DEE59229E5756006B61A3 /* EYNotificationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYNotificationTool.h; sourceTree = "<group>"; };
 		602DEE5A229E5756006B61A3 /* EYNotificationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYNotificationTool.m; sourceTree = "<group>"; };
@@ -924,8 +924,8 @@
 		602A386622A11F7900D6DB0D /* VideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				602A386722A11F8600D6DB0D /* EYBaseVideoPlayer.h */,
-				602A386822A11F8600D6DB0D /* EYBaseVideoPlayer.m */,
+				602A386722A11F8600D6DB0D /* EYBaseTXVideoPlayer.h */,
+				602A386822A11F8600D6DB0D /* EYBaseTXVideoPlayer.m */,
 			);
 			path = VideoPlayer;
 			sourceTree = "<group>";
@@ -2636,7 +2636,7 @@
 				602DEE5B229E5756006B61A3 /* EYNotificationTool.m in Sources */,
 				601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */,
 				60EE77B321201CE8004133A6 /* EYTestViewController.m in Sources */,
-				602A386922A11F8600D6DB0D /* EYBaseVideoPlayer.m in Sources */,
+				602A386922A11F8600D6DB0D /* EYBaseTXVideoPlayer.m in Sources */,
 				6080A7AF22C744A5003EC084 /* EYLike+Extension.swift in Sources */,
 				6080A7AD22C744A5003EC084 /* EYLiveViewModel.swift in Sources */,
 				6080A75B22C744A5003EC084 /* EYMainViewController.swift in Sources */,
