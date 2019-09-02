@@ -9,7 +9,6 @@
 #import "EYBaseTXVideoPlayer.h"
 #import <TXLiteAVSDK_Player/TXLiveBase.h>
 
-
 @interface EYBaseTXVideoPlayer() <TXVodPlayListener>
 
 // 腾讯SDK播放器

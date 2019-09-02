@@ -39,6 +39,7 @@
 		6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD3E2116B929005DC856 /* NSString+EYExtension.m */; };
 		6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD412116CD21005DC856 /* EYTabBarView.m */; };
 		605EECB122B8E3B80001610D /* EYMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605EECB022B8E3B80001610D /* EYMineViewController.m */; };
+		60656FF4231D0E4200C0548C /* EYLikeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60656FF1231D0E4200C0548C /* EYLikeAnimation.m */; };
 		606B658A219182130059D1F7 /* UIButton+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */; };
 		606B658D2191883B0059D1F7 /* UIImage+EYAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B658C2191883B0059D1F7 /* UIImage+EYAddition.m */; };
 		606B6590219189310059D1F7 /* UIButton+EYAdditionOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B658F219189310059D1F7 /* UIButton+EYAdditionOC.m */; };
@@ -198,6 +199,7 @@
 		6085A1702189B8F800637F31 /* EYCollectionViewOtherController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A16E2189B8F800637F31 /* EYCollectionViewOtherController.m */; };
 		6085A1712189B8F800637F31 /* EYCollectionViewOtherController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */; };
 		6085A174218AA91600637F31 /* EYFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A173218AA91600637F31 /* EYFlowLayout.m */; };
+		6093D599231CDA26002BC4BA /* EYBaseAliVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6093D598231CDA26002BC4BA /* EYBaseAliVideoPlayer.m */; };
 		609C575822B257980010AF7D /* EYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 609C575722B257980010AF7D /* EYProgressHUD.m */; };
 		60AAFC7722B27DE600F30A9B /* sheet1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 60AAFC7622B27DE600F30A9B /* sheet1.xml */; };
 		60AAFC7C22B374E800F30A9B /* EYExcelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AAFC7B22B374E800F30A9B /* EYExcelTool.m */; };
@@ -317,6 +319,8 @@
 		6055AD412116CD21005DC856 /* EYTabBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYTabBarView.m; sourceTree = "<group>"; };
 		605EECAF22B8E3B80001610D /* EYMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMineViewController.h; sourceTree = "<group>"; };
 		605EECB022B8E3B80001610D /* EYMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMineViewController.m; sourceTree = "<group>"; };
+		60656FED231D0E4200C0548C /* EYLikeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYLikeAnimation.h; sourceTree = "<group>"; };
+		60656FF1231D0E4200C0548C /* EYLikeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYLikeAnimation.m; sourceTree = "<group>"; };
 		606B6588219182130059D1F7 /* UIButton+EYSDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+EYSDWebImage.h"; sourceTree = "<group>"; };
 		606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EYSDWebImage.m"; sourceTree = "<group>"; };
 		606B658B2191883B0059D1F7 /* UIImage+EYAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EYAddition.h"; sourceTree = "<group>"; };
@@ -542,6 +546,8 @@
 		6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EYCollectionViewOtherController.xib; sourceTree = "<group>"; };
 		6085A172218AA91600637F31 /* EYFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFlowLayout.h; sourceTree = "<group>"; };
 		6085A173218AA91600637F31 /* EYFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFlowLayout.m; sourceTree = "<group>"; };
+		6093D597231CDA26002BC4BA /* EYBaseAliVideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYBaseAliVideoPlayer.h; sourceTree = "<group>"; };
+		6093D598231CDA26002BC4BA /* EYBaseAliVideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYBaseAliVideoPlayer.m; sourceTree = "<group>"; };
 		609C575622B257980010AF7D /* EYProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYProgressHUD.h; sourceTree = "<group>"; };
 		609C575722B257980010AF7D /* EYProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYProgressHUD.m; sourceTree = "<group>"; };
 		60AAFC7622B27DE600F30A9B /* sheet1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = sheet1.xml; path = ../../../Resource/sheet1.xml; sourceTree = "<group>"; };
@@ -926,6 +932,8 @@
 			children = (
 				602A386722A11F8600D6DB0D /* EYBaseTXVideoPlayer.h */,
 				602A386822A11F8600D6DB0D /* EYBaseTXVideoPlayer.m */,
+				6093D597231CDA26002BC4BA /* EYBaseAliVideoPlayer.h */,
+				6093D598231CDA26002BC4BA /* EYBaseAliVideoPlayer.m */,
 			);
 			path = VideoPlayer;
 			sourceTree = "<group>";
@@ -955,6 +963,15 @@
 				6000D871213D1CFB00491BB7 /* Localizable.strings */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		60656FEC231D0E4200C0548C /* EYLikeAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				60656FED231D0E4200C0548C /* EYLikeAnimation.h */,
+				60656FF1231D0E4200C0548C /* EYLikeAnimation.m */,
+			);
+			path = EYLikeAnimation;
 			sourceTree = "<group>";
 		};
 		60752B3F2182C500001B857C /* SJVideoPlayer使用 */ = {
@@ -1133,6 +1150,7 @@
 		607541602104CD6600EB258D /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				60656FEC231D0E4200C0548C /* EYLikeAnimation */,
 				60B3657922E36D2A00283241 /* FFmpeg-iOS */,
 				601EB04922D4DE3400A0DB95 /* PhotoBrower */,
 				6002BD8722D33F5800945DC3 /* Language */,
@@ -2573,6 +2591,7 @@
 				6080A76522C744A5003EC084 /* NSString+EYPath.m in Sources */,
 				6080A76822C744A5003EC084 /* NSString+EYHash.m in Sources */,
 				6080A77122C744A5003EC084 /* EYPhotoBrowserAnimator.m in Sources */,
+				6093D599231CDA26002BC4BA /* EYBaseAliVideoPlayer.m in Sources */,
 				602A3839229FA8FB00D6DB0D /* EYFollowListViewController.m in Sources */,
 				60752B6C2186F49A001B857C /* EYShopCell.m in Sources */,
 				60B00F2622D39BB300941A14 /* TTFFmpegConverOC.m in Sources */,
@@ -2674,6 +2693,7 @@
 				606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */,
 				6080A78C22C744A5003EC084 /* EYUserAccount.swift in Sources */,
 				60B00F2722D39BB300941A14 /* TTFFmpegManager.m in Sources */,
+				60656FF4231D0E4200C0548C /* EYLikeAnimation.m in Sources */,
 				602A386522A11A4100D6DB0D /* EYVideoModel.m in Sources */,
 				6080A77622C744A5003EC084 /* EYNetworkManager+Extension.swift in Sources */,
 				6080A78922C744A5003EC084 /* EYEmoticonManager.swift in Sources */,
