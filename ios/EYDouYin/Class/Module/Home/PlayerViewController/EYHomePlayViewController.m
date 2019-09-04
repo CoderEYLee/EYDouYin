@@ -68,10 +68,8 @@
     
     NSTimeInterval timestamp = touches.anyObject.timestamp;
     if (timestamp - self.lastTouchTime > 0.25) {//单击
-        EYLog(@"11111111111");
         [self performSelector:@selector(touchPauseOrResume) withObject:nil afterDelay:0.25];
     } else {//双击
-        EYLog(@"22222222222");
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(touchPauseOrResume) object:nil];
         
         [[EYLikeAnimation shareInstance] createAnimationWithTouch:touches withEvent:event];
