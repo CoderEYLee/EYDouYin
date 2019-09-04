@@ -16,6 +16,7 @@
 @property (weak, nonatomic) UIImageView *videoImageView;
 
 @property (weak, nonatomic) UIButton *playbutton;
+@property (assign, nonatomic) NSTimeInterval lastTouchTime;
 
 @end
 
@@ -51,6 +52,7 @@
     UIButton *playbutton = [[UIButton alloc] initWithFrame:self.view.bounds];
     [playbutton setImage:[UIImage imageNamed:@"common_video_pause"] forState:UIControlStateSelected];
     playbutton.selected = NO;
+    playbutton.userInteractionEnabled = NO;
     [playbutton addTarget:self action:@selector(tapPlayButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:playbutton];
     self.playbutton = playbutton;
@@ -58,6 +60,32 @@
 
 //2.设置数据
 - (void)setupData {
+    
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    
+    NSTimeInterval timestamp = touches.anyObject.timestamp;
+    if (timestamp - self.lastTouchTime > 0.25) {//单击
+        EYLog(@"11111111111");
+        [self performSelector:@selector(touchPauseOrResume) withObject:nil afterDelay:0.25];
+    } else {//双击
+        EYLog(@"22222222222");
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(touchPauseOrResume) object:nil];
+        
+        [[EYLikeAnimation shareInstance] createAnimationWithTouch:touches withEvent:event];
+    }
+    
+    self.lastTouchTime = timestamp;
+}
+
+- (void)touchPauseOrResume {
+    if (self.isPlaying) {
+        [self pausePlay];
+    } else {
+        [self resumePlay];
+    }
 }
 
 - (void)setVideoModel:(EYVideoModel *)videoModel {
