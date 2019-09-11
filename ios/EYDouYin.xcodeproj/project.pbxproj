@@ -237,6 +237,7 @@
 		60EE77B82120282C004133A6 /* EYTestViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60EE77B72120282C004133A6 /* EYTestViewView.xib */; };
 		60EE77BF21204188004133A6 /* NSObject+EYRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77BE21204188004133A6 /* NSObject+EYRuntime.m */; };
 		60F3201122CDF83000B86161 /* EYRNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F3201022CDF83000B86161 /* EYRNViewController.m */; };
+		60F6975B2328EEFC00EDF4A4 /* EYPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F6975A2328EEFC00EDF4A4 /* EYPageViewController.m */; };
 		6749C7643083D80B46377F2A /* Pods_EYDouYin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF4547C5200AAEC1524E726 /* Pods_EYDouYin.framework */; };
 /* End PBXBuildFile section */
 
@@ -729,6 +730,8 @@
 		60EE77BE21204188004133A6 /* NSObject+EYRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EYRuntime.m"; sourceTree = "<group>"; };
 		60F3200F22CDF83000B86161 /* EYRNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYRNViewController.h; sourceTree = "<group>"; };
 		60F3201022CDF83000B86161 /* EYRNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYRNViewController.m; sourceTree = "<group>"; };
+		60F697592328EEFC00EDF4A4 /* EYPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPageViewController.h; sourceTree = "<group>"; };
+		60F6975A2328EEFC00EDF4A4 /* EYPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPageViewController.m; sourceTree = "<group>"; };
 		97A2A75C3787089F0E951A39 /* libPods-EYDouYinTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EYDouYinTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1220,6 +1223,7 @@
 				60752B4C2186DFC2001B857C /* 3、瀑布流 */,
 				6085A1612189A81100637F31 /* 4、UICollectionView 其他布局使用 */,
 				6041F3A42319316200EAED19 /* 5、UITableView分组 */,
+				60F697582328EED000EDF4A4 /* 6、UIPageViewController */,
 			);
 			path = "详情列表";
 			sourceTree = "<group>";
@@ -2253,6 +2257,15 @@
 			path = bundle;
 			sourceTree = "<group>";
 		};
+		60F697582328EED000EDF4A4 /* 6、UIPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				60F697592328EEFC00EDF4A4 /* EYPageViewController.h */,
+				60F6975A2328EEFC00EDF4A4 /* EYPageViewController.m */,
+			);
+			path = "6、UIPageViewController";
+			sourceTree = "<group>";
+		};
 		6C135B6B8657BEA513DBC0C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2644,6 +2657,7 @@
 				60F3201122CDF83000B86161 /* EYRNViewController.m in Sources */,
 				601B03192104DDED00489E96 /* EYFindViewController.m in Sources */,
 				6080A79422C744A5003EC084 /* EYTitleButton.swift in Sources */,
+				60F6975B2328EEFC00EDF4A4 /* EYPageViewController.m in Sources */,
 				6080A77822C744A5003EC084 /* EYSQLiteManager.swift in Sources */,
 				6080A75822C744A5003EC084 /* EYBaseSwiftViewController.swift in Sources */,
 				6075412C2104CC4B00EB258D /* AppDelegate.m in Sources */,

@@ -24,6 +24,8 @@ static NSString *EYTableViewSizeToFitViewControllerCellID = @"EYTableViewSizeToF
     
     //1.初始化界面
     [self setupUI];
+    
+    [EYProgressHUD showInfoWithStatus:@"还没有测试完成"];
 }
 
 - (void)setupUI {
