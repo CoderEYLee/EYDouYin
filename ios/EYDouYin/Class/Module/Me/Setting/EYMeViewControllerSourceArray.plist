@@ -81,34 +81,10 @@
 				<key>language</key>
 				<string>OC</string>
 				<key>name</key>
-				<string>瀑布流使用</string>
-				<key>vcName</key>
-				<string>EYWaterFallViewController</string>
-			</dict>
-			<dict>
-				<key>language</key>
-				<string>OC</string>
-				<key>name</key>
-				<string>UICollectionView 其他布局使用</string>
-				<key>vcName</key>
-				<string>EYCollectionViewOtherController</string>
-			</dict>
-			<dict>
-				<key>language</key>
-				<string>OC</string>
-				<key>name</key>
 				<string>自定义 UIview</string>
 				<key>vcName</key>
 				<string>EYCustomViewViewController</string>
 			</dict>
-            <dict>
-                <key>language</key>
-                <string>OC</string>
-                <key>name</key>
-                <string>UITableView分组(组头自适应高度)</string>
-                <key>vcName</key>
-                <string>EYTableViewSizeToFitViewController</string>
-            </dict>
 		</array>
 	</dict>
 </array>

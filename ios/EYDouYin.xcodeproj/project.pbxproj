@@ -793,10 +793,7 @@
 				60752B3F2182C500001B857C /* SJVideoPlayer使用 */,
 				60752B4421832233001B857C /* ZFPlayer使用 */,
 				60752B482186A37A001B857C /* iOS锁使用 */,
-				60752B4C2186DFC2001B857C /* 瀑布流 */,
-				6085A1612189A81100637F31 /* UICollectionView 其他布局使用 */,
 				60C9F36F22E559C300450718 /* 自定义 UIView */,
-				6041F3A42319316200EAED19 /* UITableView分组 */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -947,13 +944,13 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
-		6041F3A42319316200EAED19 /* UITableView分组 */ = {
+		6041F3A42319316200EAED19 /* 5、UITableView分组 */ = {
 			isa = PBXGroup;
 			children = (
 				6041F3A52319319B00EAED19 /* EYTableViewSizeToFitViewController.h */,
 				6041F3A62319319B00EAED19 /* EYTableViewSizeToFitViewController.m */,
 			);
-			path = "UITableView分组";
+			path = "5、UITableView分组";
 			sourceTree = "<group>";
 		};
 		6055AD3A2116B03E005DC856 /* Resource */ = {
@@ -1001,7 +998,7 @@
 			path = "iOS锁使用";
 			sourceTree = "<group>";
 		};
-		60752B4C2186DFC2001B857C /* 瀑布流 */ = {
+		60752B4C2186DFC2001B857C /* 3、瀑布流 */ = {
 			isa = PBXGroup;
 			children = (
 				60752B6E21871763001B857C /* 方式一 */,
@@ -1010,7 +1007,7 @@
 				60752B512186E205001B857C /* EYWaterFallViewController.m */,
 				60752B522186E205001B857C /* EYWaterFallViewController.xib */,
 			);
-			path = "瀑布流";
+			path = "3、瀑布流";
 			sourceTree = "<group>";
 		};
 		60752B6E21871763001B857C /* 方式一 */ = {
@@ -1218,8 +1215,11 @@
 		607C2F2623024F07000962C8 /* 详情列表 */ = {
 			isa = PBXGroup;
 			children = (
-				60DBBD842302A29400DD422E /* YYLabel */,
-				60DBBD872302A2CC00DD422E /* UICollectionView */,
+				60DBBD842302A29400DD422E /* 1、YYLabel */,
+				60DBBD872302A2CC00DD422E /* 2、UICollectionView */,
+				60752B4C2186DFC2001B857C /* 3、瀑布流 */,
+				6085A1612189A81100637F31 /* 4、UICollectionView 其他布局使用 */,
+				6041F3A42319316200EAED19 /* 5、UITableView分组 */,
 			);
 			path = "详情列表";
 			sourceTree = "<group>";
@@ -1830,7 +1830,7 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		6085A1612189A81100637F31 /* UICollectionView 其他布局使用 */ = {
+		6085A1612189A81100637F31 /* 4、UICollectionView 其他布局使用 */ = {
 			isa = PBXGroup;
 			children = (
 				6085A1652189A94900637F31 /* EYCircleLayout.h */,
@@ -1841,7 +1841,7 @@
 				6085A16E2189B8F800637F31 /* EYCollectionViewOtherController.m */,
 				6085A16F2189B8F800637F31 /* EYCollectionViewOtherController.xib */,
 			);
-			path = "UICollectionView 其他布局使用";
+			path = "4、UICollectionView 其他布局使用";
 			sourceTree = "<group>";
 		};
 		609C575222B257520010AF7D /* View */ = {
@@ -2181,7 +2181,7 @@
 			path = "自定义 UIView";
 			sourceTree = "<group>";
 		};
-		60DBBD842302A29400DD422E /* YYLabel */ = {
+		60DBBD842302A29400DD422E /* 1、YYLabel */ = {
 			isa = PBXGroup;
 			children = (
 				60C9F37022E55A1700450718 /* EYCustomViewController1.h */,
@@ -2189,10 +2189,10 @@
 				60C9F37322E55ABA00450718 /* EYCustomFitView1.h */,
 				60C9F37422E55ABA00450718 /* EYCustomFitView1.m */,
 			);
-			path = YYLabel;
+			path = "1、YYLabel";
 			sourceTree = "<group>";
 		};
-		60DBBD872302A2CC00DD422E /* UICollectionView */ = {
+		60DBBD872302A2CC00DD422E /* 2、UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
 				60780CAC230FCDAE007CFAD4 /* EYCustom2CollectionViewCell1.h */,
@@ -2202,7 +2202,7 @@
 				60DBBD882302A2F200DD422E /* EYCustomViewController2.h */,
 				60DBBD892302A2F200DD422E /* EYCustomViewController2.m */,
 			);
-			path = UICollectionView;
+			path = "2、UICollectionView";
 			sourceTree = "<group>";
 		};
 		60EE77A9211F51D1004133A6 /* Controller */ = {
