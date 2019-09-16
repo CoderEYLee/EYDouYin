@@ -62,6 +62,14 @@
 				<key>vcName</key>
 				<string>EYZFPlayerViewController</string>
 			</dict>
+            <dict>
+                <key>language</key>
+                <string>OC</string>
+                <key>name</key>
+                <string>AliPlayer使用</string>
+                <key>vcName</key>
+                <string>EYAliViewController</string>
+            </dict>
 		</array>
 	</dict>
 	<dict>
