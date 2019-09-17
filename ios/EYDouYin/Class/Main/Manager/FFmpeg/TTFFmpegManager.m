@@ -65,10 +65,6 @@
     
     //直接进入选择视频界面
     TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 columnNumber:3 delegate:nil pushPhotoPickerVc:YES];
-//    imagePickerVc.preferredLanguage = @"en";//英文环境
-//    imagePickerVc.allowPickingImage = NO;//不显示图片
-//    imagePickerVc.needShowStatusBar = YES;//显示电池栏
-//    imagePickerVc.allowTakeVideo = NO;//不能拍摄视频
     
     //展示相册中的视频
     imagePickerVc.allowPickingVideo = YES;
@@ -206,6 +202,7 @@
     if (mgr.fileDuration) {
         float process = 0.5 + (time / (mgr.fileDuration * 1.00)) * 0.5;
         EYLog(@"FFmpeg视频转码==进度:%f==当前时间 %lld", process, time);
+        [EYProgressHUD showProgress:process status:@"视频转码进行中..."];
         //2.进度
         NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
         userInfo[@"state"] = @"1";
