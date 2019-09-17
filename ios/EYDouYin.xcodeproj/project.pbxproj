@@ -38,6 +38,20 @@
 		6055AD3C2116B382005DC856 /* TabBar.json in Resources */ = {isa = PBXBuildFile; fileRef = 6055AD3B2116B382005DC856 /* TabBar.json */; };
 		6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD3E2116B929005DC856 /* NSString+EYExtension.m */; };
 		6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD412116CD21005DC856 /* EYTabBarView.m */; };
+		605C3F8D23310599003069CC /* AlivcConan.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 605C3F8323310598003069CC /* AlivcConan.framework.dSYM */; };
+		605C3F9223310599003069CC /* AliyunMediaDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8823310598003069CC /* AliyunMediaDownloader.framework */; };
+		605C3F9323310599003069CC /* artpSource.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 605C3F8923310598003069CC /* artpSource.framework.dSYM */; };
+		605C3F9423310599003069CC /* AliyunPlayer.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 605C3F8A23310598003069CC /* AliyunPlayer.framework.dSYM */; };
+		605C3F9523310599003069CC /* alivcffmpeg.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 605C3F8B23310598003069CC /* alivcffmpeg.framework.dSYM */; };
+		605C3F9623310599003069CC /* AliyunMediaDownloader.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 605C3F8C23310598003069CC /* AliyunMediaDownloader.framework.dSYM */; };
+		605C3F972331060A003069CC /* AlivcConan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8423310598003069CC /* AlivcConan.framework */; };
+		605C3F982331060A003069CC /* AlivcConan.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8423310598003069CC /* AlivcConan.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		605C3F9B2331060A003069CC /* AliyunPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8623310598003069CC /* AliyunPlayer.framework */; };
+		605C3F9C2331060A003069CC /* AliyunPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8623310598003069CC /* AliyunPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		605C3F9D2331060A003069CC /* artpSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8723310598003069CC /* artpSource.framework */; };
+		605C3F9E2331060A003069CC /* artpSource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8723310598003069CC /* artpSource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		605C3FA02331060A003069CC /* AliyunMediaDownloader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8823310598003069CC /* AliyunMediaDownloader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		605C3FA323310884003069CC /* alivcffmpeg.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8523310598003069CC /* alivcffmpeg.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		605EECB122B8E3B80001610D /* EYMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605EECB022B8E3B80001610D /* EYMineViewController.m */; };
 		60656FF4231D0E4200C0548C /* EYLikeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60656FF1231D0E4200C0548C /* EYLikeAnimation.m */; };
 		606B658A219182130059D1F7 /* UIButton+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */; };
@@ -238,26 +252,6 @@
 		60EE77BF21204188004133A6 /* NSObject+EYRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EE77BE21204188004133A6 /* NSObject+EYRuntime.m */; };
 		60F3201122CDF83000B86161 /* EYRNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F3201022CDF83000B86161 /* EYRNViewController.m */; };
 		60F6975B2328EEFC00EDF4A4 /* EYPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F6975A2328EEFC00EDF4A4 /* EYPageViewController.m */; };
-		60F69773232A3F1A00EDF4A4 /* AlivcConan.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 60F69769232A3F1A00EDF4A4 /* AlivcConan.framework.dSYM */; };
-		60F69774232A3F1A00EDF4A4 /* AlivcConan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F6976A232A3F1A00EDF4A4 /* AlivcConan.framework */; };
-		60F69775232A3F1B00EDF4A4 /* alivcffmpeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F6976B232A3F1A00EDF4A4 /* alivcffmpeg.framework */; };
-		60F69776232A3F1B00EDF4A4 /* AliyunPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F6976C232A3F1A00EDF4A4 /* AliyunPlayer.framework */; };
-		60F69777232A3F1B00EDF4A4 /* artpSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F6976D232A3F1A00EDF4A4 /* artpSource.framework */; };
-		60F69778232A3F1B00EDF4A4 /* AliyunMediaDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F6976E232A3F1A00EDF4A4 /* AliyunMediaDownloader.framework */; };
-		60F69779232A3F1B00EDF4A4 /* artpSource.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 60F6976F232A3F1A00EDF4A4 /* artpSource.framework.dSYM */; };
-		60F6977A232A3F1B00EDF4A4 /* AliyunPlayer.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 60F69770232A3F1A00EDF4A4 /* AliyunPlayer.framework.dSYM */; };
-		60F6977B232A3F1B00EDF4A4 /* alivcffmpeg.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 60F69771232A3F1A00EDF4A4 /* alivcffmpeg.framework.dSYM */; };
-		60F6977C232A3F1B00EDF4A4 /* AliyunMediaDownloader.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 60F69772232A3F1A00EDF4A4 /* AliyunMediaDownloader.framework.dSYM */; };
-		60F6977D232A443100EDF4A4 /* AliyunPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F6976C232A3F1A00EDF4A4 /* AliyunPlayer.framework */; };
-		60F6977E232A443100EDF4A4 /* AliyunPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60F6976C232A3F1A00EDF4A4 /* AliyunPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		60F69780232A447700EDF4A4 /* AlivcConan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F6976A232A3F1A00EDF4A4 /* AlivcConan.framework */; };
-		60F69781232A447700EDF4A4 /* AlivcConan.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60F6976A232A3F1A00EDF4A4 /* AlivcConan.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		60F69782232A447700EDF4A4 /* alivcffmpeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F6976B232A3F1A00EDF4A4 /* alivcffmpeg.framework */; };
-		60F69783232A447700EDF4A4 /* alivcffmpeg.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60F6976B232A3F1A00EDF4A4 /* alivcffmpeg.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		60F69784232A447700EDF4A4 /* artpSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F6976D232A3F1A00EDF4A4 /* artpSource.framework */; };
-		60F69785232A447700EDF4A4 /* artpSource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60F6976D232A3F1A00EDF4A4 /* artpSource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		60F69786232A447700EDF4A4 /* AliyunMediaDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F6976E232A3F1A00EDF4A4 /* AliyunMediaDownloader.framework */; };
-		60F69787232A447700EDF4A4 /* AliyunMediaDownloader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60F6976E232A3F1A00EDF4A4 /* AliyunMediaDownloader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		60F6978C232A471A00EDF4A4 /* EYAliViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F6978B232A471900EDF4A4 /* EYAliViewController.m */; };
 		6749C7643083D80B46377F2A /* Pods_EYDouYin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF4547C5200AAEC1524E726 /* Pods_EYDouYin.framework */; };
 /* End PBXBuildFile section */
@@ -280,17 +274,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		60F6977F232A443200EDF4A4 /* Embed Frameworks */ = {
+		605C3FA12331060B003069CC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				60F69785232A447700EDF4A4 /* artpSource.framework in Embed Frameworks */,
-				60F69783232A447700EDF4A4 /* alivcffmpeg.framework in Embed Frameworks */,
-				60F69787232A447700EDF4A4 /* AliyunMediaDownloader.framework in Embed Frameworks */,
-				60F69781232A447700EDF4A4 /* AlivcConan.framework in Embed Frameworks */,
-				60F6977E232A443100EDF4A4 /* AliyunPlayer.framework in Embed Frameworks */,
+				605C3F9E2331060A003069CC /* artpSource.framework in Embed Frameworks */,
+				605C3F982331060A003069CC /* AlivcConan.framework in Embed Frameworks */,
+				605C3FA323310884003069CC /* alivcffmpeg.framework in Embed Frameworks */,
+				605C3FA02331060A003069CC /* AliyunMediaDownloader.framework in Embed Frameworks */,
+				605C3F9C2331060A003069CC /* AliyunPlayer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +351,16 @@
 		6055AD3E2116B929005DC856 /* NSString+EYExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+EYExtension.m"; sourceTree = "<group>"; };
 		6055AD402116CD21005DC856 /* EYTabBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYTabBarView.h; sourceTree = "<group>"; };
 		6055AD412116CD21005DC856 /* EYTabBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYTabBarView.m; sourceTree = "<group>"; };
+		605C3F8323310598003069CC /* AlivcConan.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AlivcConan.framework.dSYM; sourceTree = "<group>"; };
+		605C3F8423310598003069CC /* AlivcConan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlivcConan.framework; sourceTree = "<group>"; };
+		605C3F8523310598003069CC /* alivcffmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = alivcffmpeg.framework; sourceTree = "<group>"; };
+		605C3F8623310598003069CC /* AliyunPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunPlayer.framework; sourceTree = "<group>"; };
+		605C3F8723310598003069CC /* artpSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = artpSource.framework; sourceTree = "<group>"; };
+		605C3F8823310598003069CC /* AliyunMediaDownloader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunMediaDownloader.framework; sourceTree = "<group>"; };
+		605C3F8923310598003069CC /* artpSource.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = artpSource.framework.dSYM; sourceTree = "<group>"; };
+		605C3F8A23310598003069CC /* AliyunPlayer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AliyunPlayer.framework.dSYM; sourceTree = "<group>"; };
+		605C3F8B23310598003069CC /* alivcffmpeg.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = alivcffmpeg.framework.dSYM; sourceTree = "<group>"; };
+		605C3F8C23310598003069CC /* AliyunMediaDownloader.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AliyunMediaDownloader.framework.dSYM; sourceTree = "<group>"; };
 		605EECAF22B8E3B80001610D /* EYMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMineViewController.h; sourceTree = "<group>"; };
 		605EECB022B8E3B80001610D /* EYMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMineViewController.m; sourceTree = "<group>"; };
 		60656FED231D0E4200C0548C /* EYLikeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYLikeAnimation.h; sourceTree = "<group>"; };
@@ -771,16 +775,6 @@
 		60F3201022CDF83000B86161 /* EYRNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYRNViewController.m; sourceTree = "<group>"; };
 		60F697592328EEFC00EDF4A4 /* EYPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYPageViewController.h; sourceTree = "<group>"; };
 		60F6975A2328EEFC00EDF4A4 /* EYPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYPageViewController.m; sourceTree = "<group>"; };
-		60F69769232A3F1A00EDF4A4 /* AlivcConan.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AlivcConan.framework.dSYM; sourceTree = "<group>"; };
-		60F6976A232A3F1A00EDF4A4 /* AlivcConan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlivcConan.framework; sourceTree = "<group>"; };
-		60F6976B232A3F1A00EDF4A4 /* alivcffmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = alivcffmpeg.framework; sourceTree = "<group>"; };
-		60F6976C232A3F1A00EDF4A4 /* AliyunPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunPlayer.framework; sourceTree = "<group>"; };
-		60F6976D232A3F1A00EDF4A4 /* artpSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = artpSource.framework; sourceTree = "<group>"; };
-		60F6976E232A3F1A00EDF4A4 /* AliyunMediaDownloader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunMediaDownloader.framework; sourceTree = "<group>"; };
-		60F6976F232A3F1A00EDF4A4 /* artpSource.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = artpSource.framework.dSYM; sourceTree = "<group>"; };
-		60F69770232A3F1A00EDF4A4 /* AliyunPlayer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AliyunPlayer.framework.dSYM; sourceTree = "<group>"; };
-		60F69771232A3F1A00EDF4A4 /* alivcffmpeg.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = alivcffmpeg.framework.dSYM; sourceTree = "<group>"; };
-		60F69772232A3F1A00EDF4A4 /* AliyunMediaDownloader.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AliyunMediaDownloader.framework.dSYM; sourceTree = "<group>"; };
 		60F6978A232A471900EDF4A4 /* EYAliViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYAliViewController.h; sourceTree = "<group>"; };
 		60F6978B232A471900EDF4A4 /* EYAliViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYAliViewController.m; sourceTree = "<group>"; };
 		97A2A75C3787089F0E951A39 /* libPods-EYDouYinTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EYDouYinTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -791,30 +785,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60B3660C22E36D2A00283241 /* libavutil.a in Frameworks */,
 				6014B0BB22D10B03003DC224 /* libz.tbd in Frameworks */,
 				6014B0BD22D10B12003DC224 /* libbz2.tbd in Frameworks */,
-				60B3660F22E36D2A00283241 /* libavformat.a in Frameworks */,
 				6014B0BF22D10B20003DC224 /* libiconv.tbd in Frameworks */,
-				60F69782232A447700EDF4A4 /* alivcffmpeg.framework in Frameworks */,
-				60F69776232A3F1B00EDF4A4 /* AliyunPlayer.framework in Frameworks */,
-				6014B0C122D10B30003DC224 /* AudioToolbox.framework in Frameworks */,
-				60F69784232A447700EDF4A4 /* artpSource.framework in Frameworks */,
-				60B3661222E36D2A00283241 /* libswscale.a in Frameworks */,
-				6014B0C322D10B3B003DC224 /* CoreMedia.framework in Frameworks */,
+				605C3F972331060A003069CC /* AlivcConan.framework in Frameworks */,
+				605C3F9D2331060A003069CC /* artpSource.framework in Frameworks */,
+				605C3F9B2331060A003069CC /* AliyunPlayer.framework in Frameworks */,
+				605C3F9223310599003069CC /* AliyunMediaDownloader.framework in Frameworks */,
+				60B3660C22E36D2A00283241 /* libavutil.a in Frameworks */,
 				60B3660D22E36D2A00283241 /* libavfilter.a in Frameworks */,
-				6014B0C522D10B47003DC224 /* VideoToolbox.framework in Frameworks */,
-				60F6977D232A443100EDF4A4 /* AliyunPlayer.framework in Frameworks */,
-				60F69780232A447700EDF4A4 /* AlivcConan.framework in Frameworks */,
 				60B3660E22E36D2A00283241 /* libavcodec.a in Frameworks */,
-				60F69778232A3F1B00EDF4A4 /* AliyunMediaDownloader.framework in Frameworks */,
-				60F69786232A447700EDF4A4 /* AliyunMediaDownloader.framework in Frameworks */,
-				6076A16B214A05BF002ED551 /* MediaPlayer.framework in Frameworks */,
+				60B3660F22E36D2A00283241 /* libavformat.a in Frameworks */,
 				60B3661022E36D2A00283241 /* libavdevice.a in Frameworks */,
 				60B3661122E36D2A00283241 /* libswresample.a in Frameworks */,
-				60F69774232A3F1A00EDF4A4 /* AlivcConan.framework in Frameworks */,
-				60F69777232A3F1B00EDF4A4 /* artpSource.framework in Frameworks */,
-				60F69775232A3F1B00EDF4A4 /* alivcffmpeg.framework in Frameworks */,
+				60B3661222E36D2A00283241 /* libswscale.a in Frameworks */,
+				6014B0C322D10B3B003DC224 /* CoreMedia.framework in Frameworks */,
+				6014B0C522D10B47003DC224 /* VideoToolbox.framework in Frameworks */,
+				6014B0C122D10B30003DC224 /* AudioToolbox.framework in Frameworks */,
+				6076A16B214A05BF002ED551 /* MediaPlayer.framework in Frameworks */,
 				6749C7643083D80B46377F2A /* Pods_EYDouYin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1025,6 +1013,23 @@
 				6000D871213D1CFB00491BB7 /* Localizable.strings */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		605C3F8223310598003069CC /* ARM_SIMULATOR */ = {
+			isa = PBXGroup;
+			children = (
+				605C3F8423310598003069CC /* AlivcConan.framework */,
+				605C3F8523310598003069CC /* alivcffmpeg.framework */,
+				605C3F8623310598003069CC /* AliyunPlayer.framework */,
+				605C3F8723310598003069CC /* artpSource.framework */,
+				605C3F8823310598003069CC /* AliyunMediaDownloader.framework */,
+				605C3F8923310598003069CC /* artpSource.framework.dSYM */,
+				605C3F8323310598003069CC /* AlivcConan.framework.dSYM */,
+				605C3F8A23310598003069CC /* AliyunPlayer.framework.dSYM */,
+				605C3F8B23310598003069CC /* alivcffmpeg.framework.dSYM */,
+				605C3F8C23310598003069CC /* AliyunMediaDownloader.framework.dSYM */,
+			);
+			path = ARM_SIMULATOR;
 			sourceTree = "<group>";
 		};
 		60656FEC231D0E4200C0548C /* EYLikeAnimation */ = {
@@ -2332,26 +2337,9 @@
 		60F6975C2329F1D000EDF4A4 /* AliVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				60F69768232A3F1A00EDF4A4 /* ARM_SIMULATOR */,
+				605C3F8223310598003069CC /* ARM_SIMULATOR */,
 			);
 			path = AliVideoPlayer;
-			sourceTree = "<group>";
-		};
-		60F69768232A3F1A00EDF4A4 /* ARM_SIMULATOR */ = {
-			isa = PBXGroup;
-			children = (
-				60F6976A232A3F1A00EDF4A4 /* AlivcConan.framework */,
-				60F6976B232A3F1A00EDF4A4 /* alivcffmpeg.framework */,
-				60F6976C232A3F1A00EDF4A4 /* AliyunPlayer.framework */,
-				60F6976D232A3F1A00EDF4A4 /* artpSource.framework */,
-				60F6976E232A3F1A00EDF4A4 /* AliyunMediaDownloader.framework */,
-				60F69769232A3F1A00EDF4A4 /* AlivcConan.framework.dSYM */,
-				60F6976F232A3F1A00EDF4A4 /* artpSource.framework.dSYM */,
-				60F69770232A3F1A00EDF4A4 /* AliyunPlayer.framework.dSYM */,
-				60F69771232A3F1A00EDF4A4 /* alivcffmpeg.framework.dSYM */,
-				60F69772232A3F1A00EDF4A4 /* AliyunMediaDownloader.framework.dSYM */,
-			);
-			path = ARM_SIMULATOR;
 			sourceTree = "<group>";
 		};
 		60F69789232A46EE00EDF4A4 /* AliPlayer使用 */ = {
@@ -2404,7 +2392,7 @@
 				7164FAC7CBD575C447A17FE0 /* [CP] Embed Pods Frameworks */,
 				601DE50322CB028B00C99E5E /* ShellScript */,
 				9384ED7CEF854FA4EC6D63AE /* [CP] Copy Pods Resources */,
-				60F6977F232A443200EDF4A4 /* Embed Frameworks */,
+				605C3FA12331060B003069CC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2502,7 +2490,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60F69779232A3F1B00EDF4A4 /* artpSource.framework.dSYM in Resources */,
+				605C3F9323310599003069CC /* artpSource.framework.dSYM in Resources */,
 				6080A76C22C744A5003EC084 /* EYHumanRefreshView.xib in Resources */,
 				60EE77AF211F52A4004133A6 /* EYFindTopView.xib in Resources */,
 				6080A7A922C744A5003EC084 /* EYProfileLabelCell.xib in Resources */,
@@ -2513,7 +2501,7 @@
 				607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */,
 				60752B6D2186F49A001B857C /* EYShopCell.xib in Resources */,
 				602112B522CF18EA00510A74 /* index.jsbundle in Resources */,
-				60F6977B232A3F1B00EDF4A4 /* alivcffmpeg.framework.dSYM in Resources */,
+				605C3F9523310599003069CC /* alivcffmpeg.framework.dSYM in Resources */,
 				6080A75022C744A5003EC084 /* api.ehomeclouds.com.cn.cer in Resources */,
 				6080A76D22C744A5003EC084 /* EYRefreshView.xib in Resources */,
 				607C2F2223024E5F000962C8 /* EYMeCustomViewArray.plist in Resources */,
@@ -2526,14 +2514,14 @@
 				60EE77B82120282C004133A6 /* EYTestViewView.xib in Resources */,
 				6080A77922C744A5003EC084 /* status.sql in Resources */,
 				6080A7B322C744A5003EC084 /* EYLiveCell.xib in Resources */,
-				60F6977A232A3F1B00EDF4A4 /* AliyunPlayer.framework.dSYM in Resources */,
+				605C3F9423310599003069CC /* AliyunPlayer.framework.dSYM in Resources */,
 				6080A75722C744A5003EC084 /* EYWelcomeView.xib in Resources */,
 				60752B642186F230001B857C /* Shops.plist in Resources */,
 				6085A16021897A4B00637F31 /* EYWaterflowShopCell2.xib in Resources */,
 				6080A79B22C744A5003EC084 /* Home.xcassets in Resources */,
 				6080A75622C744A5003EC084 /* NewFeature.xcassets in Resources */,
-				60F69773232A3F1A00EDF4A4 /* AlivcConan.framework.dSYM in Resources */,
-				60F6977C232A3F1B00EDF4A4 /* AliyunMediaDownloader.framework.dSYM in Resources */,
+				605C3F8D23310599003069CC /* AlivcConan.framework.dSYM in Resources */,
+				605C3F9623310599003069CC /* AliyunMediaDownloader.framework.dSYM in Resources */,
 				6080A7A422C744A5003EC084 /* Compose.xcassets in Resources */,
 				60C4008B218BFCF000B07E4A /* EYCollectionArray.plist in Resources */,
 				6080A78522C744A5003EC084 /* EYEmoticonInputView.xib in Resources */,
