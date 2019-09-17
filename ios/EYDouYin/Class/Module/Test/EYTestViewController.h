@@ -10,4 +10,7 @@
 
 @interface EYTestViewController : EYBaseViewController
 
+@property (weak, nonatomic) UILabel *label;
+
+
 @end

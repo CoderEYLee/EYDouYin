@@ -17,8 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.view.backgroundColor = [UIColor grayColor];
  
     //1. 初始化界面
     [self setupUI];
@@ -27,6 +25,15 @@
 //1. 初始化界面
 - (void)setupUI {
     self.view.backgroundColor = EYColorRandom;
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:self.view.bounds];
+    label.text = @"1234";
+    label.textColor = EYColorRed;
+    label.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:label];
+    self.label = label;
+    
+    return;
     
     EYTestView *redView = [[EYTestView alloc] init];
     redView.backgroundColor = EYColorRed;
