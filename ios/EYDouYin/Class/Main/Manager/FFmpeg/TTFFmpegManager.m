@@ -224,6 +224,7 @@
         userInfo[@"progress"] = @(1.0);
     }
     EYLog(@"FFmpeg 转换停止");
+    UISaveVideoAtPathToSavedPhotosAlbum(EYSendVideoFilePath, nil, nil, nil);
     [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
 }
 
