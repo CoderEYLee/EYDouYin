@@ -85,7 +85,7 @@
     if (selectedIndex == EYTabBarViewTypePlus) {//弹出发布界面
         NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
         parameters[@"min_time"] = @(0.5);
-        parameters[@"max_time"] = @(60.5);
+        parameters[@"max_time"] = @(600.5);
         [[TTFFmpegManager manager] selectVideoWithParameters:parameters];
 //        [self presentViewController:[[EYSendViewController alloc] init] animated:YES completion:nil];
         return NO;
