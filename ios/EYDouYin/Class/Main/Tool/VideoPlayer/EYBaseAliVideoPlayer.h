@@ -158,7 +158,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  @brief 设置缓存配置
- @param AVPCacheConfig 缓存配置。{@link AVPCacheConfig}。
+ @param cacheConfig 缓存配置。{@link AVPCacheConfig}。
  @return 设置成功返回YES
  */
 -(BOOL)setCacheConfig:(AVPCacheConfig *)cacheConfig;
