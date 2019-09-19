@@ -52,6 +52,8 @@
 		605C3F9E2331060A003069CC /* artpSource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8723310598003069CC /* artpSource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		605C3FA02331060A003069CC /* AliyunMediaDownloader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8823310598003069CC /* AliyunMediaDownloader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		605C3FA323310884003069CC /* alivcffmpeg.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8523310598003069CC /* alivcffmpeg.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		605C3FA52331D52F003069CC /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 605C3FA42331D52F003069CC /* video1.mp4 */; };
+		605C3FAF23338BC9003069CC /* videoEnd.mpg in Resources */ = {isa = PBXBuildFile; fileRef = 605C3FAE23338BC9003069CC /* videoEnd.mpg */; };
 		605EECB122B8E3B80001610D /* EYMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605EECB022B8E3B80001610D /* EYMineViewController.m */; };
 		60656FF4231D0E4200C0548C /* EYLikeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60656FF1231D0E4200C0548C /* EYLikeAnimation.m */; };
 		606B658A219182130059D1F7 /* UIButton+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */; };
@@ -361,6 +363,8 @@
 		605C3F8A23310598003069CC /* AliyunPlayer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AliyunPlayer.framework.dSYM; sourceTree = "<group>"; };
 		605C3F8B23310598003069CC /* alivcffmpeg.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = alivcffmpeg.framework.dSYM; sourceTree = "<group>"; };
 		605C3F8C23310598003069CC /* AliyunMediaDownloader.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AliyunMediaDownloader.framework.dSYM; sourceTree = "<group>"; };
+		605C3FA42331D52F003069CC /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
+		605C3FAE23338BC9003069CC /* videoEnd.mpg */ = {isa = PBXFileReference; lastKnownFileType = video.mpeg; path = videoEnd.mpg; sourceTree = "<group>"; };
 		605EECAF22B8E3B80001610D /* EYMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMineViewController.h; sourceTree = "<group>"; };
 		605EECB022B8E3B80001610D /* EYMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMineViewController.m; sourceTree = "<group>"; };
 		60656FED231D0E4200C0548C /* EYLikeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYLikeAnimation.h; sourceTree = "<group>"; };
@@ -1009,6 +1013,8 @@
 		6055AD3A2116B03E005DC856 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				605C3FA42331D52F003069CC /* video1.mp4 */,
+				605C3FAE23338BC9003069CC /* videoEnd.mpg */,
 				607541332104CC4C00EB258D /* Assets.xcassets */,
 				6000D871213D1CFB00491BB7 /* Localizable.strings */,
 			);
@@ -2500,6 +2506,7 @@
 				6080A7A222C744A5003EC084 /* EYComposeTypeView.xib in Resources */,
 				607541372104CC4C00EB258D /* LaunchScreen.storyboard in Resources */,
 				60752B6D2186F49A001B857C /* EYShopCell.xib in Resources */,
+				605C3FAF23338BC9003069CC /* videoEnd.mpg in Resources */,
 				602112B522CF18EA00510A74 /* index.jsbundle in Resources */,
 				605C3F9523310599003069CC /* alivcffmpeg.framework.dSYM in Resources */,
 				6080A75022C744A5003EC084 /* api.ehomeclouds.com.cn.cer in Resources */,
@@ -2523,6 +2530,7 @@
 				605C3F8D23310599003069CC /* AlivcConan.framework.dSYM in Resources */,
 				605C3F9623310599003069CC /* AliyunMediaDownloader.framework.dSYM in Resources */,
 				6080A7A422C744A5003EC084 /* Compose.xcassets in Resources */,
+				605C3FA52331D52F003069CC /* video1.mp4 in Resources */,
 				60C4008B218BFCF000B07E4A /* EYCollectionArray.plist in Resources */,
 				6080A78522C744A5003EC084 /* EYEmoticonInputView.xib in Resources */,
 				6080A7AA22C744A5003EC084 /* EYProfileDetailCell.xib in Resources */,

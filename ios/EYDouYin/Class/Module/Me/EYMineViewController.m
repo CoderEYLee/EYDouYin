@@ -151,6 +151,8 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 #pragma mark - Private Methods
 - (void)tapSettingButton:(UIButton *)button {
+    [[TTFFmpegManager manager] concatVideos];
+    return;
     EYMeViewController *vc = [[EYMeViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
