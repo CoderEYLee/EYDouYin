@@ -21,6 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)selectVideoWithParameters:(NSDictionary *)parameters;
 
+/**
+ 合并多个视频
+ */
+- (void)concatVideos;
+
 // 设置总时长
 + (void)setDuration:(long long)time;
 

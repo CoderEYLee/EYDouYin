@@ -9,11 +9,23 @@
 #import "TTFFmpegManager.h"
 #import "ffmpeg.h"
 
+typedef NS_ENUM(NSInteger, TTFFmpegManagerState) {
+    TTFFmpegManagerStateFree,
+    TTFFmpegManagerStateSelectVideo,
+    TTFFmpegManagerStateConcatVideosFirst,
+    TTFFmpegManagerStateConcatVideosSecond,
+};
+
 // 将项目中文件进行 FFmpeg 转码后的文件(可以直接上传)
-#define EYSendVideoFilePath [NSTemporaryDirectory() stringByAppendingPathComponent:@"ey_SendVideo.mp4"]
+#define EYSendVideoFilePath [NSTemporaryDirectory() stringByAppendingPathComponent:@"ey_SendVideo.mpg"]
+
+// 将两个视频进行合并
+#define EYTxtFilePath [NSTemporaryDirectory() stringByAppendingPathComponent:@"concatVideos.txt"]
+#define EYDownSubliteFilePath [NSTemporaryDirectory() stringByAppendingPathComponent:@"ey_downVideo.mpg"]
 
 @interface TTFFmpegManager()
 
+@property (nonatomic, assign) TTFFmpegManagerState state;
 @property (nonatomic, assign) BOOL isRuning;
 @property (nonatomic, assign) long long fileDuration;
 @property (strong, nonatomic) NSMutableDictionary *coverDictionary;
@@ -63,6 +75,8 @@
     self.fileDuration = 0;
     [self.coverDictionary removeAllObjects];
     
+    self.state = TTFFmpegManagerStateSelectVideo;
+    
     //直接进入选择视频界面
     TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 columnNumber:3 delegate:nil pushPhotoPickerVc:YES];
     
@@ -101,6 +115,38 @@
         }
     }];
     [EYKeyWindow.rootViewController presentViewController:imagePickerVc animated:YES completion:nil];
+}
+
+// 合并多个视频
+- (void)concatVideos {
+    EYLog(@"FFmpeg 合并多个视频");
+    
+    //清除数据
+    self.isRuning = NO;
+    self.fileDuration = 0;
+    [self.coverDictionary removeAllObjects];
+    
+    self.state = TTFFmpegManagerStateConcatVideosFirst;
+    
+    //1.转格式(mp4->mpg)
+    NSString *inputPath = [[NSBundle mainBundle] pathForResource:@"video1.mp4" ofType:nil];
+    NSString *inputPath_mpg = [NSTemporaryDirectory() stringByAppendingPathComponent:@"input.mpg"];
+    NSString *videoEndPath = [[NSBundle mainBundle] pathForResource:@"videoEnd.mpg" ofType:nil];
+    
+    //2.创建.txt文件
+    if ([[NSFileManager defaultManager] fileExistsAtPath:EYTxtFilePath]) {
+        [[NSFileManager defaultManager] removeItemAtPath:EYTxtFilePath error:nil];
+    }
+    
+    NSString *dataString = [NSString stringWithFormat:@"file '%@'\nfile '%@'", inputPath_mpg, videoEndPath];
+    NSData *data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+    [[NSFileManager defaultManager] createFileAtPath:EYTxtFilePath contents:data attributes:nil];
+    
+    //3.FFmpeg 指令转换
+    NSString *commandString = [NSString stringWithFormat:@"ffmpeg -threads 2 -i %@ -qscale 0 -s 540x960 -y %@", inputPath, inputPath_mpg];
+    
+    // 放在子线程运行
+    [[[NSThread alloc] initWithTarget:self selector:@selector(runCommand:) object:commandString] start];
 }
 
 #pragma mark - 选取视频
@@ -191,6 +237,9 @@
 // 设置总时长
 + (void)setDuration:(long long)time {
     EYLog(@"FFmpeg视频转码设置总时长 秒数==%lld", time);
+    if (time <= 0) {
+        return;
+    }
     TTFFmpegManager *mgr = [TTFFmpegManager manager];
     mgr.fileDuration = time;
     mgr.coverDictionary[@"audio_duration"] = [NSString stringWithFormat:@"%ld",(long)(time * 1000)];
@@ -199,33 +248,89 @@
 // 设置当前时间
 + (void)setCurrentTime:(long long)time {
     TTFFmpegManager *mgr = [TTFFmpegManager manager];
-    if (mgr.fileDuration) {
-        float process = 0.5 + (time / (mgr.fileDuration * 1.00)) * 0.5;
-        EYLog(@"FFmpeg视频转码==进度:%f==当前时间 %lld", process, time);
-        [EYProgressHUD showProgress:process status:@"视频转码进行中..."];
-        //2.进度
-        NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-        userInfo[@"state"] = @"1";
-        userInfo[@"progress"] = @(process);
-        [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
+    switch (mgr.state) {
+            case TTFFmpegManagerStateFree: {
+                return;
+                break;
+            }
+            case TTFFmpegManagerStateSelectVideo: {
+                float process = 0.5 + (time / (mgr.fileDuration * 1.00)) * 0.5;
+                EYLog(@"FFmpeg视频转码==进度:%f==当前时间 %lld", process, time);
+                [EYProgressHUD showProgress:process status:@"视频转码进行中..."];
+                
+                //2.进度
+                NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+                userInfo[@"state"] = @"1";
+                userInfo[@"progress"] = @(process);
+                [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
+                break;
+            }
+            case TTFFmpegManagerStateConcatVideosFirst: {
+                float process = 0.0 + (time / (mgr.fileDuration * 1.00)) * 0.5;
+                
+                [EYProgressHUD showProgress:process status:@"视频合并进行中1..."];
+                break;
+            }
+            case TTFFmpegManagerStateConcatVideosSecond: {
+                float process = 0.5 + (time / (mgr.fileDuration * 1.00)) * 0.5;
+                EYLog(@"视频合并进行中2==%lld==%lld==%f", time, mgr.fileDuration, process);
+                [EYProgressHUD showProgress:process status:@"视频合并进行中2..."];
+                break;
+            }
+            
+        default:
+            break;
     }
 }
 
 // 转换停止 ret:0 成功, 其他:失败
 + (void)stopRuning:(int)ret {
     TTFFmpegManager *mgr = [TTFFmpegManager manager];
-    
-    NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:mgr.coverDictionary];
-    if (ret) {//失败
-        userInfo[@"state"] = @"3";
-        userInfo[@"progress"] = @(1.0);
-    } else {//成功
-        userInfo[@"state"] = @"2";
-        userInfo[@"progress"] = @(1.0);
+    switch (mgr.state) {
+            case TTFFmpegManagerStateFree: {
+                return;
+                break;
+            }
+            case TTFFmpegManagerStateSelectVideo: {
+                NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithDictionary:mgr.coverDictionary];
+                if (ret) {//失败
+                    userInfo[@"state"] = @"3";
+                    userInfo[@"progress"] = @(1.0);
+                } else {//成功
+                    userInfo[@"state"] = @"2";
+                    userInfo[@"progress"] = @(1.0);
+                }
+                
+                UISaveVideoAtPathToSavedPhotosAlbum(EYSendVideoFilePath, nil, nil, nil);
+                [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
+                mgr.state = TTFFmpegManagerStateFree;
+                break;
+            }
+            case TTFFmpegManagerStateConcatVideosFirst: {
+                mgr.state = TTFFmpegManagerStateConcatVideosSecond;
+                mgr.isRuning = NO;
+                
+                EYLog(@"FFmpeg txt文件位置==%@==%@", EYTxtFilePath, [NSThread currentThread]);
+                
+                //ffmpeg -threads 2 -i %@ -vcodec copy -c:v h264 -b:v 1250K -s %@ -r 30 -vol 500 -y %@
+                NSString *concatString = [NSString stringWithFormat:@"ffmpeg -threads 2 -f concat -safe 0 -i %@ -vcodec copy -b:v 1250K -s 540x960 -y %@", EYTxtFilePath, EYDownSubliteFilePath];
+                [mgr runCommand:concatString];
+                
+                break;
+            }
+            case TTFFmpegManagerStateConcatVideosSecond: {
+                EYLog(@"TTFFmpegManagerStateConcatVideosSecond");
+                mgr.state = TTFFmpegManagerStateFree;
+                break;
+            }
+            
+        default:
+            break;
     }
+    
     EYLog(@"FFmpeg 转换停止");
-    UISaveVideoAtPathToSavedPhotosAlbum(EYSendVideoFilePath, nil, nil, nil);
-    [EYNotificationTool ey_postTTCompressNotificationUserInfo:userInfo];
+    [EYProgressHUD dismiss];
+    mgr.isRuning = NO;
 }
 
 /**
