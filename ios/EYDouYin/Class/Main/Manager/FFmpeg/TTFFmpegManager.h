@@ -22,6 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)selectVideoWithParameters:(NSDictionary *)parameters;
 
 /**
+ 添加字幕
+ */
+- (void)addVideoSubtitle;
+
+/**
  合并多个视频
  */
 - (void)concatVideos;

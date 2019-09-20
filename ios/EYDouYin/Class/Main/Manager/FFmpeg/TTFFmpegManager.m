@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, TTFFmpegManagerState) {
 
 // 将两个视频进行合并
 #define EYTxtFilePath [NSTemporaryDirectory() stringByAppendingPathComponent:@"concatVideos.txt"]
-#define EYDownSubliteFilePath [NSTemporaryDirectory() stringByAppendingPathComponent:@"ey_downVideo.mpg"]
+#define EYDownSubliteFilePath [NSTemporaryDirectory() stringByAppendingPathComponent:@"ey_downVideo.mp4"]
 
 @interface TTFFmpegManager()
 
@@ -115,6 +115,27 @@ typedef NS_ENUM(NSInteger, TTFFmpegManagerState) {
         }
     }];
     [EYKeyWindow.rootViewController presentViewController:imagePickerVc animated:YES completion:nil];
+}
+
+/**
+ 添加字幕
+ */
+- (void)addVideoSubtitle {
+    EYLog(@"FFmpeg 添加字幕");
+    
+    //清除数据
+    self.isRuning = NO;
+    self.fileDuration = 0;
+    [self.coverDictionary removeAllObjects];
+    
+    self.state = TTFFmpegManagerStateSelectVideo;
+    
+    //1.添加字幕
+    NSString *inputPath = [[NSBundle mainBundle] pathForResource:@"video1.mp4" ofType:nil];
+//    NSString *commandString = [NSString stringWithFormat:@"ffmpeg -threads 2 -i %@ -qscale 0 -s 540x960 -y %@", inputPath, inputPath_mpg];
+//
+//    // 放在子线程运行
+//    [[[NSThread alloc] initWithTarget:self selector:@selector(runCommand:) object:commandString] start];
 }
 
 // 合并多个视频
@@ -313,7 +334,7 @@ typedef NS_ENUM(NSInteger, TTFFmpegManagerState) {
                 EYLog(@"FFmpeg txt文件位置==%@==%@", EYTxtFilePath, [NSThread currentThread]);
                 
                 //ffmpeg -threads 2 -i %@ -vcodec copy -c:v h264 -b:v 1250K -s %@ -r 30 -vol 500 -y %@
-                NSString *concatString = [NSString stringWithFormat:@"ffmpeg -threads 2 -f concat -safe 0 -i %@ -vcodec copy -b:v 1250K -s 540x960 -y %@", EYTxtFilePath, EYDownSubliteFilePath];
+                NSString *concatString = [NSString stringWithFormat:@"ffmpeg -threads 2 -f concat -safe 0 -i %@ -vcodec copy -c:v h264 -b:v 1250K -s 540x960 -r 30 -vol 500 -y %@", EYTxtFilePath, EYDownSubliteFilePath];
                 [mgr runCommand:concatString];
                 
                 break;
