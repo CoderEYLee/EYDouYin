@@ -83,6 +83,8 @@
     }
     
     if (selectedIndex == EYTabBarViewTypePlus) {//弹出发布界面
+        [[TTFFmpegManager manager] addVideoSubtitle];
+        return NO;
         NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
         parameters[@"min_time"] = @(0.5);
         parameters[@"max_time"] = @(600.5);
