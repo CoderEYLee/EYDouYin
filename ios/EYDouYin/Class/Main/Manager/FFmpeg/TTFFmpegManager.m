@@ -130,10 +130,13 @@ typedef NS_ENUM(NSInteger, TTFFmpegManagerState) {
     
     self.state = TTFFmpegManagerStateSelectVideo;
     
-    //1.添加字幕 -c:a aac -c:s srt
+    //1.添加字幕
+    //ffmpeg -i bunny.mp4 -vf drawtext=fontcolor=white:fontsize=40:fontfile=msyh.ttf:line_spacing=7:text='test':x=50:y=50:enable='lte(t\,5)'   -y out.mp4
+
     NSString *inputPath = [[NSBundle mainBundle] pathForResource:@"video1.mp4" ofType:nil];
-    NSString *inputSRTPath = [[NSBundle mainBundle] pathForResource:@"logo.png" ofType:nil];
-    NSString *commandString = [NSString stringWithFormat:@"ffmpeg -i %@ -i %@ -filter_complex overlay -canvas_size 300x300 -y %@", inputPath, inputSRTPath, EYDownSubliteFilePath];
+//    NSString *inputSRTPath = [[NSBundle mainBundle] pathForResource:@"logo.png" ofType:nil];line_spacing=7
+    //drawtext=fontcolor=white:fontsize=" + fontsize + ":fontfile=" + fone + ":text='" + result + "':x=40:y=" + (hei + lines * lines_space) + ":enable='between(t\\," + st + "\\," + et + ")',enable='between(t\\,0\\,20)'
+    NSString *commandString = [NSString stringWithFormat:@"ffmpeg -i %@ -filter_complex drawtext=fontcolor=white:fontsize=40:fontfile=msyh.ttf:text='lieryang':x=50:y=50 -y %@", inputPath, EYDownSubliteFilePath];
 
     // 放在子线程运行
     [[[NSThread alloc] initWithTarget:self selector:@selector(runCommand:) object:commandString] start];
