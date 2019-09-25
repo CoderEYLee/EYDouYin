@@ -130,12 +130,13 @@ typedef NS_ENUM(NSInteger, TTFFmpegManagerState) {
     
     self.state = TTFFmpegManagerStateSelectVideo;
     
-    //1.添加字幕
+    //1.添加字幕 -c:a aac -c:s srt
     NSString *inputPath = [[NSBundle mainBundle] pathForResource:@"video1.mp4" ofType:nil];
-//    NSString *commandString = [NSString stringWithFormat:@"ffmpeg -threads 2 -i %@ -qscale 0 -s 540x960 -y %@", inputPath, inputPath_mpg];
-//
-//    // 放在子线程运行
-//    [[[NSThread alloc] initWithTarget:self selector:@selector(runCommand:) object:commandString] start];
+    NSString *inputSRTPath = [[NSBundle mainBundle] pathForResource:@"logo.png" ofType:nil];
+    NSString *commandString = [NSString stringWithFormat:@"ffmpeg -i %@ -i %@ -filter_complex overlay -canvas_size 300x300 -y %@", inputPath, inputSRTPath, EYDownSubliteFilePath];
+
+    // 放在子线程运行
+    [[[NSThread alloc] initWithTarget:self selector:@selector(runCommand:) object:commandString] start];
 }
 
 // 合并多个视频
@@ -525,10 +526,6 @@ typedef NS_ENUM(NSInteger, TTFFmpegManagerState) {
  
  usage: ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfile}...
  */
-//    NSString *commandStr = [NSString stringWithFormat:@"ffmpeg -i %@ -y %@", inputPath, outpath];
-//    NSString *commandStr = [NSString stringWithFormat:@"ffmpeg -ignore_unknown -i %@ -c:v h264 -b:v 1250 -r 25 -vol 500 -y %@", inputPath, outpath];
-//    String[] commands = new String[]{"-threads", "2", "-i", videoPath, "-c:v", "libx264", "-b:v", "1250K", "-crf", "30", "-preset", "superfast", "-y",
-//        "-acodec", "aac", "-vol", "500", outPath};
 
 
 @end

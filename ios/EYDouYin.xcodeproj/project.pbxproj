@@ -54,6 +54,9 @@
 		605C3FA323310884003069CC /* alivcffmpeg.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8523310598003069CC /* alivcffmpeg.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		605C3FA52331D52F003069CC /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 605C3FA42331D52F003069CC /* video1.mp4 */; };
 		605C3FAF23338BC9003069CC /* videoEnd.mpg in Resources */ = {isa = PBXBuildFile; fileRef = 605C3FAE23338BC9003069CC /* videoEnd.mpg */; };
+		605C3FB12334ACF0003069CC /* input.srt in Resources */ = {isa = PBXBuildFile; fileRef = 605C3FB02334ACEF003069CC /* input.srt */; };
+		605C3FB32334B12C003069CC /* 123.mkv in Resources */ = {isa = PBXBuildFile; fileRef = 605C3FB22334B12C003069CC /* 123.mkv */; };
+		605C3FB52334B9FC003069CC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 605C3FB42334B9FC003069CC /* logo.png */; };
 		605EECB122B8E3B80001610D /* EYMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605EECB022B8E3B80001610D /* EYMineViewController.m */; };
 		60656FF4231D0E4200C0548C /* EYLikeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60656FF1231D0E4200C0548C /* EYLikeAnimation.m */; };
 		606B658A219182130059D1F7 /* UIButton+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */; };
@@ -365,6 +368,9 @@
 		605C3F8C23310598003069CC /* AliyunMediaDownloader.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AliyunMediaDownloader.framework.dSYM; sourceTree = "<group>"; };
 		605C3FA42331D52F003069CC /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
 		605C3FAE23338BC9003069CC /* videoEnd.mpg */ = {isa = PBXFileReference; lastKnownFileType = video.mpeg; path = videoEnd.mpg; sourceTree = "<group>"; };
+		605C3FB02334ACEF003069CC /* input.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input.srt; sourceTree = "<group>"; };
+		605C3FB22334B12C003069CC /* 123.mkv */ = {isa = PBXFileReference; lastKnownFileType = file; path = 123.mkv; sourceTree = "<group>"; };
+		605C3FB42334B9FC003069CC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		605EECAF22B8E3B80001610D /* EYMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMineViewController.h; sourceTree = "<group>"; };
 		605EECB022B8E3B80001610D /* EYMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMineViewController.m; sourceTree = "<group>"; };
 		60656FED231D0E4200C0548C /* EYLikeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYLikeAnimation.h; sourceTree = "<group>"; };
@@ -1013,7 +1019,10 @@
 		6055AD3A2116B03E005DC856 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				605C3FB42334B9FC003069CC /* logo.png */,
+				605C3FB22334B12C003069CC /* 123.mkv */,
 				605C3FA42331D52F003069CC /* video1.mp4 */,
+				605C3FB02334ACEF003069CC /* input.srt */,
 				605C3FAE23338BC9003069CC /* videoEnd.mpg */,
 				607541332104CC4C00EB258D /* Assets.xcassets */,
 				6000D871213D1CFB00491BB7 /* Localizable.strings */,
@@ -2496,6 +2505,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				605C3FB52334B9FC003069CC /* logo.png in Resources */,
 				605C3F9323310599003069CC /* artpSource.framework.dSYM in Resources */,
 				6080A76C22C744A5003EC084 /* EYHumanRefreshView.xib in Resources */,
 				60EE77AF211F52A4004133A6 /* EYFindTopView.xib in Resources */,
@@ -2514,8 +2524,10 @@
 				607C2F2223024E5F000962C8 /* EYMeCustomViewArray.plist in Resources */,
 				6080A79822C744A5003EC084 /* EYStatusNormalCell.xib in Resources */,
 				6080A7B822C744A5003EC084 /* Live.xcassets in Resources */,
+				605C3FB12334ACF0003069CC /* input.srt in Resources */,
 				6080A75422C744A5003EC084 /* EYNewFeatureView.xib in Resources */,
 				6080A7B722C744A5003EC084 /* EYLivePlayerVideoViewController.xib in Resources */,
+				605C3FB32334B12C003069CC /* 123.mkv in Resources */,
 				60752B542186E205001B857C /* EYWaterFallViewController.xib in Resources */,
 				6080A79722C744A5003EC084 /* EYStatusRetweetedCell.xib in Resources */,
 				60EE77B82120282C004133A6 /* EYTestViewView.xib in Resources */,

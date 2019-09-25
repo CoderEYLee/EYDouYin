@@ -32,6 +32,7 @@ pod 'Masonry', '1.1.0'              #自动布局
 pod 'MJExtension', '3.1.2'          #字典转模型
 pod 'MJRefresh', '3.2.0'            #刷新
 pod 'pop', '1.0.12'                 #动画
+pod 'RJBadgeKit', '0.2.5'           #小红点实现
 pod 'SDWebImage', '5.1.1'           #图片缓存
 pod 'SnapKit', '5.0.1'              #自动布局
 pod 'SVProgressHUD', '2.2.5'        #提示框
@@ -42,7 +43,6 @@ pod 'YYModel', '1.0.4'              #字典转模型
 pod 'YYText', '1.0.7'               #富文本
 pod 'YYCategories', '1.0.4'         #分类
 pod 'YYCache', '1.0.4'              #缓存
-pod 'ZXCountDownView', '1.0.3'      #
 
 #pod 'SJVideoPlayer', '2.5.7'       #播放器
 #pod 'MWPhotoBrowser', '2.1.2'       # 图片浏览器(加载网络图片)8.6k
