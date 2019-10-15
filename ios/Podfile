@@ -38,7 +38,7 @@ pod 'SnapKit', '5.0.1'              #自动布局
 pod 'SVProgressHUD', '2.2.5'        #提示框
 pod 'SwiftyJSON', '5.0.0'           # Swift 转 JSON
 pod 'TXLiteAVSDK_Player', '6.7.7734' # 腾讯云播放器-独立播放器
-pod 'TZImagePickerController', '3.2.3' #本地选择图片与视频
+pod 'TZImagePickerController', '3.2.4' #本地选择图片与视频
 pod 'XRCarouselView', '2.6.1'       #轮播
 pod 'YYModel', '1.0.4'              #字典转模型
 pod 'YYText', '1.0.7'               #富文本
