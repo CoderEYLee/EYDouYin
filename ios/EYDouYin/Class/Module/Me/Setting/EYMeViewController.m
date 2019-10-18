@@ -106,7 +106,7 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     NSString *eventChannelName = @"com.pages.your/native_post";
     FlutterEventChannel *evenChannal = [FlutterEventChannel eventChannelWithName:eventChannelName binaryMessenger:flutterViewController];
     // 代理FlutterStreamHandler
-    [evenChannal setStreamHandler:self];
+    [evenChannal setStreamHandler:weakSelf];
     
     //push转场动画
     CATransition *animation = [CATransition animation];
