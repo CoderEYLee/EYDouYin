@@ -100,6 +100,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    void _pushSaved() {
+      Navigator.of(context).push(
+        new MaterialPageRoute(
+          builder: (context) {
+            return Scaffold();
+          },
+        ),
+      );
+    }
     
     return Scaffold(
       appBar: AppBar(
@@ -119,6 +129,8 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
+            // Image.asset('images/2.png'),
+            IconButton(icon: Icon(Icons.menu), onPressed: _pushSaved,)
           ],
         ),
       ),
