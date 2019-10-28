@@ -28,7 +28,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>4、UITableView分组(组头自适应高度)</string>
+		<string>5、UITableView分组(组头自适应高度)</string>
 		<key>vcName</key>
 		<string>EYTableViewSizeToFitViewController</string>
 	</dict>
@@ -37,6 +37,12 @@
 		<string>6、UIPageViewController</string>
 		<key>vcName</key>
 		<string>EYPageViewController</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>7、轮播框架</string>
+		<key>vcName</key>
+		<string>EYXRCarouselViewController</string>
 	</dict>
 </array>
 </plist>
