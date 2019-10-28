@@ -43,7 +43,7 @@
 	</dict>
 	<dict>
 		<key>groupName</key>
-		<string>三方框架使用</string>
+		<string>视频相关</string>
 		<key>items</key>
 		<array>
 			<dict>
@@ -62,14 +62,14 @@
 				<key>vcName</key>
 				<string>EYZFPlayerViewController</string>
 			</dict>
-            <dict>
-                <key>language</key>
-                <string>OC</string>
-                <key>name</key>
-                <string>AliPlayer使用</string>
-                <key>vcName</key>
-                <string>EYAliViewController</string>
-            </dict>
+			<dict>
+				<key>language</key>
+				<string>OC</string>
+				<key>name</key>
+				<string>AliPlayer使用</string>
+				<key>vcName</key>
+				<string>EYAliViewController</string>
+			</dict>
 		</array>
 	</dict>
 	<dict>
