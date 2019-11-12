@@ -139,7 +139,7 @@
     [TXLiveBase setConsoleEnabled:NO];
     
     // 2.8Flutter初始化
-    self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
+//    self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
     
     // 2.9滚动条与分割线
     UIScrollView.appearance.showsHorizontalScrollIndicator = NO;
