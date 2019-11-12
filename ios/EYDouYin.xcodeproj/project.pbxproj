@@ -58,6 +58,7 @@
 		605C3FB32334B12C003069CC /* 123.mkv in Resources */ = {isa = PBXBuildFile; fileRef = 605C3FB22334B12C003069CC /* 123.mkv */; };
 		605C3FB52334B9FC003069CC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 605C3FB42334B9FC003069CC /* logo.png */; };
 		605EECB122B8E3B80001610D /* EYMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605EECB022B8E3B80001610D /* EYMineViewController.m */; };
+		606355D523669C850053644C /* EYXRCarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606355D423669C850053644C /* EYXRCarouselViewController.m */; };
 		60656FF4231D0E4200C0548C /* EYLikeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60656FF1231D0E4200C0548C /* EYLikeAnimation.m */; };
 		606B658A219182130059D1F7 /* UIButton+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B6589219182130059D1F7 /* UIButton+EYSDWebImage.m */; };
 		606B658D2191883B0059D1F7 /* UIImage+EYAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B658C2191883B0059D1F7 /* UIImage+EYAddition.m */; };
@@ -373,6 +374,8 @@
 		605C3FB42334B9FC003069CC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		605EECAF22B8E3B80001610D /* EYMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMineViewController.h; sourceTree = "<group>"; };
 		605EECB022B8E3B80001610D /* EYMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMineViewController.m; sourceTree = "<group>"; };
+		606355D323669C850053644C /* EYXRCarouselViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYXRCarouselViewController.h; sourceTree = "<group>"; };
+		606355D423669C850053644C /* EYXRCarouselViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYXRCarouselViewController.m; sourceTree = "<group>"; };
 		60656FED231D0E4200C0548C /* EYLikeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYLikeAnimation.h; sourceTree = "<group>"; };
 		60656FF1231D0E4200C0548C /* EYLikeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYLikeAnimation.m; sourceTree = "<group>"; };
 		606B6588219182130059D1F7 /* UIButton+EYSDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+EYSDWebImage.h"; sourceTree = "<group>"; };
@@ -1047,6 +1050,15 @@
 			path = ARM_SIMULATOR;
 			sourceTree = "<group>";
 		};
+		606355D223669C200053644C /* 7、轮播 */ = {
+			isa = PBXGroup;
+			children = (
+				606355D323669C850053644C /* EYXRCarouselViewController.h */,
+				606355D423669C850053644C /* EYXRCarouselViewController.m */,
+			);
+			path = "7、轮播";
+			sourceTree = "<group>";
+		};
 		60656FEC231D0E4200C0548C /* EYLikeAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1307,6 +1319,7 @@
 				6085A1612189A81100637F31 /* 4、UICollectionView 其他布局使用 */,
 				6041F3A42319316200EAED19 /* 5、UITableView分组 */,
 				60F697582328EED000EDF4A4 /* 6、UIPageViewController */,
+				606355D223669C200053644C /* 7、轮播 */,
 			);
 			path = "详情列表";
 			sourceTree = "<group>";
@@ -2667,6 +2680,7 @@
 				6080A76B22C744A5003EC084 /* EYMeituanRefreshView.swift in Sources */,
 				60C40089218BFB9B00B07E4A /* EYCollectionViewController.m in Sources */,
 				60EE77B62120217D004133A6 /* UIBarButtonItem+EYExtension.m in Sources */,
+				606355D523669C850053644C /* EYXRCarouselViewController.m in Sources */,
 				6080A7A022C744A5003EC084 /* EYComposeTypeButton.swift in Sources */,
 				6080A78022C744A5003EC084 /* EYEmoticon.swift in Sources */,
 				60752B422182C533001B857C /* EYSJVideoPlayerViewController.m in Sources */,
