@@ -13,6 +13,8 @@ private let EYMessageAAViewCellId = "EYMessageAAViewCellId"
 
 private let EYMessageAAViewViewId = "EYMessageAAViewViewId"
 
+private let startDate = Date(timeIntervalSince1970: 1_589_904_000)
+
 open class EYMessageAAView: UIView {
 
     var monthView : JTACMonthView?
@@ -35,9 +37,7 @@ open class EYMessageAAView: UIView {
 
 extension EYMessageAAView: JTACMonthViewDataSource {
     public func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
-        let startDate = Date(timeIntervalSince1970: 1_589_904_000)
-        let parameters = ConfigurationParameters(startDate: startDate, endDate: Date())
-        return parameters
+        return ConfigurationParameters(startDate: startDate, endDate: Date(), hasStrictBoundaries: true)
     }
 }
 
@@ -64,8 +64,10 @@ extension EYMessageAAView: JTACMonthViewDelegate {
     }
     
     public func calendar(_ calendar: JTACMonthView, shouldSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) -> Bool {
-        print("将会选中");
-        return true
+        let timeIntervalStart = date.timeIntervalSince(startDate)
+        let timeIntervalEnd = Date().timeIntervalSince(date)
+        
+        return (timeIntervalStart >= 0.0 && timeIntervalEnd >= 0.0)
     }
     
     public func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
