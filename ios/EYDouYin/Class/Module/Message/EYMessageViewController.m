@@ -7,6 +7,7 @@
 //
 
 #import "EYMessageViewController.h"
+#import "EYDouYin-Swift.h"
 
 @interface EYMessageViewController ()
 
@@ -29,13 +30,17 @@
     self.gk_navLineHidden = YES;
     self.gk_navigationBar.backgroundColor = EYColorBlue;
     
+    EYMessageAAView *aaView = [[EYMessageAAView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenWidth / 7.0 * 6.0)];
+    aaView.backgroundColor = EYColorRed;
+    [self.view addSubview:aaView];
+    
     //1.滚动视图
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.gk_navigationBar.height, EYScreenWidth, EYScreenHeight)];
-    scrollView.backgroundColor = EYColorRed;
-    scrollView.contentSize = CGSizeMake(EYScreenWidth, EYScreenHeight * 2);
-    scrollView.showsVerticalScrollIndicator = YES;
-    scrollView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)];
-    [self.view addSubview:scrollView];
+//    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.gk_navigationBar.height, EYScreenWidth, EYScreenHeight)];
+//    scrollView.backgroundColor = EYColorRed;
+//    scrollView.contentSize = CGSizeMake(EYScreenWidth, EYScreenHeight * 2);
+//    scrollView.showsVerticalScrollIndicator = YES;
+//    scrollView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refresh)];
+//    [self.view addSubview:scrollView];
     
     //2.底部 view
     UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, EYScreenHeight - EYTabBarHomeIndicatorHeight, EYScreenWidth, EYTabBarHomeIndicatorHeight)];
