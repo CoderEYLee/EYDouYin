@@ -95,17 +95,7 @@ static EYHTTPManager *_HTTPManager = nil;
 
 #pragma mark - 公共方法
 - (void)ey_POST:(NSString *)URLString parameters:(nullable id)parameters success:(nullable void (^)(id _Nullable))success failure:(nullable void (^)(NSError * _Nonnull))failure {
-    EYLog(@"发起POST请求--->\nURL--->%@%@\n请求头--->%@\nparameters--->%@\n", self.afManager.baseURL, URLString, self.afManager.requestSerializer.HTTPRequestHeaders, parameters);
-    if (success) {
-        NSMutableDictionary *response = [NSMutableDictionary dictionary];
-        success(response);
-    }
-    
-    return;
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored"-Code will never be executed"
-    
-    [self.afManager POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.afManager POST:URLString parameters:parameters headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         EYLog(@"POST请求回调成功\nURL--->%@%@\nresponseObject--->%@", self.afManager.baseURL, URLString, responseObject);
         [self handle:URLString parameters:parameters response:responseObject success:success failure:failure];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -114,8 +104,6 @@ static EYHTTPManager *_HTTPManager = nil;
             failure(error);
         }
     }];
-    
-#pragma clang diagnostic pop
 }
 
 - (void)ey_DOWN:(NSString *)URLString progress:(void (^)(NSProgress * _Nonnull))downloadProgressBlock destination:(NSURL * _Nonnull (^)(NSURL * _Nonnull, NSURLResponse * _Nonnull))destination completionHandler:(void (^)(NSURLResponse * _Nonnull, NSURL * _Nullable, NSError * _Nullable))completionHandler {
@@ -208,7 +196,7 @@ static EYHTTPManager *_HTTPManager = nil;
     NSString *URLString = @"";
 
     EYLog(@"getToken请求--%@%@--%@-", self.afManager.baseURL, URLString, parameters);
-    [self.afManager POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.afManager POST:URLString parameters:parameters headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSInteger stateValue = [responseObject[@"state"] integerValue];
         EYLog(@"getToken请求回来数据-----%@", responseObject);
         switch (stateValue) {
