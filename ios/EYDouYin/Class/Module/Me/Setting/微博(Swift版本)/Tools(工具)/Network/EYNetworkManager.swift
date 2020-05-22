@@ -121,7 +121,6 @@ class EYNetworkManager: NSObject {
         } else {
             
             // 调用 request 发起真正的网络请求方法
-            // request(URLString: URLString, parameters: parameters, completion: completion)
             request(method: method, URLString: URLString, parameters: parameters, completion: completion)
         }
     }

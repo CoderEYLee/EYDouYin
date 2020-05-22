@@ -43,4 +43,8 @@
     [self.view addSubview:bottomView];
 }
 
+- (void)refresh {
+    
+}
+
 @end
