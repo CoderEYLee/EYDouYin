@@ -26,19 +26,21 @@ pod 'Bugly', '2.5.0'                #Bugly
 pod 'FMDB', '2.7.5'                 # 数据库存储
 pod 'GDataXML-HTML', '1.4.1'        # 解析 XML/EXCEL
 pod 'GKNavigationBarViewController', '2.4.7' #抖音的左滑 push 效果
-pod 'IQKeyboardManager', '6.5.0'    #键盘管理
+pod 'IQKeyboardManager', '6.5.5'    #键盘管理
 pod 'lottie-ios', '2.5.3'           # JSON 动画
+pod 'JTAppleCalendar','7.1.7'       #日历
 pod 'Masonry', '1.1.0'              #自动布局
 pod 'MJExtension', '3.2.1'          #字典转模型
-pod 'MJRefresh', '3.2.0'            #刷新
+pod 'MJRefresh', '3.4.1'            #刷新
 pod 'pop', '1.0.12'                 #动画
 pod 'RJBadgeKit', '0.2.5'           #小红点实现
-pod 'SDWebImage', '5.2.3'           #图片缓存
+pod 'RSKImageCropper', '2.2.3'      # 裁剪图片
+pod 'SDWebImage', '5.7.3'           #图片缓存
 pod 'SnapKit', '5.0.1'              #自动布局
 pod 'SVProgressHUD', '2.2.5'        #提示框
 pod 'SwiftyJSON', '5.0.0'           # Swift 转 JSON
 pod 'TXLiteAVSDK_Player', '6.7.7754' # 腾讯云播放器-独立播放器
-pod 'TZImagePickerController', '3.2.4' #本地选择图片与视频
+pod 'TZImagePickerController', '3.3.1' #本地选择图片与视频
 pod 'XRCarouselView', '2.6.1'       #轮播
 pod 'YYModel', '1.0.4'              #字典转模型
 pod 'YYText', '1.0.7'               #富文本
