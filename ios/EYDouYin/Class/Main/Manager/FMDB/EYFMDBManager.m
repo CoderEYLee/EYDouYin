@@ -90,10 +90,10 @@ static EYFMDBManager *_FMDBManager = nil;
         if (self.mermoryResults.count >= EYFMDBManagerReportMinCount) {//需要上报数据
             NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
             parameters[@"results"] = [EYClickPointModel mj_keyValuesArrayWithObjectArray:self.mermoryResults];
-            if ([[EYHTTPManager manager] tt_RecordUserClickWithParameters:parameters]) {
-                [self.mermoryResults removeAllObjects]; //删除内存
-                [EYFMDBTool deleteAllClickPointModel];  //删除数据库
-            }
+//            if ([[EYHTTPManager manager] tt_RecordUserClickWithParameters:parameters]) {
+//                [self.mermoryResults removeAllObjects]; //删除内存
+//                [EYFMDBTool deleteAllClickPointModel];  //删除数据库
+//            }
         }
     });
 }
