@@ -59,12 +59,12 @@ static TTOSSManager *_OSSmanager = nil;
             dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
 
             NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-            [[EYHTTPManager manager] ey_GetAuthFileTokenWithParameters:parameters success:^(id  _Nullable responseObject) {
-                dictionary = responseObject;
+//            [[EYHTTPManager manager] ey_GetAuthFileTokenWithParameters:parameters success:^(id  _Nullable responseObject) {
+//                dictionary = responseObject;
+//                dispatch_semaphore_signal(semaphore);
+//            } failure:^(NSError * _Nonnull error) {
                 dispatch_semaphore_signal(semaphore);
-            } failure:^(NSError * _Nonnull error) {
-                dispatch_semaphore_signal(semaphore);
-            }];
+//            }];
             dispatch_semaphore_wait(semaphore,DISPATCH_TIME_FOREVER);
 
             NSDictionary *credentials = dictionary[@"data"][@"Credentials"];
