@@ -1,10 +1,10 @@
-#source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/aliyun/aliyun-specs.git'
 
 use_frameworks!
 inhibit_all_warnings!
 
-#platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'EYDouYin' do
 
@@ -55,7 +55,7 @@ pod 'YYCache', '1.0.4'              #缓存
 
 
 #pragma mark - 微博(Swift 版本)
-pod "Weibo_SDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
+pod "Weibo_SDK", '3.2.7'
 
 #pragma mark - React-Native
 # 'node_modules'目录一般位于根目录中
