@@ -20,12 +20,12 @@ pod 'ZFPlayer/AVPlayer', '~> 3.0'
 
 pod 'AFNetworking', '4.0.1'         #网络请求
 pod 'Alamofire', '5.0.0-rc.2'       #网络请求
-pod 'AliyunOSSiOS', '2.10.7'        # 阿里云 OSS
+pod 'AliyunOSSiOS', '2.10.8'        # 阿里云 OSS
 pod 'AvoidCrash', '2.5.2'           # 防止崩溃
 pod 'Bugly', '2.5.0'                #Bugly
 pod 'FMDB', '2.7.5'                 # 数据库存储
 pod 'GDataXML-HTML', '1.4.1'        # 解析 XML/EXCEL
-pod 'GKNavigationBarViewController', '2.3.8' #抖音的左滑 push 效果
+pod 'GKNavigationBarViewController', '2.4.7' #抖音的左滑 push 效果
 pod 'IQKeyboardManager', '6.5.0'    #键盘管理
 pod 'lottie-ios', '2.5.3'           # JSON 动画
 pod 'Masonry', '1.1.0'              #自动布局
