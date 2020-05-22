@@ -3212,7 +3212,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PYJ3M9TJFN;
+				DEVELOPMENT_TEAM = 3A5H5A6LD7;
 				INFOPLIST_FILE = EYDouYinUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3231,7 +3231,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PYJ3M9TJFN;
+				DEVELOPMENT_TEAM = 3A5H5A6LD7;
 				INFOPLIST_FILE = EYDouYinUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
