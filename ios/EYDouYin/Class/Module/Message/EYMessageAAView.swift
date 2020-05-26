@@ -17,17 +17,18 @@ private let startDate = Date(timeIntervalSince1970: 1_589_904_000)
 
 open class EYMessageAAView: UIView {
 
-    var monthView : JTACMonthView?
+    lazy var monthView : JTACMonthView = {
+        let monthView = JTACMonthView(frame: self.frame)
+        monthView.ibCalendarDataSource = self
+        monthView.ibCalendarDelegate = self
+        monthView.register(EYJTACDayCell.self, forCellWithReuseIdentifier: EYMessageAAViewCellId)
+        monthView.register(JTACMonthReusableView.self, forSupplementaryViewOfKind: "", withReuseIdentifier: EYMessageAAViewViewId)
+        return monthView
+    }()
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
-        monthView = JTACMonthView(frame: frame)
-        monthView?.ibCalendarDataSource = self
-        monthView?.ibCalendarDelegate = self
-        monthView?.register(EYJTACDayCell.self, forCellWithReuseIdentifier: EYMessageAAViewCellId)
-        monthView?.register(JTACMonthReusableView.self, forSupplementaryViewOfKind: "", withReuseIdentifier: EYMessageAAViewViewId)
-        monthView?.scrollDirection = .horizontal
-        addSubview(monthView!)
+        addSubview(monthView)
     }
     
     required public init?(coder: NSCoder) {
