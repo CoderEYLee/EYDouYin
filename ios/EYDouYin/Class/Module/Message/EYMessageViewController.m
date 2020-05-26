@@ -30,7 +30,7 @@
     self.gk_navLineHidden = YES;
     self.gk_navigationBar.backgroundColor = EYColorBlue;
     
-    EYMessageAAView *aaView = [[EYMessageAAView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenWidth / 7.0 * 6.0)];
+    EYMessageAAView *aaView = [[EYMessageAAView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenWidth)];
     aaView.backgroundColor = EYColorRed;
     [self.view addSubview:aaView];
     
