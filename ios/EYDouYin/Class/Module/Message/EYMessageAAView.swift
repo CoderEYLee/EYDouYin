@@ -51,11 +51,9 @@ extension EYMessageAAView: JTACMonthViewDataSource {
 extension EYMessageAAView: JTACMonthViewDelegate {
     public func calendar(_ calendar: JTACMonthView, willDisplay cell: JTACDayCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         print("将会渲染");
-        //(cell as? CellView)?.setupCellBeforeDisplay(cellState, date: date)
     }
     
     public func calendar(_ calendar: JTACMonthView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTACDayCell {
-        print("渲染cell");
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: EYMessageAAViewCellId, for: indexPath) as! EYJTACDayCell
         cell.cellState = cellState
         return cell
@@ -70,7 +68,6 @@ extension EYMessageAAView: JTACMonthViewDelegate {
     }
     
     public func calendar(_ calendar: JTACMonthView, shouldSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) -> Bool {
-        print("1234")
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         

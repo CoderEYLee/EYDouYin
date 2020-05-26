@@ -31,7 +31,6 @@
     self.gk_navigationBar.backgroundColor = EYColorBlue;
     
     EYMessageAAView *aaView = [[EYMessageAAView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenWidth)];
-    aaView.backgroundColor = EYColorRed;
     [self.view addSubview:aaView];
     
     //1.滚动视图
