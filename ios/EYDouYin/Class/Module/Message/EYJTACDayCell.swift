@@ -22,18 +22,23 @@ class EYJTACDayCell: JTACDayCell {
     var cellState: CellState? {
         didSet {
             dateLabel.text = cellState?.text
-            if cellState?.isSelected ?? false {
-                self.backgroundColor = .red
+            
+            if cellState?.dateBelongsTo == .thisMonth {
+                dateLabel.textColor = .black
             } else {
-                self.backgroundColor = .blue
+                dateLabel.textColor = .gray
+            }
+            
+            if cellState?.isSelected ?? false {
+                self.selectedBackgroundView?.isHidden = true
+            } else {
+                self.selectedBackgroundView?.isHidden = false
             }
         }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.backgroundColor = .blue
         
         self.addSubview(dateLabel)
         dateLabel.snp.makeConstraints({ (make) in

@@ -13,12 +13,11 @@ private let EYMessageAAViewCellId = "EYMessageAAViewCellId"
 
 private let EYMessageAAViewViewId = "EYMessageAAViewViewId"
 
-private let startDate = Date(timeIntervalSince1970: 1_589_904_000)
-
 open class EYMessageAAView: UIView {
 
     lazy var monthView : JTACMonthView = {
-        let monthView = JTACMonthView(frame: self.frame)
+        let monthView = JTACMonthView(frame: CGRect(origin: .zero, size: frame.size))
+        monthView.backgroundColor = EYRGBColor(r: 255, g: 255, b: 255)
         monthView.ibCalendarDataSource = self
         monthView.ibCalendarDelegate = self
         monthView.register(EYJTACDayCell.self, forCellWithReuseIdentifier: EYMessageAAViewCellId)
@@ -38,7 +37,13 @@ open class EYMessageAAView: UIView {
 
 extension EYMessageAAView: JTACMonthViewDataSource {
     public func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
-        return ConfigurationParameters(startDate: startDate, endDate: Date(), hasStrictBoundaries: true)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MM dd"
+        
+        let startDate = formatter.date(from: "2020 05 20") ?? Date()
+        let endDate = Date()
+        
+        return ConfigurationParameters(startDate: startDate, endDate: endDate, hasStrictBoundaries: true)
     }
 }
 
@@ -65,6 +70,12 @@ extension EYMessageAAView: JTACMonthViewDelegate {
     }
     
     public func calendar(_ calendar: JTACMonthView, shouldSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) -> Bool {
+        print("1234")
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MM dd"
+        
+        let startDate = formatter.date(from: "2020 05 20") ?? Date()
+        
         let timeIntervalStart = date.timeIntervalSince(startDate)
         let timeIntervalEnd = Date().timeIntervalSince(date)
         
@@ -100,38 +111,20 @@ extension EYMessageAAView: JTACMonthViewDelegate {
 
     public func calendar(_ calendar: JTACMonthView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTACMonthReusableView {
         let headerView = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: EYMessageAAViewViewId, for: indexPath)
+        headerView.backgroundColor = .green
         return headerView
     }
     
-//
-//    func calendar(_ calendar: JTAppleCalendarView,
-//        sectionHeaderIdentifierFor range: (start: Date, end: Date),
-//        belongingTo month: Int) -> String {
-//            if month % 2 > 0 {
-//                return "WhiteSectionHeaderView"
-//            }
-//            return "PinkSectionHeaderView"
-//    }
-//
-//    func calendar(_ calendar: JTAppleCalendarView, sectionHeaderSizeFor range: (start: Date, end: Date), belongingTo month: Int) -> CGSize {
-//        if month % 2 > 0 {
-//            return CGSize(width: 200, height: 50)
-//        } else {
-//            // Yes you can have different size headers
-//            return CGSize(width: 200, height: 100)
-//        }
-//    }
-//
-//    func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
-//        switch identifier {
-//        case "WhiteSectionHeaderView":
-//            let headerCell = header as? WhiteSectionHeaderView
-//            headerCell?.title.text = "Design multiple headers"
-//        default:
-//            let headerCell = header as? PinkSectionHeaderView
-//            headerCell?.title.text = "In any color or size you want"
-//        }
-//    }
+    public func sizeOfDecorationView(indexPath: IndexPath) -> CGRect {
+        return .zero
+    }
+    
+    public func scrollDidEndDecelerating(for calendar: JTACMonthView) {
+        print("结束滚动")
+    }
 
+    public func calendar(_ calendar: JTACMonthView, willScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        print("qqq")
+    }
 }
 
