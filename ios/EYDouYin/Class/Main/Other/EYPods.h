@@ -7,6 +7,7 @@
 //  通过Cocoa Pods 安装的三方
 
 #import <AFNetworking.h>
+#import <FSCalendar.h>
 #import <IQKeyboardManager.h>
 #import <Masonry.h>
 #import <MJExtension.h>
