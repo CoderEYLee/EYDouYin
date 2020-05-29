@@ -8,7 +8,9 @@
 
 #import "EYCalendarViewController.h"
 
-@interface EYCalendarViewController () <FSCalendarDataSource, FSCalendarDelegate>
+#define EYCalendarViewControllerStartDate 1589904000
+
+@interface EYCalendarViewController () <FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance>
 
 @property (weak , nonatomic) FSCalendar *calendar;
 @property (strong, nonatomic) NSCalendar *gregorian;
@@ -30,6 +32,7 @@
     self.view.backgroundColor = EYColorRandom;
     
     FSCalendar *calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenWidth)];
+    calendar.backgroundColor = EYColorWhite;
     calendar.locale = [NSLocale localeWithLocaleIdentifier:@"zh-CN"];
     calendar.dataSource = self;
     calendar.delegate = self;
@@ -55,7 +58,7 @@
 }
 
 - (NSDate *)minimumDateForCalendar:(FSCalendar *)calendar {
-    return [NSDate dateWithTimeIntervalSinceNow:- 60 * 60 * 24 * 365];
+    return [NSDate dateWithTimeIntervalSince1970:1589904000];
 }
 
 - (NSDate *)maximumDateForCalendar:(FSCalendar *)calendar {
@@ -64,7 +67,6 @@
 
 - (__kindof FSCalendarCell *)calendar:(FSCalendar *)calendar cellForDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)position {
     FSCalendarCell *cell = [calendar dequeueReusableCellWithIdentifier:@"EYCalendarViewControllerCellID" forDate:date atMonthPosition:position];
-    cell.backgroundColor = EYColorRandom;
     return cell;
 }
 
@@ -76,12 +78,16 @@
 #pragma mark - FSCalendarDelegate
 
 - (BOOL)calendar:(FSCalendar *)calendar shouldSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition {
-    EYLog(@"shouldSelectDate");
-    return YES;
+    NSTimeInterval timeInterval = date.timeIntervalSince1970;
+    NSTimeInterval end = [NSDate date].timeIntervalSince1970;
+    if (EYCalendarViewControllerStartDate <= timeInterval && timeInterval <= end) {
+        return YES;
+    }
+    return NO;
 }
 
 - (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition {
-    EYLog(@"didSelectDate");
+    
 }
 
 - (BOOL)calendar:(FSCalendar *)calendar shouldDeselectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition {
@@ -97,13 +103,74 @@
     EYLog(@"boundingRectWillChange");
 }
 
-- (void)calendar:(FSCalendar *)calendar willDisplayCell:(FSCalendarCell *)cell forDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition {
-    EYLog(@"willDisplayCell");
+- (void)calendar:(FSCalendar *)calendar willDisplayCell:(FSCalendarCell *)cell forDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition {//将会渲染 cell
+    
 }
 
-- (void)calendarCurrentPageDidChange:(FSCalendar *)calendar {
-    EYLog(@"calendarCurrentPageDidChange");
+- (void)calendarCurrentPageDidChange:(FSCalendar *)calendar {//滑动了一个月
+    
 }
 
+#pragma mark - FSCalendarDelegateAppearance
+- (UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance fillDefaultColorForDate:(NSDate *)date {
+    return calendar.backgroundColor;
+}
+
+- (UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance fillSelectionColorForDate:(NSDate *)date {
+    return EYColorRed;
+}
+
+- (UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance titleDefaultColorForDate:(NSDate *)date {
+    return EYColorRGBHex(0x21242B);
+}
+
+- (UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance titleSelectionColorForDate:(NSDate *)date {
+    return EYColorRed;
+}
+
+- (UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance subtitleDefaultColorForDate:(NSDate *)date {
+    return EYColorRGBHex(0x21242B);
+}
+
+
+- (UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance subtitleSelectionColorForDate:(NSDate *)date {
+    return EYColorRGBHex(0x21242B);
+}
+
+- (NSArray<UIColor *> *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance eventDefaultColorsForDate:(NSDate *)date {
+    return nil;
+}
+
+- (NSArray<UIColor *> *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance eventSelectionColorsForDate:(NSDate *)date {
+    return nil;
+}
+
+- (UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance borderDefaultColorForDate:(NSDate *)date {
+    return calendar.backgroundColor;
+}
+
+- (UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance borderSelectionColorForDate:(NSDate *)date {
+    return EYColorGreen;
+}
+
+- (CGPoint)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance titleOffsetForDate:(NSDate *)date {
+    return CGPointMake(0, 2);
+}
+
+- (CGPoint)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance subtitleOffsetForDate:(NSDate *)date {
+    return CGPointZero;
+}
+
+- (CGPoint)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance imageOffsetForDate:(NSDate *)date {
+    return CGPointZero;
+}
+
+- (CGPoint)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance eventOffsetForDate:(NSDate *)date {
+    return CGPointZero;
+}
+
+- (CGFloat)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance borderRadiusForDate:(NSDate *)date {
+    return 0;
+}
 
 @end
