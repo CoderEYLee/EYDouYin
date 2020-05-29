@@ -223,6 +223,7 @@
 		6085A174218AA91600637F31 /* EYFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6085A173218AA91600637F31 /* EYFlowLayout.m */; };
 		6093D599231CDA26002BC4BA /* EYBaseAliVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6093D598231CDA26002BC4BA /* EYBaseAliVideoPlayer.m */; };
 		609C575822B257980010AF7D /* EYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 609C575722B257980010AF7D /* EYProgressHUD.m */; };
+		60AABF612481AC5600FFD89B /* EYCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AABF602481AC5600FFD89B /* EYCalendarViewController.m */; };
 		60AAFC7722B27DE600F30A9B /* sheet1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 60AAFC7622B27DE600F30A9B /* sheet1.xml */; };
 		60AAFC7C22B374E800F30A9B /* EYExcelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AAFC7B22B374E800F30A9B /* EYExcelTool.m */; };
 		60AAFC7F22B375C300F30A9B /* EYExcelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AAFC7E22B375C300F30A9B /* EYExcelModel.m */; };
@@ -611,6 +612,8 @@
 		6093D598231CDA26002BC4BA /* EYBaseAliVideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYBaseAliVideoPlayer.m; sourceTree = "<group>"; };
 		609C575622B257980010AF7D /* EYProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYProgressHUD.h; sourceTree = "<group>"; };
 		609C575722B257980010AF7D /* EYProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYProgressHUD.m; sourceTree = "<group>"; };
+		60AABF5F2481AC5600FFD89B /* EYCalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCalendarViewController.h; sourceTree = "<group>"; };
+		60AABF602481AC5600FFD89B /* EYCalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCalendarViewController.m; sourceTree = "<group>"; };
 		60AAFC7622B27DE600F30A9B /* sheet1.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = sheet1.xml; path = ../../../Resource/sheet1.xml; sourceTree = "<group>"; };
 		60AAFC7A22B374E800F30A9B /* EYExcelTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYExcelTool.h; sourceTree = "<group>"; };
 		60AAFC7B22B374E800F30A9B /* EYExcelTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYExcelTool.m; sourceTree = "<group>"; };
@@ -1326,6 +1329,7 @@
 				6041F3A42319316200EAED19 /* 5、UITableView分组 */,
 				60F697582328EED000EDF4A4 /* 6、UIPageViewController */,
 				606355D223669C200053644C /* 7、轮播 */,
+				60AABF5E2481AC1600FFD89B /* 8、日历 */,
 			);
 			path = "详情列表";
 			sourceTree = "<group>";
@@ -1957,6 +1961,15 @@
 				6080A68422C61C8D003EC084 /* Service */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		60AABF5E2481AC1600FFD89B /* 8、日历 */ = {
+			isa = PBXGroup;
+			children = (
+				60AABF5F2481AC5600FFD89B /* EYCalendarViewController.h */,
+				60AABF602481AC5600FFD89B /* EYCalendarViewController.m */,
+			);
+			path = "8、日历";
 			sourceTree = "<group>";
 		};
 		60AAFC7922B374CF00F30A9B /* Excel */ = {
@@ -2768,6 +2781,7 @@
 				60AAFC7C22B374E800F30A9B /* EYExcelTool.m in Sources */,
 				6085A174218AA91600637F31 /* EYFlowLayout.m in Sources */,
 				6080A7B522C744A5003EC084 /* EmmitParticles.swift in Sources */,
+				60AABF612481AC5600FFD89B /* EYCalendarViewController.m in Sources */,
 				6012FD70215A36BF004A3083 /* UIView+EYCornerRadius.m in Sources */,
 				60752B682186F3CE001B857C /* EYShop.m in Sources */,
 				601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */,

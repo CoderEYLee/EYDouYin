@@ -44,5 +44,11 @@
 		<key>vcName</key>
 		<string>EYXRCarouselViewController</string>
 	</dict>
+    <dict>
+        <key>title</key>
+        <string>8、日历组件</string>
+        <key>vcName</key>
+        <string>EYCalendarViewController</string>
+    </dict>
 </array>
 </plist>
