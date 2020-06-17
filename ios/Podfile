@@ -27,7 +27,7 @@ pod 'FMDB', '2.7.5'                 # 数据库存储
 pod 'FSCalendar', '2.8.1'           # 日历 8.8K OC/Swift
 pod 'FSPagerView', '0.8.3'          # 轮播
 pod 'GDataXML-HTML', '1.4.1'        # 解析 XML/EXCEL
-pod 'GKNavigationBarViewController', '2.4.7' #抖音的左滑 push 效果
+pod 'GKNavigationBarViewController', '2.4.9' #抖音的左滑 push 效果
 pod 'IQKeyboardManager', '6.5.5'    # 键盘管理
 pod 'libOpenInstallSDK', '2.3.1'    # OpenInstall
 pod 'lottie-ios', '2.5.3'           # JSON 动画
@@ -43,7 +43,7 @@ pod 'SnapKit', '5.0.1'              # 自动布局
 pod 'SVProgressHUD', '2.2.5'        # 提示框
 pod 'SwiftyJSON', '5.0.0'           # Swift 转 JSON
 pod 'TXLiteAVSDK_Player', '7.2.8932' # 腾讯云播放器-独立播放器
-pod 'TZImagePickerController', '3.3.1' #本地选择图片与视频
+pod 'TZImagePickerController', '3.3.2' #本地选择图片与视频
 pod 'XRCarouselView', '2.6.1'       # 轮播
 pod 'YYModel', '1.0.4'              # 字典转模型
 pod 'YYText', '1.0.7'               # 富文本

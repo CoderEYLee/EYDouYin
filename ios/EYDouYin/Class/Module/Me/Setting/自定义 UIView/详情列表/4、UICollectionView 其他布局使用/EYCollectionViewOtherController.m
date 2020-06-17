@@ -26,7 +26,17 @@ static NSString *const EYCollectionViewOtherControllerCellID = @"EYCollectionVie
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.collectionView reloadData];
+    // 1.自定义布局
+    EYCircleLayout *layout = [[EYCircleLayout alloc] init];
+
+    // 2.创建UICollectionView
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 200, EYScreenWidth, 300) collectionViewLayout:layout];
+    collectionView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    collectionView.dataSource = self;
+    collectionView.delegate = self;
+    [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(EYShopCell.class) bundle:nil] forCellWithReuseIdentifier:EYCollectionViewOtherControllerCellID];
+    [self.view addSubview:collectionView];
+    self.collectionView = collectionView;
 }
 
 - (IBAction)tapSegmentdCotrol:(UISegmentedControl *)sender {
@@ -61,23 +71,6 @@ static NSString *const EYCollectionViewOtherControllerCellID = @"EYCollectionVie
 }
 
 #pragma mark - 懒加载
-- (UICollectionView *)collectionView {
-    if (nil == _collectionView) {
-        // 1.自定义布局
-        EYCircleLayout *layout = [[EYCircleLayout alloc] init];
-
-        // 2.创建UICollectionView
-        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 200, EYScreenWidth, 300) collectionViewLayout:layout];
-        collectionView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        collectionView.dataSource = self;
-        collectionView.delegate = self;
-        [collectionView registerNib:[UINib nibWithNibName:@"EYShopCell" bundle:nil] forCellWithReuseIdentifier:EYCollectionViewOtherControllerCellID];
-        [self.view addSubview:collectionView];
-        self.collectionView = collectionView;
-    }
-    return _collectionView;
-}
-
 - (NSMutableArray *)collectionViewShops {
     if (nil == _collectionViewShops) {
         _collectionViewShops = [EYShop mj_objectArrayWithFilename:@"Shops.plist"];

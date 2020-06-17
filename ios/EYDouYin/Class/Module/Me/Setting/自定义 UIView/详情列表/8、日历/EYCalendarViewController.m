@@ -33,7 +33,9 @@
     
     FSCalendar *calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenWidth)];
     calendar.backgroundColor = EYColorWhite;
+    calendar.appearance.headerDateFormat = @"";
     calendar.locale = [NSLocale localeWithLocaleIdentifier:@"zh-CN"];
+    calendar.appearance.caseOptions = FSCalendarCaseOptionsWeekdayUsesSingleUpperCase;
     calendar.dataSource = self;
     calendar.delegate = self;
     [calendar registerClass:FSCalendarCell.class forCellReuseIdentifier:@"EYCalendarViewControllerCellID"];
@@ -125,7 +127,7 @@
 }
 
 - (UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance titleSelectionColorForDate:(NSDate *)date {
-    return EYColorRed;
+    return EYColorRGBHex(0x21242B);
 }
 
 - (UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance subtitleDefaultColorForDate:(NSDate *)date {
