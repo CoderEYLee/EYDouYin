@@ -19,6 +19,7 @@ open class EYJTCalendarView: UIView {
         let monthView = JTACMonthView(frame: CGRect(origin: .zero, size: frame.size))
         monthView.backgroundColor = EYRGBColor(r: 255, g: 255, b: 255)
         monthView.scrollDirection = .horizontal
+        monthView.isPagingEnabled = true
         monthView.ibCalendarDataSource = self
         monthView.ibCalendarDelegate = self
         monthView.register(EYJTACDayCell.self, forCellWithReuseIdentifier: EYMessageAAViewCellId)
