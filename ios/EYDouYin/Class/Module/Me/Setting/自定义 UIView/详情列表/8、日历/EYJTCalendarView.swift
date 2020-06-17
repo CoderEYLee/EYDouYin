@@ -13,11 +13,12 @@ private let EYMessageAAViewCellId = "EYMessageAAViewCellId"
 
 private let EYMessageAAViewViewId = "EYMessageAAViewViewId"
 
-open class EYMessageAAView: UIView {
+open class EYJTCalendarView: UIView {
 
     lazy var monthView : JTACMonthView = {
         let monthView = JTACMonthView(frame: CGRect(origin: .zero, size: frame.size))
         monthView.backgroundColor = EYRGBColor(r: 255, g: 255, b: 255)
+        monthView.scrollDirection = .horizontal
         monthView.ibCalendarDataSource = self
         monthView.ibCalendarDelegate = self
         monthView.register(EYJTACDayCell.self, forCellWithReuseIdentifier: EYMessageAAViewCellId)
@@ -35,7 +36,7 @@ open class EYMessageAAView: UIView {
     }
 }
 
-extension EYMessageAAView: JTACMonthViewDataSource {
+extension EYJTCalendarView: JTACMonthViewDataSource {
     public func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
@@ -48,7 +49,7 @@ extension EYMessageAAView: JTACMonthViewDataSource {
 }
 
 // MARK : JTAppleCalendarDelegate
-extension EYMessageAAView: JTACMonthViewDelegate {
+extension EYJTCalendarView: JTACMonthViewDelegate {
     public func calendar(_ calendar: JTACMonthView, willDisplay cell: JTACDayCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         print("将会渲染");
     }

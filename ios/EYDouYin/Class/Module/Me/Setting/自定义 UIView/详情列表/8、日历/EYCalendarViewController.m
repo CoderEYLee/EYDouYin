@@ -7,6 +7,7 @@
 //
 
 #import "EYCalendarViewController.h"
+#import "EYDouYin-Swift.h"
 
 #define EYCalendarViewControllerStartDate 1589904000
 
@@ -43,6 +44,9 @@
     self.calendar = calendar;
     
     self.gregorian = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    
+    EYJTCalendarView *jtCalendarView = [[EYJTCalendarView alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight + EYScreenWidth, EYScreenWidth, EYScreenWidth)];
+    [self.view addSubview:jtCalendarView];
 }
 
 #pragma mark - FSCalendarDataSource
