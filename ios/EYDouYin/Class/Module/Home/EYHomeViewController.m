@@ -106,14 +106,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    if (self.currentPlayViewController.isPlaying) {
-        [self.currentPlayViewController pausePlay];
-    }
-}
-
 #pragma mark - HTTP
 //3.请求网络数据
 - (void)requestVideo {

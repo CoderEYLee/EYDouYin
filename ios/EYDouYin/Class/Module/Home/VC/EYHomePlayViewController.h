@@ -18,32 +18,22 @@ NS_ASSUME_NONNULL_BEGIN
 /// startPlay后是否立即播放，默认NO
 @property (assign, nonatomic) BOOL isAutoPlay;
 
-/**
- 开始播放视频
- */
+///开始播放视频
 //- (void)startPlayWithURLString:(NSString *)TX_URLString;
 
-/**
- 暂停播放
- */
+///暂停播放
 - (void)pausePlay;
 
-/**
- 恢复播放
- */
+///恢复播放
 - (void)resumePlay;
 
-/**
- 停止播放
- */
+///停止播放
 - (void)stopPlay;
 
-/**
- 移除播放
- */
+///移除播放
 - (void)removePlay;
 
-/// 是否正在播放
+///是否正在播放
 @property (assign, nonatomic, readonly) BOOL isPlaying;
 
 @end
