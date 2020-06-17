@@ -34,7 +34,7 @@
 		602A387122A12BCD00D6DB0D /* EYVideoArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 602A387022A12BCC00D6DB0D /* EYVideoArray.plist */; };
 		602DEE5B229E5756006B61A3 /* EYNotificationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 602DEE5A229E5756006B61A3 /* EYNotificationTool.m */; };
 		6041F3A72319319B00EAED19 /* EYTableViewSizeToFitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6041F3A62319319B00EAED19 /* EYTableViewSizeToFitViewController.m */; };
-		6046A2AF247796B500348E10 /* EYMessageAAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046A2AE247796B500348E10 /* EYMessageAAView.swift */; };
+		6046A2AF247796B500348E10 /* EYJTCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046A2AE247796B500348E10 /* EYJTCalendarView.swift */; };
 		6046A2B22477AD5500348E10 /* EYJTACDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046A2B02477AD5500348E10 /* EYJTACDayCell.swift */; };
 		6055AD382116933E005DC856 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD372116933E005DC856 /* UIView+Extension.m */; };
 		6055AD3C2116B382005DC856 /* TabBar.json in Resources */ = {isa = PBXBuildFile; fileRef = 6055AD3B2116B382005DC856 /* TabBar.json */; };
@@ -353,7 +353,7 @@
 		602DEE5A229E5756006B61A3 /* EYNotificationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYNotificationTool.m; sourceTree = "<group>"; };
 		6041F3A52319319B00EAED19 /* EYTableViewSizeToFitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYTableViewSizeToFitViewController.h; sourceTree = "<group>"; };
 		6041F3A62319319B00EAED19 /* EYTableViewSizeToFitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYTableViewSizeToFitViewController.m; sourceTree = "<group>"; };
-		6046A2AE247796B500348E10 /* EYMessageAAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EYMessageAAView.swift; sourceTree = "<group>"; };
+		6046A2AE247796B500348E10 /* EYJTCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EYJTCalendarView.swift; sourceTree = "<group>"; };
 		6046A2B02477AD5500348E10 /* EYJTACDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EYJTACDayCell.swift; sourceTree = "<group>"; };
 		6055AD362116933E005DC856 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		6055AD372116933E005DC856 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
@@ -931,8 +931,6 @@
 			children = (
 				601B032C21056E8600489E96 /* EYMessageViewController.h */,
 				601B032D21056E8600489E96 /* EYMessageViewController.m */,
-				6046A2AE247796B500348E10 /* EYMessageAAView.swift */,
-				6046A2B02477AD5500348E10 /* EYJTACDayCell.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -1967,6 +1965,8 @@
 			children = (
 				60AABF5F2481AC5600FFD89B /* EYCalendarViewController.h */,
 				60AABF602481AC5600FFD89B /* EYCalendarViewController.m */,
+				6046A2AE247796B500348E10 /* EYJTCalendarView.swift */,
+				6046A2B02477AD5500348E10 /* EYJTACDayCell.swift */,
 			);
 			path = "8、日历";
 			sourceTree = "<group>";
@@ -2726,7 +2726,7 @@
 				6080A78622C744A5003EC084 /* EYEmoticonToolbar.swift in Sources */,
 				6075413A2104CC4C00EB258D /* main.m in Sources */,
 				6080A78E22C744A5003EC084 /* EYStatusListDAL.swift in Sources */,
-				6046A2AF247796B500348E10 /* EYMessageAAView.swift in Sources */,
+				6046A2AF247796B500348E10 /* EYJTCalendarView.swift in Sources */,
 				60780CB1230FCDBA007CFAD4 /* EYCustom2CollectionViewCell2.m in Sources */,
 				6080A78D22C744A5003EC084 /* EYUser.swift in Sources */,
 				6080A79022C744A5003EC084 /* EYStatusListViewModel.swift in Sources */,
