@@ -907,10 +907,9 @@
 			children = (
 				601B032321056E5F00489E96 /* EYHomeViewController.h */,
 				601B032421056E5F00489E96 /* EYHomeViewController.m */,
-				602A385F22A1141000D6DB0D /* PlayerViewController */,
+				602A385F22A1141000D6DB0D /* VC */,
 				602A385E22A113B700D6DB0D /* Work */,
 				602A385D22A1139700D6DB0D /* City */,
-				60B2FAE1213915A00046D13D /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -990,13 +989,13 @@
 			path = Work;
 			sourceTree = "<group>";
 		};
-		602A385F22A1141000D6DB0D /* PlayerViewController */ = {
+		602A385F22A1141000D6DB0D /* VC */ = {
 			isa = PBXGroup;
 			children = (
 				602A386022A1143400D6DB0D /* EYHomePlayViewController.h */,
 				602A386122A1143400D6DB0D /* EYHomePlayViewController.m */,
 			);
-			path = PlayerViewController;
+			path = VC;
 			sourceTree = "<group>";
 		};
 		602A386622A11F7900D6DB0D /* VideoPlayer */ = {
@@ -2042,13 +2041,6 @@
 				60B00F2222D39BB200941A14 /* TTFFmpegConverOC.m */,
 			);
 			path = FFmpeg;
-			sourceTree = "<group>";
-		};
-		60B2FAE1213915A00046D13D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		60B3657922E36D2A00283241 /* FFmpeg-iOS */ = {

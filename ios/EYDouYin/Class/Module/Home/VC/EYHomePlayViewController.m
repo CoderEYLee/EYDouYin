@@ -33,6 +33,16 @@
     [self setupData];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (self.playbutton.selected) {
+        
+    } else {
+        [self resumePlay];
+    }
+}
+
 //1. 初始化界面
 - (void)setupUI {
     //1.隐藏导航
@@ -107,16 +117,12 @@
     self.videoPlayer.isAutoPlay = isAutoPlay;
 }
 
-/**
- 开始播放视频
- */
+///开始播放视频
 - (void)startPlayWithURLString:(NSString *)TX_URLString {
     [self.videoPlayer startPlayWithURLString:TX_URLString];
 }
 
-/**
- 暂停播放
- */
+///暂停播放
 - (void)pausePlay {
     self.isAutoPlay = YES;
     [self.videoPlayer pausePlay];
@@ -124,9 +130,7 @@
     self.playbutton.selected = YES;
 }
 
-/**
- 恢复播放
- */
+///恢复播放
 - (void)resumePlay {
     // 1.恢复按钮状态
     self.playbutton.selected = NO;
@@ -135,9 +139,7 @@
     [self.videoPlayer resumePlay];
 }
 
-/**
- 停止播放
- */
+///停止播放
 - (void)stopPlay {
     // 1.恢复按钮状态
     self.playbutton.selected = NO;
@@ -146,9 +148,7 @@
     self.isAutoPlay = NO;
 }
 
-/**
- 移除播放
- */
+///移除播放
 - (void)removePlay {
     // 1.恢复按钮状态
     self.playbutton.selected = NO;
@@ -197,6 +197,13 @@
             break;
         }
         case PLAY_EVT_PLAY_PROGRESS:{// 进度
+            if (baseVideoPlayer.isPlaying) {
+                if (self.gk_visibleViewControllerIfExist == self) {
+                    
+                } else {
+                    [baseVideoPlayer pausePlay];
+                }
+            }
 //            float currTime = [param[EVT_PLAY_PROGRESS] floatValue];
 //            EYLog(@"PLAY_EVT_PLAY_PROGRESS==%f==%d", currTime, baseVideoPlayer.isPlaying);
 //            self.playbutton.selected = !baseVideoPlayer.isPlaying;
