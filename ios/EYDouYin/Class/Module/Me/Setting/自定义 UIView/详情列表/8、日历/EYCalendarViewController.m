@@ -29,7 +29,6 @@
 
 //1. 初始化界面
 - (void)setupUI {
-    self.gk_navLineHidden = YES;
     self.view.backgroundColor = EYColorRandom;
     
     FSCalendar *calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(0, EYStatusBarAndNaviBarHeight, EYScreenWidth, EYScreenWidth)];

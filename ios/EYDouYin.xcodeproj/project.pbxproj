@@ -24,6 +24,7 @@
 		601B032821056E6900489E96 /* EYFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032721056E6900489E96 /* EYFollowViewController.m */; };
 		601B032B21056E7700489E96 /* EYMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032A21056E7700489E96 /* EYMeViewController.m */; };
 		601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601B032D21056E8600489E96 /* EYMessageViewController.m */; };
+		601F07892499EF2300D9D64D /* EYArithmeticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 601F07882499EF2300D9D64D /* EYArithmeticViewController.m */; };
 		602112B522CF18EA00510A74 /* index.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 602112B422CF18EA00510A74 /* index.jsbundle */; };
 		6026FA5122C07DE200C7F18B /* EYMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6026FA5022C07DE100C7F18B /* EYMineCell.m */; };
 		602A3839229FA8FB00D6DB0D /* EYFollowListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602A3838229FA8FB00D6DB0D /* EYFollowListViewController.m */; };
@@ -335,6 +336,8 @@
 		601B032C21056E8600489E96 /* EYMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMessageViewController.h; sourceTree = "<group>"; };
 		601B032D21056E8600489E96 /* EYMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMessageViewController.m; sourceTree = "<group>"; };
 		601C8C8C22CDE51200106CB1 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		601F07872499EF2300D9D64D /* EYArithmeticViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYArithmeticViewController.h; sourceTree = "<group>"; };
+		601F07882499EF2300D9D64D /* EYArithmeticViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYArithmeticViewController.m; sourceTree = "<group>"; };
 		602112B422CF18EA00510A74 /* index.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.jsbundle; sourceTree = "<group>"; };
 		6026FA4F22C07DE100C7F18B /* EYMineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYMineCell.h; sourceTree = "<group>"; };
 		6026FA5022C07DE100C7F18B /* EYMineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYMineCell.m; sourceTree = "<group>"; };
@@ -951,6 +954,15 @@
 			path = PhotoBrower;
 			sourceTree = "<group>";
 		};
+		601F07862499EEA500D9D64D /* 9、算法 */ = {
+			isa = PBXGroup;
+			children = (
+				601F07872499EF2300D9D64D /* EYArithmeticViewController.h */,
+				601F07882499EF2300D9D64D /* EYArithmeticViewController.m */,
+			);
+			path = "9、算法";
+			sourceTree = "<group>";
+		};
 		602A3835229FA82800D6DB0D /* Follow */ = {
 			isa = PBXGroup;
 			children = (
@@ -1327,6 +1339,7 @@
 				60F697582328EED000EDF4A4 /* 6、UIPageViewController */,
 				606355D223669C200053644C /* 7、轮播 */,
 				60AABF5E2481AC1600FFD89B /* 8、日历 */,
+				601F07862499EEA500D9D64D /* 9、算法 */,
 			);
 			path = "详情列表";
 			sourceTree = "<group>";
@@ -2739,6 +2752,7 @@
 				601B032221056E4E00489E96 /* EYSendViewController.m in Sources */,
 				601B032521056E5F00489E96 /* EYHomeViewController.m in Sources */,
 				6080A68E22C61EBB003EC084 /* NSDate+EYFormat.m in Sources */,
+				601F07892499EF2300D9D64D /* EYArithmeticViewController.m in Sources */,
 				6080A76522C744A5003EC084 /* NSString+EYPath.m in Sources */,
 				6080A76822C744A5003EC084 /* NSString+EYHash.m in Sources */,
 				6080A77122C744A5003EC084 /* EYPhotoBrowserAnimator.m in Sources */,
