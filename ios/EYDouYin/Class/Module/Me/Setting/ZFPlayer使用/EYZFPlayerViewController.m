@@ -62,8 +62,6 @@
 }
 
 - (void)setupVideoView {
-    self.gk_navLineHidden = YES;
-    
     /// 播放器相关
     ZFAVPlayerManager *playerManager = [[ZFAVPlayerManager alloc] init];
     UIView *containerView = [[UIView alloc] initWithFrame:EYScreenBounds];

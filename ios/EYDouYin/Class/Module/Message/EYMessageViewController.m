@@ -26,7 +26,6 @@
 
 //1. 初始化界面
 - (void)setupUI {
-    self.gk_navLineHidden = YES;
     self.gk_navigationBar.backgroundColor = EYColorBlue;
     
     //1.滚动视图

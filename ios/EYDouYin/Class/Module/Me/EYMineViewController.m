@@ -113,7 +113,6 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         
         self.gk_navTitle = self.user_id;
         self.gk_navTintColor = EYColorRGBHexAlpha(0xFFFFFF, 0.0);
-        self.gk_navLineHidden = YES;
         
         //显示导航
         self.gk_navigationBar.hidden = NO;

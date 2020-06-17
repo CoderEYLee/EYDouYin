@@ -27,8 +27,6 @@
 
 //1. 初始化界面
 - (void)setupUI {
-    self.gk_navLineHidden = YES;
-    
     //1.1初始化播放器
     EYBaseAliVideoPlayer *aliVideoPlayer = [[EYBaseAliVideoPlayer alloc] init];
     aliVideoPlayer.playerView = self.view;

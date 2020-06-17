@@ -23,7 +23,6 @@
 
 //1. 初始化界面
 - (void)setupUI {
-    self.gk_navLineHidden = YES;
     self.view.backgroundColor = EYColorRandom;
     
     XRCarouselView *carouselView = [[XRCarouselView alloc] initWithFrame:CGRectMake(0, self.gk_navigationBar.height, EYScreenWidth, 300)];
