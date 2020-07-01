@@ -81,7 +81,7 @@
 #pragma mark - RK算法
 - (void)testSubString_RK {
     //是将对比字符变成了对比hash值。pow(x, y) x的y次方
-    NSInteger result = [self findSubstringInStringRKWithAllString:@"abcdefgh" subString:@"abcdefgh"];
+    NSInteger result = [self findSubstringInStringRKWithAllString:@"abcdefgh" subString:@"bcd"];
     EYLog(@"RK算法======%ld", result);
 }
 
@@ -98,9 +98,11 @@
     NSUInteger leftLength = allLength - subLength;
     double subHash = [self hashString:subString]; // 子串hash
     
+    NSString *tempString = @"";
     int i = 0;//主串
     while (i <= leftLength) {
-        if (subHash == [self hashString:[allString substringWithRange:NSMakeRange(i, subLength)]]) {
+        tempString = [allString substringWithRange:NSMakeRange(i, subLength)];
+        if (subHash == [self hashString:tempString] && [self isEqualString:subString string:tempString length:subLength]) {
             return i;
         }
         i++;
@@ -121,6 +123,23 @@
     }
     
     return sum;
+}
+
+- (BOOL)isEqualString:(NSString *)string1 string:(NSString *)string2 length:(NSInteger)length {
+    NSUInteger length1 = string1.length;
+    NSUInteger length2 = string2.length;
+    
+    if (length1 < length || length2 < length) {
+        return NO;
+    }
+    
+    for (int i = 0; i < length; i++) {
+        if ([string1 characterAtIndex:i] != [string2 characterAtIndex:i]) {//存在不同的
+            return NO;
+        }
+    }
+    //全部相同
+    return YES;
 }
 
 @end
