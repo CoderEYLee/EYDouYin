@@ -23,7 +23,7 @@
 #pragma mark - Life Cycle
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 1.语言
-    [self setupLanguage];
+    [self testMutableArray];
 
     // 2.设置启动页面
     [self launchViewController];
@@ -37,6 +37,11 @@
     EYLog(@"AppDelegate--1111111--->程序启动了");
 
     return YES;
+}
+
+//2.1算法测试(可变数组)
+- (void)testMutableArray {
+    
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
