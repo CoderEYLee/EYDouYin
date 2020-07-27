@@ -44,17 +44,23 @@
 		<key>vcName</key>
 		<string>EYXRCarouselViewController</string>
 	</dict>
-    <dict>
-        <key>title</key>
-        <string>8、日历组件</string>
-        <key>vcName</key>
-        <string>EYCalendarViewController</string>
-    </dict>
-    <dict>
-        <key>title</key>
-        <string>9、算法</string>
-        <key>vcName</key>
-        <string>EYArithmeticViewController</string>
-    </dict>
+	<dict>
+		<key>title</key>
+		<string>8、日历组件</string>
+		<key>vcName</key>
+		<string>EYCalendarViewController</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>9、算法</string>
+		<key>vcName</key>
+		<string>EYArithmeticViewController</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>10、悬浮按钮</string>
+		<key>vcName</key>
+		<string>EYFloatButtonViewController</string>
+	</dict>
 </array>
 </plist>

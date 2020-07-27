@@ -158,7 +158,7 @@
 - (void)appDidBecomeActive:(NSNotification *)noti {
     EYLog(@"程序已经变成活跃状态");
     
-    if (self.gk_visibleViewControllerIfExist == self) {
+    if (self.ey_visibleViewControllerIfExist == self) {
         [self.currentPlayViewController resumePlay];
     }
 }
