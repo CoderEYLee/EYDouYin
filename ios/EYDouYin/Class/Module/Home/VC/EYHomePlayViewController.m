@@ -198,7 +198,7 @@
         }
         case PLAY_EVT_PLAY_PROGRESS:{// 进度
             if (baseVideoPlayer.isPlaying) {
-                if (self.gk_visibleViewControllerIfExist == self) {
+                if (self.ey_visibleViewControllerIfExist == self) {
                     
                 } else {
                     [baseVideoPlayer pausePlay];
