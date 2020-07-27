@@ -11,7 +11,9 @@
 
 @interface EYHomeViewController : EYBaseViewController
 
-// 当前屏幕所属的控制器
-@property (weak, nonatomic, readonly) EYHomePlayViewController *currentPlayViewController;
+@property (weak, nonatomic, readonly) EYHomePlayViewController *toptopVC;//上
+@property (weak, nonatomic, readonly) EYHomePlayViewController *centerVC;//中
+@property (weak, nonatomic, readonly) EYHomePlayViewController *bottomVC;//下
+@property (weak, nonatomic, readonly) EYHomePlayViewController *currentVC;//当前
 
 @end

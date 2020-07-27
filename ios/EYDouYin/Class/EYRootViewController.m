@@ -51,7 +51,7 @@
 #pragma mark - GKViewControllerPushDelegate
 - (void)pushToNextViewController {
     if (self.selecetdIndex == EYTabBarViewTypeHome) {
-        NSString *user_id = self.tabBarVC.homeVC.currentPlayViewController.videoModel.user_id;
+        NSString *user_id = self.tabBarVC.homeVC.currentVC.videoModel.user_id;
         EYLog(@"123456==%@", user_id);
         
         EYMineViewController *vc = [[EYMineViewController alloc] init];

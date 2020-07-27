@@ -9,6 +9,7 @@
 #import "EYHomePlayViewController.h"
 #import "EYBaseTXVideoPlayer.h"
 #import "EYLikeAnimation.h"
+#import "EYHomeViewController.h"
 
 @interface EYHomePlayViewController () <EYBaseTXVideoPlayerDelegate>
 
@@ -198,11 +199,11 @@
         }
         case PLAY_EVT_PLAY_PROGRESS:{// 进度
             if (baseVideoPlayer.isPlaying) {
-                if (self.ey_visibleViewControllerIfExist == self) {
-                    
-                } else {
-                    [baseVideoPlayer pausePlay];
-                }
+                
+                ///业务代码
+                
+                ///以下代码是防护代码
+                [self handleVideoUISyncWhenCacheVideoWithPlayer:baseVideoPlayer];
             }
 //            float currTime = [param[EVT_PLAY_PROGRESS] floatValue];
 //            EYLog(@"PLAY_EVT_PLAY_PROGRESS==%f==%d", currTime, baseVideoPlayer.isPlaying);
@@ -213,6 +214,45 @@
         default:
             break;
     }
+}
+
+///处理视频播放状态和 UI 同步(视频缓冲期间)
+- (void)handleVideoUISyncWhenCacheVideoWithPlayer:(EYBaseTXVideoPlayer *)baseVideoPlayer {
+    // 定义一个block处理播放状态和 UI
+    void (^pauseVideoPlayerBlock)(void) = ^(){
+        ///1.上层有东西弹出
+        if (self.ey_visibleViewControllerIfExist == self) {
+            
+        } else {//上层有东西弹出
+            [self pausePlay];
+        }
+        
+        //2.缓存期间,用户点击了暂停
+        if (self.playbutton.isSelected) {
+            [self pausePlay];
+        }
+                    
+        //3.正在播放...
+        EYHomeViewController *parentVC = (EYHomeViewController *)self.parentViewController;
+        if ([parentVC isMemberOfClass:EYHomeViewController.class]) {
+            if (parentVC.currentVC.videoPlayer == baseVideoPlayer) {//当前
+                
+            } else {//上下vc在播放
+                if (parentVC.toptopVC == parentVC.currentVC) {
+                    [parentVC.centerVC stopPlay];
+                    [parentVC.bottomVC stopPlay];
+                } else if (parentVC.centerVC == parentVC.currentVC) {
+                    [parentVC.toptopVC stopPlay];
+                    [parentVC.bottomVC stopPlay];
+                } else {
+                    [parentVC.toptopVC stopPlay];
+                    [parentVC.centerVC stopPlay];
+                }
+            }
+        }
+    };
+    
+    pauseVideoPlayerBlock();
 }
 
 #pragma mark - 懒加载
