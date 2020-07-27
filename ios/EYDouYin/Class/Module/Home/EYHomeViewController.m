@@ -15,9 +15,10 @@
 
 // 滚动视图
 @property (weak, nonatomic) UIScrollView *scrollView;
-@property (weak, nonatomic) EYHomePlayViewController *toptopVC;//上
-@property (weak, nonatomic) EYHomePlayViewController *centerVC;//中
-@property (weak, nonatomic) EYHomePlayViewController *bottomVC;//下
+@property (weak, nonatomic, readwrite) EYHomePlayViewController *toptopVC;//上
+@property (weak, nonatomic, readwrite) EYHomePlayViewController *centerVC;//中
+@property (weak, nonatomic, readwrite) EYHomePlayViewController *bottomVC;//下
+@property (weak, nonatomic, readwrite) EYHomePlayViewController *currentVC;
 
 @property (strong, nonatomic) NSMutableArray <EYVideoModel *>*arrarM;
 
@@ -25,7 +26,6 @@
 @property (assign, nonatomic) NSUInteger currentVideoIndex;
 
 // 当前屏幕所属的控制器
-@property (weak, nonatomic, readwrite) EYHomePlayViewController *currentPlayViewController;
 
 @end
 
@@ -129,7 +129,7 @@
         });
 
         //3.设置当前控制器
-        self.currentPlayViewController = self.toptopVC;
+        self.currentVC = self.toptopVC;
     });
 }
 
@@ -159,15 +159,15 @@
     EYLog(@"程序已经变成活跃状态");
     
     if (self.ey_visibleViewControllerIfExist == self) {
-        [self.currentPlayViewController resumePlay];
+        [self.currentVC resumePlay];
     }
 }
 
 - (void)appWillResignActive:(NSNotification *)noti {
     EYLog(@"程序将会失去活跃状态");
     
-    if (self.currentPlayViewController.isPlaying) {
-        [self.currentPlayViewController pausePlay];
+    if (self.currentVC.isPlaying) {
+        [self.currentVC pausePlay];
     }
 }
 
@@ -193,17 +193,17 @@
     if (self.arrarM.count <= 3) {//小于等于3个只处理逻辑不处理界面
         if (contentOffsetY == 0) {
             self.currentVideoIndex = 0;
-            self.currentPlayViewController = self.toptopVC;
+            self.currentVC = self.toptopVC;
             EYLog(@"小于等于3个第%lu个视频", self.currentVideoIndex);
         } else if(contentOffsetY == EYScreenHeight) {
             self.currentVideoIndex = 1;
-            self.currentPlayViewController = self.centerVC;
+            self.currentVC = self.centerVC;
             EYLog(@"小于等于3个第%lu个视频", self.currentVideoIndex);
             // 获取更多数据
             [self getMoreVideoChangeContentSize];
         } else if(contentOffsetY == EYScreenHeight * 2) {
             self.currentVideoIndex = 2;
-            self.currentPlayViewController = self.bottomVC;
+            self.currentVC = self.bottomVC;
             EYLog(@"小于等于3个第%lu个视频", self.currentVideoIndex);
         } else {
 //            EYLog(@"小于等于3个其他位置==%f", contentOffsetY);
@@ -281,9 +281,9 @@
     //1.播放当前界面显示的对应视频
     EYVideoModel *videoModel = self.arrarM[self.currentVideoIndex];
     EYLog(@"需要播放的下标为**%lu**%@", self.currentVideoIndex, videoModel.ey_video_name);
-    [self.currentPlayViewController resumePlay];
+    [self.currentVC resumePlay];
     
-    if ([videoModel.ey_video_name isEqualToString:self.currentPlayViewController.videoModel.ey_video_name]) {
+    if ([videoModel.ey_video_name isEqualToString:self.currentVC.videoModel.ey_video_name]) {
         [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"播放的视频正确"];
     } else {
@@ -310,7 +310,7 @@
     self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
     
     //3.设置当前播放器
-    self.currentPlayViewController = self.centerVC;
+    self.currentVC = self.centerVC;
 }
 
 // 中 + 下 + 上
@@ -331,7 +331,7 @@
     self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
     
     //3.设置当前播放器
-    self.currentPlayViewController = self.bottomVC;
+    self.currentVC = self.bottomVC;
 }
 
 // 下 + 上 + 中
@@ -352,7 +352,7 @@
     self.centerVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
     
     //2.设置当前播放器
-    self.currentPlayViewController = self.toptopVC;
+    self.currentVC = self.toptopVC;
 }
 
 #pragma mark - 正常看
@@ -365,7 +365,7 @@
         [self.bottomVC stopPlay];
         self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
         
-        self.currentPlayViewController = self.toptopVC;
+        self.currentVC = self.toptopVC;
     } else if (remainder == 2) {//多两个
         [self.bottomVC stopPlay];
         self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 2];
@@ -373,7 +373,7 @@
         [self.toptopVC stopPlay];
         self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
         
-        self.currentPlayViewController = self.centerVC;
+        self.currentVC = self.centerVC;
     } else {//正好
         [self.toptopVC stopPlay];
         self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 2];
@@ -381,7 +381,7 @@
         [self.centerVC stopPlay];
         self.centerVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
         
-        self.currentPlayViewController = self.bottomVC;
+        self.currentVC = self.bottomVC;
     }
 }
 
@@ -393,7 +393,7 @@
         [self.centerVC stopPlay];
         self.centerVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
         
-        self.currentPlayViewController = self.bottomVC;
+        self.currentVC = self.bottomVC;
         
         [self.toptopVC stopPlay];
         self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
@@ -401,7 +401,7 @@
         [self.bottomVC stopPlay];
         self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
         
-        self.currentPlayViewController = self.toptopVC;
+        self.currentVC = self.toptopVC;
         
         [self.centerVC stopPlay];
         self.centerVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
@@ -409,7 +409,7 @@
         [self.toptopVC stopPlay];
         self.toptopVC.videoModel = self.arrarM[self.currentVideoIndex - 1];
         
-        self.currentPlayViewController = self.centerVC;
+        self.currentVC = self.centerVC;
         
         [self.bottomVC stopPlay];
         self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 1];
@@ -433,7 +433,7 @@
     self.bottomVC.videoModel = self.arrarM[self.currentVideoIndex + 2];
     
     //3.设置当前播放器
-    self.currentPlayViewController = self.toptopVC;
+    self.currentVC = self.toptopVC;
 }
 
 #pragma mark - 懒加载
