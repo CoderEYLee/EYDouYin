@@ -2346,9 +2346,9 @@
 		60D7176524CEA0A9000CC045 /* NumberView */ = {
 			isa = PBXGroup;
 			children = (
-				60D7176624CEA0A9000CC045 /* TextTransformationLayer.h */,
-				60D7176724CEA0A9000CC045 /* NumberTransformationView.m */,
 				60D7176824CEA0A9000CC045 /* NumberTransformationView.h */,
+				60D7176724CEA0A9000CC045 /* NumberTransformationView.m */,
+				60D7176624CEA0A9000CC045 /* TextTransformationLayer.h */,
 				60D7176924CEA0A9000CC045 /* TextTransformationLayer.m */,
 			);
 			path = NumberView;
