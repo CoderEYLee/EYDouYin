@@ -107,7 +107,7 @@ class EYStatusPictureView: UIView {
             selectedIndex -= 1
         }
         
-        let urls = (picURLs as NSArray).value(forKey: "thumbnail_pic") as! [String]
+        let urls = (picURLs as NSArray).value(forKeyPath: "largePic") as! [String]
         
         // 处理可见的图像视图数组
         var imageViewList = [UIImageView]()
