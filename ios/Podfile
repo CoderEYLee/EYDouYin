@@ -37,6 +37,7 @@ pod 'KakaJSON', '1.1.2'             # 字典转模型
 pod 'Masonry', '1.1.0'              # 自动布局
 pod 'MJExtension', '3.2.2'          # 字典转模型
 pod 'MJRefresh', '3.4.3'            # 刷新
+pod 'NSLogger', '1.9.7'             # 日志打印
 pod 'pop', '1.0.12'                 # 动画
 pod 'RJBadgeKit', '0.2.5'           # 小红点实现
 pod 'RSKImageCropper', '2.2.3'      # 裁剪图片

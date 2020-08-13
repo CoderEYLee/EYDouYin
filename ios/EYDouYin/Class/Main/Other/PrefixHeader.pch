@@ -30,6 +30,7 @@
 #import "EYManager.h"
 #import "TTFFmpegManager.h"
 #import "EYTestViewController.h"
+#import "TTBuglyManager.h"
 
 #endif
 

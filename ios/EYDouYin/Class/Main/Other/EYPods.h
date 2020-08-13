@@ -9,6 +9,7 @@
 #import <AFNetworking.h>
 #import <FSCalendar.h>
 #import <IQKeyboardManager.h>
+#import <LMJVerticalScrollText.h>
 #import <Masonry.h>
 #import <MJExtension.h>
 #import <MJRefresh.h>
