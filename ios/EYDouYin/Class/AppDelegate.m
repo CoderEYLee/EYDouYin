@@ -170,7 +170,7 @@
     NSString *errorReason = [NSString stringWithFormat:@"【ErrorReason】%@======\n【ErrorPlace】%@======\n【DefaultToDo】%@======【ErrorName】%@======", info[@"errorReason"], info[@"errorPlace"], info[@"defaultToDo"], info[@"errorName"]];
     NSArray *callStack = info[@"callStackSymbols"];
     
-    //[[TTBuglyManager manager] reportExceptionWithCategory:3 name:@"App崩溃" reason:errorReason callStack:callStack extraInfo:nil terminateApp:NO];
+    [[TTBuglyManager manager] reportExceptionWithCategory:3 name:@"App崩溃" reason:errorReason callStack:callStack extraInfo:nil terminateApp:NO];
 }
 
 #pragma mark - Private Methods
