@@ -254,8 +254,6 @@
 		60C9F37222E55A1700450718 /* EYCustomViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9F37122E55A1700450718 /* EYCustomViewController1.m */; };
 		60C9F37522E55ABA00450718 /* EYCustomFitView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9F37422E55ABA00450718 /* EYCustomFitView1.m */; };
 		60D7176424CEA068000CC045 /* EYFloatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D7176224CEA068000CC045 /* EYFloatButton.m */; };
-		60D7176A24CEA0AA000CC045 /* NumberTransformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D7176724CEA0A9000CC045 /* NumberTransformationView.m */; };
-		60D7176B24CEA0AA000CC045 /* TextTransformationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D7176924CEA0A9000CC045 /* TextTransformationLayer.m */; };
 		60D7176E24CEA0D4000CC045 /* EYFloatButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D7176D24CEA0D4000CC045 /* EYFloatButtonViewController.m */; };
 		60D7177124CEA34C000CC045 /* UIViewController+EYTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D7177024CEA34C000CC045 /* UIViewController+EYTopViewController.m */; };
 		60DBBD8A2302A2F200DD422E /* EYCustomViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DBBD892302A2F200DD422E /* EYCustomViewController2.m */; };
@@ -790,10 +788,6 @@
 		60C9F37422E55ABA00450718 /* EYCustomFitView1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EYCustomFitView1.m; path = ../EYCustomFitView1.m; sourceTree = "<group>"; };
 		60D7176224CEA068000CC045 /* EYFloatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYFloatButton.m; sourceTree = "<group>"; };
 		60D7176324CEA068000CC045 /* EYFloatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYFloatButton.h; sourceTree = "<group>"; };
-		60D7176624CEA0A9000CC045 /* TextTransformationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextTransformationLayer.h; sourceTree = "<group>"; };
-		60D7176724CEA0A9000CC045 /* NumberTransformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberTransformationView.m; sourceTree = "<group>"; };
-		60D7176824CEA0A9000CC045 /* NumberTransformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberTransformationView.h; sourceTree = "<group>"; };
-		60D7176924CEA0A9000CC045 /* TextTransformationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextTransformationLayer.m; sourceTree = "<group>"; };
 		60D7176C24CEA0D4000CC045 /* EYFloatButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFloatButtonViewController.h; sourceTree = "<group>"; };
 		60D7176D24CEA0D4000CC045 /* EYFloatButtonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFloatButtonViewController.m; sourceTree = "<group>"; };
 		60D7176F24CEA34C000CC045 /* UIViewController+EYTopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+EYTopViewController.h"; sourceTree = "<group>"; };
@@ -2333,7 +2327,6 @@
 				60D7176C24CEA0D4000CC045 /* EYFloatButtonViewController.h */,
 				60D7176D24CEA0D4000CC045 /* EYFloatButtonViewController.m */,
 				60D7176124CEA068000CC045 /* FloatButton */,
-				60D7176524CEA0A9000CC045 /* NumberView */,
 			);
 			path = "10、悬浮按钮";
 			sourceTree = "<group>";
@@ -2345,17 +2338,6 @@
 				60D7176324CEA068000CC045 /* EYFloatButton.h */,
 			);
 			path = FloatButton;
-			sourceTree = "<group>";
-		};
-		60D7176524CEA0A9000CC045 /* NumberView */ = {
-			isa = PBXGroup;
-			children = (
-				60D7176824CEA0A9000CC045 /* NumberTransformationView.h */,
-				60D7176724CEA0A9000CC045 /* NumberTransformationView.m */,
-				60D7176624CEA0A9000CC045 /* TextTransformationLayer.h */,
-				60D7176924CEA0A9000CC045 /* TextTransformationLayer.m */,
-			);
-			path = NumberView;
 			sourceTree = "<group>";
 		};
 		60DBBD842302A29400DD422E /* 1、YYLabel */ = {
@@ -2924,7 +2906,6 @@
 				6016065922D5F2A70082B278 /* EYTestView.m in Sources */,
 				60AAFC7F22B375C300F30A9B /* EYExcelModel.m in Sources */,
 				60C9F37522E55ABA00450718 /* EYCustomFitView1.m in Sources */,
-				60D7176B24CEA0AA000CC045 /* TextTransformationLayer.m in Sources */,
 				606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */,
 				6080A78C22C744A5003EC084 /* EYUserAccount.swift in Sources */,
 				60B00F2722D39BB300941A14 /* TTFFmpegManager.m in Sources */,
@@ -2935,7 +2916,6 @@
 				60BBC68B2104D83400DEEA34 /* EYBaseViewController.m in Sources */,
 				6085A15B21897A2800637F31 /* EYWaterflowShopCell1.m in Sources */,
 				6080A79122C744A5003EC084 /* EYStatusPicture.swift in Sources */,
-				60D7176A24CEA0AA000CC045 /* NumberTransformationView.m in Sources */,
 				6085A15E21897A3C00637F31 /* EYWaterflowShopCell2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

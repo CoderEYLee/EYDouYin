@@ -19,6 +19,7 @@
 #import <SVProgressHUD.h>
 #import <TZImagePickerController.h>
 #import <TXLiveBase.h>
+#import <UICountingLabel.h>
 #import <WeiboSDK.h>
 #import "XRCarouselView.h"
 #import <YYModel.h>
