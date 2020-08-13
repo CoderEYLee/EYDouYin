@@ -11,6 +11,7 @@
 #import "EYNavigationController.h"
 #import <AFNetworkActivityIndicatorManager.h>
 #import "EYRootViewController.h"
+#import <AvoidCrash.h>
 
 //#import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h> // Only if you have Flutter Plugins
 
@@ -91,6 +92,7 @@
 
 //3.初始化其他信息
 - (void)setupOtherInfo {
+    [self setupAvoidCrash];
     //2.1 键盘
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     manager.shouldResignOnTouchOutside = YES; // 点击背景收起键盘，默认NO
@@ -150,6 +152,25 @@
     UIScrollView.appearance.showsHorizontalScrollIndicator = NO;
     UIScrollView.appearance.showsVerticalScrollIndicator= NO;
     UITableView.appearance.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+///2.1初始化AvoidCrash
+- (void)setupAvoidCrash {
+    [AvoidCrash makeAllEffective];
+    NSArray *noneSelClassStrings = @[@"NSNull", @"NSNumber", @"NSString", @"NSDictionary", @"NSArray"];
+    [AvoidCrash setupNoneSelClassStringsArr:noneSelClassStrings];
+    
+    //监听通知:AvoidCrashNotification, 获取AvoidCrash捕获的崩溃日志的详细信息
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dealwithCrashMessage:) name:AvoidCrashNotification object:nil];
+}
+
+#pragma mark - 通知
+- (void)dealwithCrashMessage:(NSNotification *)noti {
+    NSDictionary *info = noti.userInfo;
+    NSString *errorReason = [NSString stringWithFormat:@"【ErrorReason】%@======\n【ErrorPlace】%@======\n【DefaultToDo】%@======【ErrorName】%@======", info[@"errorReason"], info[@"errorPlace"], info[@"defaultToDo"], info[@"errorName"]];
+    NSArray *callStack = info[@"callStackSymbols"];
+    
+    //[[TTBuglyManager manager] reportExceptionWithCategory:3 name:@"App崩溃" reason:errorReason callStack:callStack extraInfo:nil terminateApp:NO];
 }
 
 #pragma mark - Private Methods
