@@ -22,38 +22,69 @@ pod 'AFNetworking', '4.0.1'         # 网络请求
 pod 'Alamofire', '5.2.2'            # 网络请求
 pod 'AliyunOSSiOS', '2.10.8'        # 阿里云 OSS
 pod 'AvoidCrash', '2.5.2'           # 防止崩溃
+
+pod 'BaiduMobStatCodeless', '5.2.6' # 百度无埋点 SDK
+pod 'BAWKWebView', '1.0.9'          # 网页加载(Block 实现)
 pod 'Bugly', '2.5.71'               # Bugly
+
+pod 'FCUUID', '1.3.1'               # UUID(随机数)
 pod 'FMDB', '2.7.5'                 # 数据库存储
 pod 'FSCalendar', '2.8.1'           # 日历 8.8K OC/Swift
 pod 'FSPagerView', '0.8.3'          # 轮播
+
 pod 'GDataXML-HTML', '1.4.1'        # 解析 XML/EXCEL
-pod 'GKNavigationBarViewController', '2.5.7' #抖音的左滑 push 效果
-pod 'IQKeyboardManager', '6.5.5'    # 键盘管理
+pod 'GKNavigationBarViewController', '2.5.8' #抖音的左滑 push 效果
+pod 'GRStarsView', '0.1.0'          # 星星评分view，支持小数，支持点击、拖动评分。
+
+pod 'iflyMSC-ZW', '0.0.3'           # 科大讯飞
+pod 'IQKeyboardManager', '6.5.6'    # 键盘管理
 pod 'libOpenInstallSDK', '2.4.0'    # OpenInstall
-pod 'lottie-ios', '2.5.3'           # JSON 动画
+pod 'lottie-ios', '2.5.3'           # JSON 动画(OC最高版本)
+
 pod 'JTAppleCalendar','8.0.3'       # 日历 Swift 6.5K
-pod 'LMJVerticalScrollText', '3.0.1'  # 数字动画
+
+pod 'LMJVerticalScrollText', '3.0.1'# 数字动画(没有使用)
+
 pod 'KakaJSON', '1.1.2'             # 字典转模型
+pod 'KJBannerView', '1.3.5'         # 图片轮播(网络加载)
+
 pod 'Masonry', '1.1.0'              # 自动布局
 pod 'MJExtension', '3.2.2'          # 字典转模型
-pod 'MJRefresh', '3.4.3'            # 刷新
+pod 'MJRefresh', '3.5.0'            # 刷新
+
 pod 'NSLogger', '1.9.7'             # 日志打印
+
+pod 'PhotoSolution', '1.5.8'        # 多选图片
 pod 'pop', '1.0.12'                 # 动画
+
+pod 'Qiniu', '8.0.0'                # 七牛云上传
+
 pod 'RJBadgeKit', '0.2.5'           # 小红点实现
-pod 'RSKImageCropper', '2.2.3'      # 裁剪图片
-pod 'SDWebImage', '5.8.0'           # 图片缓存
+pod 'RSKImageCropper', '2.3.0'      # 裁剪图片
+
+pod 'SDWebImage', '5.9.0'           # 图片缓存
+pod 'SFHFKeychainUtils', '1.0.0'    # 钥匙串访问
+pod 'SHPhotoBrowser', '0.0.9'       # 图片大图预览
 pod 'SnapKit', '5.0.1'              # 自动布局
 pod 'SVProgressHUD', '2.2.5'        # 提示框
 pod 'SwiftyJSON', '5.0.0'           # Swift 转 JSON
-pod 'TXLiteAVSDK_Player', '7.4.9203' # 腾讯云播放器-独立播放器
-pod 'TZImagePickerController', '3.3.2' #本地选择图片与视频
+
+pod 'TXLiteAVSDK_Player', '7.7.9458' # 腾讯云播放器-独立播放器
+pod 'TZImagePickerController', '3.4.2' #本地选择图片与视频
 pod 'TwicketSegmentedControl', '0.1.2'# 分隔选中按钮
-pod 'UICountingLabel', '1.4.1'      # 动画数字
-pod 'XRCarouselView', '2.6.1'       # 轮播
-pod 'YYModel', '1.0.4'              # 字典转模型
-pod 'YYText', '1.0.7'               # 富文本
-pod 'YYCategories', '1.0.4'         # 分类
-pod 'YYCache', '1.0.4'              # 缓存
+
+pod 'UICountingLabel', '1.4.1'        # 数字动画
+
+pod 'WRNavigationBar', '1.2.0'        # 导航
+
+pod 'XRCarouselView', '2.6.1'         # 图片轮播
+
+pod 'YYModel', '1.0.4'                # 字典转模型
+pod 'YYText', '1.0.7'                 # 富文本
+pod 'YYCategories', '1.0.4'           # 分类
+pod 'YYCache', '1.0.4'                # 缓存
+
+pod 'ZYCornerRadius', '1.0.2'         # 切圆角
 
 #pod 'SJVideoPlayer', '2.5.7'       #播放器
 #pod 'MWPhotoBrowser', '2.1.2'       # 图片浏览器(加载网络图片)8.6k
