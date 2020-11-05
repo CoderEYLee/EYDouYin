@@ -32,9 +32,6 @@
     // 3.初始化其他信息
     [self setupOtherInfo];
 
-    //启动图时间
-    sleep(2);
-
     EYLog(@"AppDelegate--1111111--->程序启动了");
 
     return YES;
@@ -101,8 +98,8 @@
     //2.2 提示框
     [EYProgressHUD setMinimumDismissTimeInterval:1.5];
     [EYProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];//后面的大背景是透明色
-    //    [EYProgressHUD setInfoImage:[UIImage imageNamed:@""]];//提示的图片
-    //    [EYProgressHUD setImageViewSize:CGSizeMake(0, -1)];//提示的图片大小
+    //[EYProgressHUD setInfoImage:[UIImage imageNamed:@""]];//提示的图片
+    //[EYProgressHUD setImageViewSize:CGSizeMake(0, -1)];//提示的图片大小
     [EYProgressHUD setBackgroundColor:EYColorRGBHexAlpha(0x000000, 0.5)];// 弹出框背景颜色
     [EYProgressHUD setCornerRadius:5.0];
     [EYProgressHUD setForegroundColor:EYColorWhite];//进度&文字颜色
@@ -122,9 +119,6 @@
         configure.gk_scaleX = 0.90;
         configure.gk_scaleY = 0.92;
     }];
-    
-    // 2.4 Bugly
-    // [Bugly startWithAppId:Bugly_APP_ID];
     
     // 2.5 iflyMSC
     //[IFlyDebugLog setShowLog:NO];//关闭log
