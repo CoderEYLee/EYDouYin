@@ -16,6 +16,8 @@
 
 @implementation TTBuglyManager
 
+static NSString *const TTBuglyAppID = @"123";
+
 #pragma mark - 初始化
 // 用来保存唯一的单例对象
 static TTBuglyManager *_BuglyManager = nil;
@@ -67,10 +69,10 @@ static TTBuglyManager *_BuglyManager = nil;
     config.debugMode = NO;
     #ifdef DEBUG
         config.channel = @"DEBUG";
-        [Bugly startWithAppId:@"123" developmentDevice:YES config:config];
+        [Bugly startWithAppId:TTBuglyAppID developmentDevice:YES config:config];
     #else
         config.channel = @"App Store";
-        [Bugly startWithAppId:Bugly_APP_ID developmentDevice:NO config:config];
+        [Bugly startWithAppId:TTBuglyAppID developmentDevice:NO config:config];
     #endif
     
     ///设置标识
