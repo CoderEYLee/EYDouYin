@@ -1490,11 +1490,11 @@
 		6080A6A622C744A5003EC084 /* NewFeature */ = {
 			isa = PBXGroup;
 			children = (
+				6080A6AC22C744A5003EC084 /* EYWelcomeView.xib */,
 				6080A6A722C744A5003EC084 /* EYWelcomeView.swift */,
 				6080A6A822C744A5003EC084 /* EYNewFeatureView.xib */,
 				6080A6A922C744A5003EC084 /* EYNewFeatureView.swift */,
 				6080A6AA22C744A5003EC084 /* Resource */,
-				6080A6AC22C744A5003EC084 /* EYWelcomeView.xib */,
 			);
 			path = NewFeature;
 			sourceTree = "<group>";
