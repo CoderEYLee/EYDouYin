@@ -62,4 +62,6 @@ fastlane/screenshots
 iOSInjectionProject/
 EYDouYin/node_modules/
 ios/Podfile.lock
+ios/.DS_Store
+my_flutter/pubspec.lock
 node_modules/
