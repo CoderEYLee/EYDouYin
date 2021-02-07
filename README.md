@@ -29,7 +29,8 @@ EYDouYin 该项目主体框架是模仿抖音框架实现
 ## pod 1.8.0之后的版本可以使用 "https://cdn.cocoapods.org/" CDN的源
 
 修改 Podflie 文件
-旧源:            ```source 'https://github.com/CocoaPods/Specs.git'``` \n
+旧源:            ```source 'https://github.com/CocoaPods/Specs.git'```
+
 新源(CDN 源):    ```source 'https://cdn.cocoapods.org/'```
 
 # 项目框架结构
@@ -43,7 +44,7 @@ EYDouYin 该项目主体框架是模仿抖音框架实现
 ## 1.集成 FFmpeg
 本项目中使用的 FFmpeg 版本为 4.0.3 版本。  
 
-FFmpeg：https://github.com/FFmpeg/FFmpeg \n
+FFmpeg：https://github.com/FFmpeg/FFmpeg
 
 编译脚本地址: https://github.com/kewlbear/FFmpeg-iOS-build-script
 
