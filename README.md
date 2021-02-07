@@ -23,12 +23,14 @@ EYDouYin 该项目主体框架是模仿抖音框架实现
 ## 第三步: 安装工程需要的三方库(OC、Swift、Flutter 支持、React Native 支持)   
    
 ```cd ios```
+
 ```pod install```
 
 # 注意事项:
 ## pod 1.8.0之后的版本可以使用 "https://cdn.cocoapods.org/" CDN的源
 
 修改 Podflie 文件
+
 旧源:            ```source 'https://github.com/CocoaPods/Specs.git'```
 
 新源(CDN 源):    ```source 'https://cdn.cocoapods.org/'```
