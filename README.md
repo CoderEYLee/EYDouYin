@@ -14,6 +14,7 @@ EYDouYin 该项目主体框架是模仿抖音框架实现
    
 方式一: (SSH)   
 ```git clone git@github.com:lieryang/EYDouYin.git```
+
 方式二: (HTTPS)    
 ```git clone https://github.com/lieryang/EYDouYin.git```   
 
@@ -27,7 +28,7 @@ EYDouYin 该项目主体框架是模仿抖音框架实现
 ```pod install```
 
 # 注意事项:
-## pod 1.8.0之后的版本可以使用 "https://cdn.cocoapods.org/" CDN的源
+## 1. pod 1.8.0之后的版本可以使用 "https://cdn.cocoapods.org/" CDN的源
 
 修改 Podflie 文件
 
