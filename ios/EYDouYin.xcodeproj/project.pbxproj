@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BE4A99E25D031EA00257DC5 /* AlivcConan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8423310598003069CC /* AlivcConan.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6000D86F213D1CFB00491BB7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6000D871213D1CFB00491BB7 /* Localizable.strings */; };
 		6002BD8A22D33F5800945DC3 /* EYLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6002BD8822D33F5800945DC3 /* EYLanguageTool.m */; };
 		6012FD70215A36BF004A3083 /* UIView+EYCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012FD6F215A36BF004A3083 /* UIView+EYCornerRadius.m */; };
@@ -41,20 +42,9 @@
 		6055AD3C2116B382005DC856 /* TabBar.json in Resources */ = {isa = PBXBuildFile; fileRef = 6055AD3B2116B382005DC856 /* TabBar.json */; };
 		6055AD3F2116B929005DC856 /* NSString+EYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD3E2116B929005DC856 /* NSString+EYExtension.m */; };
 		6055AD422116CD21005DC856 /* EYTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055AD412116CD21005DC856 /* EYTabBarView.m */; };
-		605C3F8D23310599003069CC /* AlivcConan.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 605C3F8323310598003069CC /* AlivcConan.framework.dSYM */; };
-		605C3F9223310599003069CC /* AliyunMediaDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8823310598003069CC /* AliyunMediaDownloader.framework */; };
-		605C3F9323310599003069CC /* artpSource.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 605C3F8923310598003069CC /* artpSource.framework.dSYM */; };
-		605C3F9423310599003069CC /* AliyunPlayer.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 605C3F8A23310598003069CC /* AliyunPlayer.framework.dSYM */; };
-		605C3F9523310599003069CC /* alivcffmpeg.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 605C3F8B23310598003069CC /* alivcffmpeg.framework.dSYM */; };
-		605C3F9623310599003069CC /* AliyunMediaDownloader.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 605C3F8C23310598003069CC /* AliyunMediaDownloader.framework.dSYM */; };
-		605C3F972331060A003069CC /* AlivcConan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8423310598003069CC /* AlivcConan.framework */; };
-		605C3F982331060A003069CC /* AlivcConan.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8423310598003069CC /* AlivcConan.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		605C3F9B2331060A003069CC /* AliyunPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8623310598003069CC /* AliyunPlayer.framework */; };
-		605C3F9C2331060A003069CC /* AliyunPlayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8623310598003069CC /* AliyunPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		605C3F9D2331060A003069CC /* artpSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8723310598003069CC /* artpSource.framework */; };
-		605C3F9E2331060A003069CC /* artpSource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8723310598003069CC /* artpSource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		605C3FA02331060A003069CC /* AliyunMediaDownloader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8823310598003069CC /* AliyunMediaDownloader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		605C3FA323310884003069CC /* alivcffmpeg.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8523310598003069CC /* alivcffmpeg.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		605C3F9223310599003069CC /* AliyunMediaDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8823310598003069CC /* AliyunMediaDownloader.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		605C3F9B2331060A003069CC /* AliyunPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8623310598003069CC /* AliyunPlayer.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		605C3F9D2331060A003069CC /* artpSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605C3F8723310598003069CC /* artpSource.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		605C3FA52331D52F003069CC /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 605C3FA42331D52F003069CC /* video1.mp4 */; };
 		605C3FAF23338BC9003069CC /* videoEnd.mpg in Resources */ = {isa = PBXBuildFile; fileRef = 605C3FAE23338BC9003069CC /* videoEnd.mpg */; };
 		605C3FB12334ACF0003069CC /* input.srt in Resources */ = {isa = PBXBuildFile; fileRef = 605C3FB02334ACEF003069CC /* input.srt */; };
@@ -287,24 +277,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		605C3FA12331060B003069CC /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				605C3F9E2331060A003069CC /* artpSource.framework in Embed Frameworks */,
-				605C3F982331060A003069CC /* AlivcConan.framework in Embed Frameworks */,
-				605C3FA323310884003069CC /* alivcffmpeg.framework in Embed Frameworks */,
-				605C3FA02331060A003069CC /* AliyunMediaDownloader.framework in Embed Frameworks */,
-				605C3F9C2331060A003069CC /* AliyunPlayer.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		2C2163A71ED181EE341E06B8 /* Pods-EYDouYin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EYDouYin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EYDouYin/Pods-EYDouYin.debug.xcconfig"; sourceTree = "<group>"; };
 		2D2814A2580E2965D9B57163 /* libPods-EYDouYinUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EYDouYinUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -369,16 +341,11 @@
 		6055AD3E2116B929005DC856 /* NSString+EYExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+EYExtension.m"; sourceTree = "<group>"; };
 		6055AD402116CD21005DC856 /* EYTabBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYTabBarView.h; sourceTree = "<group>"; };
 		6055AD412116CD21005DC856 /* EYTabBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYTabBarView.m; sourceTree = "<group>"; };
-		605C3F8323310598003069CC /* AlivcConan.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AlivcConan.framework.dSYM; sourceTree = "<group>"; };
 		605C3F8423310598003069CC /* AlivcConan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlivcConan.framework; sourceTree = "<group>"; };
 		605C3F8523310598003069CC /* alivcffmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = alivcffmpeg.framework; sourceTree = "<group>"; };
 		605C3F8623310598003069CC /* AliyunPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunPlayer.framework; sourceTree = "<group>"; };
 		605C3F8723310598003069CC /* artpSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = artpSource.framework; sourceTree = "<group>"; };
 		605C3F8823310598003069CC /* AliyunMediaDownloader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AliyunMediaDownloader.framework; sourceTree = "<group>"; };
-		605C3F8923310598003069CC /* artpSource.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = artpSource.framework.dSYM; sourceTree = "<group>"; };
-		605C3F8A23310598003069CC /* AliyunPlayer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AliyunPlayer.framework.dSYM; sourceTree = "<group>"; };
-		605C3F8B23310598003069CC /* alivcffmpeg.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = alivcffmpeg.framework.dSYM; sourceTree = "<group>"; };
-		605C3F8C23310598003069CC /* AliyunMediaDownloader.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = AliyunMediaDownloader.framework.dSYM; sourceTree = "<group>"; };
 		605C3FA42331D52F003069CC /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
 		605C3FAE23338BC9003069CC /* videoEnd.mpg */ = {isa = PBXFileReference; lastKnownFileType = video.mpeg; path = videoEnd.mpg; sourceTree = "<group>"; };
 		605C3FB02334ACEF003069CC /* input.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input.srt; sourceTree = "<group>"; };
@@ -823,13 +790,13 @@
 				6014B0BB22D10B03003DC224 /* libz.tbd in Frameworks */,
 				6014B0BD22D10B12003DC224 /* libbz2.tbd in Frameworks */,
 				6014B0BF22D10B20003DC224 /* libiconv.tbd in Frameworks */,
-				605C3F972331060A003069CC /* AlivcConan.framework in Frameworks */,
 				605C3F9D2331060A003069CC /* artpSource.framework in Frameworks */,
 				605C3F9B2331060A003069CC /* AliyunPlayer.framework in Frameworks */,
 				605C3F9223310599003069CC /* AliyunMediaDownloader.framework in Frameworks */,
 				60B3660C22E36D2A00283241 /* libavutil.a in Frameworks */,
 				60B3660D22E36D2A00283241 /* libavfilter.a in Frameworks */,
 				60B3660E22E36D2A00283241 /* libavcodec.a in Frameworks */,
+				2BE4A99E25D031EA00257DC5 /* AlivcConan.framework in Frameworks */,
 				60B3660F22E36D2A00283241 /* libavformat.a in Frameworks */,
 				60B3661022E36D2A00283241 /* libavdevice.a in Frameworks */,
 				60B3661122E36D2A00283241 /* libswresample.a in Frameworks */,
@@ -1071,11 +1038,6 @@
 				605C3F8623310598003069CC /* AliyunPlayer.framework */,
 				605C3F8723310598003069CC /* artpSource.framework */,
 				605C3F8823310598003069CC /* AliyunMediaDownloader.framework */,
-				605C3F8923310598003069CC /* artpSource.framework.dSYM */,
-				605C3F8323310598003069CC /* AlivcConan.framework.dSYM */,
-				605C3F8A23310598003069CC /* AliyunPlayer.framework.dSYM */,
-				605C3F8B23310598003069CC /* alivcffmpeg.framework.dSYM */,
-				605C3F8C23310598003069CC /* AliyunMediaDownloader.framework.dSYM */,
 			);
 			path = ARM_SIMULATOR;
 			sourceTree = "<group>";
@@ -2488,7 +2450,6 @@
 				7164FAC7CBD575C447A17FE0 /* [CP] Embed Pods Frameworks */,
 				601DE50322CB028B00C99E5E /* ShellScript */,
 				9384ED7CEF854FA4EC6D63AE /* [CP] Copy Pods Resources */,
-				605C3FA12331060B003069CC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2587,7 +2548,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				605C3FB52334B9FC003069CC /* logo.png in Resources */,
-				605C3F9323310599003069CC /* artpSource.framework.dSYM in Resources */,
 				6080A76C22C744A5003EC084 /* EYHumanRefreshView.xib in Resources */,
 				60EE77AF211F52A4004133A6 /* EYFindTopView.xib in Resources */,
 				6080A7A922C744A5003EC084 /* EYProfileLabelCell.xib in Resources */,
@@ -2599,7 +2559,6 @@
 				60752B6D2186F49A001B857C /* EYShopCell.xib in Resources */,
 				605C3FAF23338BC9003069CC /* videoEnd.mpg in Resources */,
 				602112B522CF18EA00510A74 /* index.jsbundle in Resources */,
-				605C3F9523310599003069CC /* alivcffmpeg.framework.dSYM in Resources */,
 				6080A75022C744A5003EC084 /* api.ehomeclouds.com.cn.cer in Resources */,
 				6080A76D22C744A5003EC084 /* EYRefreshView.xib in Resources */,
 				607C2F2223024E5F000962C8 /* EYMeCustomViewArray.plist in Resources */,
@@ -2614,14 +2573,11 @@
 				60EE77B82120282C004133A6 /* EYTestViewView.xib in Resources */,
 				6080A77922C744A5003EC084 /* status.sql in Resources */,
 				6080A7B322C744A5003EC084 /* EYLiveCell.xib in Resources */,
-				605C3F9423310599003069CC /* AliyunPlayer.framework.dSYM in Resources */,
 				6080A75722C744A5003EC084 /* EYWelcomeView.xib in Resources */,
 				60752B642186F230001B857C /* Shops.plist in Resources */,
 				6085A16021897A4B00637F31 /* EYWaterflowShopCell2.xib in Resources */,
 				6080A79B22C744A5003EC084 /* Home.xcassets in Resources */,
 				6080A75622C744A5003EC084 /* NewFeature.xcassets in Resources */,
-				605C3F8D23310599003069CC /* AlivcConan.framework.dSYM in Resources */,
-				605C3F9623310599003069CC /* AliyunMediaDownloader.framework.dSYM in Resources */,
 				6080A7A422C744A5003EC084 /* Compose.xcassets in Resources */,
 				605C3FA52331D52F003069CC /* video1.mp4 in Resources */,
 				60C4008B218BFCF000B07E4A /* EYCollectionArray.plist in Resources */,
@@ -3096,6 +3052,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 3A5H5A6LD7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3104,7 +3061,7 @@
 					"$(PROJECT_DIR)/EYDouYin/Class/Main/ThirdLib/AliVideoPlayer/ARM_SIMULATOR",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/lieryang/个人/iOS项目/EYDouYin/ios/EYDouYin/Class/Main/Other/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EYDouYin/Class/Main/Other/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -3136,7 +3093,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/ZFPlayer/ZFPlayer.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/glog/glog.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/pop/pop.framework/Headers\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/yoga/yoga.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Yoga/yoga.framework/Headers\"",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/Weibo_SDK\"",
 					"$(inherited)",
@@ -3175,6 +3132,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 3A5H5A6LD7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3183,7 +3141,7 @@
 					"$(PROJECT_DIR)/EYDouYin/Class/Main/ThirdLib/AliVideoPlayer/ARM_SIMULATOR",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/lieryang/个人/iOS项目/EYDouYin/ios/EYDouYin/Class/Main/Other/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EYDouYin/Class/Main/Other/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -3215,7 +3173,7 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/ZFPlayer/ZFPlayer.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/glog/glog.framework/Headers\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/pop/pop.framework/Headers\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/yoga/yoga.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Yoga/yoga.framework/Headers\"",
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/Weibo_SDK\"",
 					"$(inherited)",
