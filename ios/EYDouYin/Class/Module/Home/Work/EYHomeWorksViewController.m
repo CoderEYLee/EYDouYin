@@ -23,7 +23,7 @@
 
 //1. 初始化界面
 - (void)setupUI {
-    if (!EYSCREENSIZE_IS_IPhoneX_All) {
+    if (!EYSCREENSIZE_IS_IPhoneX) {
         [UIApplication sharedApplication].statusBarHidden = NO;
     }
     

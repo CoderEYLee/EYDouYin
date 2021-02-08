@@ -71,8 +71,8 @@
     self.window = [[UIWindow alloc] initWithFrame:EYScreenBounds];
     self.window.backgroundColor = EYColorTheme;
     
-    EYRootViewController *rootVC= [[EYRootViewController alloc] init];
-    EYNavigationController *navi = [[EYNavigationController alloc] initWithRootViewController:rootVC];
+    EYRootViewController *rootVC = [[EYRootViewController alloc] init];
+    EYNavigationController *navi = [EYNavigationController rootVC:rootVC translationScale:YES];
     navi.gk_openScrollLeftPush = YES;
     
     self.window.rootViewController = navi;
@@ -100,16 +100,12 @@
     
     // 2.3 设置导航条
     [[GKNavigationBarConfigure sharedInstance] setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
+        configure.backImage = [UIImage imageNamed:@"common_arrow_left"];
         configure.backgroundColor = EYColorClear;
         configure.titleColor = EYColorWhite;
         configure.titleFont = EYSizeFont17;
-        configure.backStyle = GKNavigationBarBackStyleWhite;
-        configure.gk_navItemRightSpace = 20.0;
-        
-        configure.gk_translationX = 15;
-        configure.gk_translationY = 20;
-        configure.gk_scaleX = 0.90;
-        configure.gk_scaleY = 0.92;
+        configure.gk_navItemLeftSpace = 6.0;
+        configure.gk_navItemRightSpace = 6.0;
     }];
     
     // 2.5 iflyMSC
