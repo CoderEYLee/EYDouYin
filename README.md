@@ -18,12 +18,17 @@ EYDouYin 该项目主体框架是模仿抖音框架实现
 方式二: (HTTPS)    
 ```git clone https://github.com/lieryang/EYDouYin.git```   
 
+
 ## 第二步: 下载 node_modules 依赖
 
-EYDouYin目录下:    ```flutter pub get```
+EYDouYin目录下:    ```npm install```
+
+
 ## 第三步: 下载 Flutter 依赖
 
 my_flutter目录下:  ```flutter pub get```
+
+
 
 ## 第四步: 安装工程需要的三方库(OC、Swift、Flutter 支持、React Native 支持)   
 
