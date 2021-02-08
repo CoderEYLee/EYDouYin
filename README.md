@@ -18,16 +18,16 @@ EYDouYin 该项目主体框架是模仿抖音框架实现
 方式二: (HTTPS)    
 ```git clone https://github.com/lieryang/EYDouYin.git```   
 
-## 第二步: 下载 Flutter 依赖
-```cd my_flutter```
+## 第二步: 下载 node_modules 依赖
 
-```flutter pub get```
+EYDouYin目录下:    ```flutter pub get```
+## 第三步: 下载 Flutter 依赖
 
-## 第三步: 安装工程需要的三方库(OC、Swift、Flutter 支持、React Native 支持)   
-   
-```cd ios```
+my_flutter目录下:  ```flutter pub get```
 
-```pod install```
+## 第四步: 安装工程需要的三方库(OC、Swift、Flutter 支持、React Native 支持)   
+
+ios目录下:   ```pod install```
 
 # 注意事项:
 ## 1. pod 1.8.0之后的版本可以使用 "https://cdn.cocoapods.org/" CDN的源
