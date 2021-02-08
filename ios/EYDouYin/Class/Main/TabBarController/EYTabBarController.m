@@ -35,24 +35,24 @@
     
     //0.首页
     EYHomeViewController *homeVC = [[EYHomeViewController alloc] init];
-    [arrayM addObject:[[EYNavigationController alloc] initWithRootViewController:homeVC]];
+    [arrayM addObject:homeVC];
     self.homeVC = homeVC;
     
     //1.关注
     EYFollowViewController *followVC = [[EYFollowViewController alloc] init];
-    [arrayM addObject:[[EYNavigationController alloc] initWithRootViewController:followVC]];
+    [arrayM addObject:followVC];
     
     //2.占位控制器
     UIViewController *placeholderVC = [[UIViewController alloc] init];
-    [arrayM addObject:[[EYNavigationController alloc] initWithRootViewController:placeholderVC]];
+    [arrayM addObject:placeholderVC];
         
     //3.消息
     EYMessageViewController *messageVC = [[EYMessageViewController alloc] init];
-    [arrayM addObject:[[EYNavigationController alloc] initWithRootViewController:messageVC]];
+    [arrayM addObject:messageVC];
 
     //4.我
     EYMineViewController *mineVC = [[EYMineViewController alloc] init];
-    [arrayM addObject:[[EYNavigationController alloc] initWithRootViewController:mineVC]];
+    [arrayM addObject:mineVC];
         
     self.viewControllers = arrayM;
 }

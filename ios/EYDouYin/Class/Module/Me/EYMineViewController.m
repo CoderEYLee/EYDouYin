@@ -121,8 +121,8 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     //2.背景图片(放大)
     UIImageView *backImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewRealHeight)];
     backImageView.image = [UIImage imageNamed:@"common_placeholder_mine"];
-    backImageView.layer.masksToBounds = YES;
     backImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.view.clipsToBounds = YES;
     [self.view insertSubview:backImageView atIndex:0];
     self.backImageView = backImageView;
     
