@@ -12,6 +12,7 @@
 
 @interface EYMineCell()
 
+@property (weak, nonatomic) UIButton *topButton;
 @property (weak, nonatomic) UIButton *userHeaderButton;
 @property (weak, nonatomic) UIImageView *userImageView;
 @property (weak, nonatomic) UIButton *profileButton;
@@ -28,20 +29,38 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.backgroundColor = EYColorTheme;
+        self.backgroundColor = EYColorClear;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
         //1.顶部
+        UIButton *topButton = [[UIButton alloc] init];
+        topButton.backgroundColor = EYColorClear;
+        [topButton addTarget:self action:@selector(tapTopButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.contentView addSubview:topButton];
+        self.topButton = topButton;
+        [topButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.top.right.mas_equalTo(0);
+            make.height.mas_equalTo(110);
+        }];
+        
+        UIView *bottomView = [[UIView alloc] init];
+        bottomView.backgroundColor = EYColorTheme;
+        [self.contentView addSubview:bottomView];
+        [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(topButton.mas_bottom);
+            make.left.right.bottom.mas_equalTo(0);
+        }];
+        
         //1.1用户个人头像按钮
         UIButton *userHeaderButton = [[UIButton alloc] init];
         userHeaderButton.layer.cornerRadius = 55.0;
         [userHeaderButton addTarget:self action:@selector(tapUserHeaderButton:) forControlEvents:UIControlEventTouchUpInside];
         userHeaderButton.backgroundColor = EYColorTheme;
-        [self.contentView addSubview:userHeaderButton];
+        [bottomView addSubview:userHeaderButton];
         self.userHeaderButton = userHeaderButton;
         [userHeaderButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(EYMineCellMargin);
-            make.top.mas_equalTo(-20);
+            make.top.mas_equalTo(topButton.mas_bottom).mas_offset(-20);
             make.width.height.mas_equalTo(110);
         }];
         //用户个人头像图片
@@ -60,7 +79,7 @@
         profileButton.layer.cornerRadius = 2.0;
         [profileButton setTitle:@"编辑资料" forState:UIControlStateNormal];
         [profileButton addTarget:self action:@selector(tapProfileButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.contentView addSubview:profileButton];
+        [bottomView addSubview:profileButton];
         self.profileButton = profileButton;
         [profileButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(userHeaderButton.mas_right).mas_offset(20);
@@ -74,7 +93,7 @@
         focusButton.backgroundColor = EYColorRGBHex(0x393A43);
         focusButton.layer.cornerRadius = 2.0;
         [focusButton addTarget:self action:@selector(tapFocusButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.contentView addSubview:focusButton];
+        [bottomView addSubview:focusButton];
         self.focusButton = focusButton;
         [focusButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.left.bottom.right.mas_equalTo(profileButton);
@@ -85,7 +104,7 @@
         addFriendButton.backgroundColor = EYColorRGBHex(0x393A43);
         addFriendButton.layer.cornerRadius = 2.0;
         [addFriendButton addTarget:self action:@selector(tapAddFriendButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.contentView addSubview:addFriendButton];
+        [bottomView addSubview:addFriendButton];
         self.addFriendButton = addFriendButton;
         [addFriendButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(profileButton);
@@ -98,7 +117,7 @@
         nickNameLabel.text = @"没有女朋友的程序员";
         nickNameLabel.textColor = EYColorWhite;
         nickNameLabel.font = [UIFont systemFontOfSize:25.0 weight:UIFontWeightBold];
-        [self.contentView addSubview:nickNameLabel];
+        [bottomView addSubview:nickNameLabel];
         self.nickNameLabel = nickNameLabel;
         [nickNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(userHeaderButton);
@@ -111,7 +130,7 @@
         douyinNumberLabel.text = @"抖音号: 970478306";
         douyinNumberLabel.textColor = EYColorWhite;
         douyinNumberLabel.font = EYSizeFont12;
-        [self.contentView addSubview:douyinNumberLabel];
+        [bottomView addSubview:douyinNumberLabel];
         [douyinNumberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(userHeaderButton);
             make.top.mas_equalTo(nickNameLabel.mas_bottom).mas_offset(5);
@@ -120,7 +139,7 @@
         //1.6 分割线
         UILabel *lineLabel = [[UILabel alloc] init];
         lineLabel.backgroundColor = EYColorSeparateLine;
-        [self.contentView addSubview:lineLabel];
+        [bottomView addSubview:lineLabel];
         [lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(userHeaderButton);
             make.top.mas_equalTo(douyinNumberLabel.mas_bottom).mas_offset(10);
@@ -133,7 +152,7 @@
         UIButton *signatureButton = [[UIButton alloc] init];
         [signatureButton setTitle:@"你还没有填写个人简介，点击添加..." forState:UIControlStateNormal];
         [signatureButton addTarget:self action:@selector(tapSignatureButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.contentView addSubview:signatureButton];
+        [bottomView addSubview:signatureButton];
         [signatureButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(userHeaderButton);
             make.top.mas_equalTo(lineLabel.mas_bottom).mas_offset(10);
@@ -148,7 +167,7 @@
         ageButton.titleLabel.font = EYSizeFont13;
         ageButton.contentEdgeInsets = UIEdgeInsetsMake(5, 8, 5, 8);
         [ageButton addTarget:self action:@selector(tapAgeButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.contentView addSubview:ageButton];
+        [bottomView addSubview:ageButton];
         [ageButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(userHeaderButton);
             make.top.mas_equalTo(signatureButton.mas_bottom).mas_offset(10);
@@ -163,7 +182,7 @@
         locationButton.titleLabel.font = EYSizeFont13;
         locationButton.contentEdgeInsets = UIEdgeInsetsMake(5, 8, 5, 8);
         [locationButton addTarget:self action:@selector(tapLocationButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.contentView addSubview:locationButton];
+        [bottomView addSubview:locationButton];
         [locationButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(ageButton.mas_right).mas_offset(5);
             make.top.mas_equalTo(ageButton);
@@ -178,7 +197,7 @@
         schoolButton.titleLabel.font = EYSizeFont13;
         schoolButton.contentEdgeInsets = UIEdgeInsetsMake(5, 8, 5, 8);
         [schoolButton addTarget:self action:@selector(tapSchoolButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.contentView addSubview:schoolButton];
+        [bottomView addSubview:schoolButton];
         [schoolButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(locationButton.mas_right).mas_offset(5);
             make.top.mas_equalTo(ageButton);
@@ -188,7 +207,7 @@
         UIButton *toMeLikeButton = [[UIButton alloc] init];
         [toMeLikeButton setAttributedTitle:[self createAttributedStringWithCount:@"100.3W" withTitle:@"获赞"] forState:UIControlStateNormal];
         [toMeLikeButton addTarget:self action:@selector(tapToMeLikeButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self.contentView addSubview:toMeLikeButton];
+        [bottomView addSubview:toMeLikeButton];
         [toMeLikeButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(userHeaderButton);
             make.top.mas_equalTo(schoolButton.mas_bottom).mas_offset(EYMineCellMargin);
@@ -199,7 +218,7 @@
         UILabel *alphaLabel = [[UILabel alloc] init];
         alphaLabel.backgroundColor = EYColorTheme;
         alphaLabel.alpha = 0.0;
-        [self.contentView addSubview:alphaLabel];
+        [bottomView addSubview:alphaLabel];
         self.alphaLabel = alphaLabel;
         [alphaLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.right.bottom.mas_equalTo(0);
@@ -215,6 +234,10 @@
 }
 
 #pragma mark - Private Methods
+
+- (void)tapTopButton:(UIButton *)button {
+    [self tapButtonWithJumpType:EYJumpTypeMineUserBackImageButton];
+}
 
 - (void)tapUserHeaderButton:(UIButton *)button {
     [self tapButtonWithJumpType:EYJumpTypeMineUserHeaderButton];
@@ -278,6 +301,14 @@
     [lastAttributedStringM appendAttributedString:[[NSAttributedString alloc] initWithString:title attributes:titleAttributeDictionary]];
     
     return [[NSAttributedString alloc] initWithAttributedString:lastAttributedStringM];
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    if (CGRectContainsPoint(self.userHeaderButton.bounds, [self.userHeaderButton convertPoint:point fromView:self])) {
+        return self.userHeaderButton;
+    }
+    
+    return [super hitTest:point withEvent:event];
 }
 
 @end
