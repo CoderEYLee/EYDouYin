@@ -10,55 +10,7 @@
 #import "EYMineCell.h"
 #import "EYMeViewController.h"
 
-//tableHeaderView
-@class EYMineViewControllerHeaderView;
-
-@protocol EYMineViewControllerHeaderViewDelegate<NSObject>
-@optional
-- (void)mineViewControllerHeaderViewDidTapHeaderButton:(EYMineViewControllerHeaderView *)view jumpType:(EYJumpType)jumpType;
-
-@end
-
-@interface EYMineViewControllerHeaderView : UIView
-
-@property (weak, nonatomic) id <EYMineViewControllerHeaderViewDelegate> delegate;
-
-@end
-
-@implementation EYMineViewControllerHeaderView
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        CGFloat height = frame.size.height;
-        self.backgroundColor = EYColorClear;
-        UIButton *headerButton = [[UIButton alloc] initWithFrame:CGRectMake(20, height - 20, 110, 110)];
-        headerButton.backgroundColor = EYColorClear;
-        headerButton.layer.cornerRadius = 55.0;
-        [headerButton addTarget:self action:@selector(tapHeaderButton:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:headerButton];
-        self.layer.masksToBounds = YES;
-    }
-    return self;
-}
-
-- (void)tapHeaderButton:(UIButton *)button {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(mineViewControllerHeaderViewDidTapHeaderButton:jumpType:)]) {
-        [self.delegate mineViewControllerHeaderViewDidTapHeaderButton:self jumpType:EYJumpTypeMineUserHeaderButton];
-    }
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [super touchesBegan:touches withEvent:event];
-    
-    if (self.delegate && [self.delegate respondsToSelector:@selector(mineViewControllerHeaderViewDidTapHeaderButton:jumpType:)]) {
-        [self.delegate mineViewControllerHeaderViewDidTapHeaderButton:self jumpType:EYJumpTypeMineUserBackImageButton];
-    }
-}
-
-@end
-
-@interface EYMineViewController() <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, EYMineCellDelegate, EYMineViewControllerHeaderViewDelegate>
+@interface EYMineViewController() <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, EYMineCellDelegate>
 
 @property (nonatomic, weak) UIImageView *backImageView;
 @property (nonatomic, weak) EYMineCell *mineInfoCell;
@@ -78,6 +30,7 @@ const CGFloat EYBackImageViewRealHeight = 310;
 const CGFloat EYBackImageViewBeginHeight = EYBackImageViewRealHeight * 0.45;
 //个人信息的 cell 的高度
 const CGFloat EYPersonInfoCellHeight = 300;
+static NSString *EYMineViewControllerCellPlaceholderID = @"EYMineViewControllerCellPlaceholderID";
 static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 - (void)viewDidLoad {
@@ -138,12 +91,14 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
     tableView.backgroundColor = EYColorClear;
     tableView.rowHeight = UITableViewAutomaticDimension;
     tableView.estimatedRowHeight = 100;
+    [tableView registerClass:UITableViewCell.class forCellReuseIdentifier:EYMineViewControllerCellPlaceholderID];
     [tableView registerClass:[EYMineCell class] forCellReuseIdentifier:EYMineViewControllerCellID];
     
     //tableHeaderView
-    EYMineViewControllerHeaderView *headerView = [[EYMineViewControllerHeaderView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewBeginHeight)];
-    headerView.delegate = self;
-    tableView.tableHeaderView = headerView;
+//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, EYScreenWidth, EYBackImageViewBeginHeight)];
+//    headerView.backgroundColor = EYColorBlue;
+//    //[headerView addTarget:self action:@selector(tapBackView:) forControlEvents:UIControlEventTouchUpInside];
+//    tableView.tableHeaderView = headerView;
     [self.view insertSubview:tableView aboveSubview:backImageView];
     self.tableView = tableView;
 }
@@ -169,15 +124,20 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    EYMineCell *cell = [tableView dequeueReusableCellWithIdentifier:EYMineViewControllerCellID];
-    if (indexPath.row == 0) {//个人信息
+    if (indexPath.row == 1) {//占位
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:EYMineViewControllerCellPlaceholderID];
+        cell.backgroundColor = EYColorClear;
+        return cell;
+    } else if (indexPath.row == 0) {//个人信息
+        EYMineCell *cell = [tableView dequeueReusableCellWithIdentifier:EYMineViewControllerCellID];
         self.mineInfoCell = cell;
+        cell.userModel = self.userModel;
+        cell.delegate = self;
+        return cell;
     } else {
         
     }
-    cell.userModel = self.userModel;
-    cell.delegate = self;
-    return cell;
+    return [[UITableViewCell alloc] init];
 }
 
 #pragma mark - UITableViewDelegate
@@ -223,31 +183,14 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 - (void)mineCell:(EYMineCell *)cell didSelectedButton:(EYJumpType)jumpTpye {
     EYLog(@"cell--delegate 回调==%@==%lu", cell, jumpTpye);
     switch (jumpTpye) {
+        case EYJumpTypeMineUserBackImageButton: {//用户背景图片按钮
+            [SVProgressHUD showInfoWithStatus:@"用户背景图片"];
+            break;
+        }
         case EYJumpTypeMineUserHeaderButton: {//用户头像按钮
             [SVProgressHUD showInfoWithStatus:@"更换用户头像"];
             break;
         }
-            
-        default:
-            break;
-    }
-}
-
-#pragma mark - EYMineViewControllerHeaderViewDelegate
-- (void)mineViewControllerHeaderViewDidTapHeaderButton:(EYMineViewControllerHeaderView *)view jumpType:(EYJumpType)jumpTpye {
-    EYLog(@"headerView--delegate 回调==%@==%lu", view, jumpTpye);
-    
-    switch (jumpTpye) {
-        case EYJumpTypeMineUserBackImageButton: {//用户背景图片按钮
-            [EYProgressHUD showInfoWithStatus:@"更换背景图片"];
-            break;
-        }
-        case EYJumpTypeMineUserHeaderButton: {//用户头像按钮
-            EYLog(@"更换用户头像");
-            [EYProgressHUD showInfoWithStatus:@"更换用户头像"];
-            break;
-        }
-            
         default:
             break;
     }

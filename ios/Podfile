@@ -63,7 +63,7 @@ pod 'Qiniu', '8.1.2'                # 七牛云上传
 pod 'RJBadgeKit', '0.2.5'           # 小红点实现
 pod 'RSKImageCropper', '3.0.2'      # 裁剪图片
 
-pod 'SDWebImage', '5.10.4'           # 图片缓存
+pod 'SDWebImage', '5.10.4'          # 图片缓存
 pod 'SFHFKeychainUtils', '1.0.0'    # 钥匙串访问
 pod 'SnapKit', '5.0.1'              # 自动布局
 pod 'SVProgressHUD', '2.2.5'        # 提示框
