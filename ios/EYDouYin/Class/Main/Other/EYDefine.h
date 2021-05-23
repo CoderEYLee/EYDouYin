@@ -35,7 +35,7 @@
 #define EYUI_IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define EYUI_IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
 
-#define EYSCREENSIZE_IS_IPhoneX GK_IS_iPhoneX
+#define EYSCREENSIZE_IS_IPhoneX GK_NOTCHED_SCREEN
 
 //获取当前屏幕的尺寸
 #define EYScreenBounds  ([UIScreen mainScreen].bounds)
