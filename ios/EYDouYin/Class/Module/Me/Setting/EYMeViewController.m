@@ -9,10 +9,10 @@
 #import "EYMeViewController.h"
 #import "EYExcelTool.h"
 #import "EYDouYin-Swift.h"
-//#import <Flutter/Flutter.h>
+#import <Flutter/Flutter.h>
 #import "EYRNViewController.h"
 
-@interface EYMeViewController () <UITableViewDataSource, UITableViewDelegate>///, FlutterStreamHandler>
+@interface EYMeViewController () <UITableViewDataSource, UITableViewDelegate, FlutterStreamHandler>
 
 @property (weak, nonatomic) UITableView *tableView;
 
@@ -43,79 +43,79 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
 
 #pragma mark - iOS <--> Flutter 的通信
 // 进入 Fulutter 界面
-//- (void)pushFlutterViewController {
-//    FlutterViewController *flutterViewController = [[FlutterViewController alloc] initWithNibName:nil bundle:nil];
-//    flutterViewController.view.backgroundColor = EYColorWhite;
-//    // 设置路由名字 跳转到不同的flutter界面
-//    /*flutter代码*/
-//    /*
-//     import 'dart:ui';
-//
-//     void main() => runApp(_widgetForRoute(window.defaultRouteName));
-//
-//     Widget _widgetForRoute(String route) {
-//     switch (route) {
-//     case 'myApp':
-//     return new MyApp();
-//     case 'home':
-//     return new HomePage();
-//     default:
-//     return Center(
-//     child: Text('Unknown route: $route', textDirection: TextDirection.ltr),
-//     );
-//     }
-//     }
-//     */
-//
-//    __weak typeof(self) weakSelf = self;
-//
-//    // iOS-->Flutter
-//    // 要与main.dart中一致
-//    NSString *methodChannelName = @"com.pages.your/native_get";
-//    FlutterMethodChannel *methodChannel = [FlutterMethodChannel methodChannelWithName:methodChannelName binaryMessenger:flutterViewController];
-//    [methodChannel setMethodCallHandler:^(FlutterMethodCall* _Nonnull call, FlutterResult  _Nonnull result) {
-//        // call.method 获取 flutter 给回到的方法名，要匹配到 channelName 对应的多个 发送方法名，一般需要判断区分
-//        // call.arguments 获取到 flutter 给到的参数，（比如跳转到另一个页面所需要参数）
-//        // result 是给flutter的回调， 该回调只能使用一次
-//        EYLog(@"flutter 给到我：\nmethod=%@ \narguments = %@", call.method, call.arguments);
-//        if([call.method isEqualToString:@"toNativeSomething"]) {
-//            //添加提示框
-//            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"成功" preferredStyle:UIAlertControllerStyleAlert];
-//
-//            UIAlertAction * actionDetermine = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-//                // 回调给flutter
-//                if(result) {
-//                    result(@(1000));
-//                }
-//            }];
-//
-//            [alert addAction:actionDetermine];
-//
-//            [self presentViewController:alert animated:YES completion:nil];
-//        } else if([call.method isEqualToString:@"toNativePush"]) {
-//
-//        } else if([call.method isEqualToString:@"toNativePop"]) {
-//            [weakSelf.navigationController popViewControllerAnimated:YES];
-//        } else {
-//
-//        }
-//    }];
-//
-//    //iOS-->Flutter
-//    NSString *eventChannelName = @"com.pages.your/native_post";
-//    FlutterEventChannel *evenChannal = [FlutterEventChannel eventChannelWithName:eventChannelName binaryMessenger:flutterViewController];
-//    // 代理FlutterStreamHandler
-//    [evenChannal setStreamHandler:weakSelf];
-//
-//    //push转场动画
-//    CATransition *animation = [CATransition animation];
-//    [animation setDuration:0.3];
-//    [animation setType:kCATransitionMoveIn];
-//    [animation setSubtype:kCATransitionFromTop];
-//    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-//    [self.navigationController.view.layer addAnimation:animation forKey:kCATransition];
-//    [self.navigationController pushViewController:flutterViewController animated:NO];
-//}
+- (void)pushFlutterViewController {
+    FlutterViewController *flutterViewController = [[FlutterViewController alloc] initWithNibName:nil bundle:nil];
+    flutterViewController.view.backgroundColor = EYColorWhite;
+    // 设置路由名字 跳转到不同的flutter界面
+    /*flutter代码*/
+    /*
+     import 'dart:ui';
+
+     void main() => runApp(_widgetForRoute(window.defaultRouteName));
+
+     Widget _widgetForRoute(String route) {
+     switch (route) {
+     case 'myApp':
+     return new MyApp();
+     case 'home':
+     return new HomePage();
+     default:
+     return Center(
+     child: Text('Unknown route: $route', textDirection: TextDirection.ltr),
+     );
+     }
+     }
+     */
+
+    __weak typeof(self) weakSelf = self;
+
+    // iOS-->Flutter
+    // 要与main.dart中一致
+    NSString *methodChannelName = @"com.pages.your/native_get";
+    FlutterMethodChannel *methodChannel = [FlutterMethodChannel methodChannelWithName:methodChannelName binaryMessenger:flutterViewController];
+    [methodChannel setMethodCallHandler:^(FlutterMethodCall* _Nonnull call, FlutterResult  _Nonnull result) {
+        // call.method 获取 flutter 给回到的方法名，要匹配到 channelName 对应的多个 发送方法名，一般需要判断区分
+        // call.arguments 获取到 flutter 给到的参数，（比如跳转到另一个页面所需要参数）
+        // result 是给flutter的回调， 该回调只能使用一次
+        EYLog(@"flutter 给到我：\nmethod=%@ \narguments = %@", call.method, call.arguments);
+        if([call.method isEqualToString:@"toNativeSomething"]) {
+            //添加提示框
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"成功" preferredStyle:UIAlertControllerStyleAlert];
+
+            UIAlertAction * actionDetermine = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                // 回调给flutter
+                if(result) {
+                    result(@(1000));
+                }
+            }];
+
+            [alert addAction:actionDetermine];
+
+            [self presentViewController:alert animated:YES completion:nil];
+        } else if([call.method isEqualToString:@"toNativePush"]) {
+
+        } else if([call.method isEqualToString:@"toNativePop"]) {
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        } else {
+
+        }
+    }];
+
+    //iOS-->Flutter
+    NSString *eventChannelName = @"com.pages.your/native_post";
+    FlutterEventChannel *evenChannal = [FlutterEventChannel eventChannelWithName:eventChannelName binaryMessenger:flutterViewController];
+    // 代理FlutterStreamHandler
+    [evenChannal setStreamHandler:weakSelf];
+
+    //push转场动画
+    CATransition *animation = [CATransition animation];
+    [animation setDuration:0.3];
+    [animation setType:kCATransitionMoveIn];
+    [animation setSubtype:kCATransitionFromTop];
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    [self.navigationController.view.layer addAnimation:animation forKey:kCATransition];
+    [self.navigationController pushViewController:flutterViewController animated:NO];
+}
     
 - (void)pushReactNative {
     EYRNViewController *rnVc = [[EYRNViewController alloc] init];
@@ -167,7 +167,7 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
         vc.title = localUseModel.name;
         [self.navigationController pushViewController:vc animated:YES];
     } else if ([language isEqualToString:@"Flutter"]) {
-        //[self pushFlutterViewController];
+        [self pushFlutterViewController];
     } else if ([language isEqualToString:@"RN"]) {
         [self pushReactNative];
     } else {
@@ -176,23 +176,23 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
 }
 
 #pragma mark - FlutterStreamHandler
-// // 这个onListen是Flutter端开始监听这个channel时的回调，第二个参数 EventSink是用来传数据的载体。
-//- (FlutterError* _Nullable)onListenWithArguments:(id)arguments eventSink:(FlutterEventSink)events {
-//    EYLog(@"123 onListenWithArguments==%@==%@", arguments, events);
-//    // arguments flutter给native的参数
-//    // 回调给flutter， 建议使用实例指向，因为该block可以使用多次
-//    if (events) {
-//        events(@"push传值给flutter的vc");
-//    }
-//    return nil;
-//}
-//
-///// flutter不再接收
-//- (FlutterError* _Nullable)onCancelWithArguments:(id)arguments {
-//    // arguments flutter给native的参数
-//    EYLog(@"123 onCancelWithArguments==%@", arguments);
-//    return nil;
-//}
+ // 这个onListen是Flutter端开始监听这个channel时的回调，第二个参数 EventSink是用来传数据的载体。
+- (FlutterError* _Nullable)onListenWithArguments:(id)arguments eventSink:(FlutterEventSink)events {
+    EYLog(@"123 onListenWithArguments==%@==%@", arguments, events);
+    // arguments flutter给native的参数
+    // 回调给flutter， 建议使用实例指向，因为该block可以使用多次
+    if (events) {
+        events(@"push传值给flutter的vc");
+    }
+    return nil;
+}
+
+/// flutter不再接收
+- (FlutterError* _Nullable)onCancelWithArguments:(id)arguments {
+    // arguments flutter给native的参数
+    EYLog(@"123 onCancelWithArguments==%@", arguments);
+    return nil;
+}
 
 #pragma mark - 懒加载
 - (UITableView *)tableView {
