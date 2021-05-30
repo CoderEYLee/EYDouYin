@@ -2444,6 +2444,7 @@
 			buildConfigurationList = 607541532104CC4C00EB258D /* Build configuration list for PBXNativeTarget "EYDouYin" */;
 			buildPhases = (
 				34982ED06F2CA4C6D2CB7435 /* [CP] Check Pods Manifest.lock */,
+				72EF0349467C992EEF026324 /* [CP-User] Run Flutter Build my_flutter Script */,
 				607541232104CC4B00EB258D /* Sources */,
 				607541242104CC4B00EB258D /* Frameworks */,
 				607541252104CC4B00EB258D /* Resources */,
@@ -2665,6 +2666,22 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		72EF0349467C992EEF026324 /* [CP-User] Run Flutter Build my_flutter Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../my_flutter/.metadata",
+				"${SRCROOT}/../my_flutter/.ios/Flutter/App.framework/App",
+				"${SRCROOT}/../my_flutter/.ios/Flutter/engine/Flutter.framework/Flutter",
+				"${SRCROOT}/../my_flutter/.ios/Flutter/flutter_export_environment.sh",
+			);
+			name = "[CP-User] Run Flutter Build my_flutter Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../my_flutter/.ios/Flutter/flutter_export_environment.sh\"\n\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
 		};
 		9384ED7CEF854FA4EC6D63AE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

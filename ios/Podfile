@@ -98,7 +98,7 @@ pod 'ZYCornerRadius', '1.0.2'         # 切圆角
 
 
 #pragma mark - 微博(Swift 版本)
-pod "Weibo_SDK", '3.3.0'
+pod "Weibo_SDK", '3.2.7'
 
 #pragma mark - React-Native
 # 'node_modules'目录一般位于根目录中
@@ -161,6 +161,10 @@ end
 
 #pragma mark - Flutter
 flutter_application_path = '../my_flutter/'
-eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
+#eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
+load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb’)
+
+install_flutter_engine_pod
+install_all_flutter_pods(flutter_application_path)
 
 end
