@@ -49,10 +49,10 @@ pod 'JTAppleCalendar','8.0.3'       # 日历 Swift 6.5K
 pod 'LMJVerticalScrollText', '3.0.1'# 数字动画(没有使用)
 
 pod 'KakaJSON', '1.1.2'             # 字典转模型(MJ)
-pod 'KJBannerView', '2.1.6'        # 图片轮播(网络加载)
+pod 'KJBannerView', '2.1.7'        # 图片轮播(网络加载)
 
 pod 'Masonry', '1.1.0'              # 自动布局
-pod 'MJExtension', '3.2.4'          # 字典转模型
+pod 'MJExtension', '3.3.0'          # 字典转模型
 pod 'MJRefresh', '3.6.1'            # 刷新
 
 pod 'NSLogger', '1.9.7'             # 日志打印
@@ -67,11 +67,11 @@ pod 'RSKImageCropper', '3.0.2'      # 裁剪图片
 
 pod 'SDWebImage', '5.11.1'          # 图片缓存
 pod 'SFHFKeychainUtils', '1.0.0'    # 钥匙串访问
-pod 'SnapKit', '5.0.1'              # 自动布局
+pod 'SnapKit', '5.0.1'              # 自动布局!!!
 pod 'SVProgressHUD', '2.2.5'        # 提示框
 pod 'SwiftyJSON', '5.0.1'           # Swift 转 JSON
 
-pod 'TXLiteAVSDK_Player', '8.7.10102'   # 腾讯云播放器
+pod 'TXLiteAVSDK_Player', '8.8.10257'   # 腾讯云播放器
 pod 'TZImagePickerController', '3.6.0' # 本地选择图片与视频
 pod 'TwicketSegmentedControl', '0.1.2' # 分隔选中按钮
 
