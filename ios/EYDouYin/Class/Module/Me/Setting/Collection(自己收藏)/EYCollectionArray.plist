@@ -293,11 +293,11 @@
         </dict>
         <dict>
             <key>content_url</key>
-            <string>http://www.baidu.com:8888/index.html</string>
+            <string>https://www.jkzg2030.cn/app-m/detail/132250/at?guid=991932afb9a1470c4b438a953a5e3815</string>
             <key>lock</key>
-            <true/>
+            <false/>
             <key>title</key>
-            <string>37、高效的设计模式</string>
+            <string>37、WKWebView打开新标签页</string>
         </dict>
     </array>
 </plist>
