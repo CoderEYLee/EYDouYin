@@ -5,5 +5,5 @@ import 'package:flutter/material.dart';
 
 ThemeData themeData = ThemeData(
   //主题色
-  primaryColor: Colors.red.shade400, //Colors.indigo.shade400,
+  primaryColor: Colors.white, //Colors.indigo.shade400,
 );
