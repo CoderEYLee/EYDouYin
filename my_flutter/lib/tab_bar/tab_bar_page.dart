@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:my_flutter/test_stateful_widget_page.dart';
 
 class TabBarPage extends StatefulWidget {
   TabBarPage({Key key}) : super(key: key);
@@ -83,24 +84,23 @@ class _TabBarPageState extends State<TabBarPage> {
   // 错误返回
   void _onError(Object error) {}
 
+  void _pushSaved() {
+    Navigator.of(context).push(
+      new MaterialPageRoute(
+        builder: (context) {
+          return Scaffold();
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    void _pushSaved() {
-      Navigator.of(context).push(
-        new MaterialPageRoute(
-          builder: (context) {
-            return Scaffold();
-          },
-        ),
-      );
-    }
-
     return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(naviTitle),
             Text(
               'You have pushed the button this many times:',
             ),
@@ -108,13 +108,36 @@ class _TabBarPageState extends State<TabBarPage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
-            // Image.asset('images/2.png'),
             IconButton(
               icon: Icon(Icons.menu),
               onPressed: _pushSaved,
-            )
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                  return TestStatefulWidgetPage(
+                    settings: RouteSettings(),
+                  );
+                }));
+              },
+              child: Container(
+                color: Colors.red,
+                height: 100,
+                width: 100,
+                child: Center(
+                  child: Text(
+                    '测试按钮',
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
+      ),
+      bottomNavigationBar: Container(
+        height: 100,
+        width: 100,
+        color: Colors.red,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
