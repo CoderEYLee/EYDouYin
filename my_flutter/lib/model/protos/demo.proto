@@ -1,0 +1,36 @@
+
+///syntax指定用哪个版本的语法，proto3比2有更好的压缩特性
+syntax = "proto3";
+
+/// package指定编译生成java类的包名
+package com.protos;
+
+option java_package = "com.dy.messagepackdemo.protobuffer.model";
+
+/// java_outer_classname指定java类的类名
+option java_outer_classname = "ResponsePB";
+
+/// 每个结构体是一个message，message之间可以互相引用。
+message TabBar {
+  ///修饰符：required表示必填，optional可选，repeated表示重复的list
+  ///如果没有为optional的元素指定默认值，就会使用与特定类型相关的默认值：
+  ///对string来说，默认值是空字符串。
+  ///对bool来说，默认值是false。
+  ///对数值类型来说，默认值是0。
+  ///对枚举来说，默认值是枚举类型定义中的第一个值。
+  required string name = 1 [default = ''];
+
+  /// 每个层级内的数据要按顺序编号，也就是上一篇文中讲的field_number
+  option string packageid = 2;
+  enum Corpus {
+    UNIVERSAL = 0;
+    WEB = 1;
+    IMAGES = 2;
+    LOCAL = 3;
+    NEWS = 4;
+    PRODUCTS = 5;
+    VIDEO = 6;
+  }
+
+  optional Corpus corpus = 4 [default = UNIVERSAL];
+}

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter/config/config_theme.dart';
 import 'package:my_flutter/config/print.dart';
-import 'package:my_flutter/tab_bar/tab_bar_page.dart';
+import 'package:my_flutter/app_root_page.dart';
 
 void main() {
   //1.设置打印
@@ -21,7 +21,7 @@ class FlutterApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: themeData,
-      home: TabBarPage(),
+      home: AppRootPage(),
     );
   }
 }

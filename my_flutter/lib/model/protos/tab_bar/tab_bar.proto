@@ -1,0 +1,26 @@
+///底部 bar
+
+syntax = "proto3";
+
+package com.protos;
+
+///底部 bar
+message TabBarModel {
+  // 背景颜色
+  string backGroundColor = 1;
+
+  //默认选中的下标
+  int32 currentIndex = 2;
+
+  //items
+  repeated TabBarItemModel items = 3;
+}
+
+///底部 bar->item
+message TabBarItemModel {
+  //标题
+  string title = 1;
+
+  //图片
+  string image = 2;
+}
