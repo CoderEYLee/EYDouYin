@@ -20,13 +20,13 @@ class _MePageState extends State<MePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('TabbarPage页面'),
+            Text('我的页面'),
             MaterialButton(
               onPressed: () {
-                EYPrint('lieryang||=->1111<-=|');
+                EYPrint('lieryang|我的页面|=->1111<-=|');
               },
               color: Colors.red,
-              child: Text('按钮'),
+              child: Text('我的'),
             ),
           ],
         ),

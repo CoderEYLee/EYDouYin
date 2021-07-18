@@ -20,13 +20,13 @@ class _StudyPageState extends State<StudyPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('TabbarPage页面'),
+            Text('学习页面'),
             MaterialButton(
               onPressed: () {
-                EYPrint('lieryang||=->1111<-=|');
+                EYPrint('lieryang|学习页面|=->1111<-=|');
               },
               color: Colors.red,
-              child: Text('按钮'),
+              child: Text('学习'),
             ),
           ],
         ),
