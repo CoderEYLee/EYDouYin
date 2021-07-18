@@ -20,13 +20,13 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('TabbarPage页面'),
+            Text('首页页面'),
             MaterialButton(
               onPressed: () {
-                EYPrint('lieryang||=->1111<-=|');
+                EYPrint('lieryang|首页页面|=->1111<-=|');
               },
               color: Colors.red,
-              child: Text('按钮'),
+              child: Text('首页'),
             ),
           ],
         ),

@@ -12,10 +12,7 @@ dependencies:
 
   cupertino_icons: 0.1.2
 
-  flutter_is_emulator:
-    git:
-      url: https://github.com/g123k/flutter_is_emulator.git
-      ref: 196d1b5ffdae04a74864bde432445b30776be46a
+  flutter_is_emulator: 1.0.0
 
   image_gallery_saver: 1.6.8
 
