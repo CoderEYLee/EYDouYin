@@ -12,7 +12,23 @@ dependencies:
 
   cupertino_icons: 0.1.2
 
+  flutter_is_emulator:
+    git:
+      url: https://github.com/g123k/flutter_is_emulator.git
+      ref: 196d1b5ffdae04a74864bde432445b30776be46a
+
+  image_gallery_saver: 1.6.8
+
+  lottie: 0.7.0+1
+
+  permission_handler: 5.1.0+2
+
   pin_code_text_field: 1.7.1
+
+  protobuf:
+    git:
+      url: https://github.com/dart-lang/protobuf
+      path: protobuf
 
 dev_dependencies:
   flutter_test:
