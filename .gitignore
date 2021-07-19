@@ -66,3 +66,4 @@ ios/.DS_Store
 my_flutter/pubspec.lock
 node_modules/
 .DS_Store
+my_flutter/.flutter-plugins-dependencies
