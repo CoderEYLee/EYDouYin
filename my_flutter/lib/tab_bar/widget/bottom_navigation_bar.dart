@@ -1,13 +1,12 @@
 ///底部Tabbar
 ///
 import 'package:flutter/material.dart';
-import 'package:my_flutter/config/print.dart';
 import 'package:my_flutter/model/darts/tab_bar/tab_bar.pb.dart';
 import 'package:my_flutter/utils/safe.dart';
 
 class BottomNavigationBarWidget extends StatefulWidget {
   final Map<String, dynamic> map;
-  final Function(Map<String, dynamic>) onTap;
+  final Function(int index) onTap;
 
   const BottomNavigationBarWidget({
     Key key,
@@ -31,7 +30,6 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
     _tabBarModel = TabBarModel.fromJsonObject(widget.map);
     _backGroundColor = Color(safeInt(_tabBarModel.backGroundColor, defaultValue: 0xFFFFFFFF));
     _currentIndex = _tabBarModel.currentIndex;
-    EYPrint('lieryang||=->$_tabBarModel<-=|');
 
     super.initState();
   }
@@ -41,13 +39,32 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
     super.dispose();
   }
 
+  //底部信息
+  List<Widget> _buildItems() {
+    List<Widget> _results = List<Widget>();
+
+    for (int i = 0; i < _tabBarModel.items.length; i++) {
+      TabBarItemModel _model = _tabBarModel.items[i];
+      _results.add(_buildItem(
+        title: _model.title,
+        index: i,
+      ));
+    }
+
+    return _results;
+  }
+
   //每一个 item
-  Widget _buildItem({String title = ''}) {
+  Widget _buildItem({String title = '', int index = 0}) {
     return Expanded(
       child: GestureDetector(
         behavior: HitTestBehavior.translucent,
         onTap: () {
-          widget.onTap?.call({});
+          setState(() {
+            _currentIndex = index;
+          });
+
+          widget.onTap?.call(index);
         },
         child: Center(
           child: Text(title),
@@ -66,9 +83,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
           color: _backGroundColor,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: _tabBarModel.items.map((e) {
-              return _buildItem(title: e.title);
-            }).toList(),
+            children: _buildItems(),
           ),
         ),
       ),
