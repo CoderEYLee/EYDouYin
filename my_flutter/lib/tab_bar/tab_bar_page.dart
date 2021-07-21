@@ -26,6 +26,12 @@ class _TabBarPageState extends State<TabBarPage> {
   ///界面数组
   List<Widget> _pageList = List<Widget>();
 
+  ///当前页面组件
+  Widget _page;
+
+  ///当前选中下标
+  int _currentIndex;
+
   @override
   void initState() {
     _pageList.addAll([
@@ -33,31 +39,31 @@ class _TabBarPageState extends State<TabBarPage> {
       StudyPage(),
       MePage(),
     ]);
+    _page = _pageList.first;
+    _currentIndex = 0;
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('TabbarPage页面'),
-            MaterialButton(
-              onPressed: () {
-                EYPrint('lieryang||=->1111<-=|');
-              },
-              color: Colors.red,
-              child: Text('按钮'),
-            ),
-          ],
-        ),
-      ),
+      body: _page,
       bottomNavigationBar: BottomNavigationBarWidget(
           map: _tabBarMap,
-          onTap: (Map<String, dynamic> map) {
-            EYPrint('lieryang|BottomNavigationBarWidget|onTap|=->$map<-=|');
+          onTap: (int index) {
+            if (index < 0 || index >= _pageList.length) {
+              return;
+            }
+
+            if (index == _currentIndex) {
+              return;
+            }
+
+            EYPrint('lieryang|BottomNavigationBarWidget|onTap|=->$index<-=|');
+            setState(() {
+              _currentIndex = index;
+              _page = _pageList[index];
+            });
           }),
     );
   }
