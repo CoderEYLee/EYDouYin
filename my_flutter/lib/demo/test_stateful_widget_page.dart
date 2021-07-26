@@ -36,9 +36,9 @@ class _TestStatefulWidgetPageState extends State<TestStatefulWidgetPage> {
   ///比如前面我们提到的InheritedWidget；
   @override
   void didChangeDependencies() {
+    super.didChangeDependencies();
     ///initState之后立即调用
     EYPrint('lieryang|测试生命周期页面|=->didChangeDependencies<-=|');
-    super.didChangeDependencies();
   }
 
   ///主要是提供开发阶段使用，
