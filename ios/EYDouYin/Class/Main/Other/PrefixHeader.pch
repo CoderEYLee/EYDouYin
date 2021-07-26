@@ -25,6 +25,7 @@
 #import "EYDeviceInformation.h" //设备信息
 #import "EYLocalUseModel.h"     //通用数据模型
 #import "EYCategory.h"          //分类文件
+#import "EYMGJRouteKey.h"       //路由文件
 
 #pragma mark - 项目通用文件
 #import "EYManager.h"
