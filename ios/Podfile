@@ -41,15 +41,19 @@ pod 'GRStarsView', '0.1.0'          # 星星评分view，支持小数，支持�
 
 pod 'iflyMSC', '1.144'              # 科大讯飞
 pod 'IQKeyboardManager', '6.5.6'    # 键盘管理
-pod 'libOpenInstallSDK', '2.5.3'    # OpenInstall
-pod 'lottie-ios', '2.5.3'           # JSON 动画(OC最高版本)
 
+pod 'JLRoutes', '2.1'               # 路由(查找 URL 的实现不够高效，通过遍历而不是匹配。还有就是功能偏多)
 pod 'JTAppleCalendar','8.0.3'       # 日历 Swift 6.5K
-
-pod 'LMJVerticalScrollText', '3.0.1'# 数字动画(没有使用)
 
 pod 'KakaJSON', '1.1.2'             # 字典转模型(MJ)
 pod 'KJBannerView', '2.1.7'        # 图片轮播(网络加载)
+
+pod 'libOpenInstallSDK', '2.5.3'    # OpenInstall
+pod 'lottie-ios', '2.5.3'           # JSON 动画(OC最高版本)
+
+pod 'LMJVerticalScrollText', '3.0.1'# 数字动画(没有使用)
+
+pod 'MGJRouter', '0.10.0'           # 路由(URL 查找是基于匹配，所以会更高效)
 
 pod 'Masonry', '1.1.0'              # 自动布局
 pod 'MJExtension', '3.3.0'          # 字典转模型
@@ -91,7 +95,7 @@ pod 'ZYCornerRadius', '1.0.2'         # 切圆角
 #pod 'SJVideoPlayer', '3.2.6'       #播放器
 #pod 'MWPhotoBrowser', '2.1.2'       # 图片浏览器(加载网络图片)8.6k
 #pod 'IDMPhotoBrowser', '1.11.3'     # 图片浏览器(加载网络图片)2.7k
-#pod 'NYTPhotoViewer', '5.0.3'        # 不建议使用 没有直接设置网络地址去加载图片的方式只能自己处理图片加载然后更新界面
+#pod 'NYTPhotoViewer', '5.0.5'        # 不建议使用 没有直接设置网络地址去加载图片的方式只能自己处理图片加载然后更新界面
 #pod 'YYRefreshView'
 
 
