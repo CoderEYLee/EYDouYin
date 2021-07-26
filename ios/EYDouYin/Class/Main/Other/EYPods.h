@@ -11,6 +11,7 @@
 #import <IQKeyboardManager.h>
 #import <LMJVerticalScrollText.h>
 #import <Masonry.h>
+#import <MGJRouter.h>
 #import <MJExtension.h>
 #import <MJRefresh.h>
 #import <POP.h>
