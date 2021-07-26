@@ -105,6 +105,9 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
 
 #pragma mark - Private Methods
 - (void)tapSettingButton:(UIButton *)button {
+//    [MGJRouter openURL:EYMGJRouteKeyTestA withUserInfo:@{EYMGJRouteKeyNavigationVC: self.navigationController} completion:^(id result) {
+//        NSLog(@"李二洋---result=%@", result);
+//    }];
     EYMeViewController *vc = [[EYMeViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
