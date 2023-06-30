@@ -6,8 +6,9 @@
 //  Copyright © 2018年 李二洋. All rights reserved.
 //  控制器的父类
 
-#import <GKNavigationBarViewController.h>
+#import <UIKit/UIKit.h>
+#import <GKNavigationBar/GKNavigationBar.h>
 
-@interface EYBaseViewController : GKNavigationBarViewController
+@interface EYBaseViewController : UIViewController
 
 @end

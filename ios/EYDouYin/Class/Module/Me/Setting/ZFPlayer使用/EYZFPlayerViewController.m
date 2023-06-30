@@ -63,16 +63,16 @@
 
 - (void)setupVideoView {
     /// 播放器相关
-    ZFAVPlayerManager *playerManager = [[ZFAVPlayerManager alloc] init];
-    UIView *containerView = [[UIView alloc] initWithFrame:EYScreenBounds];
-    containerView.backgroundColor = [UIColor blackColor];
-    ZFPlayerController *playerController = [ZFPlayerController playerWithPlayerManager:playerManager containerView:containerView];
-    playerController.assetURL = [NSURL URLWithString:@"http://video.chinlab.com/CLXXXYE1539069802307.mp4"];
-    self.playerController = playerController;
+//    ZFAVPlayerManager *playerManager = [[ZFAVPlayerManager alloc] init];
+//    UIView *containerView = [[UIView alloc] initWithFrame:EYScreenBounds];
+//    containerView.backgroundColor = [UIColor blackColor];
+//    ZFPlayerController *playerController = [ZFPlayerController playerWithPlayerManager:playerManager containerView:containerView];
+//    playerController.assetURL = [NSURL URLWithString:@"http://video.chinlab.com/CLXXXYE1539069802307.mp4"];
+//    self.playerController = playerController;
     
     //竖屏进入
-    [self.view insertSubview:containerView atIndex:0];
-    [playerController enterPortraitFullScreen:NO animated:NO];
+//    [self.view insertSubview:containerView atIndex:0];
+//    [playerController enterPortraitFullScreen:NO animated:NO];
     
     //横屏进入
 //    EYZFPlayerControlView *eyZFPlayerControlView = [[EYZFPlayerControlView alloc] initWithFrame:EYScreenBounds];

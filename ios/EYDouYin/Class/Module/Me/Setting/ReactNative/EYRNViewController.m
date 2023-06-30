@@ -7,14 +7,14 @@
 //
 
 #import "EYRNViewController.h"
-#import <React/RCTBridge.h>
-#import <React/RCTBundleURLProvider.h>
-#import <React/RCTRootView.h>
-#if RCT_DEV
-#import <React/RCTDevLoadingView.h>
-#endif
+//#import <React/RCTBridge.h>
+//#import <React/RCTBundleURLProvider.h>
+//#import <React/RCTRootView.h>
+//#if RCT_DEV
+//#import <React/RCTDevLoadingView.h>
+//#endif
 
-@interface EYRNViewController () <RCTBridgeDelegate>
+@interface EYRNViewController ()// <RCTBridgeDelegate>
 
 @end
 
@@ -30,27 +30,27 @@
 //1.初始化界面
 - (void)setupUI {
     self.view.backgroundColor = EYColorRed;
-    RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:nil];
-#if RCT_DEV
-    [bridge moduleForClass:[RCTDevLoadingView class]];
-#endif
-    NSMutableDictionary *properties = [NSMutableDictionary dictionary];
-    properties[@"user_id"] = [EYManager manager].userModel.user_id;
-    RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                                     moduleName:@"EYDouYin"
-                                              initialProperties:properties];
-    
-    rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
-    self.view = rootView;
+//    RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:nil];
+//#if RCT_DEV
+//    [bridge moduleForClass:[RCTDevLoadingView class]];
+//#endif
+//    NSMutableDictionary *properties = [NSMutableDictionary dictionary];
+//    properties[@"user_id"] = [EYManager manager].userModel.user_id;
+//    RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
+//                                                     moduleName:@"EYDouYin"
+//                                              initialProperties:properties];
+//
+//    rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
+//    self.view = rootView;
 }
     
 #pragma mark - RCTBridgeDelegate
-- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge {
-#if DEBUG
-    return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-#else
-    return [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"jsbundle"];
-#endif
-}
+//- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge {
+//#if DEBUG
+//    return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+//#else
+//    return [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"jsbundle"];
+//#endif
+//}
 
 @end

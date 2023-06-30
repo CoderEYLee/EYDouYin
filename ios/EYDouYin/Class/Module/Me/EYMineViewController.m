@@ -61,11 +61,11 @@ static NSString *EYMineViewControllerCellID = @"EYMineViewControllerCellID";
         self.gk_navigationBar.hidden = YES;
     } else {//其他渠道进入
         if ([[EYManager manager].userModel.user_id isEqualToString:self.user_id] == NO) {
-            self.gk_navRightBarButtonItem = [UIBarButtonItem itemWithImageName:@"common_arrow_right" target:self action:@selector(tapMoreButton:)];
+            self.gk_navRightBarButtonItem = [UIBarButtonItem gk_itemWithImage:[UIImage imageNamed:@"common_arrow_right"] target:self action:@selector(tapMoreButton:)];
         }
         
         self.gk_navTitle = self.user_id;
-        self.gk_navTintColor = EYColorRGBHexAlpha(0xFFFFFF, 0.0);
+        self.gk_navTitleColor = EYColorRGBHexAlpha(0xFFFFFF, 0.0);
         
         //显示导航
         self.gk_navigationBar.hidden = NO;

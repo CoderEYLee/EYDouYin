@@ -9,7 +9,7 @@
 #import "EYMeViewController.h"
 #import "EYExcelTool.h"
 #import "EYDouYin-Swift.h"
-#import <Flutter/Flutter.h>
+#import "EYFlutterViewController.h"
 #import "EYRNViewController.h"
 
 @interface EYMeViewController () <UITableViewDataSource, UITableViewDelegate, FlutterStreamHandler>
@@ -44,8 +44,7 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
 #pragma mark - iOS <--> Flutter 的通信
 // 进入 Fulutter 界面
 - (void)pushFlutterViewController {
-    FlutterViewController *flutterViewController = [[FlutterViewController alloc] initWithNibName:nil bundle:nil];
-    flutterViewController.view.backgroundColor = EYColorWhite;
+    EYFlutterViewController *flutterVC = [[EYFlutterViewController alloc] init];
     // 设置路由名字 跳转到不同的flutter界面
     /*flutter代码*/
     /*
@@ -72,7 +71,7 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
     // iOS-->Flutter
     // 要与main.dart中一致
     NSString *methodChannelName = @"com.pages.your/native_get";
-    FlutterMethodChannel *methodChannel = [FlutterMethodChannel methodChannelWithName:methodChannelName binaryMessenger:flutterViewController];
+    FlutterMethodChannel *methodChannel = [FlutterMethodChannel methodChannelWithName:methodChannelName binaryMessenger:flutterVC.binaryMessenger];
     [methodChannel setMethodCallHandler:^(FlutterMethodCall* _Nonnull call, FlutterResult  _Nonnull result) {
         // call.method 获取 flutter 给回到的方法名，要匹配到 channelName 对应的多个 发送方法名，一般需要判断区分
         // call.arguments 获取到 flutter 给到的参数，（比如跳转到另一个页面所需要参数）
@@ -103,18 +102,20 @@ static NSString *EYMeViewControllerCellID = @"EYMeViewControllerCellID";
 
     //iOS-->Flutter
     NSString *eventChannelName = @"com.pages.your/native_post";
-    FlutterEventChannel *evenChannal = [FlutterEventChannel eventChannelWithName:eventChannelName binaryMessenger:flutterViewController];
+    FlutterEventChannel *evenChannal = [FlutterEventChannel eventChannelWithName:eventChannelName binaryMessenger:flutterVC.binaryMessenger];
     // 代理FlutterStreamHandler
     [evenChannal setStreamHandler:weakSelf];
 
+    [self presentViewController:flutterVC animated:YES completion:nil];
+    
     //push转场动画
-    CATransition *animation = [CATransition animation];
-    [animation setDuration:0.3];
-    [animation setType:kCATransitionMoveIn];
-    [animation setSubtype:kCATransitionFromTop];
-    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-    [self.navigationController.view.layer addAnimation:animation forKey:kCATransition];
-    [self.navigationController pushViewController:flutterViewController animated:NO];
+//    CATransition *animation = [CATransition animation];
+//    [animation setDuration:0.3];
+//    [animation setType:kCATransitionMoveIn];
+//    [animation setSubtype:kCATransitionFromTop];
+//    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+//    [self.navigationController.view.layer addAnimation:animation forKey:kCATransition];
+//    [self.navigationController pushViewController:flutterVC animated:NO];
 }
     
 - (void)pushReactNative {

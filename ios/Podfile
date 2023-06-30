@@ -1,18 +1,19 @@
-# source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://github.com/CocoaPods/Specs.git'
 source 'https://cdn.cocoapods.org/'
 source 'https://github.com/aliyun/aliyun-specs.git'
 
 use_frameworks!
 inhibit_all_warnings!
 
-platform :ios, '10.0'
+#忽略多 repo 警告
+install! 'cocoapods', :warn_for_unused_master_specs_repo => false
+
+platform :ios, '12.0'
 
 target 'EYDouYin' do
 
-#pod 'AlicloudHTTPDNS', '~> 1.6.11'
-pod 'ZFPlayer', '3.2.13'
-pod 'ZFPlayer/ControlView', '~> 3.0'
-pod 'ZFPlayer/AVPlayer', '~> 3.0'
+#pod 'AlicloudHTTPDNS', '2.0.10'
+pod 'ZFPlayer', '4.1.4'
 # 因为项目中使用了 FFmpeg 和ijkplayer中使用的 FFmpeg 版本不同, 故不能同时存在,目前没有找到解决方案,暂时使用别的播放框架去实现
 #pod 'ZFPlayer/ijkplayer', '~> 3.0'
 #pod 'IJKMediaFramework', '0.1.2'
@@ -20,64 +21,66 @@ pod 'ZFPlayer/AVPlayer', '~> 3.0'
 #pod 'MPMoviePlayerController-Subtitles', '~> 2.2.2'
 
 pod 'AFNetworking', '4.0.1'         # 网络请求
-pod 'Alamofire', '5.4.3'            # 网络请求
-pod 'AliyunOSSiOS', '2.10.10'       # 阿里云 OSS
+pod 'Alamofire', '5.7.1'            # 网络请求
+pod 'AliyunOSSiOS', '2.10.18'       # 阿里云 OSS
 pod 'AvoidCrash', '2.5.2'           # 防止崩溃
 
-pod 'BaiduMobStatCodeless', '5.3.5' # 百度无埋点 SDK
+pod 'BaiduMobStatCodeless', '5.3.6' # 百度无埋点 SDK
 pod 'BAWKWebView', '1.0.9'          # 网页加载(Block 实现)
-pod 'Bugly', '2.5.90'               # Bugly
+pod 'Bugly', '2.5.93'               # Bugly
 
 pod 'CocoaLumberjack', '3.7.2'      # 日志框架
 
+pod 'Debugo', :configurations => ['Debug']
+
 pod 'FCUUID', '1.3.1'               # UUID(随机数)
 pod 'FMDB', '2.7.5'                 # 数据库存储
-pod 'FSCalendar', '2.8.2'           # 日历 8.8K OC/Swift
+pod 'FSCalendar', '2.8.4'           # 日历 8.8K OC/Swift
 pod 'FSPagerView', '0.8.3'          # 轮播
 
 pod 'GDataXML-HTML', '1.4.1'        # 解析 XML/EXCEL
-pod 'GKNavigationBarViewController', '3.0.2' #抖音的左滑 push 效果
+#pod 'GKNavigationBarViewController', '3.0.2' #抖音的左滑 push 效果
+pod 'GKNavigationBar'                 #导航
 pod 'GRStarsView', '0.1.0'          # 星星评分view，支持小数，支持点击、拖动评分。
 
 pod 'iflyMSC', '1.144'              # 科大讯飞
-pod 'IQKeyboardManager', '6.5.6'    # 键盘管理
+pod 'IQKeyboardManager', '6.5.12'   # 键盘管理
 
 pod 'JLRoutes', '2.1'               # 路由(查找 URL 的实现不够高效，通过遍历而不是匹配。还有就是功能偏多)
-pod 'JTAppleCalendar','8.0.3'       # 日历 Swift 6.5K
+pod 'JTAppleCalendar','8.0.0'       # 日历 Swift 6.5K
 
-pod 'KakaJSON', '1.1.2'             # 字典转模型(MJ)
-pod 'KJBannerView', '2.1.7'        # 图片轮播(网络加载)
+#pod 'KakaJSON', '1.1.2'                        # 字典转模型(使用HandyJSON)
+pod 'KJBannerView', '3.1.0'         # 图片轮播(网络加载)
 
-pod 'libOpenInstallSDK', '2.5.3'    # OpenInstall
+pod 'libOpenInstallSDK', '2.7.1'    # OpenInstall
 pod 'lottie-ios', '2.5.3'           # JSON 动画(OC最高版本)
 
 pod 'LMJVerticalScrollText', '3.0.1'# 数字动画(没有使用)
 
-pod 'MGJRouter', '0.10.0'           # 路由(URL 查找是基于匹配，所以会更高效)
+pod 'MGJRouter', :git => 'https://github.com/lyujunwei/MGJRouter.git'           # 路由(URL 查找是基于匹配，所以会更高效)
 
 pod 'Masonry', '1.1.0'              # 自动布局
-pod 'MJExtension', '3.3.0'          # 字典转模型
-pod 'MJRefresh', '3.7.2'            # 刷新
+pod 'MJExtension', '3.4.1'          # 字典转模型
+pod 'MJRefresh', '3.7.5'            # 刷新
 
 pod 'NSLogger', '1.9.7'             # 日志打印
 
 pod 'PhotoSolution', '1.5.8'        # 多选图片
 pod 'pop', '1.0.12'                 # 动画
 
-pod 'Qiniu', '8.2.1'                # 七牛云上传
+pod 'Qiniu', '8.4.4'                # 七牛云上传
 
 pod 'RJBadgeKit', '0.2.5'           # 小红点实现
-pod 'RSKImageCropper', '3.0.2'      # 裁剪图片
+pod 'RSKImageCropper', '4.0.0'      # 裁剪图片
 
-pod 'SDWebImage', '5.11.1'          # 图片缓存
+pod 'SDWebImage', '5.16.0'          # 图片缓存
 pod 'SFHFKeychainUtils', '1.0.0'    # 钥匙串访问
-pod 'SnapKit', '5.0.1'              # 自动布局!!!
+pod 'SnapKit', '5.6.0'              # 自动布局
 pod 'SVProgressHUD', '2.2.5'        # 提示框
 pod 'SwiftyJSON', '5.0.1'           # Swift 转 JSON
 
 pod 'TXLiteAVSDK_Player', '8.9.10361'   # 腾讯云播放器
-pod 'TZImagePickerController', '3.6.2' # 本地选择图片与视频
-pod 'TwicketSegmentedControl', '0.1.2' # 分隔选中按钮
+pod 'TZImagePickerController', '3.8.3' # 本地选择图片与视频
 
 pod 'UICountingLabel', '1.4.1'        # 数字动画
 
@@ -108,110 +111,31 @@ pod "Weibo_SDK", '3.2.7'
 # 'node_modules'目录一般位于根目录中
 # 但是如果你的结构不同，那你就要根据实际路径修改下面的`:path`
 # 如果你的RN版本 >= 0.42.0，则加入下面这行
-pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
-pod 'React', :path => '../node_modules/react-native', :subspecs => [
-'Core',
-'RCTText',
-'RCTNetwork',
-'RCTWebSocket', # 这个模块是用于调试功能的
-#'ART',
-#'RCTActionSheet',
-#'RCTGeolocation',
-#'RCTImage',
-#'RCTPushNotification',
-#'RCTSettings',
-#'RCTVibration',
-#'RCTLinkingIOS',
-#'BatchedBridge',
-# 在这里继续添加你所需要的模块
 
-'CxxBridge', # 如果RN版本 >= 0.47则加入此行
-'DevSupport', # 如果RN版本 >= 0.43，则需要加入此行才能开启开发者菜单
-'RCTAnimation' # FlatList和原生动画功能需要此模块
-]
+#pragma mark - Flutter
+flutter_application_path = '../my_flutter/'
+#eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
+load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb’)
+               
+#install_flutter_engine_pod
+install_all_flutter_pods(flutter_application_path)
 
-
-# 如果RN版本 >= 0.45则加入下面三个第三方编译依赖
-pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
-pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
-pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
-
-post_install do |installer|
-## Fix for XCode 12.5
-  find_and_replace(
-  "../node_modules/react-native/React/CxxBridge/RCTCxxBridge.mm",
-  "_initializeModules:(NSArray<id<RCTBridgeModule>> *)modules",
-  "_initializeModules:(NSArray<Class> *)modules")
-  
-  find_and_replace(
-  "../node_modules/react-native/ReactCommon/turbomodule/core/platform/ios/RCTTurboModuleManager.mm",
-  "RCTBridgeModuleNameForClass(module))",
-  "RCTBridgeModuleNameForClass(Class(module)))"
-  )
-## Fix permission_handler的 build
-installer.pods_project.targets.each do |target|
-  target.build_configurations.each do |config|
-    config.build_settings['ENABLE_BITCODE'] = 'NO'
-    config.build_settings['SWIFT_VERSION'] = '5.3'
-    
-    # Here are some configurations automatically generated by flutter
-
-    # You can enable the permissions needed here. For example to enable camera
-    # permission, just remove the `#` character in front so it looks like this:
-    #
-    # ## dart: PermissionGroup.camera
-    # 'PERMISSION_CAMERA=1'
-    #
-    #  Preprocessor definitions can be found in: https://github.com/Baseflow/flutter-permission-handler/blob/master/permission_handler/ios/Classes/PermissionHandlerEnums.h
-    config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-      '$(inherited)',
-
-      ## dart: PermissionGroup.calendar
-      # 'PERMISSION_EVENTS=1',
-
-      ## dart: PermissionGroup.reminders
-      # 'PERMISSION_REMINDERS=1',
-
-      ## dart: PermissionGroup.contacts
-      # 'PERMISSION_CONTACTS=1',
-
-      ## dart: PermissionGroup.camera
-      # 'PERMISSION_CAMERA=1',
-
-      ## dart: PermissionGroup.microphone
-      # 'PERMISSION_MICROPHONE=1',
-
-      ## dart: PermissionGroup.speech
-      # 'PERMISSION_SPEECH_RECOGNIZER=1',
-
-      ## dart: PermissionGroup.photos
-      # 'PERMISSION_PHOTOS=1',
-
-      ## dart: [PermissionGroup.location, PermissionGroup.locationAlways, PermissionGroup.locationWhenInUse]
-      # 'PERMISSION_LOCATION=1',
-
-      ## dart: PermissionGroup.notification
-      # 'PERMISSION_NOTIFICATIONS=1',
-
-      ## dart: PermissionGroup.mediaLibrary
-      # 'PERMISSION_MEDIA_LIBRARY=1',
-
-      ## dart: PermissionGroup.sensors
-      # 'PERMISSION_SENSORS=1',
-
-      ## dart: PermissionGroup.bluetooth
-      # 'PERMISSION_BLUETOOTH=1',
-
-      ## dart: PermissionGroup.appTrackingTransparency
-      # 'PERMISSION_APP_TRACKING_TRANSPARENCY=1',
-
-      ## dart: PermissionGroup.criticalAlerts
-      # 'PERMISSION_CRITICAL_ALERTS=1'
-    ]
-
-  end
 end
 
+post_install do |installer|
+    flutter_post_install(installer) if defined?(flutter_post_install)
+
+    # Fix for 源码存在问题
+    find_and_replace("Pods/FBRetainCycleDetector/FBRetainCycleDetector/Layout/Classes/FBClassStrongLayout.mm",
+      "layoutCache[currentClass] = ivars;", "layoutCache[(id<NSCopying>)currentClass] = ivars;")
+    
+    installer.pods_project.targets.each do |target|
+      
+      #修改为最低 12.0 版本
+      target.build_configurations.each do |config|
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+      end
+    end
 end
 
 def find_and_replace(dir, findstr, replacestr)
@@ -225,14 +149,4 @@ def find_and_replace(dir, findstr, replacestr)
       end
   end
   Dir[dir + '*/'].each(&method(:find_and_replace))
-end
-
-#pragma mark - Flutter
-flutter_application_path = '../my_flutter/'
-#eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
-load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb’)
-
-install_flutter_engine_pod
-install_all_flutter_pods(flutter_application_path)
-
 end

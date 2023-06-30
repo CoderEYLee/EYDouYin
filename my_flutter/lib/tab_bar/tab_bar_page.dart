@@ -24,13 +24,13 @@ class _TabBarPageState extends State<TabBarPage> {
   };
 
   ///界面数组
-  List<Widget> _pageList = List<Widget>();
+  List<Widget> _pageList = <Widget>[];
 
   ///当前页面组件
-  Widget _page;
+  Widget? _page;
 
   ///当前选中下标
-  int _currentIndex;
+  int _currentIndex = 0;
 
   @override
   void initState() {
@@ -50,8 +50,8 @@ class _TabBarPageState extends State<TabBarPage> {
       body: _page,
       bottomNavigationBar: BottomNavigationBarWidget(
           map: _tabBarMap,
-          onTap: (int index) {
-            if (index < 0 || index >= _pageList.length) {
+          onTap: (int? index) {
+            if (index == null || index < 0 || index >= _pageList.length) {
               return;
             }
 

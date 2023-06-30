@@ -26,6 +26,5 @@
 #import <YYModel.h>
 #import <YYCategories.h>
 #import <YYText.h>
-#import <ZFPlayer/ZFAVPlayerManager.h>
 #import <ZFPlayer/ZFPlayer.h>
 //#import <SJVideoPlayer.h>

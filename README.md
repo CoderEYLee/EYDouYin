@@ -45,7 +45,7 @@ ios目录下:   ```pod install```
 
 # 项目框架结构
   
-## GKNavigationBarViewController （版本:2.3.3 地址： https://github.com/QuintGao/GKNavigationBarViewController）
+## GKNavigationBarViewController （版本:3.0.2 地址： https://github.com/QuintGao/GKNavigationBarViewController ）
   ![image](https://github.com/lieryang/EYDouYin/blob/master/image/GKNavigationBarViewController.png)
   
   

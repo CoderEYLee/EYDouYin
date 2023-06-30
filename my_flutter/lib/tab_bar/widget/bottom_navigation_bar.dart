@@ -5,11 +5,11 @@ import 'package:my_flutter/model/darts/tab_bar/tab_bar.pb.dart';
 import 'package:my_flutter/utils/safe.dart';
 
 class BottomNavigationBarWidget extends StatefulWidget {
-  final Map<String, dynamic> map;
-  final Function(int index) onTap;
+  final Map<String, dynamic>? map;
+  final Function(int? index)? onTap;
 
   const BottomNavigationBarWidget({
-    Key key,
+    Key? key,
     this.map,
     this.onTap,
   }) : super(key: key);
@@ -20,16 +20,16 @@ class BottomNavigationBarWidget extends StatefulWidget {
 
 class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
   TabBarModel _tabBarModel = TabBarModel();
-  Color _backGroundColor;
+  Color? _backGroundColor;
 
   //当前选中下标
   int _currentIndex = 0;
 
   @override
   void initState() {
-    _tabBarModel = TabBarModel.fromJsonObject(widget.map);
-    _backGroundColor = Color(safeInt(_tabBarModel.backGroundColor, defaultValue: 0xFFFFFFFF));
-    _currentIndex = _tabBarModel.currentIndex;
+    // _tabBarModel = TabBarModel.fromJsonObject(widget.map ?? {});
+    // _backGroundColor = Color(safeInt(_tabBarModel.backGroundColor, defaultValue: 0xFFFFFFFF));
+    // _currentIndex = _tabBarModel.currentIndex;
 
     super.initState();
   }
@@ -41,7 +41,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
 
   //底部信息
   List<Widget> _buildItems() {
-    List<Widget> _results = List<Widget>();
+    List<Widget> _results = <Widget>[];
 
     for (int i = 0; i < _tabBarModel.items.length; i++) {
       TabBarItemModel _model = _tabBarModel.items[i];

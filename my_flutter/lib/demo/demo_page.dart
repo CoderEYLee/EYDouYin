@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 
 // Demo页面
 class DemoPage extends StatefulWidget {
-  final RouteSettings settings;
+  final RouteSettings? settings;
 
-  DemoPage({this.settings, Key key}) : super(key: key);
+  DemoPage({this.settings, Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _DemoPageState();
@@ -45,8 +45,8 @@ class _DemoPageState extends State<DemoPage> {
   }
 
   //每一个点击按钮
-  Widget _buildItem({String text, BuildContext context, VoidCallback onTap}) {
-    var wh = (MediaQuery.of(context).size.width - 40) * 0.2;
+  Widget _buildItem({String text = '', BuildContext? context, VoidCallback? onTap}) {
+    var wh = 50.0; //(MediaQuery.of(context).size.width - 40) * 0.2;
     Color randomColor = Color.fromARGB(0xFF, Random().nextInt(0xFF), Random().nextInt(0xFF), Random().nextInt(0xFF));
     return GestureDetector(
       onTap: onTap,

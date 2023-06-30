@@ -239,12 +239,13 @@
 		60BBC68B2104D83400DEEA34 /* EYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6862104D83400DEEA34 /* EYBaseViewController.m */; };
 		60BBC68E2104D8D200DEEA34 /* EYRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC68D2104D8D200DEEA34 /* EYRootViewController.m */; };
 		60BBC6912104D9D900DEEA34 /* EYConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBC6902104D9D900DEEA34 /* EYConstant.m */; };
+		60C026F12A5099A40010496D /* EYCustomFitView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C026EE2A5099A40010496D /* EYCustomFitView1.m */; };
+		60C026F22A5099A40010496D /* EYCustomViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C026F02A5099A40010496D /* EYCustomViewController1.m */; };
+		60C026F62A53045E0010496D /* EYFlutterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C026F52A53045E0010496D /* EYFlutterViewController.m */; };
 		60C40089218BFB9B00B07E4A /* EYCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C40088218BFB9B00B07E4A /* EYCollectionViewController.m */; };
 		60C4008B218BFCF000B07E4A /* EYCollectionArray.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C4008A218BFCF000B07E4A /* EYCollectionArray.plist */; };
 		60C4008E218C1DB600B07E4A /* EYCollectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */; };
 		60C40091218C269C00B07E4A /* UIImageView+EYSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */; };
-		60C9F37222E55A1700450718 /* EYCustomViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9F37122E55A1700450718 /* EYCustomViewController1.m */; };
-		60C9F37522E55ABA00450718 /* EYCustomFitView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C9F37422E55ABA00450718 /* EYCustomFitView1.m */; };
 		60D7176424CEA068000CC045 /* EYFloatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D7176224CEA068000CC045 /* EYFloatButton.m */; };
 		60D7176E24CEA0D4000CC045 /* EYFloatButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D7176D24CEA0D4000CC045 /* EYFloatButtonViewController.m */; };
 		60D7177124CEA34C000CC045 /* UIViewController+EYTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D7177024CEA34C000CC045 /* UIViewController+EYTopViewController.m */; };
@@ -748,6 +749,12 @@
 		60BBC68D2104D8D200DEEA34 /* EYRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYRootViewController.m; sourceTree = "<group>"; };
 		60BBC68F2104D9D900DEEA34 /* EYConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYConstant.h; sourceTree = "<group>"; };
 		60BBC6902104D9D900DEEA34 /* EYConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYConstant.m; sourceTree = "<group>"; };
+		60C026ED2A5099A40010496D /* EYCustomFitView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYCustomFitView1.h; sourceTree = "<group>"; };
+		60C026EE2A5099A40010496D /* EYCustomFitView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYCustomFitView1.m; sourceTree = "<group>"; };
+		60C026EF2A5099A40010496D /* EYCustomViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYCustomViewController1.h; sourceTree = "<group>"; };
+		60C026F02A5099A40010496D /* EYCustomViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYCustomViewController1.m; sourceTree = "<group>"; };
+		60C026F42A53045E0010496D /* EYFlutterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFlutterViewController.h; sourceTree = "<group>"; };
+		60C026F52A53045E0010496D /* EYFlutterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYFlutterViewController.m; sourceTree = "<group>"; };
 		60C40087218BFB9B00B07E4A /* EYCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYCollectionViewController.h; sourceTree = "<group>"; };
 		60C40088218BFB9B00B07E4A /* EYCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCollectionViewController.m; sourceTree = "<group>"; };
 		60C4008A218BFCF000B07E4A /* EYCollectionArray.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EYCollectionArray.plist; sourceTree = "<group>"; };
@@ -755,10 +762,6 @@
 		60C4008D218C1DB600B07E4A /* EYCollectionDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EYCollectionDetailViewController.m; sourceTree = "<group>"; };
 		60C4008F218C269C00B07E4A /* UIImageView+EYSDWebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+EYSDWebImage.h"; sourceTree = "<group>"; };
 		60C40090218C269C00B07E4A /* UIImageView+EYSDWebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+EYSDWebImage.m"; sourceTree = "<group>"; };
-		60C9F37022E55A1700450718 /* EYCustomViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EYCustomViewController1.h; path = ../EYCustomViewController1.h; sourceTree = "<group>"; };
-		60C9F37122E55A1700450718 /* EYCustomViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EYCustomViewController1.m; path = ../EYCustomViewController1.m; sourceTree = "<group>"; };
-		60C9F37322E55ABA00450718 /* EYCustomFitView1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EYCustomFitView1.h; path = ../EYCustomFitView1.h; sourceTree = "<group>"; };
-		60C9F37422E55ABA00450718 /* EYCustomFitView1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EYCustomFitView1.m; path = ../EYCustomFitView1.m; sourceTree = "<group>"; };
 		60D7176224CEA068000CC045 /* EYFloatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYFloatButton.m; sourceTree = "<group>"; };
 		60D7176324CEA068000CC045 /* EYFloatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYFloatButton.h; sourceTree = "<group>"; };
 		60D7176C24CEA0D4000CC045 /* EYFloatButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EYFloatButtonViewController.h; sourceTree = "<group>"; };
@@ -858,6 +861,7 @@
 				601B032921056E7700489E96 /* EYMeViewController.h */,
 				601B032A21056E7700489E96 /* EYMeViewController.m */,
 				60752B3B2181EC78001B857C /* EYMeViewControllerSourceArray.plist */,
+				60C026F32A53043F0010496D /* Flutter */,
 				60F3200C22CDF7FB00B86161 /* ReactNative */,
 				60C40086218BFB2200B07E4A /* Collection(自己收藏) */,
 				6080A69922C74427003EC084 /* 微博(Swift版本) */,
@@ -1314,7 +1318,7 @@
 		607C2F2623024F07000962C8 /* 详情列表 */ = {
 			isa = PBXGroup;
 			children = (
-				60DBBD842302A29400DD422E /* 1、YYLabel */,
+				60C026EC2A50995D0010496D /* 1、YYLabel */,
 				60DBBD872302A2CC00DD422E /* 2、UICollectionView */,
 				60752B4C2186DFC2001B857C /* 3、瀑布流 */,
 				6085A1612189A81100637F31 /* 4、UICollectionView 其他布局使用 */,
@@ -2270,6 +2274,26 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		60C026EC2A50995D0010496D /* 1、YYLabel */ = {
+			isa = PBXGroup;
+			children = (
+				60C026ED2A5099A40010496D /* EYCustomFitView1.h */,
+				60C026EE2A5099A40010496D /* EYCustomFitView1.m */,
+				60C026EF2A5099A40010496D /* EYCustomViewController1.h */,
+				60C026F02A5099A40010496D /* EYCustomViewController1.m */,
+			);
+			path = "1、YYLabel";
+			sourceTree = "<group>";
+		};
+		60C026F32A53043F0010496D /* Flutter */ = {
+			isa = PBXGroup;
+			children = (
+				60C026F42A53045E0010496D /* EYFlutterViewController.h */,
+				60C026F52A53045E0010496D /* EYFlutterViewController.m */,
+			);
+			path = Flutter;
+			sourceTree = "<group>";
+		};
 		60C40086218BFB2200B07E4A /* Collection(自己收藏) */ = {
 			isa = PBXGroup;
 			children = (
@@ -2310,17 +2334,6 @@
 				60D7176324CEA068000CC045 /* EYFloatButton.h */,
 			);
 			path = FloatButton;
-			sourceTree = "<group>";
-		};
-		60DBBD842302A29400DD422E /* 1、YYLabel */ = {
-			isa = PBXGroup;
-			children = (
-				60C9F37022E55A1700450718 /* EYCustomViewController1.h */,
-				60C9F37122E55A1700450718 /* EYCustomViewController1.m */,
-				60C9F37322E55ABA00450718 /* EYCustomFitView1.h */,
-				60C9F37422E55ABA00450718 /* EYCustomFitView1.m */,
-			);
-			path = "1、YYLabel";
 			sourceTree = "<group>";
 		};
 		60DBBD872302A2CC00DD422E /* 2、UICollectionView */ = {
@@ -2454,13 +2467,14 @@
 			buildConfigurationList = 607541532104CC4C00EB258D /* Build configuration list for PBXNativeTarget "EYDouYin" */;
 			buildPhases = (
 				34982ED06F2CA4C6D2CB7435 /* [CP] Check Pods Manifest.lock */,
-				72EF0349467C992EEF026324 /* [CP-User] Run Flutter Build my_flutter Script */,
+				E0198988633BE9C92E59D521 /* [CP-User] Run Flutter Build my_flutter Script */,
 				607541232104CC4B00EB258D /* Sources */,
 				607541242104CC4B00EB258D /* Frameworks */,
 				607541252104CC4B00EB258D /* Resources */,
-				7164FAC7CBD575C447A17FE0 /* [CP] Embed Pods Frameworks */,
 				601DE50322CB028B00C99E5E /* ShellScript */,
-				9384ED7CEF854FA4EC6D63AE /* [CP] Copy Pods Resources */,
+				1B7342448FCFA980D77D212D /* [CP] Copy Pods Resources */,
+				78EFD2C03088ADC1FE54F4BB /* [CP] Embed Pods Frameworks */,
+				49DF643BDE86A93522574ED9 /* [CP-User] Embed Flutter Build my_flutter Script */,
 			);
 			buildRules = (
 			);
@@ -2625,6 +2639,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1B7342448FCFA980D77D212D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		34982ED06F2CA4C6D2CB7435 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2643,6 +2674,16 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		49DF643BDE86A93522574ED9 /* [CP-User] Embed Flutter Build my_flutter Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Embed Flutter Build my_flutter Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../my_flutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh embed_and_thin";
+		};
 		601DE50322CB028B00C99E5E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2660,7 +2701,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#\"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n\n#\"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed\n";
 		};
-		7164FAC7CBD575C447A17FE0 /* [CP] Embed Pods Frameworks */ = {
+		78EFD2C03088ADC1FE54F4BB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2677,38 +2718,15 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		72EF0349467C992EEF026324 /* [CP-User] Run Flutter Build my_flutter Script */ = {
+		E0198988633BE9C92E59D521 /* [CP-User] Run Flutter Build my_flutter Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/../my_flutter/.metadata",
-				"${SRCROOT}/../my_flutter/.ios/Flutter/App.framework/App",
-				"${SRCROOT}/../my_flutter/.ios/Flutter/engine/Flutter.framework/Flutter",
-				"${SRCROOT}/../my_flutter/.ios/Flutter/flutter_export_environment.sh",
 			);
 			name = "[CP-User] Run Flutter Build my_flutter Script";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../my_flutter/.ios/Flutter/flutter_export_environment.sh\"\n\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
-		};
-		9384ED7CEF854FA4EC6D63AE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EYDouYin/Pods-EYDouYin-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../my_flutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2788,6 +2806,7 @@
 				6093D599231CDA26002BC4BA /* EYBaseAliVideoPlayer.m in Sources */,
 				602A3839229FA8FB00D6DB0D /* EYFollowListViewController.m in Sources */,
 				60752B6C2186F49A001B857C /* EYShopCell.m in Sources */,
+				60C026F62A53045E0010496D /* EYFlutterViewController.m in Sources */,
 				60B00F2622D39BB300941A14 /* TTFFmpegConverOC.m in Sources */,
 				6080A67B22C61510003EC084 /* EYClickPointModel.m in Sources */,
 				60B3660722E36D2A00283241 /* ffmpeg_opt.c in Sources */,
@@ -2822,8 +2841,8 @@
 				6012FD70215A36BF004A3083 /* UIView+EYCornerRadius.m in Sources */,
 				60752B682186F3CE001B857C /* EYShop.m in Sources */,
 				601B032E21056E8600489E96 /* EYMessageViewController.m in Sources */,
-				60C9F37222E55A1700450718 /* EYCustomViewController1.m in Sources */,
 				606B658A219182130059D1F7 /* UIButton+EYSDWebImage.m in Sources */,
+				60C026F22A5099A40010496D /* EYCustomViewController1.m in Sources */,
 				6080A76422C744A5003EC084 /* NSAttributedString+EYAdditon.m in Sources */,
 				6080A76322C744A5003EC084 /* NSString+EYBase64.m in Sources */,
 				60752B4B2186A3B9001B857C /* EYIOSLockViewController.m in Sources */,
@@ -2851,6 +2870,7 @@
 				6080A7AC22C744A5003EC084 /* EYLiveListViewModel.swift in Sources */,
 				6080A76F22C744A5003EC084 /* EYRefreshControl.swift in Sources */,
 				6080A78422C744A5003EC084 /* EYEmoticonLayout.swift in Sources */,
+				60C026F12A5099A40010496D /* EYCustomFitView1.m in Sources */,
 				6080A7A322C744A5003EC084 /* EYComposeTypeView.swift in Sources */,
 				602DEE5B229E5756006B61A3 /* EYNotificationTool.m in Sources */,
 				601B03152104DCBD00489E96 /* EYTabBarController.m in Sources */,
@@ -2890,7 +2910,6 @@
 				6080A65E22C60898003EC084 /* EYUserModel.m in Sources */,
 				6016065922D5F2A70082B278 /* EYTestView.m in Sources */,
 				60AAFC7F22B375C300F30A9B /* EYExcelModel.m in Sources */,
-				60C9F37522E55ABA00450718 /* EYCustomFitView1.m in Sources */,
 				606E6FA721284FD900ABEB83 /* EYBaseTableViewController.m in Sources */,
 				6080A78C22C744A5003EC084 /* EYUserAccount.swift in Sources */,
 				60B00F2722D39BB300941A14 /* TTFFmpegManager.m in Sources */,
@@ -3131,7 +3150,7 @@
 					"$(PROJECT_DIR)/EYDouYin/Class/Main/Tool/FFmpeg-iOS/include",
 				);
 				INFOPLIST_FILE = EYDouYin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3211,7 +3230,7 @@
 					"$(PROJECT_DIR)/EYDouYin/Class/Main/Tool/FFmpeg-iOS/include",
 				);
 				INFOPLIST_FILE = EYDouYin/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

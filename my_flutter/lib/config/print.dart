@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 ///
 /// 初始化
 void setupDebugPrint() {
-  debugPrint = _debugPrint;
+  //debugPrint = _debugPrint;
 }
 
-void _debugPrint(Object object, {int wrapWidth}) {
+void _debugPrint(Object object, {int? wrapWidth}) {
   EYPrint(object, wrapWidth: wrapWidth);
 }
 
 /// Log总方法
 // ignore: non_constant_identifier_names
-void EYPrint(Object object, {int wrapWidth, bool isForce = false}) {
+void EYPrint(Object object, {int? wrapWidth, bool isForce = false}) {
   print(object.toString());
 }

@@ -4,7 +4,7 @@ import 'package:my_flutter/demo/test_stateful_widget_page.dart';
 import 'package:my_flutter/tab_bar/tab_bar_page.dart';
 
 class AppRootPage extends StatefulWidget {
-  AppRootPage({Key key}) : super(key: key);
+  AppRootPage({Key? key}) : super(key: key);
 
   @override
   _AppRootPageState createState() => _AppRootPageState();
@@ -70,7 +70,7 @@ class _AppRootPageState extends State<AppRootPage> {
     super.initState();
 
     // 监听事件，同时发送参数12345
-    eventChannel.receiveBroadcastStream(12345).listen(_onEvent, onError: _onError);
+    //eventChannel.receiveBroadcastStream(12345).listen(_onEvent, onError: _onError);
   }
 
   String naviTitle = 'title';

@@ -62,15 +62,10 @@ static NSString *EYTableViewSizeToFitViewControllerCellID = @"EYTableViewSizeToF
         tableView.backgroundColor = EYColorClear;
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = 44;
+        tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         tableView.dataSource = self;
         tableView.delegate = self;
         [self.view addSubview:tableView];
-        
-        if (@available(iOS 11.0, *)) {
-            tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        } else {
-            self.automaticallyAdjustsScrollViewInsets = NO;
-        }
         
         _tableView = tableView;
     }

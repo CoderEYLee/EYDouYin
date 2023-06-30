@@ -6,8 +6,8 @@
 //  Copyright © 2018年 李二洋. All rights reserved.
 //
 
-#import <GKNavigationBarViewController.h>
+#import "EYBaseViewController.h"
 
-@interface EYRootViewController : GKNavigationBarViewController
+@interface EYRootViewController : EYBaseViewController
 
 @end

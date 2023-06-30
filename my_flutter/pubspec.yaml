@@ -4,32 +4,32 @@ description: A new flutter module project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: 0.1.2
+  cupertino_icons: 1.0.5
 
   #日历
-  flutter_datetime_picker: 1.5.0
+  flutter_datetime_picker: 1.5.1
 
   #是否是模拟器
-  flutter_is_emulator: 1.0.0
+  safe_device: 1.1.4
 
   #轮播图
-  flutter_swiper : 1.1.6
+  flutter_swiper_null_safety: 1.0.2
 
   #图片保存
-  image_gallery_saver: 1.6.8
+  image_gallery_saver: 2.0.2
 
   #json 动画
-  lottie: 0.7.0+1
+  lottie: 2.4.0
 
-  permission_handler: 5.1.0+2
+  permission_handler: 10.4.1
 
-  pin_code_text_field: 1.7.1
+  pin_code_text_field: 1.8.0
 
   protobuf:
     git:

@@ -16,13 +16,11 @@
 @implementation EYMGJRouteManager
 
 + (void)load {
-    [MGJRouter registerURLPattern:EYMGJRouteKeyTestA toObjectHandler:^id(NSDictionary *routerParameters) {
+    [MGJRouter registerURLPattern:EYMGJRouteKeyTestA toHandler:^(NSDictionary *routerParameters) {
         NSLog(@"李二洋---%@", routerParameters);
         
         UINavigationController *navi = routerParameters[MGJRouterParameterUserInfo][EYMGJRouteKeyNavigationVC];
         [navi pushViewController:[[EYMineViewController alloc] init] animated:YES];
-        
-        return navi;
     }];
 }
 

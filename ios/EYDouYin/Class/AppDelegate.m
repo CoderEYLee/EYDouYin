@@ -13,7 +13,7 @@
 #import "EYRootViewController.h"
 #import <AvoidCrash.h>
 
-//#import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h> // Only if you have Flutter Plugins
+#import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h> // Only if you have Flutter Plugins
 
 @interface AppDelegate () <WeiboSDKDelegate>
 
@@ -72,7 +72,7 @@
     self.window.backgroundColor = EYColorTheme;
     
     EYRootViewController *rootVC = [[EYRootViewController alloc] init];
-    EYNavigationController *navi = [EYNavigationController rootVC:rootVC translationScale:YES];
+    EYNavigationController *navi = [EYNavigationController rootVC:rootVC transitionScale:YES];
     navi.gk_openScrollLeftPush = YES;
     
     self.window.rootViewController = navi;
@@ -128,7 +128,7 @@
     [TXLiveBase setConsoleEnabled:NO];
     
     // 2.8Flutter初始化
-//    self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
+    self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
     
     // 2.9滚动条与分割线
     UIScrollView.appearance.showsHorizontalScrollIndicator = NO;
