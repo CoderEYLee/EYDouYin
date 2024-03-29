@@ -13,10 +13,10 @@ EYDouYin 该项目主体框架是模仿抖音框架实现
 ## 第一步: clone 项目
    
 方式一: (SSH)   
-```git clone git@github.com:lieryang/EYDouYin.git```
+```git clone git@github.com:CoderEYLee/EYDouYin.git```
 
 方式二: (HTTPS)    
-```git clone https://github.com/lieryang/EYDouYin.git```   
+```git clone https://github.com/CoderEYLee/EYDouYin.git```   
 
 
 ## 第二步: 下载 node_modules 依赖
