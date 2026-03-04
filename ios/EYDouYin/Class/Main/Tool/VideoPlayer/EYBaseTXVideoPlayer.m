@@ -7,7 +7,7 @@
 //
 
 #import "EYBaseTXVideoPlayer.h"
-#import <TXLiteAVSDK_Player/TXLiveBase.h>
+#import <TXLiteAVSDK_Player/TXVodPlayer.h>
 
 @interface EYBaseTXVideoPlayer() <TXVodPlayListener>
 
@@ -71,7 +71,7 @@
 
     self.TX_URLString = TX_URLString;
 
-    int result = [self.txVodPlayer startPlay:TX_URLString];
+    int result = [self.txVodPlayer startVodPlay:TX_URLString];
     if (self.isAutoPlay) {
         if (result == 0) {
             EYLog(@"开始播放成功==%@==%@", self, TX_URLString);

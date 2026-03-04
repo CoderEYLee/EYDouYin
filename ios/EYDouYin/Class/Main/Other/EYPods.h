@@ -9,9 +9,7 @@
 #import <AFNetworking.h>
 #import <FSCalendar.h>
 #import <IQKeyboardManager.h>
-#import <LMJVerticalScrollText.h>
 #import <Masonry.h>
-#import <MGJRouter.h>
 #import <MJExtension.h>
 #import <MJRefresh.h>
 #import <POP.h>
@@ -22,9 +20,9 @@
 #import <TXLiveBase.h>
 #import <UICountingLabel.h>
 #import <WeiboSDK.h>
-#import "XRCarouselView.h"
+#import <XRCarouselView.h>
 #import <YYModel.h>
-#import <YYCategories.h>
+//#import <YYCategories.h>
 #import <YYText.h>
 #import <ZFPlayer/ZFAVPlayerManager.h>
 #import <ZFPlayer/ZFPlayer.h>
