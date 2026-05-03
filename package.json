@@ -7,7 +7,7 @@
     },
     "dependencies": {
         "react": "16.8.3",
-        "react-native": "0.59.8",
+        "react-native": "0.85.2",
         "react-navigation": "^4.0.10"
     }
 }
